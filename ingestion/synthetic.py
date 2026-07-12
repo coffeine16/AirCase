@@ -42,19 +42,27 @@ from shared.grid import city_cells, cell_center, bearing_deg
 
 RNG = np.random.default_rng(42)
 
-# ---- Hidden sources: (name, type, lat, lon, strength, active_hours, registered) ----
-# `registered=False` -> the source exists and emits, but appears in NO map layer.
+# ---- Hidden sources ----
+# (name, type, lat, lon, strength, active_hours, registered, live_from)
+#   registered=False -> the source emits but appears in NO map layer.
+#   live_from        -> fraction of the window at which it switches on. A source
+#                       that starts on day 45 of 60 is EMERGING: loud in the 7d
+#                       window, invisible in the 30d one. Detection has to tell
+#                       that apart from a chronic source and from a one-off fire,
+#                       which is the whole point of aggregating over several
+#                       windows instead of trusting one.
 SOURCES = [
-    ("Peenya industrial cluster", "industrial",    13.030, 77.520, 55.0, range(0, 24), True),
-    ("Bommasandra industries",    "industrial",    12.870, 77.700, 45.0, range(0, 24), True),
-    ("ORR construction site A",   "construction",  12.935, 77.695, 40.0, range(8, 19), True),
-    ("Metro construction B",      "construction",  12.990, 77.550, 35.0, range(8, 19), True),
-    ("Silk Board corridor",       "traffic",       12.917, 77.623, 38.0, list(range(7, 11)) + list(range(17, 21)), True),
-    ("Hebbal corridor",           "traffic",       13.036, 77.591, 32.0, list(range(7, 11)) + list(range(17, 21)), True),
+    ("Peenya industrial cluster", "industrial",    13.030, 77.520, 55.0, range(0, 24), True, 0.0),
+    ("Bommasandra industries",    "industrial",    12.870, 77.700, 45.0, range(0, 24), True, 0.0),
+    ("ORR construction site A",   "construction",  12.935, 77.695, 40.0, range(8, 19), True, 0.0),
+    ("Metro construction B",      "construction",  12.990, 77.550, 35.0, range(8, 19), True, 0.0),
+    ("Silk Board corridor",       "traffic",       12.917, 77.623, 38.0, list(range(7, 11)) + list(range(17, 21)), True, 0.0),
+    ("Hebbal corridor",           "traffic",       13.036, 77.591, 32.0, list(range(7, 11)) + list(range(17, 21)), True, 0.0),
     # --- unregistered: on no map, in no register. The hard cases. ---
-    ("Landfill burning zone",     "waste_burning", 13.075, 77.610, 60.0, list(range(18, 24)) + [0, 1, 2, 3], False),
-    ("Kiln belt NE",              "waste_burning", 13.060, 77.720, 30.0, list(range(17, 24)), False),
-    ("Unpermitted crusher SW",    "construction",  12.880, 77.490, 34.0, range(7, 20), False),
+    ("Landfill burning zone",     "waste_burning", 13.075, 77.610, 60.0, list(range(18, 24)) + [0, 1, 2, 3], False, 0.0),
+    ("Kiln belt NE",              "waste_burning", 13.060, 77.720, 30.0, list(range(17, 24)), False, 0.0),
+    # --- emerging: commissioned three-quarters of the way through the window ---
+    ("Unpermitted crusher SW",    "construction",  12.880, 77.490, 42.0, range(7, 20), False, 0.75),
 ]
 
 N_DECOYS = 14           # mapped sites that emit nothing (dormant / compliant / finished)
@@ -137,10 +145,10 @@ def truth_field(n_hours: int = PANEL_HOURS):
 
     # Precompute per-source geometry once: distance + bearing to every cell.
     geom = []
-    for name, stype, slat, slon, strength, active, _reg in SOURCES:
+    for name, stype, slat, slon, strength, active, _reg, live_from in SOURCES:
         dist = np.array([_haversine_vec(slat, slon, centers[:, 0], centers[:, 1])]).ravel()
         brg = np.array([bearing_deg(slat, slon, la, lo) for la, lo in centers])
-        geom.append((stype, strength, set(active), dist, brg))
+        geom.append((stype, strength, set(active), dist, brg, int(live_from * len(wx))))
 
     n_cells, n_hours_ = len(cells), len(wx)
     surf = {k: np.zeros((n_hours_, n_cells)) for k in kinds}
@@ -153,8 +161,8 @@ def truth_field(n_hours: int = PANEL_HOURS):
 
     for h, wx_row in enumerate(wx.itertuples(index=False)):
         trap = float(np.clip(600.0 / wx_row.blh_m, 0.5, 3.0))
-        for si, (stype, strength, active, dist, brg) in enumerate(geom):
-            if wx_row.ts.hour not in active:
+        for si, (stype, strength, active, dist, brg, live_at) in enumerate(geom):
+            if wx_row.ts.hour not in active or h < live_at:
                 continue
             load = EMIT_SCALE * strength / 50.0 * _plume(dist, brg, wx_row.wind_from_deg, wx_row.wind_ms)
             col[stype][h] += load                     # satellite: no trapping
@@ -235,7 +243,7 @@ def pick_station_cells(n: int = 12) -> list[str]:
     cells = city_cells()
     src_cells = set()
     from shared.grid import latlng_to_cell, neighbors
-    for _, _, slat, slon, _, _, _ in SOURCES:
+    for _, _, slat, slon, _, _, _, _ in SOURCES:
         c0 = latlng_to_cell(slat, slon)
         src_cells |= {c0, *neighbors(c0, 2)}
     candidates = [c for c in cells if c not in src_cells]
@@ -253,7 +261,7 @@ def _osm_layer() -> pd.DataFrame:
               "waste_burning": "man_made=kiln", "traffic": "highway=trunk"}
     deg = OSM_POS_ERROR_M / 111_320.0
 
-    for name, stype, slat, slon, _strength, _active, registered in SOURCES:
+    for name, stype, slat, slon, _strength, _active, registered, _live in SOURCES:
         if not registered:
             continue                                    # illegal / unmapped: no OSM record
         rows.append({"name": name, "kind": stype, "tag": tag_of[stype],
@@ -333,9 +341,12 @@ def generate_all(n_hours: int = PANEL_HOURS):
     # 3) FIRMS fires near burning sources during their active hours. Fires are the
     #    only direct evidence of the unregistered burning sources.
     fires = []
-    for wx_row in wx.itertuples(index=False):
-        for name, stype, slat, slon, strength, active, _reg in SOURCES:
+    n_wx = len(wx)
+    for h, wx_row in enumerate(wx.itertuples(index=False)):
+        for name, stype, slat, slon, strength, active, _reg, live_from in SOURCES:
             if stype != "waste_burning" or wx_row.ts.hour not in active:
+                continue
+            if h < int(live_from * n_wx):
                 continue
             if RNG.random() < 0.25:
                 fires.append({"ts": wx_row.ts,

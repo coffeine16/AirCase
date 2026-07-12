@@ -8,10 +8,13 @@
 **Design principles**
 
 1. Deterministic arithmetic ranks; LLMs only explain. Every score is reproducible plain math, so the priority queue is defensible to an administrator and a judge alike.
-2. Every AI claim ships with its evidence chain and a confidence score. No black-box attributions.
+2. Every AI claim ships with its evidence chain and a confidence score. No black-box attributions. **And the confidence must actually discriminate** — a number that reads the same on right and wrong answers is decoration. Ours is validated against truth: median 0.66 on hits vs 0.42 on misses, and 100% precision above 0.70.
 3. Heavy compute runs in a batch pipeline; the API and frontend read precomputed JSON contracts. If the backend dies mid-demo, the map still renders.
 4. Every LLM-dependent component has a deterministic rule-based fallback. The demo cannot be killed by a rate limit.
 5. Channels are dumb, agents are smart. Messaging infrastructure only moves bytes; all intelligence lives in the agent pipeline.
+6. **Robust statistics only. Never the mean.** Every aggregate is a median and every spread is a MAD. A mean is not robust to outliers, and in this domain the outliers *are* the phenomenon: one spike hour inflates a mean and manufactures a chronic source out of a single bonfire.
+7. **One window is not a signal.** Real-time data is noisy and cannot identify a source on its own. Every source claim is aggregated over 24 h / 7 d / 30 d and must survive the zoom-out; agreement across windows is what separates a standing violator from a fire.
+8. **The evaluation must be able to fail.** A synthetic world that hands the scorer its own answer key produces 100% accuracy and teaches nothing (ours did, for a while — see below). The generator uses different physics than the scorer, some sources appear on no map, decoy sites emit nothing, and the satellite is blurred to its real footprint. Numbers are reported split by what is physically observable and what is not.
 
 ---
 
@@ -55,7 +58,45 @@ A panel builder assembles the **cell × hour feature table**: interpolated stati
 4. **Validation — the headline number:** **leave-one-station-out.** Hide each station entirely, predict its cell from satellite + features, compare against its actual readings. Report per-station R²/RMSE. One rigorous number that says "our full-coverage map is trustworthy," which no interpolated dashboard can produce.
 5. **SHAP values** per prediction feed the attribution agent's evidence (e.g., "this cell's estimate is driven 40% by the NO₂ column, 25% by low boundary layer").
 
-Everything downstream — hotspot detection, attribution, forecasting, prioritisation — runs on the fusion field, not raw stations.
+### ⚠️ Measured limitation — the fusion field is an EXPOSURE map, not a source detector
+
+The original design said "everything downstream — hotspot detection, attribution, forecasting, prioritisation — runs on the fusion field." **That is wrong, and we measured it.**
+
+The model is trained only on cells that contain a station, and CPCB siting norms deliberately place stations *away from sources* — the very fact this layer's rationale rests on. On the synthetic world the 12 training stations see a mean source contribution of **0.25 µg/m³** (p99 = 6.7; only 0.5% of station-hours exceed 10 µg/m³) while the rest of the city reaches **210 µg/m³**. Only 6 of 4,032 station-hours have a fire within range, against 4,414 citywide.
+
+So the model never observes a source, cannot learn a source response, and — being a tree ensemble — **cannot extrapolate one either**: LightGBM predicts piecewise-constant, so a cell whose NO₂ column is far above anything a station ever saw gets the same prediction as the highest station. The fusion field's spatial spread at peak hour is 14 µg/m³ against a true spread of 37. Measured: it is ~9% *worse* than the naive station-mean baseline on the dirtiest decile, and understates it by ~9 µg/m³.
+
+Bolting a physical dispersion term onto the model does not rescue this, because its coefficient would have to be calibrated on the same station data that contains no plumes.
+
+**What the fusion field IS good for:** citywide exposure ("what is a person in this cell breathing"), where it cuts error ~15% vs the station-mean map at LOSO R² ≈ 0.90. That is a real and useful product. It is simply not the detector.
+
+**Detection therefore moved to Layer 3b.** Everything downstream reads the fusion field for *exposure* and the detector for *sources*.
+
+---
+
+## Layer 3b — Detection: satellite contrast + fire persistence
+
+Detection runs on the two instruments with **genuinely uniform coverage** — every cell, no siting bias:
+
+- **Satellite contrast.** Per-cell *median* (never mean — one spike hour would manufacture a fake chronic source) of each S5P column over each window, scored by **neighbourhood contrast**: how far the cell sits above the annulus at 4–8 km around it, in robust MAD units. Contrast rather than a citywide rank, because the dense urban core is high everywhere and "this district is dense" is true, unactionable, and not a violator.
+- **Fire persistence.** Fraction of window-hours with a FIRMS detection within 1.5 km. FIRMS observes burning *directly* — no inference, no contrast needed.
+
+**Multi-window agreement (24 h / 7 d / 30 d)** then separates the three things an administrator must respond to differently. A real-time spike is noise; a source is what is still there when you zoom out:
+
+| class | signal | response |
+|---|---|---|
+| `chronic` | elevated over 30 d | a standing violator — build the case file |
+| `emerging` | elevated over 7 d, not 30 d | newly commissioned — act now |
+| `acute` | elevated in 24 h only | a fire — send a truck, not a notice |
+
+**Measured on the synthetic world** (`scripts/eval_detection.py`): **4/4** physically observable sources found and correctly named, including **2/2 that appear on no map at all**; precision 76%; and the coverage-bias number — **0 of 9 sources sit within 2 km of a monitor**, so a station-only dashboard sees none of them.
+
+### Known blind spots (stated, not hidden)
+
+- **Construction dust is invisible to this detector.** It is coarse PM with no satellite tracer (S5P measures NO₂/SO₂/CO/aerosol index; none fingerprint it) and it does not burn. Recall on construction sources is **0/3**. Catching it needs the OSM permit layer, PM10/PM2.5 coarse-fraction from stations, and citizen reports — not this detector.
+- **Traffic is confounded.** The NO₂ column does see traffic, but the diffuse road network raises NO₂ across the whole urban core, so a corridor does not stand out against its own neighbourhood. Recall on traffic corridors is **0/2**.
+
+Claiming credit for finding what these instruments physically cannot see would be dishonest; so would quietly hiding the gap.
 
 **Free byproduct — the network audit (see Layer 6, Feature F4):** cells where satellite and fusion say "high" but no monitor exists are *monitoring blind spots*, ranked into a next-sensor-placement recommendation; a station reading flat while the satellite spikes overhead is flagged for *sensor malfunction/tampering review*. The problem statement opens with a CAG audit; this feature audits the monitoring network itself.
 
@@ -86,7 +127,7 @@ A LangGraph `StateGraph` orchestrates six nodes over a shared typed state (`AirQ
 A centralized LLM gateway serves all agents with provider switching (Gemini primary, Groq secondary, local Ollama last resort) and hardened JSON parsing (fence stripping, fallback on parse failure). Three interchangeable providers means no single rate limit or outage can take down demo day.
 
 ### Node 1 — Hotspot Detection
-Flags cells where the fusion field exceeds the ward's rolling baseline by a configurable margin, or where the satellite shows a plume with no nearby station corroboration (a blind-spot spike). Output: candidate hotspots with severity and detection basis.
+See **Layer 3b**. Satellite neighbourhood contrast + FIRMS fire persistence, aggregated over 24 h/7 d/30 d with robust statistics, classified `chronic` / `emerging` / `acute`. It does **not** run on the fusion field — that was the original design and it does not work, for measured reasons. Output: candidate hotspots with severity, ward, and detection basis.
 
 ### Node 2 — Source Attribution Agent (the innovation core)
 **What:** for each hotspot, names the responsible source category with a confidence score and a fully inspectable evidence chain.

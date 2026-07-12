@@ -30,7 +30,9 @@ jobs:
       - run: PYTHONPATH=. python scripts/run_pipeline.py --synthetic
       - run: PYTHONPATH=. python intelligence/agents/detect.py
       - run: PYTHONPATH=. python intelligence/agents/attribution.py
+      - run: PYTHONPATH=. python scripts/eval_detection.py
       - run: PYTHONPATH=. python scripts/eval_attribution.py
+      - run: PYTHONPATH=. python scripts/eval_hotspot_recovery.py
   app-smoke:
     needs: changes
     if: needs.changes.outputs.app == 'true'
