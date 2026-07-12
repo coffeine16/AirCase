@@ -1,0 +1,8 @@
+pandas>=2.0
+numpy>=1.24
+pyarrow
+h3>=4.0
+lightgbm>=4.0
+scikit-learn>=1.3
+fastapi>=0.110
+uvicorn>=0.29
