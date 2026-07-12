@@ -27,10 +27,12 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
       - run: pip install -r requirements.txt
-      - run: PYTHONPATH=. python scripts/run_pipeline.py --synthetic
-      - run: PYTHONPATH=. python intelligence/agents/detect.py
-      - run: PYTHONPATH=. python intelligence/agents/attribution.py
+      # --full chains detect + attribution, so CI can never bless a run whose
+      # hotspots.json is stale relative to the panel underneath it.
+      - run: PYTHONPATH=. python scripts/run_pipeline.py --synthetic --full
+      - run: PYTHONPATH=. python scripts/eval_detection.py
       - run: PYTHONPATH=. python scripts/eval_attribution.py
+      - run: PYTHONPATH=. python scripts/eval_hotspot_recovery.py
   app-smoke:
     needs: changes
     if: needs.changes.outputs.app == 'true'

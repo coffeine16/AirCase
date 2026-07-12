@@ -32,7 +32,7 @@ WARDS = dict(zip(ward_frame().cell, ward_frame().ward_id))
 
 # ------------------------------------------------------------ evidence
 def build_evidence(cell: str, ts: pd.Timestamp, panel_row: pd.Series,
-                   osm: pd.DataFrame, sat_pct: dict,
+                   osm: pd.DataFrame, sat_pct: dict, fire_activity: dict,
                    wind_hist: list[float] | None = None) -> dict:
     lat, lon = cell_center(cell)
     # Bearings live on a circle: the arithmetic mean of 350 and 10 is 180, which
@@ -70,7 +70,7 @@ def build_evidence(cell: str, ts: pd.Timestamp, panel_row: pd.Series,
         "pm25_estimate": round(float(panel_row.get("pm25_hat", np.nan)), 1),
         "candidates": candidates[:8],
         "pollutant_signature": sig,
-        "fire_activity": {"fires_6h": int(panel_row.fires_6h), "frp_6h": round(float(panel_row.frp_6h), 1)},
+        "fire_activity": fire_activity,
         "landuse_context": {k: int(panel_row[f"lu_{k}"]) for k in CATEGORIES},
         "meteorology": {"wind_from_deg": round(wind_from), "wind_ms": round(float(panel_row.wind_ms), 1),
                         "blh_m": round(float(panel_row.blh_m)), "hour_local": hour,
@@ -93,8 +93,13 @@ def category_scores(ev: dict) -> dict:
     hour = ev["meteorology"]["hour_local"]
     if sig.get("no2_col", {}).get("city_percentile", 0) >= 80 and (7 <= hour <= 10 or 17 <= hour <= 20):
         s["traffic"] += 0.8
-    if ev["fire_activity"]["fires_6h"] > 0:
-        s["waste_burning"] += 0.6 + 0.1 * ev["fire_activity"]["fires_6h"]
+    # Fire evidence is scored on the FRACTION of the window that was burning, not
+    # a raw count: a count is not comparable across a 6-hour acute window and a
+    # 30-day chronic one. Sustained burning is what distinguishes a landfill from
+    # somebody's bonfire.
+    frac = ev["fire_activity"]["fire_hour_fraction"]
+    if frac > 0:
+        s["waste_burning"] += 0.6 + 0.8 * min(frac / 0.15, 1.0)
     for k in CATEGORIES:
         s[k] += 0.15 * min(ev["landuse_context"][k], 3)
     if 8 <= hour <= 18:
@@ -104,13 +109,50 @@ def category_scores(ev: dict) -> dict:
     return {k: round(v, 3) for k, v in s.items()}
 
 
-def confidence_from(scores: dict) -> float:
-    """Evidence agreement, not LLM self-report: margin of top-1 over top-2."""
+def independent_signals(ev: dict, top: str) -> int:
+    """How many INDEPENDENT evidence types point at `top`.
+
+    Independence is the point: a named candidate upwind, a matching pollutant
+    fingerprint, satellite-confirmed fire, and land-use context are four different
+    instruments. Four instruments agreeing is a real result; one instrument
+    shouting is not.
+    """
+    n = 0
+    if any(c["type"] == top and c["wind_alignment"] > 0.4 for c in ev["candidates"]):
+        n += 1
+    sig_map = {"industrial": "so2_col", "waste_burning": "aai", "traffic": "no2_col"}
+    if top in sig_map and ev["pollutant_signature"].get(sig_map[top], {}).get("city_percentile", 0) >= 80:
+        n += 1
+    if top == "waste_burning" and ev["fire_activity"]["fire_hour_fraction"] > 0:
+        n += 1
+    if ev["landuse_context"].get(top, 0) > 0:
+        n += 1
+    return n
+
+
+def confidence_from(scores: dict, ev: dict, top: str) -> float:
+    """Evidence agreement — never LLM self-report.
+
+    Margin alone was not enough: measured against synthetic truth it scored 0.74
+    on hits and 0.75 on misses, i.e. it carried no information about correctness,
+    which quietly breaks the "every claim ships a confidence" principle. A wrong
+    call with one weak candidate and nothing else can still win by a wide margin
+    over three zeros. So confidence now combines three things that actually
+    differ between hits and misses:
+
+      margin   — how decisively the top category beat the runner-up
+      strength — how much absolute evidence there is at all (a top score of 0.2
+                 means we know essentially nothing, whatever the margin)
+      agreement— how many INDEPENDENT instruments point the same way
+    """
     vals = sorted(scores.values(), reverse=True)
     if vals[0] <= 0:
-        return 0.1
+        return 0.05
     margin = (vals[0] - vals[1]) / vals[0]
-    return round(float(np.clip(0.35 + 0.6 * margin, 0.1, 0.95)), 2)
+    strength = float(np.clip(vals[0] / 2.0, 0, 1))
+    agreement = independent_signals(ev, top) / 4.0
+    conf = 0.10 + 0.30 * margin + 0.30 * strength + 0.30 * agreement
+    return round(float(np.clip(conf, 0.05, 0.95)), 2)
 
 
 # ---------------------------------------------------------- reasoners
@@ -140,10 +182,14 @@ def rule_based_reason(ev: dict, scores: dict, top: str) -> dict:
     sig_map = {"industrial": "so2_col", "waste_burning": "aai", "traffic": "no2_col"}
     if top in sig_map and sig.get(sig_map[top], {}).get("city_percentile", 0) >= 80:
         factors.append(f'{sig_map[top]} at p{sig[sig_map[top]]["city_percentile"]} citywide')
-    if top == "waste_burning" and ev["fire_activity"]["fires_6h"]:
-        factors.append(f'{ev["fire_activity"]["fires_6h"]} satellite fire detections in last 6h')
+    fa = ev["fire_activity"]
+    if top == "waste_burning" and fa["fire_hours"]:
+        factors.append(f'satellite fire detections in {fa["fire_hours"]} hours '
+                       f'({fa["fire_hour_fraction"]:.0%} of the window)')
     if ev["meteorology"]["air_trapped"]:
         factors.append(f'shallow boundary layer ({ev["meteorology"]["blh_m"]} m) trapping emissions')
+    if not factors:
+        factors.append("no corroborating evidence beyond weak land-use context")
     reason = (f"Deterministic evidence scoring points to {top.replace('_', ' ')} "
               f"as the primary source. " + "; ".join(factors[:3]) + ".")
     return {"primary_source": top, "reason": reason, "evidence_factors": factors}
@@ -152,7 +198,7 @@ def rule_based_reason(ev: dict, scores: dict, top: str) -> dict:
 def attribute_one(ev: dict) -> dict:
     scores = category_scores(ev)
     top = max(scores, key=scores.get)
-    conf = confidence_from(scores)
+    conf = confidence_from(scores, ev, top)
     llm_out, provider = complete_json(PROMPT.format(
         evidence=json.dumps(ev, indent=1), scores=json.dumps(scores), cats=CATEGORIES))
     if llm_out and llm_out.get("primary_source") in CATEGORIES:
@@ -172,8 +218,20 @@ def attribute_one(ev: dict) -> dict:
 
 
 # -------------------------------------------------------------- runner
+# The evidence window must match the CLAIM being made. Attributing a standing
+# violator off one hour of wind is how you name the wrong factory; attributing a
+# fire off a 30-day median is how you miss it entirely.
+WINDOW_HOURS = {"chronic": 24 * 30, "emerging": 24 * 7, "acute": 6}
+
+
 def run(top_n: int = 100) -> list[dict]:
-    hotspots = json.loads((DATA_OUT / "hotspots.json").read_text())[:top_n]
+    all_hot = json.loads((DATA_OUT / "hotspots.json").read_text())
+    # Only ENFORCEABLE hotspots get a case built. A diffuse urban-background zone
+    # is real pollution with nobody to serve a notice on: it stays on the map and
+    # feeds ward advisories, but naming a "primary source" for it would be
+    # inventing a culprit. Policy target, not inspection target.
+    hotspots = [h for h in all_hot if h.get("attributable", True)][:top_n]
+    n_diffuse = len(all_hot) - len([h for h in all_hot if h.get("attributable", True)])
     panel = pd.read_parquet(DATA_OUT / "panel.parquet")
     field = pd.read_parquet(DATA_OUT / "fusion_field.parquet")
     osm = pd.read_parquet(DATA_RAW / "osm.parquet")
@@ -185,26 +243,40 @@ def run(top_n: int = 100) -> list[dict]:
     out = []
     for h in hotspots:
         ts = pd.Timestamp(h["ts"])
-        kind = h.get("kind", "anomaly")
-        if kind == "chronic":
-            week = panel[(panel.cell == h["cell"]) & (panel.ts > ts - pd.Timedelta(days=7))]
-            if week.empty:
-                continue
-            row = week.mean(numeric_only=True)
-            row["hour"] = 12  # neutral daytime context for chronic evidence
-            wind_hist = week.wind_from_deg.tolist()
-            ev = build_evidence(h["cell"], ts, row, osm, sat_pct, wind_hist=wind_hist)
-        else:
-            r = panel[(panel.cell == h["cell"]) & (panel.ts == ts)]
-            if r.empty:
-                continue
-            ev = build_evidence(h["cell"], ts, r.iloc[0], osm, sat_pct)
+        kind = h.get("kind", "chronic")
+        w = panel[(panel.cell == h["cell"])
+                  & (panel.ts > ts - pd.Timedelta(hours=WINDOW_HOURS[kind]))
+                  & (panel.ts <= ts)]
+        if w.empty:
+            continue
+
+        # MEDIAN, not mean: one spike hour must not be able to invent an
+        # industrial signature out of a quiet month.
+        row = w.median(numeric_only=True)
+        row["hour"] = 12 if kind != "acute" else int(ts.hour)
+
+        fires_hours = int((w.fires_6h > 0).sum())
+        fire_activity = {
+            "fire_hours": fires_hours,
+            "fire_hour_fraction": round(fires_hours / len(w), 4),
+            "frp_p90": round(float(w.frp_6h.quantile(0.9)), 1),
+        }
+        ev = build_evidence(h["cell"], ts, row, osm, sat_pct, fire_activity,
+                            wind_hist=w.wind_from_deg.tolist())
         ev["hotspot_kind"] = kind
-        out.append(attribute_one(ev))
+        ev["evidence_window_hours"] = WINDOW_HOURS[kind]
+        rec = attribute_one(ev)
+        rec["zone_id"] = h.get("zone_id")
+        out.append(rec)
+
     (DATA_OUT / "attributions.json").write_text(json.dumps(out, indent=2))
-    by_src = pd.Series([o["primary_source"] for o in out]).value_counts().to_dict()
-    prov = pd.Series([o["explained_by"] for o in out]).value_counts().to_dict()
-    print(f"[attribute] {len(out)} hotspots attributed {by_src} (explained by {prov})")
+    if out:
+        by_src = pd.Series([o["primary_source"] for o in out]).value_counts().to_dict()
+        prov = pd.Series([o["explained_by"] for o in out]).value_counts().to_dict()
+        print(f"[attribute] {len(out)} enforceable hotspots attributed {by_src} "
+              f"(explained by {prov})")
+    print(f"[attribute] {n_diffuse} diffuse urban-background hotspots left unattributed "
+          f"(no locatable source — policy target, not an inspection)")
     return out
 
 

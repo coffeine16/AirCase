@@ -30,6 +30,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import pandas as pd
 
 from shared.config import DATA_RAW, DATA_OUT
+from intelligence.agents.attribution import WINDOW_HOURS
 
 CONTRIB = {"c_industrial": "industrial", "c_construction": "construction",
            "c_waste_burning": "waste_burning", "c_traffic": "traffic"}
@@ -64,18 +65,21 @@ def main():
     rows = []
     for a in attrs:
         ts = pd.Timestamp(a["ts"])
-        if a.get("evidence", {}).get("hotspot_kind") == "chronic":
-            t = truth[(truth.cell == a["cell"]) & (truth.ts > ts - pd.Timedelta(days=7))]
-        else:
-            t = truth[(truth.cell == a["cell"]) & (truth.ts == ts)]
+        kind = a.get("evidence", {}).get("hotspot_kind", "chronic")
+        # Score against the SAME window the attribution reasoned over, or the
+        # comparison is meaningless.
+        hours = WINDOW_HOURS[kind]
+        t = truth[(truth.cell == a["cell"]) & (truth.ts > ts - pd.Timedelta(hours=hours))
+                  & (truth.ts <= ts)]
         if t.empty:
             continue
         got = _truth_for(t)
         if got is None:
             continue
         true_src, registered = got
-        rows.append({"cell": a["cell"], "predicted": a["primary_source"], "true": true_src,
-                     "registered": registered, "confidence": a["confidence"],
+        rows.append({"cell": a["cell"], "kind": kind, "predicted": a["primary_source"],
+                     "true": true_src, "registered": registered,
+                     "confidence": a["confidence"],
                      "hit": a["primary_source"] == true_src})
 
     df = pd.DataFrame(rows)
@@ -93,11 +97,18 @@ def main():
     report("OVERALL accuracy", df)
     report("  registered sources", df[df.registered])
     report("  UNREGISTERED sources", df[~df.registered])
+    for k in ("chronic", "emerging", "acute"):
+        report(f"  kind={k}", df[df.kind == k])
     print()
-    print("[eval] mean confidence on hits  :", round(df[df.hit].confidence.mean(), 2)
-          if df.hit.any() else "n/a")
-    if (~df.hit).any():
-        print("[eval] mean confidence on misses:", round(df[~df.hit].confidence.mean(), 2))
+    # Does confidence actually MEAN anything? If hits and misses score the same,
+    # the number is decoration and principle 4 is violated in spirit.
+    if df.hit.any() and (~df.hit).any():
+        ch, cm = df[df.hit].confidence, df[~df.hit].confidence
+        print(f"[eval] median confidence  hits {ch.median():.2f}  misses {cm.median():.2f}"
+              f"   (separation {ch.median() - cm.median():+.2f})")
+        hi = df[df.confidence >= 0.7]
+        if len(hi):
+            print(f"[eval] precision @ confidence>=0.70: {hi.hit.mean():.0%} ({hi.hit.sum()}/{len(hi)})")
     print()
     print("[eval] confusion (rows = truth, cols = predicted)")
     print(pd.crosstab(df.true, df.predicted).to_string())

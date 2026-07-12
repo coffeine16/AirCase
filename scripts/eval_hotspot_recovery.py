@@ -1,5 +1,16 @@
-"""The money stat: does the fusion field recover hotspots that naive
-station-interpolation misses? Only computable in synthetic mode (we know truth).
+"""Is the fusion field a good EXPOSURE map? (It is not the hotspot detector.)
+
+This script used to be billed as "the money stat: does fusion recover hotspots
+that station interpolation misses". It does not, and it cannot — the model is
+trained only on station cells, CPCB siting puts stations away from sources, so it
+never observes a source and (as a tree ensemble) cannot extrapolate to one. What
+it measures honestly is citywide exposure, which is a genuinely useful thing and
+what it is now used for.
+
+The real money stat moved to scripts/eval_detection.py: of the sources actually
+polluting the city, how many does the platform find, and how many would a
+station-only dashboard find? (Answer, on the synthetic world: 4/4 observable vs
+0/9 within range of a monitor.)
 """
 import sys
 from pathlib import Path
@@ -43,8 +54,14 @@ def main():
     print(f"ALL cells x hours   : fusion RMSE {overall_f:6.2f}  | naive station-mean RMSE {overall_n:6.2f}")
     print(f"HOTSPOTS (top 10%)  : fusion RMSE {hot_f:6.2f}  | naive station-mean RMSE {hot_n:6.2f}")
     print(f"HOTSPOT bias        : fusion {bias_f:+6.1f} ug/m3 | naive {bias_n:+6.1f} ug/m3  (negative = understates)")
-    print(f"-> naive interpolation understates hotspots by {abs(bias_n):.0f} ug/m3 on average; "
-          f"fusion cuts hotspot error by {100*(1-hot_f/hot_n):.0f}%")
+    print()
+    print(f"-> CITYWIDE EXPOSURE: fusion cuts error by {100*(1-overall_f/overall_n):.0f}% vs the "
+          f"station-mean map. This is what the fusion field is for.")
+    print(f"-> HOTSPOTS: fusion still understates the dirtiest decile by {abs(bias_f):.0f} ug/m3. "
+          f"It is trained on stations,")
+    print(f"   and stations are sited away from sources, so it never saw one. Do NOT use it to "
+          f"find sources —")
+    print(f"   that is what scripts/eval_detection.py measures, on the satellite + fire channels.")
 
 
 if __name__ == "__main__":

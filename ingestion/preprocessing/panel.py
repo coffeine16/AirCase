@@ -7,7 +7,7 @@ weather, land-use context, time features.
 import numpy as np
 import pandas as pd
 
-from shared.config import DATA_RAW, DATA_OUT
+from shared.config import DATA_RAW, DATA_OUT, FIRE_RADIUS_KM
 from shared.grid import city_cells, cell_center, latlng_to_cell, haversine_km, neighbors
 from shared.wards import attach_wards
 
@@ -36,21 +36,60 @@ def _landuse_features(cells: list[str], osm: pd.DataFrame) -> pd.DataFrame:
 
 
 def _fire_features(cells: list[str], fires: pd.DataFrame, hours: pd.DatetimeIndex) -> pd.DataFrame:
-    """fires within 2 km of the cell in the trailing 6 h, per (cell, hour)."""
-    centers = {c: cell_center(c) for c in cells}
-    out = []
+    """Fires within 2 km of the cell in the trailing 6 h, per (cell, hour).
+
+    Vectorised: the cell x hour spine is ~1.7 M rows over a 60-day window, so the
+    nested-loop version (one pandas filter per cell per hour) is not viable. We
+    build the (cell x fire) proximity mask once, bin fires to their hour, and
+    accumulate into a (hour x cell) matrix with a 6-hour trailing convolution.
+    """
+    n_c, n_h = len(cells), len(hours)
+    spine_cell = np.tile(np.asarray(cells), n_h)
+    # .values would strip the tz and silently break the merge against the panel
+    spine_ts = pd.DatetimeIndex(hours).repeat(n_c)
+
     if fires.empty:
-        return pd.DataFrame([{"cell": c, "ts": t, "fires_6h": 0, "frp_6h": 0.0}
-                             for c in cells for t in hours])
+        return pd.DataFrame({"cell": spine_cell, "ts": spine_ts,
+                             "fires_6h": 0, "frp_6h": 0.0})
+
     fires = fires.copy()
-    fires["ts"] = pd.to_datetime(fires.ts, utc=True)
-    for c in cells:
-        lat, lon = centers[c]
-        near = fires[[haversine_km(lat, lon, r.lat, r.lon) <= 2.0 for r in fires.itertuples()]]
-        for t in hours:
-            w = near[(near.ts > t - pd.Timedelta(hours=6)) & (near.ts <= t)]
-            out.append({"cell": c, "ts": t, "fires_6h": len(w), "frp_6h": float(w.frp.sum())})
-    return pd.DataFrame(out)
+    fires["ts"] = pd.to_datetime(fires.ts, utc=True).dt.floor("h")
+    fires = fires[fires.ts.isin(hours)]
+    if fires.empty:
+        return pd.DataFrame({"cell": spine_cell, "ts": spine_ts,
+                             "fires_6h": 0, "frp_6h": 0.0})
+
+    centers = np.array([cell_center(c) for c in cells])            # (n_c, 2)
+    flat, flon = fires.lat.values, fires.lon.values                # (n_f,)
+    # (n_c, n_f) great-circle distance, vectorised
+    p1 = np.radians(centers[:, 0])[:, None]
+    p2 = np.radians(flat)[None, :]
+    dp = p2 - p1
+    dl = np.radians(flon)[None, :] - np.radians(centers[:, 1])[:, None]
+    a = np.sin(dp / 2) ** 2 + np.cos(p1) * np.cos(p2) * np.sin(dl / 2) ** 2
+    near = (2 * 6371.0 * np.arcsin(np.sqrt(a))) <= FIRE_RADIUS_KM  # (n_c, n_f) bool
+
+    hour_of = pd.Index(hours).get_indexer(fires.ts)                # fire -> hour index
+    counts = np.zeros((n_h, n_c))
+    frp = np.zeros((n_h, n_c))
+    for fi, hi in enumerate(hour_of):
+        hit = near[:, fi]
+        counts[hi, hit] += 1
+        frp[hi, hit] += float(fires.frp.values[fi])
+
+    # trailing 6 h (inclusive of the current hour)
+    csum = np.cumsum(counts, axis=0)
+    fsum = np.cumsum(frp, axis=0)
+    lag = np.zeros_like(csum)
+    lag[6:] = csum[:-6]
+    counts_6h = csum - lag
+    lag_f = np.zeros_like(fsum)
+    lag_f[6:] = fsum[:-6]
+    frp_6h = fsum - lag_f
+
+    return pd.DataFrame({"cell": spine_cell, "ts": spine_ts,
+                         "fires_6h": counts_6h.ravel().astype(int),
+                         "frp_6h": frp_6h.ravel()})
 
 
 def build_panel() -> pd.DataFrame:
