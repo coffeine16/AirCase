@@ -114,6 +114,27 @@ def stations():
             for r in latest.itertuples()]
 
 
+@app.get("/memos")
+def memos():
+    """All drafted enforcement memos (the EPS queue turned into documents)."""
+    return _json("memos.json")
+
+
+@app.get("/memo/{action_id}")
+def memo(action_id: str):
+    """One memo, with its evidence chain and its legal basis.
+
+    GET, not POST: the memo is PRECOMPUTED by the batch pipeline, like everything
+    else this API serves (principle 3 — serving never computes). The frontend's
+    "Generate memo" button fetches a document that already exists; it does not
+    trigger an LLM call inside a request handler.
+    """
+    for x in _json("memos.json"):
+        if action_id in (x.get("action_id"), x.get("zone_id"), x.get("memo_id")):
+            return x
+    raise HTTPException(404, f"no memo for {action_id}")
+
+
 @app.get("/fires")
 def fires():
     """FIRMS thermal detections in the window. The instrument that finds burning
