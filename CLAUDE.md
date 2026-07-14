@@ -63,12 +63,52 @@ python intelligence/agents/attribution.py                # source attribution
 python scripts/eval_detection.py                         # THE headline stat (recall/precision vs truth)
 python scripts/eval_attribution.py                       # attribution accuracy + confidence calibration
 python scripts/eval_hotspot_recovery.py                  # fusion as an EXPOSURE map (not a detector)
+python scripts/eval_station_sensitivity.py               # is recall an artefact of monitor siting? (no)
+python scripts/compare_cities.py                         # can the satellite RESOLVE anything here?
 uvicorn app.backend.main:app --reload --port 8000        # serving API
 ```
-Drop `--synthetic` once real API keys are in `.env` (copy from `.env.example`).
+
+**Live mode.** Needs `FIRMS_KEY` + `OPENAQ_API_KEY` in `.env` (both free) and GEE
+auth (`gcloud auth application-default login`; see `docs/gcp-setup.md`).
 `shared/config.py` loads `.env` itself — no python-dotenv dependency.
 
-## The two things that will mislead you if you don't know them
+```powershell
+# Delhi, November 2025 — the real landfill/stubble burning season. This is the run
+# that found Bhalswa. July is monsoon: cloud masks NO2 and NOTHING BURNS (real FIRMS
+# returns 2 fires over Bengaluru in 60 days), so BOTH of the detector's instruments
+# are blind. Point it at a season it can actually see.
+$env:AQ_CITY = "delhi"; $env:AQ_WINDOW_END = "2025-11-30"
+python scripts/run_pipeline.py --full
+```
+
+Live mode **refuses to run** if satellite, fires, or OSM fall back to synthetic
+(`pollers.NO_FALLBACK`) — each of those *invents a place we would then accuse*.
+Stations may degrade: they feed the exposure map, not the detector.
+
+## The three things that will mislead you if you don't know them
+
+**0. Two of our three satellite channels are NOISE, and the synthetic world hides it.**
+Measured on real S5P over Bengaluru *and* Delhi (`scripts/compare_cities.py`):
+
+| channel | SNR (spatial signal / noise surviving a 60-day median) | verdict |
+|---|---|---|
+| NO2 | 2.6 – 2.8 | usable |
+| SO2 | 0.66 – 0.87 | **noise** — 49% of values are *negative*, MAD 30x the median |
+| AAI | 0.76 – 1.03 | **noise** |
+
+TROPOMI SO2 is built for volcanoes and mega point-sources; an urban industrial
+cluster sits far under its noise floor. AAI at a ~5.5 km footprint sees regional
+aerosol, not a landfill. On real Delhi, taking `max(contrast)` across all three
+flagged **470 of 1703 cells (28% of the city)** — and **87% of those were driven by
+SO2 (63%) or AAI (24%)**, i.e. we were manufacturing enforcement targets out of
+retrieval error, and a real burning landfill ranked *below* them. Detection is now
+**NO2 contrast + FIRMS fire persistence only** (`detect.py::POLLUTANTS`).
+
+Our synthetic satellite gave SO2 a clean industrial signature it does not have. The
+old **4/4 headline leaned on it and was never real.** If you re-add SO2 or AAI to
+any scoring path, you are re-adding noise. Don't.
+
+## The other two
 
 **1. The fusion field is an EXPOSURE map, not a source detector.**
 It trains only on station cells, and stations are sited *away* from sources — so
@@ -108,18 +148,27 @@ leakage before you assume success.
   pollution, no one to serve a notice on, a policy target. It stays on the map and
   is excluded from the enforcement queue.
 - 📊 Headline numbers (synthetic, anchored world — reproducible run to run):
-  - **4/4** physically observable sources detected and correctly named,
-    including **2/2 that appear on no map at all**
-  - enforceable-**zone** precision **4/4** (74 cells -> 5 zones; the 5th is a
-    1-cell diffuse zone, correctly excluded from the enforcement queue)
-  - attribution accuracy **89%** (48/54; **100%** on unregistered); precision
-    **100%** at confidence >= 0.70 (17/17); confidence separates hits 0.67 from
-    misses 0.38; fusion LOSO R2 **0.898**, RMSE 6.4 vs naive 9.97 (~36% better)
-  - ⚠️ 4/4 is **n=4**. Per "the 100% trap" below, never sell it as a robust rate.
-    The conservative companion is cell-level precision **71%**, whose shortfall is
-    *plume extent inside correctly-found zones* (a 1.6 km satellite footprint plus
-    advection means a real source necessarily lights a 2-3 km blob), not false
-    accusations. Quote both.
+  - recall **by what the instruments can physically see**:
+    - **direct (thermal fire): 2/2** found and correctly named — **both are
+      UNREGISTERED**, i.e. they appear on no map at all. This is the real result.
+    - **NO2, confounded (industrial + traffic): 0/4.** NO2 is a real combustion
+      tracer, but the road network lifts it across the whole core, so a point
+      source has to out-shout its own neighbourhood. Hard, not impossible — on
+      real Delhi this tier *did* surface industrial zones.
+    - **no tracer at all (construction): 0/3.** Coarse PM. Nothing sees it.
+  - enforceable-**zone** precision **2/2** (34 cells -> 3 zones; the 3rd is diffuse,
+    correctly excluded from the enforcement queue); cell-level **85%** (28/33)
+  - attribution **100%** (16/16, all unregistered); fusion LOSO R2 **0.898**
+  - ⚠️ These are small n. Never sell 2/2 as a rate.
+- 🌍 **Real Delhi, November 2025 (every source live).** The number that matters:
+  - **Bhalswa landfill -> `waste_burning`, confidence 0.67**, evidence
+    *"satellite fire detections in 30 hours (18% of the window)"*. A real polluter,
+    in a real city, from public satellite data, with an evidence chain anyone can
+    check by googling "Bhalswa landfill fire November 2025".
+  - Okhla -> `traffic` (it genuinely sits on Mathura Road; defensible, incomplete).
+    Ghazipur -> not detected (no fires in the window).
+  - ⚠️ Fusion does **not** generalise: LOSO R2 **0.48** on Delhi, and **22% WORSE**
+    than the naive station-mean. Do not quote the synthetic 0.90 as if it holds.
   - 🚩 **"0 of 9 sources within 2 km of a monitor" is NOT a finding.** It is an
     assumption: `pick_station_cells` excludes each source's k=2 ring (floor
     ~1.9-2.4 km), so it is true ~99% of the time by construction. Reporting it as
@@ -156,6 +205,32 @@ leakage before you assume success.
   `docs:`, `ci:`) with a body explaining *why*, not just *what*.
 
 ## Known gotchas
+- **The synthetic world's INSTRUMENTS were too kind, and that is the same class of
+  bug as the 100% trap.** We made the *sources* adversarial and left the *sensors*
+  perfect: clean SO2, clean AAI, 281 fires, full satellite coverage every day.
+  Reality: SO2/AAI are noise, real FIRMS returns **2 fires over Bengaluru in 60
+  days**, and monsoon cloud masks 71% of NO2. When you add a new instrument, model
+  its NOISE before you model its signal.
+- **Score candidates with MAX, not SUM.** `category_scores` used to sum over every
+  nearby OSM site of a type. That asks "how many mapped sites of this type are near
+  me" — a question about OSM's *coverage*, not about who is polluting. Synthetic had
+  2 traffic corridors; real Delhi has **1,240**, so traffic won by sheer count and
+  *both* burning landfills were attributed to traffic.
+- **Every collector must fetch the WHOLE panel window.** FIRMS asked for 2 days,
+  OpenAQ for 14, Open-Meteo for 14 — against a 60-day panel. `build_panel()`
+  intersects station and weather hours, so a live run silently produced a 14-day
+  panel, the 30-day detection window came back EMPTY, and every chronic source
+  vanished with no error. (FIRMS caps `DAY_RANGE` at **5**, so it is walked in
+  chunks.)
+- **An empty critical source is as dangerous as a failed one, and it does not
+  raise.** A loaded Overpass mirror returns HTTP 200 with zero elements; we wrote an
+  empty OSM layer and carried on as if Delhi contained no industry. `NO_FALLBACK`
+  now rejects zero-row payloads too. Overpass also 406s without a User-Agent and
+  silently truncates at `out center 4000` (real Bengaluru returns 8,057 features —
+  we were losing 500 industrial sites).
+- **Live GEE emits tz-aware dates; the synthetic satellite emits naive ones.** The
+  panel coerces to naive before merging, or pandas raises. Same family as the
+  `DatetimeIndex.values` gotcha below.
 - **The synthetic world is anchored to `config.SYNTHETIC_ANCHOR`, not to now.**
   It used to end at `utcnow()`, so the same code gave 72 hotspot cells at 22:00
   and 93 at 02:00 and every reported number silently meant "as measured last

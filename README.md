@@ -59,17 +59,30 @@ uvicorn app.backend.main:app --reload --port 8000        # GET /hotspots, /attri
 
 ## The headline result
 
-Scored against a synthetic world **built to fool us** (see
-[the 100% trap](#the-100-trap)):
+**On real data.** Delhi, November 2025 — real Sentinel-5P, real NASA FIRMS, real
+CPCB stations, real OpenStreetMap:
 
-| | |
+> ### 🔥 Bhalswa landfill → `waste_burning`, confidence 0.67
+> *evidence: satellite fire detections in 30 hours (18% of the window);
+> shallow boundary layer (120 m) trapping emissions*
+
+A real polluter, in a real city, from public satellite data, with an evidence chain
+**anyone can check** — google *"Bhalswa landfill fire November 2025"*.
+
+(Okhla landfill → `traffic`; it genuinely sits on Mathura Road — defensible but
+incomplete. Ghazipur → not detected: no fires in the window. We report all three.)
+
+**On the synthetic world**, where ground truth exists and accuracy can actually be
+*scored*, recall is reported by **what the instruments can physically see**:
+
+| tier | recall |
 |---|---|
-| Sources found **and correctly named** | **4 / 4** of those physically observable |
-| ...that appear on **no map at all** | **2 / 2** |
-| Enforceable **zones** containing a real source | **4 / 4** |
-| Attribution accuracy | **89%** (100% on unregistered sources) |
-| Precision at confidence ≥ 0.70 | **100%** (17/17) |
-| Fusion LOSO R² *(exposure, not detection)* | **0.90** — RMSE 6.4 vs naive 9.97 |
+| **direct — thermal fire** (waste burning) | **2/2 found and correctly named** — and **both appear on no map at all** |
+| **NO₂, confounded** (industrial, traffic) | **0/4** — NO₂ is a real tracer, but the road network lifts it citywide, so a point source must out-shout its own neighbourhood |
+| **no tracer at all** (construction) | **0/3** — coarse PM. Nothing sees it. |
+
+Enforceable-**zone** precision **2/2**. Attribution **100%** (16/16, all
+unregistered). ⚠️ Small n — never sell these as rates.
 
 And the number the whole thing exists for:
 
@@ -77,11 +90,22 @@ And the number the whole thing exists for:
 > It misses eight. That is not siting bias — that is *geometry*. A dozen sensors
 > cannot cover a city, however honestly you place them.
 
-**What it cannot see, stated plainly:** construction dust (**0/3**) and traffic
-corridors (**0/2**). Construction is coarse PM with no satellite tracer and it
-does not burn — neither instrument can detect it. Traffic NO₂ is confounded with
-the diffuse road network. Claiming credit for finding what our sensors physically
-cannot see would be dishonest; so would quietly hiding the gap.
+### We used to claim 4/4. It was not real.
+
+The two *industrial* sources were being found via **SO₂ contrast**. Then we pulled
+the real satellite: **real S5P SO₂ over a city is noise** — 49% of readings are
+*negative*, a physical impossibility, with a MAD 30× the median (SNR 0.7). TROPOMI's
+SO₂ band is built for volcanoes; an urban factory is far below its floor. The
+aerosol index is no better (SNR 1.0).
+
+On real Delhi, scoring across all three channels flagged **470 of 1,703 cells — 28%
+of the city — and 87% of those were driven by SO₂ or AAI noise.** We were
+manufacturing enforcement targets out of retrieval error, and a genuinely burning
+landfill ranked *below* them.
+
+So we deleted both channels, and the industrial sources went with them. **4/4 → 2/4.**
+Our simulation had given the instruments a signal they do not have — the same class
+of error as [the 100% trap](#the-100-trap), one level deeper.
 
 ---
 
@@ -149,7 +173,7 @@ cell, no siting bias:**
 
 ```mermaid
 flowchart TD
-    SAT["Satellite columns<br/>per-cell MEDIAN per window"] --> CON["Neighbourhood contrast<br/>vs the 4–8 km annulus, in MAD units"]
+    SAT["Satellite NO₂ column<br/>per-cell MEDIAN per window<br/>(SO₂/AAI dropped — measured noise)"] --> CON["Neighbourhood contrast<br/>vs the 4–8 km annulus, in MAD units"]
     FIRE["FIRMS detections<br/>fraction of window burning within 1.5 km"] --> CON
     CON --> W{"Multi-window agreement<br/>24h / 7d / 30d"}
     W -->|"elevated over 30 d"| CHR["chronic<br/>a standing violator → build the case file"]
@@ -181,21 +205,26 @@ Because a README that oversells is the same bug as a metric that oversells.
 
 | | Status |
 |---|---|
-| Ingestion — OpenAQ, Open-Meteo, FIRMS, OSM | ✅ **real**, free, live-capable today |
-| Ingestion — **Sentinel-5P satellite** | ⛔ **not implemented.** Always synthetic. This is the critical path — see below |
+| Ingestion — Sentinel-5P, OpenAQ, Open-Meteo, FIRMS, OSM | ✅ **all real and live.** Run end-to-end on Delhi, Nov 2025 |
 | H3 spatial fabric + ward layer | ✅ real (official GeoJSON if present, deterministic Voronoi fallback) |
-| Fusion **exposure** field + LOSO validation | ✅ real |
-| Detection (satellite contrast + fire persistence) | ✅ real — but only as good as the satellite feeding it |
+| Detection (NO₂ contrast + fire persistence) | ✅ real — validated on a real landfill fire |
 | Attribution + evidence chain + confidence | ✅ real, truth-scored, calibrated |
+| **Fusion exposure field** | ⚠️ **does not generalise.** LOSO R² 0.90 synthetic, **0.48 on Delhi** — and 22% *worse* than the naive station-mean. Unsolved. |
 | Read-only serving API | ✅ real |
 | Forecast, EPS/dispatch, memo, advisory, frontend, n8n | ⬜ **not built** |
 
-> ### ⚠️ Live mode is not yet scientifically valid
-> There is no Sentinel-5P collector, so **satellite data is always synthetic**.
-> Running without `--synthetic` silently joins *real* stations to a *fake*
-> satellite and produces a confident, meaningless map. Getting Google Earth Engine
-> access is the single biggest schedule risk in this project — **start the signup
-> before you write another line of code.**
+> ### ⚠️ Live mode refuses to fake anything
+> If the satellite, fire, or OSM collector fails, the pipeline **raises rather than
+> substituting synthetic data**. Each of those layers *invents a place we would then
+> accuse* — a fabricated output, not a degraded one. (Stations may degrade: they
+> feed the exposure map, not the detector.)
+>
+> ### ⚠️ Don't run it in monsoon
+> July is the worst possible month for both instruments: cloud masks 71% of the NO₂
+> retrieval, and **nothing burns when it is wet** — real FIRMS returns **2 fires over
+> Bengaluru in 60 days** (our synthetic world had 281). Both channels go blind.
+> Delhi's burning season is **October–November**, which is where the real result
+> above comes from.
 
 ---
 

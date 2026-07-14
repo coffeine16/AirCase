@@ -78,8 +78,24 @@ Bolting a physical dispersion term onto the model does not rescue this, because 
 
 Detection runs on the two instruments with **genuinely uniform coverage** — every cell, no siting bias:
 
-- **Satellite contrast.** Per-cell *median* (never mean — one spike hour would manufacture a fake chronic source) of each S5P column over each window, scored by **neighbourhood contrast**: how far the cell sits above the annulus at 4–8 km around it, in robust MAD units. Contrast rather than a citywide rank, because the dense urban core is high everywhere and "this district is dense" is true, unactionable, and not a violator.
+- **NO₂ neighbourhood contrast.** Per-cell *median* (never mean — one spike hour would manufacture a fake chronic source) of the S5P NO₂ column over each window, scored by how far the cell sits above the annulus at 4–8 km around it, in robust MAD units. Contrast rather than a citywide rank, because the dense urban core is high everywhere and "this district is dense" is true, unactionable, and not a violator.
 - **Fire persistence.** Fraction of window-hours with a FIRMS detection within 1.5 km. FIRMS observes burning *directly* — no inference, no contrast needed.
+
+### ⚠️ SO₂ and the aerosol index were removed. They are noise.
+
+An earlier version of this layer scored `max(contrast)` across **NO₂, SO₂ and AAI**. Measured on real Sentinel-5P over Bengaluru *and* Delhi (`scripts/compare_cities.py`), comparing the spatial signal against the instrument noise that survives a 60-day median:
+
+| channel | SNR | verdict |
+|---|---|---|
+| NO₂ | 2.6 – 2.8 | usable |
+| **SO₂** | **0.66 – 0.87** | **noise** |
+| **AAI** | **0.76 – 1.03** | **noise** |
+
+Real S5P SO₂ over a city is **49% negative** — a physical impossibility — with a MAD **30× its median**. TROPOMI's SO₂ band is designed for volcanoes and mega point-sources; an urban industrial cluster sits far beneath its noise floor. The aerosol index, at a ~5.5 km footprint, sees *regional* aerosol, not a landfill.
+
+Taking the max across one signal and two noise fields means **the max is usually noise**. On real Delhi it flagged **470 of 1,703 cells — 28% of the city — of which 87% were driven by SO₂ (63%) or AAI (24%)**. We were manufacturing enforcement targets out of retrieval error, and a genuinely burning landfill was ranked *below* them. Removing both channels cut Delhi from **470 hotspot cells to 70**.
+
+**This cost us the headline.** Our synthetic satellite gave SO₂ a clean industrial signature it does not possess, so the old **4/4 recall was partly an artefact of an instrument model that was kinder than the instrument.** It is now **2/4** — and both survivors are the unregistered burning sources, found by fire. This is Principle 8 applied one level deeper than we had applied it: we made the *sources* adversarial and left the *sensors* perfect. **Model an instrument's noise before you model its signal.**
 
 **Multi-window agreement (24 h / 7 d / 30 d)** then separates the three things an administrator must respond to differently. A real-time spike is noise; a source is what is still there when you zoom out:
 
@@ -101,16 +117,33 @@ Note the trap this rule is built to avoid: an OSM-proximity test *alone* would m
 
 **Measured on the synthetic world** (`scripts/eval_detection.py`):
 
+**Recall is reported by what the instruments can physically see** — not as one number, because the tiers mean different things:
+
+| tier | recall |
+|---|---|
+| **direct — thermal fire** (waste burning) | **2/2** found and correctly named; **2/2 of them appear on no map at all** |
+| **NO₂, confounded** (industrial, traffic) | **0/4** — a real tracer, but the road network lifts NO₂ across the whole core, so a point source must out-shout its own neighbourhood. *Hard, not impossible: on real Delhi this tier did surface industrial zones.* |
+| **no tracer at all** (construction) | **0/3** — coarse PM, invisible to every instrument we have |
+
 | metric | result |
 |---|---|
-| observable sources found **and correctly named** | **4/4** |
-| ...that appear on **no map at all** | **2/2** |
-| enforceable-**zone** precision (each zone = one inspector dispatched) | **4/4** |
-| attribution accuracy | 89% (48/54; 100% on unregistered) |
-| precision at confidence ≥ 0.70 | 100% (17/17) |
-| fusion LOSO R² (exposure, not detection) | 0.898 |
+| enforceable-**zone** precision (each zone = one inspector dispatched) | **2/2** |
+| cell-level precision | 85% (28/33) |
+| attribution accuracy | **100%** (16/16, all unregistered) |
+| fusion LOSO R² (exposure, not detection) | 0.898 **synthetic** — but only **0.48 on real Delhi** |
 
-⚠️ **State 4/4 honestly.** It is n=4 — four detectable sources, four zones — not a robust rate, and by our own Principle 8 a number that comes back at 100% deserves suspicion before applause. The conservative companion is **cell-level precision 71%**; its shortfall is *plume extent inside correctly-found zones* (the failing cells sit inside the zone of the very source that produced them), not false accusations. A 1.6 km satellite footprint plus advection means a real source **necessarily** lights up a 2–3 km blob. Quote both.
+### The result that actually matters — on real data
+
+Delhi, November 2025. Real Sentinel-5P, real FIRMS, real CPCB stations, real OSM:
+
+> **Bhalswa landfill → `waste_burning`, confidence 0.67**
+> *evidence: satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions*
+
+A real polluter, in a real city, from public satellite data, with an evidence chain **anyone can verify** — google "Bhalswa landfill fire November 2025". Okhla landfill → `traffic` (it does sit on Mathura Road: defensible, incomplete). Ghazipur → not detected (no fires in the window). All three are reported.
+
+⚠️ **And the fusion field does not generalise.** LOSO R² **0.48** on Delhi against 0.90 synthetic, and **22% worse than the naive station-mean**. The exposure claim in Layer 3 stands only on the synthetic world so far. Stated, not hidden.
+
+⚠️ **State the small n honestly.** Two detectable sources, two zones. That is not a rate, and by our own Principle 8 a clean number deserves suspicion before applause — this document previously reported **4/4**, and that number turned out to rest on an instrument channel (SO₂) that does not work. The conservative companion is **cell-level precision 85%**; its shortfall is *plume extent inside correctly-found zones* (the failing cells sit inside the zone of the very source that produced them), not false accusations. A 1.6 km satellite footprint plus advection means a real source **necessarily** lights up a 2–3 km blob. Quote both, and quote the real-Delhi result alongside them.
 
 ### 🚩 The coverage-bias number, stated correctly
 

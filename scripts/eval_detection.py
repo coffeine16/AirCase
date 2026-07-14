@@ -40,9 +40,24 @@ from ingestion.synthetic import SOURCES
 NEAR_KM = 2.0        # a detection "finds" a source if it lands within this radius
 STATION_KM = 2.0     # a station could plausibly notice a source within this radius
 
-# What the instruments can physically see. Not a tuning knob — a statement about
-# what NO2/SO2/aerosol-index columns and thermal fire detection actually measure.
-OBSERVABLE = {"industrial", "waste_burning"}
+# WHAT THE INSTRUMENTS CAN ACTUALLY SEE. Not a tuning knob — a statement about what
+# FIRMS thermal detection and the S5P NO2 column physically measure, revised after
+# running on real data (see intelligence/agents/detect.py::POLLUTANTS).
+#
+# This used to say {industrial, waste_burning}, because our synthetic satellite gave
+# SO2 a clean industrial signature. Real S5P SO2 over a city is NOISE — 49% negative,
+# SNR 0.7. So industry lost its fingerprint, and the honest tiering is now:
+TIERS = {
+    # FIRMS sees burning DIRECTLY. No inference, no contrast, no confound.
+    "direct (thermal fire)": {"waste_burning"},
+    # NO2 is a real combustion tracer, but the road network raises it across the
+    # whole urban core, so a point source must out-shout its own neighbourhood.
+    # Hard, not impossible: on real Delhi this tier DID surface industrial zones.
+    "NO2, confounded":       {"industrial", "traffic"},
+    # Coarse PM. No satellite tracer of any kind, and it does not burn.
+    "no tracer at all":      {"construction"},
+}
+OBSERVABLE = TIERS["direct (thermal fire)"]
 
 
 def main():
@@ -79,16 +94,19 @@ def main():
               f"{r.attributed_as or '-'}")
     print("=" * 78)
 
+    print("RECALL, by what the instruments can physically see:")
+    for tier, kinds in TIERS.items():
+        t = df[df.kind.isin(kinds)]
+        if t.empty:
+            continue
+        named = t.correct.sum()
+        print(f"  {tier:<24} {t.detected.sum()}/{len(t)} found, "
+              f"{named}/{len(t)} correctly named")
     obs = df[df.observable]
-    blind = df[~df.observable]
-    print(f"RECALL, physically observable sources : {obs.detected.mean():.0%} "
-          f"({obs.detected.sum()}/{len(obs)})")
-    print(f"  ...and correctly named             : {obs.correct.mean():.0%} "
-          f"({obs.correct.sum()}/{len(obs)})")
-    print(f"  ...of which UNREGISTERED (on no map): "
-          f"{obs[~obs.registered].detected.sum()}/{len(obs[~obs.registered])}")
-    print(f"RECALL, sources with no tracer        : {blind.detected.mean():.0%} "
-          f"({blind.detected.sum()}/{len(blind)})  <- known blind spot, not a bug")
+    if len(obs):
+        unreg = obs[~obs.registered]
+        print(f"  ...of the directly-observable ones, UNREGISTERED (on no map): "
+              f"{unreg.detected.sum()}/{len(unreg)}")
     print()
 
     # Precision, split by what we are actually claiming about each cell.
