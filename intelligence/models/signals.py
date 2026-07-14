@@ -29,6 +29,7 @@ import pandas as pd
 import h3
 
 from shared.config import DETECT_WINDOWS_H, CONTRAST_INNER_K, CONTRAST_OUTER_K
+from shared.grid import circular_mean_deg
 
 MAD_SCALE = 1.4826   # makes MAD comparable to sigma for normally-distributed data
 EPS = 1e-9
@@ -113,6 +114,86 @@ def neighbourhood_contrast(values: pd.Series, inner_k: int = CONTRAST_INNER_K,
         scale = max(scale, 0.05 * abs(o_med), EPS)
         scores[cell] = float((np.median(inner) - o_med) / scale)
     return pd.Series(scores, name="contrast")
+
+
+def downwind_enhancement(daily: pd.DataFrame, wind: pd.DataFrame, cells: list[str],
+                         value: str = "no2_col",
+                         r_min: float = 2.0, r_max: float = 6.0,
+                         half_angle: float = 40.0) -> pd.Series:
+    """Wind-rotated plume detection: is this cell's DOWNWIND air dirtier than its
+    CROSSWIND air?
+
+    THE PROBLEM THIS SOLVES. Plain neighbourhood contrast fails on industry because
+    the urban road network lifts NO2 across the entire core, so a factory cannot
+    out-shout its own neighbourhood. Measured: 0/4 recall on the NO2-confounded tier.
+
+    THE IDEA. A source's plume always points DOWNWIND. The diffuse background does
+    not care which way the wind blows. So for each cell, on each day, compare the NO2
+    in the downwind sector against the NO2 in the CROSSWIND sectors — same cell, same
+    day, same distance band, same everything except direction:
+
+        enhancement(cell, day) = median(NO2 downwind) - median(NO2 crosswind)
+
+    A real point source produces a consistent positive enhancement, because the wind
+    drags its plume into whichever sector is downwind THAT day. A dense-but-innocent
+    district produces ~0, because it is dirty in every direction equally. Take the
+    median over days and the background cancels while the plume accumulates.
+
+    This is the standard technique in the TROPOMI point-source literature (wind
+    rotation / oversampling, cf. Beirle et al.). It is not a trick — it is what the
+    field does, and we already have every input: per-cell daily NO2, and hourly wind.
+
+    Returns a robust z-score per cell. Cells near the grid edge (too few neighbours
+    in a sector) return 0.0 rather than a guess.
+    """
+    n = len(cells)
+    idx = {c: i for i, c in enumerate(cells)}
+    pts = np.array([h3.cell_to_latlng(c) for c in cells])
+
+    # pairwise distance + bearing, equirectangular (exact enough at city scale)
+    lat0 = np.radians(pts[:, 0].mean())
+    dy = (pts[None, :, 0] - pts[:, None, 0]) * 111.32
+    dx = (pts[None, :, 1] - pts[:, None, 1]) * 111.32 * np.cos(lat0)
+    dist = np.sqrt(dx ** 2 + dy ** 2)
+    bearing = (np.degrees(np.arctan2(dx, dy)) + 360.0) % 360.0   # from cell i to cell j
+    ring = (dist >= r_min) & (dist <= r_max)
+
+    # daily mean wind, on the circle
+    w = wind.copy()
+    w["date"] = pd.to_datetime(w.ts).dt.tz_localize(None).dt.normalize()
+    daily_wind = w.groupby("date").wind_from_deg.apply(circular_mean_deg)
+
+    d = daily.copy()
+    d["date"] = pd.to_datetime(d.date).dt.tz_localize(None).dt.normalize() \
+        if getattr(pd.to_datetime(d.date).dt, "tz", None) is not None \
+        else pd.to_datetime(d.date).dt.normalize()
+
+    per_day = []
+    for date, g in d.groupby("date"):
+        if date not in daily_wind.index:
+            continue
+        v = np.full(n, np.nan)
+        for c, val in zip(g.cell, g[value]):
+            if c in idx:
+                v[idx[c]] = val
+        if np.isnan(v).all():
+            continue
+
+        wind_to = (float(daily_wind[date]) + 180.0) % 360.0   # where the plume GOES
+        off = np.abs(((bearing - wind_to + 180.0) % 360.0) - 180.0)
+        down = ring & (off <= half_angle)
+        cross = ring & (np.abs(off - 90.0) <= half_angle)
+
+        md = np.nanmedian(np.where(down, v[None, :], np.nan), axis=1)
+        mc = np.nanmedian(np.where(cross, v[None, :], np.nan), axis=1)
+        per_day.append(md - mc)
+
+    if not per_day:
+        return pd.Series(0.0, index=cells, name="plume")
+
+    enh = np.nanmedian(np.vstack(per_day), axis=0)     # median over days
+    enh = np.nan_to_num(enh, nan=0.0)
+    return pd.Series(robust_z(enh), index=cells, name="plume")
 
 
 def classify_persistence(z24: float, z7: float, z30: float, thresh: float = 2.0) -> str:

@@ -35,9 +35,44 @@ PARAMS = dict(objective="regression", metric="rmse", num_leaves=63,
               bagging_freq=1, min_data_in_leaf=40, verbose=-1)
 
 
-def _train(df: pd.DataFrame, rounds: int = 400) -> lgb.Booster:
-    ds = lgb.Dataset(df[FEATURES], label=df[LABEL])
+# PREDICT THE DEVIATION, NOT THE LEVEL.
+#
+# The old model predicted absolute PM2.5 and, on real Delhi, came in 24% WORSE than
+# a naive city-mean (LOSO R2 0.52, RMSE 75 vs 60.7). The reason is visible in its own
+# feature importances: temp_c, hour, wind — it was spending nearly all its capacity
+# re-learning the CITYWIDE TEMPORAL signal (in Delhi's November episodes every
+# station spikes together, so pollution is regionally dominated), and then getting
+# the spatial part wrong on top of it.
+#
+# But the citywide signal is the one thing the station network measures WELL. Hand it
+# to the model for free, and make it learn only what stations cannot tell you: the
+# SPATIAL DEVIATION of a cell from the city as a whole.
+#
+#     pm25_hat(cell, hour) = city_median(hour)          <- from stations, free
+#                          + residual_hat(cell, hour)   <- what the model must learn
+#
+# This cannot lose to the naive baseline by construction: predicting a zero residual
+# IS the naive baseline. Every bit of skill above that is spatial skill, which is the
+# only thing we ever claimed to add.
+#
+# MEDIAN, not mean, for the city term — one station having a bad hour must not move
+# the baseline for the whole city.
+def _city_baseline(df: pd.DataFrame) -> pd.Series:
+    """Hour -> median PM2.5 across the stations in `df`. The regional component."""
+    return df.groupby("ts")[LABEL].median()
+
+
+def _train(df: pd.DataFrame, baseline: pd.Series, rounds: int = 400) -> lgb.Booster:
+    resid = df[LABEL] - df.ts.map(baseline)
+    ok = resid.notna()
+    ds = lgb.Dataset(df.loc[ok, FEATURES], label=resid[ok])
     return lgb.train(PARAMS, ds, num_boost_round=rounds)
+
+
+def _predict(model: lgb.Booster, df: pd.DataFrame, baseline: pd.Series) -> np.ndarray:
+    base = df.ts.map(baseline)
+    base = base.fillna(baseline.median())
+    return base.values + model.predict(df[FEATURES])
 
 
 def loso_validation(panel: pd.DataFrame) -> dict:
@@ -48,8 +83,11 @@ def loso_validation(panel: pd.DataFrame) -> dict:
     for held_out in stations:
         train = labeled[labeled.cell != held_out]
         test = labeled[labeled.cell == held_out]
-        model = _train(train, rounds=250)
-        pred = model.predict(test[FEATURES])
+        # The baseline is built from the OTHER stations only — the held-out station
+        # must not appear in its own regional term, or LOSO is leaking.
+        baseline = _city_baseline(train)
+        model = _train(train, baseline, rounds=250)
+        pred = _predict(model, test, baseline)
         rmse = float(np.sqrt(mean_squared_error(test[LABEL], pred)))
         r2 = float(r2_score(test[LABEL], pred))
         per_station[held_out] = {"rmse": round(rmse, 2), "r2": round(r2, 3), "n": len(test)}
@@ -86,11 +124,12 @@ def run():
 
     print("[fusion] training final model on all stations, predicting all cells ...")
     labeled = panel[panel[LABEL].notna()]
-    model = _train(labeled)
+    baseline = _city_baseline(labeled)
+    model = _train(labeled, baseline)
     model.save_model(str(DATA_OUT / "fusion_model.txt"))
 
     field = panel[["cell", "ts"]].copy()
-    field["pm25_hat"] = model.predict(panel[FEATURES])
+    field["pm25_hat"] = _predict(model, panel, baseline)
     field.to_parquet(DATA_OUT / "fusion_field.parquet", index=False)
 
     imp = pd.Series(model.feature_importance("gain"), index=FEATURES).sort_values(ascending=False)
