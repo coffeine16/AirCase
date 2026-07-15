@@ -45,12 +45,15 @@ def main():
     # import time via the ward layer, which does not exist on a cold checkout.
     from intelligence.agents.detect import detect
     from intelligence.agents.attribution import run as attribute_run
+    from intelligence.models.forecast import run as forecast_run
     from intelligence.agents.memo import run as memo_run
 
     print(RULE)
     detect()
     print(RULE)
     attribute_run()
+    print(RULE)
+    forecast_run()
     print(RULE)
     memo_run()
     print(RULE)

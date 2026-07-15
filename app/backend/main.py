@@ -114,6 +114,24 @@ def stations():
             for r in latest.itertuples()]
 
 
+@app.get("/forecast")
+def forecast(h: int | None = None):
+    """PM2.5 forecast per cell. ?h=24|48|72 filters to one horizon; omit for all.
+
+    Precomputed in batch (principle 3). Each row: {cell, horizon_h, pm25_hat, urgency}.
+    """
+    field = _json("forecast.json")
+    if h is not None:
+        field = [f for f in field if f["horizon_h"] == h]
+    return field
+
+
+@app.get("/forecast/eval")
+def forecast_eval():
+    """RMSE at each horizon vs persistence + diurnal baselines. The rubric's number."""
+    return _json("forecast_eval.json")
+
+
 @app.get("/memos")
 def memos():
     """All drafted enforcement memos (the EPS queue turned into documents)."""
