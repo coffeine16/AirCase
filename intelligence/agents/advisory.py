@@ -85,19 +85,31 @@ TEMPLATES = {
                   "activity. Even healthy people may be affected. Seek medical help if "
                   "you have breathing difficulty.",
     },
+    # PLAIN SPOKEN HINDI, NOT TRANSLATED-ENGLISH. Reviewed by a Hindi speaker on the
+    # team, who flagged the first draft as too formal ("परिश्रम", "वायु गुणवत्ता",
+    # "बाहरी गतिविधि कम करें" — all literary register nobody actually says).
+    #
+    # This is not a style preference. The brief's whole point is that the people most
+    # exposed — outdoor workers — skew low-literacy. An advisory in officialese is an
+    # advisory that does not get read, which makes it worse than useless: it looks
+    # like coverage while delivering none. Everyday words, short sentences.
+    #
+    # The ward name deliberately stays in English ("Bhalswa की हवा..."). Code-mixing
+    # is completely normal in Indian speech, and transliterating arbitrary proper
+    # nouns programmatically mangles them.
     "hi": {
-        "Good": "{ward} में वायु गुणवत्ता अच्छी है (AQI {aqi})। कोई सावधानी आवश्यक नहीं।",
-        "Satisfactory": "{ward} में वायु गुणवत्ता संतोषजनक है (AQI {aqi})। संवेदनशील "
-                        "व्यक्तियों को हल्की साँस की तकलीफ हो सकती है।",
-        "Moderate": "{ward} में वायु गुणवत्ता मध्यम है (AQI {aqi})। दमा या हृदय रोग वाले "
-                    "लोग, बच्चे और बुजुर्ग लंबे समय तक बाहर परिश्रम न करें।",
-        "Poor": "{ward} में वायु गुणवत्ता खराब है (AQI {aqi})। लंबे समय तक बाहर रहने पर "
-                "अधिकांश लोगों को साँस लेने में तकलीफ हो सकती है। बाहरी गतिविधि कम करें।",
-        "Very Poor": "{ward} में वायु गुणवत्ता बहुत खराब है (AQI {aqi})। बाहर परिश्रम से "
-                     "बचें। खिड़कियाँ बंद रखें। बाहर मास्क पहनें।",
-        "Severe": "{ward} में वायु गुणवत्ता गंभीर है (AQI {aqi})। सभी बाहरी गतिविधियों से "
-                  "बचें। स्वस्थ लोग भी प्रभावित हो सकते हैं। साँस लेने में कठिनाई हो तो "
-                  "चिकित्सक से संपर्क करें।",
+        "Good": "{ward} की हवा साफ़ है (AQI {aqi})। कोई दिक्कत नहीं।",
+        "Satisfactory": "{ward} की हवा ठीक है (AQI {aqi})। जिन्हें साँस की दिक्कत रहती "
+                        "है, उन्हें थोड़ी परेशानी हो सकती है।",
+        "Moderate": "{ward} की हवा ठीक नहीं है (AQI {aqi})। दमा या दिल की बीमारी वाले "
+                    "लोग, बच्चे और बुज़ुर्ग बाहर ज़्यादा देर मेहनत का काम न करें।",
+        "Poor": "{ward} की हवा खराब है (AQI {aqi})। ज़्यादा देर बाहर रहने पर साँस लेने "
+                "में दिक्कत हो सकती है। बाहर कम निकलें।",
+        "Very Poor": "{ward} की हवा बहुत खराब है (AQI {aqi})। बाहर मेहनत का काम न करें। "
+                     "खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।",
+        "Severe": "{ward} की हवा बहुत ज़्यादा खराब है (AQI {aqi})। बाहर निकलने से बचें। "
+                  "सेहतमंद लोगों को भी दिक्कत हो सकती है। साँस लेने में परेशानी हो तो "
+                  "डॉक्टर को दिखाएँ।",
     },
     "kn": {
         "Good": "{ward} ನಲ್ಲಿ ಗಾಳಿಯ ಗುಣಮಟ್ಟ ಉತ್ತಮವಾಗಿದೆ (AQI {aqi}). ಯಾವುದೇ ಮುನ್ನೆಚ್ಚರಿಕೆ ಅಗತ್ಯವಿಲ್ಲ.",
