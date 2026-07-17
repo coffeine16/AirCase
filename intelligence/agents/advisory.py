@@ -19,22 +19,22 @@ THE RULES THIS FOLLOWS (same discipline as every other agent here)
    NAQI advisory text per band. We are not qualified to write original medical advice
    and we do not; we route the official line to the right ward at the right time.
 
-⚠️ REVIEW STATUS IS PER LANGUAGE, AND IT IS PART OF THE OUTPUT.
-Shipping unreviewed health advice in a language nobody on the team reads is exactly
-the confident-but-unverified claim this project keeps deleting. So each language
-carries its own flag (see LANG_REVIEWED) and the disclaimer names the specific
-languages that are still drafts:
+⚠️ VERIFICATION IS PER LANGUAGE, IT RECORDS THE METHOD, AND IT SHIPS IN THE OUTPUT.
+Shipping health advice nobody on the team can read is exactly the confident-but-
+unverified claim this project keeps deleting. So each language carries HOW it was
+verified (see VERIFICATION), not merely whether:
 
-    en  CPCB's own published NAQI wording. Not our words.
-    hi  REVIEWED — a Hindi speaker on the team rejected the first draft as too formal
-        and the register was rewritten to everyday speech.
-    ta  REVIEWED — the team's NATIVE Tamil speaker confirmed the everyday register
-        reads correctly. Approved unchanged.
-    kn  DRAFT — nobody on this team reads Kannada. Ships flagged. See LANG_REVIEWED.
+    en  cpcb_official  — CPCB's own published NAQI wording. Not our words.
+    hi  native_speaker — a Hindi speaker rejected the first draft as too formal; the
+                         register was rewritten to everyday speech.
+    ta  native_speaker — the team's native Tamil speaker approved it unchanged.
+    kn  cross_checked  — nobody here reads Kannada. Machine-written, then rewritten
+                         and cross-checked term-for-term against the corrections a
+                         HUMAN made to the Hindi.
 
-Note that machine translation would NOT fix this. It moves the unverified text from
-one author to another; it does not make anyone able to check it. A human reading the
-language is the only thing that flips the flag.
+`cross_checked` is deliberately not `native_speaker`, and the disclaimer says so on
+every Kannada advisory. A second model agreeing with the first is evidence of
+CONSISTENCY, not of correctness. That distinction is the whole point of the field.
 
 WHAT WE CAN AND CANNOT SEE FOR VULNERABILITY
 The brief asks for "hospitals, schools, outdoor workers, elderly populations".
@@ -63,27 +63,31 @@ CITY_LANGUAGES = {
 }
 LANG_NAMES = {"en": "English", "hi": "Hindi", "kn": "Kannada", "ta": "Tamil"}
 
-# WHO HAS ACTUALLY READ THIS LANGUAGE. Per-language, because one `reviewed: false`
-# for the whole advisory cannot say "the Hindi is verified but the Kannada is not" —
-# and that distinction is the entire honesty of the language claim.
-#   en -> CPCB's own published NAQI advisory wording. Not our words.
-#   hi -> REVIEWED by a Hindi speaker on the team, who rejected the first draft as too
-#         formal; the register was rewritten to everyday speech.
-#   ta -> REVIEWED by the team's NATIVE Tamil speaker, who confirmed the everyday
-#         register reads correctly. Approved unchanged.
-#   kn -> STILL A DRAFT. NOBODY ON THIS TEAM READS KANNADA.
+# HOW EACH LANGUAGE WAS VERIFIED — the METHOD, not a boolean.
 #
-# The Kannada is the one language we cannot verify, and it is worth knowing exactly
-# why we distrust it: it was written before the Hindi was corrected, and it still uses
-# ಗಾಳಿಯ ಗುಣಮಟ್ಟ / ಶ್ರಮ / ಚಟುವಟಿಕೆ — the structural twins of वायु गुणवत्ता / परिश्रम /
-# गतिविधि, every one of which the Hindi reviewer rejected as too formal for the people
-# this advisory exists to reach. The Tamil, written AFTER that lesson in deliberately
-# plain register, passed a native review first time. That pattern is evidence the
-# Kannada has the same defect — but evidence is not verification, so it ships flagged.
+# A true/false flag cannot express what actually happened here, and the difference
+# matters more than the flag: three different processes produced these four languages,
+# and only two of them involved a human who reads the language.
 #
-# Machine translation would NOT fix this. It changes the author, not the verifiability.
-# Find a Kannada speaker; it is ten minutes of their time.
-LANG_REVIEWED = {"en": True, "hi": True, "ta": True, "kn": False}
+#   cpcb_official  en — CPCB's own published NAQI wording. Not our words at all.
+#   native_speaker hi — a Hindi speaker on the team rejected the first draft as too
+#                       formal; the register was rewritten to everyday speech.
+#   native_speaker ta — the team's native Tamil speaker approved it unchanged.
+#   cross_checked  kn — NOBODY ON THIS TEAM READS KANNADA. The first draft was
+#                       machine-written and sounded like a government notice. It was
+#                       rewritten with LLM assistance and cross-checked term-for-term
+#                       against the corrections a HUMAN made to the Hindi
+#                       (ಗಾಳಿಯ ಗುಣಮಟ್ಟ->ಗಾಳಿ mirrors वायु गुणवत्ता->हवा, etc).
+#
+# `cross_checked` is deliberately NOT `native_speaker`. The Kannada is much better
+# than it was and is structurally parallel to two human-verified languages — that is
+# real evidence. But it is evidence of CONSISTENCY, not of correctness: a second model
+# agreeing with the first is not a speaker confirming either. Ten minutes from any
+# Kannada speaker upgrades this; nothing else does.
+VERIFICATION = {"en": "cpcb_official", "hi": "native_speaker",
+                "ta": "native_speaker", "kn": "cross_checked"}
+NATIVE_VERIFIED = {"cpcb_official", "native_speaker"}
+LANG_REVIEWED = {l: v in NATIVE_VERIFIED for l, v in VERIFICATION.items()}
 
 # Google Cloud TTS voice per language, for the IVR/voice advisories the brief asks
 # for. VERIFIED by querying the API, not by reading a doc: hi-IN 46 voices, kn-IN 38,
@@ -172,22 +176,31 @@ TEMPLATES = {
                   "தவிர்க்கவும். நல்ல உடல்நலம் உள்ளவங்களுக்கும் பிரச்சனை வரலாம். மூச்சு "
                   "விட சிரமம் இருந்தா டாக்டரை பாருங்க.",
     },
-    # KANNADA — DRAFT, awaiting review. Written before the Hindi was corrected, so it
-    # is probably ALSO too formal ("ಗಾಳಿಯ ಗುಣಮಟ್ಟ", "ಶ್ರಮ", "ಮುನ್ನೆಚ್ಚರಿಕೆ"). Expect the
-    # same corrections the Hindi needed: everyday words, shorter sentences.
+    # KANNADA — rewritten to everyday speech after the first draft was flagged as
+    # sounding like a government advisory rather than a person talking. The
+    # corrections mirror, term for term, the ones the Hindi reviewer made:
+    #     ಗಾಳಿಯ ಗುಣಮಟ್ಟ        -> ಗಾಳಿ            (cf. वायु गुणवत्ता -> हवा)
+    #     ಹೊರಾಂಗಣ ಶ್ರಮ         -> ಹೊರಗೆ ಕಷ್ಟದ ಕೆಲಸ (cf. परिश्रम -> मेहनत का काम)
+    #     ಹೊರಾಂಗಣ ಚಟುವಟಿಕೆ     -> ಹೊರಗೆ ಹೋಗಿ      (cf. बाहरी गतिविधि -> बाहर निकलें)
+    #     ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ   -> ಡಾಕ್ಟರ್‌ನ್ನು ನೋಡಿ (cf. चिकित्सक -> डॉक्टर)
+    #     ಮುನ್ನೆಚ್ಚರಿಕೆ ಅಗತ್ಯವಿಲ್ಲ -> ಯಾವುದೇ ತೊಂದರೆ ಇಲ್ಲ
+    #
+    # Very Poor uses ತುಂಬಾ and Severe uses ಬಹಳ: a step up in severity without the
+    # clumsy "ತುಂಬಾ ತುಂಬಾ" doubling that a literal port of the Hindi would have given.
     "kn": {
-        "Good": "{ward} ನಲ್ಲಿ ಗಾಳಿಯ ಗುಣಮಟ್ಟ ಉತ್ತಮವಾಗಿದೆ (AQI {aqi}). ಯಾವುದೇ ಮುನ್ನೆಚ್ಚರಿಕೆ ಅಗತ್ಯವಿಲ್ಲ.",
-        "Satisfactory": "{ward} ನಲ್ಲಿ ಗಾಳಿಯ ಗುಣಮಟ್ಟ ತೃಪ್ತಿಕರವಾಗಿದೆ (AQI {aqi}). "
-                        "ಸೂಕ್ಷ್ಮ ವ್ಯಕ್ತಿಗಳಿಗೆ ಸ್ವಲ್ಪ ಉಸಿರಾಟದ ತೊಂದರೆ ಆಗಬಹುದು.",
-        "Moderate": "{ward} ನಲ್ಲಿ ಗಾಳಿಯ ಗುಣಮಟ್ಟ ಮಧ್ಯಮವಾಗಿದೆ (AQI {aqi}). ಅಸ್ತಮಾ ಅಥವಾ "
-                    "ಹೃದ್ರೋಗ ಇರುವವರು, ಮಕ್ಕಳು ಮತ್ತು ಹಿರಿಯರು ಹೊರಾಂಗಣ ಶ್ರಮವನ್ನು ಮಿತಿಗೊಳಿಸಿ.",
-        "Poor": "{ward} ನಲ್ಲಿ ಗಾಳಿಯ ಗುಣಮಟ್ಟ ಕಳಪೆಯಾಗಿದೆ (AQI {aqi}). ದೀರ್ಘಕಾಲ ಹೊರಗಿದ್ದರೆ "
-                "ಹೆಚ್ಚಿನವರಿಗೆ ಉಸಿರಾಟದ ತೊಂದರೆ ಆಗಬಹುದು. ಹೊರಾಂಗಣ ಚಟುವಟಿಕೆ ಕಡಿಮೆ ಮಾಡಿ.",
-        "Very Poor": "{ward} ನಲ್ಲಿ ಗಾಳಿಯ ಗುಣಮಟ್ಟ ಅತ್ಯಂತ ಕಳಪೆಯಾಗಿದೆ (AQI {aqi}). ಹೊರಾಂಗಣ "
-                     "ಶ್ರಮ ಬೇಡ. ಕಿಟಕಿಗಳನ್ನು ಮುಚ್ಚಿ. ಹೊರಗೆ ಮಾಸ್ಕ್ ಧರಿಸಿ.",
-        "Severe": "{ward} ನಲ್ಲಿ ಗಾಳಿಯ ಗುಣಮಟ್ಟ ಗಂಭೀರವಾಗಿದೆ (AQI {aqi}). ಎಲ್ಲಾ ಹೊರಾಂಗಣ "
-                  "ಚಟುವಟಿಕೆ ತಪ್ಪಿಸಿ. ಆರೋಗ್ಯವಂತರೂ ಪ್ರಭಾವಿತರಾಗಬಹುದು. ಉಸಿರಾಟದ ತೊಂದರೆ ಇದ್ದರೆ "
-                  "ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ.",
+        "Good": "{ward} ನಲ್ಲಿ ಗಾಳಿ ಚೆನ್ನಾಗಿದೆ (AQI {aqi}). ಯಾವುದೇ ತೊಂದರೆ ಇಲ್ಲ.",
+        "Satisfactory": "{ward} ನಲ್ಲಿ ಗಾಳಿ ಸರಿ ಇದೆ (AQI {aqi}). ಉಸಿರಾಟದ ತೊಂದರೆ "
+                        "ಇರುವವರಿಗೆ ಸ್ವಲ್ಪ ತೊಂದರೆ ಆಗಬಹುದು.",
+        "Moderate": "{ward} ನಲ್ಲಿ ಗಾಳಿ ಅಷ್ಟೇನು ಚೆನ್ನಾಗಿಲ್ಲ (AQI {aqi}). ಆಸ್ತಮಾ ಅಥವಾ "
+                    "ಹೃದಯದ ಸಮಸ್ಯೆ ಇರುವವರು, ಮಕ್ಕಳು ಮತ್ತು ವಯಸ್ಸಾದವರು ಹೊರಗೆ ಹೆಚ್ಚು ಹೊತ್ತು "
+                    "ಕಷ್ಟದ ಕೆಲಸ ಮಾಡಬೇಡಿ.",
+        "Poor": "{ward} ನಲ್ಲಿ ಗಾಳಿ ಕೆಟ್ಟಿದೆ (AQI {aqi}). ಹೆಚ್ಚು ಹೊತ್ತು ಹೊರಗೆ ಇದ್ದರೆ "
+                "ಉಸಿರಾಟಕ್ಕೆ ತೊಂದರೆ ಆಗಬಹುದು. ಹೊರಗೆ ಕಡಿಮೆ ಹೋಗಿ.",
+        "Very Poor": "{ward} ನಲ್ಲಿ ಗಾಳಿ ತುಂಬಾ ಕೆಟ್ಟಿದೆ (AQI {aqi}). ಹೊರಗೆ ಕಷ್ಟದ ಕೆಲಸ "
+                     "ಮಾಡಬೇಡಿ. ಕಿಟಕಿಗಳನ್ನು ಮುಚ್ಚಿ ಇಡಿ. ಹೊರಗೆ ಹೋದರೆ ಮಾಸ್ಕ್ ಹಾಕಿ.",
+        "Severe": "{ward} ನಲ್ಲಿ ಗಾಳಿ ಬಹಳ ಕೆಟ್ಟಿದೆ (AQI {aqi}). ಸಾಧ್ಯವಾದಷ್ಟು ಹೊರಗೆ "
+                  "ಹೋಗಬೇಡಿ. ಆರೋಗ್ಯವಾಗಿರುವವರಿಗೂ ತೊಂದರೆ ಆಗಬಹುದು. ಉಸಿರಾಟಕ್ಕೆ ತೊಂದರೆ "
+                  "ಇದ್ದರೆ ಡಾಕ್ಟರ್‌ನ್ನು ನೋಡಿ.",
     },
 }
 
@@ -314,12 +327,14 @@ def run() -> list[dict]:
             "written_by": provider,
             # per-language, not one flag for the whole thing
             "reviewed": {l: LANG_REVIEWED.get(l, False) for l in texts},
+            "verification": {l: VERIFICATION.get(l, "unverified") for l in texts},
             "disclaimer": (
                 "AQI band and health impact are the official CPCB NAQI classification. "
-                + (f"Text in {', '.join(LANG_NAMES.get(l, l) for l in unreviewed)} is a "
-                   f"draft NOT yet reviewed by a native speaker or health authority."
+                + (f"Text in {', '.join(LANG_NAMES.get(l, l) for l in unreviewed)} has "
+                   f"NOT been read by a native speaker — it is machine-written and "
+                   f"cross-checked only. Get it reviewed before broadcasting."
                    if unreviewed else
-                   "All languages reviewed by a speaker of that language.")),
+                   "All languages verified by a speaker of that language.")),
         })
 
     advisories.sort(key=lambda a: -a["risk_score"])
