@@ -154,6 +154,13 @@ def ward_summary(ward_id: str):
     raise HTTPException(404, f"no advisory for ward {ward_id}")
 
 
+@app.get("/ledger")
+def ledger():
+    """Intervention ledger: response-time reduction (real) + frozen counterfactuals
+    awaiting real outcomes. See intelligence/agents/ledger.py for the honesty split."""
+    return _json("ledger.json")
+
+
 @app.get("/memos")
 def memos():
     """All drafted enforcement memos (the EPS queue turned into documents)."""
