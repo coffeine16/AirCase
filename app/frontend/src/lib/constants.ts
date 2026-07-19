@@ -61,10 +61,13 @@ export const AGENT_LABELS: Record<AgentName, string> = {
 export const AGENT_DESCRIPTIONS: Record<AgentName, string> = {
   detection:      "Satellite contrast + fire persistence → chronic / emerging / acute zones",
   attribution:    "Names the responsible source with evidence chain + confidence",
-  forecast:       "24–72h PM2.5 forecast per cell via wind-weighted graph neural net",
+  // NB: describe what is BUILT, not what the architecture doc imagined. The STGCN
+  // was cut; the forecast is gradient boosting on lags + met vs a persistence baseline.
+  forecast:       "24–72h PM2.5 forecast per cell (gradient boosting vs persistence baseline)",
   prioritisation: "Enforcement Priority Score + inspection route assignment",
   memo:           "Generates dispatch-ready enforcement memo with legal citation",
-  advisory:       "Ward-level health advisories in Kannada / Hindi / English",
+  advisory:       "Ward-level health advisories in Kannada / Hindi / Tamil / English",
+  ledger:         "Freezes the counterfactual forecast per action; tracks signal→memo→dispatch response chain",
 };
 
 export const AGENT_ORDER: AgentName[] = [
