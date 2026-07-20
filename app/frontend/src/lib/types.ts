@@ -386,7 +386,6 @@ export type LayerId =
   | "satellite"
   | "hotspots"
   | "fires"
-  | "wind"
   | "wards"
   | "blindspots"
   | "dispatch";
@@ -399,7 +398,6 @@ export interface LayerVisibility {
   satellite: boolean;
   hotspots: boolean;
   fires: boolean;
-  wind: boolean;
   wards: boolean;
   blindspots: boolean;
   dispatch: boolean;

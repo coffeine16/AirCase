@@ -4,7 +4,7 @@ import type { LayerVisibility, LayerId } from "@/lib/types";
 
 const LAYER_ORDER: LayerId[] = [
   "fusion", "stations", "satellite", "hotspots",
-  "fires", "wind", "wards", "blindspots", "dispatch"
+  "fires", "wards", "blindspots", "dispatch"
 ];
 
 const LAYER_ICONS: Record<LayerId, string> = {
@@ -13,7 +13,6 @@ const LAYER_ICONS: Record<LayerId, string> = {
   satellite:  "🛰",
   hotspots:   "⬡",
   fires:      "🔥",
-  wind:       "💨",
   wards:      "🗺",
   blindspots: "👁",
   dispatch:   "🚗",

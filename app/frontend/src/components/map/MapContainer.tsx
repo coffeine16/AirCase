@@ -21,6 +21,7 @@ import { buildFireLayer }    from "./layers/FireLayer";
 import { buildWardLayer }    from "./layers/WardLayer";
 import { buildBlindSpotLayer } from "./layers/BlindSpotLayer";
 import { buildDispatchLayers } from "./layers/DispatchLayer";
+import { buildSatelliteLayer, type SatelliteCell } from "./layers/SatelliteLayer";
 import LegendBar from "./controls/LegendBar";
 
 // ── Tooltip state ─────────────────────────────────────────────────────────────
@@ -42,6 +43,7 @@ interface Props {
   fires?: FireDetection[];
   wardCells?: { cell: string; ward_id: string; ward_name: string }[];
   blindSpots?: BlindSpot[];
+  satellite?: SatelliteCell[];
   dispatchRoutes?: DispatchRoute[];
   hourOffset: number;
   selectedCell: string | null;
@@ -57,6 +59,7 @@ export default function MapContainer({
   fires = [],
   wardCells = [],
   blindSpots = [],
+  satellite = [],
   dispatchRoutes = [],
   selectedCell,
   onCellClick,
@@ -184,6 +187,7 @@ export default function MapContainer({
   const fireLayer     = useMemo(() => layers.fires     ? buildFireLayer(fires, setTip)               : null,  [layers.fires, fires, setTip]);
   const wardLayer     = useMemo(() => layers.wards     ? buildWardLayer(wardCells, setTip)           : null,  [layers.wards, wardCells, setTip]);
   const blindLayer    = useMemo(() => layers.blindspots? buildBlindSpotLayer(blindSpots, setTip)     : null,  [layers.blindspots, blindSpots, setTip]);
+  const satelliteLayer= useMemo(() => layers.satellite ? buildSatelliteLayer(satellite, setTip)      : null,  [layers.satellite, satellite, setTip]);
   const dispatchLayers= useMemo(() => layers.dispatch  ? buildDispatchLayers(dispatchRoutes, setTip) : [],   [layers.dispatch, dispatchRoutes, setTip]);
 
   // ── Selected cell highlight ──────────────────────────────────────────────────
@@ -206,6 +210,7 @@ export default function MapContainer({
   const deckLayers = useMemo(
     () => [
       fusionLayer,
+      satelliteLayer,
       wardLayer,
       hotspotLayer,
       stationLayer,
@@ -214,7 +219,7 @@ export default function MapContainer({
       ...dispatchLayers,
       selectedLayer,
     ].filter(Boolean),
-    [fusionLayer, wardLayer, hotspotLayer, stationLayer, fireLayer, blindLayer, dispatchLayers, selectedLayer]
+    [fusionLayer, satelliteLayer, wardLayer, hotspotLayer, stationLayer, fireLayer, blindLayer, dispatchLayers, selectedLayer]
   );
 
   return (

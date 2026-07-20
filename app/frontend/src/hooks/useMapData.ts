@@ -59,6 +59,16 @@ export function useFires() {
   return { fires: data ?? [], error, isLoading };
 }
 
+// ── Satellite (Sentinel-5P NO2 column) ───────────────────────────────────────
+export function useSatellite() {
+  const { data, error, isLoading } = useSWR<{ cell: string; no2: number }[]>(
+    "satellite",
+    () => api.getSatellite(),
+    { revalidateOnFocus: false }
+  );
+  return { satellite: data ?? [], error, isLoading };
+}
+
 // ── Audit (blind spots + sensor flags) ───────────────────────────────────────
 export function useAudit() {
   const { data, error, isLoading } = useSWR<AuditResponse>(

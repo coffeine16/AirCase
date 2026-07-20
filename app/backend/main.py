@@ -127,6 +127,26 @@ def stations():
             for r in latest.itertuples()]
 
 
+@app.get("/satellite")
+def satellite():
+    """Per-cell Sentinel-5P NO2 tropospheric column (median over the window).
+
+    NO2 ONLY. SO2 and the aerosol index are in the raw file but are measured NOISE
+    over a city (SNR < 1, 49% of SO2 negative) — see docs/architecture.md. Serving
+    them would invite the map to render retrieval error as signal. Detection reads
+    exactly this NO2 field; showing it explains WHY a hotspot fired.
+    """
+    p = DATA_RAW / "satellite.parquet"
+    if not p.exists():
+        raise HTTPException(404, "satellite not ingested yet — run the pipeline first")
+    df = pd.read_parquet(p)
+    per_cell = df.groupby("cell")["no2_col"].median().dropna()
+    if per_cell.empty:
+        return []
+    return [{"cell": cell, "no2": round(float(v), 2)}
+            for cell, v in per_cell.items()]
+
+
 @app.get("/forecast")
 def forecast(h: int | None = None):
     """PM2.5 forecast per cell. ?h=24|48|72 filters to one horizon; omit for all.

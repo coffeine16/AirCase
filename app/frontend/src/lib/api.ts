@@ -29,6 +29,7 @@ const FALLBACK_MAP: Record<string, string> = {
   "/fires":           "/data/fires.json",
   "/loso":            "/data/loso.json",
   "/compare":         "/data/city_comparison.json",
+  "/satellite":       "/data/satellite.json",
 };
 
 function getFallbackPath(endpoint: string): string | null {
@@ -116,6 +117,10 @@ export const api = {
   // Multi-city comparison — each row is a full LIVE pipeline run over a real city.
   getComparison: () =>
     apiFetch<CityComparison[]>("/compare").catch(() => [] as CityComparison[]),
+
+  // Sentinel-5P NO2 column per cell — the raw signal detection runs on.
+  getSatellite: () =>
+    apiFetch<{ cell: string; no2: number }[]>("/satellite").catch(() => [] as { cell: string; no2: number }[]),
   getAudit: () =>
     apiFetch<AuditResponse>("/audit").catch(() => ({
       blind_spots: [],

@@ -11,7 +11,7 @@ import { useFilters }  from "@/hooks/useFilters";
 import { useHotspots } from "@/hooks/useHotspots";
 import { useFusion }   from "@/hooks/useFusion";
 import { useAgentRun } from "@/hooks/useAgentRun";
-import { useWards, useStations, useFires, useAudit, useDispatch } from "@/hooks/useMapData";
+import { useWards, useStations, useFires, useAudit, useDispatch, useSatellite } from "@/hooks/useMapData";
 
 // All WebGL/heavy components are dynamically imported — no SSR
 const MapContainer    = dynamic(() => import("@/components/map/MapContainer"),                { ssr: false, loading: () => <MapPlaceholder /> });
@@ -54,6 +54,7 @@ export default function AdminPage() {
   const { stations }                             = useStations();
   const { fires }                                = useFires();
   const { blindSpots }                           = useAudit();
+  const { satellite }                            = useSatellite();
   const { routes: dispatchRoutes }               = useDispatch();
 
   // ── Agent pipeline ──────────────────────────────────────────────────────────
@@ -124,6 +125,7 @@ export default function AdminPage() {
           fires={fires}
           wardCells={wardCells}
           blindSpots={blindSpots}
+          satellite={satellite}
           dispatchRoutes={dispatchRoutes}
           hourOffset={hourOffset}
           selectedCell={selectedCell}
