@@ -1,0 +1,255 @@
+{
+  "blind_spots": [
+    {
+      "cell": "88618c4c03fffff",
+      "ward_id": "W181",
+      "satellite_signal": 31.7,
+      "rank": 1
+    },
+    {
+      "cell": "88618eb213fffff",
+      "ward_id": "W061",
+      "satellite_signal": 31.6,
+      "rank": 2
+    },
+    {
+      "cell": "88618c489bfffff",
+      "ward_id": "W105",
+      "satellite_signal": 31.6,
+      "rank": 3
+    },
+    {
+      "cell": "88618c4f59fffff",
+      "ward_id": "W004",
+      "satellite_signal": 31.6,
+      "rank": 4
+    },
+    {
+      "cell": "88618c4891fffff",
+      "ward_id": "W106",
+      "satellite_signal": 31.6,
+      "rank": 5
+    },
+    {
+      "cell": "88618c4d09fffff",
+      "ward_id": "W095",
+      "satellite_signal": 31.6,
+      "rank": 6
+    },
+    {
+      "cell": "88618c4d0dfffff",
+      "ward_id": "W090",
+      "satellite_signal": 31.6,
+      "rank": 7
+    },
+    {
+      "cell": "88618c4d47fffff",
+      "ward_id": "W102",
+      "satellite_signal": 31.6,
+      "rank": 8
+    },
+    {
+      "cell": "88618c4d0bfffff",
+      "ward_id": "W187",
+      "satellite_signal": 31.5,
+      "rank": 9
+    },
+    {
+      "cell": "88618c4897fffff",
+      "ward_id": "W099",
+      "satellite_signal": 31.4,
+      "rank": 10
+    },
+    {
+      "cell": "88618c41b7fffff",
+      "ward_id": "W160",
+      "satellite_signal": 31.4,
+      "rank": 11
+    },
+    {
+      "cell": "88618c4d4bfffff",
+      "ward_id": "W104",
+      "satellite_signal": 31.4,
+      "rank": 12
+    },
+    {
+      "cell": "88618c4d69fffff",
+      "ward_id": "W099",
+      "satellite_signal": 31.4,
+      "rank": 13
+    },
+    {
+      "cell": "88618c4d49fffff",
+      "ward_id": "W104",
+      "satellite_signal": 31.4,
+      "rank": 14
+    },
+    {
+      "cell": "88618c4c39fffff",
+      "ward_id": "W181",
+      "satellite_signal": 31.3,
+      "rank": 15
+    },
+    {
+      "cell": "88618c4893fffff",
+      "ward_id": "W097",
+      "satellite_signal": 31.3,
+      "rank": 16
+    },
+    {
+      "cell": "88618c4d4dfffff",
+      "ward_id": "W105",
+      "satellite_signal": 31.3,
+      "rank": 17
+    },
+    {
+      "cell": "88618c4d41fffff",
+      "ward_id": "W103",
+      "satellite_signal": 31.3,
+      "rank": 18
+    },
+    {
+      "cell": "88618c4e29fffff",
+      "ward_id": "W162",
+      "satellite_signal": 31.2,
+      "rank": 19
+    },
+    {
+      "cell": "88618c4d6bfffff",
+      "ward_id": "W100",
+      "satellite_signal": 31.1,
+      "rank": 20
+    },
+    {
+      "cell": "88618c4d45fffff",
+      "ward_id": "W102",
+      "satellite_signal": 31.1,
+      "rank": 21
+    },
+    {
+      "cell": "88618c4f41fffff",
+      "ward_id": "W159",
+      "satellite_signal": 31.1,
+      "rank": 22
+    },
+    {
+      "cell": "88618c4f49fffff",
+      "ward_id": "W155",
+      "satellite_signal": 31.1,
+      "rank": 23
+    },
+    {
+      "cell": "88618c4d1dfffff",
+      "ward_id": "W187",
+      "satellite_signal": 31.1,
+      "rank": 24
+    },
+    {
+      "cell": "88618c4d03fffff",
+      "ward_id": "W187",
+      "satellite_signal": 31.1,
+      "rank": 25
+    },
+    {
+      "cell": "88618c4d57fffff",
+      "ward_id": "W187",
+      "satellite_signal": 31.0,
+      "rank": 26
+    },
+    {
+      "cell": "88618c41b3fffff",
+      "ward_id": "W004",
+      "satellite_signal": 31.0,
+      "rank": 27
+    },
+    {
+      "cell": "88618c4f21fffff",
+      "ward_id": "W111",
+      "satellite_signal": 31.0,
+      "rank": 28
+    },
+    {
+      "cell": "88618c4f2dfffff",
+      "ward_id": "W117",
+      "satellite_signal": 31.0,
+      "rank": 29
+    },
+    {
+      "cell": "88618c4f29fffff",
+      "ward_id": "W111",
+      "satellite_signal": 30.9,
+      "rank": 30
+    },
+    {
+      "cell": "88618c4f05fffff",
+      "ward_id": "W112",
+      "satellite_signal": 30.9,
+      "rank": 31
+    },
+    {
+      "cell": "88618c4f27fffff",
+      "ward_id": "W105",
+      "satellite_signal": 30.9,
+      "rank": 32
+    },
+    {
+      "cell": "88618c4d39fffff",
+      "ward_id": "W128",
+      "satellite_signal": 30.9,
+      "rank": 33
+    },
+    {
+      "cell": "88618c4d43fffff",
+      "ward_id": "W101",
+      "satellite_signal": 30.8,
+      "rank": 34
+    },
+    {
+      "cell": "88618c4e67fffff",
+      "ward_id": "W163",
+      "satellite_signal": 30.8,
+      "rank": 35
+    },
+    {
+      "cell": "88618c48d3fffff",
+      "ward_id": "W106",
+      "satellite_signal": 30.8,
+      "rank": 36
+    },
+    {
+      "cell": "88618c48dbfffff",
+      "ward_id": "W117",
+      "satellite_signal": 30.8,
+      "rank": 37
+    },
+    {
+      "cell": "88618c4c35fffff",
+      "ward_id": "W182",
+      "satellite_signal": 30.7,
+      "rank": 38
+    },
+    {
+      "cell": "88618c4c3dfffff",
+      "ward_id": "W013",
+      "satellite_signal": 30.7,
+      "rank": 39
+    },
+    {
+      "cell": "88618c4d19fffff",
+      "ward_id": "W184",
+      "satellite_signal": 30.7,
+      "rank": 40
+    }
+  ],
+  "sensor_flags": [],
+  "placement_recommendations": [
+    "Add a monitor near ward W181 (cell 88618c4c…): the fusion field estimates ~31.7 µg/m³ here with no station within the cell — currently a blind spot.",
+    "Add a monitor near ward W061 (cell 88618eb2…): the fusion field estimates ~31.6 µg/m³ here with no station within the cell — currently a blind spot.",
+    "Add a monitor near ward W105 (cell 88618c48…): the fusion field estimates ~31.6 µg/m³ here with no station within the cell — currently a blind spot.",
+    "Add a monitor near ward W004 (cell 88618c4f…): the fusion field estimates ~31.6 µg/m³ here with no station within the cell — currently a blind spot.",
+    "Add a monitor near ward W106 (cell 88618c48…): the fusion field estimates ~31.6 µg/m³ here with no station within the cell — currently a blind spot."
+  ],
+  "n_cells": 759,
+  "n_monitored": 2,
+  "elevated_threshold_pm25": 29.6
+}

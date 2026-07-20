@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import useSWR from "swr";
 import { api } from "@/lib/api";
 import { pm25ToAqi, getAqiCategory, AQI_CATEGORIES } from "@/lib/colors";
+import { useCity } from "@/lib/CityContext";
 import { AQI_ADVICE } from "@/lib/constants";
 import type { FusionResponse, ForecastCell } from "@/lib/types";
 
@@ -18,23 +19,37 @@ interface Params { wardId: string }
 export default function WardDashboardPage({ params }: { params: Promise<Params> }) {
   const { wardId } = use(params);
 
-  const { data: summary, isLoading } = useSWR(
-    ["ward-summary", wardId],
-    () => api.getWardSummary(wardId)
-  );
-  const { data: fusion } = useSWR<FusionResponse>(["fusion", 0], () => api.getFusion(0));
+  const { city } = useCity();
+  const { data: fusion, isLoading } = useSWR<FusionResponse>([city, "fusion"], () => api.cityFusion(city));
+  const { data: wardsResp } = useSWR([city, "wards"], () => api.cityWards(city));
   const cells = useMemo(() => fusion?.cells ?? [], [fusion]);
 
-  // forecast for this ward: median predicted AQI across its cells, per horizon
-  const { data: fc24 } = useSWR<ForecastCell[]>(["forecast", 24], () => api.getForecast(24));
-  const { data: fc48 } = useSWR<ForecastCell[]>(["forecast", 48], () => api.getForecast(48));
-  const { data: fc72 } = useSWR<ForecastCell[]>(["forecast", 72], () => api.getForecast(72));
+  // Everything is derived from THIS CITY's fusion field, so the page follows the
+  // city switcher and stays consistent (no separate backend summary to drift).
   const wardCells = useMemo(() => new Set(cells.filter((c) => c.ward_id === wardId).map((c) => c.cell)), [cells, wardId]);
+  const median = (v: number[]) => (v.length ? [...v].sort((a, b) => a - b)[Math.floor(v.length / 2)] : NaN);
+  const wardPm25 = useMemo(() => median(cells.filter((c) => c.ward_id === wardId).map((c) => c.pm25)), [cells, wardId]);
+  const wardName = useMemo(
+    () => wardsResp?.cells.find((c) => c.ward_id === wardId)?.ward_name ?? wardId,
+    [wardsResp, wardId]
+  );
+  const summary = Number.isFinite(wardPm25) ? { pm25: wardPm25, ward_name: wardName } : null;
+
+  // The ward's real CPCB advisory text (English), from this city's advisories.
+  const { data: advisories } = useSWR([city, "advisories"], () => api.cityAdvisories(city));
+  const advisoryText = useMemo(
+    () => advisories?.find((a) => a.ward_id === wardId)?.texts?.en ?? null,
+    [advisories, wardId]
+  );
+
+  const { data: fc24 } = useSWR<ForecastCell[]>([city, "forecast", 24], () => api.cityForecast(city, 24));
+  const { data: fc48 } = useSWR<ForecastCell[]>([city, "forecast", 48], () => api.cityForecast(city, 48));
+  const { data: fc72 } = useSWR<ForecastCell[]>([city, "forecast", 72], () => api.cityForecast(city, 72));
   const horizonAqi = (fc?: ForecastCell[]): number | null => {
     if (!fc) return null;
-    const vals = fc.filter((f) => wardCells.has(f.cell)).map((f) => f.pm25_hat).sort((a, b) => a - b);
+    const vals = fc.filter((f) => wardCells.has(f.cell)).map((f) => f.pm25_hat);
     if (!vals.length) return null;
-    return pm25ToAqi(vals[Math.floor(vals.length / 2)]);
+    return pm25ToAqi(median(vals));
   };
   const forecast = [
     { label: "Now", aqi: summary ? pm25ToAqi(summary.pm25) : null },
@@ -137,7 +152,7 @@ export default function WardDashboardPage({ params }: { params: Promise<Params> 
       </div>
 
       {/* Advisory */}
-      {summary?.advisory && (
+      {advisoryText && (
         <div
           className="card"
           style={{
@@ -148,7 +163,7 @@ export default function WardDashboardPage({ params }: { params: Promise<Params> 
         >
           <h5 style={{ marginBottom: 8, color: "var(--accent-amber)" }}>📢 Advisory</h5>
           <p style={{ fontSize: "0.9rem", color: "var(--text-primary)", lineHeight: 1.6 }}>
-            {summary.advisory}
+            {advisoryText}
           </p>
         </div>
       )}

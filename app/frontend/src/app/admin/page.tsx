@@ -4,14 +4,14 @@
  * Full-bleed map (left ~70%) + collapsible Action Queue panel (right ~30%)
  */
 import dynamic from "next/dynamic";
-import { useState, useCallback } from "react";
-import { mutate } from "swr";
+import { useState, useCallback, useMemo } from "react";
+import useSWR, { mutate } from "swr";
 
+import { api } from "@/lib/api";
+import { useCity } from "@/lib/CityContext";
 import { useFilters }  from "@/hooks/useFilters";
-import { useHotspots } from "@/hooks/useHotspots";
-import { useFusion }   from "@/hooks/useFusion";
+import { filterHotspots } from "@/hooks/useHotspots";
 import { useAgentRun } from "@/hooks/useAgentRun";
-import { useWards, useStations, useFires, useAudit, useDispatch, useSatellite } from "@/hooks/useMapData";
 
 // All WebGL/heavy components are dynamically imported — no SSR
 const MapContainer    = dynamic(() => import("@/components/map/MapContainer"),                { ssr: false, loading: () => <MapPlaceholder /> });
@@ -47,24 +47,32 @@ export default function AdminPage() {
     setWards, setSources, setPersistence, toggleLayer, setHorizon, resetFilters,
   } = useFilters();
 
-  // ── Map data ────────────────────────────────────────────────────────────────
-  const { hotspots, isLoading: hotspotsLoading } = useHotspots(filters);
-  const { cells: fusionCells }                   = useFusion(hourOffset);
-  const { cells: wardCells }                     = useWards();
-  const { stations }                             = useStations();
-  const { fires }                                = useFires();
-  const { blindSpots }                           = useAudit();
-  const { satellite }                            = useSatellite();
-  const { routes: dispatchRoutes }               = useDispatch();
+  // ── Map data — CITY-SCOPED. Every contract keys on `city`, so switching city
+  //    in the header refetches everything and the map moves with it. ────────────
+  const { city } = useCity();
+  const { data: rawHotspots, isLoading: hotspotsLoading } = useSWR([city, "hotspots"], () => api.cityHotspots(city));
+  const { data: fusionResp }   = useSWR([city, "fusion"],    () => api.cityFusion(city));
+  const { data: wardsResp }    = useSWR([city, "wards"],     () => api.cityWards(city));
+  const { data: stations = [] }= useSWR([city, "stations"],  () => api.cityStations(city));
+  const { data: fires = [] }   = useSWR([city, "fires"],     () => api.cityFires(city));
+  const { data: audit }        = useSWR([city, "audit"],     () => api.cityAudit(city));
+  const { data: satellite = [] }= useSWR([city, "satellite"],() => api.citySatellite(city));
+  const { data: dispatchRoutes = [] } = useSWR([city, "dispatch"], () => api.cityDispatch(city));
+
+  const allHotspots = useMemo(() => rawHotspots ?? [], [rawHotspots]);
+  const hotspots = useMemo(() => filterHotspots(allHotspots, filters), [allHotspots, filters]);
+  const fusionCells = fusionResp?.cells ?? [];
+  const wardCells = wardsResp?.cells ?? [];
+  const blindSpots = audit?.blind_spots ?? [];
 
   // ── Agent pipeline ──────────────────────────────────────────────────────────
   const onAgentComplete = useCallback(() => {
-    mutate("hotspots");
-    mutate(["fusion", hourOffset]);
-    mutate("actions");
-    mutate("dispatch");
-    mutate("audit");
-  }, [hourOffset]);
+    // Re-read this city's contracts after a pipeline run.
+    mutate([city, "hotspots"]);
+    mutate([city, "fusion"]);
+    mutate([city, "dispatch"]);
+    mutate([city, "audit"]);
+  }, [city]);
   const { agents, running, runAgent, resetAgents } = useAgentRun(onAgentComplete);
 
   return (

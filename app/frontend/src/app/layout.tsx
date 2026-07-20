@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { CityProvider } from "@/lib/CityContext";
 
 export const metadata: Metadata = {
   title: "AQ Intelligence Platform",
@@ -34,7 +35,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <CityProvider>{children}</CityProvider>
+      </body>
     </html>
   );
 }

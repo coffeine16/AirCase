@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
+import CitySwitcher from "@/components/CitySwitcher";
+import CityLabel from "@/components/CityLabel";
 
 export const metadata: Metadata = {
   title: "Citizen View — AQ Intelligence Platform",
@@ -56,7 +58,7 @@ export default function CitizenLayout({ children }: { children: React.ReactNode 
           </div>
           <div>
             <div style={{ fontWeight: 700, fontSize: "0.9rem", lineHeight: 1.2 }}>My Ward Air Quality</div>
-            <div style={{ fontSize: "0.7rem", color: "var(--text-tertiary)", lineHeight: 1 }}>Delhi</div>
+            <CityLabel style={{ fontSize: "0.7rem", color: "var(--text-tertiary)", lineHeight: 1 }} />
           </div>
         </Link>
 
@@ -90,6 +92,7 @@ export default function CitizenLayout({ children }: { children: React.ReactNode 
           >
             Admin →
           </Link>
+          <CitySwitcher />
           <ThemeToggle />
         </nav>
       </header>

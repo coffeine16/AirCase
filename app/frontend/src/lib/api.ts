@@ -38,6 +38,22 @@ function getFallbackPath(endpoint: string): string | null {
   return FALLBACK_MAP[path] ?? null;
 }
 
+/**
+ * City-scoped fetch: reads a contract from that city's static bundle
+ * (public/data/<city>/<file>). This is how city-switching works — every map
+ * contract lives per-city and needs no backend. Falls back to the legacy flat
+ * /data/<file> (the default-city bundle) if the per-city file is absent.
+ */
+export async function cityFetch<T>(city: string, file: string, fallback: T): Promise<T> {
+  for (const url of [`/data/${city}/${file}`, `/data/${file}`]) {
+    try {
+      const res = await fetch(url, { next: { revalidate: 0 } });
+      if (res.ok) return (await res.json()) as T;
+    } catch { /* try next */ }
+  }
+  return fallback;
+}
+
 export async function apiFetch<T>(endpoint: string, options?: RequestInit): Promise<T> {
   const url = `${API_BASE}${endpoint}`;
   try {
@@ -88,9 +104,28 @@ import type {
   CityComparison,
   Memo,
 } from "./types";
+import type { Station, FireDetection } from "@/hooks/useMapData";
 
 export const api = {
-  // ─── Map data ────────────────────────────────────────────────────────────────
+  // ─── City-scoped contracts (drive the multi-city map) ─────────────────────────
+  // These read that city's static bundle so switching city needs no backend.
+  cityHotspots:   (city: string) => cityFetch<Hotspot[]>(city, "hotspots.json", []),
+  cityFusion:     (city: string) => cityFetch<FusionResponse>(city, "fusion_field.json", { ts: "", n_hours: 0, cells: [] }),
+  cityWards:      (city: string) => cityFetch<WardsResponse>(city, "wards.json", { synthetic: false, n_wards: 0, cells: [] } as unknown as WardsResponse),
+  cityStations:   (city: string) => cityFetch<Station[]>(city, "stations.json", []),
+  cityFires:      (city: string) => cityFetch<FireDetection[]>(city, "fires.json", []),
+  citySatellite:  (city: string) => cityFetch<{ cell: string; no2: number }[]>(city, "satellite.json", []),
+  cityAudit:      (city: string) => cityFetch<AuditResponse>(city, "audit.json", { blind_spots: [], sensor_flags: [], placement_recommendations: [] }),
+  cityDispatch:   (city: string) => cityFetch<DispatchRoute[]>(city, "dispatch.json", []),
+  cityActions:    (city: string) => cityFetch<Action[]>(city, "actions.json", []),
+  cityForecast:   (city: string, h: 24 | 48 | 72) =>
+    cityFetch<ForecastCell[]>(city, "forecast.json", []).then((all) => all.filter((f) => f.horizon_h === h)),
+  cityAttributions: (city: string) => cityFetch<Attribution[]>(city, "attributions.json", []),
+  cityMemos:      (city: string) => cityFetch<Memo[]>(city, "memos.json", []),
+  cityLedger:     (city: string) => cityFetch<Ledger | null>(city, "ledger.json", null),
+  cityAdvisories: (city: string) => cityFetch<{ ward_id: string; texts?: Record<string, string> }[]>(city, "advisories.json", []),
+
+  // ─── Map data (legacy, single-city via backend) ──────────────────────────────
   getHotspots: () => apiFetch<Hotspot[]>("/hotspots"),
   getAttributions: () => apiFetch<Attribution[]>("/attributions"),
   getAttribution: (cell: string) => apiFetch<Attribution>(`/attribution/${cell}`),

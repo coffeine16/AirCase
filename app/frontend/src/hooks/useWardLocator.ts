@@ -10,6 +10,7 @@ import { useMemo } from "react";
 import useSWR from "swr";
 import { latLngToCell, cellToLatLng, getResolution } from "h3-js";
 import { api } from "@/lib/api";
+import { useCity } from "@/lib/CityContext";
 import type { WardsResponse } from "@/lib/types";
 
 export interface WardHit {
@@ -19,7 +20,8 @@ export interface WardHit {
 }
 
 export function useWardLocator() {
-  const { data, isLoading } = useSWR<WardsResponse>("wards", () => api.getWards());
+  const { city } = useCity();
+  const { data, isLoading } = useSWR<WardsResponse>([city, "wards"], () => api.cityWards(city));
 
   // cell -> {ward_id, ward_name}, plus a flat list of ward centroids for fallback.
   const { cellMap, res, wardCentroids } = useMemo(() => {

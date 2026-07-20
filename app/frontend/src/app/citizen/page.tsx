@@ -14,6 +14,7 @@ import useSWR from "swr";
 import { api } from "@/lib/api";
 import { useCitizenWard } from "@/hooks/useReports";
 import { useWardLocator } from "@/hooks/useWardLocator";
+import { useCity } from "@/lib/CityContext";
 import type { FusionResponse } from "@/lib/types";
 
 const CitizenMap = dynamic(() => import("@/components/citizen/CitizenMap"), {
@@ -23,10 +24,11 @@ const CitizenMap = dynamic(() => import("@/components/citizen/CitizenMap"), {
 
 export default function CitizenHomePage() {
   const router = useRouter();
+  const { city } = useCity();
   const { wardId: savedWard, setWardId } = useCitizenWard();
   const { locate, hasData } = useWardLocator();
 
-  const { data: fusion } = useSWR<FusionResponse>(["fusion", 0], () => api.getFusion(0));
+  const { data: fusion } = useSWR<FusionResponse>([city, "fusion"], () => api.cityFusion(city));
   const cells = useMemo(() => fusion?.cells ?? [], [fusion]);
 
   const [locating, setLocating] = useState(false);

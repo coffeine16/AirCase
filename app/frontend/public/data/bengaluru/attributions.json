@@ -1,0 +1,5925 @@
+[
+  {
+    "cell": "8861892d69fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 57.9,
+    "primary_source": "industrial",
+    "confidence": 0.4,
+    "scores": {
+      "industrial": 0.364,
+      "construction": 0.071,
+      "waste_burning": 0.061,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1435373384 is 2.51 km away, wind alignment 0.75.",
+    "evidence_factors": [
+      "industrial_1435373384 is 2.51 km away, wind alignment 0.75"
+    ],
+    "evidence": {
+      "cell": "8861892d69fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 57.9,
+      "candidates": [
+        {
+          "name": "industrial_1435373384",
+          "type": "industrial",
+          "distance_km": 2.51,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_1420179072",
+          "type": "industrial",
+          "distance_km": 2.48,
+          "wind_alignment": 0.65
+        },
+        {
+          "name": "BMTC Depot 47 (Manduru)",
+          "type": "industrial",
+          "distance_km": 1.93,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "Neighbourhood Estates (u/c)",
+          "type": "construction",
+          "distance_km": 4.01,
+          "wind_alignment": 0.44
+        },
+        {
+          "name": "Shriram WYTField",
+          "type": "construction",
+          "distance_km": 4.29,
+          "wind_alignment": 0.32
+        },
+        {
+          "name": "Purva (u/c)",
+          "type": "construction",
+          "distance_km": 3.51,
+          "wind_alignment": 0.27
+        },
+        {
+          "name": "Mandur Landfill",
+          "type": "waste_burning",
+          "distance_km": 2.06,
+          "wind_alignment": 0.17
+        },
+        {
+          "name": "industrial_1531055726",
+          "type": "industrial",
+          "distance_km": 3.17,
+          "wind_alignment": 0.23
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 51.7,
+          "city_percentile": 72
+        },
+        "so2_col": {
+          "value": 141.1,
+          "city_percentile": 81
+        },
+        "aai": {
+          "value": -1.0,
+          "city_percentile": 36
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "8861892893fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 57.9,
+    "primary_source": "industrial",
+    "confidence": 0.4,
+    "scores": {
+      "industrial": 0.364,
+      "construction": 0.071,
+      "waste_burning": 0.061,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1435373384 is 2.51 km away, wind alignment 0.75.",
+    "evidence_factors": [
+      "industrial_1435373384 is 2.51 km away, wind alignment 0.75"
+    ],
+    "evidence": {
+      "cell": "8861892d69fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 57.9,
+      "candidates": [
+        {
+          "name": "industrial_1435373384",
+          "type": "industrial",
+          "distance_km": 2.51,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_1420179072",
+          "type": "industrial",
+          "distance_km": 2.48,
+          "wind_alignment": 0.65
+        },
+        {
+          "name": "BMTC Depot 47 (Manduru)",
+          "type": "industrial",
+          "distance_km": 1.93,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "Neighbourhood Estates (u/c)",
+          "type": "construction",
+          "distance_km": 4.01,
+          "wind_alignment": 0.44
+        },
+        {
+          "name": "Shriram WYTField",
+          "type": "construction",
+          "distance_km": 4.29,
+          "wind_alignment": 0.32
+        },
+        {
+          "name": "Purva (u/c)",
+          "type": "construction",
+          "distance_km": 3.51,
+          "wind_alignment": 0.27
+        },
+        {
+          "name": "Mandur Landfill",
+          "type": "waste_burning",
+          "distance_km": 2.06,
+          "wind_alignment": 0.17
+        },
+        {
+          "name": "industrial_1531055726",
+          "type": "industrial",
+          "distance_km": 3.17,
+          "wind_alignment": 0.23
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 51.7,
+          "city_percentile": 72
+        },
+        "so2_col": {
+          "value": 141.1,
+          "city_percentile": 81
+        },
+        "aai": {
+          "value": -1.0,
+          "city_percentile": 36
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "8861892897fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 57.9,
+    "primary_source": "industrial",
+    "confidence": 0.4,
+    "scores": {
+      "industrial": 0.364,
+      "construction": 0.071,
+      "waste_burning": 0.061,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1435373384 is 2.51 km away, wind alignment 0.75.",
+    "evidence_factors": [
+      "industrial_1435373384 is 2.51 km away, wind alignment 0.75"
+    ],
+    "evidence": {
+      "cell": "8861892d69fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 57.9,
+      "candidates": [
+        {
+          "name": "industrial_1435373384",
+          "type": "industrial",
+          "distance_km": 2.51,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_1420179072",
+          "type": "industrial",
+          "distance_km": 2.48,
+          "wind_alignment": 0.65
+        },
+        {
+          "name": "BMTC Depot 47 (Manduru)",
+          "type": "industrial",
+          "distance_km": 1.93,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "Neighbourhood Estates (u/c)",
+          "type": "construction",
+          "distance_km": 4.01,
+          "wind_alignment": 0.44
+        },
+        {
+          "name": "Shriram WYTField",
+          "type": "construction",
+          "distance_km": 4.29,
+          "wind_alignment": 0.32
+        },
+        {
+          "name": "Purva (u/c)",
+          "type": "construction",
+          "distance_km": 3.51,
+          "wind_alignment": 0.27
+        },
+        {
+          "name": "Mandur Landfill",
+          "type": "waste_burning",
+          "distance_km": 2.06,
+          "wind_alignment": 0.17
+        },
+        {
+          "name": "industrial_1531055726",
+          "type": "industrial",
+          "distance_km": 3.17,
+          "wind_alignment": 0.23
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 51.7,
+          "city_percentile": 72
+        },
+        "so2_col": {
+          "value": 141.1,
+          "city_percentile": 81
+        },
+        "aai": {
+          "value": -1.0,
+          "city_percentile": 36
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "8861892d6bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 57.9,
+    "primary_source": "industrial",
+    "confidence": 0.4,
+    "scores": {
+      "industrial": 0.364,
+      "construction": 0.071,
+      "waste_burning": 0.061,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1435373384 is 2.51 km away, wind alignment 0.75.",
+    "evidence_factors": [
+      "industrial_1435373384 is 2.51 km away, wind alignment 0.75"
+    ],
+    "evidence": {
+      "cell": "8861892d69fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 57.9,
+      "candidates": [
+        {
+          "name": "industrial_1435373384",
+          "type": "industrial",
+          "distance_km": 2.51,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_1420179072",
+          "type": "industrial",
+          "distance_km": 2.48,
+          "wind_alignment": 0.65
+        },
+        {
+          "name": "BMTC Depot 47 (Manduru)",
+          "type": "industrial",
+          "distance_km": 1.93,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "Neighbourhood Estates (u/c)",
+          "type": "construction",
+          "distance_km": 4.01,
+          "wind_alignment": 0.44
+        },
+        {
+          "name": "Shriram WYTField",
+          "type": "construction",
+          "distance_km": 4.29,
+          "wind_alignment": 0.32
+        },
+        {
+          "name": "Purva (u/c)",
+          "type": "construction",
+          "distance_km": 3.51,
+          "wind_alignment": 0.27
+        },
+        {
+          "name": "Mandur Landfill",
+          "type": "waste_burning",
+          "distance_km": 2.06,
+          "wind_alignment": 0.17
+        },
+        {
+          "name": "industrial_1531055726",
+          "type": "industrial",
+          "distance_km": 3.17,
+          "wind_alignment": 0.23
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 51.7,
+          "city_percentile": 72
+        },
+        "so2_col": {
+          "value": 141.1,
+          "city_percentile": 81
+        },
+        "aai": {
+          "value": -1.0,
+          "city_percentile": 36
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "8861892895fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 57.9,
+    "primary_source": "industrial",
+    "confidence": 0.4,
+    "scores": {
+      "industrial": 0.364,
+      "construction": 0.071,
+      "waste_burning": 0.061,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1435373384 is 2.51 km away, wind alignment 0.75.",
+    "evidence_factors": [
+      "industrial_1435373384 is 2.51 km away, wind alignment 0.75"
+    ],
+    "evidence": {
+      "cell": "8861892d69fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 57.9,
+      "candidates": [
+        {
+          "name": "industrial_1435373384",
+          "type": "industrial",
+          "distance_km": 2.51,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_1420179072",
+          "type": "industrial",
+          "distance_km": 2.48,
+          "wind_alignment": 0.65
+        },
+        {
+          "name": "BMTC Depot 47 (Manduru)",
+          "type": "industrial",
+          "distance_km": 1.93,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "Neighbourhood Estates (u/c)",
+          "type": "construction",
+          "distance_km": 4.01,
+          "wind_alignment": 0.44
+        },
+        {
+          "name": "Shriram WYTField",
+          "type": "construction",
+          "distance_km": 4.29,
+          "wind_alignment": 0.32
+        },
+        {
+          "name": "Purva (u/c)",
+          "type": "construction",
+          "distance_km": 3.51,
+          "wind_alignment": 0.27
+        },
+        {
+          "name": "Mandur Landfill",
+          "type": "waste_burning",
+          "distance_km": 2.06,
+          "wind_alignment": 0.17
+        },
+        {
+          "name": "industrial_1531055726",
+          "type": "industrial",
+          "distance_km": 3.17,
+          "wind_alignment": 0.23
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 51.7,
+          "city_percentile": 72
+        },
+        "so2_col": {
+          "value": 141.1,
+          "city_percentile": 81
+        },
+        "aai": {
+          "value": -1.0,
+          "city_percentile": 36
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "8861892891fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 57.9,
+    "primary_source": "industrial",
+    "confidence": 0.4,
+    "scores": {
+      "industrial": 0.364,
+      "construction": 0.071,
+      "waste_burning": 0.061,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1435373384 is 2.51 km away, wind alignment 0.75.",
+    "evidence_factors": [
+      "industrial_1435373384 is 2.51 km away, wind alignment 0.75"
+    ],
+    "evidence": {
+      "cell": "8861892d69fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 57.9,
+      "candidates": [
+        {
+          "name": "industrial_1435373384",
+          "type": "industrial",
+          "distance_km": 2.51,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_1420179072",
+          "type": "industrial",
+          "distance_km": 2.48,
+          "wind_alignment": 0.65
+        },
+        {
+          "name": "BMTC Depot 47 (Manduru)",
+          "type": "industrial",
+          "distance_km": 1.93,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "Neighbourhood Estates (u/c)",
+          "type": "construction",
+          "distance_km": 4.01,
+          "wind_alignment": 0.44
+        },
+        {
+          "name": "Shriram WYTField",
+          "type": "construction",
+          "distance_km": 4.29,
+          "wind_alignment": 0.32
+        },
+        {
+          "name": "Purva (u/c)",
+          "type": "construction",
+          "distance_km": 3.51,
+          "wind_alignment": 0.27
+        },
+        {
+          "name": "Mandur Landfill",
+          "type": "waste_burning",
+          "distance_km": 2.06,
+          "wind_alignment": 0.17
+        },
+        {
+          "name": "industrial_1531055726",
+          "type": "industrial",
+          "distance_km": 3.17,
+          "wind_alignment": 0.23
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 51.7,
+          "city_percentile": 72
+        },
+        "so2_col": {
+          "value": 141.1,
+          "city_percentile": 81
+        },
+        "aai": {
+          "value": -1.0,
+          "city_percentile": 36
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "8861892d45fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 57.9,
+    "primary_source": "industrial",
+    "confidence": 0.4,
+    "scores": {
+      "industrial": 0.364,
+      "construction": 0.071,
+      "waste_burning": 0.061,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1435373384 is 2.51 km away, wind alignment 0.75.",
+    "evidence_factors": [
+      "industrial_1435373384 is 2.51 km away, wind alignment 0.75"
+    ],
+    "evidence": {
+      "cell": "8861892d69fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 57.9,
+      "candidates": [
+        {
+          "name": "industrial_1435373384",
+          "type": "industrial",
+          "distance_km": 2.51,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_1420179072",
+          "type": "industrial",
+          "distance_km": 2.48,
+          "wind_alignment": 0.65
+        },
+        {
+          "name": "BMTC Depot 47 (Manduru)",
+          "type": "industrial",
+          "distance_km": 1.93,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "Neighbourhood Estates (u/c)",
+          "type": "construction",
+          "distance_km": 4.01,
+          "wind_alignment": 0.44
+        },
+        {
+          "name": "Shriram WYTField",
+          "type": "construction",
+          "distance_km": 4.29,
+          "wind_alignment": 0.32
+        },
+        {
+          "name": "Purva (u/c)",
+          "type": "construction",
+          "distance_km": 3.51,
+          "wind_alignment": 0.27
+        },
+        {
+          "name": "Mandur Landfill",
+          "type": "waste_burning",
+          "distance_km": 2.06,
+          "wind_alignment": 0.17
+        },
+        {
+          "name": "industrial_1531055726",
+          "type": "industrial",
+          "distance_km": 3.17,
+          "wind_alignment": 0.23
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 51.7,
+          "city_percentile": 72
+        },
+        "so2_col": {
+          "value": 141.1,
+          "city_percentile": 81
+        },
+        "aai": {
+          "value": -1.0,
+          "city_percentile": 36
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "886189289dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 57.9,
+    "primary_source": "industrial",
+    "confidence": 0.4,
+    "scores": {
+      "industrial": 0.364,
+      "construction": 0.071,
+      "waste_burning": 0.061,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1435373384 is 2.51 km away, wind alignment 0.75.",
+    "evidence_factors": [
+      "industrial_1435373384 is 2.51 km away, wind alignment 0.75"
+    ],
+    "evidence": {
+      "cell": "8861892d69fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 57.9,
+      "candidates": [
+        {
+          "name": "industrial_1435373384",
+          "type": "industrial",
+          "distance_km": 2.51,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_1420179072",
+          "type": "industrial",
+          "distance_km": 2.48,
+          "wind_alignment": 0.65
+        },
+        {
+          "name": "BMTC Depot 47 (Manduru)",
+          "type": "industrial",
+          "distance_km": 1.93,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "Neighbourhood Estates (u/c)",
+          "type": "construction",
+          "distance_km": 4.01,
+          "wind_alignment": 0.44
+        },
+        {
+          "name": "Shriram WYTField",
+          "type": "construction",
+          "distance_km": 4.29,
+          "wind_alignment": 0.32
+        },
+        {
+          "name": "Purva (u/c)",
+          "type": "construction",
+          "distance_km": 3.51,
+          "wind_alignment": 0.27
+        },
+        {
+          "name": "Mandur Landfill",
+          "type": "waste_burning",
+          "distance_km": 2.06,
+          "wind_alignment": 0.17
+        },
+        {
+          "name": "industrial_1531055726",
+          "type": "industrial",
+          "distance_km": 3.17,
+          "wind_alignment": 0.23
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 51.7,
+          "city_percentile": 72
+        },
+        "so2_col": {
+          "value": 141.1,
+          "city_percentile": 81
+        },
+        "aai": {
+          "value": -1.0,
+          "city_percentile": 36
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "8861892d0dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 57.9,
+    "primary_source": "industrial",
+    "confidence": 0.4,
+    "scores": {
+      "industrial": 0.364,
+      "construction": 0.071,
+      "waste_burning": 0.061,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1435373384 is 2.51 km away, wind alignment 0.75.",
+    "evidence_factors": [
+      "industrial_1435373384 is 2.51 km away, wind alignment 0.75"
+    ],
+    "evidence": {
+      "cell": "8861892d69fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 57.9,
+      "candidates": [
+        {
+          "name": "industrial_1435373384",
+          "type": "industrial",
+          "distance_km": 2.51,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_1420179072",
+          "type": "industrial",
+          "distance_km": 2.48,
+          "wind_alignment": 0.65
+        },
+        {
+          "name": "BMTC Depot 47 (Manduru)",
+          "type": "industrial",
+          "distance_km": 1.93,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "Neighbourhood Estates (u/c)",
+          "type": "construction",
+          "distance_km": 4.01,
+          "wind_alignment": 0.44
+        },
+        {
+          "name": "Shriram WYTField",
+          "type": "construction",
+          "distance_km": 4.29,
+          "wind_alignment": 0.32
+        },
+        {
+          "name": "Purva (u/c)",
+          "type": "construction",
+          "distance_km": 3.51,
+          "wind_alignment": 0.27
+        },
+        {
+          "name": "Mandur Landfill",
+          "type": "waste_burning",
+          "distance_km": 2.06,
+          "wind_alignment": 0.17
+        },
+        {
+          "name": "industrial_1531055726",
+          "type": "industrial",
+          "distance_km": 3.17,
+          "wind_alignment": 0.23
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 51.7,
+          "city_percentile": 72
+        },
+        "so2_col": {
+          "value": 141.1,
+          "city_percentile": 81
+        },
+        "aai": {
+          "value": -1.0,
+          "city_percentile": 36
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "886189289bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 57.9,
+    "primary_source": "industrial",
+    "confidence": 0.4,
+    "scores": {
+      "industrial": 0.364,
+      "construction": 0.071,
+      "waste_burning": 0.061,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1435373384 is 2.51 km away, wind alignment 0.75.",
+    "evidence_factors": [
+      "industrial_1435373384 is 2.51 km away, wind alignment 0.75"
+    ],
+    "evidence": {
+      "cell": "8861892d69fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 57.9,
+      "candidates": [
+        {
+          "name": "industrial_1435373384",
+          "type": "industrial",
+          "distance_km": 2.51,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_1420179072",
+          "type": "industrial",
+          "distance_km": 2.48,
+          "wind_alignment": 0.65
+        },
+        {
+          "name": "BMTC Depot 47 (Manduru)",
+          "type": "industrial",
+          "distance_km": 1.93,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "Neighbourhood Estates (u/c)",
+          "type": "construction",
+          "distance_km": 4.01,
+          "wind_alignment": 0.44
+        },
+        {
+          "name": "Shriram WYTField",
+          "type": "construction",
+          "distance_km": 4.29,
+          "wind_alignment": 0.32
+        },
+        {
+          "name": "Purva (u/c)",
+          "type": "construction",
+          "distance_km": 3.51,
+          "wind_alignment": 0.27
+        },
+        {
+          "name": "Mandur Landfill",
+          "type": "waste_burning",
+          "distance_km": 2.06,
+          "wind_alignment": 0.17
+        },
+        {
+          "name": "industrial_1531055726",
+          "type": "industrial",
+          "distance_km": 3.17,
+          "wind_alignment": 0.23
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 51.7,
+          "city_percentile": 72
+        },
+        "so2_col": {
+          "value": 141.1,
+          "city_percentile": 81
+        },
+        "aai": {
+          "value": -1.0,
+          "city_percentile": 36
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "886014434dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451c3fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451d5fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860145189fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860145181fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451c7fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451e3fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451a3fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451a7fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451abfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451a5fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451a1fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451a9fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451adfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860145187fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451c5fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451ebfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451e7fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "886014518dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860145185fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451c1fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451e1fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.3,
+    "primary_source": "industrial",
+    "confidence": 0.39,
+    "scores": {
+      "industrial": 0.839,
+      "construction": 0.807,
+      "waste_burning": 0.0,
+      "traffic": 0.747
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.72.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.72"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.3,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.94
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.34
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SMV Club (u/c)",
+          "type": "construction",
+          "distance_km": 2.88,
+          "wind_alignment": 0.94
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.0,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 84
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 53
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 22
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 22
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8861892e3dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W216",
+    "pm25_estimate": 39.5,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 1.096,
+      "construction": 0.54,
+      "waste_burning": 0.0,
+      "traffic": 0.975
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1410389264 is 0.64 km away, wind alignment 0.89.",
+    "evidence_factors": [
+      "industrial_1410389264 is 0.64 km away, wind alignment 0.89"
+    ],
+    "evidence": {
+      "cell": "8861892e3dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W216",
+      "pm25_estimate": 39.5,
+      "candidates": [
+        {
+          "name": "industrial_1410389264",
+          "type": "industrial",
+          "distance_km": 0.64,
+          "wind_alignment": 0.89
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.94,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.54,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.58,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_1410389583",
+          "type": "industrial",
+          "distance_km": 1.17,
+          "wind_alignment": 0.9
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.13,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.14,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "KR Puram Phase I 20MLD Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.44,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.6,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": -546.9,
+          "city_percentile": 0
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 6,
+        "waste_burning": 0,
+        "traffic": 32
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 12
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "8861892e07fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W216",
+    "pm25_estimate": 39.5,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 1.096,
+      "construction": 0.54,
+      "waste_burning": 0.0,
+      "traffic": 0.975
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1410389264 is 0.64 km away, wind alignment 0.89.",
+    "evidence_factors": [
+      "industrial_1410389264 is 0.64 km away, wind alignment 0.89"
+    ],
+    "evidence": {
+      "cell": "8861892e3dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W216",
+      "pm25_estimate": 39.5,
+      "candidates": [
+        {
+          "name": "industrial_1410389264",
+          "type": "industrial",
+          "distance_km": 0.64,
+          "wind_alignment": 0.89
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.94,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.54,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.58,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_1410389583",
+          "type": "industrial",
+          "distance_km": 1.17,
+          "wind_alignment": 0.9
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.13,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.14,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "KR Puram Phase I 20MLD Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.44,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.6,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": -546.9,
+          "city_percentile": 0
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 6,
+        "waste_burning": 0,
+        "traffic": 32
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 12
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "8861892e37fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W216",
+    "pm25_estimate": 39.5,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 1.096,
+      "construction": 0.54,
+      "waste_burning": 0.0,
+      "traffic": 0.975
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1410389264 is 0.64 km away, wind alignment 0.89.",
+    "evidence_factors": [
+      "industrial_1410389264 is 0.64 km away, wind alignment 0.89"
+    ],
+    "evidence": {
+      "cell": "8861892e3dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W216",
+      "pm25_estimate": 39.5,
+      "candidates": [
+        {
+          "name": "industrial_1410389264",
+          "type": "industrial",
+          "distance_km": 0.64,
+          "wind_alignment": 0.89
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.94,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.54,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.58,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_1410389583",
+          "type": "industrial",
+          "distance_km": 1.17,
+          "wind_alignment": 0.9
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.13,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.14,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "KR Puram Phase I 20MLD Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.44,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.6,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": -546.9,
+          "city_percentile": 0
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 6,
+        "waste_burning": 0,
+        "traffic": 32
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 12
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "8861892e35fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W216",
+    "pm25_estimate": 39.5,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 1.096,
+      "construction": 0.54,
+      "waste_burning": 0.0,
+      "traffic": 0.975
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1410389264 is 0.64 km away, wind alignment 0.89.",
+    "evidence_factors": [
+      "industrial_1410389264 is 0.64 km away, wind alignment 0.89"
+    ],
+    "evidence": {
+      "cell": "8861892e3dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W216",
+      "pm25_estimate": 39.5,
+      "candidates": [
+        {
+          "name": "industrial_1410389264",
+          "type": "industrial",
+          "distance_km": 0.64,
+          "wind_alignment": 0.89
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.94,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.54,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.58,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_1410389583",
+          "type": "industrial",
+          "distance_km": 1.17,
+          "wind_alignment": 0.9
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.13,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.14,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "KR Puram Phase I 20MLD Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.44,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.6,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": -546.9,
+          "city_percentile": 0
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 6,
+        "waste_burning": 0,
+        "traffic": 32
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 12
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "8861892e39fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W216",
+    "pm25_estimate": 39.5,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 1.096,
+      "construction": 0.54,
+      "waste_burning": 0.0,
+      "traffic": 0.975
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1410389264 is 0.64 km away, wind alignment 0.89.",
+    "evidence_factors": [
+      "industrial_1410389264 is 0.64 km away, wind alignment 0.89"
+    ],
+    "evidence": {
+      "cell": "8861892e3dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W216",
+      "pm25_estimate": 39.5,
+      "candidates": [
+        {
+          "name": "industrial_1410389264",
+          "type": "industrial",
+          "distance_km": 0.64,
+          "wind_alignment": 0.89
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.94,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.54,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.58,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_1410389583",
+          "type": "industrial",
+          "distance_km": 1.17,
+          "wind_alignment": 0.9
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.13,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.14,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "KR Puram Phase I 20MLD Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.44,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.6,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": -546.9,
+          "city_percentile": 0
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 6,
+        "waste_burning": 0,
+        "traffic": 32
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 12
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "8861892c59fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W216",
+    "pm25_estimate": 39.5,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 1.096,
+      "construction": 0.54,
+      "waste_burning": 0.0,
+      "traffic": 0.975
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1410389264 is 0.64 km away, wind alignment 0.89.",
+    "evidence_factors": [
+      "industrial_1410389264 is 0.64 km away, wind alignment 0.89"
+    ],
+    "evidence": {
+      "cell": "8861892e3dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W216",
+      "pm25_estimate": 39.5,
+      "candidates": [
+        {
+          "name": "industrial_1410389264",
+          "type": "industrial",
+          "distance_km": 0.64,
+          "wind_alignment": 0.89
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.94,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.54,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.58,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_1410389583",
+          "type": "industrial",
+          "distance_km": 1.17,
+          "wind_alignment": 0.9
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.13,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.14,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "KR Puram Phase I 20MLD Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.44,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.6,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": -546.9,
+          "city_percentile": 0
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 6,
+        "waste_burning": 0,
+        "traffic": 32
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 12
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "8861892e33fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W216",
+    "pm25_estimate": 39.5,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 1.096,
+      "construction": 0.54,
+      "waste_burning": 0.0,
+      "traffic": 0.975
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1410389264 is 0.64 km away, wind alignment 0.89.",
+    "evidence_factors": [
+      "industrial_1410389264 is 0.64 km away, wind alignment 0.89"
+    ],
+    "evidence": {
+      "cell": "8861892e3dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W216",
+      "pm25_estimate": 39.5,
+      "candidates": [
+        {
+          "name": "industrial_1410389264",
+          "type": "industrial",
+          "distance_km": 0.64,
+          "wind_alignment": 0.89
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.94,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.54,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.58,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_1410389583",
+          "type": "industrial",
+          "distance_km": 1.17,
+          "wind_alignment": 0.9
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.13,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.14,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "KR Puram Phase I 20MLD Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.44,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.6,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": -546.9,
+          "city_percentile": 0
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 6,
+        "waste_burning": 0,
+        "traffic": 32
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 12
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "8861892e31fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W216",
+    "pm25_estimate": 39.5,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 1.096,
+      "construction": 0.54,
+      "waste_burning": 0.0,
+      "traffic": 0.975
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1410389264 is 0.64 km away, wind alignment 0.89.",
+    "evidence_factors": [
+      "industrial_1410389264 is 0.64 km away, wind alignment 0.89"
+    ],
+    "evidence": {
+      "cell": "8861892e3dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W216",
+      "pm25_estimate": 39.5,
+      "candidates": [
+        {
+          "name": "industrial_1410389264",
+          "type": "industrial",
+          "distance_km": 0.64,
+          "wind_alignment": 0.89
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.94,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.54,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.58,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_1410389583",
+          "type": "industrial",
+          "distance_km": 1.17,
+          "wind_alignment": 0.9
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.13,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.14,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "KR Puram Phase I 20MLD Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.44,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.6,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": -546.9,
+          "city_percentile": 0
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 6,
+        "waste_burning": 0,
+        "traffic": 32
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 12
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "8861892e3bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W216",
+    "pm25_estimate": 39.5,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 1.096,
+      "construction": 0.54,
+      "waste_burning": 0.0,
+      "traffic": 0.975
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1410389264 is 0.64 km away, wind alignment 0.89.",
+    "evidence_factors": [
+      "industrial_1410389264 is 0.64 km away, wind alignment 0.89"
+    ],
+    "evidence": {
+      "cell": "8861892e3dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W216",
+      "pm25_estimate": 39.5,
+      "candidates": [
+        {
+          "name": "industrial_1410389264",
+          "type": "industrial",
+          "distance_km": 0.64,
+          "wind_alignment": 0.89
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.94,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.54,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.58,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_1410389583",
+          "type": "industrial",
+          "distance_km": 1.17,
+          "wind_alignment": 0.9
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.13,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.14,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "KR Puram Phase I 20MLD Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.44,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.6,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": -546.9,
+          "city_percentile": 0
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 6,
+        "waste_burning": 0,
+        "traffic": 32
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 12
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "8861892e15fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W216",
+    "pm25_estimate": 39.5,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 1.096,
+      "construction": 0.54,
+      "waste_burning": 0.0,
+      "traffic": 0.975
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1410389264 is 0.64 km away, wind alignment 0.89.",
+    "evidence_factors": [
+      "industrial_1410389264 is 0.64 km away, wind alignment 0.89"
+    ],
+    "evidence": {
+      "cell": "8861892e3dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W216",
+      "pm25_estimate": 39.5,
+      "candidates": [
+        {
+          "name": "industrial_1410389264",
+          "type": "industrial",
+          "distance_km": 0.64,
+          "wind_alignment": 0.89
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.94,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.54,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.58,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_1410389583",
+          "type": "industrial",
+          "distance_km": 1.17,
+          "wind_alignment": 0.9
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.13,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.14,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "KR Puram Phase I 20MLD Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.44,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.6,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": -546.9,
+          "city_percentile": 0
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 6,
+        "waste_burning": 0,
+        "traffic": 32
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 12
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "8861892eedfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W216",
+    "pm25_estimate": 39.5,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 1.096,
+      "construction": 0.54,
+      "waste_burning": 0.0,
+      "traffic": 0.975
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1410389264 is 0.64 km away, wind alignment 0.89.",
+    "evidence_factors": [
+      "industrial_1410389264 is 0.64 km away, wind alignment 0.89"
+    ],
+    "evidence": {
+      "cell": "8861892e3dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W216",
+      "pm25_estimate": 39.5,
+      "candidates": [
+        {
+          "name": "industrial_1410389264",
+          "type": "industrial",
+          "distance_km": 0.64,
+          "wind_alignment": 0.89
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.94,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.54,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.58,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_1410389583",
+          "type": "industrial",
+          "distance_km": 1.17,
+          "wind_alignment": 0.9
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.13,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.14,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "KR Puram Phase I 20MLD Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.44,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.6,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": -546.9,
+          "city_percentile": 0
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 6,
+        "waste_burning": 0,
+        "traffic": 32
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 12
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "8861892e17fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W216",
+    "pm25_estimate": 39.5,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 1.096,
+      "construction": 0.54,
+      "waste_burning": 0.0,
+      "traffic": 0.975
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1410389264 is 0.64 km away, wind alignment 0.89.",
+    "evidence_factors": [
+      "industrial_1410389264 is 0.64 km away, wind alignment 0.89"
+    ],
+    "evidence": {
+      "cell": "8861892e3dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W216",
+      "pm25_estimate": 39.5,
+      "candidates": [
+        {
+          "name": "industrial_1410389264",
+          "type": "industrial",
+          "distance_km": 0.64,
+          "wind_alignment": 0.89
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.94,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.54,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 0.58,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_1410389583",
+          "type": "industrial",
+          "distance_km": 1.17,
+          "wind_alignment": 0.9
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.13,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Old Madras Road",
+          "type": "traffic",
+          "distance_km": 1.14,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "KR Puram Phase I 20MLD Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.44,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 83.6,
+          "city_percentile": 91
+        },
+        "so2_col": {
+          "value": -546.9,
+          "city_percentile": 0
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 6,
+        "waste_burning": 0,
+        "traffic": 32
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 12
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "8860145a05fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W167",
+    "pm25_estimate": 35.6,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 0.976,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.804
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1203069041 is 0.57 km away, wind alignment 0.7; shallow boundary layer (440 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_1203069041 is 0.57 km away, wind alignment 0.7",
+      "shallow boundary layer (440 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860145a05fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W167",
+      "pm25_estimate": 35.6,
+      "candidates": [
+        {
+          "name": "industrial_1203069041",
+          "type": "industrial",
+          "distance_km": 0.57,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "Kempabudhi Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.15,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "TR Mills",
+          "type": "industrial",
+          "distance_km": 1.51,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 0.92,
+          "wind_alignment": 0.56
+        },
+        {
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 0.89,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 1.55,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 1.58,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "industrial_55684007",
+          "type": "industrial",
+          "distance_km": 1.05,
+          "wind_alignment": 0.56
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 111.0,
+          "city_percentile": 98
+        },
+        "so2_col": {
+          "value": 278.8,
+          "city_percentile": 95
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 55
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 12,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 7
+      },
+      "meteorology": {
+        "wind_from_deg": 54,
+        "wind_ms": 2.7,
+        "blh_m": 440,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 3
+    },
+    "explained_by": "rules",
+    "zone_id": "Z03"
+  },
+  {
+    "cell": "8860145a0dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W167",
+    "pm25_estimate": 35.6,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 0.976,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.804
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1203069041 is 0.57 km away, wind alignment 0.7; shallow boundary layer (440 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_1203069041 is 0.57 km away, wind alignment 0.7",
+      "shallow boundary layer (440 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860145a05fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W167",
+      "pm25_estimate": 35.6,
+      "candidates": [
+        {
+          "name": "industrial_1203069041",
+          "type": "industrial",
+          "distance_km": 0.57,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "Kempabudhi Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.15,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "TR Mills",
+          "type": "industrial",
+          "distance_km": 1.51,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 0.92,
+          "wind_alignment": 0.56
+        },
+        {
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 0.89,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 1.55,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 1.58,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "industrial_55684007",
+          "type": "industrial",
+          "distance_km": 1.05,
+          "wind_alignment": 0.56
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 111.0,
+          "city_percentile": 98
+        },
+        "so2_col": {
+          "value": 278.8,
+          "city_percentile": 95
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 55
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 12,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 7
+      },
+      "meteorology": {
+        "wind_from_deg": 54,
+        "wind_ms": 2.7,
+        "blh_m": 440,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 3
+    },
+    "explained_by": "rules",
+    "zone_id": "Z03"
+  },
+  {
+    "cell": "8860145a63fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W167",
+    "pm25_estimate": 35.6,
+    "primary_source": "industrial",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 0.976,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.804
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1203069041 is 0.57 km away, wind alignment 0.7; shallow boundary layer (440 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_1203069041 is 0.57 km away, wind alignment 0.7",
+      "shallow boundary layer (440 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860145a05fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W167",
+      "pm25_estimate": 35.6,
+      "candidates": [
+        {
+          "name": "industrial_1203069041",
+          "type": "industrial",
+          "distance_km": 0.57,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "Kempabudhi Sewage Treatment Planet",
+          "type": "industrial",
+          "distance_km": 1.15,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "TR Mills",
+          "type": "industrial",
+          "distance_km": 1.51,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 0.92,
+          "wind_alignment": 0.56
+        },
+        {
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 0.89,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 1.55,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 1.58,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "industrial_55684007",
+          "type": "industrial",
+          "distance_km": 1.05,
+          "wind_alignment": 0.56
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 111.0,
+          "city_percentile": 98
+        },
+        "so2_col": {
+          "value": 278.8,
+          "city_percentile": 95
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 55
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 12,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 7
+      },
+      "meteorology": {
+        "wind_from_deg": 54,
+        "wind_ms": 2.7,
+        "blh_m": 440,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 3
+    },
+    "explained_by": "rules",
+    "zone_id": "Z03"
+  },
+  {
+    "cell": "8860145841fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W231",
+    "pm25_estimate": 41.5,
+    "primary_source": "industrial",
+    "confidence": 0.44,
+    "scores": {
+      "industrial": 1.078,
+      "construction": 0.965,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1206777021 is 0.38 km away, wind alignment 0.76; shallow boundary layer (440 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_1206777021 is 0.38 km away, wind alignment 0.76",
+      "shallow boundary layer (440 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860145841fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W231",
+      "pm25_estimate": 41.5,
+      "candidates": [
+        {
+          "name": "industrial_1206777021",
+          "type": "industrial",
+          "distance_km": 0.38,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "construction_991531024",
+          "type": "construction",
+          "distance_km": 0.82,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "Birla Tisya (u/c)",
+          "type": "construction",
+          "distance_km": 0.86,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_1458729076",
+          "type": "industrial",
+          "distance_km": 1.97,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_1343404374",
+          "type": "industrial",
+          "distance_km": 1.61,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "Government Tool and Training Centre",
+          "type": "industrial",
+          "distance_km": 2.02,
+          "wind_alignment": 0.69
+        },
+        {
+          "name": "industrial_1343404375",
+          "type": "industrial",
+          "distance_km": 1.59,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "Karnataka Power Transmission Corporation",
+          "type": "industrial",
+          "distance_km": 2.43,
+          "wind_alignment": 0.76
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 111.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 15.1,
+          "city_percentile": 54
+        },
+        "aai": {
+          "value": -0.4,
+          "city_percentile": 57
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 2,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 54,
+        "wind_ms": 2.7,
+        "blh_m": 440,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 1
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "88601458a1fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.7,
+    "primary_source": "traffic",
+    "confidence": 0.59,
+    "scores": {
+      "industrial": 0.402,
+      "construction": 0.421,
+      "waste_burning": 0.0,
+      "traffic": 0.808
+    },
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. NICE Road is 1.68 km away, wind alignment 0.83; NO2 column at p98 citywide.",
+    "evidence_factors": [
+      "NICE Road is 1.68 km away, wind alignment 0.83",
+      "NO2 column at p98 citywide"
+    ],
+    "evidence": {
+      "cell": "88601458a1fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.7,
+      "candidates": [
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 1.68,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.03,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "Karivobanahalli Sewage Treatment Plant",
+          "type": "construction",
+          "distance_km": 1.77,
+          "wind_alignment": 0.85
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.13,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "industrial_1202361057",
+          "type": "industrial",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "industrial_1383925232",
+          "type": "industrial",
+          "distance_km": 2.57,
+          "wind_alignment": 0.81
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 3.03,
+          "wind_alignment": 0.82
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 107.2,
+          "city_percentile": 98
+        },
+        "so2_col": {
+          "value": -38.3,
+          "city_percentile": 39
+        },
+        "aai": {
+          "value": -0.6,
+          "city_percentile": 51
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 4
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 3
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "88601458a9fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.7,
+    "primary_source": "traffic",
+    "confidence": 0.59,
+    "scores": {
+      "industrial": 0.402,
+      "construction": 0.421,
+      "waste_burning": 0.0,
+      "traffic": 0.808
+    },
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. NICE Road is 1.68 km away, wind alignment 0.83; NO2 column at p98 citywide.",
+    "evidence_factors": [
+      "NICE Road is 1.68 km away, wind alignment 0.83",
+      "NO2 column at p98 citywide"
+    ],
+    "evidence": {
+      "cell": "88601458a1fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.7,
+      "candidates": [
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 1.68,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.03,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "Karivobanahalli Sewage Treatment Plant",
+          "type": "construction",
+          "distance_km": 1.77,
+          "wind_alignment": 0.85
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.13,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "industrial_1202361057",
+          "type": "industrial",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "industrial_1383925232",
+          "type": "industrial",
+          "distance_km": 2.57,
+          "wind_alignment": 0.81
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 3.03,
+          "wind_alignment": 0.82
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 107.2,
+          "city_percentile": 98
+        },
+        "so2_col": {
+          "value": -38.3,
+          "city_percentile": 39
+        },
+        "aai": {
+          "value": -0.6,
+          "city_percentile": 51
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 4
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 3
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "88601458adfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 44.7,
+    "primary_source": "traffic",
+    "confidence": 0.59,
+    "scores": {
+      "industrial": 0.402,
+      "construction": 0.421,
+      "waste_burning": 0.0,
+      "traffic": 0.808
+    },
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. NICE Road is 1.68 km away, wind alignment 0.83; NO2 column at p98 citywide.",
+    "evidence_factors": [
+      "NICE Road is 1.68 km away, wind alignment 0.83",
+      "NO2 column at p98 citywide"
+    ],
+    "evidence": {
+      "cell": "88601458a1fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.7,
+      "candidates": [
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 1.68,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.03,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "Karivobanahalli Sewage Treatment Plant",
+          "type": "construction",
+          "distance_km": 1.77,
+          "wind_alignment": 0.85
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.13,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "industrial_1202361057",
+          "type": "industrial",
+          "distance_km": 2.61,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "industrial_1383925232",
+          "type": "industrial",
+          "distance_km": 2.57,
+          "wind_alignment": 0.81
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 3.03,
+          "wind_alignment": 0.82
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 107.2,
+          "city_percentile": 98
+        },
+        "so2_col": {
+          "value": -38.3,
+          "city_percentile": 39
+        },
+        "aai": {
+          "value": -0.6,
+          "city_percentile": 51
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 4
+      },
+      "meteorology": {
+        "wind_from_deg": 62,
+        "wind_ms": 3.4,
+        "blh_m": 548,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 3
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  }
+]
