@@ -10,7 +10,7 @@ import os
 import urllib.request
 
 GEMINI_URL = ("https://generativelanguage.googleapis.com/v1beta/models/"
-              "gemini-2.0-flash:generateContent?key={key}")
+              "gemini-2.5-flash:generateContent?key={key}")
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL = "llama-3.3-70b-versatile"
 
