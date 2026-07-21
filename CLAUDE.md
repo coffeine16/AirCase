@@ -1,4 +1,4 @@
-# AQ Intelligence Platform
+# AirTrace
 
 AI-powered urban air quality intelligence: signal -> attribution -> action.
 From AQI dashboards to enforcement dispatch — names *who* is polluting,

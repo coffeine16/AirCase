@@ -3,14 +3,14 @@ import "./globals.css";
 import { CityProvider } from "@/lib/CityContext";
 
 export const metadata: Metadata = {
-  title: "AQ Intelligence Platform",
+  title: "AirTrace",
   description:
     "From AQI dashboards to enforcement dispatch — signal → attribution → action. " +
     "Names who is polluting, where, with what evidence, and what to do about it today.",
   keywords: ["air quality", "AQI", "pollution", "enforcement", "Delhi", "CAAQMS"],
-  authors: [{ name: "AQ Intelligence Team" }],
+  authors: [{ name: "AirTrace" }],
   openGraph: {
-    title: "AQ Intelligence Platform",
+    title: "AirTrace",
     description: "AI-powered urban air quality intelligence for Delhi",
     type: "website",
   },

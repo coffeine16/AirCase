@@ -1,6 +1,7 @@
-<h1 align="center">AQ Intelligence Platform</h1>
+<h1 align="center">AirTrace</h1>
 
 <p align="center">
+  <strong>Trace the source. Serve the notice.</strong><br/>
   <em>From AQI dashboards to enforcement dispatch — signal → attribution → action.</em>
 </p>
 

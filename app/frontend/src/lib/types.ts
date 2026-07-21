@@ -1,4 +1,4 @@
-/** TypeScript interfaces matching all JSON contracts from the AQ Intelligence Platform backend.
+/** TypeScript interfaces matching all JSON contracts from the AirTrace backend.
  * Aligned with data contracts defined in docs/architecture.md and agent outputs.
  */
 
