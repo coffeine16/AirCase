@@ -146,10 +146,17 @@ export default function AdminPage() {
   const panelOpen = panelPref ?? !isCompact;
   const togglePanel = () => setPanelPref(!panelOpen);
 
-  // On compact the sheet and the floating map controls fight for the same
-  // bottom strip. When the sheet is open the user is reading the queue, so the
-  // controls step aside rather than stacking three deep on top of it.
+  // On compact the sheet and the floating map controls fight for the same bottom
+  // strip. The layer/filter stack steps aside when the sheet is open — it is a
+  // tall panel and would stack three deep.
   const showMapControls = !(isCompact && panelOpen);
+
+  // The forecast slider is the EXCEPTION: it drives what the map is showing, so
+  // hiding it behind "collapse the queue first" made the map's own time control
+  // reachable only by a scroll-and-collapse nobody discovers. It stays mounted
+  // and rides above the sheet instead — sheet height when open, handle height
+  // when collapsed.
+  const sheetH = isCompact ? (panelOpen ? (isMobile ? "72vh" : "62vh") : "44px") : "0px";
 
   return (
     <div style={{ display: "flex", height: "100%", overflow: "hidden" }}>
@@ -218,21 +225,23 @@ export default function AdminPage() {
           </div>
         )}
 
-        {/* Forecast horizon — centred at the bottom, clearing the collapsed
-            sheet handle (44px) on compact. Hidden entirely while the sheet is
-            open: it would sit *under* an opaque panel and be untappable. */}
-        {showMapControls && (
-          <div style={{
-            position: "absolute",
-            bottom: isCompact ? 56 : 24, left: "50%",
-            transform: "translateX(-50%)",
-            zIndex: "var(--z-overlay)",
-            width: isCompact ? "calc(100% - 24px)" : "min(480px, 80%)",
-            transition: "bottom var(--transition-normal)",
-          }}>
-            <TimeSlider value={hourOffset} onChange={setHourOffset} />
-          </div>
-        )}
+        {/* Forecast horizon — always present on compact, sitting directly above
+            the sheet whatever height the sheet currently has. `fixed`, not
+            `absolute`, because the sheet is fixed to the viewport: positioning
+            this against the map wrapper instead would put it underneath an
+            opaque panel and make it untappable, which is what used to happen. */}
+        <div style={{
+          position: isCompact ? "fixed" : "absolute",
+          bottom: isCompact ? `calc(${sheetH} + 12px)` : 24,
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: "var(--z-panel)",
+          width: isCompact ? "calc(100% - 24px)" : "min(480px, 80%)",
+          transition: "bottom var(--transition-slow)",
+          pointerEvents: "auto",
+        }}>
+          <TimeSlider value={hourOffset} onChange={setHourOffset} />
+        </div>
 
         {/* The full-bleed map */}
         <MapContainer
@@ -260,7 +269,8 @@ export default function AdminPage() {
         // map (or the legend) bleed through its text.
         <div style={{
           position: "fixed", left: 0, right: 0, bottom: 0,
-          height: panelOpen ? (isMobile ? "72vh" : "62vh") : 44,
+          // Single source of truth: the slider positions itself against this.
+          height: sheetH,
           transition: "height var(--transition-slow)",
           background: "var(--bg-primary)",
           borderTop: "1px solid var(--border-default)",
