@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T07:51:25.977339+00:00",
+  "generated_at": "2026-07-22T13:16:30.001739+00:00",
   "response_time_claim": "Signal-to-memo is automated and deterministic: a cited enforcement memo and dispatch route are produced in seconds. The manual baseline — correlating a satellite signal to a served notice across agencies — is measured in weeks. This is the response-time reduction.",
   "effectiveness_claim": "NOT yet measured. Intervention effectiveness requires a real intervention between the frozen counterfactual and a realized outcome. The ledger freezes the counterfactual and awaits actioned outcomes from the inspector loop; it does not attribute natural change to itself.",
   "n_actions": 4,
@@ -7,22 +7,22 @@
   "counterfactual_horizon_h": 48,
   "entries": [
     {
-      "action_id": "A03",
-      "zone_id": "Z05",
+      "action_id": "A02",
+      "zone_id": "Z06",
       "ward_id": "W219",
       "ward_name": "SAMAYPUR BADLI",
       "source": "waste_burning",
       "eps": 80.8,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-07-22T07:48:49.677841+00:00",
+        "memo_drafted_at": "2026-07-22T13:11:12.905048+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 209.5,
-        "aqi_counterfactual": 369,
+        "pm25_counterfactual": 198.8,
+        "aqi_counterfactual": 361,
         "band_counterfactual": "Very Poor",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
@@ -31,22 +31,22 @@
       "status": "awaiting_outcome"
     },
     {
-      "action_id": "A02",
-      "zone_id": "Z02",
+      "action_id": "A03",
+      "zone_id": "Z04",
       "ward_id": "W110",
       "ward_name": "MADANPUR KHADAR",
       "source": "waste_burning",
-      "eps": 75.4,
+      "eps": 72.0,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-07-22T07:48:57.530460+00:00",
+        "memo_drafted_at": "2026-07-22T13:11:13.412857+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 207.1,
-        "aqi_counterfactual": 367,
+        "pm25_counterfactual": 194.7,
+        "aqi_counterfactual": 358,
         "band_counterfactual": "Very Poor",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
@@ -63,14 +63,14 @@
       "eps": 64.3,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-07-22T07:49:02.730060+00:00",
+        "memo_drafted_at": "2026-07-22T13:11:14.068518+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 215.8,
-        "aqi_counterfactual": 374,
+        "pm25_counterfactual": 193.4,
+        "aqi_counterfactual": 357,
         "band_counterfactual": "Very Poor",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
@@ -80,21 +80,21 @@
     },
     {
       "action_id": "A01",
-      "zone_id": "Z04",
+      "zone_id": "Z05",
       "ward_id": "W223",
       "ward_name": "KAPASHERA",
       "source": "traffic",
       "eps": 59.3,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-07-22T07:49:02.979399+00:00",
+        "memo_drafted_at": "2026-07-22T13:11:14.737456+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 215.1,
-        "aqi_counterfactual": 373,
+        "pm25_counterfactual": 198.6,
+        "aqi_counterfactual": 361,
         "band_counterfactual": "Very Poor",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },

@@ -98,6 +98,16 @@ ATTRIBUTABLE_KM = 0.5    # a candidate site this close is something to go inspec
 POINT_TRACER_Z = 2.0     # SO2 / aerosol index: emitted by point sources, not by roads
 ZONE_LINK_KM = 2.0       # hotspot cells this close belong to the same source zone
 
+# Hard cap on how wide a zone may get. A zone exists to be DISPATCHED to — one
+# inspector, one visit — so its size is bounded by what a team can cover, not by
+# how far a plume happens to reach. Without this, single-linkage chaining fused
+# real Chennai into 2 zones of 18.3 km and 11.1 km.
+#
+# 5 km is the bound Delhi's own zones already respect (2.5-5.2 km across 6 zones),
+# so it formalises a size the working case had reached on its own rather than
+# imposing a number picked to make Chennai look better.
+MAX_ZONE_KM = 5.0
+
 
 def _zone_scores(panel: pd.DataFrame, at: pd.Timestamp) -> pd.DataFrame:
     """Per-cell detection score per window: the stronger of two instruments.
@@ -223,12 +233,42 @@ def _reconcile_zones(hot: pd.DataFrame) -> pd.DataFrame:
         if ra != rb:
             parent[rb] = ra
 
+    # Single-linkage with a DIAMETER CAP. Plain single-linkage chains: A links to
+    # B, B to C, and the zone grows without limit as long as consecutive cells are
+    # within ZONE_LINK_KM of *each other*. On real Chennai that fused 157 cells
+    # into 2 zones spanning 18.3 km and 11.1 km — and an 18 km "inspection zone"
+    # is not a place you can send a van, which is the only thing a zone is for.
+    #
+    # So a merge is refused when it would make the zone wider than MAX_ZONE_KM.
+    # Pairs are considered nearest-first, so the tightest, most defensible links
+    # form before the budget is spent on a straggler.
+    members = {c: [c] for c in cells}          # root -> its cells, for the span test
+
+    def span_if_merged(ra: str, rb: str) -> float:
+        grp = members[ra] + members[rb]
+        return max(haversine_km(*centres[x], *centres[y])
+                   for i, x in enumerate(grp) for y in grp[i + 1:]) if len(grp) > 1 else 0.0
+
+    pairs = []
     for i, a in enumerate(cells):
         la, lo = centres[a]
         for b in cells[i + 1:]:
             lb, lob = centres[b]
-            if haversine_km(la, lo, lb, lob) <= ZONE_LINK_KM:
-                union(a, b)
+            d = haversine_km(la, lo, lb, lob)
+            if d <= ZONE_LINK_KM:
+                pairs.append((d, a, b))
+    pairs.sort()                                # nearest first
+
+    for _, a, b in pairs:
+        ra, rb = find(a), find(b)
+        if ra == rb:
+            continue
+        if span_if_merged(ra, rb) > MAX_ZONE_KM:
+            continue                            # would exceed a dispatchable area
+        merged = members[ra] + members[rb]
+        union(a, b)
+        root = find(a)
+        members[root] = merged                  # the surviving root owns the union
 
     hot["zone_id"] = [find(c) for c in hot.cell]
     zone_kind = (hot.assign(rank=hot.kind.map(_ZONE_RANK))

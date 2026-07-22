@@ -12,14 +12,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -119,7 +118,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da110e1fffff",
@@ -134,14 +133,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -241,7 +239,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da110e5fffff",
@@ -256,14 +254,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -363,7 +360,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da110e9fffff",
@@ -378,14 +375,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -485,7 +481,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da110edfffff",
@@ -500,14 +496,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -607,7 +602,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da111d3fffff",
@@ -622,14 +617,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -729,7 +723,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da111d1fffff",
@@ -744,14 +738,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -851,7 +844,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da111d9fffff",
@@ -866,14 +859,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -973,7 +965,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da111d7fffff",
@@ -988,14 +980,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -1095,7 +1086,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da11013fffff",
@@ -1110,14 +1101,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -1217,7 +1207,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da11033fffff",
@@ -1232,14 +1222,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -1339,7 +1328,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da1103bfffff",
@@ -1354,14 +1343,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -1461,7 +1449,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da11031fffff",
@@ -1476,14 +1464,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -1583,7 +1570,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da11037fffff",
@@ -1598,14 +1585,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -1705,7 +1691,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da11017fffff",
@@ -1720,14 +1706,13 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Traffic is identified as the most likely primary source, supported by its highest category score of 0.798. This is corroborated by the land use context showing a high presence of traffic (7) and a pollutant signature with elevated NO2 and AAI levels (both at the 67th city percentile), which are characteristic of vehicular emissions. Additionally, multiple nearby traffic sources exhibit strong wind alignment with the hotspot.",
+    "reason": "Traffic is the most likely primary source of this PM2.5 hotspot, as indicated by its highest deterministic category score of 0.798. This is further supported by the landuse context showing 7 traffic areas and the presence of multiple traffic candidate sources, some with high wind alignment (e.g., traffic_1429639987 at 0.77). The pollutant signature with elevated NO2 (67th percentile) and AAI (67th percentile) is consistent with vehicular emissions, and trapped air conditions likely contribute to the high PM2.5 estimate.",
     "evidence_factors": [
-      "Highest traffic category score",
-      "Elevated NO2 pollutant signature",
-      "Elevated AAI pollutant signature",
-      "High traffic land use context",
-      "Multiple nearby traffic candidates",
-      "Strong wind alignment from traffic sources",
+      "Highest traffic category score (0.798)",
+      "High traffic landuse context (7)",
+      "Multiple traffic candidate sources",
+      "Favorable wind alignment to traffic sources (e.g., 0.77)",
+      "Elevated NO2 (67th percentile) and AAI (67th percentile)",
       "Trapped air conditions"
     ],
     "evidence": {
@@ -1827,2506 +1812,7 @@
       "zone_cells": 15
     },
     "explained_by": "gemini",
-    "zone_id": "Z04"
-  },
-  {
-    "cell": "883da1046dfffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10733fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10703fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10723fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da1072bfffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10717fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10707fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10739fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da1073bfffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10731fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10715fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da1073dfffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10711fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10465fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da1071dfffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da1070bfffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10757fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10719fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10701fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10727fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "883da10721fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W110",
-    "pm25_estimate": 206.6,
-    "primary_source": "waste_burning",
-    "confidence": 0.52,
-    "scores": {
-      "industrial": 0.365,
-      "construction": 0.584,
-      "waste_burning": 1.238,
-      "traffic": 0.345
-    },
-    "reason": "Waste burning is identified as the most likely primary source due to its highest category score (1.238) among all candidates. This is supported by the presence of 2 hours of fire activity and meteorological conditions indicating trapped air, which would exacerbate the impact of any burning, contributing to the high PM2.5 estimate of 206.6.",
-    "evidence_factors": [
-      "Highest category score for waste burning",
-      "Presence of fire activity (2 fire hours)",
-      "Trapped air conditions",
-      "High PM2.5 estimate"
-    ],
-    "evidence": {
-      "cell": "883da1046dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 206.6,
-      "candidates": [
-        {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.63,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
-          "type": "industrial",
-          "distance_km": 2.73,
-          "wind_alignment": 0.84
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.41,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "DND-KMP Expressway",
-          "type": "traffic",
-          "distance_km": 2.37,
-          "wind_alignment": 0.52
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.31,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.47,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 4.48,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Okhla Estate Marg Flyover",
-          "type": "traffic",
-          "distance_km": 4.65,
-          "wind_alignment": 0.81
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 261.2,
-          "city_percentile": 96
-        },
-        "so2_col": {
-          "value": 51.5,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": 0.5,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 2,
-        "fire_hour_fraction": 0.0119,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 1,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 21
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z02"
+    "zone_id": "Z05"
   },
   {
     "cell": "883da18cd7fffff",
@@ -4341,14 +1827,10 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "The waste_burning category has the highest deterministic score of 3.45, indicating it as the most likely primary source. This is strongly supported by significant fire_activity, with 30 fire hours, and an elevated Aerosol Absorbing Index (AAI) at the 70th percentile, both consistent with burning. Additionally, the landuse_context shows a presence of waste_burning, and air_trapped meteorological conditions would concentrate these emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
     "evidence_factors": [
-      "waste_burning category score (3.45)",
-      "fire_activity (30 fire hours)",
-      "elevated AAI (70th percentile)",
-      "waste_burning landuse context (3)",
-      "air_trapped meteorology",
-      "high PM2.5 estimate (196.4)"
+      "satellite fire detections in 30 hours (18% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -4446,8 +1928,8 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "gemini",
-    "zone_id": "Z05"
+    "explained_by": "rules",
+    "zone_id": "Z06"
   },
   {
     "cell": "883da18c91fffff",
@@ -4462,14 +1944,10 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "The waste_burning category has the highest deterministic score of 3.45, indicating it as the most likely primary source. This is strongly supported by significant fire_activity, with 30 fire hours, and an elevated Aerosol Absorbing Index (AAI) at the 70th percentile, both consistent with burning. Additionally, the landuse_context shows a presence of waste_burning, and air_trapped meteorological conditions would concentrate these emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
     "evidence_factors": [
-      "waste_burning category score (3.45)",
-      "fire_activity (30 fire hours)",
-      "elevated AAI (70th percentile)",
-      "waste_burning landuse context (3)",
-      "air_trapped meteorology",
-      "high PM2.5 estimate (196.4)"
+      "satellite fire detections in 30 hours (18% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -4567,8 +2045,8 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "gemini",
-    "zone_id": "Z05"
+    "explained_by": "rules",
+    "zone_id": "Z06"
   },
   {
     "cell": "883da18c83fffff",
@@ -4583,14 +2061,10 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "The waste_burning category has the highest deterministic score of 3.45, indicating it as the most likely primary source. This is strongly supported by significant fire_activity, with 30 fire hours, and an elevated Aerosol Absorbing Index (AAI) at the 70th percentile, both consistent with burning. Additionally, the landuse_context shows a presence of waste_burning, and air_trapped meteorological conditions would concentrate these emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
     "evidence_factors": [
-      "waste_burning category score (3.45)",
-      "fire_activity (30 fire hours)",
-      "elevated AAI (70th percentile)",
-      "waste_burning landuse context (3)",
-      "air_trapped meteorology",
-      "high PM2.5 estimate (196.4)"
+      "satellite fire detections in 30 hours (18% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -4688,8 +2162,8 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "gemini",
-    "zone_id": "Z05"
+    "explained_by": "rules",
+    "zone_id": "Z06"
   },
   {
     "cell": "883da18c9dfffff",
@@ -4704,14 +2178,10 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "The waste_burning category has the highest deterministic score of 3.45, indicating it as the most likely primary source. This is strongly supported by significant fire_activity, with 30 fire hours, and an elevated Aerosol Absorbing Index (AAI) at the 70th percentile, both consistent with burning. Additionally, the landuse_context shows a presence of waste_burning, and air_trapped meteorological conditions would concentrate these emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
     "evidence_factors": [
-      "waste_burning category score (3.45)",
-      "fire_activity (30 fire hours)",
-      "elevated AAI (70th percentile)",
-      "waste_burning landuse context (3)",
-      "air_trapped meteorology",
-      "high PM2.5 estimate (196.4)"
+      "satellite fire detections in 30 hours (18% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -4809,8 +2279,8 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "gemini",
-    "zone_id": "Z05"
+    "explained_by": "rules",
+    "zone_id": "Z06"
   },
   {
     "cell": "883da18c8bfffff",
@@ -4825,14 +2295,10 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "The waste_burning category has the highest deterministic score of 3.45, indicating it as the most likely primary source. This is strongly supported by significant fire_activity, with 30 fire hours, and an elevated Aerosol Absorbing Index (AAI) at the 70th percentile, both consistent with burning. Additionally, the landuse_context shows a presence of waste_burning, and air_trapped meteorological conditions would concentrate these emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
     "evidence_factors": [
-      "waste_burning category score (3.45)",
-      "fire_activity (30 fire hours)",
-      "elevated AAI (70th percentile)",
-      "waste_burning landuse context (3)",
-      "air_trapped meteorology",
-      "high PM2.5 estimate (196.4)"
+      "satellite fire detections in 30 hours (18% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -4930,8 +2396,8 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "gemini",
-    "zone_id": "Z05"
+    "explained_by": "rules",
+    "zone_id": "Z06"
   },
   {
     "cell": "883da18c95fffff",
@@ -4946,14 +2412,10 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "The waste_burning category has the highest deterministic score of 3.45, indicating it as the most likely primary source. This is strongly supported by significant fire_activity, with 30 fire hours, and an elevated Aerosol Absorbing Index (AAI) at the 70th percentile, both consistent with burning. Additionally, the landuse_context shows a presence of waste_burning, and air_trapped meteorological conditions would concentrate these emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
     "evidence_factors": [
-      "waste_burning category score (3.45)",
-      "fire_activity (30 fire hours)",
-      "elevated AAI (70th percentile)",
-      "waste_burning landuse context (3)",
-      "air_trapped meteorology",
-      "high PM2.5 estimate (196.4)"
+      "satellite fire detections in 30 hours (18% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -5051,8 +2513,8 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "gemini",
-    "zone_id": "Z05"
+    "explained_by": "rules",
+    "zone_id": "Z06"
   },
   {
     "cell": "883da18c99fffff",
@@ -5067,14 +2529,10 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "The waste_burning category has the highest deterministic score of 3.45, indicating it as the most likely primary source. This is strongly supported by significant fire_activity, with 30 fire hours, and an elevated Aerosol Absorbing Index (AAI) at the 70th percentile, both consistent with burning. Additionally, the landuse_context shows a presence of waste_burning, and air_trapped meteorological conditions would concentrate these emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
     "evidence_factors": [
-      "waste_burning category score (3.45)",
-      "fire_activity (30 fire hours)",
-      "elevated AAI (70th percentile)",
-      "waste_burning landuse context (3)",
-      "air_trapped meteorology",
-      "high PM2.5 estimate (196.4)"
+      "satellite fire detections in 30 hours (18% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -5172,8 +2630,8 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "gemini",
-    "zone_id": "Z05"
+    "explained_by": "rules",
+    "zone_id": "Z06"
   },
   {
     "cell": "883da18cd3fffff",
@@ -5188,14 +2646,10 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "The waste_burning category has the highest deterministic score of 3.45, indicating it as the most likely primary source. This is strongly supported by significant fire_activity, with 30 fire hours, and an elevated Aerosol Absorbing Index (AAI) at the 70th percentile, both consistent with burning. Additionally, the landuse_context shows a presence of waste_burning, and air_trapped meteorological conditions would concentrate these emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
     "evidence_factors": [
-      "waste_burning category score (3.45)",
-      "fire_activity (30 fire hours)",
-      "elevated AAI (70th percentile)",
-      "waste_burning landuse context (3)",
-      "air_trapped meteorology",
-      "high PM2.5 estimate (196.4)"
+      "satellite fire detections in 30 hours (18% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -5293,8 +2747,8 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "gemini",
-    "zone_id": "Z05"
+    "explained_by": "rules",
+    "zone_id": "Z06"
   },
   {
     "cell": "883da18cd5fffff",
@@ -5309,14 +2763,10 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "The waste_burning category has the highest deterministic score of 3.45, indicating it as the most likely primary source. This is strongly supported by significant fire_activity, with 30 fire hours, and an elevated Aerosol Absorbing Index (AAI) at the 70th percentile, both consistent with burning. Additionally, the landuse_context shows a presence of waste_burning, and air_trapped meteorological conditions would concentrate these emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
     "evidence_factors": [
-      "waste_burning category score (3.45)",
-      "fire_activity (30 fire hours)",
-      "elevated AAI (70th percentile)",
-      "waste_burning landuse context (3)",
-      "air_trapped meteorology",
-      "high PM2.5 estimate (196.4)"
+      "satellite fire detections in 30 hours (18% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -5414,8 +2864,1880 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "gemini",
-    "zone_id": "Z05"
+    "explained_by": "rules",
+    "zone_id": "Z06"
+  },
+  {
+    "cell": "883da10733fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da10703fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da10723fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da1072bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da10707fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da10739fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da1073bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da10731fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da10715fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da1073dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da1071dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da1070bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da10757fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da10701fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da10727fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883da10721fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W110",
+    "pm25_estimate": 211.1,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.334,
+      "construction": 0.655,
+      "waste_burning": 1.238,
+      "traffic": 0.752
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (120 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883da10733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W110",
+      "pm25_estimate": 211.1,
+      "candidates": [
+        {
+          "name": "construction_1248051449",
+          "type": "construction",
+          "distance_km": 1.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.92,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "DND-KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.67,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "DND KMP Expressway",
+          "type": "traffic",
+          "distance_km": 1.69,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "type": "industrial",
+          "distance_km": 2.91,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 3.48,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 261.2,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 58.9,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.5,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 2,
+        "fire_hour_fraction": 0.0119,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 5
+      },
+      "meteorology": {
+        "wind_from_deg": 301,
+        "wind_ms": 1.2,
+        "blh_m": 120,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
   },
   {
     "cell": "883da11a97fffff",
@@ -5430,13 +4752,10 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Traffic is the most likely primary source, indicated by its highest category score of 0.303. Multiple traffic candidates, such as Mehrauli Gurgaon Road and Delhi-Gurugram Expressway, are within 2-3 km and exhibit high wind alignment (up to 0.97), suggesting their emissions are carried to the hotspot. Additionally, the pollutant signature shows a NO2 column value of 86.8, consistent with traffic-related pollution, and meteorological conditions indicate trapped air.",
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
     "evidence_factors": [
-      "Traffic category score (0.303)",
-      "Multiple traffic candidates (Mehrauli Gurgaon Road, Delhi-Gurugram Expressway)",
-      "High wind alignment for traffic candidates (up to 0.97)",
-      "NO2 column value (86.8)",
-      "Air trapped (true) and low boundary layer height (150m)"
+      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
+      "shallow boundary layer (150 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -5534,7 +4853,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -5550,13 +4869,10 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Traffic is the most likely primary source, indicated by its highest category score of 0.303. Multiple traffic candidates, such as Mehrauli Gurgaon Road and Delhi-Gurugram Expressway, are within 2-3 km and exhibit high wind alignment (up to 0.97), suggesting their emissions are carried to the hotspot. Additionally, the pollutant signature shows a NO2 column value of 86.8, consistent with traffic-related pollution, and meteorological conditions indicate trapped air.",
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
     "evidence_factors": [
-      "Traffic category score (0.303)",
-      "Multiple traffic candidates (Mehrauli Gurgaon Road, Delhi-Gurugram Expressway)",
-      "High wind alignment for traffic candidates (up to 0.97)",
-      "NO2 column value (86.8)",
-      "Air trapped (true) and low boundary layer height (150m)"
+      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
+      "shallow boundary layer (150 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -5654,7 +4970,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -5670,13 +4986,10 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Traffic is the most likely primary source, indicated by its highest category score of 0.303. Multiple traffic candidates, such as Mehrauli Gurgaon Road and Delhi-Gurugram Expressway, are within 2-3 km and exhibit high wind alignment (up to 0.97), suggesting their emissions are carried to the hotspot. Additionally, the pollutant signature shows a NO2 column value of 86.8, consistent with traffic-related pollution, and meteorological conditions indicate trapped air.",
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
     "evidence_factors": [
-      "Traffic category score (0.303)",
-      "Multiple traffic candidates (Mehrauli Gurgaon Road, Delhi-Gurugram Expressway)",
-      "High wind alignment for traffic candidates (up to 0.97)",
-      "NO2 column value (86.8)",
-      "Air trapped (true) and low boundary layer height (150m)"
+      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
+      "shallow boundary layer (150 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -5774,7 +5087,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -5790,13 +5103,10 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Traffic is the most likely primary source, indicated by its highest category score of 0.303. Multiple traffic candidates, such as Mehrauli Gurgaon Road and Delhi-Gurugram Expressway, are within 2-3 km and exhibit high wind alignment (up to 0.97), suggesting their emissions are carried to the hotspot. Additionally, the pollutant signature shows a NO2 column value of 86.8, consistent with traffic-related pollution, and meteorological conditions indicate trapped air.",
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
     "evidence_factors": [
-      "Traffic category score (0.303)",
-      "Multiple traffic candidates (Mehrauli Gurgaon Road, Delhi-Gurugram Expressway)",
-      "High wind alignment for traffic candidates (up to 0.97)",
-      "NO2 column value (86.8)",
-      "Air trapped (true) and low boundary layer height (150m)"
+      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
+      "shallow boundary layer (150 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -5894,7 +5204,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -5910,13 +5220,10 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Traffic is the most likely primary source, indicated by its highest category score of 0.303. Multiple traffic candidates, such as Mehrauli Gurgaon Road and Delhi-Gurugram Expressway, are within 2-3 km and exhibit high wind alignment (up to 0.97), suggesting their emissions are carried to the hotspot. Additionally, the pollutant signature shows a NO2 column value of 86.8, consistent with traffic-related pollution, and meteorological conditions indicate trapped air.",
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
     "evidence_factors": [
-      "Traffic category score (0.303)",
-      "Multiple traffic candidates (Mehrauli Gurgaon Road, Delhi-Gurugram Expressway)",
-      "High wind alignment for traffic candidates (up to 0.97)",
-      "NO2 column value (86.8)",
-      "Air trapped (true) and low boundary layer height (150m)"
+      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
+      "shallow boundary layer (150 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -6014,7 +5321,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -6030,13 +5337,10 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Traffic is the most likely primary source, indicated by its highest category score of 0.303. Multiple traffic candidates, such as Mehrauli Gurgaon Road and Delhi-Gurugram Expressway, are within 2-3 km and exhibit high wind alignment (up to 0.97), suggesting their emissions are carried to the hotspot. Additionally, the pollutant signature shows a NO2 column value of 86.8, consistent with traffic-related pollution, and meteorological conditions indicate trapped air.",
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
     "evidence_factors": [
-      "Traffic category score (0.303)",
-      "Multiple traffic candidates (Mehrauli Gurgaon Road, Delhi-Gurugram Expressway)",
-      "High wind alignment for traffic candidates (up to 0.97)",
-      "NO2 column value (86.8)",
-      "Air trapped (true) and low boundary layer height (150m)"
+      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
+      "shallow boundary layer (150 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -6134,7 +5438,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -6150,13 +5454,10 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Traffic is the most likely primary source, indicated by its highest category score of 0.303. Multiple traffic candidates, such as Mehrauli Gurgaon Road and Delhi-Gurugram Expressway, are within 2-3 km and exhibit high wind alignment (up to 0.97), suggesting their emissions are carried to the hotspot. Additionally, the pollutant signature shows a NO2 column value of 86.8, consistent with traffic-related pollution, and meteorological conditions indicate trapped air.",
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
     "evidence_factors": [
-      "Traffic category score (0.303)",
-      "Multiple traffic candidates (Mehrauli Gurgaon Road, Delhi-Gurugram Expressway)",
-      "High wind alignment for traffic candidates (up to 0.97)",
-      "NO2 column value (86.8)",
-      "Air trapped (true) and low boundary layer height (150m)"
+      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
+      "shallow boundary layer (150 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -6254,7 +5555,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -6270,13 +5571,10 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Traffic is the most likely primary source, indicated by its highest category score of 0.303. Multiple traffic candidates, such as Mehrauli Gurgaon Road and Delhi-Gurugram Expressway, are within 2-3 km and exhibit high wind alignment (up to 0.97), suggesting their emissions are carried to the hotspot. Additionally, the pollutant signature shows a NO2 column value of 86.8, consistent with traffic-related pollution, and meteorological conditions indicate trapped air.",
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
     "evidence_factors": [
-      "Traffic category score (0.303)",
-      "Multiple traffic candidates (Mehrauli Gurgaon Road, Delhi-Gurugram Expressway)",
-      "High wind alignment for traffic candidates (up to 0.97)",
-      "NO2 column value (86.8)",
-      "Air trapped (true) and low boundary layer height (150m)"
+      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
+      "shallow boundary layer (150 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -6374,7 +5672,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -6390,13 +5688,10 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Traffic is the most likely primary source, indicated by its highest category score of 0.303. Multiple traffic candidates, such as Mehrauli Gurgaon Road and Delhi-Gurugram Expressway, are within 2-3 km and exhibit high wind alignment (up to 0.97), suggesting their emissions are carried to the hotspot. Additionally, the pollutant signature shows a NO2 column value of 86.8, consistent with traffic-related pollution, and meteorological conditions indicate trapped air.",
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
     "evidence_factors": [
-      "Traffic category score (0.303)",
-      "Multiple traffic candidates (Mehrauli Gurgaon Road, Delhi-Gurugram Expressway)",
-      "High wind alignment for traffic candidates (up to 0.97)",
-      "NO2 column value (86.8)",
-      "Air trapped (true) and low boundary layer height (150m)"
+      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
+      "shallow boundary layer (150 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -6494,7 +5789,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -6510,13 +5805,10 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Traffic is the most likely primary source, indicated by its highest category score of 0.303. Multiple traffic candidates, such as Mehrauli Gurgaon Road and Delhi-Gurugram Expressway, are within 2-3 km and exhibit high wind alignment (up to 0.97), suggesting their emissions are carried to the hotspot. Additionally, the pollutant signature shows a NO2 column value of 86.8, consistent with traffic-related pollution, and meteorological conditions indicate trapped air.",
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
     "evidence_factors": [
-      "Traffic category score (0.303)",
-      "Multiple traffic candidates (Mehrauli Gurgaon Road, Delhi-Gurugram Expressway)",
-      "High wind alignment for traffic candidates (up to 0.97)",
-      "NO2 column value (86.8)",
-      "Air trapped (true) and low boundary layer height (150m)"
+      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
+      "shallow boundary layer (150 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -6614,7 +5906,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -6630,13 +5922,10 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Traffic is the most likely primary source, indicated by its highest category score of 0.303. Multiple traffic candidates, such as Mehrauli Gurgaon Road and Delhi-Gurugram Expressway, are within 2-3 km and exhibit high wind alignment (up to 0.97), suggesting their emissions are carried to the hotspot. Additionally, the pollutant signature shows a NO2 column value of 86.8, consistent with traffic-related pollution, and meteorological conditions indicate trapped air.",
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
     "evidence_factors": [
-      "Traffic category score (0.303)",
-      "Multiple traffic candidates (Mehrauli Gurgaon Road, Delhi-Gurugram Expressway)",
-      "High wind alignment for traffic candidates (up to 0.97)",
-      "NO2 column value (86.8)",
-      "Air trapped (true) and low boundary layer height (150m)"
+      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
+      "shallow boundary layer (150 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -6734,7 +6023,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -6750,13 +6039,10 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Traffic is the most likely primary source, indicated by its highest category score of 0.303. Multiple traffic candidates, such as Mehrauli Gurgaon Road and Delhi-Gurugram Expressway, are within 2-3 km and exhibit high wind alignment (up to 0.97), suggesting their emissions are carried to the hotspot. Additionally, the pollutant signature shows a NO2 column value of 86.8, consistent with traffic-related pollution, and meteorological conditions indicate trapped air.",
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
     "evidence_factors": [
-      "Traffic category score (0.303)",
-      "Multiple traffic candidates (Mehrauli Gurgaon Road, Delhi-Gurugram Expressway)",
-      "High wind alignment for traffic candidates (up to 0.97)",
-      "NO2 column value (86.8)",
-      "Air trapped (true) and low boundary layer height (150m)"
+      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
+      "shallow boundary layer (150 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -6854,7 +6140,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -6870,13 +6156,10 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Traffic is the most likely primary source, indicated by its highest category score of 0.303. Multiple traffic candidates, such as Mehrauli Gurgaon Road and Delhi-Gurugram Expressway, are within 2-3 km and exhibit high wind alignment (up to 0.97), suggesting their emissions are carried to the hotspot. Additionally, the pollutant signature shows a NO2 column value of 86.8, consistent with traffic-related pollution, and meteorological conditions indicate trapped air.",
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
     "evidence_factors": [
-      "Traffic category score (0.303)",
-      "Multiple traffic candidates (Mehrauli Gurgaon Road, Delhi-Gurugram Expressway)",
-      "High wind alignment for traffic candidates (up to 0.97)",
-      "NO2 column value (86.8)",
-      "Air trapped (true) and low boundary layer height (150m)"
+      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
+      "shallow boundary layer (150 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -6974,7 +6257,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   }
 ]
