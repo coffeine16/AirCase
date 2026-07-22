@@ -20,10 +20,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in DELHI CANTT CHARGE 2 is VERY POOR (AQI 342). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "DELHI CANTT CHARGE 2 की हवा बहुत खराब है (AQI 342)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air in DELHI CANTT CHARGE 2 is Very Poor (AQI 342). Long exposure can cause breathing illness. Please avoid heavy outdoor work, keep windows closed, and wear a mask if you go outside.",
+      "hi": "DELHI CANTT CHARGE 2 में हवा बहुत खराब है (AQI 342)। ज्यादा देर बाहर रहने से सांस की बीमारी हो सकती है। खिड़कियां बंद रखें, भारी काम से बचें और बाहर जाते समय मास्क पहनें।"
     },
-    "written_by": "rules",
+    "written_by": "gemini",
     "reviewed": {
       "en": true,
       "hi": true
@@ -59,10 +59,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in DELHI CANTT CHARGE 4 is VERY POOR (AQI 334). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "DELHI CANTT CHARGE 4 की हवा बहुत खराब है (AQI 334)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air in DELHI CANTT CHARGE 4 is Very Poor today (AQI 334). Long exposure can cause breathing illness. Avoid heavy outdoor work, keep windows closed, and wear a mask when going outside.",
+      "hi": "DELHI CANTT CHARGE 4 में हवा बहुत खराब है (AQI 334)। ज्यादा देर बाहर रहने से सांस की बीमारी हो सकती है। बाहर मेहनत से बचें, खिड़कियां बंद रखें और मास्क पहनें।"
     },
-    "written_by": "rules",
+    "written_by": "gemini",
     "reviewed": {
       "en": true,
       "hi": true
@@ -98,10 +98,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in DELHI CANTT CHARGE 6 is VERY POOR (AQI 354). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "DELHI CANTT CHARGE 6 की हवा बहुत खराब है (AQI 354)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in DELHI CANTT CHARGE 6 is Very Poor (AQI 354). Long outdoor stay can cause breathing illness. Please avoid heavy work outside, keep your windows closed, and wear a mask when going out.",
+      "hi": "DELHI CANTT CHARGE 6 में हवा बहुत खराब है (AQI 354)। बाहर ज़्यादा रहने से सांस की तकलीफ हो सकती है। बाहर मेहनत का काम न करें, खिड़कियां बंद रखें और मास्क पहनकर ही निकलें।"
     },
-    "written_by": "rules",
+    "written_by": "gemini",
     "reviewed": {
       "en": true,
       "hi": true
@@ -5230,10 +5230,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in DELHI CANTT CHARGE 5 is VERY POOR (AQI 329). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "DELHI CANTT CHARGE 5 की हवा बहुत खराब है (AQI 329)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in DELHI CANTT CHARGE 5 is Very Poor (AQI 329). Breathing this air for long can cause lung illness. Please stay indoors, close windows, avoid hard work outside, and wear a mask if you go out.",
+      "hi": "DELHI CANTT CHARGE 5 में हवा बहुत खराब है (AQI 329)। ज़्यादा देर बाहर रहने से साँस की बीमारी हो सकती है। खिड़कियाँ बंद रखें, बाहर मेहनत न करें और बाहर जाने पर मास्क ज़रूर पहनें।"
     },
-    "written_by": "rules",
+    "written_by": "gemini",
     "reviewed": {
       "en": true,
       "hi": true
@@ -6525,10 +6525,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in DELHI CANTT CHARGE 7 is VERY POOR (AQI 344). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "DELHI CANTT CHARGE 7 की हवा बहुत खराब है (AQI 344)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in DELHI CANTT CHARGE 7 is Very Poor (AQI 344). Staying outside too long can cause breathing illness. Please avoid heavy work outside, keep windows closed, and wear a mask if you step out.",
+      "hi": "DELHI CANTT CHARGE 7 में हवा बहुत खराब है (AQI 344)। ज़्यादा देर बाहर रहने से सांस की बीमारी हो सकती है। बाहर मेहनत का काम न करें, खिड़कियां बंद रखें और मास्क ज़रूर पहनें।"
     },
-    "written_by": "rules",
+    "written_by": "gemini",
     "reviewed": {
       "en": true,
       "hi": true
@@ -6560,10 +6560,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in DELHI CANTT CHARGE 8 is VERY POOR (AQI 332). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "DELHI CANTT CHARGE 8 की हवा बहुत खराब है (AQI 332)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in DELHI CANTT CHARGE 8 is Very Poor today (AQI 332). Long exposure can cause breathing illness. Please avoid heavy work outside, keep your windows closed, and wear a mask if going out.",
+      "hi": "DELHI CANTT CHARGE 8 की हवा आज बहुत खराब है (AQI 332)। ज्यादा देर बाहर रहने से सांस की बीमारी हो सकती है। खिड़कियां बंद रखें, बाहर मेहनत न करें और मास्क जरूर पहनें।"
     },
-    "written_by": "rules",
+    "written_by": "gemini",
     "reviewed": {
       "en": true,
       "hi": true
@@ -9220,10 +9220,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in DELHI CANTT CHARGE 1 is POOR (AQI 290). Most people may feel breathing discomfort on prolonged exposure. Reduce outdoor activity.",
-      "hi": "DELHI CANTT CHARGE 1 की हवा खराब है (AQI 290)। ज़्यादा देर बाहर रहने पर साँस लेने में दिक्कत हो सकती है। बाहर कम निकलें।"
+      "en": "The air quality in DELHI CANTT CHARGE 1 is Poor today with an AQI of 290. Staying outside for a long time can cause breathing discomfort for most people. Please reduce your outdoor activity to stay safe.",
+      "hi": "DELHI CANTT CHARGE 1 में आज हवा खराब है और AQI 290 है। लंबे समय तक बाहर रहने से ज्यादातर लोगों को सांस लेने में तकलीफ हो सकती है। कृपया बाहर कम से कम समय बिताएं।"
     },
-    "written_by": "rules",
+    "written_by": "gemini",
     "reviewed": {
       "en": true,
       "hi": true

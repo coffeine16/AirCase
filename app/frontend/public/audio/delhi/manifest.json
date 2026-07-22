@@ -4,9 +4,9 @@
     "lang": "en",
     "path": "audio/W002_en.mp3",
     "voice": "en-IN-Wavenet-A",
-    "chars": 125,
-    "bytes": 89664,
-    "text_hash": "207941f0227e3edf6b18ec26ac1315db0ba95057d9b6b9374c002876838a8baf",
+    "chars": 183,
+    "bytes": 119040,
+    "text_hash": "663f671c579e688f612addd47d35e7889848b803e7b0be02a359e66395aeed0b",
     "text_verification": "cpcb_official"
   },
   {
@@ -14,9 +14,9 @@
     "lang": "hi",
     "path": "audio/W002_hi.mp3",
     "voice": "hi-IN-Wavenet-A",
-    "chars": 123,
-    "bytes": 92160,
-    "text_hash": "81f14ccbfa3ef0df24a51b77120de7f78cb7ab37b158a034389346b09569b001",
+    "chars": 170,
+    "bytes": 118656,
+    "text_hash": "f36929cd94cd3487d6558576d3644dfcbee06c0901563b12567ef7256aebea5d",
     "text_verification": "native_speaker"
   },
   {
@@ -24,9 +24,9 @@
     "lang": "en",
     "path": "audio/W003_en.mp3",
     "voice": "en-IN-Wavenet-A",
-    "chars": 125,
-    "bytes": 91200,
-    "text_hash": "8a990dc6e4a86cb4824e17028f69e3ba40233dacff557592ab13ce0a5fad1f82",
+    "chars": 183,
+    "bytes": 120000,
+    "text_hash": "8380978caa69c7c3dbe9d1b50b85cfb693cf26e63429d91fdbd6f519b97a8a75",
     "text_verification": "cpcb_official"
   },
   {
@@ -34,9 +34,9 @@
     "lang": "hi",
     "path": "audio/W003_hi.mp3",
     "voice": "hi-IN-Wavenet-A",
-    "chars": 123,
-    "bytes": 93312,
-    "text_hash": "8430700fc362ae5b34ccc8dc10650360275a436a1a5ef96dcbea160a16ef5be5",
+    "chars": 158,
+    "bytes": 109440,
+    "text_hash": "d951dd7a3e622fcf3fba80e0aab497e7d2b5e6786db3f8c5dbe115126ee5f4c5",
     "text_verification": "native_speaker"
   },
   {
@@ -44,9 +44,9 @@
     "lang": "en",
     "path": "audio/W005_en.mp3",
     "voice": "en-IN-Wavenet-A",
-    "chars": 125,
-    "bytes": 91200,
-    "text_hash": "178e5885c25a9d4b26884233a315df843e6843467cb71f78c21f07d1d3fedbb3",
+    "chars": 197,
+    "bytes": 124992,
+    "text_hash": "6c6639f183e6232a3efb66af9d6c814c53c1a4bc93d978e8afe3a5ac6fb9f864",
     "text_verification": "cpcb_official"
   },
   {
@@ -54,9 +54,9 @@
     "lang": "hi",
     "path": "audio/W005_hi.mp3",
     "voice": "hi-IN-Wavenet-A",
-    "chars": 123,
-    "bytes": 93504,
-    "text_hash": "127909b0a49c2e5be31f9c9f0dd1756ecf87cc28055d5e645aa6a80652baca2e",
+    "chars": 170,
+    "bytes": 117120,
+    "text_hash": "24e3f6f298d2c9216011ce0553a24d16484b8ca9f2c4ee06d7b26e257ebc848d",
     "text_verification": "native_speaker"
   },
   {

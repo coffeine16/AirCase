@@ -5,7 +5,7 @@
     "zone_id": "Z00",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-07-22T14:10:59.253101+00:00",
+    "issued_at": "2026-07-22T14:30:38.824107+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -149,7 +149,7 @@
     "zone_id": "Z01",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-07-22T14:10:59.253192+00:00",
+    "issued_at": "2026-07-22T14:30:38.824237+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -293,7 +293,7 @@
     "zone_id": "Z05",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-07-22T14:10:59.253236+00:00",
+    "issued_at": "2026-07-22T14:30:38.824325+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -437,7 +437,7 @@
     "zone_id": "Z06",
     "ward_id": "W216",
     "ward_name": "K R Puram",
-    "issued_at": "2026-07-22T14:10:59.253270+00:00",
+    "issued_at": "2026-07-22T14:30:38.824399+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -581,7 +581,7 @@
     "zone_id": "Z04",
     "ward_id": "W167",
     "ward_name": "Avalahalli",
-    "issued_at": "2026-07-22T14:10:59.253304+00:00",
+    "issued_at": "2026-07-22T14:30:38.824483+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -727,7 +727,7 @@
     "zone_id": "Z02",
     "ward_id": "W231",
     "ward_name": "Govindaraja Nagar",
-    "issued_at": "2026-07-22T14:10:59.253334+00:00",
+    "issued_at": "2026-07-22T14:30:38.824560+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -873,7 +873,7 @@
     "zone_id": "Z03",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-07-22T14:10:59.253362+00:00",
+    "issued_at": "2026-07-22T14:30:38.824632+00:00",
     "status": "draft",
     "situation": {
       "source": "traffic",

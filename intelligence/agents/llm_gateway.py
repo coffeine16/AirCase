@@ -9,8 +9,20 @@ import json
 import os
 import urllib.request
 
+# Gemini models to try IN ORDER. Not a preference list — a resilience one.
+# Measured on our own key: 2.5-flash returns 429 (free-tier daily quota spent),
+# 3.5-flash returned 503 (model busy), 3.6-flash answered in 2.7s. Any single
+# model name is therefore a single point of failure, and pinning one is how we
+# spent a day thinking the key was broken when the quota was simply gone.
+#
+# Override with GEMINI_MODEL to pin one deliberately.
+GEMINI_MODELS = [
+    m.strip() for m in os.environ.get(
+        "GEMINI_MODEL", "gemini-3.6-flash,gemini-2.5-flash,gemini-flash-latest"
+    ).split(",") if m.strip()
+]
 GEMINI_URL = ("https://generativelanguage.googleapis.com/v1beta/models/"
-              "gemini-2.5-flash:generateContent?key={key}")
+              "{model}:generateContent?key={key}")
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL = "llama-3.3-70b-versatile"
 
@@ -74,16 +86,23 @@ def _parse_json(text: str) -> dict | None:
 def complete_json(prompt: str) -> tuple[dict | None, str]:
     """Returns (parsed_json_or_None, provider_used)."""
     if (key := os.environ.get("GEMINI_API_KEY")) and not _open("gemini"):
-        try:
-            out = _post(GEMINI_URL.format(key=key), {
-                "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"},
-            }, {})
-            text = out["candidates"][0]["content"]["parts"][0]["text"]
-            if parsed := _parse_json(text):
-                return parsed, "gemini"
-        except Exception as e:
-            _trip("gemini", e)
+        # Walk the model list; a 429 or 503 on one is not a failure of Gemini.
+        # Only when every model is exhausted does the circuit take a strike.
+        last: Exception | None = None
+        for model in GEMINI_MODELS:
+            try:
+                out = _post(GEMINI_URL.format(model=model, key=key), {
+                    "contents": [{"parts": [{"text": prompt}]}],
+                    "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"},
+                }, {})
+                text = out["candidates"][0]["content"]["parts"][0]["text"]
+                if parsed := _parse_json(text):
+                    _fails.pop("gemini", None)          # a success clears the strikes
+                    return parsed, "gemini"
+            except Exception as e:  # noqa: BLE001 — try the next model
+                last = e
+        if last is not None:
+            _trip("gemini", last)
     if (key := os.environ.get("GROQ_API_KEY")) and not _open("groq"):
         try:
             out = _post(GROQ_URL, {

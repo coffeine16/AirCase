@@ -12,10 +12,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -113,7 +115,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -129,10 +131,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -230,7 +234,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -246,10 +250,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -347,7 +353,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -363,10 +369,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -464,7 +472,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -480,10 +488,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -581,7 +591,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -597,10 +607,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -698,7 +710,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -714,10 +726,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -815,7 +829,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -831,10 +845,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -932,7 +948,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -948,10 +964,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -1049,7 +1067,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -1065,10 +1083,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -1166,7 +1186,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -1182,10 +1202,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -1283,7 +1305,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -1299,10 +1321,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -1400,7 +1424,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -1416,10 +1440,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -1517,7 +1543,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -1533,10 +1559,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -1634,7 +1662,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -1650,10 +1678,12 @@
       "waste_burning": 0.0,
       "traffic": 0.798
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. traffic_25524703 is 1.31 km away, wind alignment 0.67; shallow boundary layer (130 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest deterministic score of 0.798. This is corroborated by the landuse context featuring 7 traffic points and an elevated NO2 column value of 117.6 (67th city percentile), which aligns with vehicular emissions. Furthermore, several traffic candidates are located in close proximity, including one just 0.74 km away.",
     "evidence_factors": [
-      "traffic_25524703 is 1.31 km away, wind alignment 0.67",
-      "shallow boundary layer (130 m) trapping emissions"
+      "Highest deterministic category score of 0.798",
+      "Landuse context with 7 traffic sources",
+      "Elevated NO2 column value of 117.6 (67th city percentile)",
+      "Multiple traffic candidates within 1 km"
     ],
     "evidence": {
       "cell": "883da111dbfffff",
@@ -1751,7 +1781,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -1767,10 +1797,12 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source based on the highest deterministic category score of 3.45. This is supported by fire activity metrics showing 30 fire hours and an Absorbing Aerosol Index (AAI) reaching the 70th city percentile. Stagnant atmospheric conditions, characterized by trapped air and a low boundary layer height of 120 meters, further exacerbated the PM2.5 elevation to 196.4.",
     "evidence_factors": [
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 3.45 for waste burning",
+      "30 fire hours (0.1786 hour fraction)",
+      "AAI at the 70th city percentile",
+      "Trapped air with low boundary layer height of 120m"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -1868,7 +1900,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -1884,10 +1916,12 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source based on the highest deterministic category score of 3.45. This is supported by fire activity metrics showing 30 fire hours and an Absorbing Aerosol Index (AAI) reaching the 70th city percentile. Stagnant atmospheric conditions, characterized by trapped air and a low boundary layer height of 120 meters, further exacerbated the PM2.5 elevation to 196.4.",
     "evidence_factors": [
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 3.45 for waste burning",
+      "30 fire hours (0.1786 hour fraction)",
+      "AAI at the 70th city percentile",
+      "Trapped air with low boundary layer height of 120m"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -1985,7 +2019,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2001,10 +2035,12 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source based on the highest deterministic category score of 3.45. This is supported by fire activity metrics showing 30 fire hours and an Absorbing Aerosol Index (AAI) reaching the 70th city percentile. Stagnant atmospheric conditions, characterized by trapped air and a low boundary layer height of 120 meters, further exacerbated the PM2.5 elevation to 196.4.",
     "evidence_factors": [
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 3.45 for waste burning",
+      "30 fire hours (0.1786 hour fraction)",
+      "AAI at the 70th city percentile",
+      "Trapped air with low boundary layer height of 120m"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -2102,7 +2138,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2118,10 +2154,12 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source based on the highest deterministic category score of 3.45. This is supported by fire activity metrics showing 30 fire hours and an Absorbing Aerosol Index (AAI) reaching the 70th city percentile. Stagnant atmospheric conditions, characterized by trapped air and a low boundary layer height of 120 meters, further exacerbated the PM2.5 elevation to 196.4.",
     "evidence_factors": [
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 3.45 for waste burning",
+      "30 fire hours (0.1786 hour fraction)",
+      "AAI at the 70th city percentile",
+      "Trapped air with low boundary layer height of 120m"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -2219,7 +2257,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2235,10 +2273,12 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source based on the highest deterministic category score of 3.45. This is supported by fire activity metrics showing 30 fire hours and an Absorbing Aerosol Index (AAI) reaching the 70th city percentile. Stagnant atmospheric conditions, characterized by trapped air and a low boundary layer height of 120 meters, further exacerbated the PM2.5 elevation to 196.4.",
     "evidence_factors": [
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 3.45 for waste burning",
+      "30 fire hours (0.1786 hour fraction)",
+      "AAI at the 70th city percentile",
+      "Trapped air with low boundary layer height of 120m"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -2336,7 +2376,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2352,10 +2392,12 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source based on the highest deterministic category score of 3.45. This is supported by fire activity metrics showing 30 fire hours and an Absorbing Aerosol Index (AAI) reaching the 70th city percentile. Stagnant atmospheric conditions, characterized by trapped air and a low boundary layer height of 120 meters, further exacerbated the PM2.5 elevation to 196.4.",
     "evidence_factors": [
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 3.45 for waste burning",
+      "30 fire hours (0.1786 hour fraction)",
+      "AAI at the 70th city percentile",
+      "Trapped air with low boundary layer height of 120m"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -2453,7 +2495,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2469,10 +2511,12 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source based on the highest deterministic category score of 3.45. This is supported by fire activity metrics showing 30 fire hours and an Absorbing Aerosol Index (AAI) reaching the 70th city percentile. Stagnant atmospheric conditions, characterized by trapped air and a low boundary layer height of 120 meters, further exacerbated the PM2.5 elevation to 196.4.",
     "evidence_factors": [
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 3.45 for waste burning",
+      "30 fire hours (0.1786 hour fraction)",
+      "AAI at the 70th city percentile",
+      "Trapped air with low boundary layer height of 120m"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -2570,7 +2614,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2586,10 +2630,12 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source based on the highest deterministic category score of 3.45. This is supported by fire activity metrics showing 30 fire hours and an Absorbing Aerosol Index (AAI) reaching the 70th city percentile. Stagnant atmospheric conditions, characterized by trapped air and a low boundary layer height of 120 meters, further exacerbated the PM2.5 elevation to 196.4.",
     "evidence_factors": [
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 3.45 for waste burning",
+      "30 fire hours (0.1786 hour fraction)",
+      "AAI at the 70th city percentile",
+      "Trapped air with low boundary layer height of 120m"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -2687,7 +2733,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2703,10 +2749,12 @@
       "waste_burning": 3.45,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 30 hours (18% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source based on the highest deterministic category score of 3.45. This is supported by fire activity metrics showing 30 fire hours and an Absorbing Aerosol Index (AAI) reaching the 70th city percentile. Stagnant atmospheric conditions, characterized by trapped air and a low boundary layer height of 120 meters, further exacerbated the PM2.5 elevation to 196.4.",
     "evidence_factors": [
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 3.45 for waste burning",
+      "30 fire hours (0.1786 hour fraction)",
+      "AAI at the 70th city percentile",
+      "Trapped air with low boundary layer height of 120m"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -2804,7 +2852,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2820,10 +2868,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -2921,7 +2971,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -2937,10 +2987,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -3038,7 +3090,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3054,10 +3106,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -3155,7 +3209,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3171,10 +3225,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -3272,7 +3328,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3288,10 +3344,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -3389,7 +3447,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3405,10 +3463,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -3506,7 +3566,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3522,10 +3582,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -3623,7 +3685,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3639,10 +3701,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -3740,7 +3804,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3756,10 +3820,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -3857,7 +3923,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3873,10 +3939,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -3974,7 +4042,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3990,10 +4058,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -4091,7 +4161,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4107,10 +4177,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -4208,7 +4280,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4224,10 +4296,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -4325,7 +4399,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4341,10 +4415,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -4442,7 +4518,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4458,10 +4534,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -4559,7 +4637,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4575,10 +4653,12 @@
       "waste_burning": 1.238,
       "traffic": 0.752
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (120 m) trapping emissions.",
+    "reason": "Waste burning is identified as the most likely primary source based on its leading deterministic category score of 1.238. The hotspot is characterized by severe particulate accumulation (PM2.5 of 211.1) under trapped atmospheric conditions with a very low boundary layer height of 120 m and light winds of 1.2 m/s. Additionally, an exceptionally high NO2 column density at the 96th city percentile indicates strong local combustion activity.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (120 m) trapping emissions"
+      "Highest deterministic score of 1.238 for waste burning",
+      "Elevated PM2.5 estimate of 211.1 with trapped air",
+      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
+      "NO2 concentration at the 96th city percentile"
     ],
     "evidence": {
       "cell": "883da10733fffff",
@@ -4676,7 +4756,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4692,10 +4772,11 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest category score of 0.303, driven by multiple nearby traffic segments including Mehrauli Gurgaon Road and Delhi-Gurugram Expressway with high wind alignment up to 0.97. Stagnant nocturnal meteorology at hour 23, characterized by a low boundary layer height of 150 meters, wind speed of 1.7 m/s, and trapped air, caused vehicular emissions to accumulate locally. Additionally, fire activity and waste burning were absent, while construction and industrial scores were lower.",
     "evidence_factors": [
-      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
-      "shallow boundary layer (150 m) trapping emissions"
+      "Highest deterministic score for traffic (0.303)",
+      "Multiple traffic candidates with strong wind alignment (up to 0.97)",
+      "Low boundary layer height (150m) and trapped air condition at night"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -4793,7 +4874,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -4809,10 +4890,11 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest category score of 0.303, driven by multiple nearby traffic segments including Mehrauli Gurgaon Road and Delhi-Gurugram Expressway with high wind alignment up to 0.97. Stagnant nocturnal meteorology at hour 23, characterized by a low boundary layer height of 150 meters, wind speed of 1.7 m/s, and trapped air, caused vehicular emissions to accumulate locally. Additionally, fire activity and waste burning were absent, while construction and industrial scores were lower.",
     "evidence_factors": [
-      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
-      "shallow boundary layer (150 m) trapping emissions"
+      "Highest deterministic score for traffic (0.303)",
+      "Multiple traffic candidates with strong wind alignment (up to 0.97)",
+      "Low boundary layer height (150m) and trapped air condition at night"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -4910,7 +4992,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -4926,10 +5008,11 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest category score of 0.303, driven by multiple nearby traffic segments including Mehrauli Gurgaon Road and Delhi-Gurugram Expressway with high wind alignment up to 0.97. Stagnant nocturnal meteorology at hour 23, characterized by a low boundary layer height of 150 meters, wind speed of 1.7 m/s, and trapped air, caused vehicular emissions to accumulate locally. Additionally, fire activity and waste burning were absent, while construction and industrial scores were lower.",
     "evidence_factors": [
-      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
-      "shallow boundary layer (150 m) trapping emissions"
+      "Highest deterministic score for traffic (0.303)",
+      "Multiple traffic candidates with strong wind alignment (up to 0.97)",
+      "Low boundary layer height (150m) and trapped air condition at night"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -5027,7 +5110,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5043,10 +5126,11 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest category score of 0.303, driven by multiple nearby traffic segments including Mehrauli Gurgaon Road and Delhi-Gurugram Expressway with high wind alignment up to 0.97. Stagnant nocturnal meteorology at hour 23, characterized by a low boundary layer height of 150 meters, wind speed of 1.7 m/s, and trapped air, caused vehicular emissions to accumulate locally. Additionally, fire activity and waste burning were absent, while construction and industrial scores were lower.",
     "evidence_factors": [
-      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
-      "shallow boundary layer (150 m) trapping emissions"
+      "Highest deterministic score for traffic (0.303)",
+      "Multiple traffic candidates with strong wind alignment (up to 0.97)",
+      "Low boundary layer height (150m) and trapped air condition at night"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -5144,7 +5228,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5160,10 +5244,11 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest category score of 0.303, driven by multiple nearby traffic segments including Mehrauli Gurgaon Road and Delhi-Gurugram Expressway with high wind alignment up to 0.97. Stagnant nocturnal meteorology at hour 23, characterized by a low boundary layer height of 150 meters, wind speed of 1.7 m/s, and trapped air, caused vehicular emissions to accumulate locally. Additionally, fire activity and waste burning were absent, while construction and industrial scores were lower.",
     "evidence_factors": [
-      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
-      "shallow boundary layer (150 m) trapping emissions"
+      "Highest deterministic score for traffic (0.303)",
+      "Multiple traffic candidates with strong wind alignment (up to 0.97)",
+      "Low boundary layer height (150m) and trapped air condition at night"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -5261,7 +5346,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5277,10 +5362,11 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest category score of 0.303, driven by multiple nearby traffic segments including Mehrauli Gurgaon Road and Delhi-Gurugram Expressway with high wind alignment up to 0.97. Stagnant nocturnal meteorology at hour 23, characterized by a low boundary layer height of 150 meters, wind speed of 1.7 m/s, and trapped air, caused vehicular emissions to accumulate locally. Additionally, fire activity and waste burning were absent, while construction and industrial scores were lower.",
     "evidence_factors": [
-      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
-      "shallow boundary layer (150 m) trapping emissions"
+      "Highest deterministic score for traffic (0.303)",
+      "Multiple traffic candidates with strong wind alignment (up to 0.97)",
+      "Low boundary layer height (150m) and trapped air condition at night"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -5378,7 +5464,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5394,10 +5480,11 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest category score of 0.303, driven by multiple nearby traffic segments including Mehrauli Gurgaon Road and Delhi-Gurugram Expressway with high wind alignment up to 0.97. Stagnant nocturnal meteorology at hour 23, characterized by a low boundary layer height of 150 meters, wind speed of 1.7 m/s, and trapped air, caused vehicular emissions to accumulate locally. Additionally, fire activity and waste burning were absent, while construction and industrial scores were lower.",
     "evidence_factors": [
-      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
-      "shallow boundary layer (150 m) trapping emissions"
+      "Highest deterministic score for traffic (0.303)",
+      "Multiple traffic candidates with strong wind alignment (up to 0.97)",
+      "Low boundary layer height (150m) and trapped air condition at night"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -5495,7 +5582,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5511,10 +5598,11 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest category score of 0.303, driven by multiple nearby traffic segments including Mehrauli Gurgaon Road and Delhi-Gurugram Expressway with high wind alignment up to 0.97. Stagnant nocturnal meteorology at hour 23, characterized by a low boundary layer height of 150 meters, wind speed of 1.7 m/s, and trapped air, caused vehicular emissions to accumulate locally. Additionally, fire activity and waste burning were absent, while construction and industrial scores were lower.",
     "evidence_factors": [
-      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
-      "shallow boundary layer (150 m) trapping emissions"
+      "Highest deterministic score for traffic (0.303)",
+      "Multiple traffic candidates with strong wind alignment (up to 0.97)",
+      "Low boundary layer height (150m) and trapped air condition at night"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -5612,7 +5700,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5628,10 +5716,11 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest category score of 0.303, driven by multiple nearby traffic segments including Mehrauli Gurgaon Road and Delhi-Gurugram Expressway with high wind alignment up to 0.97. Stagnant nocturnal meteorology at hour 23, characterized by a low boundary layer height of 150 meters, wind speed of 1.7 m/s, and trapped air, caused vehicular emissions to accumulate locally. Additionally, fire activity and waste burning were absent, while construction and industrial scores were lower.",
     "evidence_factors": [
-      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
-      "shallow boundary layer (150 m) trapping emissions"
+      "Highest deterministic score for traffic (0.303)",
+      "Multiple traffic candidates with strong wind alignment (up to 0.97)",
+      "Low boundary layer height (150m) and trapped air condition at night"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -5729,7 +5818,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5745,10 +5834,11 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest category score of 0.303, driven by multiple nearby traffic segments including Mehrauli Gurgaon Road and Delhi-Gurugram Expressway with high wind alignment up to 0.97. Stagnant nocturnal meteorology at hour 23, characterized by a low boundary layer height of 150 meters, wind speed of 1.7 m/s, and trapped air, caused vehicular emissions to accumulate locally. Additionally, fire activity and waste burning were absent, while construction and industrial scores were lower.",
     "evidence_factors": [
-      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
-      "shallow boundary layer (150 m) trapping emissions"
+      "Highest deterministic score for traffic (0.303)",
+      "Multiple traffic candidates with strong wind alignment (up to 0.97)",
+      "Low boundary layer height (150m) and trapped air condition at night"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -5846,7 +5936,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5862,10 +5952,11 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest category score of 0.303, driven by multiple nearby traffic segments including Mehrauli Gurgaon Road and Delhi-Gurugram Expressway with high wind alignment up to 0.97. Stagnant nocturnal meteorology at hour 23, characterized by a low boundary layer height of 150 meters, wind speed of 1.7 m/s, and trapped air, caused vehicular emissions to accumulate locally. Additionally, fire activity and waste burning were absent, while construction and industrial scores were lower.",
     "evidence_factors": [
-      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
-      "shallow boundary layer (150 m) trapping emissions"
+      "Highest deterministic score for traffic (0.303)",
+      "Multiple traffic candidates with strong wind alignment (up to 0.97)",
+      "Low boundary layer height (150m) and trapped air condition at night"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -5963,7 +6054,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5979,10 +6070,11 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest category score of 0.303, driven by multiple nearby traffic segments including Mehrauli Gurgaon Road and Delhi-Gurugram Expressway with high wind alignment up to 0.97. Stagnant nocturnal meteorology at hour 23, characterized by a low boundary layer height of 150 meters, wind speed of 1.7 m/s, and trapped air, caused vehicular emissions to accumulate locally. Additionally, fire activity and waste burning were absent, while construction and industrial scores were lower.",
     "evidence_factors": [
-      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
-      "shallow boundary layer (150 m) trapping emissions"
+      "Highest deterministic score for traffic (0.303)",
+      "Multiple traffic candidates with strong wind alignment (up to 0.97)",
+      "Low boundary layer height (150m) and trapped air condition at night"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -6080,7 +6172,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -6096,10 +6188,11 @@
       "waste_burning": 0.0,
       "traffic": 0.303
     },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93; shallow boundary layer (150 m) trapping emissions.",
+    "reason": "Traffic is identified as the primary source with the highest category score of 0.303, driven by multiple nearby traffic segments including Mehrauli Gurgaon Road and Delhi-Gurugram Expressway with high wind alignment up to 0.97. Stagnant nocturnal meteorology at hour 23, characterized by a low boundary layer height of 150 meters, wind speed of 1.7 m/s, and trapped air, caused vehicular emissions to accumulate locally. Additionally, fire activity and waste burning were absent, while construction and industrial scores were lower.",
     "evidence_factors": [
-      "Mehrauli Gurgaon Road is 2.24 km away, wind alignment 0.93",
-      "shallow boundary layer (150 m) trapping emissions"
+      "Highest deterministic score for traffic (0.303)",
+      "Multiple traffic candidates with strong wind alignment (up to 0.97)",
+      "Low boundary layer height (150m) and trapped air condition at night"
     ],
     "evidence": {
       "cell": "883da11a97fffff",
@@ -6197,7 +6290,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   }
 ]

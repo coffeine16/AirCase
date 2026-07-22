@@ -5,7 +5,7 @@
     "zone_id": "Z02",
     "ward_id": "W006",
     "ward_name": "Ward 37 (Tondiarpet)",
-    "issued_at": "2026-07-22T14:10:37.819627+00:00",
+    "issued_at": "2026-07-22T14:30:07.664568+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -149,7 +149,7 @@
     "zone_id": "Z10",
     "ward_id": "W018",
     "ward_name": "Ward 19 (Manali)",
-    "issued_at": "2026-07-22T14:10:37.819686+00:00",
+    "issued_at": "2026-07-22T14:30:07.664663+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -293,7 +293,7 @@
     "zone_id": "Z07",
     "ward_id": "W014",
     "ward_name": "Ward 157 (Alandur)",
-    "issued_at": "2026-07-22T14:10:37.819724+00:00",
+    "issued_at": "2026-07-22T14:30:07.664709+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -437,7 +437,7 @@
     "zone_id": "Z05",
     "ward_id": "W168",
     "ward_name": "Ward 156 (Alandur)",
-    "issued_at": "2026-07-22T14:10:37.819756+00:00",
+    "issued_at": "2026-07-22T14:30:07.664742+00:00",
     "status": "draft",
     "situation": {
       "source": "traffic",
@@ -573,7 +573,7 @@
     "zone_id": "Z00",
     "ward_id": "W102",
     "ward_name": "Ward 106 (Annanagar)",
-    "issued_at": "2026-07-22T14:10:37.819788+00:00",
+    "issued_at": "2026-07-22T14:30:07.664776+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -717,7 +717,7 @@
     "zone_id": "Z01",
     "ward_id": "W100",
     "ward_name": "Ward 102 (Annanagar)",
-    "issued_at": "2026-07-22T14:10:37.819818+00:00",
+    "issued_at": "2026-07-22T14:30:07.664810+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -731,7 +731,11 @@
       "ward_name": "Ward 102 (Annanagar)",
       "n_cells": 22,
       "evidence_factors": [
-        "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96"
+        "Highest category score of 0.814",
+        "Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment",
+        "Elevated NO2 column at 76th city percentile (66.7)",
+        "3 industrial sites in landuse context",
+        "Zero fire activity hours and 0 FRP"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
@@ -751,10 +755,14 @@
     ],
     "subject": "Air pollution source detected — industrial — Ward 102 (Annanagar) (zone Z01)",
     "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 22 cell(s) in Ward 102 (Annanagar). The zone is classified 'emerging'. Estimated PM2.5 in the zone is 49.1 ug/m3, corresponding to an AQI of 82 (Satisfactory).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.45. Supporting evidence: Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96. This finding is INDICATIVE and requires verification on site.",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.45. Supporting evidence: Highest category score of 0.814; Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment; Elevated NO2 column at 76th city percentile (66.7). This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
     "evidence_chain": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96"
+      "Highest category score of 0.814",
+      "Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment",
+      "Elevated NO2 column at 76th city percentile (66.7)",
+      "3 industrial sites in landuse context",
+      "Zero fire activity hours and 0 FRP"
     ],
     "evidence_full": {
       "cell": "88618c4d61fffff",
@@ -861,7 +869,7 @@
     "zone_id": "Z04",
     "ward_id": "W175",
     "ward_name": "Ward 150 (Valasaravakkam)",
-    "issued_at": "2026-07-22T14:10:37.819845+00:00",
+    "issued_at": "2026-07-22T14:30:07.664839+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -1005,7 +1013,7 @@
     "zone_id": "Z06",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-07-22T14:10:37.819873+00:00",
+    "issued_at": "2026-07-22T14:30:07.664869+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -1149,7 +1157,7 @@
     "zone_id": "Z09",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-07-22T14:10:37.819898+00:00",
+    "issued_at": "2026-07-22T14:30:07.664897+00:00",
     "status": "draft",
     "situation": {
       "source": "traffic",
@@ -1285,7 +1293,7 @@
     "zone_id": "Z08",
     "ward_id": "W167",
     "ward_name": "Ward 159 (Alandur)",
-    "issued_at": "2026-07-22T14:10:37.819925+00:00",
+    "issued_at": "2026-07-22T14:30:07.664928+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",

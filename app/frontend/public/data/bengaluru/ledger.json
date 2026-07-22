@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T14:10:59.670224+00:00",
+  "generated_at": "2026-07-22T14:30:39.323218+00:00",
   "response_time_claim": "Signal-to-memo is automated and deterministic: a cited enforcement memo and dispatch route are produced in seconds. The manual baseline — correlating a satellite signal to a served notice across agencies — is measured in weeks. This is the response-time reduction.",
   "effectiveness_claim": "NOT yet measured. Intervention effectiveness requires a real intervention between the frozen counterfactual and a realized outcome. The ledger freezes the counterfactual and awaits actioned outcomes from the inspector loop; it does not attribute natural change to itself.",
   "n_actions": 7,
@@ -15,7 +15,7 @@
       "eps": 71.8,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-07-22T14:10:59.253101+00:00",
+        "memo_drafted_at": "2026-07-22T14:30:38.824107+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
@@ -39,7 +39,7 @@
       "eps": 71.3,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-07-22T14:10:59.253192+00:00",
+        "memo_drafted_at": "2026-07-22T14:30:38.824237+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
@@ -63,7 +63,7 @@
       "eps": 66.8,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-07-22T14:10:59.253236+00:00",
+        "memo_drafted_at": "2026-07-22T14:30:38.824325+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
@@ -87,7 +87,7 @@
       "eps": 64.1,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-07-22T14:10:59.253270+00:00",
+        "memo_drafted_at": "2026-07-22T14:30:38.824399+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
@@ -111,7 +111,7 @@
       "eps": 60.3,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-07-22T14:10:59.253304+00:00",
+        "memo_drafted_at": "2026-07-22T14:30:38.824483+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
@@ -135,7 +135,7 @@
       "eps": 59.7,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-07-22T14:10:59.253334+00:00",
+        "memo_drafted_at": "2026-07-22T14:30:38.824560+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
@@ -159,7 +159,7 @@
       "eps": 50.1,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-07-22T14:10:59.253362+00:00",
+        "memo_drafted_at": "2026-07-22T14:30:38.824632+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },

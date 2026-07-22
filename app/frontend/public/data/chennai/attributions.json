@@ -12,9 +12,13 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96.",
+    "reason": "Industrial is identified as the primary source with the highest category score of 0.814. The hotspot is strongly influenced by nearby industrial sites, notably Ayanavaram MTC Depot located 1.94 km away with a high wind alignment of 0.96, alongside elevated NO2 levels at the 76th city percentile (66.7). Furthermore, landuse context shows a concentration of 3 industrial sites and fire activity is completely absent.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96"
+      "Highest category score of 0.814",
+      "Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment",
+      "Elevated NO2 column at 76th city percentile (66.7)",
+      "3 industrial sites in landuse context",
+      "Zero fire activity hours and 0 FRP"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -112,7 +116,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 12
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -128,9 +132,13 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96.",
+    "reason": "Industrial is identified as the primary source with the highest category score of 0.814. The hotspot is strongly influenced by nearby industrial sites, notably Ayanavaram MTC Depot located 1.94 km away with a high wind alignment of 0.96, alongside elevated NO2 levels at the 76th city percentile (66.7). Furthermore, landuse context shows a concentration of 3 industrial sites and fire activity is completely absent.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96"
+      "Highest category score of 0.814",
+      "Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment",
+      "Elevated NO2 column at 76th city percentile (66.7)",
+      "3 industrial sites in landuse context",
+      "Zero fire activity hours and 0 FRP"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -228,7 +236,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 12
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -244,9 +252,13 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96.",
+    "reason": "Industrial is identified as the primary source with the highest category score of 0.814. The hotspot is strongly influenced by nearby industrial sites, notably Ayanavaram MTC Depot located 1.94 km away with a high wind alignment of 0.96, alongside elevated NO2 levels at the 76th city percentile (66.7). Furthermore, landuse context shows a concentration of 3 industrial sites and fire activity is completely absent.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96"
+      "Highest category score of 0.814",
+      "Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment",
+      "Elevated NO2 column at 76th city percentile (66.7)",
+      "3 industrial sites in landuse context",
+      "Zero fire activity hours and 0 FRP"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -344,7 +356,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 12
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -360,9 +372,13 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96.",
+    "reason": "Industrial is identified as the primary source with the highest category score of 0.814. The hotspot is strongly influenced by nearby industrial sites, notably Ayanavaram MTC Depot located 1.94 km away with a high wind alignment of 0.96, alongside elevated NO2 levels at the 76th city percentile (66.7). Furthermore, landuse context shows a concentration of 3 industrial sites and fire activity is completely absent.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96"
+      "Highest category score of 0.814",
+      "Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment",
+      "Elevated NO2 column at 76th city percentile (66.7)",
+      "3 industrial sites in landuse context",
+      "Zero fire activity hours and 0 FRP"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -460,7 +476,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 12
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -476,9 +492,13 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96.",
+    "reason": "Industrial is identified as the primary source with the highest category score of 0.814. The hotspot is strongly influenced by nearby industrial sites, notably Ayanavaram MTC Depot located 1.94 km away with a high wind alignment of 0.96, alongside elevated NO2 levels at the 76th city percentile (66.7). Furthermore, landuse context shows a concentration of 3 industrial sites and fire activity is completely absent.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96"
+      "Highest category score of 0.814",
+      "Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment",
+      "Elevated NO2 column at 76th city percentile (66.7)",
+      "3 industrial sites in landuse context",
+      "Zero fire activity hours and 0 FRP"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -576,7 +596,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 12
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -592,9 +612,13 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96.",
+    "reason": "Industrial is identified as the primary source with the highest category score of 0.814. The hotspot is strongly influenced by nearby industrial sites, notably Ayanavaram MTC Depot located 1.94 km away with a high wind alignment of 0.96, alongside elevated NO2 levels at the 76th city percentile (66.7). Furthermore, landuse context shows a concentration of 3 industrial sites and fire activity is completely absent.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96"
+      "Highest category score of 0.814",
+      "Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment",
+      "Elevated NO2 column at 76th city percentile (66.7)",
+      "3 industrial sites in landuse context",
+      "Zero fire activity hours and 0 FRP"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -692,7 +716,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 12
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -708,9 +732,13 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96.",
+    "reason": "Industrial is identified as the primary source with the highest category score of 0.814. The hotspot is strongly influenced by nearby industrial sites, notably Ayanavaram MTC Depot located 1.94 km away with a high wind alignment of 0.96, alongside elevated NO2 levels at the 76th city percentile (66.7). Furthermore, landuse context shows a concentration of 3 industrial sites and fire activity is completely absent.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96"
+      "Highest category score of 0.814",
+      "Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment",
+      "Elevated NO2 column at 76th city percentile (66.7)",
+      "3 industrial sites in landuse context",
+      "Zero fire activity hours and 0 FRP"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -808,7 +836,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 12
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -824,9 +852,13 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96.",
+    "reason": "Industrial is identified as the primary source with the highest category score of 0.814. The hotspot is strongly influenced by nearby industrial sites, notably Ayanavaram MTC Depot located 1.94 km away with a high wind alignment of 0.96, alongside elevated NO2 levels at the 76th city percentile (66.7). Furthermore, landuse context shows a concentration of 3 industrial sites and fire activity is completely absent.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96"
+      "Highest category score of 0.814",
+      "Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment",
+      "Elevated NO2 column at 76th city percentile (66.7)",
+      "3 industrial sites in landuse context",
+      "Zero fire activity hours and 0 FRP"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -924,7 +956,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 12
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -940,9 +972,13 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96.",
+    "reason": "Industrial is identified as the primary source with the highest category score of 0.814. The hotspot is strongly influenced by nearby industrial sites, notably Ayanavaram MTC Depot located 1.94 km away with a high wind alignment of 0.96, alongside elevated NO2 levels at the 76th city percentile (66.7). Furthermore, landuse context shows a concentration of 3 industrial sites and fire activity is completely absent.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96"
+      "Highest category score of 0.814",
+      "Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment",
+      "Elevated NO2 column at 76th city percentile (66.7)",
+      "3 industrial sites in landuse context",
+      "Zero fire activity hours and 0 FRP"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -1040,7 +1076,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 12
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -1056,9 +1092,13 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96.",
+    "reason": "Industrial is identified as the primary source with the highest category score of 0.814. The hotspot is strongly influenced by nearby industrial sites, notably Ayanavaram MTC Depot located 1.94 km away with a high wind alignment of 0.96, alongside elevated NO2 levels at the 76th city percentile (66.7). Furthermore, landuse context shows a concentration of 3 industrial sites and fire activity is completely absent.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96"
+      "Highest category score of 0.814",
+      "Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment",
+      "Elevated NO2 column at 76th city percentile (66.7)",
+      "3 industrial sites in landuse context",
+      "Zero fire activity hours and 0 FRP"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -1156,7 +1196,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 12
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -1172,9 +1212,13 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96.",
+    "reason": "Industrial is identified as the primary source with the highest category score of 0.814. The hotspot is strongly influenced by nearby industrial sites, notably Ayanavaram MTC Depot located 1.94 km away with a high wind alignment of 0.96, alongside elevated NO2 levels at the 76th city percentile (66.7). Furthermore, landuse context shows a concentration of 3 industrial sites and fire activity is completely absent.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96"
+      "Highest category score of 0.814",
+      "Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment",
+      "Elevated NO2 column at 76th city percentile (66.7)",
+      "3 industrial sites in landuse context",
+      "Zero fire activity hours and 0 FRP"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -1272,7 +1316,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 12
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -1288,9 +1332,13 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96.",
+    "reason": "Industrial is identified as the primary source with the highest category score of 0.814. The hotspot is strongly influenced by nearby industrial sites, notably Ayanavaram MTC Depot located 1.94 km away with a high wind alignment of 0.96, alongside elevated NO2 levels at the 76th city percentile (66.7). Furthermore, landuse context shows a concentration of 3 industrial sites and fire activity is completely absent.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.96"
+      "Highest category score of 0.814",
+      "Ayanavaram MTC Depot 1.94 km away with 0.96 wind alignment",
+      "Elevated NO2 column at 76th city percentile (66.7)",
+      "3 industrial sites in landuse context",
+      "Zero fire activity hours and 0 FRP"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -1388,7 +1436,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 12
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
