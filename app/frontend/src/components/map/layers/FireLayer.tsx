@@ -6,7 +6,28 @@
 import { ScatterplotLayer } from "@deck.gl/layers";
 import { FIRE_HEX, hexToRgba } from "@/lib/colors";
 import { icon, Flame } from "@/components/Icon";
-import type { FireDetection } from "@/hooks/useMapData";
+import { FIRE_CONFIDENCE, type FireDetection } from "@/hooks/useMapData";
+
+/** FIRMS confidence is a letter code, not a number. */
+const conf = (d: FireDetection) => FIRE_CONFIDENCE[d.confidence] ?? { label: "Unknown", weight: 0.5 };
+
+/**
+ * Absolute timestamp, never "N hours ago".
+ *
+ * The detections belong to the ANALYSIS WINDOW (Delhi's is November 2025), not
+ * to this minute, so an age measured against the wall clock is either NaN — as
+ * it was, from a field name that does not exist — or a true-but-useless "6,800
+ * hours ago". A date is the honest answer for a historical window and stays
+ * correct in a live one.
+ */
+function overpass(ts: string): string {
+  const d = new Date(ts);
+  if (Number.isNaN(d.getTime())) return "time unavailable";
+  return d.toLocaleString(undefined, {
+    day: "numeric", month: "short", year: "numeric",
+    hour: "2-digit", minute: "2-digit", timeZone: "UTC",
+  }) + " UTC";
+}
 
 export function buildFireLayer(
   fires: FireDetection[],
@@ -21,8 +42,9 @@ export function buildFireLayer(
     radiusMinPixels: 4,
     radiusMaxPixels: 24,
     getFillColor: (d) => {
-      const [r, g, b] = hexToRgba(d.confidence >= 0.7 ? FIRE_HEX.high : FIRE_HEX.low);
-      return [r, g, b, Math.round(175 + d.confidence * 60)];
+      const w = conf(d).weight;
+      const [r, g, b] = hexToRgba(w >= 0.7 ? FIRE_HEX.high : FIRE_HEX.low);
+      return [r, g, b, Math.round(175 + w * 60)];
     },
     getLineColor: [255, 255, 255, 90],
     lineWidthMinPixels: 1,
@@ -33,9 +55,6 @@ export function buildFireLayer(
     onHover: (info) => {
       if (info.object) {
         const d = info.object as FireDetection;
-        const ageH = Math.round(
-          (Date.now() - new Date(d.acquired_at).getTime()) / 3_600_000
-        );
         onHover({
           x: info.x,
           y: info.y,
@@ -49,10 +68,10 @@ export function buildFireLayer(
                 FRP: {d.frp.toFixed(1)} MW
               </div>
               <div style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>
-                Confidence: {(d.confidence * 100).toFixed(0)}%
+                Confidence: {conf(d).label}
               </div>
               <div style={{ fontSize: "0.7rem", color: "var(--text-tertiary)", marginTop: 6 }}>
-                {ageH}h ago
+                {overpass(d.ts)}
               </div>
             </div>
           ),

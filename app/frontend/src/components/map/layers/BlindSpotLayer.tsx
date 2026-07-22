@@ -47,7 +47,7 @@ export function buildBlindSpotLayer(
               </div>
               <div style={{ fontSize: "0.8rem", color: "var(--text-secondary)", marginBottom: 4 }}>
                 Satellite signal: <span style={{ fontFamily: "var(--font-mono)", color: "var(--text-primary)" }}>
-                  {d.satellite_signal.toFixed(3)}
+                  {d.satellite_signal.toFixed(1)} µg/m³
                 </span>
               </div>
               <div style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>

@@ -48,14 +48,30 @@ export function useStations() {
 }
 
 // ── Fires ──────────────────────────────────────────────────────────────────────
+/**
+ * A FIRMS thermal anomaly, as the pipeline actually writes it.
+ *
+ * This interface used to claim `confidence: number` and `acquired_at`. Neither
+ * exists: FIRMS reports confidence as a LETTER CODE and the contract's time
+ * field is `ts`. TypeScript could not catch the lie because the rows arrive as
+ * runtime JSON, so the popup rendered `"n" * 100` as **NaN%** and
+ * `new Date(undefined)` as **NaN h ago**. Keep this shape pinned to the file.
+ */
 export interface FireDetection {
-  cell: string;
+  cell?: string;
   lat: number;
   lon: number;
-  frp: number;           // fire radiative power (MW)
-  confidence: number;    // [0,1]
-  acquired_at: string;   // ISO timestamp
+  frp: number;                    // fire radiative power (MW)
+  confidence: "l" | "n" | "h";    // FIRMS: low / nominal / high
+  ts: string;                     // ISO timestamp of the satellite overpass
 }
+
+/** FIRMS confidence letter -> label + a weight for styling. */
+export const FIRE_CONFIDENCE: Record<string, { label: string; weight: number }> = {
+  l: { label: "Low", weight: 0.3 },
+  n: { label: "Nominal", weight: 0.6 },
+  h: { label: "High", weight: 0.9 },
+};
 
 export function useFires() {
   const { data, error, isLoading } = useSWR<FireDetection[]>(

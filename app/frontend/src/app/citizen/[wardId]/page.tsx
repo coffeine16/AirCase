@@ -162,9 +162,15 @@ export default function WardDashboardPage({ params }: { params: Promise<Params> 
                   {summary?.pm25 != null ? `${summary.pm25.toFixed(1)} µg/m³` : "—"}
                 </span>
               </div>
-              <div style={{ fontSize: "0.85rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>
-                {AQI_ADVICE[adviceIndex]}
-              </div>
+              {/* Only when the ward has NO real advisory. The pipeline's advisory
+                  says the same thing better — named ward, actual AQI, and it is
+                  the text the voice note reads — so rendering both printed the
+                  same sentence twice, once generically and once for real. */}
+              {!advisoryText && (
+                <div style={{ fontSize: "0.85rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>
+                  {AQI_ADVICE[adviceIndex]}
+                </div>
+              )}
             </div>
           </div>
         )}
