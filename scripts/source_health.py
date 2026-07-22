@@ -95,6 +95,9 @@ def build() -> dict:
             "cadence": "event-driven, several passes daily",
             "observed": f"{len(fires)} detections in the window",
             "completeness_pct": None,
+            # A percentage would be a lie here: there is no expected rate to be
+            # complete AGAINST. Days with no fire are the normal case, not a gap.
+            "completeness_note": "not a rate — event-driven",
             "feeds": ["detection (fire persistence)", "attribution (fire evidence)"],
             "if_stale": "Sparsity is the NORMAL case, not a failure — this is why "
                         "persistence is a fraction of window-hours rather than a "
@@ -127,6 +130,7 @@ def build() -> dict:
             "cadence": "static per run",
             "observed": f"{len(osm):,} features",
             "completeness_pct": None,
+            "completeness_note": "not a rate — static snapshot",
             "feeds": ["attribution (named candidate sites)"],
             "if_stale": "Attribution loses named candidates but not the finding: the "
                         "two burning landfills we detect appear on NO map at all, and "
@@ -142,6 +146,7 @@ def build() -> dict:
         "cadence": "event-driven",
         "observed": f"{n_rep} reports synced",
         "completeness_pct": None,
+        "completeness_note": "not a rate — event-driven",
         "feeds": ["attribution (corroboration)"],
         "if_stale": "Nothing breaks. Corroboration is capped at +0.75 and can never "
                     "out-vote an instrument — it is deliberately not load-bearing.",

@@ -34,6 +34,10 @@ interface Loso { overall: { rmse: number; r2: number; n_stations: number; naive_
 interface SourceRow {
   source: string; cadence: string; observed: string;
   completeness_pct: number | null; if_stale: string;
+  /** Why there is no percentage. A rate is meaningless for an event-driven or
+   *  static source, and a blank cell reads as missing data rather than as a
+   *  deliberate refusal to invent one. */
+  completeness_note?: string;
   load_bearing_for_detection: boolean;
 }
 interface SourceHealth { claim: string; why: string[]; honest_limit: string; sources: SourceRow[] }
@@ -234,7 +238,11 @@ export default function ValidationPage() {
                       </td>
                       <td style={{ whiteSpace: "nowrap" }}>{s.cadence}</td>
                       <td className="num">
-                        {s.completeness_pct == null ? "—" : `${s.completeness_pct}%`}
+                        {s.completeness_pct == null ? (
+                          <span style={{ color: "var(--text-tertiary)", fontSize: "0.74rem" }}>
+                            {s.completeness_note ?? "n/a"}
+                          </span>
+                        ) : `${s.completeness_pct}%`}
                       </td>
                       <td style={{ whiteSpace: "normal", maxWidth: 380, fontSize: "0.78rem" }}>{s.if_stale}</td>
                     </tr>

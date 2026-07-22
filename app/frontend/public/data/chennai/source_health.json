@@ -1,5 +1,5 @@
 {
-  "city": "delhi",
+  "city": "chennai",
   "claim": "No single source being stale can silence source detection.",
   "why": [
     "Detection reads satellite NO₂ contrast + FIRMS fire persistence only — never a station. Measured: eval_station_sensitivity.py moves station siting from realistic to none and recall does not change.",
@@ -12,8 +12,8 @@
     {
       "source": "OpenAQ / CPCB stations",
       "cadence": "hourly, best effort",
-      "observed": "22 stations over 1440 hours",
-      "completeness_pct": 87.3,
+      "observed": "3 stations over 1368 hours",
+      "completeness_pct": 75.1,
       "feeds": [
         "fusion exposure field",
         "citizen AQI display"
@@ -24,18 +24,18 @@
     {
       "source": "Sentinel-5P (TROPOMI) NO₂",
       "cadence": "one overpass per day, cloud-masked",
-      "observed": "1,703 cells × 60 days",
-      "completeness_pct": 68.3,
+      "observed": "759 cells × 60 days",
+      "completeness_pct": 26.4,
       "feeds": [
         "detection (NO₂ neighbourhood contrast)"
       ],
-      "if_stale": "32% of cell-days are already cloud-masked and detection still works: the 24h/7d/30d medians absorb gaps by construction. Sustained loss degrades the NO₂ tier; the fire tier is independent.",
+      "if_stale": "74% of cell-days are already cloud-masked and detection still works: the 24h/7d/30d medians absorb gaps by construction. Sustained loss degrades the NO₂ tier; the fire tier is independent.",
       "load_bearing_for_detection": true
     },
     {
       "source": "NASA FIRMS thermal anomalies",
       "cadence": "event-driven, several passes daily",
-      "observed": "18 detections in the window",
+      "observed": "14 detections in the window",
       "completeness_pct": null,
       "completeness_note": "not a rate — event-driven",
       "feeds": [
@@ -60,7 +60,7 @@
     {
       "source": "OpenStreetMap land use",
       "cadence": "static per run",
-      "observed": "4,726 features",
+      "observed": "3,505 features",
       "completeness_pct": null,
       "completeness_note": "not a rate — static snapshot",
       "feeds": [
@@ -72,7 +72,7 @@
     {
       "source": "Citizen reports (Telegram / web)",
       "cadence": "event-driven",
-      "observed": "16 reports synced",
+      "observed": "0 reports synced",
       "completeness_pct": null,
       "completeness_note": "not a rate — event-driven",
       "feeds": [
