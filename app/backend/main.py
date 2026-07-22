@@ -324,6 +324,12 @@ def run_agent(body: dict):
     if agent != "all" and agent not in AGENT_NAMES:
         raise HTTPException(400, f"unknown agent {agent!r}; choose from {AGENT_NAMES} or 'all'")
 
+    # Read once, here, so BOTH execution paths below get it. It was previously
+    # parsed after the in-process `return`, which made it unreachable on the fast
+    # path and absent from the subprocess path — so a dispatch config sent from
+    # the console was silently ignored on every city.
+    dispatch_config = (body or {}).get("dispatch_config") or None
+
     city = _city()
     if not (DATA_OUT_BASE / city / "panel.parquet").exists():
         raise HTTPException(404, f"no pipeline artifacts for {city} — the agents read a "
@@ -333,7 +339,7 @@ def run_agent(body: dict):
     # points at the right tree.
     if city == CITY:
         from intelligence.orchestrator import run_chain
-        return run_chain(agent)
+        return run_chain(agent, dispatch_config=dispatch_config)
 
     # Another city. shared.config binds DATA_OUT at IMPORT, so we cannot simply
     # set an env var and call run_chain — the agents already captured the wrong
@@ -348,21 +354,24 @@ def run_agent(body: dict):
 
     with tempfile.TemporaryDirectory() as td:
         out = Path(td) / "result.json"
+        # dispatch_config travels as JSON in argv rather than as another env var:
+        # it is structured, and json.loads on the far side keeps the contract
+        # identical to the in-process call above.
         child = (
             "import json,sys;"
             "from intelligence.orchestrator import run_chain;"
-            "r=run_chain(sys.argv[1]);"
+            "cfg=json.loads(sys.argv[3]) or None;"
+            "r=run_chain(sys.argv[1], dispatch_config=cfg);"
             "open(sys.argv[2],'w',encoding='utf-8').write(json.dumps(r,default=str))"
         )
         env = {**os.environ, "AQ_CITY": city, "PYTHONPATH": str(ROOT)}
-        proc = subprocess.run([sys.executable, "-c", child, agent, str(out)],
-                              cwd=str(ROOT), env=env, capture_output=True, timeout=240)
+        proc = subprocess.run(
+            [sys.executable, "-c", child, agent, str(out), json.dumps(dispatch_config)],
+            cwd=str(ROOT), env=env, capture_output=True, timeout=240)
         if not out.exists():
             tail = (proc.stderr or b"").decode(errors="replace")[-400:]
             raise HTTPException(500, f"agent run for {city} failed: {tail}")
         return json.loads(out.read_text(encoding="utf-8"))
-    dispatch_config = (body or {}).get("dispatch_config", None)
-    return run_chain(agent, dispatch_config=dispatch_config)
 
 
 @app.get("/ledger", dependencies=[Depends(city_param)])
