@@ -10,6 +10,7 @@ import { AQI_ADVICE } from "@/lib/constants";
 import type { FusionResponse, ForecastCell } from "@/lib/types";
 
 import VoiceAdvisory from "@/components/citizen/VoiceAdvisory";
+import WardAccountability from "@/components/citizen/WardAccountability";
 import { icon, ArrowLeft, ArrowRight, Camera, ClipboardList, Megaphone, TrendingUp } from "@/components/Icon";
 
 const CitizenMap = dynamic(() => import("@/components/citizen/CitizenMap"), {
@@ -168,6 +169,11 @@ export default function WardDashboardPage({ params }: { params: Promise<Params> 
           </div>
         )}
       </div>
+
+      {/* Why / what is being done / how sure — placed directly under the number,
+          because "why" is the question the number provokes and the one every
+          other AQI product leaves unanswered. */}
+      <WardAccountability city={city} wardId={wardId} cells={cells} />
 
       {/* Advisory */}
       {advisoryText && (
