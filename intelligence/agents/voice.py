@@ -27,7 +27,6 @@ import shutil
 import subprocess
 import urllib.error
 import urllib.request
-from pathlib import Path
 from typing import Any
 
 logger = logging.getLogger("voice_agent")
@@ -37,7 +36,13 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(messag
 # Paths / config
 # ---------------------------------------------------------------------------
 
-DATA_OUT = Path("data/outputs")
+# Import DATA_OUT rather than rebuilding it: it resolves per city
+# (data/outputs/<city>/). This module used to define `Path("data/outputs")`
+# locally, which after the per-city split pointed at a directory holding no
+# advisories at all — and would have been worse if it HAD, since it would then
+# have voiced one city's advisories during another city's run.
+from shared.config import DATA_OUT
+
 ADVISORIES_PATH = DATA_OUT / "advisories.json"
 AUDIO_DIR = DATA_OUT / "audio"
 MANIFEST_PATH = AUDIO_DIR / "manifest.json"
