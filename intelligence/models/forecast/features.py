@@ -154,13 +154,22 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
         X["target_month"] = tgt.dt.month
         X["horizon"] = horizon
 
+        # For the loso_exclude cell's own rows, skip the "cell" scope and let
+        # lookup_climatology fall through to ward/city -- exactly what a
+        # genuinely non-station cell would see. climatology.py has no
+        # exclude parameter at all, so the "cell" scope for loso_exclude is
+        # that station's own real history -- passing a cell value that can
+        # never match the table's index (None) is what forces the
+        # fallback, without touching climatology.py or discarding the
+        # ward/city signal the way a blanket NaN would.
+        clim_cell = [None if row.cell == loso_exclude else row.cell for row in X.itertuples()]
         X["clim_dow_hour"] = [
-            lookup_climatology(clim_tables, row.cell, p.loc[row.Index, "ward_id"], row.city, t, "dow_hour")
-            for row, t in zip(X.itertuples(), tgt)
+            lookup_climatology(clim_tables, cc, p.loc[row.Index, "ward_id"], row.city, t, "dow_hour")
+            for cc, row, t in zip(clim_cell, X.itertuples(), tgt)
         ]
         X["clim_month"] = [
-            lookup_climatology(clim_tables, row.cell, p.loc[row.Index, "ward_id"], row.city, t, "month")
-            for row, t in zip(X.itertuples(), tgt)
+            lookup_climatology(clim_tables, cc, p.loc[row.Index, "ward_id"], row.city, t, "month")
+            for cc, row, t in zip(clim_cell, X.itertuples(), tgt)
         ]
 
         X["y"] = g.pm25_station.shift(-horizon)

@@ -1,6 +1,7 @@
 # tests/intelligence/models/forecast/test_features.py
 import numpy as np
 import pandas as pd
+import pytest
 
 from shared.grid import city_cells
 from intelligence.models.forecast.features import build_features, FEATURE_COLUMNS
@@ -60,3 +61,34 @@ def test_build_features_loso_exclude_masks_own_history():
     # last-24h/168h history, defeating the point of loso_exclude.
     assert np.isnan(loso_row["roll_med_24"])
     assert np.isnan(loso_row["roll_med_168"])
+
+
+def test_build_features_loso_exclude_falls_back_to_ward_climatology():
+    # two stations in the same ward, different constant values: excluding
+    # one, its OWN cell-level climatology entry must not leak through --
+    # lookup_climatology's already-proven cell->ward->city fallback (Task 4)
+    # should kick in, blending BOTH stations' history, not returning the
+    # excluded station's own value verbatim.
+    cells = city_cells()[:3]
+    hours = pd.date_range("2024-01-01", periods=72, freq="h", tz="UTC")
+    rows = []
+    for i, c in enumerate(cells):
+        for h in hours:
+            rows.append({
+                "cell": c, "ts": h, "ward_id": "W1", "ward_name": "Ward 1", "city": "bengaluru",
+                "pm25_station": 50.0 if i == 0 else (90.0 if i == 1 else np.nan),
+                "wind_from_deg": 90.0, "wind_ms": 2.0, "blh_m": 400.0, "temp_c": 27.0,
+                "fires_6h": 0, "frp_6h": 0.0, "lu_industrial": 0, "lu_construction": 0,
+                "lu_waste_burning": 0, "lu_traffic": 0, "lu_road": 1, "lu_sensitive": 0,
+                "hour": h.hour, "dow": h.dayofweek,
+            })
+    panel = pd.DataFrame(rows)
+    station_cell = cells[0]
+
+    loso = build_features(panel, horizons=[3], loso_exclude=station_cell)
+    loso_row = loso[loso.cell == station_cell].iloc[-1]
+
+    # cell[0]'s own cell-level climatology is exactly 50.0 (its own constant
+    # reading); if that leaked through unmasked, clim_dow_hour would be
+    # exactly 50.0. It must not be -- the ward blend (50 and 90) differs.
+    assert loso_row["clim_dow_hour"] != pytest.approx(50.0)
