@@ -52,7 +52,7 @@ def composite_grid(query_lat: np.ndarray, query_lon: np.ndarray,
 
     wind_to = (wind_from_deg + 180.0) % 360.0                            # (n_t,) direction wind blows TOWARD
     off = np.abs(((bearing_to_query[None, :, :] - wind_to[:, None, None] + 180.0) % 360.0) - 180.0)
-    align = np.clip(np.sin(np.radians(off)), 0.0, None)                  # (n_t, n_q, n_s)
+    align = np.clip(np.cos(np.radians(off)), 0.0, None)                  # (n_t, n_q, n_s)
 
     weight = align * decay[None, :, :]                                  # (n_t, n_q, n_s)
     if exclude is not None:
