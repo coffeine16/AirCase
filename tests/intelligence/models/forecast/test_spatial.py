@@ -1,6 +1,8 @@
 import numpy as np
+import pandas as pd
 
-from intelligence.models.forecast.spatial import composite_grid, DIST_DECAY_KM
+from intelligence.models.forecast.spatial import composite_grid, DIST_DECAY_KM, positional_block, fire_pressure
+from shared.grid import city_cells
 
 
 def test_composite_grid_basic_blend():
@@ -51,3 +53,39 @@ def test_composite_grid_no_stations_returns_nan():
 def test_distance_decay_matches_attribution_kernel():
     from intelligence.agents.attribution import category_scores
     assert DIST_DECAY_KM == 2.0   # same exp(-d/2) kernel used in category_scores
+
+
+def test_positional_block_shape_is_seven_columns():
+    cell = city_cells()[len(city_cells()) // 2]     # an interior cell, has 6 neighbors
+    station_lat = np.array([12.97])
+    station_lon = np.array([77.59])
+    station_val = np.array([[50.0], [55.0]])          # 2 hours
+    wind = np.array([90.0, 90.0])
+
+    out = positional_block(cell, station_lat, station_lon, station_val, wind)
+
+    assert out.shape == (2, 7)
+
+
+def test_fire_pressure_zero_when_no_fires():
+    cells = city_cells()[:5]
+    hours = pd.date_range("2024-01-01", periods=3, freq="h", tz="UTC")
+    fires = pd.DataFrame(columns=["ts", "lat", "lon", "frp", "confidence"])
+
+    out = fire_pressure(cells, fires, hours)
+
+    assert set(out.columns) == {"cell", "ts", "fire_pressure_regional"}
+    assert (out.fire_pressure_regional == 0.0).all()
+
+
+def test_fire_pressure_positive_near_a_real_detection():
+    cells = city_cells()
+    hours = pd.date_range("2024-01-01", periods=1, freq="h", tz="UTC")
+    from shared.grid import cell_center
+    lat, lon = cell_center(cells[0])
+    fires = pd.DataFrame({"ts": [hours[0]], "lat": [lat], "lon": [lon],
+                           "frp": [50.0], "confidence": [80]})
+
+    out = fire_pressure(cells, fires, hours)
+
+    assert out[out.cell == cells[0]].fire_pressure_regional.iloc[0] > 0.0
