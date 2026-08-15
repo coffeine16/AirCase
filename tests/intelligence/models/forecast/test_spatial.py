@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import pytest
 
 from intelligence.models.forecast.spatial import composite_grid, DIST_DECAY_KM, positional_block, fire_pressure
 from shared.grid import city_cells
@@ -71,21 +72,44 @@ def test_fire_pressure_zero_when_no_fires():
     cells = city_cells()[:5]
     hours = pd.date_range("2024-01-01", periods=3, freq="h", tz="UTC")
     fires = pd.DataFrame(columns=["ts", "lat", "lon", "frp", "confidence"])
+    wind = np.zeros(3)
 
-    out = fire_pressure(cells, fires, hours)
+    out = fire_pressure(cells, fires, hours, wind)
 
     assert set(out.columns) == {"cell", "ts", "fire_pressure_regional"}
     assert (out.fire_pressure_regional == 0.0).all()
 
 
 def test_fire_pressure_positive_near_a_real_detection():
+    # fire placed 1.1km NORTH of the cell, wind FROM the north (blows south,
+    # straight from the fire toward the cell) -- genuinely upwind, so this
+    # exercises the wind-alignment term rather than relying on distance=0's
+    # arbitrary bearing (same lesson as Task 2's composite_grid tests).
     cells = city_cells()
     hours = pd.date_range("2024-01-01", periods=1, freq="h", tz="UTC")
     from shared.grid import cell_center
     lat, lon = cell_center(cells[0])
-    fires = pd.DataFrame({"ts": [hours[0]], "lat": [lat], "lon": [lon],
+    fires = pd.DataFrame({"ts": [hours[0]], "lat": [lat + 0.01], "lon": [lon],
                            "frp": [50.0], "confidence": [80]})
+    wind = np.array([0.0])   # wind FROM the north
 
-    out = fire_pressure(cells, fires, hours)
+    out = fire_pressure(cells, fires, hours, wind)
 
     assert out[out.cell == cells[0]].fire_pressure_regional.iloc[0] > 0.0
+
+
+def test_fire_pressure_zero_when_wind_blows_away():
+    # same fire placement as above, but wind now blows AWAY from the cell
+    # (FROM the south) -- the fire is downwind of nothing relevant to this
+    # cell, so pressure should be zero despite being within radius.
+    cells = city_cells()
+    hours = pd.date_range("2024-01-01", periods=1, freq="h", tz="UTC")
+    from shared.grid import cell_center
+    lat, lon = cell_center(cells[0])
+    fires = pd.DataFrame({"ts": [hours[0]], "lat": [lat + 0.01], "lon": [lon],
+                           "frp": [50.0], "confidence": [80]})
+    wind = np.array([180.0])   # wind FROM the south -> blows north, away from the cell
+
+    out = fire_pressure(cells, fires, hours, wind)
+
+    assert out[out.cell == cells[0]].fire_pressure_regional.iloc[0] == pytest.approx(0.0, abs=1e-6)

@@ -95,13 +95,17 @@ def positional_block(cell: str, station_lat: np.ndarray, station_lon: np.ndarray
 
 
 def fire_pressure(cells: list[str], fires: pd.DataFrame,
-                   hours: pd.DatetimeIndex) -> pd.DataFrame:
-    """Regional fire-pressure composite per (cell, hour): distance-decay-
-    weighted sum of REAL FIRMS detections within the trailing
-    FIRE_PRESSURE_WINDOW_H hours, out to FIRE_PRESSURE_RADIUS_KM. Not
-    circular — FIRMS is a raw observation, never a model's own output.
-    Reuses panel.py::_fire_features' vectorised (cell x fire) distance-
-    matrix approach, with a decay weight instead of a hard radius cutoff.
+                   hours: pd.DatetimeIndex, wind_from_deg: np.ndarray) -> pd.DataFrame:
+    """Regional fire-pressure composite per (cell, hour): distance AND
+    wind-decay-weighted sum of REAL FIRMS detections within the trailing
+    FIRE_PRESSURE_WINDOW_H hours, out to FIRE_PRESSURE_RADIUS_KM — "the
+    same distance/wind weighting" spec section 3.2's Fire bullet requires,
+    matching composite_grid's convention (bearing FROM the source TO the
+    destination, compared against that hour's wind). Not circular — FIRMS
+    is a raw observation, never a model's own output. `wind_from_deg` is
+    one bearing per entry in `hours` (citywide single point, matching the
+    operational panel's existing convention — see spec section 3.2's
+    'Weather at T' note on this being a stated limitation, not fixed here).
     """
     n_c, n_h = len(cells), len(hours)
     spine_cell = np.tile(np.asarray(cells), n_h)
@@ -125,9 +129,21 @@ def fire_pressure(cells: list[str], fires: pd.DataFrame,
     a = np.sin(dp / 2) ** 2 + np.cos(p1) * np.cos(p2) * np.sin(dl / 2) ** 2
     dist_km = 2 * 6371.0 * np.arcsin(np.sqrt(a))                # (n_c, n_f)
     within = dist_km <= FIRE_PRESSURE_RADIUS_KM
-    weight = np.where(within, np.exp(-dist_km / DIST_DECAY_KM), 0.0)
 
-    hour_of = pd.Index(hours).get_indexer(f.ts)
+    # bearing FROM the fire TO the cell (fire is the source, cell is the
+    # destination) -- same "source -> destination" convention composite_grid
+    # uses for stations.
+    dy = (centers[:, 0][:, None] - flat[None, :]) * 111.32              # (n_c, n_f)
+    dx = (centers[:, 1][:, None] - flon[None, :]) * 111.32 * np.cos(p1)
+    bearing_fire_to_cell = (np.degrees(np.arctan2(dx, dy)) + 360.0) % 360.0
+
+    hour_of = pd.Index(hours).get_indexer(f.ts)                # (n_f,) fire -> hour index
+    wind_to_per_fire = (wind_from_deg[hour_of] + 180.0) % 360.0  # (n_f,) wind at each fire's own hour
+    off = np.abs(((bearing_fire_to_cell - wind_to_per_fire[None, :] + 180.0) % 360.0) - 180.0)
+    align = np.clip(np.cos(np.radians(off)), 0.0, None)          # (n_c, n_f)
+
+    weight = np.where(within, np.exp(-dist_km / DIST_DECAY_KM) * align, 0.0)
+
     pressure = np.zeros((n_h, n_c))
     for fi, hi in enumerate(hour_of):
         pressure[hi, :] += weight[:, fi] * float(f.frp.values[fi])
