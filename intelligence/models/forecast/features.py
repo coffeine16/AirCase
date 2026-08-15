@@ -40,7 +40,15 @@ def _station_matrix(panel: pd.DataFrame):
 def build_features(panel: pd.DataFrame, horizons: list[int],
                     loso_exclude: str | None = None,
                     fires: pd.DataFrame | None = None) -> pd.DataFrame:
-    p = panel.sort_values(["cell", "ts"]).copy()
+    # reset_index is required, not cosmetic: the fire_pressure merge below
+    # produces a fresh 0..n-1 RangeIndex on X, and later code re-joins X
+    # against THIS frame (p) by index label (p.loc[row.Index, "ward_id"]).
+    # Any caller that passes a sliced or otherwise non-0-based panel (e.g.
+    # panel[panel.cell != some_cell], as Task 9's spatial-LOSO does) would
+    # silently break that alignment and raise KeyError deep inside the
+    # climatology lookup -- found the hard way once already; fixed at the
+    # source so no future caller has to remember this precondition.
+    p = panel.sort_values(["cell", "ts"]).reset_index(drop=True).copy()
     if fires is None:
         fires = pd.DataFrame(columns=["ts", "lat", "lon", "frp", "confidence"])
     station_lat, station_lon, station_val, station_cells = _station_matrix(p)
