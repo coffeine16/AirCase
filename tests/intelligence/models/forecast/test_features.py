@@ -86,9 +86,18 @@ def test_build_features_loso_exclude_falls_back_to_ward_climatology():
     station_cell = cells[0]
 
     loso = build_features(panel, horizons=[3], loso_exclude=station_cell)
-    loso_row = loso[loso.cell == station_cell].iloc[-1]
+    # NOT .iloc[-1]: with a 72h panel and horizon=3, the LAST row's target
+    # time (ts + 3h) falls past the end of the panel entirely, so NO scope
+    # (cell, ward, or city) has a climatology entry for it and the lookup
+    # returns NaN regardless of whether the leak fix is present -- the
+    # assertion would pass vacuously either way. .iloc[0] is the first row
+    # surviving the lag_24 warm-up filter; its target time is well inside
+    # the panel, so both scopes have real entries and the comparison
+    # actually discriminates leak-vs-fallback.
+    loso_row = loso[loso.cell == station_cell].iloc[0]
 
     # cell[0]'s own cell-level climatology is exactly 50.0 (its own constant
     # reading); if that leaked through unmasked, clim_dow_hour would be
     # exactly 50.0. It must not be -- the ward blend (50 and 90) differs.
     assert loso_row["clim_dow_hour"] != pytest.approx(50.0)
+    assert loso_row["clim_month"] != pytest.approx(50.0)
