@@ -81,6 +81,18 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
         X["distance_to_nearest_station_km"] = p.cell.map(nearest_station_km).fillna(0.0)
         X.loc[X.has_station, "distance_to_nearest_station_km"] = 0.0
 
+        # roll_med_24/168 are computed from the RAW per-cell groupby above,
+        # which is correct for every station cell and already NaN for every
+        # non-station cell (no history to roll over) -- except the ONE case
+        # that matters: the loso_exclude cell IS a station, so its rolling
+        # medians are its own real history unless explicitly nulled here.
+        # Leaving them in place would let a "held-out" station see the
+        # median of its own last 24/168 real hours -- exactly the leak
+        # spec 3.1's self-exclusion rule exists to prevent, just via a
+        # feature the composite-based lag fill below never touches.
+        if loso_exclude is not None:
+            X.loc[X.cell == loso_exclude, ["roll_med_24", "roll_med_168"]] = np.nan
+
         # composite-based fill for non-station cells (and a LOSO station's own rows)
         if len(station_cells) > 0:
             excl = None

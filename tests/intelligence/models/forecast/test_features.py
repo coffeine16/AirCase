@@ -53,3 +53,10 @@ def test_build_features_loso_exclude_masks_own_history():
     # lag_0 must differ once the station is excluded from its own composite —
     # otherwise the LOSO test would trivially see its own real data
     assert normal_row["lag_0"] != loso_row["lag_0"] or np.isnan(loso_row["lag_0"])
+    # roll_med_24/168 must ALSO be masked for the excluded station's own
+    # rows -- these bypass the composite fill entirely (they're computed
+    # straight from the raw per-cell groupby), so without an explicit null
+    # a "held-out" station would still see the median of its own real
+    # last-24h/168h history, defeating the point of loso_exclude.
+    assert np.isnan(loso_row["roll_med_24"])
+    assert np.isnan(loso_row["roll_med_168"])
