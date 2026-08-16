@@ -1,0 +1,141 @@
+name: train-forecast
+
+# Manual only — this is a real compute spend (~$0.03/hr on HF Jobs' CPU
+# Upgrade flavor, but still a live job you kick off on purpose), not
+# something to fire on every push. Trigger from the Actions tab, or
+# `gh workflow run train-forecast.yml`.
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: >-
+          Branch/ref to train from (checks out this ref and builds the
+          training image from it). Blank = whatever ref you launched this
+          run from in the Actions UI.
+        required: false
+        default: ""
+      cities:
+        description: >-
+          Comma-separated city list to train on. Blank = all 8
+          (bengaluru,delhi,chennai,mumbai,kolkata,hyderabad,pune,ahmedabad).
+        required: false
+        default: ""
+      flavor:
+        description: "HF Jobs hardware flavor"
+        required: false
+        default: "cpu-upgrade"
+      timeout:
+        description: "Max Job duration before it's killed (e.g. 6h, 8h)"
+        required: false
+        default: "8h"
+
+concurrency:
+  group: train-forecast
+  cancel-in-progress: false
+
+env:
+  IMAGE: ghcr.io/${{ github.repository }}-trainer
+  # EDIT to your own HF username/org — must match training/train_and_upload.py's
+  # HF_MODEL_REPO constant.
+  HF_MODEL_REPO: MagmaCubes1133/aircase-forecast-models
+
+permissions:
+  contents: write   # commit the trained model back to the repo
+  packages: write   # push the training image to GHCR
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch || github.ref }}
+          lfs: true   # data/historical/**/*.parquet is git-lfs tracked
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push training image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: training/Dockerfile
+          push: true
+          tags: ${{ env.IMAGE }}:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Make the training image pullable by HF Jobs
+        # HF's docs don't document authenticated pulls from a third-party
+        # private registry (GHCR included) -- only from HF's own registry.
+        # Rather than risk the `hf jobs run` step failing on a private-pull
+        # auth error, force the package public every run (idempotent, and
+        # this image has no secrets baked in -- code + public API data
+        # only). If HF Jobs turns out to support private GHCR auth after
+        # all, this step is just unnecessary, not harmful.
+        run: |
+          gh api --method PATCH \
+            -H "Accept: application/vnd.github+json" \
+            "/user/packages/container/${{ github.event.repository.name }}-trainer/visibility" \
+            -f visibility=public || \
+          gh api --method PATCH \
+            -H "Accept: application/vnd.github+json" \
+            "/orgs/${{ github.repository_owner }}/packages/container/${{ github.event.repository.name }}-trainer/visibility" \
+            -f visibility=public || \
+          echo "::warning::couldn't set package visibility automatically -- if 'hf jobs run' fails to pull the image below, make ghcr.io/${{ github.repository }}-trainer public manually once in the repo's Packages settings"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install the hf CLI
+        run: pip install -U "huggingface_hub[cli]"
+
+      - name: Run training on Hugging Face Jobs
+        # Setting HF_TOKEN in the environment is enough — the hf CLI and
+        # huggingface_hub both pick it up automatically, no explicit `hf
+        # auth login` step needed. `--secrets HF_TOKEN` (bare form) hands
+        # the SAME token to the container so train_and_upload.py can push
+        # to the Hub. A non-detached `hf jobs run` blocks until the Job
+        # reaches a terminal state and exits non-zero on failure, so this
+        # step (and therefore the whole workflow) fails correctly if
+        # training fails — no separate `hf jobs wait` needed.
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          CITIES_ARG=""
+          if [ -n "${{ inputs.cities }}" ]; then
+            CITIES_ARG="--env CITIES=${{ inputs.cities }}"
+          fi
+          hf jobs run \
+            --flavor "${{ inputs.flavor }}" \
+            --timeout "${{ inputs.timeout }}" \
+            --secrets HF_TOKEN \
+            $CITIES_ARG \
+            "${{ env.IMAGE }}:${{ github.sha }}" \
+            python train_and_upload.py
+
+      - name: Pull the trained model back from the Hub
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python -c "
+          from huggingface_hub import snapshot_download
+          import shutil
+          path = snapshot_download('${{ env.HF_MODEL_REPO }}', repo_type='model')
+          shutil.copytree(path, 'models', dirs_exist_ok=True)
+          "
+
+      - name: Commit the updated model
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add models/
+          if git diff --cached --quiet; then
+            echo "no model changes to commit (this run's manifest matched what's already in models/)"
+            exit 0
+          fi
+          git commit -m "chore(models): update trained forecast model [skip ci]"
+          git push
