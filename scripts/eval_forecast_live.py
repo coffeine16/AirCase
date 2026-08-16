@@ -11,6 +11,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 warnings.filterwarnings("ignore")
 import pandas as pd
 from shared.config import CITY, window_end
+from shared.wards import attach_wards
 from ingestion.collectors.pollers import fetch_stations, fetch_weather
 from intelligence.models.forecast import evaluate, HORIZONS, TEST_TAIL_DAYS
 
@@ -24,6 +25,13 @@ panel = sta.merge(wx, on="ts", how="left")
 panel["city"] = CITY
 for c in ["lu_road", "lu_industrial", "lu_traffic"]:
     panel[c] = 0
+# build_features requires these three and does NOT synthesise them:
+# ward_id is the climatology's middle fallback scope, and fires_6h/frp_6h are
+# in FEATURE_COLUMNS. Without them this script raised KeyError on the first
+# call. Same ward helper build_panel() uses — not a reinvented assignment.
+panel = attach_wards(panel)
+panel["fires_6h"] = 0
+panel["frp_6h"] = 0.0
 print(f"[{CITY}] {panel.cell.nunique()} stations, {len(panel):,} station-hours, "
       f"window ends {window_end().date()}")
 
