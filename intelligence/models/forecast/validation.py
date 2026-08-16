@@ -2,6 +2,9 @@
 fixed holdout — walk-forward folds, spatial-LOSO (Task 9), city-LOSO, and
 real-event oversampling that touches ONLY sample weights, never a
 synthetic ignition schedule (spec 5.3's hard rule)."""
+import os
+from concurrent.futures import ProcessPoolExecutor, as_completed
+
 import numpy as np
 import pandas as pd
 
@@ -50,48 +53,132 @@ def city_loso_splits(cities: list[str]) -> list[tuple[str, list[str]]]:
     return [(c, [x for x in cities if x != c]) for c in cities]
 
 
+def _run_one_loso_fold(panel: pd.DataFrame, horizons: list[int], feature_cols: list[str],
+                        fires: pd.DataFrame | None, held_out: str,
+                        num_threads: int | None) -> dict | None:
+    """One spatial-LOSO fold's actual work, factored out so both the
+    sequential loop and the parallel (ProcessPoolExecutor) path in
+    spatial_loso call the exact same code -- the two paths must be provably
+    identical, not just similar, since only one of them is what every
+    existing test exercises."""
+    # ONE build on the FULL panel, filtered by cell afterwards. Slicing
+    # the panel down to the held-out cell BEFORE building features (an
+    # earlier version did) leaves composite_grid/positional_block with no
+    # other station to compose from -- every spatial feature comes back
+    # NaN -- and rebuilds the climatology from that single station, whose
+    # cell/ward/city scopes then all collapse onto the held-out station's
+    # own value, which is also the prediction target. The model is handed
+    # the answer and nothing else, and the resulting "RMSE" measures
+    # nothing. Filtering after the build keeps the composite real and the
+    # self-exclusion (loso_exclude) honest.
+    frame = build_features(panel, horizons, loso_exclude=held_out, fires=fires,
+                            restrict_to_station_cells=True)
+    train_frame = mask_unknown_city(
+        frame[frame.cell != held_out].dropna(subset=["y"]))
+    test_frame = frame[frame.cell == held_out]
+    if train_frame.empty or test_frame.empty:
+        return None
+    test_frame = _align_city(test_frame, train_frame.city.cat.categories)
+    models = train_quantile_models(train_frame, feature_cols, num_boost_round=200,
+                                    num_threads=num_threads)
+    pred = predict_quantiles(models, test_frame, feature_cols)
+    truth = test_frame["y"].values
+    rmse = float(np.sqrt(np.nanmean((truth - pred["pm25_p50"].values) ** 2)))
+    return {"held_out": held_out, "rmse": round(rmse, 2), "n": len(test_frame),
+            "truth": truth, "pred": pred["pm25_p50"].values}
+
+
+# Set once per worker PROCESS by _init_loso_worker, read by _loso_worker_task.
+# ProcessPoolExecutor's initializer runs once when a worker starts (not once
+# per submitted task), so the panel/horizons/etc. get pickled to each worker
+# ONE time no matter how many folds that worker goes on to run -- submitting
+# 57 tasks each carrying the full panel would re-pickle a multi-hundred-MB
+# object 57 times for no reason.
+_LOSO_WORKER_STATE: dict = {}
+
+
+def _init_loso_worker(panel, horizons, feature_cols, fires, num_threads):
+    _LOSO_WORKER_STATE.update(panel=panel, horizons=horizons, feature_cols=feature_cols,
+                               fires=fires, num_threads=num_threads)
+
+
+def _loso_worker_task(held_out: str) -> dict | None:
+    s = _LOSO_WORKER_STATE
+    return _run_one_loso_fold(s["panel"], s["horizons"], s["feature_cols"], s["fires"],
+                               held_out, s["num_threads"])
+
+
 def spatial_loso(panel: pd.DataFrame, horizons: list[int], feature_cols: list[str],
-                  fires: pd.DataFrame | None = None) -> dict:
+                  fires: pd.DataFrame | None = None,
+                  max_workers: int | None = None, threads_per_fold: int = 2) -> dict:
     """Direct analog of fusion.py::loso_validation, applied to the
     forecaster (spec 5.2). For each real station: retrain excluding it
     entirely from training, forecast its cell using composite-only features
     with itself excluded from its own composite (spec 3.1's self-exclusion
     rule via features.build_features's loso_exclude), score against its
-    real held-out readings."""
+    real held-out readings.
+
+    `max_workers`: None (default) runs every fold sequentially in THIS
+    process, one after another -- unchanged from before this parameter
+    existed, and what every existing test exercises (monkeypatching
+    train_quantile_models/predict_quantiles only affects the current
+    process; a ProcessPoolExecutor worker re-imports the module fresh and
+    would silently see the REAL functions instead, breaking that test
+    coverage). Pass an integer to run that many folds concurrently in
+    separate processes instead -- train_and_promote does, for the real
+    training run. Each concurrent fold's LightGBM calls are capped to
+    `threads_per_fold` threads (default 2) so N concurrent folds don't
+    oversubscribe the machine the way N folds each grabbing every core
+    would. Measured on real 4-city data: one fold is ~7 min wall-clock
+    (~104s feature build, ~313s LightGBM training on ~8M rows, ~4s
+    predict) -- with 57 real stations across delhi/chennai/bengaluru/
+    mumbai, sequential is ~6.5-7h; this is the dominant cost of the whole
+    training run."""
     station_cells = sorted(panel[panel.pm25_station.notna()].cell.unique())
+    if not station_cells:
+        return {"overall_rmse": float("nan"), "per_station": {}, "n_stations": 0}
+
     per_station, all_true, all_pred = {}, [], []
-    for i, held_out in enumerate(station_cells, 1):
-        # Each fold rebuilds features for the WHOLE panel (composite fidelity
-        # requires full-city context), so this loop is the dominant cost of
-        # the whole training run on a real multi-city panel and can run
-        # silently for a long time with no other output. One line per fold
-        # is the difference between "still running" and "looks hung".
-        print(f"[spatial_loso] fold {i}/{len(station_cells)}: holding out {held_out}")
-        # ONE build on the FULL panel, filtered by cell afterwards. Slicing
-        # the panel down to the held-out cell BEFORE building features (an
-        # earlier version did) leaves composite_grid/positional_block with no
-        # other station to compose from -- every spatial feature comes back
-        # NaN -- and rebuilds the climatology from that single station, whose
-        # cell/ward/city scopes then all collapse onto the held-out station's
-        # own value, which is also the prediction target. The model is handed
-        # the answer and nothing else, and the resulting "RMSE" measures
-        # nothing. Filtering after the build keeps the composite real and the
-        # self-exclusion (loso_exclude) honest.
-        frame = build_features(panel, horizons, loso_exclude=held_out, fires=fires,
-                                restrict_to_station_cells=True)
-        train_frame = mask_unknown_city(
-            frame[frame.cell != held_out].dropna(subset=["y"]))
-        test_frame = frame[frame.cell == held_out]
-        if train_frame.empty or test_frame.empty:
-            continue
-        test_frame = _align_city(test_frame, train_frame.city.cat.categories)
-        models = train_quantile_models(train_frame, feature_cols, num_boost_round=200)
-        pred = predict_quantiles(models, test_frame, feature_cols)
-        truth = test_frame["y"].values
-        rmse = float(np.sqrt(np.nanmean((truth - pred["pm25_p50"].values) ** 2)))
-        per_station[held_out] = {"rmse": round(rmse, 2), "n": len(test_frame)}
-        all_true.extend(truth)
-        all_pred.extend(pred["pm25_p50"].values)
+
+    if max_workers is None or max_workers <= 1:
+        for i, held_out in enumerate(station_cells, 1):
+            # Each fold rebuilds features for the WHOLE panel (composite
+            # fidelity requires full-city context), so this loop is the
+            # dominant cost of the whole training run on a real multi-city
+            # panel and can run silently for a long time with no other
+            # output. One line per fold is the difference between "still
+            # running" and "looks hung".
+            print(f"[spatial_loso] fold {i}/{len(station_cells)}: holding out {held_out}")
+            result = _run_one_loso_fold(panel, horizons, feature_cols, fires, held_out,
+                                         num_threads=None)
+            if result is None:
+                continue
+            per_station[result["held_out"]] = {"rmse": result["rmse"], "n": result["n"]}
+            all_true.extend(result["truth"])
+            all_pred.extend(result["pred"])
+    else:
+        print(f"[spatial_loso] {len(station_cells)} stations, {max_workers} concurrent "
+              f"workers x {threads_per_fold} threads/fold (cpu_count={os.cpu_count()})")
+        done = 0
+        with ProcessPoolExecutor(max_workers=max_workers, initializer=_init_loso_worker,
+                                  initargs=(panel, horizons, feature_cols, fires,
+                                            threads_per_fold)) as ex:
+            futures = {ex.submit(_loso_worker_task, held_out): held_out
+                       for held_out in station_cells}
+            # as_completed, not the submission order -- folds finish whenever
+            # they finish, and blocking on submission order would waste every
+            # worker that raced ahead while we wait on a slow one specifically.
+            for future in as_completed(futures):
+                done += 1
+                held_out = futures[future]
+                print(f"[spatial_loso] fold {done}/{len(station_cells)} complete: {held_out}")
+                result = future.result()
+                if result is None:
+                    continue
+                per_station[result["held_out"]] = {"rmse": result["rmse"], "n": result["n"]}
+                all_true.extend(result["truth"])
+                all_pred.extend(result["pred"])
+
     overall = float(np.sqrt(np.nanmean((np.array(all_true) - np.array(all_pred)) ** 2))) if all_true else float("nan")
     return {"overall_rmse": round(overall, 2), "per_station": per_station, "n_stations": len(per_station)}
 

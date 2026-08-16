@@ -31,13 +31,24 @@ def mask_unknown_city(frame: pd.DataFrame, frac: float = 0.05, seed: int = 0) ->
 def train_quantile_models(train: pd.DataFrame, feature_cols: list[str],
                            label_col: str = "y", num_boost_round: int = 2000,
                            valid: pd.DataFrame | None = None,
-                           early_stopping_rounds: int = 50) -> dict[float, lgb.Booster]:
+                           early_stopping_rounds: int = 50,
+                           num_threads: int | None = None) -> dict[float, lgb.Booster]:
     """One booster per quantile in QUANTILES. `city` must already be a
-    'category' dtype column in `train`/`valid` (see mask_unknown_city)."""
+    'category' dtype column in `train`/`valid` (see mask_unknown_city).
+
+    `num_threads`: PARAMS never set this, so LightGBM auto-detects available
+    cores and uses all of them for a single call -- fine for one fold at a
+    time, but spatial_loso's parallel path (validation.py) runs several
+    folds concurrently in separate processes, and if EACH one still tried
+    to grab every core, they'd oversubscribe the machine and likely run
+    SLOWER than sequential. Pass an explicit cap there; every other caller
+    leaves this None and keeps today's auto-detect behavior unchanged."""
     cat_cols = [c for c in feature_cols if c == "city"]
     models = {}
     for q in QUANTILES:
         params = {**PARAMS, "alpha": q}
+        if num_threads is not None:
+            params["num_threads"] = num_threads
         ds = lgb.Dataset(train[feature_cols], label=train[label_col],
                           categorical_feature=cat_cols)
         callbacks, valid_sets = [], None

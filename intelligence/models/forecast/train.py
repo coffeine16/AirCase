@@ -10,6 +10,7 @@ single "better" direction — both over- and under-coverage relative to the
 comparison this version doesn't implement; stated here as a real scope
 limit, not a silent gap."""
 import json
+import os
 from pathlib import Path
 
 import numpy as np
@@ -68,7 +69,9 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
                        prior_manifest: dict | None = None,
                        regression_tolerance_pct: float = 5.0,
                        fires_by_city: dict[str, pd.DataFrame] | None = None,
-                       walk_forward_kwargs: dict | None = None) -> dict:
+                       walk_forward_kwargs: dict | None = None,
+                       loso_max_workers: int | None = None,
+                       loso_threads_per_fold: int = 2) -> dict:
     out_dir = Path(out_dir)
     # concat silently reverts each city's own categorical columns back to
     # plain string dtype whenever their category sets differ (every city's
@@ -129,8 +132,23 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
             "ceiling": ceil_pred, "fires_6h": te["fires_6h"].fillna(0).values,
         }))
 
-    print("[train_and_promote] starting spatial-LOSO")
-    loso_result = spatial_loso(full_panel, horizons, feature_cols, fires=all_fires)
+    # None (the parameter's own default) would run every station fold
+    # sequentially in this one process -- fine for tests, much too slow for
+    # a real multi-city panel (measured: ~7 min/fold, 57 folds across 4
+    # cities is ~6.5-7h alone). Auto-pick a concurrency level from whatever
+    # this machine actually has, capping each fold's own LightGBM threads
+    # so N concurrent folds don't oversubscribe it -- os.cpu_count() reads
+    # the container's own view, so this adapts to whatever HF Jobs flavor
+    # the run was launched with instead of assuming cpu-upgrade's 8 vCPUs.
+    resolved_max_workers = loso_max_workers
+    if resolved_max_workers is None:
+        cpu_count = os.cpu_count() or 4
+        resolved_max_workers = max(1, cpu_count // loso_threads_per_fold)
+    print(f"[train_and_promote] starting spatial-LOSO ({resolved_max_workers} concurrent "
+          f"workers x {loso_threads_per_fold} threads/fold)")
+    loso_result = spatial_loso(full_panel, horizons, feature_cols, fires=all_fires,
+                                max_workers=resolved_max_workers,
+                                threads_per_fold=loso_threads_per_fold)
     print("[train_and_promote] starting city-LOSO")
     city_result = run_city_loso(panels_by_city, horizons, feature_cols,
                                  fires_by_city=fires_by_city)

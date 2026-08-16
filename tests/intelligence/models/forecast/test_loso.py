@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import pytest
 
 from shared.grid import city_cells
 from intelligence.models.forecast.validation import spatial_loso, run_city_loso
@@ -61,6 +62,35 @@ def test_spatial_loso_runs_one_fold_per_station():
     assert "overall_rmse" in result
     # not just "a key exists" -- the number has to be real
     assert np.isfinite(result["overall_rmse"])
+
+
+def test_spatial_loso_parallel_path_matches_sequential():
+    """The parallel (ProcessPoolExecutor) path exists purely as a faster way
+    to compute the SAME thing the sequential loop does -- both call
+    _run_one_loso_fold with identical arguments, just from different
+    processes. This proves that equivalence directly rather than trusting
+    it by construction: run both paths on the same panel and require the
+    same stations, same per-station RMSEs, and the same overall RMSE. A
+    small tolerance (not exact equality) allows for LightGBM histogram
+    reduction order differing slightly across thread counts -- real,
+    documented floating-point non-determinism, not a bug in the split
+    itself."""
+    from intelligence.models.forecast.features import FEATURE_COLUMNS
+
+    panel = _panel_with_five_stations(held_out_level=200.0)
+    sequential = spatial_loso(panel, horizons=[3], feature_cols=FEATURE_COLUMNS)
+    parallel = spatial_loso(panel, horizons=[3], feature_cols=FEATURE_COLUMNS,
+                             max_workers=2, threads_per_fold=1)
+
+    assert sequential["n_stations"] == parallel["n_stations"] > 0
+    assert set(sequential["per_station"]) == set(parallel["per_station"])
+    for cell in sequential["per_station"]:
+        seq_rmse = sequential["per_station"][cell]["rmse"]
+        par_rmse = parallel["per_station"][cell]["rmse"]
+        assert seq_rmse == pytest.approx(par_rmse, rel=0.05), (
+            f"{cell}: sequential={seq_rmse} vs parallel={par_rmse} -- the two "
+            "paths should compute the same fold, just on different processes")
+    assert sequential["overall_rmse"] == pytest.approx(parallel["overall_rmse"], rel=0.05)
 
 
 def test_spatial_loso_test_frame_sees_the_other_stations_not_its_own_answer():
