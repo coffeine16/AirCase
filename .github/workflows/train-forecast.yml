@@ -52,6 +52,11 @@ jobs:
           ref: ${{ inputs.branch || github.ref }}
           lfs: true   # data/historical/**/*.parquet is git-lfs tracked
 
+      # ghcr.io rejects uppercase repo names (ours has "AirCase") -- lowercase
+      # it into IMAGE, overriding the job-level env default set above.
+      - name: Compute lowercase image name
+        run: echo "IMAGE=$(echo 'ghcr.io/${{ github.repository }}-trainer' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_ENV"
+
       - name: Log in to GHCR
         uses: docker/login-action@v3
         with:
@@ -86,13 +91,13 @@ jobs:
         run: |
           gh api --method PATCH \
             -H "Accept: application/vnd.github+json" \
-            "/user/packages/container/${{ github.event.repository.name }}-trainer/visibility" \
+            "/user/packages/container/$(echo '${{ github.event.repository.name }}-trainer' | tr '[:upper:]' '[:lower:]')/visibility" \
             -f visibility=public || \
           gh api --method PATCH \
             -H "Accept: application/vnd.github+json" \
-            "/orgs/${{ github.repository_owner }}/packages/container/${{ github.event.repository.name }}-trainer/visibility" \
+            "/orgs/${{ github.repository_owner }}/packages/container/$(echo '${{ github.event.repository.name }}-trainer' | tr '[:upper:]' '[:lower:]')/visibility" \
             -f visibility=public || \
-          echo "::warning::couldn't set package visibility automatically -- if 'hf jobs run' fails to pull the image below, make ghcr.io/${{ github.repository }}-trainer public manually once in the repo's Packages settings"
+          echo "::warning::couldn't set package visibility automatically -- if 'hf jobs run' fails to pull the image below, make ${{ env.IMAGE }} public manually once in the repo's Packages settings"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
