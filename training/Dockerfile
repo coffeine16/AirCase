@@ -27,4 +27,11 @@ COPY intelligence/models/forecast/ intelligence/models/forecast/
 COPY data/historical/ data/historical/
 COPY training/train_and_upload.py .
 
-CMD ["python", "train_and_upload.py"]
+# Unbuffered stdout: this container's output isn't a TTY, so Python
+# fully-buffers it by default -- every [spatial_loso]/[train_and_promote]
+# progress print can sit unflushed for a long time regardless of how much
+# real work has happened, making `hf jobs logs` look stalled when it isn't.
+# Bit this exact project once already with a local script; -u is the fix
+# there too.
+ENV PYTHONUNBUFFERED=1
+CMD ["python", "-u", "train_and_upload.py"]

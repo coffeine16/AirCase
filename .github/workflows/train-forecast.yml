@@ -25,9 +25,16 @@ on:
         required: false
         default: "cpu-upgrade"
       timeout:
-        description: "Max Job duration before it's killed (e.g. 6h, 8h)"
+        description: >-
+          Max Job duration before it's killed (e.g. 12h, 16h, 24h). Measured
+          on real 4-city data: spatial-LOSO alone (one full model retrain
+          per real station) runs ~7 min/station, dominated by LightGBM
+          training, not feature-building. 4 cities (delhi/chennai/bengaluru/
+          mumbai, 57 stations total) -> spatial-LOSO alone ~6.5-7h; the full
+          run (walk-forward + spatial-LOSO + city-LOSO + final fit)
+          extrapolates to ~9-10h. All 8 cities will be well past that.
         required: false
-        default: "8h"
+        default: "16h"
 
 concurrency:
   group: train-forecast
