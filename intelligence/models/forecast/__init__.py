@@ -6,10 +6,9 @@ scripts/eval_forecast_live.py need no changes beyond what Task 11 already
 makes."""
 import json
 
-import numpy as np
 import pandas as pd
 
-from shared.config import DATA_OUT, ROOT
+from shared.config import ROOT
 from intelligence.models.forecast.features import build_features, FEATURE_COLUMNS
 from intelligence.models.forecast.model import predict_quantiles, mask_unknown_city, UNKNOWN_CITY
 from intelligence.models.forecast.train import train_and_promote
@@ -45,6 +44,37 @@ def evaluate(panel: pd.DataFrame, oracle_met: bool = False) -> dict:
     return results
 
 
+def _predict_field(panels: dict, served_manifest: dict, served_models: dict,
+                    feature_cols: list[str]) -> dict[str, list[dict]]:
+    """Per-city forecast.json field, predicted with the SERVED model.
+
+    Uses `served_manifest["cities"]` (the cities the served model was
+    ACTUALLY trained on — train_and_promote already writes this) for the
+    categorical reconstruction, NOT `panels.keys()` (the current run's
+    data). These differ whenever a refused promotion falls back to a prior
+    model trained on a different city set — exactly the scenario this
+    session's own city-registry expansion (3 -> 8 cities) makes concrete.
+    Using the wrong source silently corrupts LightGBM's integer-coded
+    categorical predictions rather than raising: get this wrong and a
+    city's forecast quietly reflects a DIFFERENT city's learned behaviour.
+    """
+    city_categories = sorted(set(served_manifest["cities"]) | {UNKNOWN_CITY})
+    fields = {}
+    for city, panel in panels.items():
+        frame = build_features(panel, HORIZONS)
+        frame["city"] = pd.Categorical(frame["city"], categories=city_categories)
+        latest = frame.ts.max()
+        latest_rows = frame[frame.ts == latest].dropna(subset=["lag_0"])
+        if latest_rows.empty:
+            continue
+        pred = predict_quantiles(served_models, latest_rows, feature_cols)
+        fields[city] = [{"cell": c, "horizon_h": int(h), "pm25_hat": round(float(p50), 1),
+                         "pm25_p10": round(float(p10), 1), "pm25_p90": round(float(p90), 1)}
+                        for c, h, p50, p10, p90 in zip(latest_rows.cell, latest_rows.horizon,
+                                                        pred.pm25_p50, pred.pm25_p10, pred.pm25_p90)]
+    return fields
+
+
 def run(cities: list[str] | None = None) -> dict:
     """New entrypoint. Trains on each city's historical panel if
     data/historical/<city>/panel.parquet exists (richer, longer window),
@@ -70,7 +100,15 @@ def run(cities: list[str] | None = None) -> dict:
     prior = None
     manifest_p = out_dir / "manifest.json"
     if manifest_p.exists():
-        prior = json.loads(manifest_p.read_text())
+        try:
+            prior = json.loads(manifest_p.read_text())
+        except (json.JSONDecodeError, OSError) as e:
+            # A prior manifest that exists but can't be read is as dangerous
+            # as a failed run if silently ignored -- log it loudly rather
+            # than let a corrupted file quietly reset promotion history.
+            print(f"[forecast] prior manifest at {manifest_p} is unreadable "
+                  f"({type(e).__name__}: {e}) — treating as no prior model")
+            prior = None
 
     manifest = train_and_promote(panels, HORIZONS, FEATURE_COLUMNS, out_dir, prior_manifest=prior)
 
@@ -91,24 +129,16 @@ def run(cities: list[str] | None = None) -> dict:
 
     import lightgbm as lgb
     model_dir = out_dir / served_manifest["version"]
-    served_models = {
-        0.1: lgb.Booster(model_file=str(model_dir / "model_p10.txt")),
-        0.5: lgb.Booster(model_file=str(model_dir / "model_p50.txt")),
-        0.9: lgb.Booster(model_file=str(model_dir / "model_p90.txt")),
-    }
-
-    # The city categories the served model was trained on: every city in
-    # `panels` plus the UNKNOWN_CITY sentinel mask_unknown_city introduces
-    # during training. Must be reconstructed EXPLICITLY and applied to
-    # every per-city prediction frame below — LightGBM encodes categorical
-    # features as integer codes, so a prediction frame whose `city` column
-    # only contains ONE category (that single city, which is what a bare
-    # `.astype("category")` on a single-city frame would produce) would
-    # silently assign the wrong integer code and corrupt every prediction
-    # rather than raising. Sorted order matches pandas' default
-    # `astype("category")` behaviour, the same one build_features/
-    # mask_unknown_city already produce during training.
-    city_categories = sorted(set(panels) | {UNKNOWN_CITY})
+    try:
+        served_models = {
+            0.1: lgb.Booster(model_file=str(model_dir / "model_p10.txt")),
+            0.5: lgb.Booster(model_file=str(model_dir / "model_p50.txt")),
+            0.9: lgb.Booster(model_file=str(model_dir / "model_p90.txt")),
+        }
+    except Exception as e:   # noqa: BLE001 — a missing/corrupted model dir must not crash the whole run
+        print(f"[forecast] served model at {model_dir} failed to load "
+              f"({type(e).__name__}: {e}) — skipping forecast.json this run")
+        return manifest
 
     # DATA_OUT_BASE / city, NOT the singular DATA_OUT: DATA_OUT is bound at
     # process-import time to whichever single AQ_CITY started this process
@@ -116,18 +146,8 @@ def run(cities: list[str] | None = None) -> dict:
     # one process — using the bare DATA_OUT here would silently write every
     # city's forecast.json into whichever one city happened to be active,
     # exactly the bug class this plan warns about elsewhere.
-    for city, panel in panels.items():
-        frame = build_features(panel, HORIZONS)
-        frame["city"] = pd.Categorical(frame["city"], categories=city_categories)
-        latest = frame.ts.max()
-        latest_rows = frame[frame.ts == latest].dropna(subset=["lag_0"])
-        if latest_rows.empty:
-            continue
-        pred = predict_quantiles(served_models, latest_rows, FEATURE_COLUMNS)
-        field = [{"cell": c, "horizon_h": int(h), "pm25_hat": round(float(p50), 1),
-                  "pm25_p10": round(float(p10), 1), "pm25_p90": round(float(p90), 1)}
-                 for c, h, p50, p10, p90 in zip(latest_rows.cell, latest_rows.horizon,
-                                                 pred.pm25_p50, pred.pm25_p10, pred.pm25_p90)]
+    fields = _predict_field(panels, served_manifest, served_models, FEATURE_COLUMNS)
+    for city, field in fields.items():
         city_out = DATA_OUT_BASE / city
         city_out.mkdir(parents=True, exist_ok=True)
         (city_out / "forecast.json").write_text(json.dumps(field, separators=(",", ":")))

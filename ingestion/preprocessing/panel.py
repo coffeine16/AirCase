@@ -164,6 +164,9 @@ def build_panel() -> pd.DataFrame:
     # time features
     panel["hour"] = panel.ts.dt.hour
     panel["dow"] = panel.ts.dt.dayofweek
+    panel["city"] = CITY   # required by build_features(); the historical
+                            # panel (Task 1) already carries this, the
+                            # operational one didn't until now
 
     panel.to_parquet(DATA_OUT / "panel.parquet", index=False)
     n_st = panel.pm25_station.notna().sum()
