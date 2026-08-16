@@ -5,7 +5,7 @@ synthetic ignition schedule (spec 5.3's hard rule)."""
 import numpy as np
 import pandas as pd
 
-from intelligence.models.forecast.features import build_features, downcast_panel
+from intelligence.models.forecast.features import build_features, downcast_panel, station_cells_only
 from intelligence.models.forecast.model import (
     train_quantile_models, predict_quantiles, mask_unknown_city, UNKNOWN_CITY,
 )
@@ -119,15 +119,19 @@ def run_city_loso(panels_by_city: dict[str, pd.DataFrame], horizons: list[int],
         # re-downcast after concat: pd.concat reverts a categorical column
         # back to plain string dtype whenever the pieces' category sets
         # differ, which every per-city `city`/`cell`/`ward_id` column does.
-        train_panel = downcast_panel(
-            pd.concat([panels_by_city[c] for c in train_cities], ignore_index=True))
+        # station_cells_only first -- both frames below run with
+        # restrict_to_station_cells=True, which discards every non-station
+        # cell anyway (see that flag's docstring), so concatenating N-1
+        # cities' FULL grids just to throw most of it away is pure waste.
+        train_panel = downcast_panel(pd.concat(
+            [station_cells_only(panels_by_city[c]) for c in train_cities], ignore_index=True))
         train_fires = [fires_by_city[c] for c in train_cities if c in fires_by_city]
         train_frame = mask_unknown_city(
             build_features(train_panel, horizons,
                            fires=pd.concat(train_fires, ignore_index=True) if train_fires else None,
                            restrict_to_station_cells=True)
             .dropna(subset=["y"]))
-        test_panel = panels_by_city[held_out]
+        test_panel = station_cells_only(panels_by_city[held_out])
         test_frame = build_features(test_panel, horizons, fires=fires_by_city.get(held_out),
                                      restrict_to_station_cells=True)
         if train_frame.empty or test_frame.dropna(subset=["y"]).empty:

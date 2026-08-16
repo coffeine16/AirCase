@@ -35,6 +35,22 @@ FEATURE_COLUMNS = (
 )
 
 
+def station_cells_only(panel: pd.DataFrame) -> pd.DataFrame:
+    """Rows for cells that carry a real station reading somewhere in
+    `panel` (the cell's FULL time series, not just its non-NaN rows --
+    build_features' own lag/rolling groupby needs that whole history).
+
+    Every call site that runs build_features with restrict_to_station_
+    cells=True only ever keeps station-cell rows in its output (see that
+    flag's docstring), so building composite/positional features for a
+    city's other ~95-99% of grid cells first, only to discard them, is
+    pure waste -- both in compute and, on a real multi-city panel, in
+    memory. Filter here, before that expensive work runs, and every
+    downstream result is byte-identical to building on the full grid."""
+    station_cells = panel.loc[panel.pm25_station.notna(), "cell"].unique()
+    return panel[panel.cell.isin(station_cells)]
+
+
 def downcast_panel(df: pd.DataFrame) -> pd.DataFrame:
     """Shrinks a panel's memory footprint. Measured on Bengaluru's real
     2-year historical panel: 3.28GB -> ~1.1GB. The low-cardinality string
@@ -62,8 +78,16 @@ def downcast_panel(df: pd.DataFrame) -> pd.DataFrame:
     fail with exactly that TypeError. The string columns are where the
     memory actually was (city/cell/ward_id/ward_name = 39% of a real panel's
     footprint from 4 of ~19 columns), so this alone is the safe, high-value
-    part of the fix."""
-    df = df.copy()
+    part of the fix.
+
+    Mutates `df` in place rather than defensively copying it first. Every
+    call site (ingestion's per-city load, train.py's full_panel, run_city_
+    loso's train_panel) passes the fresh, single-owner result of a
+    pd.read_parquet or pd.concat call that no other name still references,
+    so there is no aliasing to protect against — and on a real 4-city
+    panel (~14.7GB post-concat) that defensive copy briefly held BOTH the
+    string-typed original and its categorical copy at once, which is a
+    measured, real contributor to a training Job's OOM."""
     for col in ("cell", "ward_id", "ward_name", "city"):
         if col in df.columns:
             df[col] = df[col].astype("category")

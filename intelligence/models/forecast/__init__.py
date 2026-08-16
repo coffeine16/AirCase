@@ -65,6 +65,18 @@ def evaluate(panel: pd.DataFrame, oracle_met: bool = False,
     return results
 
 
+# Only frame.ts == frame.ts.max() ever survives out of _predict_field's
+# build_features call below, so exploding the WHOLE historical panel (up to
+# 2 years) across HORIZONS just to throw away all but the last timestamp is
+# pure waste -- on a real multi-city panel this is the single biggest
+# contributor to the training Job's OOM. roll_med_168 (7-day rolling
+# median) is the longest lookback any feature needs, so trimming the panel
+# to this many trailing hours before build_features leaves the kept row's
+# features byte-identical while cutting the exploded frame's row count by
+# roughly (panel span in hours / this constant).
+PREDICT_LOOKBACK_HOURS = 24 * 10   # 168h roll_med window + 24h max lag + 3-day buffer
+
+
 def _predict_field(panels: dict, served_manifest: dict, served_models: dict,
                     feature_cols: list[str],
                     fires_by_city: dict | None = None) -> dict[str, list[dict]]:
@@ -85,7 +97,15 @@ def _predict_field(panels: dict, served_manifest: dict, served_models: dict,
     city_categories = sorted(set(served_manifest["cities"]) | {UNKNOWN_CITY})
     fields = {}
     for city, panel in panels.items():
-        frame = build_features(panel, HORIZONS, fires=fires_by_city.get(city))
+        # Climatology needs the FULL history (a month/dow-hour bucket only
+        # has a few dozen samples a year) -- built here, from the untrimmed
+        # panel, and passed in explicitly so build_features below doesn't
+        # rebuild it (and doesn't silently rebuild it from the trimmed slice).
+        clim_tables = build_climatology(panel)
+        cutoff = panel.ts.max() - pd.Timedelta(hours=PREDICT_LOOKBACK_HOURS)
+        recent_panel = panel[panel.ts > cutoff]
+        frame = build_features(recent_panel, HORIZONS, fires=fires_by_city.get(city),
+                                clim_tables=clim_tables)
         frame["city"] = pd.Categorical(frame["city"], categories=city_categories)
         latest = frame.ts.max()
         latest_rows = frame[frame.ts == latest].dropna(subset=["lag_0"])

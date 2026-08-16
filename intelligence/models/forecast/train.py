@@ -15,7 +15,9 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from intelligence.models.forecast.features import build_features, attach_climatology, downcast_panel
+from intelligence.models.forecast.features import (
+    build_features, attach_climatology, downcast_panel, station_cells_only,
+)
 from intelligence.models.forecast.climatology import build_climatology
 from intelligence.models.forecast.model import (
     train_quantile_models, predict_quantiles, train_ceiling_baseline, mask_unknown_city,
@@ -73,7 +75,20 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     # `city` column, for one) -- re-downcast after, not just at load time.
     # See features.py::downcast_panel's docstring; this line is the exact
     # one that failed with an ArrowMemoryError on a real 3-city panel.
-    full_panel = downcast_panel(pd.concat(panels_by_city.values(), ignore_index=True))
+    #
+    # station_cells_only FIRST, not the raw per-city panel: everything
+    # below passes restrict_to_station_cells=True, which only ever keeps
+    # station-cell rows anyway (see that flag's docstring) -- concatenating
+    # each city's full grid (often 700-1700+ cells) just to immediately
+    # discard every non-station cell is exactly the peak that OOM'd a real
+    # 4-city training Job on cpu-upgrade's 32GB, measured at ~39GB before
+    # this filter (panels_by_city + the concat + downcast_panel's own copy,
+    # all at full-grid size simultaneously). Filtering to the ~20-40
+    # station cells per city here cuts that peak by roughly the same
+    # 30-100x that composite_grid/positional_block no longer waste on
+    # cells this function was always going to throw away.
+    full_panel = downcast_panel(pd.concat(
+        [station_cells_only(p) for p in panels_by_city.values()], ignore_index=True))
     all_fires = (pd.concat(fires_by_city.values(), ignore_index=True)
                  if fires_by_city else None)
     frame = mask_unknown_city(build_features(full_panel, horizons, fires=all_fires,
