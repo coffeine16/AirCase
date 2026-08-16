@@ -26,12 +26,19 @@ def _panel(city, n_hours=400, seed=0):
     return pd.DataFrame(rows)
 
 
+# 400 hours is ~17 days, far short of walk_forward_folds' 180-day default, so
+# a default-configured run produces ZERO folds -- and the three out-of-sample
+# eval metrics are then honestly None. Shrink the fold geometry instead of
+# faking the metrics, so the assertions below exercise the real OOF path.
+_SHORT_FOLDS = {"min_train_days": 8, "test_days": 3, "step_days": 3}
+
+
 def test_train_and_promote_writes_versioned_artifacts(tmp_path):
     from intelligence.models.forecast.features import FEATURE_COLUMNS
     panels = {"bengaluru": _panel("bengaluru"), "delhi": _panel("delhi", seed=1)}
 
     manifest = train_and_promote(panels, horizons=[3, 6], feature_cols=FEATURE_COLUMNS,
-                                  out_dir=tmp_path)
+                                  out_dir=tmp_path, walk_forward_kwargs=_SHORT_FOLDS)
 
     assert (tmp_path / manifest["version"] / "model_p10.txt").exists()
     assert (tmp_path / manifest["version"] / "model_p50.txt").exists()
@@ -42,6 +49,38 @@ def test_train_and_promote_writes_versioned_artifacts(tmp_path):
     assert "city_loso" in manifest["eval"]
     assert "quiet_vs_event" in manifest["eval"]
     assert set(manifest["eval"]["quiet_vs_event"]) == {"quiet_rmse", "event_rmse", "n_quiet", "n_event"}
+    # the three formerly-in-sample metrics must come from the walk-forward
+    # folds' held-out predictions, not from the frame the final model was fit on
+    assert manifest["eval"]["eval_basis"] == "walk_forward_out_of_sample"
+    assert manifest["eval"]["walk_forward_skill_folds"] >= 1
+    assert manifest["eval"]["quantile_coverage"] is not None
+
+
+def test_out_of_sample_metrics_are_none_without_folds(tmp_path):
+    # no folds -> the honest answer is "not measured", never an in-sample stand-in
+    from intelligence.models.forecast.features import FEATURE_COLUMNS
+    panels = {"bengaluru": _panel("bengaluru")}
+
+    manifest = train_and_promote(panels, horizons=[3], feature_cols=FEATURE_COLUMNS,
+                                  out_dir=tmp_path)
+
+    assert manifest["eval"]["eval_basis"] == "no_walk_forward_folds"
+    for k in ("quantile_coverage", "ceiling_skill_vs_linear", "quiet_vs_event"):
+        assert manifest["eval"][k] is None
+
+
+def test_regression_tolerance_band_works_for_negative_priors():
+    # walk-forward skill is legitimately negative at short horizons in this
+    # project (persistence wins). prior*(1-tol) flips the band's direction for
+    # a negative prior and demands an IMPROVEMENT to pass; prior-abs(prior)*tol
+    # does not.
+    from intelligence.models.forecast.train import _regressed
+
+    assert _regressed(-10.5, -10.0, higher_is_better=True, tolerance_pct=5.0) is False
+    assert _regressed(-11.0, -10.0, higher_is_better=True, tolerance_pct=5.0) is True
+    # positive priors keep their existing behaviour
+    assert _regressed(9.6, 10.0, higher_is_better=True, tolerance_pct=5.0) is False
+    assert _regressed(9.4, 10.0, higher_is_better=True, tolerance_pct=5.0) is True
 
 
 def test_train_and_promote_refuses_regression(tmp_path):

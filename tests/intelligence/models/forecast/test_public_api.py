@@ -14,15 +14,22 @@ def test_run_pipeline_imports_forecast_run():
     assert hasattr(mod, "run")
 
 
-def test_predict_field_uses_served_manifest_cities_not_current_panels():
-    # Simulates a refused promotion falling back to a PRIOR model trained on
-    # a DIFFERENT, wider city set than the current run's panels -- exactly
-    # the scenario this session's own city-registry expansion made concrete.
-    # city_categories must come from served_manifest["cities"], never
-    # panels.keys(), or LightGBM's integer-coded categorical predictions
-    # silently corrupt (not crash -- corrupt). A "does it raise" test would
-    # NOT catch this; each city gets a strong, distinct trained offset so a
-    # wrong category code produces a MEASURABLY wrong prediction.
+def test_predict_field_pins_city_categories_to_the_served_manifest():
+    """WHAT THIS DOES AND DOES NOT VERIFY.
+
+    Verified: the frame handed to the model carries the category set the
+    SERVED model was trained on (`served_manifest["cities"]`), not the current
+    run's `panels.keys()` — which differ whenever a refused promotion falls
+    back to a prior model trained on a wider city set.
+
+    NOT verified — and an earlier version of this test wrongly claimed it was:
+    that the wrong source corrupts predictions. Measured directly: LightGBM
+    realigns a pandas Categorical column by category NAME at predict time
+    (`cat.set_categories()` is applied for you), so with the Categorical input
+    _predict_field actually passes, both category sources yield identical
+    numbers. The pin is defensive — it holds if that convention changes, or if
+    a future caller passes a raw string city column, which gets no realignment.
+    """
     import numpy as np
     import pandas as pd
     from shared.grid import city_cells
@@ -38,14 +45,8 @@ def test_predict_field_uses_served_manifest_cities_not_current_panels():
     train_frame["city"] = train_frame["city"].astype("category")
     served_models = train_quantile_models(train_frame, ["lag_0", "wind_ms", "city"], num_boost_round=100)
 
-    # the served model's REAL training cities (what the manifest records)
     served_manifest = {"cities": ["bengaluru", "chennai", "delhi"]}
 
-    # the CURRENT run's panel is ONLY "delhi" -- alphabetically first in a
-    # 1-city category list (code 0), but delhi is code 2 in the real
-    # 3-city+unknown list. A wrong category source silently remaps delhi's
-    # rows onto whatever trained as code 0 (bengaluru's ~0 offset) instead
-    # of delhi's real ~100 offset.
     cell = city_cells()[0]
     hours = pd.date_range("2024-01-01", periods=30, freq="h", tz="UTC")
     rows2 = [{"cell": cell, "ts": h, "ward_id": "W1", "ward_name": "Ward 1", "city": "delhi",
@@ -53,15 +54,54 @@ def test_predict_field_uses_served_manifest_cities_not_current_panels():
               "temp_c": 27.0, "fires_6h": 0, "frp_6h": 0.0, "lu_industrial": 0, "lu_construction": 0,
               "lu_waste_burning": 0, "lu_traffic": 0, "lu_road": 1, "lu_sensitive": 0,
               "hour": h.hour, "dow": h.dayofweek} for h in hours]
-    panels = {"delhi": pd.DataFrame(rows2)}
+    panels = {"delhi": pd.DataFrame(rows2)}   # ONE city, vs the manifest's three
 
-    fields = _predict_field(panels, served_manifest, served_models, ["lag_0", "wind_ms", "city"])
+    import intelligence.models.forecast as F
+    captured = []
+    real = F.predict_quantiles
+    monkeypatched = lambda models, frame, cols: (captured.append(frame), real(models, frame, cols))[1]
+    F.predict_quantiles = monkeypatched
+    try:
+        fields = _predict_field(panels, served_manifest, served_models, ["lag_0", "wind_ms", "city"])
+    finally:
+        F.predict_quantiles = real
 
     assert "delhi" in fields and fields["delhi"], "no predictions produced — check the panel fixture"
-    preds = [row["pm25_hat"] for row in fields["delhi"]]
-    # correct categories put "delhi" at ITS real trained code (2) -> predictions
-    # land near delhi's ~100 offset. A wrong (panels-derived, 1-city) category
-    # list would put "delhi" at code 0, which trained as bengaluru's ~0 offset.
-    assert all(p > 60 for p in preds), (
-        f"predictions {preds} suggest the wrong city category source was used "
-        f"(expected near delhi's ~100 offset, not bengaluru's ~0)")
+    assert captured, "predict_quantiles was never called"
+    # the discriminating assertion: panels.keys() would give ['delhi','unknown']
+    assert list(captured[0]["city"].cat.categories) == ["bengaluru", "chennai", "delhi", "unknown"]
+
+
+def test_evaluate_never_trains_on_nan_labels():
+    # build_features emits a row per (cell, hour, horizon) and non-station
+    # cells have no label at all, yet survive the lag filter because the
+    # composite fills their lags. LightGBM silently trains on NaN labels.
+    import numpy as np
+    import pandas as pd
+    from shared.grid import city_cells
+    import intelligence.models.forecast as F
+
+    cells = city_cells()[:4]
+    hours = pd.date_range("2024-01-01", periods=24 * 20, freq="h", tz="UTC")
+    rng = np.random.default_rng(0)
+    rows = [{"cell": c, "ts": h, "ward_id": "W1", "ward_name": "Ward 1", "city": "bengaluru",
+             "pm25_station": float(50 + i * 5 + rng.normal(0, 3)) if i < 2 else np.nan,
+             "wind_from_deg": 90.0, "wind_ms": 2.0, "blh_m": 400.0, "temp_c": 27.0,
+             "fires_6h": 0, "frp_6h": 0.0, "lu_industrial": 0, "lu_construction": 0,
+             "lu_waste_burning": 0, "lu_traffic": 0, "lu_road": 1, "lu_sensitive": 0,
+             "hour": h.hour, "dow": h.dayofweek}
+            for i, c in enumerate(cells) for h in hours]
+
+    seen = []
+    real = F.train_quantile_models
+    F.train_quantile_models = lambda train, *a, **k: (seen.append(train), real(train, *a, **k))[1]
+    try:
+        F.evaluate(pd.DataFrame(rows))
+    finally:
+        F.train_quantile_models = real
+
+    assert seen, "evaluate trained nothing"
+    for train_frame in seen:
+        assert train_frame["y"].notna().all()
+    # ...and only ONE model for all 24 horizons, not one per horizon
+    assert len(seen) == 1

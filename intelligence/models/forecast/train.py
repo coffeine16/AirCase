@@ -15,7 +15,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from intelligence.models.forecast.features import build_features
+from intelligence.models.forecast.features import build_features, attach_climatology
+from intelligence.models.forecast.climatology import build_climatology
 from intelligence.models.forecast.model import (
     train_quantile_models, predict_quantiles, train_ceiling_baseline, mask_unknown_city,
 )
@@ -40,11 +41,14 @@ def _regressed(new_val: float | None, prior_val: float | None,
         return False
     if not np.isfinite(new_val) or not np.isfinite(prior_val):
         return False
+    # abs(prior), NOT prior, for the tolerance band. Walk-forward skill can
+    # legitimately be NEGATIVE (persistence beating the model at 24h is the
+    # documented normal case for this project), and prior * (1 - tol) then
+    # moves the bar the WRONG way: with prior=-10 it demands >= -9.5, i.e. a
+    # strict improvement, instead of allowing -10.5 as within tolerance.
     if higher_is_better:
-        allowed = prior_val * (1 - tolerance_pct / 100)
-        return new_val < allowed
-    allowed = prior_val * (1 + tolerance_pct / 100)
-    return new_val > allowed
+        return new_val < prior_val - abs(prior_val) * tolerance_pct / 100
+    return new_val > prior_val + abs(prior_val) * tolerance_pct / 100
 
 
 def _version_id() -> str:
@@ -60,25 +64,51 @@ def _version_id() -> str:
 def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[int],
                        feature_cols: list[str], out_dir: Path,
                        prior_manifest: dict | None = None,
-                       regression_tolerance_pct: float = 5.0) -> dict:
+                       regression_tolerance_pct: float = 5.0,
+                       fires_by_city: dict[str, pd.DataFrame] | None = None,
+                       walk_forward_kwargs: dict | None = None) -> dict:
     out_dir = Path(out_dir)
     full_panel = pd.concat(panels_by_city.values(), ignore_index=True)
-    frame = mask_unknown_city(build_features(full_panel, horizons))
+    all_fires = (pd.concat(fires_by_city.values(), ignore_index=True)
+                 if fires_by_city else None)
+    frame = mask_unknown_city(build_features(full_panel, horizons, fires=all_fires))
+    num_cols = [c for c in feature_cols if c != "city"]
 
-    folds = walk_forward_folds(frame)
-    fold_skills = []
+    folds = walk_forward_folds(frame, **(walk_forward_kwargs or {}))
+    fold_skills, oof = [], []
     for train_end, test_start, test_end in folds:
-        tr = frame[frame.ts <= train_end]
-        te = frame[(frame.ts > test_start) & (frame.ts <= test_end)].dropna(subset=["y"])
+        # Climatology from TRAIN ONLY, re-attached to both sides of the fold.
+        # build_features built it from the whole panel, which means every test
+        # row's clim_dow_hour/clim_month was partly computed from that same
+        # row's own future readings — the deleted forecast.py called this out
+        # explicitly ("from TRAIN ONLY. The tough baseline.") and the
+        # discipline has to survive the rewrite. Re-attaching is a merge, not
+        # a second feature build: the expensive spatial work is untouched.
+        clim = build_climatology(full_panel[full_panel.ts <= train_end])
+        tr = attach_climatology(frame[frame.ts <= train_end], clim).dropna(subset=["y"])
+        te = attach_climatology(
+            frame[(frame.ts > test_start) & (frame.ts <= test_end)], clim).dropna(subset=["y"])
         if tr.empty or te.empty:
             continue
         models = train_quantile_models(tr, feature_cols, num_boost_round=300)
         pred = predict_quantiles(models, te, feature_cols)
-        persistence = te["lag_0"].values
-        fold_skills.append(skill_vs_baseline(te["y"].values, pred["pm25_p50"].values, persistence))
+        fold_skills.append(skill_vs_baseline(te["y"].values, pred["pm25_p50"].values,
+                                              te["lag_0"].values))
+        # The linear ceiling baseline is fit per fold on a capped sample:
+        # sklearn's QuantileRegressor solves an LP whose cost grows fast in n,
+        # and a median line does not need millions of rows to be identified.
+        ceil_fit = tr.sample(min(len(tr), 50_000), random_state=0)
+        ceil = train_ceiling_baseline(ceil_fit, num_cols)
+        ceil_pred = ceil.predict(te[num_cols].select_dtypes(include=[np.number]).fillna(0.0))
+        oof.append(pd.DataFrame({
+            "y": te["y"].values, "p10": pred["pm25_p10"].values,
+            "p50": pred["pm25_p50"].values, "p90": pred["pm25_p90"].values,
+            "ceiling": ceil_pred, "fires_6h": te["fires_6h"].fillna(0).values,
+        }))
 
-    loso_result = spatial_loso(full_panel, horizons, feature_cols)
-    city_result = run_city_loso(panels_by_city, horizons, feature_cols)
+    loso_result = spatial_loso(full_panel, horizons, feature_cols, fires=all_fires)
+    city_result = run_city_loso(panels_by_city, horizons, feature_cols,
+                                 fires_by_city=fires_by_city)
 
     # LightGBM's Dataset already built inside train_quantile_models doesn't
     # take sample weights via that simple call, so the SERVED model (which
@@ -98,16 +128,15 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
                           weight=event_weights(final_train), categorical_feature=["city"])
         final_models[q] = lgb.train({**PARAMS, "alpha": q}, ds, num_boost_round=500)
 
-    baseline_reg = train_ceiling_baseline(final_train, [c for c in feature_cols if c != "city"])
-    ceiling_pred = baseline_reg.predict(final_train[[c for c in feature_cols if c != "city"]].select_dtypes(include=[np.number]).fillna(0.0))
-    pred_final = predict_quantiles(final_models, final_train, feature_cols)
-    ceiling_skill = skill_vs_baseline(final_train["y"].values, pred_final["pm25_p50"].values, ceiling_pred)
-
-    # quiet-vs-event breakdown (spec section 6) — "is_event" uses the SAME
-    # definition as event_weights' boost condition (real trailing fire
-    # activity), so the two stay consistent with each other.
-    is_event_final = (final_train["fires_6h"].fillna(0) > 0).values
-    quiet_event = quiet_vs_event_breakdown(final_train["y"].values, pred_final["pm25_p50"].values, is_event_final)
+    # quantile_coverage / ceiling_skill / quiet_vs_event are scored on the
+    # walk-forward folds' OUT-OF-SAMPLE predictions, never on final_train.
+    # In-sample coverage from a 500-round boosted ensemble is optimistic to
+    # the point of meaninglessness, and quiet_vs_event exists (spec section 6)
+    # precisely to catch "the model is worse exactly when it matters" — which
+    # training data cannot reveal. They are None, not faked, when there is too
+    # little history for even one fold.
+    o = pd.concat(oof, ignore_index=True) if oof else None
+    is_event_oof = (o["fires_6h"] > 0).values if o is not None else None
 
     eval_report = {
         "walk_forward_skill_median": round(float(np.median(fold_skills)), 1) if fold_skills else None,
@@ -115,10 +144,13 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
         "spatial_loso_rmse": loso_result["overall_rmse"],
         "spatial_loso_n_stations": loso_result["n_stations"],
         "city_loso": city_result["per_city"],
-        "quantile_coverage": quantile_coverage(final_train["y"].values, pred_final["pm25_p10"].values,
-                                                pred_final["pm25_p90"].values),
-        "ceiling_skill_vs_linear": ceiling_skill,
-        "quiet_vs_event": quiet_event,
+        "eval_basis": "walk_forward_out_of_sample" if o is not None else "no_walk_forward_folds",
+        "quantile_coverage": (quantile_coverage(o["y"].values, o["p10"].values, o["p90"].values)
+                              if o is not None else None),
+        "ceiling_skill_vs_linear": (skill_vs_baseline(o["y"].values, o["p50"].values, o["ceiling"].values)
+                                    if o is not None else None),
+        "quiet_vs_event": (quiet_vs_event_breakdown(o["y"].values, o["p50"].values, is_event_oof)
+                           if o is not None else None),
     }
 
     version = _version_id()
