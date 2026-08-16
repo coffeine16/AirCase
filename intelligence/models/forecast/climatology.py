@@ -2,18 +2,27 @@
 cells get their own; non-station cells fall back to ward- then city-level.
 Median throughout — this is a temporal aggregate, principle 6 applies here
 without exception (unlike spatial.py's composite, which does not)."""
-import numpy as np
 import pandas as pd
 
-SCALES = ("cell", "ward", "city")
+SCOPES = ("cell", "ward", "city")
+SCALES = SCOPES   # back-compat alias for the original (misnamed) export
 
 
 def _how(ts: pd.Series) -> pd.Series:
     return ts.dt.dayofweek * 24 + ts.dt.hour
 
 
-def build_climatology(panel: pd.DataFrame) -> dict[str, pd.Series]:
-    p = panel[panel.pm25_station.notna()].copy()
+def build_climatology(panel: pd.DataFrame, exclude_cell: str | None = None) -> dict[str, pd.Series]:
+    """`exclude_cell` drops that cell's readings from ALL THREE scopes, not
+    just the cell scope. Blanking only the cell-level lookup is not enough:
+    a ward that contains exactly one station (the common case) has a "ward
+    fallback" that IS that station's own history wearing a different hat —
+    which is the same leak spec 3.1's self-exclusion rule exists to prevent.
+    """
+    p = panel[panel.pm25_station.notna()]
+    if exclude_cell is not None:
+        p = p[p.cell != exclude_cell]
+    p = p.copy()
     p["how"] = _how(p.ts)
     p["month"] = p.ts.dt.month
     return {
@@ -32,7 +41,7 @@ def lookup_climatology(tables: dict[str, pd.Series], cell: str, ward_id: str,
     guess) if none of the three has a matching row — LightGBM treats NaN
     as a native missing value."""
     key = (ts.dayofweek * 24 + ts.hour) if scale == "dow_hour" else ts.month
-    for scope, ident in (("cell", cell), ("ward", ward_id), ("city", city)):
+    for scope, ident in zip(SCOPES, (cell, ward_id, city)):
         table = tables[f"{scope}_{scale}"]
         if (ident, key) in table.index:
             return float(table.loc[(ident, key)])

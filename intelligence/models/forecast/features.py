@@ -2,12 +2,24 @@
 """Builds the full training/prediction feature frame (spec section 3.2).
 Station cells use their own real history; non-station cells (and a
 spatial-LOSO held-out station's own rows) use the real-stations-only
-composite from spatial.py at every lag depth — not just the current hour."""
+composite from spatial.py at every lag depth — not just the current hour.
+
+STRUCTURE: the expensive work (composites, positional blocks, lags, rolling
+medians, fire pressure) does NOT depend on the forecast horizon, so it is
+computed ONCE per (cell, ts) and then replicated across horizons. Only
+`horizon`, the target clock columns, the climatology lookup (keyed on the
+TARGET time) and `y` vary with the horizon. Doing the whole build inside the
+horizon loop made one call ~24x more expensive than it needs to be — with 24
+horizons on a 1210-cell x 60-day panel that is the difference between a
+pipeline stage that finishes and one that does not. The deleted single-file
+forecast.py hit exactly this wall (88 s of a 101 s Cloud Run request) and
+solved it the same way.
+"""
 import numpy as np
 import pandas as pd
 
 from intelligence.models.forecast.spatial import composite_grid, positional_block, fire_pressure
-from intelligence.models.forecast.climatology import build_climatology, lookup_climatology
+from intelligence.models.forecast.climatology import build_climatology, SCOPES
 from shared.grid import cell_center, haversine_km
 
 LAGS = [0, 1, 3, 6, 24]
@@ -37,169 +49,206 @@ def _station_matrix(panel: pd.DataFrame):
     return lat, lon, val, cells
 
 
+def climatology_columns(frame: pd.DataFrame, tables: dict[str, pd.Series]):
+    """Vectorised cell -> ward -> city climatology lookup, keyed on each row's
+    TARGET time (ts + horizon). Returns (clim_dow_hour, clim_month) arrays.
+
+    Same fallback semantics as climatology.lookup_climatology (most specific
+    scope that has a value wins), but as three merges per scale instead of a
+    per-row Python `.loc` scan — that scan was three full itertuples() passes
+    over the frame and, on a real panel, the single slowest thing in here
+    after the composites.
+    """
+    tgt = frame["ts"] + pd.to_timedelta(frame["horizon"], unit="h")
+    keys = pd.DataFrame({
+        "cell": frame["cell"].astype(str).values,
+        "ward_id": frame["ward_id"].astype(str).values,
+        "city": frame["city"].astype(str).values,
+        "how": (tgt.dt.dayofweek * 24 + tgt.dt.hour).astype("int64").values,
+        "month": tgt.dt.month.astype("int64").values,
+    })
+    out = []
+    for scale, key_col in (("dow_hour", "how"), ("month", "month")):
+        vals = None
+        for scope, ident_col in zip(SCOPES, ("cell", "ward_id", "city")):
+            table = tables.get(f"{scope}_{scale}")
+            if table is None or len(table) == 0:
+                continue
+            td = table.rename("_v").reset_index()
+            td.columns = [ident_col, key_col, "_v"]
+            td[ident_col] = td[ident_col].astype(str)
+            td[key_col] = td[key_col].astype("int64")
+            merged = keys[[ident_col, key_col]].merge(td, on=[ident_col, key_col], how="left")["_v"]
+            vals = merged if vals is None else vals.fillna(merged)
+        out.append(np.full(len(keys), np.nan) if vals is None else vals.to_numpy(dtype=float))
+    return out[0], out[1]
+
+
+def attach_climatology(frame: pd.DataFrame, tables: dict[str, pd.Series]) -> pd.DataFrame:
+    """Returns a COPY of `frame` with clim_dow_hour/clim_month recomputed from
+    `tables`. Exists so a caller with a time-based train/test split can rebuild
+    the climatology from TRAIN-ONLY data and re-attach it, without paying for a
+    second full build_features pass (see train.py's walk-forward loop)."""
+    out = frame.copy()
+    out["clim_dow_hour"], out["clim_month"] = climatology_columns(out, tables)
+    return out
+
+
 def build_features(panel: pd.DataFrame, horizons: list[int],
                     loso_exclude: str | None = None,
-                    fires: pd.DataFrame | None = None) -> pd.DataFrame:
+                    fires: pd.DataFrame | None = None,
+                    clim_tables: dict[str, pd.Series] | None = None) -> pd.DataFrame:
+    """`clim_tables`, when given, is used verbatim instead of building the
+    climatology from `panel` — the hook a time-split caller needs so that a
+    test row's climatology is never computed from that row's own future. A
+    caller that passes BOTH `clim_tables` and `loso_exclude` is responsible
+    for having built those tables with `build_climatology(..., exclude_cell=)`;
+    the default path does it automatically."""
     # reset_index is required, not cosmetic: the fire_pressure merge below
     # produces a fresh 0..n-1 RangeIndex on X, and later code re-joins X
-    # against THIS frame (p) by index label (p.loc[row.Index, "ward_id"]).
-    # Any caller that passes a sliced or otherwise non-0-based panel (e.g.
-    # panel[panel.cell != some_cell], as Task 9's spatial-LOSO does) would
-    # silently break that alignment and raise KeyError deep inside the
-    # climatology lookup -- found the hard way once already; fixed at the
-    # source so no future caller has to remember this precondition.
+    # against THIS frame (p) positionally. Any caller that passes a sliced
+    # or otherwise non-0-based panel would silently break that alignment.
     p = panel.sort_values(["cell", "ts"]).reset_index(drop=True).copy()
     if fires is None:
         fires = pd.DataFrame(columns=["ts", "lat", "lon", "frp", "confidence"])
     station_lat, station_lon, station_val, station_cells = _station_matrix(p)
     hours = pd.DatetimeIndex(sorted(p.ts.unique()))
-    hour_idx = {h: i for i, h in enumerate(hours)}
     wind_by_hour = p.drop_duplicates("ts").set_index("ts")["wind_from_deg"].reindex(hours).values
 
-    clim_tables = build_climatology(p)
+    if clim_tables is None:
+        clim_tables = build_climatology(p, exclude_cell=loso_exclude)
 
     cells = sorted(p.cell.unique())
     cell_centers = {c: cell_center(c) for c in cells}
+    for s in station_cells:
+        cell_centers.setdefault(s, cell_center(s))
+
+    # loso_exclude masks the station's READINGS; it must mask its IDENTITY too.
+    # A held-out cell that still reports has_station=True / distance 0.0 is a
+    # train/serve mismatch — a genuinely station-less cell always reports
+    # False and a positive distance, which is the regime LOSO is meant to
+    # measure.
+    station_set = set(station_cells) - ({loso_exclude} if loso_exclude is not None else set())
     nearest_station_km = {}
     for c in cells:
-        if len(station_cells) == 0:
+        cand = [s for s in station_cells if s != c] if c == loso_exclude else station_cells
+        if len(cand) == 0:
             nearest_station_km[c] = float("nan")
             continue
         lat, lon = cell_centers[c]
-        nearest_station_km[c] = min(haversine_km(lat, lon, cell_centers.get(s, cell_center(s))[0],
-                                                   cell_centers.get(s, cell_center(s))[1])
-                                     for s in station_cells)
+        nearest_station_km[c] = min(
+            haversine_km(lat, lon, cell_centers[s][0], cell_centers[s][1]) for s in cand)
 
-    frames = []
-    for horizon in horizons:
-        g = p.groupby("cell", group_keys=False)
-        feats = {}
+    # ---- horizon-INDEPENDENT block: computed exactly once ----
+    g = p.groupby("cell", group_keys=False)
+    feats = {f"lag_{k}": g.pm25_station.shift(k) for k in LAGS}
+    feats["roll_med_24"] = g.pm25_station.transform(lambda s: s.shift(1).rolling(24, min_periods=6).median())
+    feats["roll_med_168"] = g.pm25_station.transform(lambda s: s.shift(1).rolling(168, min_periods=24).median())
+    for m in _MET + _STATIC:
+        if m in p:
+            feats[m] = p[m]
+    X = pd.DataFrame(feats, index=p.index)
+    X["cell"] = p.cell
+    X["ts"] = p.ts
+    X["city"] = p.city
+    X["ward_id"] = p.ward_id
+    X["has_station"] = p.cell.isin(station_set)
+    X["distance_to_nearest_station_km"] = p.cell.map(nearest_station_km).fillna(0.0)
+    X.loc[X.has_station, "distance_to_nearest_station_km"] = 0.0
+
+    # roll_med_24/168 are computed from the RAW per-cell groupby above,
+    # which is correct for every station cell and already NaN for every
+    # non-station cell (no history to roll over) -- except the ONE case
+    # that matters: the loso_exclude cell IS a station, so its rolling
+    # medians are its own real history unless explicitly nulled here.
+    if loso_exclude is not None:
+        X.loc[X.cell == loso_exclude, ["roll_med_24", "roll_med_168"]] = np.nan
+
+    # composite-based fill for non-station cells (and a LOSO station's own rows)
+    if len(station_cells) > 0:
+        q_lat = np.array([cell_centers[c][0] for c in cells])
+        q_lon = np.array([cell_centers[c][1] for c in cells])
+        excl = None
+        if loso_exclude is not None and loso_exclude in station_cells:
+            s_idx = station_cells.index(loso_exclude)
+            excl = np.zeros((len(cells), len(station_cells)), dtype=bool)
+            cell_idx = {c: i for i, c in enumerate(cells)}
+            excl[cell_idx[loso_exclude], s_idx] = True
+
+        needs_fill = (~X.has_station.values) | (X.cell == loso_exclude).values
         for k in LAGS:
-            feats[f"lag_{k}"] = g.pm25_station.shift(k)
-        feats["roll_med_24"] = g.pm25_station.transform(lambda s: s.shift(1).rolling(24, min_periods=6).median())
-        feats["roll_med_168"] = g.pm25_station.transform(lambda s: s.shift(1).rolling(168, min_periods=24).median())
-        for m in _MET + _STATIC:
-            if m in p:
-                feats[m] = p[m]
-        X = pd.DataFrame(feats, index=p.index)
-        X["cell"] = p.cell
-        X["ts"] = p.ts
-        X["city"] = p.city
-        X["has_station"] = p.cell.isin(station_cells)
-        X["distance_to_nearest_station_km"] = p.cell.map(nearest_station_km).fillna(0.0)
-        X.loc[X.has_station, "distance_to_nearest_station_km"] = 0.0
+            shifted_val = np.roll(station_val, k, axis=0)
+            shifted_val[:k, :] = np.nan
+            comp = composite_grid(q_lat, q_lon, station_lat, station_lon,
+                                   shifted_val, wind_by_hour, exclude=excl)
+            merged = _grid_to_rows(comp, hours, cells, X, f"_comp_{k}")
+            X.loc[needs_fill, f"lag_{k}"] = merged[needs_fill]
 
-        # roll_med_24/168 are computed from the RAW per-cell groupby above,
-        # which is correct for every station cell and already NaN for every
-        # non-station cell (no history to roll over) -- except the ONE case
-        # that matters: the loso_exclude cell IS a station, so its rolling
-        # medians are its own real history unless explicitly nulled here.
-        # Leaving them in place would let a "held-out" station see the
-        # median of its own last 24/168 real hours -- exactly the leak
-        # spec 3.1's self-exclusion rule exists to prevent, just via a
-        # feature the composite-based lag fill below never touches.
-        if loso_exclude is not None:
-            X.loc[X.cell == loso_exclude, ["roll_med_24", "roll_med_168"]] = np.nan
+        comp_now = composite_grid(q_lat, q_lon, station_lat, station_lon,
+                                   station_val, wind_by_hour, exclude=excl)
+        X["nearby_stations_delta"] = _grid_to_rows(comp_now, hours, cells, X, "_comp_now") - X["lag_0"].values
 
-        # composite-based fill for non-station cells (and a LOSO station's own rows)
-        if len(station_cells) > 0:
-            excl = None
-            if loso_exclude is not None and loso_exclude in station_cells:
-                s_idx = station_cells.index(loso_exclude)
-                excl = np.zeros((len(cells), len(station_cells)), dtype=bool)
-                cell_idx = {c: i for i, c in enumerate(cells)}
-                excl[cell_idx[loso_exclude], s_idx] = True
+        # ONE merge for all 7 positional columns instead of 7 masked
+        # assignments per cell (that inner loop was O(n_cells) full-frame
+        # boolean writes -- 8k passes over a 1.7M-row frame on a real panel).
+        pos = np.full((len(hours), len(cells), 7), np.nan)
+        for ci, c in enumerate(cells):
+            pos[:, ci, :] = positional_block(
+                c, station_lat, station_lon, station_val, wind_by_hour,
+                exclude=(excl[[ci]] if excl is not None else None))
+        pos_df = pd.DataFrame(pos.reshape(len(hours) * len(cells), 7),
+                               columns=[f"pos_{i}" for i in range(7)])
+        # .repeat on the DatetimeIndex itself, NOT .values -- .values strips
+        # the tz and silently breaks the merge (project-wide gotcha).
+        pos_df["ts"] = hours.repeat(len(cells))
+        pos_df["cell"] = np.tile(np.asarray(cells), len(hours))
+        X = X.merge(pos_df, on=["cell", "ts"], how="left")
+    else:
+        # no stations at all: lags stay NaN, LightGBM treats them as missing
+        X["nearby_stations_delta"] = np.nan
+        for i in range(7):
+            X[f"pos_{i}"] = np.nan
 
-            for k in LAGS:
-                shifted_val = np.roll(station_val, k, axis=0)
-                shifted_val[:k, :] = np.nan
-                comp = composite_grid(np.array([cell_centers[c][0] for c in cells]),
-                                       np.array([cell_centers[c][1] for c in cells]),
-                                       station_lat, station_lon, shifted_val, wind_by_hour,
-                                       exclude=excl)
-                comp_df = pd.DataFrame(comp, index=hours, columns=cells).stack().rename(f"_comp_{k}")
-                comp_lookup = comp_df.reset_index()
-                comp_lookup.columns = ["ts", "cell", f"_comp_{k}"]
-                merged = X[["cell", "ts"]].merge(comp_lookup, on=["cell", "ts"], how="left")[f"_comp_{k}"]
-                needs_fill = (~X.has_station.values) | (X.cell == loso_exclude).values
-                X.loc[needs_fill, f"lag_{k}"] = merged[needs_fill].values
+    fp = fire_pressure(cells, fires, hours, wind_by_hour)
+    X = X.merge(fp, on=["cell", "ts"], how="left")
+    if "fires_6h" in p:
+        X["fires_6h"] = p.fires_6h.values
+        X["frp_6h"] = p.frp_6h.values
 
-            comp_now = composite_grid(np.array([cell_centers[c][0] for c in cells]),
-                                       np.array([cell_centers[c][1] for c in cells]),
-                                       station_lat, station_lon, station_val, wind_by_hour, exclude=excl)
-            comp_now_df = pd.DataFrame(comp_now, index=hours, columns=cells).stack().rename("_comp_now")
-            comp_now_lookup = comp_now_df.reset_index()
-            comp_now_lookup.columns = ["ts", "cell", "_comp_now"]
-            comp_now_merged = X[["cell", "ts"]].merge(comp_now_lookup, on=["cell", "ts"], how="left")["_comp_now"]
-            X["nearby_stations_delta"] = comp_now_merged.values - X["lag_0"].values
-
-            for i in range(7):
-                X[f"pos_{i}"] = np.nan
-            for c in cells:
-                pb = positional_block(c, station_lat, station_lon, station_val, wind_by_hour,
-                                       exclude=(excl[[cells.index(c)]] if excl is not None else None))
-                pb_hours = hours
-                mask = X.cell == c
-                for i in range(7):
-                    series = pd.Series(pb[:, i], index=pb_hours)
-                    X.loc[mask, f"pos_{i}"] = X.loc[mask, "ts"].map(series).values
-        else:
-            for k in LAGS:
-                pass  # no stations at all: lags stay NaN, LightGBM treats as missing
-            X["nearby_stations_delta"] = np.nan
-            for i in range(7):
-                X[f"pos_{i}"] = np.nan
-
-        fp = fire_pressure(cells, fires, hours, wind_by_hour)
-        X = X.merge(fp, on=["cell", "ts"], how="left")
-        if "fires_6h" in p:
-            X["fires_6h"] = p.fires_6h
-            X["frp_6h"] = p.frp_6h
-
-        tgt = X["ts"] + pd.Timedelta(hours=horizon)
-        X["target_hour"] = tgt.dt.hour
-        X["target_dow"] = tgt.dt.dayofweek
-        X["target_month"] = tgt.dt.month
-        X["horizon"] = horizon
-
-        # For the loso_exclude cell's own rows, skip the "cell" scope and let
-        # lookup_climatology fall through to ward/city -- exactly what a
-        # genuinely non-station cell would see. climatology.py has no
-        # exclude parameter at all, so the "cell" scope for loso_exclude is
-        # that station's own real history -- passing a cell value that can
-        # never match the table's index (None) is what forces the
-        # fallback, without touching climatology.py or discarding the
-        # ward/city signal the way a blanket NaN would.
-        clim_cell = [None if row.cell == loso_exclude else row.cell for row in X.itertuples()]
-        X["clim_dow_hour"] = [
-            lookup_climatology(clim_tables, cc, p.loc[row.Index, "ward_id"], row.city, t, "dow_hour")
-            for cc, row, t in zip(clim_cell, X.itertuples(), tgt)
-        ]
-        X["clim_month"] = [
-            lookup_climatology(clim_tables, cc, p.loc[row.Index, "ward_id"], row.city, t, "month")
-            for cc, row, t in zip(clim_cell, X.itertuples(), tgt)
-        ]
-
-        X["y"] = g.pm25_station.shift(-horizon)
-        frames.append(X)
-
-    out = pd.concat(frames, ignore_index=True)
+    # ---- horizon-DEPENDENT block: replicate the base, vary 6 columns ----
+    n = len(X)
+    out = pd.concat([X] * len(horizons), ignore_index=True)
+    out["horizon"] = np.repeat(np.asarray(horizons, dtype="int64"), n)
+    tgt = out["ts"] + pd.to_timedelta(out["horizon"], unit="h")
+    out["target_hour"] = tgt.dt.hour
+    out["target_dow"] = tgt.dt.dayofweek
+    out["target_month"] = tgt.dt.month
+    out["y"] = np.concatenate([g.pm25_station.shift(-h).to_numpy(dtype=float) for h in horizons])
+    out["clim_dow_hour"], out["clim_month"] = climatology_columns(out, clim_tables)
     out["city"] = out["city"].astype("category")
+
     if loso_exclude is not None:
         # The loso_exclude cell's own rows are the whole point of the
-        # loso_exclude parameter: Task 9's spatial-LOSO harness evaluates
-        # predictions for exactly this cell against its real (masked-out)
-        # y. Dropping them here whenever the self-excluded composite comes
-        # back NaN (which happens whenever too few other stations remain
-        # to compose from — not just in this test's single-station panel)
-        # would silently empty out the one cell LOSO exists to test. Every
-        # other cell keeps the ordinary warm-up filter; NaN features on the
-        # loso_exclude cell reach the model as native missing values, same
-        # as everywhere else in this codebase (see climatology.py).
+        # parameter: spatial-LOSO evaluates predictions for exactly this cell
+        # against its real (masked-out) y. Dropping them whenever the
+        # self-excluded composite comes back NaN would silently empty out the
+        # one cell LOSO exists to test.
         is_excluded_cell = out.cell == loso_exclude
         has_signal = out[["lag_0", "lag_24"]].notna().all(axis=1)
         return out[is_excluded_cell | has_signal].reset_index(drop=True)
-    return out.dropna(subset=["lag_0", "lag_24"])
+    return out.dropna(subset=["lag_0", "lag_24"]).reset_index(drop=True)
+
+
+def _grid_to_rows(grid: np.ndarray, hours: pd.DatetimeIndex, cells: list[str],
+                   X: pd.DataFrame, name: str) -> np.ndarray:
+    """(n_hours, n_cells) composite grid -> one value per row of X, matched on
+    (cell, ts)."""
+    lookup = pd.DataFrame({
+        "ts": hours.repeat(len(cells)),
+        "cell": np.tile(np.asarray(cells), len(hours)),
+        name: grid.ravel(),
+    })
+    return X[["cell", "ts"]].merge(lookup, on=["cell", "ts"], how="left")[name].to_numpy(dtype=float)
 
 
 if __name__ == "__main__":
