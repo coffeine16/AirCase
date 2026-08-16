@@ -1,8 +1,14 @@
 # intelligence/models/forecast/train.py
 """Top-level training orchestration + promotion gate (spec sections 5.4, 7).
 A freshly trained model must match or beat the currently-served model on
-walk-forward skill, spatial-LOSO, city-LOSO, and quantile coverage before
-it's allowed to replace it — code-enforced, not eyeballed."""
+walk-forward skill, spatial-LOSO, and city-LOSO before it's allowed to
+replace it — code-enforced, not eyeballed. quantile_coverage is computed
+and recorded in every manifest but deliberately NOT gated: unlike RMSE
+(lower always better) or skill (higher always better), coverage has no
+single "better" direction — both over- and under-coverage relative to the
+~0.80 target are miscalibration. Gating it needs a distance-from-target
+comparison this version doesn't implement; stated here as a real scope
+limit, not a silent gap."""
 import json
 from pathlib import Path
 
@@ -17,6 +23,28 @@ from intelligence.models.forecast.validation import (
     walk_forward_folds, event_weights, spatial_loso, run_city_loso,
 )
 from intelligence.models.forecast.eval import skill_vs_baseline, quantile_coverage, quiet_vs_event_breakdown
+
+
+def _regressed(new_val: float | None, prior_val: float | None,
+               higher_is_better: bool, tolerance_pct: float) -> bool:
+    """True if `new_val` is a regression vs `prior_val` beyond tolerance.
+    Missing or non-finite `new_val`/`prior_val` means there is nothing to
+    compare -- returns False (does not block). This is deliberate: a
+    diagnostic like walk-forward skill can legitimately come back None on
+    too little history (expected on a small panel, not a failure), and
+    that must not be conflated with the primary metric (spatial-LOSO)
+    genuinely breaking -- see the separate, stricter spatial_loso_ok check
+    in train_and_promote below, which is where a non-finite result DOES
+    block promotion unconditionally."""
+    if new_val is None or prior_val is None:
+        return False
+    if not np.isfinite(new_val) or not np.isfinite(prior_val):
+        return False
+    if higher_is_better:
+        allowed = prior_val * (1 - tolerance_pct / 100)
+        return new_val < allowed
+    allowed = prior_val * (1 + tolerance_pct / 100)
+    return new_val > allowed
 
 
 def _version_id() -> str:
@@ -52,21 +80,23 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     loso_result = spatial_loso(full_panel, horizons, feature_cols)
     city_result = run_city_loso(panels_by_city, horizons, feature_cols)
 
-    weights = event_weights(frame)
+    # LightGBM's Dataset already built inside train_quantile_models doesn't
+    # take sample weights via that simple call, so the SERVED model (which
+    # needs the real-event oversampling weight) is trained directly here
+    # instead — walk-forward/LOSO above stay unweighted on purpose, since
+    # they measure generalisation, not the production fit. Only ONE
+    # training pass for the served model, not two: an earlier draft called
+    # train_quantile_models AND this weighted loop, discarding the first
+    # result unused — doubling the cost of the single most expensive stage
+    # in this function for nothing.
     final_train = frame.dropna(subset=["y"])
-    final_models = train_quantile_models(final_train, feature_cols, num_boost_round=500)
-    # LightGBM's Dataset already built inside train_quantile_models doesn't take
-    # sample weights via this simple call — apply them via a second, weighted
-    # pass on the same data for the SERVED model only (walk-forward/LOSO stay
-    # unweighted, since they measure generalisation, not the production fit).
     import lightgbm as lgb
     from intelligence.models.forecast.model import PARAMS, QUANTILES
-    weighted_models = {}
+    final_models = {}
     for q in QUANTILES:
         ds = lgb.Dataset(final_train[feature_cols], label=final_train["y"],
                           weight=event_weights(final_train), categorical_feature=["city"])
-        weighted_models[q] = lgb.train({**PARAMS, "alpha": q}, ds, num_boost_round=500)
-    final_models = weighted_models
+        final_models[q] = lgb.train({**PARAMS, "alpha": q}, ds, num_boost_round=500)
 
     baseline_reg = train_ceiling_baseline(final_train, [c for c in feature_cols if c != "city"])
     ceiling_pred = baseline_reg.predict(final_train[[c for c in feature_cols if c != "city"]].select_dtypes(include=[np.number]).fillna(0.0))
@@ -92,22 +122,38 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     }
 
     version = _version_id()
-    promoted = True
-    if prior_manifest is not None:
-        prior_rmse = prior_manifest.get("eval", {}).get("spatial_loso_rmse")
-        if prior_rmse is not None and np.isfinite(prior_rmse):
-            # RMSE: LOWER is better. A regression means the NEW rmse is
-            # HIGHER than the prior's by more than the tolerance -- allowed
-            # is an UPPER bound, not a lower one. (The original draft had
-            # this inverted: allowed = prior*(1-tol) with a "<" refusal
-            # check refuses promotion when the new model is BETTER, and
-            # would silently promote a worse one, since RMSE can't go
-            # negative. Caught before dispatch by tracing the regression
-            # test by hand: a fake prior RMSE of 0.0 must force a refusal,
-            # and only ">" does that.)
-            allowed = prior_rmse * (1 + regression_tolerance_pct / 100)
-            if not np.isfinite(loso_result["overall_rmse"]) or loso_result["overall_rmse"] > allowed:
-                promoted = False
+    prior_eval = (prior_manifest or {}).get("eval", {})
+
+    # spatial-LOSO is the primary validation metric (this plan's own
+    # "headline number"). Unlike walk-forward/city-LOSO, which can
+    # legitimately come back None/empty on too little history (expected on
+    # a small panel, not a failure -- see _regressed's docstring), a
+    # non-finite spatial-LOSO RMSE means real stations existed but scoring
+    # genuinely broke, and that must never be silently promoted, WITH or
+    # WITHOUT a prior to compare against. This closes finding #3 from Task
+    # 10's review: `promoted` used to default True unconditionally and only
+    # checked finiteness inside the `prior_manifest is not None` branch, so
+    # a NaN-RMSE first run promoted silently.
+    spatial_loso_ok = np.isfinite(eval_report["spatial_loso_rmse"])
+
+    # The other two gated metrics (walk-forward skill: higher better;
+    # city-LOSO: lower better, compared as the MEDIAN across whatever
+    # cities are present in each run -- robust to the city set changing
+    # between runs, and consistent with this project's median-not-mean
+    # convention everywhere else).
+    prior_city_rmses = [v["rmse"] for v in prior_eval.get("city_loso", {}).values()]
+    new_city_rmses = [v["rmse"] for v in city_result["per_city"].values()]
+    prior_city_median = float(np.median(prior_city_rmses)) if prior_city_rmses else None
+    new_city_median = float(np.median(new_city_rmses)) if new_city_rmses else None
+
+    promoted = spatial_loso_ok and not any([
+        _regressed(eval_report["spatial_loso_rmse"], prior_eval.get("spatial_loso_rmse"),
+                   higher_is_better=False, tolerance_pct=regression_tolerance_pct),
+        _regressed(eval_report["walk_forward_skill_median"], prior_eval.get("walk_forward_skill_median"),
+                   higher_is_better=True, tolerance_pct=regression_tolerance_pct),
+        _regressed(new_city_median, prior_city_median,
+                   higher_is_better=False, tolerance_pct=regression_tolerance_pct),
+    ])
 
     manifest = {"version": version, "trained_at": pd.Timestamp.utcnow().isoformat(),
                 "cities": sorted(panels_by_city), "eval": eval_report, "promoted": promoted}
@@ -122,7 +168,9 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
               f"{eval_report['walk_forward_skill_median']}%, spatial-LOSO RMSE "
               f"{eval_report['spatial_loso_rmse']}")
     else:
-        print(f"[train] {version} trained but NOT promoted — spatial-LOSO RMSE "
-              f"{loso_result['overall_rmse']} regressed beyond the "
-              f"{regression_tolerance_pct}% tolerance vs the current model")
+        reason = ("spatial-LOSO RMSE is non-finite (no scoreable stations)"
+                  if not spatial_loso_ok else
+                  f"regressed beyond the {regression_tolerance_pct}% tolerance "
+                  f"on spatial-LOSO, walk-forward skill, and/or city-LOSO vs the current model")
+        print(f"[train] {version} trained but NOT promoted — {reason}")
     return manifest
