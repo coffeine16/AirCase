@@ -139,6 +139,39 @@ def test_build_features_wires_fires_into_fire_pressure():
     assert with_fires.fire_pressure_regional.max() > 0
 
 
+def test_restrict_to_station_cells_matches_the_unrestricted_labeled_rows():
+    """restrict_to_station_cells=True exists purely to avoid materializing
+    horizon-expanded rows that .dropna(subset=["y"]) was always going to
+    discard anyway (see the real multi-city panel this was measured against:
+    ~50M base rows, <40 station cells, 27GB to horizon-expand unrestricted).
+    It must never change WHICH labeled rows a training call sees -- only how
+    much gets built along the way."""
+    panel = _tiny_panel()
+    horizons = [3, 24]
+
+    unrestricted = build_features(panel, horizons).dropna(subset=["y"])
+    restricted = build_features(panel, horizons, restrict_to_station_cells=True).dropna(subset=["y"])
+
+    assert not restricted.empty, "restricting to station cells dropped every labeled row"
+    key_cols = ["cell", "ts", "horizon"]
+    u = unrestricted.sort_values(key_cols).reset_index(drop=True)
+    r = restricted.sort_values(key_cols).reset_index(drop=True)
+    assert u[key_cols].equals(r[key_cols]), "restricting changed WHICH rows survive to training"
+    assert np.allclose(u["y"], r["y"])
+    assert np.allclose(u["lag_0"], r["lag_0"], equal_nan=True)
+
+    # and it must not disturb loso_exclude's own held-out rows, which are the
+    # whole reason spatial_loso passes both flags together
+    held_out = panel.cell.iloc[0]
+    loso_unrestricted = build_features(panel, horizons, loso_exclude=held_out)
+    loso_restricted = build_features(panel, horizons, loso_exclude=held_out,
+                                      restrict_to_station_cells=True)
+    held_u = loso_unrestricted[loso_unrestricted.cell == held_out].sort_values("horizon")
+    held_r = loso_restricted[loso_restricted.cell == held_out].sort_values("horizon")
+    assert len(held_u) == len(held_r) and len(held_r) > 0
+    assert np.allclose(held_u["lag_0"].to_numpy(), held_r["lag_0"].to_numpy(), equal_nan=True)
+
+
 def test_build_features_stays_fast_on_a_moderate_panel():
     # Canary against the horizon-loop regression: build_features used to
     # recompute every composite, positional block and climatology lookup once

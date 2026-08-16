@@ -5,7 +5,7 @@ synthetic ignition schedule (spec 5.3's hard rule)."""
 import numpy as np
 import pandas as pd
 
-from intelligence.models.forecast.features import build_features
+from intelligence.models.forecast.features import build_features, downcast_panel
 from intelligence.models.forecast.model import (
     train_quantile_models, predict_quantiles, mask_unknown_city, UNKNOWN_CITY,
 )
@@ -60,7 +60,13 @@ def spatial_loso(panel: pd.DataFrame, horizons: list[int], feature_cols: list[st
     real held-out readings."""
     station_cells = sorted(panel[panel.pm25_station.notna()].cell.unique())
     per_station, all_true, all_pred = {}, [], []
-    for held_out in station_cells:
+    for i, held_out in enumerate(station_cells, 1):
+        # Each fold rebuilds features for the WHOLE panel (composite fidelity
+        # requires full-city context), so this loop is the dominant cost of
+        # the whole training run on a real multi-city panel and can run
+        # silently for a long time with no other output. One line per fold
+        # is the difference between "still running" and "looks hung".
+        print(f"[spatial_loso] fold {i}/{len(station_cells)}: holding out {held_out}")
         # ONE build on the FULL panel, filtered by cell afterwards. Slicing
         # the panel down to the held-out cell BEFORE building features (an
         # earlier version did) leaves composite_grid/positional_block with no
@@ -71,7 +77,8 @@ def spatial_loso(panel: pd.DataFrame, horizons: list[int], feature_cols: list[st
         # the answer and nothing else, and the resulting "RMSE" measures
         # nothing. Filtering after the build keeps the composite real and the
         # self-exclusion (loso_exclude) honest.
-        frame = build_features(panel, horizons, loso_exclude=held_out, fires=fires)
+        frame = build_features(panel, horizons, loso_exclude=held_out, fires=fires,
+                                restrict_to_station_cells=True)
         train_frame = mask_unknown_city(
             frame[frame.cell != held_out].dropna(subset=["y"]))
         test_frame = frame[frame.cell == held_out]
@@ -108,14 +115,21 @@ def run_city_loso(panels_by_city: dict[str, pd.DataFrame], horizons: list[int],
     for held_out, train_cities in city_loso_splits(list(panels_by_city)):
         if not train_cities:
             continue   # a single-city registry has no N-1 split to make
-        train_panel = pd.concat([panels_by_city[c] for c in train_cities], ignore_index=True)
+        print(f"[run_city_loso] holding out {held_out}, training on {train_cities}")
+        # re-downcast after concat: pd.concat reverts a categorical column
+        # back to plain string dtype whenever the pieces' category sets
+        # differ, which every per-city `city`/`cell`/`ward_id` column does.
+        train_panel = downcast_panel(
+            pd.concat([panels_by_city[c] for c in train_cities], ignore_index=True))
         train_fires = [fires_by_city[c] for c in train_cities if c in fires_by_city]
         train_frame = mask_unknown_city(
             build_features(train_panel, horizons,
-                           fires=pd.concat(train_fires, ignore_index=True) if train_fires else None)
+                           fires=pd.concat(train_fires, ignore_index=True) if train_fires else None,
+                           restrict_to_station_cells=True)
             .dropna(subset=["y"]))
         test_panel = panels_by_city[held_out]
-        test_frame = build_features(test_panel, horizons, fires=fires_by_city.get(held_out))
+        test_frame = build_features(test_panel, horizons, fires=fires_by_city.get(held_out),
+                                     restrict_to_station_cells=True)
         if train_frame.empty or test_frame.dropna(subset=["y"]).empty:
             continue
         test_frame = _align_city(test_frame, train_frame.city.cat.categories, relabel_unknown=True)

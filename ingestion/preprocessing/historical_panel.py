@@ -19,6 +19,13 @@ from shared.wards import attach_wards
 from ingestion.preprocessing.panel import _landuse_features, _fire_features
 
 
+CHUNK_DAYS = 60  # bounds peak memory: _fire_features rebuilds its own cell x hour
+                  # spine internally (duplicating what the outer spine already holds),
+                  # and at the full 2-year x 1210-cell scale that transient double-hold
+                  # is what actually exhausts RAM, not the final panel's own size.
+                  # Chunking by time keeps every intermediate bounded to one chunk.
+
+
 def build_historical_panel(city: str, hist_dir: Path | None = None,
                             raw_dir: Path | None = None) -> pd.DataFrame:
     hist = hist_dir or (ROOT / "data" / "historical" / city)
@@ -40,14 +47,26 @@ def build_historical_panel(city: str, hist_dir: Path | None = None,
             f"({weather.ts.min()} .. {weather.ts.max()}) for {city} — "
             f"check {hist}/manifest.json")
 
-    panel = pd.MultiIndex.from_product([cells, hours], names=["cell", "ts"]).to_frame(index=False)
+    landuse = _landuse_features(cells, osm)  # static, built once outside the loop
 
-    st = (stations.groupby(["cell", "ts"], as_index=False).pm25.median()
-                  .rename(columns={"pm25": "pm25_station"}))
-    panel = panel.merge(st, on=["cell", "ts"], how="left")
-    panel = panel.merge(weather, on="ts", how="left")
-    panel = panel.merge(_fire_features(cells, fires, hours), on=["cell", "ts"], how="left")
-    panel = panel.merge(_landuse_features(cells, osm), on="cell", how="left")
+    chunk_hours = CHUNK_DAYS * 24
+    chunks = []
+    for start in range(0, len(hours), chunk_hours):
+        chunk = hours[start:start + chunk_hours]
+        part = pd.MultiIndex.from_product([cells, chunk], names=["cell", "ts"]).to_frame(index=False)
+
+        st = (stations[stations.ts.isin(chunk)].groupby(["cell", "ts"], as_index=False)
+                      .pm25.median().rename(columns={"pm25": "pm25_station"}))
+        part = part.merge(st, on=["cell", "ts"], how="left")
+        part = part.merge(weather, on="ts", how="left")
+        part = part.merge(_fire_features(cells, fires, chunk), on=["cell", "ts"], how="left")
+        part = part.merge(landuse, on="cell", how="left")
+        chunks.append(part)
+        print(f"[historical_panel] {city}: chunk {chunk[0].date()}..{chunk[-1].date()} "
+              f"({len(part):,} rows)")
+
+    panel = pd.concat(chunks, ignore_index=True)
+    del chunks
     panel = attach_wards(panel)
 
     panel["hour"] = panel.ts.dt.hour

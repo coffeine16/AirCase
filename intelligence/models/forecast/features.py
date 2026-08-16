@@ -35,6 +35,41 @@ FEATURE_COLUMNS = (
 )
 
 
+def downcast_panel(df: pd.DataFrame) -> pd.DataFrame:
+    """Shrinks a panel's memory footprint. Measured on Bengaluru's real
+    2-year historical panel: 3.28GB -> ~1.1GB. The low-cardinality string
+    columns account for most of it -- `city` is the SAME string repeated
+    16.75M times, but arrow-backed string columns don't dedupe the way a
+    categorical does.
+
+    Call this again after `pd.concat`-ing panels from different cities, not
+    just once at load time: `pd.concat` silently reverts a categorical
+    column back to plain string dtype whenever the pieces being concatenated
+    don't already share an identical category set (confirmed empirically —
+    two single-city frames, each with its OWN one-city categorical, concat
+    into a `str`-dtype column). A pooled multi-city panel's `full_panel =
+    pd.concat(panels_by_city.values())` is exactly that case, and it is also
+    exactly the line that failed with an ArrowMemoryError on a real 3-city
+    run: loading all 3 cities' panels, concatenating them, and only THEN
+    re-widening the string columns back out used more memory than was free.
+
+    Numeric columns stay at their original width (float64/int64), not
+    downcast to float32/int32: build_features fills lag/roll_med/composite
+    columns via `X.loc[mask, col] = <float64 array from composite_grid>`,
+    and pandas refuses to assign a float64 value into a float32 column
+    losslessly (raises, doesn't silently widen) — confirmed by trying it and
+    watching the existing, already-reviewed LOSO/train_and_promote tests
+    fail with exactly that TypeError. The string columns are where the
+    memory actually was (city/cell/ward_id/ward_name = 39% of a real panel's
+    footprint from 4 of ~19 columns), so this alone is the safe, high-value
+    part of the fix."""
+    df = df.copy()
+    for col in ("cell", "ward_id", "ward_name", "city"):
+        if col in df.columns:
+            df[col] = df[col].astype("category")
+    return df
+
+
 def _station_matrix(panel: pd.DataFrame):
     st = panel[panel.pm25_station.notna()][["cell", "ts", "pm25_station"]].drop_duplicates(["cell", "ts"])
     if st.empty:
@@ -97,13 +132,29 @@ def attach_climatology(frame: pd.DataFrame, tables: dict[str, pd.Series]) -> pd.
 def build_features(panel: pd.DataFrame, horizons: list[int],
                     loso_exclude: str | None = None,
                     fires: pd.DataFrame | None = None,
-                    clim_tables: dict[str, pd.Series] | None = None) -> pd.DataFrame:
+                    clim_tables: dict[str, pd.Series] | None = None,
+                    restrict_to_station_cells: bool = False) -> pd.DataFrame:
     """`clim_tables`, when given, is used verbatim instead of building the
     climatology from `panel` — the hook a time-split caller needs so that a
     test row's climatology is never computed from that row's own future. A
     caller that passes BOTH `clim_tables` and `loso_exclude` is responsible
     for having built those tables with `build_climatology(..., exclude_cell=)`;
-    the default path does it automatically."""
+    the default path does it automatically.
+
+    `restrict_to_station_cells`: skip horizon-expanding any cell that could
+    never carry a labeled `y` (every non-station cell — `y` is
+    `pm25_station.shift(-h)`, which is NaN everywhere there is no station).
+    The horizon-independent block `X` is still built from the FULL panel
+    first, so composite/positional fidelity is untouched; this only decides
+    which (cell, ts) rows get replicated across horizons. Every existing
+    training call site ends in `.dropna(subset=["y"])` anyway, so those rows
+    were always going to be discarded — the only difference is discarding
+    them ONCE instead of building and then dropping len(horizons) copies of
+    them. On a real multi-city 2-year panel (~50M base rows, <40 station
+    cells) that is the difference between a training run that fits in memory
+    and one that needs tens of GB to hold rows nobody was going to use.
+    Leave False for any prediction path (e.g. _predict_field) that needs
+    every cell, station or not."""
     # reset_index is required, not cosmetic: the fire_pressure merge below
     # produces a fresh 0..n-1 RangeIndex on X, and later code re-joins X
     # against THIS frame (p) positionally. Any caller that passes a sliced
@@ -215,6 +266,19 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
         X["fires_6h"] = p.fires_6h.values
         X["frp_6h"] = p.frp_6h.values
 
+    # Drop rows that can never be y-labeled BEFORE the horizon expansion below,
+    # not after -- see the docstring. Safe superset reduction: every row kept
+    # here was going to survive expansion unchanged in every horizon anyway.
+    # `keep_mask` also has to gate the `y` shift below: that's computed from
+    # `g`, the groupby over the ORIGINAL (unfiltered) `p`, so it stays aligned
+    # to p's row order -- X's own index gets reset by the filter and can't be
+    # used to re-select from `g` afterward.
+    keep_mask = None
+    if restrict_to_station_cells:
+        allowed = set(station_cells) | ({loso_exclude} if loso_exclude is not None else set())
+        keep_mask = X.cell.isin(allowed).to_numpy()
+        X = X[keep_mask].reset_index(drop=True)
+
     # ---- horizon-DEPENDENT block: replicate the base, vary 6 columns ----
     n = len(X)
     out = pd.concat([X] * len(horizons), ignore_index=True)
@@ -223,7 +287,11 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
     out["target_hour"] = tgt.dt.hour
     out["target_dow"] = tgt.dt.dayofweek
     out["target_month"] = tgt.dt.month
-    out["y"] = np.concatenate([g.pm25_station.shift(-h).to_numpy(dtype=float) for h in horizons])
+    if keep_mask is not None:
+        out["y"] = np.concatenate(
+            [g.pm25_station.shift(-h).to_numpy(dtype=float)[keep_mask] for h in horizons])
+    else:
+        out["y"] = np.concatenate([g.pm25_station.shift(-h).to_numpy(dtype=float) for h in horizons])
     out["clim_dow_hour"], out["clim_month"] = climatology_columns(out, clim_tables)
     out["city"] = out["city"].astype("category")
 

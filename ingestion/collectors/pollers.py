@@ -170,11 +170,22 @@ def fetch_weather(days: int | None = None) -> pd.DataFrame:
     end = window_end()
     start = end - pd.Timedelta(days=days)
 
-    # The forecast endpoint only reaches ~92 days back. A historical episode needs
-    # the ERA5 archive, which is a different host entirely — and still carries
-    # boundary_layer_height, which is the single strongest meteorological predictor
-    # we have (a shallow boundary layer traps everything).
-    historical = (pd.Timestamp.now("UTC").normalize() - end).days > 60
+    # The forecast endpoint only reaches ~92 days back FROM NOW — its past_days
+    # param is always relative to the current moment, it cannot target an
+    # arbitrary end date. A historical episode needs the ERA5 archive, which is
+    # a different host entirely — and still carries boundary_layer_height, the
+    # single strongest meteorological predictor we have (a shallow boundary
+    # layer traps everything).
+    #
+    # Checking only how far END is in the past silently breaks a long backfill
+    # that ends "now" (AQ_WINDOW_END unset): end - now is always ~0 days, so
+    # this always picked the forecast endpoint regardless of `days`, capping a
+    # requested 730-day window at past_days's 92-day ceiling with no error.
+    # Measured: 5 cities backfilled with `--days 730` and no AQ_WINDOW_END all
+    # got ~95 days of weather (92 past + 3 forecast) while their station pulls
+    # correctly covered the full 2 years — a silent truncation, not a failure,
+    # so nothing here ever raised.
+    historical = days > 92 or (pd.Timestamp.now("UTC").normalize() - end).days > 60
     if historical:
         q = urllib.parse.urlencode({
             "latitude": lat, "longitude": lon,

@@ -10,7 +10,7 @@ import pandas as pd
 
 from shared.config import ROOT
 from intelligence.models.forecast.features import (
-    build_features, attach_climatology, FEATURE_COLUMNS,
+    build_features, attach_climatology, downcast_panel, FEATURE_COLUMNS,
 )
 from intelligence.models.forecast.climatology import build_climatology
 from intelligence.models.forecast.model import (
@@ -29,7 +29,8 @@ def evaluate(panel: pd.DataFrame, oracle_met: bool = False,
     is no longer supported by the new model (the old model's leakage-sizing
     experiment doesn't apply to a quantile/multi-city model) — always
     ignored, and the caller gets an explicit note rather than a silent gap."""
-    frame = mask_unknown_city(build_features(panel, HORIZONS, fires=fires))
+    frame = mask_unknown_city(build_features(panel, HORIZONS, fires=fires,
+                                              restrict_to_station_cells=True))
     split = frame.ts.max() - pd.Timedelta(days=TEST_TAIL_DAYS)
     # Climatology from the TRAIN side only, re-attached to the whole frame:
     # building it inside build_features used the full panel, so every test
@@ -114,7 +115,7 @@ def run(cities: list[str] | None = None) -> dict:
         if not path.exists():
             print(f"[forecast] {city}: no panel at {path}, skipping")
             continue
-        panels[city] = pd.read_parquet(path)
+        panels[city] = downcast_panel(pd.read_parquet(path))
         # The RAW per-fire-event table (lat/lon/frp), not the panel's
         # pre-aggregated fires_6h/frp_6h columns: spatial.fire_pressure needs
         # each detection's own position to weight it by distance and wind.

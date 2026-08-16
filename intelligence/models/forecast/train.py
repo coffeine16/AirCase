@@ -15,7 +15,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from intelligence.models.forecast.features import build_features, attach_climatology
+from intelligence.models.forecast.features import build_features, attach_climatology, downcast_panel
 from intelligence.models.forecast.climatology import build_climatology
 from intelligence.models.forecast.model import (
     train_quantile_models, predict_quantiles, train_ceiling_baseline, mask_unknown_city,
@@ -68,15 +68,23 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
                        fires_by_city: dict[str, pd.DataFrame] | None = None,
                        walk_forward_kwargs: dict | None = None) -> dict:
     out_dir = Path(out_dir)
-    full_panel = pd.concat(panels_by_city.values(), ignore_index=True)
+    # concat silently reverts each city's own categorical columns back to
+    # plain string dtype whenever their category sets differ (every city's
+    # `city` column, for one) -- re-downcast after, not just at load time.
+    # See features.py::downcast_panel's docstring; this line is the exact
+    # one that failed with an ArrowMemoryError on a real 3-city panel.
+    full_panel = downcast_panel(pd.concat(panels_by_city.values(), ignore_index=True))
     all_fires = (pd.concat(fires_by_city.values(), ignore_index=True)
                  if fires_by_city else None)
-    frame = mask_unknown_city(build_features(full_panel, horizons, fires=all_fires))
+    frame = mask_unknown_city(build_features(full_panel, horizons, fires=all_fires,
+                                              restrict_to_station_cells=True))
     num_cols = [c for c in feature_cols if c != "city"]
 
     folds = walk_forward_folds(frame, **(walk_forward_kwargs or {}))
     fold_skills, oof = [], []
-    for train_end, test_start, test_end in folds:
+    print(f"[train_and_promote] {len(folds)} walk-forward fold(s)")
+    for fi, (train_end, test_start, test_end) in enumerate(folds, 1):
+        print(f"[train_and_promote] walk-forward fold {fi}/{len(folds)}: train_end={train_end.date()}")
         # Climatology from TRAIN ONLY, re-attached to both sides of the fold.
         # build_features built it from the whole panel, which means every test
         # row's clim_dow_hour/clim_month was partly computed from that same
@@ -106,9 +114,12 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
             "ceiling": ceil_pred, "fires_6h": te["fires_6h"].fillna(0).values,
         }))
 
+    print("[train_and_promote] starting spatial-LOSO")
     loso_result = spatial_loso(full_panel, horizons, feature_cols, fires=all_fires)
+    print("[train_and_promote] starting city-LOSO")
     city_result = run_city_loso(panels_by_city, horizons, feature_cols,
                                  fires_by_city=fires_by_city)
+    print("[train_and_promote] fitting final served model")
 
     # LightGBM's Dataset already built inside train_quantile_models doesn't
     # take sample weights via that simple call, so the SERVED model (which
