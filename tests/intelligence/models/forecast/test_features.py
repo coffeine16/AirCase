@@ -158,9 +158,19 @@ def test_build_features_stays_fast_on_a_moderate_panel():
             for i, c in enumerate(cells) for h in hours]
     panel = pd.DataFrame(rows)
 
+    # Full production horizon count (24), not a 4-horizon sample: the whole point
+    # of the regression this guards against is the horizon LOOP re-doing the
+    # horizon-independent work, so the canary has to pay that multiplier to be
+    # able to see it. At 4 horizons the pre-fix path (~3.7s) and the fixed path
+    # (~0.1s) both clear a loose bound and the test proves nothing.
+    horizons = list(range(3, 73, 3))
     t0 = time.perf_counter()
-    frame = build_features(panel, horizons=[3, 24, 48, 72])
+    frame = build_features(panel, horizons=horizons)
     elapsed = time.perf_counter() - t0
 
     assert not frame.empty
-    assert elapsed < 10.0, f"build_features took {elapsed:.1f}s on 60 cells x 120 hours x 4 horizons"
+    assert elapsed < 10.0, (
+        f"build_features took {elapsed:.1f}s on 60 cells x 120 hours x {len(horizons)} "
+        "horizons — the pre-fix per-horizon recomputation took ~22s on this same "
+        "fixture, so this bound catches that regression coming back."
+    )

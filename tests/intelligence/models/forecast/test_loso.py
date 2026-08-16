@@ -126,6 +126,45 @@ def test_loso_training_frames_carry_no_nan_labels_and_real_fire_pressure(monkeyp
         assert train_frame["fire_pressure_regional"].max() > 0, "fires never reached build_features"
 
 
+def test_spatial_loso_itself_builds_features_on_the_full_panel(monkeypatch):
+    """Pins spatial_loso's own call shape, not just build_features in isolation.
+
+    The earlier regression test above (`..._sees_the_other_stations_not_its_own_answer`)
+    calls build_features directly, so it only proves build_features is capable of
+    the right thing -- it says nothing about whether spatial_loso actually calls it
+    that way. spatial_loso could be reverted to pre-slicing the panel to one cell
+    before calling build_features (the original C1 bug) and every other loso test
+    still passes, because none of them inspect the frame spatial_loso itself hands
+    to predict_quantiles.
+    """
+    import intelligence.models.forecast.validation as V
+    from intelligence.models.forecast.features import FEATURE_COLUMNS
+
+    panel = _panel_with_five_stations(held_out_level=200.0)
+    held_out = city_cells()[0]
+
+    seen_test_frames = []
+    real_predict = V.predict_quantiles
+    monkeypatch.setattr(
+        V, "predict_quantiles",
+        lambda models, test, *a, **k: (seen_test_frames.append(test), real_predict(models, test, *a, **k))[1])
+
+    V.spatial_loso(panel, horizons=[3], feature_cols=FEATURE_COLUMNS)
+
+    frames = [f for f in seen_test_frames if held_out in set(f.get("cell", []))]
+    assert frames, "held-out station's fold never reached predict_quantiles"
+    test_frame = frames[0]
+
+    # if spatial_loso pre-slices the panel to the held-out cell before calling
+    # build_features (the original bug), lag_0 comes back entirely NaN -- there
+    # is no other station left to compose from.
+    assert test_frame["lag_0"].notna().any(), (
+        "spatial_loso's own test frame has an all-NaN lag_0 -- it is pre-slicing "
+        "the panel before build_features again")
+    assert test_frame["lag_0"].max() < 120, (
+        "held-out station's own ~200 level leaked into its test frame's composite")
+
+
 def test_run_city_loso_covers_every_city():
     panels = {c: _panel_with_two_stations().assign(city=c) for c in ("bengaluru", "delhi")}
     from intelligence.models.forecast.features import FEATURE_COLUMNS
