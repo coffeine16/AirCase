@@ -24,6 +24,34 @@ def _panel_with_two_stations():
     return pd.DataFrame(rows)
 
 
+def _panel_with_five_stations(held_out_level=200.0):
+    """5 station cells + 1 blank. The held-out station reads at a level no
+    other station comes near, so "did the composite/climatology just hand the
+    model the answer" is directly checkable. A 2-3 station fixture cannot
+    expose that — which is exactly why the bug survived Task 9's review."""
+    cells = city_cells()[:6]
+    hours = pd.date_range("2024-01-01", periods=240, freq="h", tz="UTC")
+    rng = np.random.default_rng(0)
+    rows = []
+    for i, c in enumerate(cells):
+        if i == 0:
+            level = held_out_level
+        elif i < 5:
+            level = 40.0 + i * 3
+        else:
+            level = None
+        for h in hours:
+            rows.append({
+                "cell": c, "ts": h, "ward_id": "W1", "ward_name": "Ward 1", "city": "bengaluru",
+                "pm25_station": np.nan if level is None else float(level + rng.normal(0, 2)),
+                "wind_from_deg": 90.0, "wind_ms": 2.0, "blh_m": 400.0, "temp_c": 27.0,
+                "fires_6h": 0, "frp_6h": 0.0, "lu_industrial": 0, "lu_construction": 0,
+                "lu_waste_burning": 0, "lu_traffic": 0, "lu_road": 1, "lu_sensitive": 0,
+                "hour": h.hour, "dow": h.dayofweek,
+            })
+    return pd.DataFrame(rows)
+
+
 def test_spatial_loso_runs_one_fold_per_station():
     from intelligence.models.forecast.features import FEATURE_COLUMNS
     result = spatial_loso(_panel_with_two_stations(), horizons=[3], feature_cols=FEATURE_COLUMNS)
@@ -31,6 +59,71 @@ def test_spatial_loso_runs_one_fold_per_station():
     assert result["n_stations"] == 2
     assert set(result["per_station"]) == set(city_cells()[:2])
     assert "overall_rmse" in result
+    # not just "a key exists" -- the number has to be real
+    assert np.isfinite(result["overall_rmse"])
+
+
+def test_spatial_loso_test_frame_sees_the_other_stations_not_its_own_answer():
+    """Regression test for the composite/climatology leak.
+
+    The old spatial_loso sliced the panel down to the held-out cell BEFORE
+    calling build_features. The composite then had no other station to compose
+    from (every spatial feature NaN) and the climatology, rebuilt from that one
+    station, resolved to the held-out station's own value -- which is also the
+    target. The "RMSE" measured nothing.
+    """
+    from intelligence.models.forecast.features import build_features
+
+    panel = _panel_with_five_stations(held_out_level=200.0)
+    held_out = city_cells()[0]
+
+    frame = build_features(panel, horizons=[3], loso_exclude=held_out)
+    test_frame = frame[frame.cell == held_out]
+    assert not test_frame.empty
+
+    # the OTHER stations' composite must actually reach the held-out cell
+    for col in ("lag_0", "lag_24", "pos_0", "nearby_stations_delta"):
+        assert test_frame[col].notna().any(), f"{col} is entirely NaN — nothing to compose from"
+
+    # ...and it must not be the held-out station's own ~200 level (its own
+    # readings are the only thing near 200 anywhere in this panel)
+    assert test_frame["lag_0"].max() < 120, "held-out station leaked into its own composite"
+    # climatology likewise: all three scopes must exclude it, not just `cell`
+    assert test_frame["clim_dow_hour"].notna().any()
+    assert test_frame["clim_dow_hour"].max() < 120, "held-out station leaked via ward/city climatology"
+    # ...while the target it is scored against IS the ~200 level
+    assert test_frame["y"].median() > 150
+
+
+def test_loso_training_frames_carry_no_nan_labels_and_real_fire_pressure(monkeypatch):
+    """build_features emits a row per (cell, hour, horizon); non-station cells
+    have no label but survive the lag filter because the composite fills their
+    lags. LightGBM neither raises nor warns on a NaN label — it just trains a
+    useless model. Also asserts the `fires` argument actually reaches
+    build_features, since fire_pressure_regional was 0.0 at every real call
+    site."""
+    import intelligence.models.forecast.validation as V
+    from intelligence.models.forecast.features import FEATURE_COLUMNS
+    from shared.grid import cell_center
+
+    panel = _panel_with_five_stations()
+    lat, lon = cell_center(city_cells()[0])
+    # due EAST of the cell, so the fire->cell bearing (270) matches where the
+    # wind_from_deg=90 wind actually blows -> alignment 1.0, weight > 0
+    fires = pd.DataFrame({"ts": panel.ts.unique()[:48],
+                          "lat": lat, "lon": lon + 0.01, "frp": 100.0, "confidence": 90})
+
+    seen = []
+    real = V.train_quantile_models
+    monkeypatch.setattr(V, "train_quantile_models",
+                         lambda train, *a, **k: (seen.append(train), real(train, *a, **k))[1])
+
+    V.spatial_loso(panel, horizons=[3], feature_cols=FEATURE_COLUMNS, fires=fires)
+
+    assert seen, "spatial_loso trained nothing"
+    for train_frame in seen:
+        assert train_frame["y"].notna().all(), "training on NaN labels"
+        assert train_frame["fire_pressure_regional"].max() > 0, "fires never reached build_features"
 
 
 def test_run_city_loso_covers_every_city():

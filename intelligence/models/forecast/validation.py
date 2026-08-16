@@ -9,7 +9,17 @@ from intelligence.models.forecast.features import build_features
 from intelligence.models.forecast.model import (
     train_quantile_models, predict_quantiles, mask_unknown_city, UNKNOWN_CITY,
 )
-from intelligence.models.forecast.eval import skill_vs_baseline
+
+
+def _align_city(frame: pd.DataFrame, categories, relabel_unknown: bool = False) -> pd.DataFrame:
+    """Give `frame` the same `city` category set the training frame carries.
+    Applied to BOTH LOSO functions' test frames so the two paths stay
+    consistent — a reader should not have to work out why one aligns and the
+    other does not."""
+    out = frame.copy()
+    values = [UNKNOWN_CITY] * len(out) if relabel_unknown else out["city"].astype(str)
+    out["city"] = pd.Categorical(values, categories=categories)
+    return out
 
 
 def walk_forward_folds(frame: pd.DataFrame, ts_col: str = "ts",
@@ -40,7 +50,8 @@ def city_loso_splits(cities: list[str]) -> list[tuple[str, list[str]]]:
     return [(c, [x for x in cities if x != c]) for c in cities]
 
 
-def spatial_loso(panel: pd.DataFrame, horizons: list[int], feature_cols: list[str]) -> dict:
+def spatial_loso(panel: pd.DataFrame, horizons: list[int], feature_cols: list[str],
+                  fires: pd.DataFrame | None = None) -> dict:
     """Direct analog of fusion.py::loso_validation, applied to the
     forecaster (spec 5.2). For each real station: retrain excluding it
     entirely from training, forecast its cell using composite-only features
@@ -50,22 +61,23 @@ def spatial_loso(panel: pd.DataFrame, horizons: list[int], feature_cols: list[st
     station_cells = sorted(panel[panel.pm25_station.notna()].cell.unique())
     per_station, all_true, all_pred = {}, [], []
     for held_out in station_cells:
-        # build_features() internally re-joins its working frame against `p`
-        # (the sorted copy of what's passed in) by index label after a merge
-        # that resets that label to a fresh 0..n-1 RangeIndex (fire_pressure
-        # join). Every other caller always passes an already-0-based panel,
-        # so the label and the row position silently coincided. A LOSO
-        # training panel is panel[panel.cell != held_out] -- a slice that
-        # keeps the ORIGINAL (non-0-based) row labels -- and without this
-        # reset that mismatch raises a KeyError deep inside build_features.
-        # Not a features.py bug to fix here: this satisfies its existing,
-        # previously-unexercised precondition at the call site instead.
-        train_panel = panel[panel.cell != held_out].reset_index(drop=True)
-        train_frame = mask_unknown_city(build_features(train_panel, horizons))
-        test_panel = panel[panel.cell == held_out].reset_index(drop=True)
-        test_frame = build_features(test_panel, horizons, loso_exclude=held_out)
+        # ONE build on the FULL panel, filtered by cell afterwards. Slicing
+        # the panel down to the held-out cell BEFORE building features (an
+        # earlier version did) leaves composite_grid/positional_block with no
+        # other station to compose from -- every spatial feature comes back
+        # NaN -- and rebuilds the climatology from that single station, whose
+        # cell/ward/city scopes then all collapse onto the held-out station's
+        # own value, which is also the prediction target. The model is handed
+        # the answer and nothing else, and the resulting "RMSE" measures
+        # nothing. Filtering after the build keeps the composite real and the
+        # self-exclusion (loso_exclude) honest.
+        frame = build_features(panel, horizons, loso_exclude=held_out, fires=fires)
+        train_frame = mask_unknown_city(
+            frame[frame.cell != held_out].dropna(subset=["y"]))
+        test_frame = frame[frame.cell == held_out]
         if train_frame.empty or test_frame.empty:
             continue
+        test_frame = _align_city(test_frame, train_frame.city.cat.categories)
         models = train_quantile_models(train_frame, feature_cols, num_boost_round=200)
         pred = predict_quantiles(models, test_frame, feature_cols)
         truth = test_frame["y"].values
@@ -78,19 +90,35 @@ def spatial_loso(panel: pd.DataFrame, horizons: list[int], feature_cols: list[st
 
 
 def run_city_loso(panels_by_city: dict[str, pd.DataFrame], horizons: list[int],
-                   feature_cols: list[str]) -> dict:
+                   feature_cols: list[str],
+                   fires_by_city: dict[str, pd.DataFrame] | None = None) -> dict:
     """Train on N-1 cities, test on the held-out city's real stations, as
-    if the model had never seen that city (spec 5.2)."""
+    if the model had never seen that city (spec 5.2).
+
+    LIMITATION, stated so nobody reads this as a stronger guarantee than it
+    is: the held-out city's test frame is built from that city's OWN panel,
+    so its spatial features (composite lags, positional block, nearest-station
+    distance) are computed from that same city's remaining stations. This is
+    zero information about the held-out CITY's learned behaviour — which is
+    what this split measures — but it is NOT zero information about the
+    held-out city's stations. Cell-level independence is spatial_loso's job,
+    not this one's."""
+    fires_by_city = fires_by_city or {}
     per_city = {}
     for held_out, train_cities in city_loso_splits(list(panels_by_city)):
+        if not train_cities:
+            continue   # a single-city registry has no N-1 split to make
         train_panel = pd.concat([panels_by_city[c] for c in train_cities], ignore_index=True)
-        train_frame = mask_unknown_city(build_features(train_panel, horizons))
+        train_fires = [fires_by_city[c] for c in train_cities if c in fires_by_city]
+        train_frame = mask_unknown_city(
+            build_features(train_panel, horizons,
+                           fires=pd.concat(train_fires, ignore_index=True) if train_fires else None)
+            .dropna(subset=["y"]))
         test_panel = panels_by_city[held_out]
-        test_frame = build_features(test_panel, horizons)
-        test_frame["city"] = pd.Categorical([UNKNOWN_CITY] * len(test_frame),
-                                             categories=train_frame.city.cat.categories)
+        test_frame = build_features(test_panel, horizons, fires=fires_by_city.get(held_out))
         if train_frame.empty or test_frame.dropna(subset=["y"]).empty:
             continue
+        test_frame = _align_city(test_frame, train_frame.city.cat.categories, relabel_unknown=True)
         models = train_quantile_models(train_frame, feature_cols, num_boost_round=200)
         scored = test_frame.dropna(subset=["y"])
         pred = predict_quantiles(models, scored, feature_cols)
