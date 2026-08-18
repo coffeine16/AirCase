@@ -1,0 +1,97 @@
+name: sync-forecast-model
+
+# The other half of train-forecast.yml's launch-only design. Runs cheaply
+# and often, checks whether the currently-tracked HF Job (see
+# training/current-run.json, written by train-forecast.yml's launch job)
+# has finished, and pulls + commits the result to models/ the moment it
+# has. Every single execution of this workflow finishes in well under a
+# minute when there's nothing to do -- the only way GitHub's 6h runner
+# limit could ever matter here is if a single check itself hung, which a
+# quick status lookup and a small model download never will.
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 minutes
+  workflow_dispatch:   # manual "check right now" trigger
+
+concurrency:
+  group: sync-forecast-model
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  HF_MODEL_REPO: MagmaCubes1133/aircase-forecast-models
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          lfs: true
+
+      - name: Check for a tracked training run
+        id: check
+        run: |
+          if [ ! -f training/current-run.json ]; then
+            echo "no training/current-run.json -- nothing launched since the last sync, or already synced"
+            echo "has_run=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "has_run=true" >> "$GITHUB_OUTPUT"
+          JOB_ID=$(python -c "import json; print(json.load(open('training/current-run.json'))['job_id'])")
+          echo "job_id=$JOB_ID" >> "$GITHUB_OUTPUT"
+
+      - name: Install the hf CLI
+        if: steps.check.outputs.has_run == 'true'
+        run: pip install -U "huggingface_hub[cli]"
+
+      - name: Check job status
+        if: steps.check.outputs.has_run == 'true'
+        id: status
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          STAGE=$(hf jobs inspect ${{ steps.check.outputs.job_id }} | python -c "import json,sys; print(json.load(sys.stdin)[0]['status']['stage'])")
+          echo "job ${{ steps.check.outputs.job_id }}: $STAGE"
+          echo "stage=$STAGE" >> "$GITHUB_OUTPUT"
+
+      - name: Pull the trained model and commit it (job completed)
+        if: steps.check.outputs.has_run == 'true' && steps.status.outputs.stage == 'COMPLETED'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python -c "
+          from huggingface_hub import snapshot_download
+          import shutil
+          path = snapshot_download('${{ env.HF_MODEL_REPO }}', repo_type='model')
+          shutil.copytree(path, 'models', dirs_exist_ok=True)
+          "
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git rm -f training/current-run.json
+          git add models/
+          if git diff --cached --quiet; then
+            echo "job completed but produced no model change (refused promotion matched what's already in models/)"
+            git commit -m "chore(training): job ${{ steps.check.outputs.job_id }} completed, no model change [skip ci]"
+          else
+            git commit -m "chore(models): update trained forecast model (job ${{ steps.check.outputs.job_id }}) [skip ci]"
+          fi
+          git push
+
+      - name: Stop tracking a job that ended without completing
+        # RUNNING is the only stage worth leaving the tracking file in
+        # place for -- anything else terminal (ERROR, CANCELED, DELETED)
+        # means there is nothing left to wait for, and leaving the file
+        # behind would make every future sync keep reporting the same
+        # dead job forever.
+        if: steps.check.outputs.has_run == 'true' && steps.status.outputs.stage != 'COMPLETED' && steps.status.outputs.stage != 'RUNNING'
+        run: |
+          echo "::warning::job ${{ steps.check.outputs.job_id }} ended in stage '${{ steps.status.outputs.stage }}', not COMPLETED -- nothing to sync. Check https://huggingface.co/jobs/${{ steps.check.outputs.job_id }} for why."
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git rm -f training/current-run.json
+          git commit -m "chore(training): clear tracked job ${{ steps.check.outputs.job_id }} (ended: ${{ steps.status.outputs.stage }}) [skip ci]"
+          git push
