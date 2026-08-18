@@ -151,9 +151,12 @@ jobs:
             --secrets HF_TOKEN \
             $CITIES_ARG \
             "${{ env.IMAGE }}:${{ github.sha }}" \
-            python train_and_upload.py)
+            python train_and_upload.py 2>&1)
           echo "$OUTPUT"
-          JOB_ID=$(echo "$OUTPUT" | grep -oP 'Job started with ID: \K\S+')
+          # Parse the URL line, not the bare `id:` line: it yields the
+          # NAMESPACE/ID form, which is what both `hf jobs inspect` (in
+          # sync-forecast-model.yml) and the huggingface.co/jobs/ URL need.
+          JOB_ID=$(echo "$OUTPUT" | grep -oP 'huggingface\.co/jobs/\K[^/[:space:]]+/[^/[:space:]]+' | head -1)
           if [ -z "$JOB_ID" ]; then
             echo "::error::couldn't parse a job ID out of hf jobs run -d's output -- see the raw output above"
             exit 1

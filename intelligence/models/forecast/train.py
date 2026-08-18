@@ -23,6 +23,96 @@ from intelligence.models.forecast.validation import (
 )
 from intelligence.models.forecast.eval import skill_vs_baseline, quantile_coverage, quiet_vs_event_breakdown
 
+# A worker's peak is its pickled payload plus the fold slice attach_climatology
+# copies plus LightGBM's Dataset -- budget for the peak, not the handoff.
+_WORKER_PEAK_MULTIPLE = 2.5
+# Spend only half of what's left after the parent's own resident copy.
+_MEMORY_SAFETY_FRACTION = 0.5
+# Past this, folds contend on memory bandwidth and disk more than they gain.
+_MAX_WORKERS = 8
+
+
+def _available_cpus() -> int:
+    """CPUs this CONTAINER may actually use.
+
+    NOT os.cpu_count(): that reports the HOST node's cores and ignores the
+    container's cgroup quota entirely. On HF Jobs it returned 64 on a
+    flavor with far fewer, so the worker count below was derived from
+    hardware the job could never use. HF Jobs sets CPU_CORES explicitly;
+    the cgroup v2 quota and sched_getaffinity are the portable fallbacks.
+    """
+    env = os.environ.get("CPU_CORES")
+    if env:
+        try:
+            return max(1, int(float(env)))
+        except ValueError:
+            pass
+    try:
+        quota, period = Path("/sys/fs/cgroup/cpu.max").read_text().split()
+        if quota != "max":
+            return max(1, int(quota) // int(period))
+    except (OSError, ValueError):
+        pass
+    try:
+        return max(1, len(os.sched_getaffinity(0)))
+    except AttributeError:      # not Linux
+        return os.cpu_count() or 4
+
+
+def _available_memory_bytes() -> int | None:
+    """Memory this container may use, or None if it can't be determined."""
+    env = os.environ.get("MEMORY")   # HF Jobs sets e.g. "32Gi"
+    if env:
+        text = env.strip()
+        for suffix, mult in (("Gi", 1 << 30), ("Mi", 1 << 20), ("G", 10**9), ("M", 10**6)):
+            if text.endswith(suffix):
+                try:
+                    return int(float(text[:-len(suffix)]) * mult)
+                except ValueError:
+                    break
+        try:
+            return int(text)
+        except ValueError:
+            pass
+    try:
+        text = Path("/sys/fs/cgroup/memory.max").read_text().strip()
+        if text != "max":
+            return int(text)
+    except (OSError, ValueError):
+        pass
+    return None
+
+
+def _resolve_workers(threads_per_fold: int, payload_bytes: int) -> int:
+    """How many folds to run concurrently.
+
+    Capped by MEMORY as well as by CPU, because each ProcessPoolExecutor
+    worker receives its own PICKLED COPY of the frame passed through
+    `initargs` -- concurrency here costs RAM linearly, it is not shared.
+    Measured on a real 4-city panel the pooled frame is ~2.9GB, so the
+    old cpu-only rule (64 phantom host cores // 2 = 32 workers) implied
+    ~93GB of frame copies and the job died on the spot.
+
+    The budget is deliberately conservative, because the failure mode is
+    not a slow run, it is an OOM kill hours in with nothing saved:
+      - the PARENT keeps its own copy for the whole run, so only
+        (memory - payload) is ever available to workers at all;
+      - a worker's PEAK is well above the payload it was handed --
+        attach_climatology copies its fold slice and LightGBM builds a
+        Dataset on top -- hence _WORKER_PEAK_MULTIPLE;
+      - only half of what remains is spent, leaving room for the final
+        served model's own three 500-round boosters.
+    Returning 1 means "run sequentially in this process", which copies
+    nothing at all and is the correct answer on a small container.
+    """
+    by_cpu = max(1, _available_cpus() // threads_per_fold)
+    available = _available_memory_bytes()
+    if available is None or payload_bytes <= 0:
+        return max(1, min(by_cpu, _MAX_WORKERS))
+    spendable = (available - payload_bytes) * _MEMORY_SAFETY_FRACTION
+    by_mem = int(spendable // (payload_bytes * _WORKER_PEAK_MULTIPLE))
+    return max(1, min(by_cpu, by_mem, _MAX_WORKERS))
+
 
 def _regressed(new_val: float | None, prior_val: float | None,
                higher_is_better: bool, tolerance_pct: float) -> bool:
@@ -103,16 +193,21 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     # fold in that stage (a different expanding-window split, a different
     # held-out station, a different held-out city), so all three get the
     # same treatment: auto-pick a concurrency level from whatever this
-    # machine actually has, capping each fold's own LightGBM threads so N
-    # concurrent folds don't oversubscribe it. os.cpu_count() reads the
-    # container's own view, so this adapts to whatever HF Jobs flavor the
-    # run was launched with instead of assuming cpu-upgrade's 8 vCPUs.
+    # container actually has -- CPU **and** memory, since each worker gets
+    # its own pickled copy of the frame -- capping each fold's own
+    # LightGBM threads so N concurrent folds don't oversubscribe the CPU.
     resolved_max_workers = max_workers
     if resolved_max_workers is None:
-        cpu_count = os.cpu_count() or 4
-        resolved_max_workers = max(1, cpu_count // threads_per_fold)
+        payload_bytes = int(frame.memory_usage(deep=True).sum()
+                            + full_panel.memory_usage(deep=True).sum())
+        resolved_max_workers = _resolve_workers(threads_per_fold, payload_bytes)
+        mem = _available_memory_bytes()
+        print(f"[train_and_promote] container: cpus={_available_cpus()} "
+              f"memory={'unknown' if mem is None else f'{mem / 1e9:.1f}GB'} "
+              f"per-worker payload={payload_bytes / 1e9:.2f}GB "
+              f"(budgeted peak {payload_bytes * _WORKER_PEAK_MULTIPLE / 1e9:.2f}GB each)")
     print(f"[train_and_promote] concurrency: {resolved_max_workers} workers x "
-          f"{threads_per_fold} threads/fold (cpu_count={os.cpu_count()})")
+          f"{threads_per_fold} threads/fold")
 
     folds = walk_forward_folds(frame, **(walk_forward_kwargs or {}))
     print(f"[train_and_promote] starting walk-forward ({len(folds)} fold(s))")

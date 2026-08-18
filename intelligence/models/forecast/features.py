@@ -31,7 +31,7 @@ FEATURE_COLUMNS = (
     "has_station", "distance_to_nearest_station_km", "nearby_stations_delta"]
     + [f"pos_{i}" for i in range(7)] + ["fire_pressure_regional", "fires_6h", "frp_6h"]
     + _MET + _STATIC + ["clim_dow_hour", "clim_month",
-    "target_hour", "target_dow", "target_month", "horizon", "city"]
+    "target_hour", "target_dow", "target_month", "target_doy", "horizon", "city"]
 )
 
 
@@ -311,6 +311,11 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
     out["target_hour"] = tgt.dt.hour
     out["target_dow"] = tgt.dt.dayofweek
     out["target_month"] = tgt.dt.month
+    # Finer than target_month, which can't separate early- from late-November
+    # -- exactly when burning season turns. Deliberately NOT an absolute date:
+    # that would let the model fit a year-over-year trend it can only
+    # extrapolate wrongly at serve time.
+    out["target_doy"] = tgt.dt.dayofyear
     if keep_mask is not None:
         out["y"] = np.concatenate(
             [g.pm25_station.shift(-h).to_numpy(dtype=float)[keep_mask] for h in horizons])

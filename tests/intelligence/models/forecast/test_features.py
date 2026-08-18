@@ -36,7 +36,8 @@ def test_build_features_has_trust_and_spatial_columns():
     for col in ("has_station", "distance_to_nearest_station_km", "nearby_stations_delta",
                 "pos_0", "pos_1", "pos_2", "pos_3", "pos_4", "pos_5", "pos_6",
                 "fire_pressure_regional", "clim_dow_hour", "clim_month",
-                "target_hour", "target_dow", "target_month", "horizon", "city", "y"):
+                "target_hour", "target_dow", "target_month", "target_doy",
+                "horizon", "city", "y"):
         assert col in frame.columns, f"missing {col}"
 
 

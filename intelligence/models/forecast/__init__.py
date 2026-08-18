@@ -196,6 +196,21 @@ def run(cities: list[str] | None = None) -> dict:
               f"({type(e).__name__}: {e}) — skipping forecast.json this run")
         return manifest
 
+    # Loading a booster succeeds regardless of how many features it was
+    # trained on; the mismatch only surfaces as a raise deep inside
+    # predict(). That happens whenever this run was REFUSED and the prior
+    # model predates a change to FEATURE_COLUMNS -- a routine event, not a
+    # corrupted file, and it must not take the whole run down after
+    # training has already succeeded.
+    stale = {q: m.num_feature() for q, m in served_models.items()
+             if m.num_feature() != len(FEATURE_COLUMNS)}
+    if stale:
+        print(f"[forecast] served model at {model_dir} was trained on {stale} features "
+              f"but FEATURE_COLUMNS now has {len(FEATURE_COLUMNS)} — the feature set "
+              f"changed since it was trained; skipping forecast.json until a model "
+              f"trained on the current features is promoted")
+        return manifest
+
     # DATA_OUT_BASE / city, NOT the singular DATA_OUT: DATA_OUT is bound at
     # process-import time to whichever single AQ_CITY started this process
     # (see Global Constraints). This loop writes several cities' outputs in
