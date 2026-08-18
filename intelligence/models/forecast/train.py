@@ -28,8 +28,11 @@ from intelligence.models.forecast.eval import skill_vs_baseline, quantile_covera
 _WORKER_PEAK_MULTIPLE = 2.5
 # Spend only half of what's left after the parent's own resident copy.
 _MEMORY_SAFETY_FRACTION = 0.5
-# Past this, folds contend on memory bandwidth and disk more than they gain.
-_MAX_WORKERS = 8
+# Ceiling on fold concurrency. Memory governs independently and binds first
+# on every flavor we actually use (11 workers for 8 cities on cpu-performance,
+# 5 on cpu-xl), so this only stops a very large box from spawning more
+# processes than the fold loops can keep busy.
+_MAX_WORKERS = 16
 
 
 def _available_cpus() -> int:
