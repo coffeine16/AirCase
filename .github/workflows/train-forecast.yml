@@ -4,14 +4,32 @@ name: train-forecast
 # Upgrade flavor, but still a live job you kick off on purpose), not
 # something to fire on every push. Trigger from the Actions tab, or
 # `gh workflow run train-forecast.yml`.
+#
+# LAUNCH ONLY. This job builds the training image and fires the HF Job
+# DETACHED (`-d`) -- it does not wait for training to finish. GitHub Actions
+# hosted runners hard-kill any job at 6 hours, full stop, regardless of
+# what timeout you give the HF Job itself; a real run on this project's
+# scale (4+ cities, spatial-LOSO retraining once per real station) can take
+# 10+ hours. A step that BLOCKS waiting for that inside a 6h-capped runner
+# doesn't fail gracefully -- it just gets killed mid-wait, and everything
+# after it (downloading the trained model, committing it back) never runs,
+# even though the HF Job itself keeps training fine on HF's own
+# infrastructure, independent of whether this runner is still connected.
+#
+# sync-forecast-model.yml is the other half: a separate, cheap, SCHEDULED
+# workflow that checks "is it done yet" every 30 minutes and pulls +
+# commits the result once it is. No single execution of either workflow
+# ever waits more than a few minutes.
 on:
   workflow_dispatch:
     inputs:
       branch:
         description: >-
-          Branch/ref to train from (checks out this ref and builds the
+          Branch/ref to train FROM (checks out this ref and builds the
           training image from it). Blank = whatever ref you launched this
-          run from in the Actions UI.
+          run from in the Actions UI. The tracked job record and the
+          eventual model commit always land on main regardless of this --
+          see sync-forecast-model.yml.
         required: false
         default: ""
       cities:
@@ -26,15 +44,14 @@ on:
         default: "cpu-upgrade"
       timeout:
         description: >-
-          Max Job duration before it's killed (e.g. 12h, 16h, 24h). Measured
-          on real 4-city data: spatial-LOSO alone (one full model retrain
-          per real station) runs ~7 min/station, dominated by LightGBM
-          training, not feature-building. 4 cities (delhi/chennai/bengaluru/
-          mumbai, 57 stations total) -> spatial-LOSO alone ~6.5-7h; the full
-          run (walk-forward + spatial-LOSO + city-LOSO + final fit)
-          extrapolates to ~9-10h. All 8 cities will be well past that.
+          Max HF JOB duration before HF kills it (e.g. 12h, 16h, 24h) --
+          unrelated to GitHub Actions' own 6h runner limit, which this
+          workflow never gets close to since it only launches and exits.
+          Measured on real 4-city data: a full run (walk-forward +
+          spatial-LOSO across 57 real stations + city-LOSO + final fit)
+          took 11+ hours and still wasn't done. Give real margin.
         required: false
-        default: "16h"
+        default: "20h"
 
 concurrency:
   group: train-forecast
@@ -42,22 +59,27 @@ concurrency:
 
 env:
   IMAGE: ghcr.io/${{ github.repository }}-trainer
-  # EDIT to your own HF username/org — must match training/train_and_upload.py's
-  # HF_MODEL_REPO constant.
-  HF_MODEL_REPO: MagmaCubes1133/aircase-forecast-models
 
 permissions:
-  contents: write   # commit the trained model back to the repo
+  contents: write   # commit the tracked-job record to main
   packages: write   # push the training image to GHCR
 
 jobs:
-  train:
+  launch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout training source (the branch being trained)
+        uses: actions/checkout@v4
         with:
           ref: ${{ inputs.branch || github.ref }}
           lfs: true   # data/historical/**/*.parquet is git-lfs tracked
+          path: train-src
+
+      - name: Checkout main (where the job record + eventual model land)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-repo
 
       # ghcr.io rejects uppercase repo names (ours has "AirCase") -- lowercase
       # it into IMAGE, overriding the job-level env default set above.
@@ -80,8 +102,8 @@ jobs:
       - name: Build and push training image
         uses: docker/build-push-action@v6
         with:
-          context: .
-          file: training/Dockerfile
+          context: train-src
+          file: train-src/training/Dockerfile
           push: true
           tags: ${{ env.IMAGE }}:${{ github.sha }}
           cache-from: type=gha
@@ -90,11 +112,9 @@ jobs:
       - name: Make the training image pullable by HF Jobs
         # HF's docs don't document authenticated pulls from a third-party
         # private registry (GHCR included) -- only from HF's own registry.
-        # Rather than risk the `hf jobs run` step failing on a private-pull
-        # auth error, force the package public every run (idempotent, and
-        # this image has no secrets baked in -- code + public API data
-        # only). If HF Jobs turns out to support private GHCR auth after
-        # all, this step is just unnecessary, not harmful.
+        # Rather than risk `hf jobs run` failing on a private-pull auth
+        # error, force the package public every run (idempotent, and this
+        # image has no secrets baked in -- code + public API data only).
         run: |
           gh api --method PATCH \
             -H "Accept: application/vnd.github+json" \
@@ -104,22 +124,20 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             "/orgs/${{ github.repository_owner }}/packages/container/$(echo '${{ github.event.repository.name }}-trainer' | tr '[:upper:]' '[:lower:]')/visibility" \
             -f visibility=public || \
-          echo "::warning::couldn't set package visibility automatically -- if 'hf jobs run' fails to pull the image below, make ${{ env.IMAGE }} public manually once in the repo's Packages settings"
+          echo "::warning::couldn't set package visibility automatically -- if the launch below fails to pull the image, make ${{ env.IMAGE }} public manually once in the repo's Packages settings"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install the hf CLI
         run: pip install -U "huggingface_hub[cli]"
 
-      - name: Run training on Hugging Face Jobs
-        # Setting HF_TOKEN in the environment is enough — the hf CLI and
-        # huggingface_hub both pick it up automatically, no explicit `hf
-        # auth login` step needed. `--secrets HF_TOKEN` (bare form) hands
-        # the SAME token to the container so train_and_upload.py can push
-        # to the Hub. A non-detached `hf jobs run` blocks until the Job
-        # reaches a terminal state and exits non-zero on failure, so this
-        # step (and therefore the whole workflow) fails correctly if
-        # training fails — no separate `hf jobs wait` needed.
+      - name: Launch training on Hugging Face Jobs (detached)
+        id: launch
+        # `-d` returns immediately with a job ID instead of blocking --
+        # that's the whole point of this redesign. Setting HF_TOKEN in the
+        # environment is enough for the hf CLI itself; `--secrets HF_TOKEN`
+        # separately hands the SAME token to the CONTAINER so
+        # train_and_upload.py can push the result to the Hub.
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
@@ -127,33 +145,38 @@ jobs:
           if [ -n "${{ inputs.cities }}" ]; then
             CITIES_ARG="--env CITIES=${{ inputs.cities }}"
           fi
-          hf jobs run \
+          OUTPUT=$(hf jobs run -d \
             --flavor "${{ inputs.flavor }}" \
             --timeout "${{ inputs.timeout }}" \
             --secrets HF_TOKEN \
             $CITIES_ARG \
             "${{ env.IMAGE }}:${{ github.sha }}" \
-            python train_and_upload.py
+            python train_and_upload.py)
+          echo "$OUTPUT"
+          JOB_ID=$(echo "$OUTPUT" | grep -oP 'Job started with ID: \K\S+')
+          if [ -z "$JOB_ID" ]; then
+            echo "::error::couldn't parse a job ID out of hf jobs run -d's output -- see the raw output above"
+            exit 1
+          fi
+          echo "Launched job $JOB_ID -- view at https://huggingface.co/jobs/$JOB_ID"
+          echo "job_id=$JOB_ID" >> "$GITHUB_OUTPUT"
 
-      - name: Pull the trained model back from the Hub
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      - name: Record the launched job for sync-forecast-model.yml to find
+        working-directory: main-repo
         run: |
-          python -c "
-          from huggingface_hub import snapshot_download
-          import shutil
-          path = snapshot_download('${{ env.HF_MODEL_REPO }}', repo_type='model')
-          shutil.copytree(path, 'models', dirs_exist_ok=True)
-          "
-
-      - name: Commit the updated model
-        run: |
+          mkdir -p training
+          cat > training/current-run.json <<JSON
+          {
+            "job_id": "${{ steps.launch.outputs.job_id }}",
+            "launched_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "cities": "${{ inputs.cities }}",
+            "flavor": "${{ inputs.flavor }}",
+            "trained_from_branch": "${{ inputs.branch || github.ref_name }}",
+            "image": "${{ env.IMAGE }}:${{ github.sha }}"
+          }
+          JSON
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add models/
-          if git diff --cached --quiet; then
-            echo "no model changes to commit (this run's manifest matched what's already in models/)"
-            exit 0
-          fi
-          git commit -m "chore(models): update trained forecast model [skip ci]"
+          git add training/current-run.json
+          git commit -m "chore(training): record launched job ${{ steps.launch.outputs.job_id }} [skip ci]"
           git push
