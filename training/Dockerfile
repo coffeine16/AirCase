@@ -27,6 +27,14 @@ COPY intelligence/models/forecast/ intelligence/models/forecast/
 COPY data/historical/ data/historical/
 COPY training/train_and_upload.py .
 
+# The previously-promoted model, so train_and_promote has a real `prior` to
+# gate against. Without this the gate is permanently degenerate: every run
+# sees no prior, every _regressed() check short-circuits to False, and
+# promotion collapses to "is spatial-LOSO RMSE finite". Last COPY on
+# purpose -- this is the only layer that changes on a promoted run, so it
+# invalidates nothing above it.
+COPY models/ models/
+
 # Unbuffered stdout: this container's output isn't a TTY, so Python
 # fully-buffers it by default -- every [spatial_loso]/[train_and_promote]
 # progress print can sit unflushed for a long time regardless of how much
