@@ -121,7 +121,13 @@ def fire_pressure(cells: list[str], fires: pd.DataFrame,
         return pd.DataFrame({"cell": spine_cell, "ts": spine_ts, "fire_pressure_regional": 0.0})
 
     centers = np.array([cell_center(c) for c in cells])       # (n_c, 2)
-    flat, flon = f.lat.values, f.lon.values                    # (n_f,)
+    # to_numpy(dtype=float), not .values: an empty per-city fires.parquet
+    # carries object-dtype lat/lon, and concatenating one into a pooled
+    # multi-city table turns the WHOLE column object -- np.radians then
+    # tries to call .radians() on each element and dies. Measured: kolkata
+    # has 0 fire rows, which poisoned all 8 cities' lat/lon.
+    flat = f.lat.to_numpy(dtype=float)                         # (n_f,)
+    flon = f.lon.to_numpy(dtype=float)
     p1 = np.radians(centers[:, 0])[:, None]
     p2 = np.radians(flat)[None, :]
     dp = p2 - p1
