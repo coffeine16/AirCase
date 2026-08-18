@@ -3,15 +3,20 @@ fixed holdout — walk-forward folds, spatial-LOSO (Task 9), city-LOSO, and
 real-event oversampling that touches ONLY sample weights, never a
 synthetic ignition schedule (spec 5.3's hard rule)."""
 import os
+import time
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 import numpy as np
 import pandas as pd
 
-from intelligence.models.forecast.features import build_features, downcast_panel, station_cells_only
-from intelligence.models.forecast.model import (
-    train_quantile_models, predict_quantiles, mask_unknown_city, UNKNOWN_CITY,
+from intelligence.models.forecast.features import (
+    build_features, attach_climatology, downcast_panel, station_cells_only,
 )
+from intelligence.models.forecast.climatology import build_climatology
+from intelligence.models.forecast.model import (
+    train_quantile_models, predict_quantiles, train_ceiling_baseline, mask_unknown_city, UNKNOWN_CITY,
+)
+from intelligence.models.forecast.eval import skill_vs_baseline
 
 
 def _align_city(frame: pd.DataFrame, categories, relabel_unknown: bool = False) -> pd.DataFrame:
@@ -149,8 +154,11 @@ def spatial_loso(panel: pd.DataFrame, horizons: list[int], feature_cols: list[st
             # output. One line per fold is the difference between "still
             # running" and "looks hung".
             print(f"[spatial_loso] fold {i}/{len(station_cells)}: holding out {held_out}")
+            t0 = time.perf_counter()
             result = _run_one_loso_fold(panel, horizons, feature_cols, fires, held_out,
                                          num_threads=None)
+            print(f"[spatial_loso] fold {i}/{len(station_cells)} done in "
+                  f"{time.perf_counter() - t0:.0f}s")
             if result is None:
                 continue
             per_station[result["held_out"]] = {"rmse": result["rmse"], "n": result["n"]}
@@ -160,6 +168,7 @@ def spatial_loso(panel: pd.DataFrame, horizons: list[int], feature_cols: list[st
         print(f"[spatial_loso] {len(station_cells)} stations, {max_workers} concurrent "
               f"workers x {threads_per_fold} threads/fold (cpu_count={os.cpu_count()})")
         done = 0
+        t_start = time.perf_counter()
         with ProcessPoolExecutor(max_workers=max_workers, initializer=_init_loso_worker,
                                   initargs=(panel, horizons, feature_cols, fires,
                                             threads_per_fold)) as ex:
@@ -171,7 +180,8 @@ def spatial_loso(panel: pd.DataFrame, horizons: list[int], feature_cols: list[st
             for future in as_completed(futures):
                 done += 1
                 held_out = futures[future]
-                print(f"[spatial_loso] fold {done}/{len(station_cells)} complete: {held_out}")
+                print(f"[spatial_loso] fold {done}/{len(station_cells)} complete: {held_out} "
+                      f"(elapsed {time.perf_counter() - t_start:.0f}s total)")
                 result = future.result()
                 if result is None:
                     continue
@@ -183,9 +193,62 @@ def spatial_loso(panel: pd.DataFrame, horizons: list[int], feature_cols: list[st
     return {"overall_rmse": round(overall, 2), "per_station": per_station, "n_stations": len(per_station)}
 
 
+def _run_one_city_loso_fold(panels_by_city: dict[str, pd.DataFrame], horizons: list[int],
+                             feature_cols: list[str], fires_by_city: dict,
+                             held_out: str, train_cities: list[str],
+                             num_threads: int | None) -> dict | None:
+    """One city-LOSO fold, factored out for the same reason as
+    _run_one_loso_fold: the sequential loop and the parallel path must call
+    provably identical code."""
+    # re-downcast after concat: pd.concat reverts a categorical column
+    # back to plain string dtype whenever the pieces' category sets
+    # differ, which every per-city `city`/`cell`/`ward_id` column does.
+    # station_cells_only first -- both frames below run with
+    # restrict_to_station_cells=True, which discards every non-station
+    # cell anyway (see that flag's docstring), so concatenating N-1
+    # cities' FULL grids just to throw most of it away is pure waste.
+    train_panel = downcast_panel(pd.concat(
+        [station_cells_only(panels_by_city[c]) for c in train_cities], ignore_index=True))
+    train_fires = [fires_by_city[c] for c in train_cities if c in fires_by_city]
+    train_frame = mask_unknown_city(
+        build_features(train_panel, horizons,
+                       fires=pd.concat(train_fires, ignore_index=True) if train_fires else None,
+                       restrict_to_station_cells=True)
+        .dropna(subset=["y"]))
+    test_panel = station_cells_only(panels_by_city[held_out])
+    test_frame = build_features(test_panel, horizons, fires=fires_by_city.get(held_out),
+                                 restrict_to_station_cells=True)
+    if train_frame.empty or test_frame.dropna(subset=["y"]).empty:
+        return None
+    test_frame = _align_city(test_frame, train_frame.city.cat.categories, relabel_unknown=True)
+    models = train_quantile_models(train_frame, feature_cols, num_boost_round=200,
+                                    num_threads=num_threads)
+    scored = test_frame.dropna(subset=["y"])
+    pred = predict_quantiles(models, scored, feature_cols)
+    rmse = float(np.sqrt(np.nanmean((scored["y"].values - pred["pm25_p50"].values) ** 2)))
+    return {"held_out": held_out, "rmse": round(rmse, 2), "n": len(scored)}
+
+
+_CITY_LOSO_WORKER_STATE: dict = {}
+
+
+def _init_city_loso_worker(panels_by_city, horizons, feature_cols, fires_by_city, num_threads):
+    _CITY_LOSO_WORKER_STATE.update(panels_by_city=panels_by_city, horizons=horizons,
+                                    feature_cols=feature_cols, fires_by_city=fires_by_city,
+                                    num_threads=num_threads)
+
+
+def _city_loso_worker_task(args: tuple[str, list[str]]) -> dict | None:
+    held_out, train_cities = args
+    s = _CITY_LOSO_WORKER_STATE
+    return _run_one_city_loso_fold(s["panels_by_city"], s["horizons"], s["feature_cols"],
+                                    s["fires_by_city"], held_out, train_cities, s["num_threads"])
+
+
 def run_city_loso(panels_by_city: dict[str, pd.DataFrame], horizons: list[int],
                    feature_cols: list[str],
-                   fires_by_city: dict[str, pd.DataFrame] | None = None) -> dict:
+                   fires_by_city: dict[str, pd.DataFrame] | None = None,
+                   max_workers: int | None = None, threads_per_fold: int = 2) -> dict:
     """Train on N-1 cities, test on the held-out city's real stations, as
     if the model had never seen that city (spec 5.2).
 
@@ -196,40 +259,156 @@ def run_city_loso(panels_by_city: dict[str, pd.DataFrame], horizons: list[int],
     zero information about the held-out CITY's learned behaviour — which is
     what this split measures — but it is NOT zero information about the
     held-out city's stations. Cell-level independence is spatial_loso's job,
-    not this one's."""
+    not this one's.
+
+    `max_workers`: same contract as spatial_loso's -- None (default) runs
+    sequentially in this process (what every existing test exercises); an
+    integer runs that many city-folds concurrently in separate processes,
+    each fold's LightGBM capped to `threads_per_fold` threads."""
     fires_by_city = fires_by_city or {}
+    splits = [(h, t) for h, t in city_loso_splits(list(panels_by_city)) if t]
     per_city = {}
-    for held_out, train_cities in city_loso_splits(list(panels_by_city)):
-        if not train_cities:
-            continue   # a single-city registry has no N-1 split to make
-        print(f"[run_city_loso] holding out {held_out}, training on {train_cities}")
-        # re-downcast after concat: pd.concat reverts a categorical column
-        # back to plain string dtype whenever the pieces' category sets
-        # differ, which every per-city `city`/`cell`/`ward_id` column does.
-        # station_cells_only first -- both frames below run with
-        # restrict_to_station_cells=True, which discards every non-station
-        # cell anyway (see that flag's docstring), so concatenating N-1
-        # cities' FULL grids just to throw most of it away is pure waste.
-        train_panel = downcast_panel(pd.concat(
-            [station_cells_only(panels_by_city[c]) for c in train_cities], ignore_index=True))
-        train_fires = [fires_by_city[c] for c in train_cities if c in fires_by_city]
-        train_frame = mask_unknown_city(
-            build_features(train_panel, horizons,
-                           fires=pd.concat(train_fires, ignore_index=True) if train_fires else None,
-                           restrict_to_station_cells=True)
-            .dropna(subset=["y"]))
-        test_panel = station_cells_only(panels_by_city[held_out])
-        test_frame = build_features(test_panel, horizons, fires=fires_by_city.get(held_out),
-                                     restrict_to_station_cells=True)
-        if train_frame.empty or test_frame.dropna(subset=["y"]).empty:
-            continue
-        test_frame = _align_city(test_frame, train_frame.city.cat.categories, relabel_unknown=True)
-        models = train_quantile_models(train_frame, feature_cols, num_boost_round=200)
-        scored = test_frame.dropna(subset=["y"])
-        pred = predict_quantiles(models, scored, feature_cols)
-        rmse = float(np.sqrt(np.nanmean((scored["y"].values - pred["pm25_p50"].values) ** 2)))
-        per_city[held_out] = {"rmse": round(rmse, 2), "n": len(scored)}
+
+    if max_workers is None or max_workers <= 1:
+        for held_out, train_cities in splits:
+            print(f"[run_city_loso] holding out {held_out}, training on {train_cities}")
+            t0 = time.perf_counter()
+            result = _run_one_city_loso_fold(panels_by_city, horizons, feature_cols,
+                                              fires_by_city, held_out, train_cities,
+                                              num_threads=None)
+            print(f"[run_city_loso] {held_out} done in {time.perf_counter() - t0:.0f}s")
+            if result is not None:
+                per_city[result["held_out"]] = {"rmse": result["rmse"], "n": result["n"]}
+    else:
+        print(f"[run_city_loso] {len(splits)} cities, {max_workers} concurrent workers "
+              f"x {threads_per_fold} threads/fold")
+        t_start = time.perf_counter()
+        with ProcessPoolExecutor(max_workers=max_workers, initializer=_init_city_loso_worker,
+                                  initargs=(panels_by_city, horizons, feature_cols,
+                                            fires_by_city, threads_per_fold)) as ex:
+            futures = {ex.submit(_city_loso_worker_task, split): split[0] for split in splits}
+            done = 0
+            for future in as_completed(futures):
+                done += 1
+                held_out = futures[future]
+                print(f"[run_city_loso] fold {done}/{len(splits)} complete: {held_out} "
+                      f"(elapsed {time.perf_counter() - t_start:.0f}s total)")
+                result = future.result()
+                if result is not None:
+                    per_city[result["held_out"]] = {"rmse": result["rmse"], "n": result["n"]}
+
     return {"per_city": per_city}
+
+
+def _run_one_walk_forward_fold(full_panel: pd.DataFrame, frame: pd.DataFrame,
+                                feature_cols: list[str], num_cols: list[str],
+                                train_end: pd.Timestamp, test_start: pd.Timestamp,
+                                test_end: pd.Timestamp, num_threads: int | None) -> dict | None:
+    """One walk-forward fold, factored out for the same reason as the two
+    LOSO functions' per-fold helpers: sequential and parallel must call
+    provably identical code, not just similar code."""
+    # Climatology from TRAIN ONLY, re-attached to both sides of the fold.
+    # build_features built it from the whole panel, which means every test
+    # row's clim_dow_hour/clim_month was partly computed from that same
+    # row's own future readings — the deleted forecast.py called this out
+    # explicitly ("from TRAIN ONLY. The tough baseline.") and the
+    # discipline has to survive the rewrite. Re-attaching is a merge, not
+    # a second feature build: the expensive spatial work is untouched.
+    clim = build_climatology(full_panel[full_panel.ts <= train_end])
+    tr = attach_climatology(frame[frame.ts <= train_end], clim).dropna(subset=["y"])
+    te = attach_climatology(
+        frame[(frame.ts > test_start) & (frame.ts <= test_end)], clim).dropna(subset=["y"])
+    if tr.empty or te.empty:
+        return None
+    n_train = len(tr)
+    models = train_quantile_models(tr, feature_cols, num_boost_round=300, num_threads=num_threads)
+    pred = predict_quantiles(models, te, feature_cols)
+    skill = skill_vs_baseline(te["y"].values, pred["pm25_p50"].values, te["lag_0"].values)
+    # The linear ceiling baseline is fit per fold on a capped sample:
+    # sklearn's QuantileRegressor solves an LP whose cost grows fast in n,
+    # and a median line does not need millions of rows to be identified.
+    ceil_fit = tr.sample(min(len(tr), 50_000), random_state=0)
+    ceil = train_ceiling_baseline(ceil_fit, num_cols)
+    ceil_pred = ceil.predict(te[num_cols].select_dtypes(include=[np.number]).fillna(0.0))
+    oof_frame = pd.DataFrame({
+        "y": te["y"].values, "p10": pred["pm25_p10"].values,
+        "p50": pred["pm25_p50"].values, "p90": pred["pm25_p90"].values,
+        "ceiling": ceil_pred, "fires_6h": te["fires_6h"].fillna(0).values,
+    })
+    return {"skill": skill, "oof": oof_frame, "n_train": n_train}
+
+
+_WF_WORKER_STATE: dict = {}
+
+
+def _init_wf_worker(full_panel, frame, feature_cols, num_cols, num_threads):
+    _WF_WORKER_STATE.update(full_panel=full_panel, frame=frame, feature_cols=feature_cols,
+                             num_cols=num_cols, num_threads=num_threads)
+
+
+def _wf_worker_task(bounds: tuple[pd.Timestamp, pd.Timestamp, pd.Timestamp]) -> dict | None:
+    train_end, test_start, test_end = bounds
+    s = _WF_WORKER_STATE
+    return _run_one_walk_forward_fold(s["full_panel"], s["frame"], s["feature_cols"],
+                                       s["num_cols"], train_end, test_start, test_end,
+                                       s["num_threads"])
+
+
+def run_walk_forward(full_panel: pd.DataFrame, frame: pd.DataFrame, feature_cols: list[str],
+                      num_cols: list[str],
+                      folds: list[tuple[pd.Timestamp, pd.Timestamp, pd.Timestamp]],
+                      max_workers: int | None = None, threads_per_fold: int = 2) -> dict:
+    """Runs every walk_forward_folds() fold and returns
+    {"fold_skills": [...], "oof": DataFrame|None}. Each fold is independent
+    (a different expanding-window train/test split, no fold depends on
+    another's output), same shape as spatial_loso/run_city_loso.
+
+    `max_workers`: same contract as the two LOSO functions -- None
+    (default) runs sequentially in this process (what every existing test
+    exercises); an integer runs that many folds concurrently in separate
+    processes, each capped to `threads_per_fold` LightGBM threads."""
+    fold_skills, oof = [], []
+
+    if max_workers is None or max_workers <= 1:
+        for fi, (train_end, test_start, test_end) in enumerate(folds, 1):
+            print(f"[walk_forward] fold {fi}/{len(folds)}: train_end={train_end.date()}")
+            t0 = time.perf_counter()
+            result = _run_one_walk_forward_fold(full_panel, frame, feature_cols, num_cols,
+                                                 train_end, test_start, test_end,
+                                                 num_threads=None)
+            if result is None:
+                print(f"[walk_forward] fold {fi}/{len(folds)} empty, skipped "
+                      f"({time.perf_counter() - t0:.0f}s)")
+                continue
+            print(f"[walk_forward] fold {fi}/{len(folds)} done in "
+                  f"{time.perf_counter() - t0:.0f}s (train_end={train_end.date()}, "
+                  f"n_train={result['n_train']:,})")
+            fold_skills.append(result["skill"])
+            oof.append(result["oof"])
+    else:
+        print(f"[walk_forward] {len(folds)} folds, {max_workers} concurrent workers "
+              f"x {threads_per_fold} threads/fold")
+        t_start = time.perf_counter()
+        with ProcessPoolExecutor(max_workers=max_workers, initializer=_init_wf_worker,
+                                  initargs=(full_panel, frame, feature_cols, num_cols,
+                                            threads_per_fold)) as ex:
+            futures = {ex.submit(_wf_worker_task, bounds): bounds for bounds in folds}
+            done = 0
+            for future in as_completed(futures):
+                done += 1
+                train_end = futures[future][0]
+                result = future.result()
+                extra = f", n_train={result['n_train']:,}" if result else ""
+                print(f"[walk_forward] fold {done}/{len(folds)} complete: "
+                      f"train_end={train_end.date()}{extra} "
+                      f"(elapsed {time.perf_counter() - t_start:.0f}s total)")
+                if result is None:
+                    continue
+                fold_skills.append(result["skill"])
+                oof.append(result["oof"])
+
+    o = pd.concat(oof, ignore_index=True) if oof else None
+    return {"fold_skills": fold_skills, "oof": o}
 
 
 if __name__ == "__main__":

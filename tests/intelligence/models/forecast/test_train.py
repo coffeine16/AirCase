@@ -2,6 +2,7 @@ import json
 
 import numpy as np
 import pandas as pd
+import pytest
 
 from shared.grid import city_cells
 from intelligence.models.forecast.train import train_and_promote
@@ -54,6 +55,38 @@ def test_train_and_promote_writes_versioned_artifacts(tmp_path):
     assert manifest["eval"]["eval_basis"] == "walk_forward_out_of_sample"
     assert manifest["eval"]["walk_forward_skill_folds"] >= 1
     assert manifest["eval"]["quantile_coverage"] is not None
+
+
+def test_train_and_promote_parallel_matches_sequential(tmp_path):
+    """train_and_promote's max_workers now parallelizes all three CV stages
+    (walk-forward, spatial-LOSO, city-LOSO) via ProcessPoolExecutor. Prove
+    the parallel path produces the same eval numbers as sequential on the
+    same panels -- not just "should" because the per-fold logic was
+    factored into shared helpers, actually run both and compare. A small
+    tolerance (not exact equality) allows for LightGBM histogram reduction
+    order differing across thread counts, the same real non-determinism
+    spatial_loso's own equivalence test already accounts for."""
+    from intelligence.models.forecast.features import FEATURE_COLUMNS
+    panels = {"bengaluru": _panel("bengaluru"), "delhi": _panel("delhi", seed=1)}
+
+    sequential = train_and_promote(panels, horizons=[3, 6], feature_cols=FEATURE_COLUMNS,
+                                    out_dir=tmp_path / "seq", walk_forward_kwargs=_SHORT_FOLDS,
+                                    max_workers=1)
+    parallel = train_and_promote(panels, horizons=[3, 6], feature_cols=FEATURE_COLUMNS,
+                                  out_dir=tmp_path / "par", walk_forward_kwargs=_SHORT_FOLDS,
+                                  max_workers=2, threads_per_fold=1)
+
+    assert sequential["eval"]["walk_forward_skill_folds"] == parallel["eval"]["walk_forward_skill_folds"] > 0
+    assert sequential["eval"]["spatial_loso_n_stations"] == parallel["eval"]["spatial_loso_n_stations"] > 0
+    assert set(sequential["eval"]["city_loso"]) == set(parallel["eval"]["city_loso"]) != set()
+
+    assert sequential["eval"]["spatial_loso_rmse"] == pytest.approx(
+        parallel["eval"]["spatial_loso_rmse"], rel=0.1)
+    assert sequential["eval"]["walk_forward_skill_median"] == pytest.approx(
+        parallel["eval"]["walk_forward_skill_median"], abs=15)
+    for city in sequential["eval"]["city_loso"]:
+        assert sequential["eval"]["city_loso"][city]["rmse"] == pytest.approx(
+            parallel["eval"]["city_loso"][city]["rmse"], rel=0.1)
 
 
 def test_out_of_sample_metrics_are_none_without_folds(tmp_path):

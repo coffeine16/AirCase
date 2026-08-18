@@ -16,15 +16,10 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from intelligence.models.forecast.features import (
-    build_features, attach_climatology, downcast_panel, station_cells_only,
-)
-from intelligence.models.forecast.climatology import build_climatology
-from intelligence.models.forecast.model import (
-    train_quantile_models, predict_quantiles, train_ceiling_baseline, mask_unknown_city,
-)
+from intelligence.models.forecast.features import build_features, downcast_panel, station_cells_only
+from intelligence.models.forecast.model import mask_unknown_city
 from intelligence.models.forecast.validation import (
-    walk_forward_folds, event_weights, spatial_loso, run_city_loso,
+    walk_forward_folds, event_weights, spatial_loso, run_city_loso, run_walk_forward,
 )
 from intelligence.models.forecast.eval import skill_vs_baseline, quantile_coverage, quiet_vs_event_breakdown
 
@@ -70,8 +65,8 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
                        regression_tolerance_pct: float = 5.0,
                        fires_by_city: dict[str, pd.DataFrame] | None = None,
                        walk_forward_kwargs: dict | None = None,
-                       loso_max_workers: int | None = None,
-                       loso_threads_per_fold: int = 2) -> dict:
+                       max_workers: int | None = None,
+                       threads_per_fold: int = 2) -> dict:
     out_dir = Path(out_dir)
     # concat silently reverts each city's own categorical columns back to
     # plain string dtype whenever their category sets differ (every city's
@@ -98,60 +93,43 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
                                               restrict_to_station_cells=True))
     num_cols = [c for c in feature_cols if c != "city"]
 
-    folds = walk_forward_folds(frame, **(walk_forward_kwargs or {}))
-    fold_skills, oof = [], []
-    print(f"[train_and_promote] {len(folds)} walk-forward fold(s)")
-    for fi, (train_end, test_start, test_end) in enumerate(folds, 1):
-        print(f"[train_and_promote] walk-forward fold {fi}/{len(folds)}: train_end={train_end.date()}")
-        # Climatology from TRAIN ONLY, re-attached to both sides of the fold.
-        # build_features built it from the whole panel, which means every test
-        # row's clim_dow_hour/clim_month was partly computed from that same
-        # row's own future readings — the deleted forecast.py called this out
-        # explicitly ("from TRAIN ONLY. The tough baseline.") and the
-        # discipline has to survive the rewrite. Re-attaching is a merge, not
-        # a second feature build: the expensive spatial work is untouched.
-        clim = build_climatology(full_panel[full_panel.ts <= train_end])
-        tr = attach_climatology(frame[frame.ts <= train_end], clim).dropna(subset=["y"])
-        te = attach_climatology(
-            frame[(frame.ts > test_start) & (frame.ts <= test_end)], clim).dropna(subset=["y"])
-        if tr.empty or te.empty:
-            continue
-        models = train_quantile_models(tr, feature_cols, num_boost_round=300)
-        pred = predict_quantiles(models, te, feature_cols)
-        fold_skills.append(skill_vs_baseline(te["y"].values, pred["pm25_p50"].values,
-                                              te["lag_0"].values))
-        # The linear ceiling baseline is fit per fold on a capped sample:
-        # sklearn's QuantileRegressor solves an LP whose cost grows fast in n,
-        # and a median line does not need millions of rows to be identified.
-        ceil_fit = tr.sample(min(len(tr), 50_000), random_state=0)
-        ceil = train_ceiling_baseline(ceil_fit, num_cols)
-        ceil_pred = ceil.predict(te[num_cols].select_dtypes(include=[np.number]).fillna(0.0))
-        oof.append(pd.DataFrame({
-            "y": te["y"].values, "p10": pred["pm25_p10"].values,
-            "p50": pred["pm25_p50"].values, "p90": pred["pm25_p90"].values,
-            "ceiling": ceil_pred, "fires_6h": te["fires_6h"].fillna(0).values,
-        }))
-
-    # None (the parameter's own default) would run every station fold
-    # sequentially in this one process -- fine for tests, much too slow for
-    # a real multi-city panel (measured: ~7 min/fold, 57 folds across 4
-    # cities is ~6.5-7h alone). Auto-pick a concurrency level from whatever
-    # this machine actually has, capping each fold's own LightGBM threads
-    # so N concurrent folds don't oversubscribe it -- os.cpu_count() reads
-    # the container's own view, so this adapts to whatever HF Jobs flavor
-    # the run was launched with instead of assuming cpu-upgrade's 8 vCPUs.
-    resolved_max_workers = loso_max_workers
+    # None (the parameter's own default) would run every fold across all
+    # three CV stages below sequentially in this one process -- fine for
+    # tests, much too slow for a real multi-city panel. Measured on real
+    # 4-city data: one spatial-LOSO fold alone is ~7 min wall-clock, and a
+    # full sequential run (walk-forward + spatial-LOSO across 57 real
+    # stations + city-LOSO) ran 11+ hours and still wasn't done. Every fold
+    # in every one of these three stages is independent of every other
+    # fold in that stage (a different expanding-window split, a different
+    # held-out station, a different held-out city), so all three get the
+    # same treatment: auto-pick a concurrency level from whatever this
+    # machine actually has, capping each fold's own LightGBM threads so N
+    # concurrent folds don't oversubscribe it. os.cpu_count() reads the
+    # container's own view, so this adapts to whatever HF Jobs flavor the
+    # run was launched with instead of assuming cpu-upgrade's 8 vCPUs.
+    resolved_max_workers = max_workers
     if resolved_max_workers is None:
         cpu_count = os.cpu_count() or 4
-        resolved_max_workers = max(1, cpu_count // loso_threads_per_fold)
-    print(f"[train_and_promote] starting spatial-LOSO ({resolved_max_workers} concurrent "
-          f"workers x {loso_threads_per_fold} threads/fold)")
+        resolved_max_workers = max(1, cpu_count // threads_per_fold)
+    print(f"[train_and_promote] concurrency: {resolved_max_workers} workers x "
+          f"{threads_per_fold} threads/fold (cpu_count={os.cpu_count()})")
+
+    folds = walk_forward_folds(frame, **(walk_forward_kwargs or {}))
+    print(f"[train_and_promote] starting walk-forward ({len(folds)} fold(s))")
+    wf_result = run_walk_forward(full_panel, frame, feature_cols, num_cols, folds,
+                                  max_workers=resolved_max_workers,
+                                  threads_per_fold=threads_per_fold)
+    fold_skills, o = wf_result["fold_skills"], wf_result["oof"]
+
+    print("[train_and_promote] starting spatial-LOSO")
     loso_result = spatial_loso(full_panel, horizons, feature_cols, fires=all_fires,
                                 max_workers=resolved_max_workers,
-                                threads_per_fold=loso_threads_per_fold)
+                                threads_per_fold=threads_per_fold)
     print("[train_and_promote] starting city-LOSO")
     city_result = run_city_loso(panels_by_city, horizons, feature_cols,
-                                 fires_by_city=fires_by_city)
+                                 fires_by_city=fires_by_city,
+                                 max_workers=resolved_max_workers,
+                                 threads_per_fold=threads_per_fold)
     print("[train_and_promote] fitting final served model")
 
     # LightGBM's Dataset already built inside train_quantile_models doesn't
@@ -178,8 +156,8 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     # the point of meaninglessness, and quiet_vs_event exists (spec section 6)
     # precisely to catch "the model is worse exactly when it matters" — which
     # training data cannot reveal. They are None, not faked, when there is too
-    # little history for even one fold.
-    o = pd.concat(oof, ignore_index=True) if oof else None
+    # little history for even one fold. `o` (the concatenated OOF frame) came
+    # back from run_walk_forward above -- already concatenated there.
     is_event_oof = (o["fires_6h"] > 0).values if o is not None else None
 
     eval_report = {
