@@ -5,7 +5,33 @@ import pandas as pd
 import pytest
 
 from shared.grid import city_cells
-from intelligence.models.forecast.train import train_and_promote
+from intelligence.models.forecast.train import train_and_promote, _mature_oof
+
+
+def test_mature_oof_keeps_only_the_later_better_trained_folds():
+    """Early walk-forward folds train on a fraction of the final model's
+    data (measured on the real run: fold 1's 318K rows vs fold 38's
+    12.69M) -- pooling them equally with late folds when calibrating the
+    serve-time interval correction would calibrate against the average
+    fold's immaturity, not what the actual final model does. _mature_oof
+    must actually drop the small-n_train fold's rows, not just pass
+    everything through unchanged."""
+    oof = pd.DataFrame({
+        "y": [1.0] * 3 + [2.0] * 5,
+        "p10": [0.0] * 8, "p50": [0.0] * 8, "p90": [0.0] * 8,
+        "n_train": [1_000] * 3 + [50_000] * 5,   # small early fold, big late fold
+    })
+    mature = _mature_oof(oof)
+
+    assert set(mature["n_train"]) == {50_000}
+    assert len(mature) == 5
+    assert (mature["y"] == 2.0).all()
+
+
+def test_mature_oof_keeps_everything_with_a_single_fold():
+    oof = pd.DataFrame({"y": [1.0, 2.0], "p10": [0.0, 0.0], "p50": [0.0, 0.0],
+                        "p90": [0.0, 0.0], "n_train": [10_000, 10_000]})
+    assert len(_mature_oof(oof)) == len(oof)
 
 
 def _panel(city, n_hours=400, seed=0):
@@ -136,3 +162,71 @@ def test_train_and_promote_refuses_regression(tmp_path):
 
     assert second["promoted"] is False
     assert second["version"] != first["version"]   # trained, just not promoted
+
+
+def test_walk_forward_regression_still_blocks_promotion_when_geometry_matches(tmp_path):
+    """The gate must keep its teeth: a genuine walk_forward_skill_median
+    regression against a prior measured under the SAME fold geometry has to
+    still refuse promotion, same as before the geometry check existed."""
+    from intelligence.models.forecast.features import FEATURE_COLUMNS
+    panels = {"bengaluru": _panel("bengaluru"), "delhi": _panel("delhi", seed=1)}
+
+    first = train_and_promote(panels, horizons=[3], feature_cols=FEATURE_COLUMNS,
+                               out_dir=tmp_path, walk_forward_kwargs=_SHORT_FOLDS)
+    assert first["eval"]["walk_forward_geometry"] == {"test_days": 3, "step_days": 3}
+
+    fake_prior = {**first, "eval": {**first["eval"], "walk_forward_skill_median": 999.0}}
+    second = train_and_promote(panels, horizons=[3], feature_cols=FEATURE_COLUMNS,
+                                out_dir=tmp_path, walk_forward_kwargs=_SHORT_FOLDS,
+                                prior_manifest=fake_prior)
+
+    assert second["promoted"] is False
+
+
+def test_walk_forward_regression_ignored_when_geometry_differs(tmp_path):
+    """The actual fix: a prior manifest scored under a DIFFERENT fold
+    geometry (e.g. trained before walk_forward_folds' defaults changed)
+    must not let a walk_forward_skill_median 'regression' block promotion
+    on its own -- that comparison is apples-to-oranges, not evidence the
+    new model is worse. spatial_loso_rmse and city_loso are untouched by
+    this and still gate normally."""
+    from intelligence.models.forecast.features import FEATURE_COLUMNS
+    panels = {"bengaluru": _panel("bengaluru"), "delhi": _panel("delhi", seed=1)}
+
+    first = train_and_promote(panels, horizons=[3], feature_cols=FEATURE_COLUMNS,
+                               out_dir=tmp_path, walk_forward_kwargs=_SHORT_FOLDS)
+
+    # same impossibly-good fake skill as the geometry-matches test, but this
+    # prior's geometry is DIFFERENT (test_days=6 vs the real run's 3) --
+    # simulating exactly the transition this run is meant to survive.
+    fake_prior = {**first, "eval": {**first["eval"], "walk_forward_skill_median": 999.0,
+                                     "walk_forward_geometry": {"test_days": 6, "step_days": 6}}}
+    second = train_and_promote(panels, horizons=[3], feature_cols=FEATURE_COLUMNS,
+                                out_dir=tmp_path, walk_forward_kwargs=_SHORT_FOLDS,
+                                prior_manifest=fake_prior)
+
+    # would have been refused under the old (pre-fix) comparison -- proves
+    # the geometry mismatch is what's protecting promotion here, not that
+    # the check silently stopped mattering.
+    assert second["promoted"] is True
+
+
+def test_walk_forward_regression_ignored_against_a_manifest_with_no_geometry_recorded(tmp_path):
+    """A prior manifest written before walk_forward_geometry existed has no
+    such key at all -- must be treated the same as a mismatch (unknown,
+    don't compare), not as a false match that would re-enable the strict
+    comparison via a None == None coincidence."""
+    from intelligence.models.forecast.features import FEATURE_COLUMNS
+    panels = {"bengaluru": _panel("bengaluru"), "delhi": _panel("delhi", seed=1)}
+
+    first = train_and_promote(panels, horizons=[3], feature_cols=FEATURE_COLUMNS,
+                               out_dir=tmp_path, walk_forward_kwargs=_SHORT_FOLDS)
+
+    old_style_eval = {k: v for k, v in first["eval"].items() if k != "walk_forward_geometry"}
+    old_style_eval["walk_forward_skill_median"] = 999.0
+    fake_prior = {**first, "eval": old_style_eval}
+    second = train_and_promote(panels, horizons=[3], feature_cols=FEATURE_COLUMNS,
+                                out_dir=tmp_path, walk_forward_kwargs=_SHORT_FOLDS,
+                                prior_manifest=fake_prior)
+
+    assert second["promoted"] is True

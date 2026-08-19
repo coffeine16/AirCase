@@ -121,6 +121,23 @@ def _resolve_workers(threads_per_fold: int, payload_bytes: int) -> int:
     return max(1, min(by_cpu, by_mem, _MAX_WORKERS))
 
 
+def _mature_oof(oof: pd.DataFrame) -> pd.DataFrame:
+    """OOF rows whose fold's `n_train` is at or above the row-weighted
+    median of `n_train` across the whole OOF frame -- the half of
+    walk-forward closest in training-data volume to what the final
+    full-data model actually sees, not the average of every fold including
+    the earliest, barely-trained ones. `oof["n_train"]` is constant within
+    a fold (see validation.py's oof_frame), so this is a per-ROW median,
+    not strictly a per-FOLD one -- with walk_forward_folds' now-uniform
+    test_days across folds, row counts per fold are close enough that the
+    two agree in practice, but a fold covering an unusually short tail
+    window could weight the split slightly. One fold (or a frame with a
+    single n_train value) keeps everything, since >= its own median is
+    always true."""
+    threshold = oof["n_train"].median()
+    return oof[oof["n_train"] >= threshold]
+
+
 def _regressed(new_val: float | None, prior_val: float | None,
                higher_is_better: bool, tolerance_pct: float) -> bool:
     """True if `new_val` is a regression vs `prior_val` beyond tolerance.
@@ -226,6 +243,16 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
           f"{threads_per_fold} threads/fold")
 
     folds = walk_forward_folds(frame, **(walk_forward_kwargs or {}))
+    # Derived from the folds themselves, not from walk_forward_kwargs --
+    # robust to that dict being {} and the geometry coming from
+    # walk_forward_folds' own defaults, which is exactly what changed
+    # between this run and a prior one trained before its defaults moved
+    # from 21/21 to 42/42. Recorded below so the promotion gate can tell a
+    # genuine walk_forward_skill_median regression apart from an artifact
+    # of comparing two runs that sliced the calendar differently.
+    wf_geometry = ({"test_days": (folds[0][2] - folds[0][1]).days,
+                    "step_days": (folds[1][0] - folds[0][0]).days if len(folds) > 1 else None}
+                   if folds else None)
     print(f"[train_and_promote] starting walk-forward ({len(folds)} fold(s))")
     wf_result = run_walk_forward(full_panel, frame, feature_cols, num_cols, folds,
                                   max_workers=resolved_max_workers,
@@ -281,10 +308,12 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     # ARTIFACT (event-rich cities are easy cities), not a real capability.
     # A per-city-relative outcome threshold can't inherit that confound.
     is_event_oof = event_by_outcome(o["y"].values, o["city"].values) if o is not None else None
+    mature = _mature_oof(o) if o is not None else None
 
     eval_report = {
         "walk_forward_skill_median": round(float(np.median(fold_skills)), 1) if fold_skills else None,
         "walk_forward_skill_folds": len(fold_skills),
+        "walk_forward_geometry": wf_geometry,
         "spatial_loso_rmse": loso_result["overall_rmse"],
         # Persistence RMSE on the SAME held-out rows -- spatial_loso_rmse had
         # no comparator on its own (is 40.51 good? bad? nobody could say).
@@ -294,12 +323,22 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
         "eval_basis": "walk_forward_out_of_sample" if o is not None else "no_walk_forward_folds",
         "quantile_coverage": (quantile_coverage(o["y"].values, o["p10"].values, o["p90"].values)
                               if o is not None else None),
-        # Calibrated on the SAME out-of-sample folds coverage is measured on,
-        # and applied only at serve time -- never fed back into the metrics
-        # below, which must keep reporting what the raw model actually did.
+        # Calibrated on the MATURE half of the out-of-sample folds (see
+        # _mature_oof), not the full pooled set quantile_coverage above
+        # reports on. Walk-forward's early folds train on a fraction of the
+        # final model's data (fold 1 of the first real run: 318K rows vs
+        # fold 38's 12.69M) -- pooling them equally with late folds when
+        # fitting the SERVE-TIME correction calibrates it against the
+        # average fold's immaturity, not against what the actual final,
+        # fully-trained model will do. quantile_coverage itself is left on
+        # the full pool: it is a REPORTED diagnostic, not a served
+        # correction, and reporting it across the whole maturity range is
+        # the more honest number for that purpose. Applied only at serve
+        # time -- never fed back into the metrics below, which must keep
+        # reporting what the raw model actually did.
         "interval_scale": (interval_scale_for_coverage(
-            o["y"].values, o["p10"].values, o["p50"].values, o["p90"].values)
-            if o is not None else None),
+            mature["y"].values, mature["p10"].values, mature["p50"].values, mature["p90"].values)
+            if mature is not None else None),
         "ceiling_skill_vs_linear": (skill_vs_baseline(o["y"].values, o["p50"].values, o["ceiling"].values)
                                     if o is not None else None),
         "quiet_vs_event": (quiet_vs_event_breakdown(o["y"].values, o["p50"].values, is_event_oof,
@@ -332,11 +371,32 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     prior_city_median = float(np.median(prior_city_rmses)) if prior_city_rmses else None
     new_city_median = float(np.median(new_city_rmses)) if new_city_rmses else None
 
+    # walk_forward_skill_median is only a fair comparison against the prior
+    # run's own number when both were measured under the SAME fold
+    # geometry (test_days/step_days). A prior manifest from before
+    # walk_forward_folds' defaults changed (or trained with different
+    # explicit walk_forward_kwargs) sliced the calendar differently -- its
+    # median comes from a different set of folds over different windows,
+    # not from a worse or better model. Comparing anyway would let a pure
+    # measurement-methodology difference refuse (or wrongly pass) a
+    # promotion on its own. prior_eval.get("walk_forward_geometry") is None
+    # for any manifest written before this field existed, which correctly
+    # falls into "unknown, don't compare" rather than a false match.
+    geometry_matches = (wf_geometry is not None
+                         and wf_geometry == prior_eval.get("walk_forward_geometry"))
+    wf_regressed = (geometry_matches and _regressed(
+        eval_report["walk_forward_skill_median"], prior_eval.get("walk_forward_skill_median"),
+        higher_is_better=True, tolerance_pct=regression_tolerance_pct))
+    if not geometry_matches and prior_eval.get("walk_forward_skill_median") is not None:
+        print(f"[train_and_promote] walk-forward fold geometry changed since the prior "
+              f"model ({wf_geometry} vs {prior_eval.get('walk_forward_geometry')}) -- "
+              f"skipping the walk_forward_skill_median regression check this run, it is "
+              f"not a fair comparison")
+
     promoted = spatial_loso_ok and not any([
         _regressed(eval_report["spatial_loso_rmse"], prior_eval.get("spatial_loso_rmse"),
                    higher_is_better=False, tolerance_pct=regression_tolerance_pct),
-        _regressed(eval_report["walk_forward_skill_median"], prior_eval.get("walk_forward_skill_median"),
-                   higher_is_better=True, tolerance_pct=regression_tolerance_pct),
+        wf_regressed,
         _regressed(new_city_median, prior_city_median,
                    higher_is_better=False, tolerance_pct=regression_tolerance_pct),
     ])

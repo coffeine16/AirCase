@@ -369,6 +369,14 @@ def _run_one_walk_forward_fold(full_panel: pd.DataFrame, frame: pd.DataFrame,
         # is exactly what hid the fires_6h city-mix confound (event-rich
         # cities happened to be the easy, low-RMSE ones).
         "city": te["city"].astype(str).values,
+        # This fold's training set size, broadcast to every row -- lets a
+        # caller select OOF rows from folds whose model was trained on a
+        # data volume close to the FINAL full-data model's, instead of
+        # pooling early folds (barely-trained) with late ones (well-trained)
+        # as if they were equally representative. See train.py's interval
+        # calibration, which uses exactly this to fix the walk-forward's
+        # fold-immaturity bias in the p10/p90 coverage calibration.
+        "n_train": n_train,
     })
     return {"skill": skill, "oof": oof_frame, "n_train": n_train}
 
