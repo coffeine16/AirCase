@@ -24,7 +24,7 @@ from intelligence.models.forecast.validation import (
 )
 from intelligence.models.forecast.eval import (
     skill_vs_baseline, quantile_coverage, quiet_vs_event_breakdown,
-    interval_scale_for_coverage,
+    interval_scale_for_coverage, event_by_outcome,
 )
 
 # A worker's peak is its pickled payload plus the fold slice attach_climatology
@@ -273,7 +273,14 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     # training data cannot reveal. They are None, not faked, when there is too
     # little history for even one fold. `o` (the concatenated OOF frame) came
     # back from run_walk_forward above -- already concatenated there.
-    is_event_oof = (o["fires_6h"] > 0).values if o is not None else None
+    #
+    # event_by_outcome, NOT fires_6h > 0: measured on the real 8-city run,
+    # the fire-based definition flagged only 0.02% of rows, 64% of which
+    # were in Chennai + Bengaluru -- the two LOWEST-RMSE cities. event_rmse
+    # beating quiet_rmse under that definition was very likely a CITY-MIX
+    # ARTIFACT (event-rich cities are easy cities), not a real capability.
+    # A per-city-relative outcome threshold can't inherit that confound.
+    is_event_oof = event_by_outcome(o["y"].values, o["city"].values) if o is not None else None
 
     eval_report = {
         "walk_forward_skill_median": round(float(np.median(fold_skills)), 1) if fold_skills else None,
@@ -295,7 +302,8 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
             if o is not None else None),
         "ceiling_skill_vs_linear": (skill_vs_baseline(o["y"].values, o["p50"].values, o["ceiling"].values)
                                     if o is not None else None),
-        "quiet_vs_event": (quiet_vs_event_breakdown(o["y"].values, o["p50"].values, is_event_oof)
+        "quiet_vs_event": (quiet_vs_event_breakdown(o["y"].values, o["p50"].values, is_event_oof,
+                                                     city=o["city"].values)
                            if o is not None else None),
     }
 

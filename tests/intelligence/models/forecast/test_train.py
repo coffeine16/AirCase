@@ -49,7 +49,14 @@ def test_train_and_promote_writes_versioned_artifacts(tmp_path):
     assert "spatial_loso_rmse" in manifest["eval"]
     assert "city_loso" in manifest["eval"]
     assert "quiet_vs_event" in manifest["eval"]
-    assert set(manifest["eval"]["quiet_vs_event"]) == {"quiet_rmse", "event_rmse", "n_quiet", "n_event"}
+    qve = manifest["eval"]["quiet_vs_event"]
+    assert set(qve) == {"quiet_rmse", "event_rmse", "n_quiet", "n_event", "per_city"}
+    # per_city stratification exists specifically so a pooled event_rmse <
+    # quiet_rmse can be told apart from a city-mix artifact -- it has to
+    # actually be there, not just an empty dict alongside the pooled keys.
+    assert qve["per_city"], "quiet_vs_event lost its per-city stratification"
+    for city_stats in qve["per_city"].values():
+        assert set(city_stats) == {"quiet_rmse", "event_rmse", "n_quiet", "n_event"}
     # the three formerly-in-sample metrics must come from the walk-forward
     # folds' held-out predictions, not from the frame the final model was fit on
     assert manifest["eval"]["eval_basis"] == "walk_forward_out_of_sample"

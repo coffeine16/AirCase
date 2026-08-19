@@ -352,6 +352,10 @@ def _run_one_walk_forward_fold(full_panel: pd.DataFrame, frame: pd.DataFrame,
         "y": te["y"].values, "p10": pred["pm25_p10"].values,
         "p50": pred["pm25_p50"].values, "p90": pred["pm25_p90"].values,
         "ceiling": ceil_pred, "fires_6h": te["fires_6h"].fillna(0).values,
+        # Needed to stratify quiet_vs_event by city -- pooled-only reporting
+        # is exactly what hid the fires_6h city-mix confound (event-rich
+        # cities happened to be the easy, low-RMSE ones).
+        "city": te["city"].astype(str).values,
     })
     return {"skill": skill, "oof": oof_frame, "n_train": n_train}
 

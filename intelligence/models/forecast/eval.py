@@ -79,15 +79,66 @@ def apply_interval_scale(p10: np.ndarray, p50: np.ndarray, p90: np.ndarray,
     return p50 - scale * (p50 - p10), p50 + scale * (p90 - p50)
 
 
-def quiet_vs_event_breakdown(y_true: np.ndarray, y_pred: np.ndarray, is_event: np.ndarray) -> dict:
-    """RMSE computed separately for real-event windows vs. normal periods."""
+def event_by_outcome(y_true: np.ndarray, city: np.ndarray, percentile: float = 80.0) -> np.ndarray:
+    """Per-row event flag: `y_true` at or above THAT ROW'S CITY's own
+    percentile of `y_true` -- an "event" is a bad day RELATIVE TO WHAT'S
+    NORMAL FOR THAT CITY, not an absolute PM2.5 level.
+
+    Replaces `fires_6h > 0` as the primary event definition. Measured on
+    the real 8-city run: fires_6h > 0 flagged only 0.02% of rows (2,721 of
+    12.8M), and 64% of those fires were in Chennai + Bengaluru -- which
+    happen to be the two LOWEST-RMSE cities. event_rmse < quiet_rmse under
+    that definition was very likely a CITY-MIX ARTIFACT (event-rich cities
+    are easy cities), not evidence the model handles real events better.
+    An outcome-based, per-city-relative threshold can't inherit that
+    confound: every city contributes ~(100-percentile)% of its OWN rows to
+    "event" regardless of how many fires it happens to report.
+    """
+    y_true, city = np.asarray(y_true, dtype=float), np.asarray(city)
+    is_event = np.zeros(len(y_true), dtype=bool)
+    for c in np.unique(city):
+        mask = city == c
+        if not mask.any():
+            continue
+        vals = y_true[mask]
+        finite = vals[np.isfinite(vals)]
+        if finite.size == 0:
+            continue
+        threshold = np.percentile(finite, percentile)
+        is_event[mask] = vals >= threshold
+    return is_event
+
+
+def quiet_vs_event_breakdown(y_true: np.ndarray, y_pred: np.ndarray, is_event: np.ndarray,
+                              city: np.ndarray | None = None) -> dict:
+    """RMSE computed separately for event windows vs. normal periods --
+    POOLED, and (when `city` is given) stratified per city too. Pooled-only
+    reporting is exactly what hid the fires_6h city-mix confound: a real
+    per-city capability and "the event-heavy rows happen to come from
+    easy cities" produce an IDENTICAL pooled event_rmse < quiet_rmse. Only
+    the per-city breakdown can tell them apart -- if the gap holds up
+    city-by-city, it's real; if the pooled gap vanishes or reverses once
+    stratified, it was never a capability."""
     y_true, y_pred, is_event = np.asarray(y_true), np.asarray(y_pred), np.asarray(is_event)
     quiet, event = ~is_event, is_event
-    return {
+    out = {
         "quiet_rmse": _rmse(y_true[quiet], y_pred[quiet]) if quiet.any() else float("nan"),
         "event_rmse": _rmse(y_true[event], y_pred[event]) if event.any() else float("nan"),
         "n_quiet": int(quiet.sum()), "n_event": int(event.sum()),
     }
+    if city is not None:
+        city = np.asarray(city)
+        per_city = {}
+        for c in np.unique(city):
+            cmask = city == c
+            cq, ce = cmask & quiet, cmask & event
+            per_city[str(c)] = {
+                "quiet_rmse": _rmse(y_true[cq], y_pred[cq]) if cq.any() else float("nan"),
+                "event_rmse": _rmse(y_true[ce], y_pred[ce]) if ce.any() else float("nan"),
+                "n_quiet": int(cq.sum()), "n_event": int(ce.sum()),
+            }
+        out["per_city"] = per_city
+    return out
 
 
 if __name__ == "__main__":
