@@ -21,7 +21,10 @@ from intelligence.models.forecast.model import mask_unknown_city
 from intelligence.models.forecast.validation import (
     walk_forward_folds, event_weights, spatial_loso, run_city_loso, run_walk_forward,
 )
-from intelligence.models.forecast.eval import skill_vs_baseline, quantile_coverage, quiet_vs_event_breakdown
+from intelligence.models.forecast.eval import (
+    skill_vs_baseline, quantile_coverage, quiet_vs_event_breakdown,
+    interval_scale_for_coverage,
+)
 
 # A worker's peak is its pickled payload plus the fold slice attach_climatology
 # copies plus LightGBM's Dataset -- budget for the peak, not the handoff.
@@ -267,6 +270,12 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
         "eval_basis": "walk_forward_out_of_sample" if o is not None else "no_walk_forward_folds",
         "quantile_coverage": (quantile_coverage(o["y"].values, o["p10"].values, o["p90"].values)
                               if o is not None else None),
+        # Calibrated on the SAME out-of-sample folds coverage is measured on,
+        # and applied only at serve time -- never fed back into the metrics
+        # below, which must keep reporting what the raw model actually did.
+        "interval_scale": (interval_scale_for_coverage(
+            o["y"].values, o["p10"].values, o["p50"].values, o["p90"].values)
+            if o is not None else None),
         "ceiling_skill_vs_linear": (skill_vs_baseline(o["y"].values, o["p50"].values, o["ceiling"].values)
                                     if o is not None else None),
         "quiet_vs_event": (quiet_vs_event_breakdown(o["y"].values, o["p50"].values, is_event_oof)

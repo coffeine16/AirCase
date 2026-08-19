@@ -17,7 +17,7 @@ from intelligence.models.forecast.model import (
     predict_quantiles, train_quantile_models, mask_unknown_city, UNKNOWN_CITY,
 )
 from intelligence.models.forecast.train import train_and_promote
-from intelligence.models.forecast.eval import skill_vs_baseline
+from intelligence.models.forecast.eval import skill_vs_baseline, apply_interval_scale
 
 HORIZONS = list(range(3, 73, 3))
 TEST_TAIL_DAYS = 14
@@ -95,6 +95,10 @@ def _predict_field(panels: dict, served_manifest: dict, served_models: dict,
     """
     fires_by_city = fires_by_city or {}
     city_categories = sorted(set(served_manifest["cities"]) | {UNKNOWN_CITY})
+    # Raw p10/p90 measured 0.684 coverage against a 0.80 target on the first
+    # real 8-city run -- bands a third too narrow. Widen by whatever the
+    # served model's own held-out folds said was needed.
+    scale = (served_manifest.get("eval") or {}).get("interval_scale")
     fields = {}
     for city, panel in panels.items():
         # Climatology needs the FULL history (a month/dow-hour bucket only
@@ -112,10 +116,11 @@ def _predict_field(panels: dict, served_manifest: dict, served_models: dict,
         if latest_rows.empty:
             continue
         pred = predict_quantiles(served_models, latest_rows, feature_cols)
-        fields[city] = [{"cell": c, "horizon_h": int(h), "pm25_hat": round(float(p50), 1),
-                         "pm25_p10": round(float(p10), 1), "pm25_p90": round(float(p90), 1)}
-                        for c, h, p50, p10, p90 in zip(latest_rows.cell, latest_rows.horizon,
-                                                        pred.pm25_p50, pred.pm25_p10, pred.pm25_p90)]
+        p10, p90 = apply_interval_scale(pred.pm25_p10, pred.pm25_p50, pred.pm25_p90, scale)
+        fields[city] = [{"cell": c, "horizon_h": int(h), "pm25_hat": round(float(m), 1),
+                         "pm25_p10": round(float(lo), 1), "pm25_p90": round(float(hi), 1)}
+                        for c, h, m, lo, hi in zip(latest_rows.cell, latest_rows.horizon,
+                                                    pred.pm25_p50, p10, p90)]
     return fields
 
 
