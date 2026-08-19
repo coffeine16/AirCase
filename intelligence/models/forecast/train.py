@@ -11,6 +11,7 @@ comparison this version doesn't implement; stated here as a real scope
 limit, not a silent gap."""
 import json
 import os
+import time
 from pathlib import Path
 
 import numpy as np
@@ -181,6 +182,13 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     # station cells per city here cuts that peak by roughly the same
     # 30-100x that composite_grid/positional_block no longer waste on
     # cells this function was always going to throw away.
+    # Timed explicitly -- on the real 8-city run this whole function reported
+    # 4.3h total but its own [walk_forward]/[spatial_loso]/[run_city_loso]
+    # stage timers summed to only 2.59h. The other ~1.7h (40% of the run)
+    # was silently spent here and in the final model fit below, neither of
+    # which had a timer. Print the true split instead of leaving a mystery
+    # gap the next run's cost estimate has to guess at.
+    t0 = time.perf_counter()
     full_panel = downcast_panel(pd.concat(
         [station_cells_only(p) for p in panels_by_city.values()], ignore_index=True))
     all_fires = (pd.concat(fires_by_city.values(), ignore_index=True)
@@ -188,6 +196,8 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     frame = mask_unknown_city(build_features(full_panel, horizons, fires=all_fires,
                                               restrict_to_station_cells=True))
     num_cols = [c for c in feature_cols if c != "city"]
+    print(f"[train_and_promote] pooled feature build done in {time.perf_counter() - t0:.0f}s "
+          f"({len(frame):,} rows)")
 
     # None (the parameter's own default) would run every fold across all
     # three CV stages below sequentially in this one process -- fine for
@@ -242,6 +252,7 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     # train_quantile_models AND this weighted loop, discarding the first
     # result unused — doubling the cost of the single most expensive stage
     # in this function for nothing.
+    t0 = time.perf_counter()
     final_train = frame.dropna(subset=["y"])
     import lightgbm as lgb
     from intelligence.models.forecast.model import PARAMS, QUANTILES
@@ -250,6 +261,9 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
         ds = lgb.Dataset(final_train[feature_cols], label=final_train["y"],
                           weight=event_weights(final_train), categorical_feature=["city"])
         final_models[q] = lgb.train({**PARAMS, "alpha": q}, ds, num_boost_round=500)
+    print(f"[train_and_promote] final model fit done in {time.perf_counter() - t0:.0f}s "
+          f"({len(final_train):,} rows, 500 rounds x {len(QUANTILES)} quantiles, "
+          f"threads=auto-detected/uncapped)")
 
     # quantile_coverage / ceiling_skill / quiet_vs_event are scored on the
     # walk-forward folds' OUT-OF-SAMPLE predictions, never on final_train.
