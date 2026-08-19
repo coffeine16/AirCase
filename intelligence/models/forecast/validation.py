@@ -89,8 +89,15 @@ def _run_one_loso_fold(panel: pd.DataFrame, horizons: list[int], feature_cols: l
     pred = predict_quantiles(models, test_frame, feature_cols)
     truth = test_frame["y"].values
     rmse = float(np.sqrt(np.nanmean((truth - pred["pm25_p50"].values) ** 2)))
+    # Persistence baseline ("PM2.5 stays what it last was"), scored on the
+    # SAME held-out rows -- lag_0 is already a feature, so this costs
+    # nothing extra to compute. spatial_loso_rmse has had no comparator:
+    # 40.51 alone doesn't say whether the model is doing anything a naive
+    # guess wouldn't already do just as well.
+    baseline_rmse = float(np.sqrt(np.nanmean((truth - test_frame["lag_0"].values) ** 2)))
     return {"held_out": held_out, "rmse": round(rmse, 2), "n": len(test_frame),
-            "truth": truth, "pred": pred["pm25_p50"].values}
+            "truth": truth, "pred": pred["pm25_p50"].values,
+            "baseline_pred": test_frame["lag_0"].values, "baseline_rmse": round(baseline_rmse, 2)}
 
 
 # Set once per worker PROCESS by _init_loso_worker, read by _loso_worker_task.
@@ -141,9 +148,10 @@ def spatial_loso(panel: pd.DataFrame, horizons: list[int], feature_cols: list[st
     training run."""
     station_cells = sorted(panel[panel.pm25_station.notna()].cell.unique())
     if not station_cells:
-        return {"overall_rmse": float("nan"), "per_station": {}, "n_stations": 0}
+        return {"overall_rmse": float("nan"), "baseline_rmse": float("nan"),
+                "per_station": {}, "n_stations": 0}
 
-    per_station, all_true, all_pred = {}, [], []
+    per_station, all_true, all_pred, all_baseline = {}, [], [], []
 
     if max_workers is None or max_workers <= 1:
         for i, held_out in enumerate(station_cells, 1):
@@ -161,9 +169,11 @@ def spatial_loso(panel: pd.DataFrame, horizons: list[int], feature_cols: list[st
                   f"{time.perf_counter() - t0:.0f}s")
             if result is None:
                 continue
-            per_station[result["held_out"]] = {"rmse": result["rmse"], "n": result["n"]}
+            per_station[result["held_out"]] = {"rmse": result["rmse"], "n": result["n"],
+                                                "baseline_rmse": result["baseline_rmse"]}
             all_true.extend(result["truth"])
             all_pred.extend(result["pred"])
+            all_baseline.extend(result["baseline_pred"])
     else:
         print(f"[spatial_loso] {len(station_cells)} stations, {max_workers} concurrent "
               f"workers x {threads_per_fold} threads/fold (cpu_count={os.cpu_count()})")
@@ -185,12 +195,20 @@ def spatial_loso(panel: pd.DataFrame, horizons: list[int], feature_cols: list[st
                 result = future.result()
                 if result is None:
                     continue
-                per_station[result["held_out"]] = {"rmse": result["rmse"], "n": result["n"]}
+                per_station[result["held_out"]] = {"rmse": result["rmse"], "n": result["n"],
+                                                    "baseline_rmse": result["baseline_rmse"]}
                 all_true.extend(result["truth"])
                 all_pred.extend(result["pred"])
+                all_baseline.extend(result["baseline_pred"])
 
     overall = float(np.sqrt(np.nanmean((np.array(all_true) - np.array(all_pred)) ** 2))) if all_true else float("nan")
-    return {"overall_rmse": round(overall, 2), "per_station": per_station, "n_stations": len(per_station)}
+    # Persistence RMSE across the SAME pooled held-out rows the model's own
+    # overall_rmse is scored on -- the direct answer to "would a naive guess
+    # have done just as well", which spatial_loso_rmse alone cannot answer.
+    baseline_overall = (float(np.sqrt(np.nanmean((np.array(all_true) - np.array(all_baseline)) ** 2)))
+                        if all_true else float("nan"))
+    return {"overall_rmse": round(overall, 2), "baseline_rmse": round(baseline_overall, 2),
+            "per_station": per_station, "n_stations": len(per_station)}
 
 
 def _run_one_city_loso_fold(panels_by_city: dict[str, pd.DataFrame], horizons: list[int],

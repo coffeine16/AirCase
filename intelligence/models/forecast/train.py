@@ -279,6 +279,9 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
         "walk_forward_skill_median": round(float(np.median(fold_skills)), 1) if fold_skills else None,
         "walk_forward_skill_folds": len(fold_skills),
         "spatial_loso_rmse": loso_result["overall_rmse"],
+        # Persistence RMSE on the SAME held-out rows -- spatial_loso_rmse had
+        # no comparator on its own (is 40.51 good? bad? nobody could say).
+        "spatial_loso_baseline_rmse": loso_result["baseline_rmse"],
         "spatial_loso_n_stations": loso_result["n_stations"],
         "city_loso": city_result["per_city"],
         "eval_basis": "walk_forward_out_of_sample" if o is not None else "no_walk_forward_folds",

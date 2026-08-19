@@ -64,6 +64,40 @@ def test_spatial_loso_runs_one_fold_per_station():
     assert np.isfinite(result["overall_rmse"])
 
 
+def test_spatial_loso_baseline_rmse_is_real_persistence_not_a_copy_of_overall():
+    """spatial_loso_rmse had no comparator -- 40.51 on a real run couldn't be
+    judged good or bad standalone. baseline_rmse is the persistence (lag_0)
+    RMSE on the SAME held-out rows the model's own overall_rmse is scored
+    on. Prove it's actually computed from lag_0, not accidentally aliased
+    to the model's own prediction: on the five-station fixture the held-out
+    station reads at a level (~200) far from lag_0's likely composite-filled
+    value (~40-52, the other stations' level) at the very start of the
+    panel, before the held-out station's own lag has had time to settle --
+    so a persistence baseline and the model's real prediction should not
+    coincide."""
+    from intelligence.models.forecast.features import FEATURE_COLUMNS
+    result = spatial_loso(_panel_with_five_stations(held_out_level=200.0),
+                           horizons=[3], feature_cols=FEATURE_COLUMNS)
+
+    assert np.isfinite(result["baseline_rmse"])
+    assert result["baseline_rmse"] > 0
+    finite_per_station = [s["baseline_rmse"] for s in result["per_station"].values()
+                          if np.isfinite(s["baseline_rmse"])]
+    # every fold's key is present, but not every fold's VALUE has to be
+    # finite -- composite_grid's wind-alignment weights can legitimately
+    # sum to zero for a specific station's exact geometry (same edge case
+    # noted elsewhere in this codebase), same as it always could for
+    # lag_0 itself. The pooled baseline_rmse above already tolerates that
+    # via nanmean, same as overall_rmse always has.
+    assert all("baseline_rmse" in s for s in result["per_station"].values())
+    assert len(finite_per_station) >= len(result["per_station"]) - 1
+    # the two numbers must be free to differ -- if baseline_rmse were
+    # secretly just overall_rmse under a new name, they would be bit-for-bit
+    # identical on every fold, which a real persistence-vs-model comparison
+    # has no reason to produce
+    assert result["baseline_rmse"] != result["overall_rmse"]
+
+
 def test_spatial_loso_parallel_path_matches_sequential():
     """The parallel (ProcessPoolExecutor) path exists purely as a faster way
     to compute the SAME thing the sequential loop does -- both call
