@@ -31,12 +31,25 @@ def _align_city(frame: pd.DataFrame, categories, relabel_unknown: bool = False) 
 
 
 def walk_forward_folds(frame: pd.DataFrame, ts_col: str = "ts",
-                        min_train_days: int = 180, test_days: int = 21,
-                        step_days: int = 21) -> list[tuple[pd.Timestamp, pd.Timestamp, pd.Timestamp]]:
+                        min_train_days: int = 180, test_days: int = 42,
+                        step_days: int = 42) -> list[tuple[pd.Timestamp, pd.Timestamp, pd.Timestamp]]:
     """Yields (train_end, test_start, test_end) triples. Train is always
     "everything up to train_end" (expanding window); test is the following
     `test_days`. Returns [] rather than raising when there isn't enough
-    history for even one fold — callers must check."""
+    history for even one fold — callers must check.
+
+    `test_days` and `step_days` default equal (42/42, halved from the first
+    run's 21/21) and MUST be changed together. When `step_days == test_days`,
+    fold N+1's test window starts exactly where fold N's ends — every day in
+    range gets tested exactly once. Raising `step_days` alone (leaving
+    `test_days` behind) opens a `step_days - test_days` gap between every
+    pair of folds: on the real 8-city panel, step_days=42/test_days=21 tests
+    only 48% of the calendar (verified directly against this function's own
+    output), silently dropping the other half from walk_forward_skill_median,
+    the OOF interval calibration, and quiet_vs_event — exactly the kind of
+    evaluation blind spot spec principle 8 exists to catch. Moving both
+    together halves the fold count (cheaper) while keeping the same 96%
+    contiguous coverage the original 21/21 config had."""
     start, end = frame[ts_col].min(), frame[ts_col].max()
     folds = []
     train_end = start + pd.Timedelta(days=min_train_days)
