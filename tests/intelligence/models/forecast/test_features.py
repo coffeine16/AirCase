@@ -30,6 +30,97 @@ def _tiny_panel():
     return pd.DataFrame(rows)
 
 
+def _panel_with_varying_weather():
+    """Same shape as _tiny_panel but weather actually varies by hour --
+    _tiny_panel's constant weather can't distinguish an issue-time lookup
+    from a target-time one, since both would return the same value."""
+    cells = city_cells()[:3]
+    hours = pd.date_range("2024-01-01", periods=72, freq="h", tz="UTC")
+    rows = []
+    for i, c in enumerate(cells):
+        for h in hours:
+            hour_idx = int((h - hours[0]) / pd.Timedelta(hours=1))
+            rows.append({
+                "cell": c, "ts": h, "ward_id": "W1", "ward_name": "Ward 1",
+                "city": "bengaluru",
+                "pm25_station": 50.0 + i * 10 if i < 2 else np.nan,
+                # Distinct per-hour value, easy to trace: temp_c == hour index.
+                "wind_from_deg": 90.0, "wind_ms": 2.0,
+                "blh_m": 300.0 + hour_idx, "temp_c": float(hour_idx),
+                "fires_6h": 0, "frp_6h": 0.0,
+                "lu_industrial": 0, "lu_construction": 0, "lu_waste_burning": 0,
+                "lu_traffic": 0, "lu_road": 1, "lu_sensitive": 0,
+                "hour": h.hour, "dow": h.dayofweek,
+            })
+    return pd.DataFrame(rows), hours
+
+
+def test_build_features_reads_weather_at_target_time_not_issue_time():
+    """A1: _MET must be looked up at ts+horizon, not ts. temp_c == hour
+    index in this fixture, so a row issued at hour 10 with horizon=6 must
+    carry temp_c == 16 (hour 16's value) -- if the lookup were still at
+    issue time (the pre-A1 behaviour), it would carry temp_c == 10, and if
+    it silently fell back to some other hour, it would carry neither."""
+    panel, hours = _panel_with_varying_weather()
+    frame = build_features(panel, horizons=[6], restrict_to_station_cells=True)
+
+    # hour 30: far enough in for lag_24 (dropna requires it), target (+6=36)
+    # still safely inside the 72h panel.
+    issue_hour = hours[30]
+    row = frame[frame.ts == issue_hour].iloc[0]
+    assert row["horizon"] == 6
+    assert row["temp_c"] == 36.0          # target hour's value (30 + 6)
+    assert row["temp_c"] != 30.0          # NOT the issue hour's value
+    assert row["blh_m"] == 336.0          # 300 + 36, same target-time rule
+
+
+def test_build_features_weather_is_nan_past_the_panels_own_coverage():
+    """A row near the panel's tail whose target time (ts+horizon) falls
+    outside the panel's own hourly range must get NaN weather, not a stale
+    or wrapped-around value -- the same honest-missing convention `y`
+    already uses for labels that shift past the panel's end."""
+    panel, hours = _panel_with_varying_weather()
+    frame = build_features(panel, horizons=[6], restrict_to_station_cells=True)
+
+    last_issue_hour = hours[-1]
+    row = frame[frame.ts == last_issue_hour].iloc[0]
+    assert pd.isna(row["temp_c"])
+    assert pd.isna(row["blh_m"])
+
+
+def test_feature_columns_uses_cyclical_encoding_not_raw_periodic_values():
+    """target_hour/dow/month/doy and wind_from_deg are periodic; the MODEL
+    must only ever see their sin/cos pairs, never the raw ordinal/degree
+    value -- a raw encoding puts 23:00 and 00:00 (or 359 deg and 1 deg)
+    numerically far apart when they are adjacent in reality."""
+    for raw in ("target_hour", "target_dow", "target_month", "target_doy", "wind_from_deg"):
+        assert raw not in FEATURE_COLUMNS, f"{raw} must not be a raw model feature"
+    for cyc in ("target_hour_sin", "target_hour_cos", "wind_from_deg_sin", "wind_from_deg_cos"):
+        assert cyc in FEATURE_COLUMNS, f"missing cyclical feature {cyc}"
+
+
+def test_target_hour_23_and_0_land_close_in_cyclical_space():
+    """The wrap-adjacency proof, same shape as fusion's: hour 23 and hour 0
+    must be close in (sin, cos) space despite being 23 apart as raw
+    integers, and clearly closer than two hours on opposite sides of the
+    clock (23 vs 12)."""
+    panel, hours = _panel_with_varying_weather()
+    frame = build_features(panel, horizons=[0], restrict_to_station_cells=True)
+
+    def row_at(hour_idx):
+        return frame[frame.ts == hours[hour_idx]].iloc[0]
+
+    r23, r0, r12 = row_at(47), row_at(48), row_at(36)   # hour-of-day 23, 0, 12
+    assert r23["target_hour"] == 23 and r0["target_hour"] == 0 and r12["target_hour"] == 12
+
+    def dist(a, b):
+        return np.hypot(a["target_hour_sin"] - b["target_hour_sin"],
+                         a["target_hour_cos"] - b["target_hour_cos"])
+
+    assert dist(r23, r0) < 0.3
+    assert dist(r23, r12) > 1.5
+
+
 def test_build_features_has_trust_and_spatial_columns():
     frame = build_features(_tiny_panel(), horizons=[3, 6])
 

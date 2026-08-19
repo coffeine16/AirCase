@@ -8,12 +8,38 @@ STRUCTURE: the expensive work (composites, positional blocks, lags, rolling
 medians, fire pressure) does NOT depend on the forecast horizon, so it is
 computed ONCE per (cell, ts) and then replicated across horizons. Only
 `horizon`, the target clock columns, the climatology lookup (keyed on the
-TARGET time) and `y` vary with the horizon. Doing the whole build inside the
-horizon loop made one call ~24x more expensive than it needs to be — with 24
-horizons on a 1210-cell x 60-day panel that is the difference between a
-pipeline stage that finishes and one that does not. The deleted single-file
-forecast.py hit exactly this wall (88 s of a 101 s Cloud Run request) and
-solved it the same way.
+TARGET time), the weather block (also keyed on the TARGET time — see below)
+and `y` vary with the horizon. Doing the whole build inside the horizon loop
+made one call ~24x more expensive than it needs to be — with 24 horizons on
+a 1210-cell x 60-day panel that is the difference between a pipeline stage
+that finishes and one that does not. The deleted single-file forecast.py hit
+exactly this wall (88 s of a 101 s Cloud Run request) and solved it the same
+way.
+
+WEATHER AT TARGET TIME, not issue time: `_MET` (blh_m, wind_ms,
+wind_from_deg, temp_c) used to be read at each row's own `ts` — the model
+had zero information about weather at the time it was actually forecasting
+for, a hard ceiling on 48-72h skill regardless of model quality (a shallow
+boundary layer 3 days out matters far more than the boundary layer right
+now). It is now looked up at `ts + horizon` instead. TRAINING reads this
+from the archived/observed value at that historical hour — genuine
+issue-time forecast archives are not available for free at this project's
+scale (checked: NOAA GFS's AWS archive is a 30-day rolling window, not a
+real archive; Open-Meteo's Single Runs API has true issue-time snapshots
+but is paid with no coverage before April 2026; ERA5 doesn't carry BLH at
+all via its free GEE mirror) — so this is a deliberate, documented oracle_met
+gap between train and serve, not hidden leakage. It is accepted because the
+gap was MEASURED, not assumed: Open-Meteo's free Previous Runs API (Delhi,
+Nov 2025) put 24h/72h-ahead temperature RMSE at 0.68C/0.76C against a 4.65C
+std (excellent) and wind speed at 22%/26% of its mean (real but usable);
+boundary layer height cannot be measured this way at all (not in that API),
+and is the single strongest predictor this model has — the honest
+residual risk in this design, not swept under the rug. SERVING reads the
+live forecast: ingestion/collectors/pollers.py's fetch_weather() already
+requests forecast_days=3 (72h, this model's max horizon) from Open-Meteo's
+live endpoint whenever the window is recent, so the panel handed to
+_predict_field already carries genuine forecast values at the target hours
+with no separate wiring needed here.
 """
 import numpy as np
 import pandas as pd
@@ -26,12 +52,28 @@ LAGS = [0, 1, 3, 6, 24]
 _MET = ["blh_m", "wind_ms", "wind_from_deg", "temp_c"]
 _STATIC = ["lu_road", "lu_industrial", "lu_traffic"]
 
+# Pure-periodic quantities, fed to the model as sin/cos pairs -- never as a
+# raw ordinal/degree value. A raw encoding forces the model to DISCOVER the
+# wrap-adjacency (23:00 next to 00:00, December next to January, 359 deg
+# next to 1 deg) from training examples that happen to land near the
+# boundary; if those are sparse, boosting may never place a split there at
+# all. sin/cos makes the adjacency true by construction. `wind_from_deg`
+# here is the MODEL-FACING copy (looked up via met_lookup at target time,
+# see the module docstring's A1 note) -- spatial.py's own use of the
+# panel's raw wind_from_deg for composite/fire-pressure alignment is a
+# separate, already-circular-correct code path (cos(bearing_diff)) and is
+# untouched by this.
+_CYCLICAL = {"wind_from_deg": 360.0, "target_hour": 24.0, "target_dow": 7.0,
+             "target_month": 12.0, "target_doy": 365.25}
+_MET_MODEL_COLS = [c for c in _MET if c not in _CYCLICAL]
+_CYCLICAL_MODEL_COLS = [f"{c}_{trig}" for c in _CYCLICAL for trig in ("sin", "cos")]
+
 FEATURE_COLUMNS = (
     [f"lag_{k}" for k in LAGS] + ["roll_med_24", "roll_med_168",
     "has_station", "distance_to_nearest_station_km", "nearby_stations_delta"]
     + [f"pos_{i}" for i in range(7)] + ["fire_pressure_regional", "fires_6h", "frp_6h"]
-    + _MET + _STATIC + ["clim_dow_hour", "clim_month",
-    "target_hour", "target_dow", "target_month", "target_doy", "horizon", "city"]
+    + _MET_MODEL_COLS + _STATIC + ["clim_dow_hour", "clim_month"]
+    + _CYCLICAL_MODEL_COLS + ["horizon", "city"]
 )
 
 
@@ -188,7 +230,14 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
         fires = pd.DataFrame(columns=["ts", "lat", "lon", "frp", "confidence"])
     station_lat, station_lon, station_val, station_cells = _station_matrix(p)
     hours = pd.DatetimeIndex(sorted(p.ts.unique()))
+    # wind_by_hour is ISSUE-time wind, used below only to weight composite_grid/
+    # positional_block's spatial fill (which real stations are upwind of a
+    # cell RIGHT NOW) -- unrelated to _MET's TARGET-time lookup further down.
     wind_by_hour = p.drop_duplicates("ts").set_index("ts")["wind_from_deg"].reindex(hours).values
+    # One row per hour (met is a single city-centroid point, shared by every
+    # cell), looked up at TARGET time in the horizon-dependent block below.
+    _met_cols = [m for m in _MET if m in p]
+    met_lookup = p.drop_duplicates("ts")[["ts"] + _met_cols].rename(columns={"ts": "_met_ts"})
 
     if clim_tables is None:
         clim_tables = build_climatology(p, exclude_cell=loso_exclude)
@@ -219,7 +268,7 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
     feats = {f"lag_{k}": g.pm25_station.shift(k) for k in LAGS}
     feats["roll_med_24"] = g.pm25_station.transform(lambda s: s.shift(1).rolling(24, min_periods=6).median())
     feats["roll_med_168"] = g.pm25_station.transform(lambda s: s.shift(1).rolling(168, min_periods=24).median())
-    for m in _MET + _STATIC:
+    for m in _STATIC:
         if m in p:
             feats[m] = p[m]
     X = pd.DataFrame(feats, index=p.index)
@@ -308,6 +357,16 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
     out = pd.concat([X] * len(horizons), ignore_index=True)
     out["horizon"] = np.repeat(np.asarray(horizons, dtype="int64"), n)
     tgt = out["ts"] + pd.to_timedelta(out["horizon"], unit="h")
+    # Weather AT TARGET TIME, not issue time -- see the module docstring.
+    # met_lookup has one row per hour (unique `_met_ts`), so this left-merge
+    # cannot duplicate or reorder `out`'s rows -- each stays matched to at
+    # most one weather row. A target hour past the panel's own coverage
+    # (the training tail, or a live run whose forecast fetch didn't reach
+    # this horizon) comes back NaN, same as `y` already does near a panel's
+    # tail -- LightGBM treats it as a native missing value, not a new
+    # failure mode.
+    out["_met_ts"] = tgt
+    out = out.merge(met_lookup, on="_met_ts", how="left").drop(columns="_met_ts")
     out["target_hour"] = tgt.dt.hour
     out["target_dow"] = tgt.dt.dayofweek
     out["target_month"] = tgt.dt.month
@@ -316,6 +375,15 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
     # that would let the model fit a year-over-year trend it can only
     # extrapolate wrongly at serve time.
     out["target_doy"] = tgt.dt.dayofyear
+    # sin/cos pairs for every periodic quantity -- see _CYCLICAL's docstring
+    # note above. Computed from the raw columns just assigned (and from
+    # wind_from_deg, already in `out` via the met_lookup merge); the raw
+    # columns themselves stay in `out` for readability/debugging, they are
+    # just not in FEATURE_COLUMNS, so nothing downstream trains on them.
+    for _col, _period in _CYCLICAL.items():
+        _rad = 2 * np.pi * out[_col].astype(float) / _period
+        out[f"{_col}_sin"] = np.sin(_rad)
+        out[f"{_col}_cos"] = np.cos(_rad)
     if keep_mask is not None:
         out["y"] = np.concatenate(
             [g.pm25_station.shift(-h).to_numpy(dtype=float)[keep_mask] for h in horizons])
