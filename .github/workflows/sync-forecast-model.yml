@@ -54,7 +54,15 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          STAGE=$(hf jobs inspect ${{ steps.check.outputs.job_id }} | python -c "import json,sys; print(json.load(sys.stdin)[0]['status']['stage'])")
+          # --format json is required: `hf jobs inspect` prints a human-readable
+          # TABLE by default, which json.load chokes on with "Expecting value:
+          # line 1 column 1". The payload is a list, but tolerate a bare object.
+          STAGE=$(hf jobs inspect --format json ${{ steps.check.outputs.job_id }} \
+            | python -c "import json,sys; d=json.load(sys.stdin); d=d[0] if isinstance(d,list) else d; print(d['status']['stage'])")
+          if [ -z "$STAGE" ]; then
+            echo "::error::could not read a stage for job ${{ steps.check.outputs.job_id }}"
+            exit 1
+          fi
           echo "job ${{ steps.check.outputs.job_id }}: $STAGE"
           echo "stage=$STAGE" >> "$GITHUB_OUTPUT"
 
