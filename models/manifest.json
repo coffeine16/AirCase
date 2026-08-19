@@ -1,0 +1,64 @@
+{
+  "version": "2026-08-18T235551",
+  "trained_at": "2026-08-18T23:55:51.614813+00:00",
+  "cities": [
+    "ahmedabad",
+    "bengaluru",
+    "chennai",
+    "delhi",
+    "hyderabad",
+    "kolkata",
+    "mumbai",
+    "pune"
+  ],
+  "eval": {
+    "walk_forward_skill_median": 16.8,
+    "walk_forward_skill_folds": 38,
+    "spatial_loso_rmse": 40.51,
+    "spatial_loso_n_stations": 82,
+    "city_loso": {
+      "mumbai": {
+        "rmse": 21.37,
+        "n": 4129891
+      },
+      "delhi": {
+        "rmse": 54.28,
+        "n": 2613384
+      },
+      "pune": {
+        "rmse": 23.01,
+        "n": 2300229
+      },
+      "chennai": {
+        "rmse": 17.69,
+        "n": 744217
+      },
+      "kolkata": {
+        "rmse": 33.26,
+        "n": 1113150
+      },
+      "bengaluru": {
+        "rmse": 13.39,
+        "n": 763828
+      },
+      "ahmedabad": {
+        "rmse": 25.65,
+        "n": 825122
+      },
+      "hyderabad": {
+        "rmse": 15.69,
+        "n": 592466
+      }
+    },
+    "eval_basis": "walk_forward_out_of_sample",
+    "quantile_coverage": 0.6836606721619123,
+    "ceiling_skill_vs_linear": 6.9,
+    "quiet_vs_event": {
+      "quiet_rmse": 32.384398932692925,
+      "event_rmse": 21.475058591588034,
+      "n_quiet": 12761525,
+      "n_event": 2721
+    }
+  },
+  "promoted": true
+}
