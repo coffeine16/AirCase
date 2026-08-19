@@ -75,7 +75,16 @@ jobs:
           from huggingface_hub import snapshot_download
           import shutil
           path = snapshot_download('${{ env.HF_MODEL_REPO }}', repo_type='model')
-          shutil.copytree(path, 'models', dirs_exist_ok=True)
+          # HF Hub model repos carry their OWN .gitattributes (LFS rules for
+          # a generic ML repo -- notably, no rule for *.txt). Copying it into
+          # models/ shadows this repo's root .gitattributes, which DOES LFS-
+          # track models/**/*.txt -- git resolves the more specific, nested
+          # file first. Without this exclusion the first sync already landed
+          # ~9MB of plain-text model dumps straight into main's history,
+          # permanently, and every future promoted run would add another
+          # ~9MB the same way.
+          shutil.copytree(path, 'models', dirs_exist_ok=True,
+                           ignore=shutil.ignore_patterns('.gitattributes'))
           "
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
