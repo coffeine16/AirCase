@@ -55,6 +55,81 @@ def _panel_with_varying_weather():
     return pd.DataFrame(rows), hours
 
 
+def _wind_test_cells():
+    """A query cell with one REAL near station (~0.9km) and one REAL far
+    station (~5.7km) -- picked by actual haversine distance, not just list
+    order, since two of city_cells()'s first three entries turned out to be
+    almost exactly equidistant from the third (a real trap: widening the
+    decay scale by the SAME factor for two already-near-equal distances
+    doesn't change their weight RATIO at all, so that geometry could never
+    show this effect regardless of whether the wiring works)."""
+    from shared.grid import neighbors, cell_center, haversine_km
+    cells = city_cells()
+    center = cells[len(cells) // 2]
+    near = neighbors(center, k=1)[0]
+    candidates = neighbors(center, k=6)
+    c0 = cell_center(center)
+    far = max(candidates, key=lambda c: haversine_km(*c0, *cell_center(c)))
+    return center, near, far
+
+
+def _panel_with_wind_ms(wind_ms):
+    center, near, far = _wind_test_cells()
+    cells = [near, far, center]   # station, station, non-station query cell
+    hours = pd.date_range("2024-01-01", periods=72, freq="h", tz="UTC")
+    rows = []
+    for i, c in enumerate(cells):
+        for h in hours:
+            rows.append({
+                "cell": c, "ts": h, "ward_id": "W1", "ward_name": "Ward 1",
+                "city": "bengaluru",
+                "pm25_station": 20.0 + i * 60.0 if i < 2 else np.nan,   # far-apart values: 20.0, 80.0
+                # wind_from_deg=29.57 (verified numerically) puts the FAR
+                # station exactly downwind of the query cell -- wind speed
+                # widens reach ONLY along the downwind axis (the physics
+                # fix), so the geometry has to actually BE downwind for
+                # this test to mean anything; an arbitrary fixed bearing
+                # (the original 90.0) is no longer guaranteed to show any
+                # effect, and isn't supposed to be.
+                "wind_from_deg": 29.57, "wind_ms": wind_ms, "blh_m": 400.0, "temp_c": 27.0,
+                "fires_6h": 0, "frp_6h": 0.0,
+                "lu_industrial": 0, "lu_construction": 0, "lu_waste_burning": 0,
+                "lu_traffic": 0, "lu_road": 1, "lu_sensitive": 0,
+                "hour": h.hour, "dow": h.dayofweek,
+            })
+    return pd.DataFrame(rows), cells
+
+
+def test_build_features_wind_speed_changes_the_composite_fill():
+    """End-to-end proof the wind_ms wiring reaches production, not just
+    spatial.py's own unit tests: a non-station cell's composite-filled lag
+    should differ between a calm and a windy panel, since its two real
+    stations (20.0 and 80.0, deliberately far apart) sit at DIFFERENT real
+    distances from it (~0.9km and ~5.7km) and wind speed widens reach
+    ALONG THE DOWNWIND AXIS specifically (the physics fix -- speed no
+    longer widens reach isotropically). wind_from_deg is chosen (29.57,
+    verified numerically) to put the FAR station exactly downwind, so this
+    geometry actually exercises the effect instead of relying on an
+    arbitrary bearing that might land crosswind, where wind speed is
+    correctly supposed to have no effect at all."""
+    calm_panel, cells = _panel_with_wind_ms(0.2)
+    windy_panel, _ = _panel_with_wind_ms(20.0)
+
+    calm = build_features(calm_panel, horizons=[3])
+    windy = build_features(windy_panel, horizons=[3])
+
+    non_station_cell = cells[2]
+    calm_val = calm[(calm.cell == non_station_cell) & (calm.horizon == 3)]["lag_0"].dropna()
+    windy_val = windy[(windy.cell == non_station_cell) & (windy.horizon == 3)]["lag_0"].dropna()
+    assert len(calm_val) > 0 and len(windy_val) > 0
+    assert not np.allclose(calm_val.values, windy_val.values), \
+        "wind_ms must actually reach composite_grid through build_features, not just spatial.py's own tests"
+    # the far (80.0) station should count for MORE under high wind, pulling
+    # the blend UP -- not just "different", but different in the physically
+    # correct direction.
+    assert windy_val.mean() > calm_val.mean()
+
+
 def test_build_features_reads_weather_at_target_time_not_issue_time():
     """A1: _MET must be looked up at ts+horizon, not ts. temp_c == hour
     index in this fixture, so a row issued at hour 10 with horizon=6 must
@@ -89,14 +164,37 @@ def test_build_features_weather_is_nan_past_the_panels_own_coverage():
 
 
 def test_feature_columns_uses_cyclical_encoding_not_raw_periodic_values():
-    """target_hour/dow/month/doy and wind_from_deg are periodic; the MODEL
-    must only ever see their sin/cos pairs, never the raw ordinal/degree
-    value -- a raw encoding puts 23:00 and 00:00 (or 359 deg and 1 deg)
-    numerically far apart when they are adjacent in reality."""
-    for raw in ("target_hour", "target_dow", "target_month", "target_doy", "wind_from_deg"):
+    """target_hour/dow/month/doy are periodic; the MODEL must only ever see
+    their sin/cos pairs, never the raw ordinal value -- a raw encoding puts
+    23:00 and 00:00 numerically far apart when they are adjacent in
+    reality."""
+    for raw in ("target_hour", "target_dow", "target_month", "target_doy"):
         assert raw not in FEATURE_COLUMNS, f"{raw} must not be a raw model feature"
-    for cyc in ("target_hour_sin", "target_hour_cos", "wind_from_deg_sin", "wind_from_deg_cos"):
+    for cyc in ("target_hour_sin", "target_hour_cos"):
         assert cyc in FEATURE_COLUMNS, f"missing cyclical feature {cyc}"
+
+
+def test_feature_columns_uses_wind_vector_not_separate_speed_and_direction():
+    """wind is a VECTOR (speed and direction together), not two
+    independently-useful scalars -- the model must see the fused wind_u/
+    wind_v components, never wind_ms or wind_from_deg (raw or cyclical) as
+    separate features it would have to learn the interaction between."""
+    for raw in ("wind_ms", "wind_from_deg", "wind_from_deg_sin", "wind_from_deg_cos"):
+        assert raw not in FEATURE_COLUMNS, f"{raw} must not be a separate model feature"
+    for vec in ("wind_u", "wind_v"):
+        assert vec in FEATURE_COLUMNS, f"missing wind vector feature {vec}"
+
+
+def test_wind_u_v_match_the_standard_meteorological_formula():
+    """Not just present -- actually computed correctly. wind_from_deg=90
+    (wind FROM the east, blowing due west) at wind_ms=2.0 must give
+    wind_u=-2.0 (westward = negative eastward component), wind_v=0.0 (no
+    north/south component) -- the standard u=-speed*sin(from), v=-speed*
+    cos(from) convention, not some other sign or axis choice."""
+    frame = build_features(_tiny_panel(), horizons=[3])
+    row = frame.iloc[0]
+    assert row["wind_u"] == pytest.approx(-2.0, abs=1e-9)
+    assert row["wind_v"] == pytest.approx(0.0, abs=1e-9)
 
 
 def test_target_hour_23_and_0_land_close_in_cyclical_space():

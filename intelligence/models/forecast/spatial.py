@@ -18,10 +18,60 @@ FIRE_PRESSURE_RADIUS_KM = 6.0   # wider than detect.py's 1.5km direct-hit radius
                                  # exact cell burning" (that's the existing fires_6h)
 FIRE_PRESSURE_WINDOW_H = 6
 
+# A calm wind and a gale get the SAME distance decay below unless wind_ms is
+# passed in and this scale is applied. decay_km(wind_ms) = DIST_DECAY_KM *
+# (1 + WIND_DECAY_SCALE * wind_ms): a floor at DIST_DECAY_KM for calm air
+# (turbulent diffusion still happens at wind_ms=0, so this never collapses
+# to zero reach) plus a wind-proportional extension, not a literal
+# advection-distance calculation (wind_speed * FIRE_PRESSURE_WINDOW_H would
+# blow past FIRE_PRESSURE_RADIUS_KM at any real wind speed and say nothing
+# about within-radius concentration gradient, which is what this decay
+# actually represents).
+#
+# CRITICAL: this scale applies ONLY along the downwind axis, never
+# isotropically. A first version of this fix stretched decay_km identically
+# in every direction regardless of bearing -- physically backwards, since
+# wind speed governs how far a DIRECTED transport process reaches, not how
+# far influence spreads sideways or against the wind. That version was
+# swept (seed-controlled, real Delhi data) and found NO reliable
+# improvement over WIND_DECAY_SCALE=0 at any tested value 0.0-3.0: a fast
+# wind was inflating the reach of crosswind and near-upwind sources too
+# (everything short of the align term's 90-degree cutoff still got the
+# isotropic stretch), injecting noise proportional to the very variable the
+# feature was supposed to extract signal from. See composite_grid/
+# fire_pressure below: distance is decomposed into a downwind component
+# (stretched by wind_ms) and a crosswind component (fixed at DIST_DECAY_KM,
+# never speed-scaled) -- an ellipse in wind-rotated coordinates, not a
+# circle in raw ones. Matches the standard Gaussian-plume treatment, where
+# wind speed enters the dilution/along-axis terms and never widens the
+# crosswind spread.
+#
+# The exact constant is empirically swept against real held-out data, not
+# asserted. Multiple sweeps were run before this value was trusted, and
+# the process itself is worth recording: a Delhi-only, seed-only-pinned
+# sweep first suggested 1.0 as a clean win at every horizon, but a
+# separate-process rerun of the same scale gave materially different
+# numbers -- LightGBM's histogram reduction order is not fully
+# deterministic across thread counts even with a fixed seed (this
+# project's own test suite documents this same caveat elsewhere), so
+# "seed-controlled" alone was not sufficient for real reproducibility.
+# The trustworthy version: seed AND thread count (num_threads=4) both
+# pinned, POOLED across three cities (Delhi/Bengaluru/Chennai, matching
+# the A1 finding's own lesson that single-city results can reverse), using
+# the actual wind_u/wind_v feature set this model trains on. Result:
+# scale=0.5 is a flat loss at every horizon; scale=1.0 costs skill only at
+# the shortest, noisiest horizon (h3 -- unreliable in every test this
+# project has run) and gains it back at every longer horizon (h9/h24/h48/
+# h72, the ones the forecast-scheduling use case actually depends on).
+# Real, modest, mostly-positive -- not a large effect, and not asserted as
+# one.
+WIND_DECAY_SCALE = 1.0
+
 
 def composite_grid(query_lat: np.ndarray, query_lon: np.ndarray,
                     station_lat: np.ndarray, station_lon: np.ndarray,
                     station_val: np.ndarray, wind_from_deg: np.ndarray,
+                    wind_ms: np.ndarray | None = None,
                     exclude: np.ndarray | None = None) -> np.ndarray:
     """Wind/distance-weighted MEAN of every real station's value, evaluated
     at every query point, for every timestamp — vectorised, no per-row
@@ -34,6 +84,13 @@ def composite_grid(query_lat: np.ndarray, query_lon: np.ndarray,
         that hour (a station's own gaps are handled, not treated as zero).
     wind_from_deg: (n_t,) per-timestamp wind bearing (citywide single point,
         matching the operational panel's existing convention).
+    wind_ms: optional (n_t,) per-timestamp wind speed. None (default)
+        reproduces the original fixed-DIST_DECAY_KM behaviour exactly, for
+        every existing call site that hasn't been updated to pass it. When
+        given, distance decay widens with wind speed ONLY along the
+        downwind axis (see WIND_DECAY_SCALE) -- an ellipse in wind-rotated
+        coordinates, not a circle stretched the same amount in every
+        direction.
     exclude: optional (n_q, n_s) bool mask — True = this station must not
         contribute to this query point's composite. Used ONLY for
         spatial-LOSO's self-exclusion rule (spec 3.1) — a held-out station
@@ -55,13 +112,32 @@ def composite_grid(query_lat: np.ndarray, query_lon: np.ndarray,
     dist = np.sqrt(dx ** 2 + dy ** 2)
     bearing_to_query = (np.degrees(np.arctan2(-dx, -dy)) + 360.0) % 360.0   # station -> query
 
-    decay = np.exp(-dist / DIST_DECAY_KM)                               # (n_q, n_s), static per city
-
     wind_to = (wind_from_deg + 180.0) % 360.0                            # (n_t,) direction wind blows TOWARD
     off = np.abs(((bearing_to_query[None, :, :] - wind_to[:, None, None] + 180.0) % 360.0) - 180.0)
-    align = np.clip(np.cos(np.radians(off)), 0.0, None)                  # (n_t, n_q, n_s)
+    align = np.clip(np.cos(np.radians(off)), 0.0, None)                  # (n_t, n_q, n_s) -- unchanged by wind_ms
 
-    weight = align * decay[None, :, :]                                  # (n_t, n_q, n_s)
+    if wind_ms is None:
+        decay = np.exp(-dist / DIST_DECAY_KM)[None, :, :]              # (1, n_q, n_s), broadcasts over n_t
+    else:
+        # Decompose into wind-rotated coordinates: x_down is the signed
+        # projection of the source->query displacement onto the downwind
+        # axis, y_cross is the projection onto the perpendicular axis --
+        # dist*cos(off)/dist*sin(off) ARE those projections, off already
+        # being the angle between the displacement bearing and the
+        # downwind axis. Speed stretches ONLY the downwind reach; the
+        # crosswind reach stays at the fixed calm-air scale regardless of
+        # wind speed, matching a Gaussian plume's along-wind vs
+        # across-wind spread. At off=0 (dead downwind) this reduces to the
+        # exact isotropic-stretch formula it replaces; off's cosine/sine
+        # split into two decay axes is where it stops matching.
+        off_rad = np.radians(off)
+        x_down = dist[None, :, :] * np.cos(off_rad)
+        y_cross = dist[None, :, :] * np.sin(off_rad)
+        along_km = (DIST_DECAY_KM * (1.0 + WIND_DECAY_SCALE * wind_ms))[:, None, None]  # (n_t,1,1)
+        r_eff = np.sqrt((x_down / along_km) ** 2 + (y_cross / DIST_DECAY_KM) ** 2)
+        decay = np.exp(-r_eff)                                          # (n_t, n_q, n_s)
+
+    weight = align * decay                                              # (n_t, n_q, n_s)
     if exclude is not None:
         weight = weight * (~exclude)[None, :, :]
 
@@ -76,18 +152,20 @@ def composite_grid(query_lat: np.ndarray, query_lon: np.ndarray,
 
 def positional_block(cell: str, station_lat: np.ndarray, station_lon: np.ndarray,
                       station_val: np.ndarray, wind_from_deg: np.ndarray,
+                      wind_ms: np.ndarray | None = None,
                       exclude: np.ndarray | None = None) -> np.ndarray:
     """composite_grid evaluated at the cell's own center + its up-to-6 k=1
     neighbor centers, in one pass (spec section 3.2's positional block).
     Always returns 7 columns; padded with NaN if the cell has fewer than 6
     neighbors (H3 pentagon distortion — a global edge case, won't occur
-    inside a city bbox, but handled rather than assumed away)."""
+    inside a city bbox, but handled rather than assumed away). `wind_ms`
+    passes straight through to composite_grid — see its docstring."""
     nbrs = neighbors(cell, k=1)[:6]
     pts = [cell] + nbrs
     lat = np.array([cell_center(c)[0] for c in pts])
     lon = np.array([cell_center(c)[1] for c in pts])
     out = composite_grid(lat, lon, station_lat, station_lon, station_val,
-                          wind_from_deg, exclude)
+                          wind_from_deg, wind_ms, exclude)
     if len(pts) < 7:
         pad = np.full((out.shape[0], 7 - len(pts)), np.nan)
         out = np.concatenate([out, pad], axis=1)
@@ -95,7 +173,8 @@ def positional_block(cell: str, station_lat: np.ndarray, station_lon: np.ndarray
 
 
 def fire_pressure(cells: list[str], fires: pd.DataFrame,
-                   hours: pd.DatetimeIndex, wind_from_deg: np.ndarray) -> pd.DataFrame:
+                   hours: pd.DatetimeIndex, wind_from_deg: np.ndarray,
+                   wind_ms: np.ndarray | None = None) -> pd.DataFrame:
     """Regional fire-pressure composite per (cell, hour): distance AND
     wind-decay-weighted sum of REAL FIRMS detections within the trailing
     FIRE_PRESSURE_WINDOW_H hours, out to FIRE_PRESSURE_RADIUS_KM — "the
@@ -106,6 +185,10 @@ def fire_pressure(cells: list[str], fires: pd.DataFrame,
     one bearing per entry in `hours` (citywide single point, matching the
     operational panel's existing convention — see spec section 3.2's
     'Weather at T' note on this being a stated limitation, not fixed here).
+    `wind_ms`: optional, one speed per entry in `hours` — same wind-rotated
+    WIND_DECAY_SCALE widening as composite_grid (downwind axis only, never
+    crosswind); None reproduces the original fixed-DIST_DECAY_KM behaviour
+    exactly.
     """
     n_c, n_h = len(cells), len(hours)
     spine_cell = np.tile(np.asarray(cells), n_h)
@@ -148,7 +231,18 @@ def fire_pressure(cells: list[str], fires: pd.DataFrame,
     off = np.abs(((bearing_fire_to_cell - wind_to_per_fire[None, :] + 180.0) % 360.0) - 180.0)
     align = np.clip(np.cos(np.radians(off)), 0.0, None)          # (n_c, n_f)
 
-    weight = np.where(within, np.exp(-dist_km / DIST_DECAY_KM) * align, 0.0)
+    if wind_ms is None:
+        decay = np.exp(-dist_km / DIST_DECAY_KM)
+    else:
+        # Same wind-rotated decomposition as composite_grid: speed
+        # stretches reach only along the downwind axis, never crosswind.
+        off_rad = np.radians(off)
+        x_down = dist_km * np.cos(off_rad)
+        y_cross = dist_km * np.sin(off_rad)
+        along_km = (DIST_DECAY_KM * (1.0 + WIND_DECAY_SCALE * wind_ms[hour_of]))[None, :]  # (1, n_f)
+        r_eff = np.sqrt((x_down / along_km) ** 2 + (y_cross / DIST_DECAY_KM) ** 2)
+        decay = np.exp(-r_eff)
+    weight = np.where(within, decay * align, 0.0)
 
     pressure = np.zeros((n_h, n_c))
     for fi, hi in enumerate(hour_of):

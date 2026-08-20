@@ -57,22 +57,32 @@ _STATIC = ["lu_road", "lu_industrial", "lu_traffic"]
 # wrap-adjacency (23:00 next to 00:00, December next to January, 359 deg
 # next to 1 deg) from training examples that happen to land near the
 # boundary; if those are sparse, boosting may never place a split there at
-# all. sin/cos makes the adjacency true by construction. `wind_from_deg`
-# here is the MODEL-FACING copy (looked up via met_lookup at target time,
-# see the module docstring's A1 note) -- spatial.py's own use of the
-# panel's raw wind_from_deg for composite/fire-pressure alignment is a
-# separate, already-circular-correct code path (cos(bearing_diff)) and is
-# untouched by this.
-_CYCLICAL = {"wind_from_deg": 360.0, "target_hour": 24.0, "target_dow": 7.0,
+# all. sin/cos makes the adjacency true by construction.
+_CYCLICAL = {"target_hour": 24.0, "target_dow": 7.0,
              "target_month": 12.0, "target_doy": 365.25}
-_MET_MODEL_COLS = [c for c in _MET if c not in _CYCLICAL]
+_MET_MODEL_COLS = [c for c in _MET if c not in _CYCLICAL and c not in ("wind_ms", "wind_from_deg")]
 _CYCLICAL_MODEL_COLS = [f"{c}_{trig}" for c in _CYCLICAL for trig in ("sin", "cos")]
+
+# Wind is a VECTOR (speed and direction together), not two independently
+# useful scalars -- feeding the model wind_ms and wind_from_deg_sin/cos as
+# three SEPARATE features (the pre-existing design) forces it to
+# rediscover their interaction from splits, on a signal this data-starved
+# (real fire/event rows are a tiny fraction of the panel) that is not a
+# reasonable thing to ask of it. Same class of fix as spatial.py's
+# composite_grid/fire_pressure wind-vector decomposition (see that
+# module's docstring), one layer up: applied to the model's own raw
+# inputs instead of the spatial weighting kernel. Standard meteorological
+# u/v convention (u=eastward component, v=northward component) computed
+# from wind_from_deg ("blows FROM" compass bearing) and wind_ms, at
+# TARGET time (see the module docstring's A1 note) since both are already
+# looked up there via met_lookup.
+_WIND_VECTOR_COLS = ["wind_u", "wind_v"]
 
 FEATURE_COLUMNS = (
     [f"lag_{k}" for k in LAGS] + ["roll_med_24", "roll_med_168",
     "has_station", "distance_to_nearest_station_km", "nearby_stations_delta"]
     + [f"pos_{i}" for i in range(7)] + ["fire_pressure_regional", "fires_6h", "frp_6h"]
-    + _MET_MODEL_COLS + _STATIC + ["clim_dow_hour", "clim_month"]
+    + _MET_MODEL_COLS + _WIND_VECTOR_COLS + _STATIC + ["clim_dow_hour", "clim_month"]
     + _CYCLICAL_MODEL_COLS + ["horizon", "city"]
 )
 
@@ -234,6 +244,12 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
     # positional_block's spatial fill (which real stations are upwind of a
     # cell RIGHT NOW) -- unrelated to _MET's TARGET-time lookup further down.
     wind_by_hour = p.drop_duplicates("ts").set_index("ts")["wind_from_deg"].reindex(hours).values
+    # Same issue-time semantics, for spatial.py's wind-speed-scaled decay --
+    # a calm hour and a gale should not spread a station's/fire's influence
+    # by the same fixed distance. None (not present in `p`) falls back to
+    # composite_grid/fire_pressure's original fixed-DIST_DECAY_KM behaviour.
+    wind_ms_by_hour = (p.drop_duplicates("ts").set_index("ts")["wind_ms"].reindex(hours).values
+                        if "wind_ms" in p else None)
     # One row per hour (met is a single city-centroid point, shared by every
     # cell), looked up at TARGET time in the horizon-dependent block below.
     _met_cols = [m for m in _MET if m in p]
@@ -304,12 +320,12 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
             shifted_val = np.roll(station_val, k, axis=0)
             shifted_val[:k, :] = np.nan
             comp = composite_grid(q_lat, q_lon, station_lat, station_lon,
-                                   shifted_val, wind_by_hour, exclude=excl)
+                                   shifted_val, wind_by_hour, wind_ms_by_hour, exclude=excl)
             merged = _grid_to_rows(comp, hours, cells, X, f"_comp_{k}")
             X.loc[needs_fill, f"lag_{k}"] = merged[needs_fill]
 
         comp_now = composite_grid(q_lat, q_lon, station_lat, station_lon,
-                                   station_val, wind_by_hour, exclude=excl)
+                                   station_val, wind_by_hour, wind_ms_by_hour, exclude=excl)
         X["nearby_stations_delta"] = _grid_to_rows(comp_now, hours, cells, X, "_comp_now") - X["lag_0"].values
 
         # ONE merge for all 7 positional columns instead of 7 masked
@@ -318,7 +334,7 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
         pos = np.full((len(hours), len(cells), 7), np.nan)
         for ci, c in enumerate(cells):
             pos[:, ci, :] = positional_block(
-                c, station_lat, station_lon, station_val, wind_by_hour,
+                c, station_lat, station_lon, station_val, wind_by_hour, wind_ms_by_hour,
                 exclude=(excl[[ci]] if excl is not None else None))
         pos_df = pd.DataFrame(pos.reshape(len(hours) * len(cells), 7),
                                columns=[f"pos_{i}" for i in range(7)])
@@ -333,7 +349,7 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
         for i in range(7):
             X[f"pos_{i}"] = np.nan
 
-    fp = fire_pressure(cells, fires, hours, wind_by_hour)
+    fp = fire_pressure(cells, fires, hours, wind_by_hour, wind_ms_by_hour)
     X = X.merge(fp, on=["cell", "ts"], how="left")
     if "fires_6h" in p:
         X["fires_6h"] = p.fires_6h.values
@@ -384,6 +400,15 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
         _rad = 2 * np.pi * out[_col].astype(float) / _period
         out[f"{_col}_sin"] = np.sin(_rad)
         out[f"{_col}_cos"] = np.cos(_rad)
+    # wind_u/wind_v: standard meteorological u/v (eastward/northward
+    # components) from wind_from_deg ("blows FROM" bearing) and wind_ms,
+    # both already in `out` via the met_lookup merge above -- see
+    # _WIND_VECTOR_COLS' docstring note. Raw wind_ms/wind_from_deg stay in
+    # `out` for readability/debugging, same convention as the cyclical
+    # columns above; only wind_u/wind_v are in FEATURE_COLUMNS.
+    _wind_from_rad = np.radians(out["wind_from_deg"].astype(float))
+    out["wind_u"] = -out["wind_ms"].astype(float) * np.sin(_wind_from_rad)
+    out["wind_v"] = -out["wind_ms"].astype(float) * np.cos(_wind_from_rad)
     if keep_mask is not None:
         out["y"] = np.concatenate(
             [g.pm25_station.shift(-h).to_numpy(dtype=float)[keep_mask] for h in horizons])

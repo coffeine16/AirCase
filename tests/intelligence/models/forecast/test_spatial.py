@@ -52,8 +52,124 @@ def test_composite_grid_no_stations_returns_nan():
 
 
 def test_distance_decay_matches_attribution_kernel():
-    from intelligence.agents.attribution import category_scores
-    assert DIST_DECAY_KM == 2.0   # same exp(-d/2) kernel used in category_scores
+    """Was tautological before: it imported category_scores but never
+    called it, only re-asserted spatial.py's own constant against itself
+    -- a real mismatch (attribution.py hardcoding its own literal 2.0
+    instead of importing DIST_DECAY_KM) would have passed this test
+    forever. Actually run category_scores and check its real output
+    matches exp(-d/DIST_DECAY_KM) bit-for-bit."""
+    from intelligence.agents.attribution import category_scores, CATEGORIES
+    d = 1.7
+    ev = {
+        "candidates": [{"type": "industrial", "distance_km": d, "wind_alignment": 1.0}],
+        "pollutant_signature": {},
+        "meteorology": {"hour_local": 3},   # outside every hour-gated bonus window
+        "fire_activity": {"fire_hour_fraction": 0.0},
+        "landuse_context": {c: 0 for c in CATEGORIES},   # zero every land-use bonus term
+    }
+    scores = category_scores(ev)
+    # category_scores rounds its return values to 3dp -- match that, not
+    # the unrounded theoretical value.
+    assert scores["industrial"] == pytest.approx(round(np.exp(-d / DIST_DECAY_KM), 3))
+
+
+def test_composite_grid_wind_ms_none_reproduces_original_behaviour():
+    """Every existing call site that hasn't been updated must see IDENTICAL
+    output with wind_ms omitted -- this is the backward-compat guarantee
+    the whole rollout depends on, not just an assumption."""
+    query_lat, query_lon = np.array([12.97]), np.array([77.60])
+    station_lat, station_lon = np.array([12.98, 12.99]), np.array([77.60, 77.60])
+    station_val = np.array([[40.0, 60.0]])
+    wind_from_deg = np.array([0.0])
+
+    without = composite_grid(query_lat, query_lon, station_lat, station_lon,
+                              station_val, wind_from_deg)
+    explicit_none = composite_grid(query_lat, query_lon, station_lat, station_lon,
+                                    station_val, wind_from_deg, wind_ms=None)
+    assert without[0, 0] == explicit_none[0, 0]
+
+
+def test_composite_grid_wider_reach_under_stronger_wind():
+    """The actual point of the change: a station 3km away (well outside the
+    2km DIST_DECAY_KM base scale) should contribute a LARGER share of the
+    composite under a strong wind than under a calm one -- distance decay
+    genuinely widens with wind speed, not the same fixed 2km either way."""
+    query_lat, query_lon = np.array([12.97]), np.array([77.60])
+    # ~3km due north -- station_val differs sharply from a co-located
+    # reference so the far station's growing/shrinking WEIGHT is visible
+    # in the blended output, not masked by both stations agreeing anyway.
+    station_lat = np.array([12.97, 12.997])
+    station_lon = np.array([77.60, 77.60])
+    station_val = np.array([[10.0, 90.0]])
+    wind_from_deg = np.array([0.0])   # wind FROM the north -> the far station is upwind
+
+    calm = composite_grid(query_lat, query_lon, station_lat, station_lon,
+                           station_val, wind_from_deg, wind_ms=np.array([0.1]))
+    windy = composite_grid(query_lat, query_lon, station_lat, station_lon,
+                            station_val, wind_from_deg, wind_ms=np.array([15.0]))
+
+    # both stations are in play (query point == station 0's own location,
+    # so its weight is large but not exclusive); the far, high-value
+    # station's contribution should pull the blend up more under high wind.
+    assert windy[0, 0] > calm[0, 0]
+
+
+def test_composite_grid_crosswind_reach_unaffected_by_wind_speed():
+    """The actual fix: wind speed must stretch reach ONLY along the
+    downwind axis, never crosswind -- a first version of this stretched
+    decay_km isotropically (same widening in every direction) and a
+    seed-controlled sweep against real data found no reliable improvement,
+    because a fast wind was spuriously inflating the reach of sources that
+    aren't actually downwind. A station due EAST of the query point, under
+    a wind blowing due NORTH, is exactly 90 degrees crosswind -- align
+    already zeroes its contribution, but the isotropic bug would still
+    have widened decay_km for it before align zeroed the product. Test a
+    near-crosswind case (verified numerically: off=85.9 degrees,
+    align=0.072 -- inside align's non-zero range) instead, where the bug's
+    effect is actually visible in the output: reach must stay pinned to
+    the calm-air scale regardless of wind speed."""
+    query_lat, query_lon = np.array([12.97]), np.array([77.60])
+    # station ~1.09km away, bearing station->query ~=95.9 degrees; wind
+    # FROM 190 degrees (blows toward 10 degrees) puts this station at
+    # off=85.9 degrees -- near-crosswind, inside align's non-zero range.
+    station_lat = np.array([12.971])
+    station_lon = np.array([77.59])
+    station_val = np.array([[50.0]])
+    wind_from_deg = np.array([190.0])
+
+    calm = composite_grid(query_lat, query_lon, station_lat, station_lon,
+                           station_val, wind_from_deg, wind_ms=np.array([0.1]))
+    windy = composite_grid(query_lat, query_lon, station_lat, station_lon,
+                            station_val, wind_from_deg, wind_ms=np.array([20.0]))
+
+    # single station -> the composite is just that station's value whenever
+    # weight is nonzero, and NaN whenever weight is exactly zero. Wind
+    # speed must not change whether/how much this near-crosswind station
+    # contributes.
+    assert calm[0, 0] == pytest.approx(windy[0, 0], abs=1e-9)
+
+
+def test_fire_pressure_wider_reach_under_stronger_wind():
+    """Same property as composite_grid, for fire_pressure: a fire near the
+    edge of FIRE_PRESSURE_RADIUS_KM should register more pressure under a
+    strong wind than a calm one, at the SAME distance and alignment."""
+    cells = city_cells()[:1]
+    hours = pd.date_range("2024-01-01", periods=1, freq="h", tz="UTC")
+    from shared.grid import cell_center
+    lat, lon = cell_center(cells[0])
+    # ~5.5km north -- inside FIRE_PRESSURE_RADIUS_KM=6.0 but far enough that
+    # the base 2km decay has already suppressed most of the weight, leaving
+    # room for wind widening to matter.
+    fires = pd.DataFrame({"ts": [hours[0]], "lat": [lat + 0.0495], "lon": [lon],
+                           "frp": [50.0], "confidence": [80]})
+    wind = np.array([0.0])   # wind FROM the north -> straight from the fire to the cell
+
+    calm = fire_pressure(cells, fires, hours, wind, wind_ms=np.array([0.1]))
+    windy = fire_pressure(cells, fires, hours, wind, wind_ms=np.array([15.0]))
+
+    calm_val = calm[calm.cell == cells[0]].fire_pressure_regional.iloc[0]
+    windy_val = windy[windy.cell == cells[0]].fire_pressure_regional.iloc[0]
+    assert windy_val > calm_val > 0.0
 
 
 def test_positional_block_shape_is_seven_columns():
