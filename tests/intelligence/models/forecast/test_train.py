@@ -35,7 +35,13 @@ def test_mature_oof_keeps_everything_with_a_single_fold():
 
 
 def _panel(city, n_hours=400, seed=0):
-    cells = city_cells()[:3]
+    # Offset by seed so two different "cities" in one test get DISTINCT real
+    # H3 cells -- every multi-city test call here already passes seed=1 for
+    # the second city. Real cities never share a cell (H3 IDs are geographic),
+    # but city_cells()[:3] for both fixture cities would fake that collision,
+    # which now matters: build_features' met_lookup merges on (cell, ts), and
+    # two "cities" sharing a cell ID would fan the merge out across both.
+    cells = city_cells()[seed * 3: seed * 3 + 3]
     hours = pd.date_range("2024-01-01", periods=n_hours, freq="h", tz="UTC")
     rng = np.random.default_rng(seed)
     rows = []

@@ -180,7 +180,18 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
                        fires_by_city: dict[str, pd.DataFrame] | None = None,
                        walk_forward_kwargs: dict | None = None,
                        max_workers: int | None = None,
-                       threads_per_fold: int = 2) -> dict:
+                       threads_per_fold: int = 2,
+                       checkpoint_dir: str | None = None) -> dict:
+    """`checkpoint_dir`: None (default) disables checkpointing, unchanged
+    from before this parameter existed -- every existing caller (tests,
+    the operational pipeline) is unaffected. When set, each of the three CV
+    stages below checkpoints its own folds under `checkpoint_dir/<stage>/`
+    and resumes from them on a later call with the SAME checkpoint_dir --
+    see validation.py's three fold-runners and checkpoint.py. The final
+    served-model fit is NOT checkpointed (a single LightGBM training call,
+    not decomposable into independent folds the way the three CV stages
+    are); a Job killed during that stage restarts it from scratch, same as
+    today."""
     out_dir = Path(out_dir)
     # concat silently reverts each city's own categorical columns back to
     # plain string dtype whenever their category sets differ (every city's
@@ -210,8 +221,18 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
         [station_cells_only(p) for p in panels_by_city.values()], ignore_index=True))
     all_fires = (pd.concat(fires_by_city.values(), ignore_index=True)
                  if fires_by_city else None)
-    frame = mask_unknown_city(build_features(full_panel, horizons, fires=all_fires,
-                                              restrict_to_station_cells=True))
+    # NOT masked here. mask_unknown_city used to run on this frame before
+    # any fold existed, so every walk-forward fold's TEST slice (drawn from
+    # THIS frame further down) carried ~5% of rows with their real city
+    # artificially withheld -- a real serving call always knows its own
+    # city, so walk-forward was measuring skill on a task strictly harder
+    # than the one being shipped. run_walk_forward now masks train-only,
+    # per fold, matching spatial_loso/run_city_loso's own pattern -- see
+    # validation.py::_run_one_walk_forward_fold. This frame is masked once,
+    # separately, right before the final served-model fit below, which is
+    # the one place spec 4.2's "unknown" supervision actually needs to land.
+    frame = build_features(full_panel, horizons, fires=all_fires,
+                            restrict_to_station_cells=True)
     num_cols = [c for c in feature_cols if c != "city"]
     print(f"[train_and_promote] pooled feature build done in {time.perf_counter() - t0:.0f}s "
           f"({len(frame):,} rows)")
@@ -256,18 +277,21 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     print(f"[train_and_promote] starting walk-forward ({len(folds)} fold(s))")
     wf_result = run_walk_forward(full_panel, frame, feature_cols, num_cols, folds,
                                   max_workers=resolved_max_workers,
-                                  threads_per_fold=threads_per_fold)
+                                  threads_per_fold=threads_per_fold,
+                                  checkpoint_dir=checkpoint_dir)
     fold_skills, o = wf_result["fold_skills"], wf_result["oof"]
 
     print("[train_and_promote] starting spatial-LOSO")
     loso_result = spatial_loso(full_panel, horizons, feature_cols, fires=all_fires,
                                 max_workers=resolved_max_workers,
-                                threads_per_fold=threads_per_fold)
+                                threads_per_fold=threads_per_fold,
+                                checkpoint_dir=checkpoint_dir)
     print("[train_and_promote] starting city-LOSO")
     city_result = run_city_loso(panels_by_city, horizons, feature_cols,
                                  fires_by_city=fires_by_city,
                                  max_workers=resolved_max_workers,
-                                 threads_per_fold=threads_per_fold)
+                                 threads_per_fold=threads_per_fold,
+                                 checkpoint_dir=checkpoint_dir)
     print("[train_and_promote] fitting final served model")
 
     # LightGBM's Dataset already built inside train_quantile_models doesn't
@@ -280,7 +304,11 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     # result unused — doubling the cost of the single most expensive stage
     # in this function for nothing.
     t0 = time.perf_counter()
-    final_train = frame.dropna(subset=["y"])
+    # Masked HERE, not when `frame` was built above -- this is the one
+    # place the "unknown" category actually needs to reach a model: the
+    # served one. See the comment at `frame`'s construction for why it
+    # must stay unmasked until here.
+    final_train = mask_unknown_city(frame.dropna(subset=["y"]))
     import lightgbm as lgb
     from intelligence.models.forecast.model import PARAMS, QUANTILES
     final_models = {}

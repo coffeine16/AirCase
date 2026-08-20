@@ -78,3 +78,41 @@ def test_attach_climatology_uses_only_the_panel_it_is_given():
 
     assert leaky.max() > 100          # full-panel climatology saw the test window
     assert honest.max() == pytest.approx(40.0)   # train-only cannot have
+
+
+def test_month_scale_smooths_across_the_calendar_month_boundary():
+    # Regression test for the climatology month-boundary fix, using a
+    # SMOOTH ramp (the real motivating case -- Delhi's stubble-burning
+    # season ramps continuously, it does not step) rather than an
+    # artificial step function. A step function is the adversarial worst
+    # case for ANY median-based smoother (median is a majority-vote
+    # statistic, not an averaging one, so it cannot blend a genuine
+    # discontinuity) and would fail this kind of assertion regardless of
+    # whether the month-boundary bug is fixed -- confirmed directly: a
+    # 50-vs-150 step still returns the hard 50.0 at Nov-30 here, because
+    # its 31-day window has a 16-vs-15 day majority on the Nov side. That
+    # is mathematically correct median behaviour, not a bug, and not what
+    # this fix is for. A LINEAR ramp is the right adversarial case for a
+    # boundary-ARTIFACT test instead: for a symmetric window over linear
+    # data, the median of the window equals the value at its own center
+    # exactly, so a correctly-smoothed climatology should show NO special
+    # jump at the calendar-month seam specifically -- just the ramp's own
+    # constant day-to-day rate, same as everywhere else in the range.
+    hours = pd.date_range("2024-10-01", "2025-01-31 23:00", freq="h", tz="UTC")
+    start = hours[0]
+    panel = pd.DataFrame({
+        "cell": ["A"] * len(hours), "ward_id": ["W1"] * len(hours), "city": ["bengaluru"] * len(hours),
+        "ts": hours, "pm25_station": [50.0 + 1.5 * (h - start).days for h in hours],
+    })
+    tables = build_climatology(panel)
+
+    nov30 = lookup_climatology(tables, "A", "W1", "bengaluru",
+                                pd.Timestamp("2024-11-30T12:00:00", tz="UTC"), scale="month")
+    dec1 = lookup_climatology(tables, "A", "W1", "bengaluru",
+                               pd.Timestamp("2024-12-01T12:00:00", tz="UTC"), scale="month")
+    assert np.isfinite(nov30) and np.isfinite(dec1)
+    # The true underlying ramp moves exactly 1.5/day. A hard calendar-month
+    # bucket would instead jump by (Dec's month-median - Nov's month-median)
+    # here ~45.75 -- 30x the real one-day change. The fix should reproduce
+    # the ramp's own rate at the boundary, not a month's worth of drift.
+    assert dec1 - nov30 == pytest.approx(1.5, abs=0.5)

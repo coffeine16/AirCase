@@ -1,9 +1,18 @@
 name: train-forecast
 
-# Manual only — this is a real compute spend (~$0.03/hr on HF Jobs' CPU
-# Upgrade flavor, but still a live job you kick off on purpose), not
-# something to fire on every push. Trigger from the Actions tab, or
-# `gh workflow run train-forecast.yml`.
+# Manual only — this is a real compute spend (cpu-performance, the default
+# flavor below, is $1.90/hr — verified against HF's own Jobs hardware
+# table; a real 8-city run costs ~$7.50 at ~4h), not something to fire on
+# every push. Trigger from the Actions tab, or `gh workflow run
+# train-forecast.yml`.
+#
+# The flavor input below defaults to cpu-performance (32 vCPU/256GB, 11-12
+# concurrent fold workers), NOT cpu-upgrade (8 vCPU/32GB, 1 worker --
+# effectively sequential). Every cost/runtime figure in this repo's own
+# docs assumes cpu-performance; launching on cpu-upgrade silently runs
+# 10x+ slower for a fraction of the per-hour price, not a real saving once
+# wall-clock is priced in. Override `flavor` explicitly if you genuinely
+# want the cheaper/slower flavor for a small/test run.
 #
 # LAUNCH ONLY. This job builds the training image and fires the HF Job
 # DETACHED (`-d`) -- it does not wait for training to finish. GitHub Actions
@@ -41,7 +50,7 @@ on:
       flavor:
         description: "HF Jobs hardware flavor"
         required: false
-        default: "cpu-upgrade"
+        default: "cpu-performance"
       timeout:
         description: >-
           Max HF JOB duration before HF kills it (e.g. 12h, 16h, 24h) --
@@ -145,10 +154,16 @@ jobs:
           if [ -n "${{ inputs.cities }}" ]; then
             CITIES_ARG="--env CITIES=${{ inputs.cities }}"
           fi
+          # GIT_SHA fingerprints this Job's checkpoints (see
+          # training/train_and_upload.py's RUN_FINGERPRINT) -- a relaunch
+          # of THIS SAME commit resumes from them; any other commit starts
+          # clean, since a different commit can mean different feature
+          # logic that a stale checkpoint would silently misapply.
           OUTPUT=$(hf jobs run -d \
             --flavor "${{ inputs.flavor }}" \
             --timeout "${{ inputs.timeout }}" \
             --secrets HF_TOKEN \
+            --env GIT_SHA=${{ github.sha }} \
             $CITIES_ARG \
             "${{ env.IMAGE }}:${{ github.sha }}" \
             python train_and_upload.py 2>&1)

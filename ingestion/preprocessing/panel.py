@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 
 from shared.config import DATA_RAW, DATA_OUT, FIRE_RADIUS_KM, CITY
-from shared.grid import city_cells, cell_center, latlng_to_cell, haversine_km, neighbors
+from shared.grid import city_cells, cell_center, latlng_to_cell, haversine_km, neighbors, cell_to_weather_cell
 from shared.wards import attach_wards
 
 
@@ -118,11 +118,18 @@ def build_panel() -> pd.DataFrame:
     panel = pd.MultiIndex.from_product([cells, hours], names=["cell", "ts"]).to_frame(index=False)
 
     # station label (only where a station sits in that cell)
-    st = stations.groupby(["cell", "ts"], as_index=False).pm25.mean().rename(columns={"pm25": "pm25_station"})
+    #
+    # MEDIAN, not mean: principle 6 is "never the mean" and this line was the one
+    # exception — when two stations share an H3 cell, a mean lets one railing
+    # sensor pull the fusion model's TRAINING LABEL, not just a downstream stat.
+    st = stations.groupby(["cell", "ts"], as_index=False).pm25.median().rename(columns={"pm25": "pm25_station"})
     panel = panel.merge(st, on=["cell", "ts"], how="left")
 
-    # weather (citywide, joined on hour)
-    panel = panel.merge(weather, on="ts", how="left")
+    # weather, per weather-grid cell (not citywide any more -- see fetch_weather).
+    # Every fine cell inherits its coarse H3 parent's weather via an exact,
+    # deterministic lookup -- no nearest-neighbour search needed.
+    panel["weather_cell"] = [cell_to_weather_cell(c) for c in panel["cell"]]
+    panel = panel.merge(weather, on=["weather_cell", "ts"], how="left").drop(columns="weather_cell")
 
     # satellite (daily -> forward-filled onto hours)
     #
@@ -137,8 +144,15 @@ def build_panel() -> pd.DataFrame:
     sat["date"] = sat["date"].dt.normalize()
     panel["date"] = panel.ts.dt.tz_localize(None).dt.normalize()
     panel = panel.merge(sat, on=["cell", "date"], how="left").drop(columns="date")
+    # ffill ONLY. A trailing bfill would use a LATER day's overpass to fill the
+    # first hours of the window — a small look-ahead leak at the very start of
+    # the panel, in a project that is otherwise strict about causal ordering
+    # (LOSO, evidence-window matching). Any cell with no overpass yet stays NaN;
+    # LightGBM treats that as a native missing value, and every detection/
+    # attribution window is trailing from the LATEST timestamp, so it never
+    # reaches back into the first day's gap anyway.
     panel[["no2_col", "so2_col", "aai"]] = (
-        panel.sort_values("ts").groupby("cell")[["no2_col", "so2_col", "aai"]].ffill().bfill())
+        panel.sort_values("ts").groupby("cell")[["no2_col", "so2_col", "aai"]].ffill())
 
     # fires + static land use
     panel = panel.merge(_fire_features(cells, fires, hours), on=["cell", "ts"], how="left")

@@ -82,9 +82,15 @@ def composite_grid(query_lat: np.ndarray, query_lon: np.ndarray,
     station_lat/station_lon: (n_s,) real station locations, fixed for a city.
     station_val: (n_t, n_s) per-timestamp station readings; NaN = no reading
         that hour (a station's own gaps are handled, not treated as zero).
-    wind_from_deg: (n_t,) per-timestamp wind bearing (citywide single point,
-        matching the operational panel's existing convention).
-    wind_ms: optional (n_t,) per-timestamp wind speed. None (default)
+    wind_from_deg: (n_t,) citywide-representative wind bearing, OR (n_t, n_q)
+        per-query-point wind bearing -- columns aligned to query_lat/
+        query_lon's order, letting each query point use its own local wind
+        (weather varies by cell, see shared.grid.WEATHER_GRID_RES) instead
+        of one city-average value. A (n_t,) array broadcasts across every
+        query point exactly as before -- pure shape upgrade, no behaviour
+        change for existing callers.
+    wind_ms: optional (n_t,) or (n_t, n_q), same broadcasting rule as
+        wind_from_deg above. None (default)
         reproduces the original fixed-DIST_DECAY_KM behaviour exactly, for
         every existing call site that hasn't been updated to pass it. When
         given, distance decay widens with wind speed ONLY along the
@@ -112,8 +118,13 @@ def composite_grid(query_lat: np.ndarray, query_lon: np.ndarray,
     dist = np.sqrt(dx ** 2 + dy ** 2)
     bearing_to_query = (np.degrees(np.arctan2(-dx, -dy)) + 360.0) % 360.0   # station -> query
 
-    wind_to = (wind_from_deg + 180.0) % 360.0                            # (n_t,) direction wind blows TOWARD
-    off = np.abs(((bearing_to_query[None, :, :] - wind_to[:, None, None] + 180.0) % 360.0) - 180.0)
+    # (n_t,) -> (n_t, 1) so it broadcasts identically over every query point
+    # (old behaviour, unchanged); (n_t, n_q) passes straight through, giving
+    # each query point its own wind column.
+    wind_from_deg = np.asarray(wind_from_deg)
+    _wind_q = wind_from_deg if wind_from_deg.ndim == 2 else wind_from_deg[:, None]
+    wind_to = (_wind_q + 180.0) % 360.0                                   # (n_t, n_q) direction wind blows TOWARD
+    off = np.abs(((bearing_to_query[None, :, :] - wind_to[:, :, None] + 180.0) % 360.0) - 180.0)
     align = np.clip(np.cos(np.radians(off)), 0.0, None)                  # (n_t, n_q, n_s) -- unchanged by wind_ms
 
     if wind_ms is None:
@@ -133,7 +144,9 @@ def composite_grid(query_lat: np.ndarray, query_lon: np.ndarray,
         off_rad = np.radians(off)
         x_down = dist[None, :, :] * np.cos(off_rad)
         y_cross = dist[None, :, :] * np.sin(off_rad)
-        along_km = (DIST_DECAY_KM * (1.0 + WIND_DECAY_SCALE * wind_ms))[:, None, None]  # (n_t,1,1)
+        wind_ms = np.asarray(wind_ms)
+        _wind_ms_q = wind_ms if wind_ms.ndim == 2 else wind_ms[:, None]  # (n_t, n_q) or (n_t, 1)
+        along_km = (DIST_DECAY_KM * (1.0 + WIND_DECAY_SCALE * _wind_ms_q))[:, :, None]  # (n_t,n_q,1)
         r_eff = np.sqrt((x_down / along_km) ** 2 + (y_cross / DIST_DECAY_KM) ** 2)
         decay = np.exp(-r_eff)                                          # (n_t, n_q, n_s)
 
@@ -174,21 +187,34 @@ def positional_block(cell: str, station_lat: np.ndarray, station_lon: np.ndarray
 
 def fire_pressure(cells: list[str], fires: pd.DataFrame,
                    hours: pd.DatetimeIndex, wind_from_deg: np.ndarray,
-                   wind_ms: np.ndarray | None = None) -> pd.DataFrame:
+                   wind_ms: np.ndarray | None = None,
+                   fire_wind_from_deg: np.ndarray | None = None,
+                   fire_wind_ms: np.ndarray | None = None) -> pd.DataFrame:
     """Regional fire-pressure composite per (cell, hour): distance AND
     wind-decay-weighted sum of REAL FIRMS detections within the trailing
     FIRE_PRESSURE_WINDOW_H hours, out to FIRE_PRESSURE_RADIUS_KM — "the
     same distance/wind weighting" spec section 3.2's Fire bullet requires,
     matching composite_grid's convention (bearing FROM the source TO the
     destination, compared against that hour's wind). Not circular — FIRMS
-    is a raw observation, never a model's own output. `wind_from_deg` is
-    one bearing per entry in `hours` (citywide single point, matching the
-    operational panel's existing convention — see spec section 3.2's
-    'Weather at T' note on this being a stated limitation, not fixed here).
-    `wind_ms`: optional, one speed per entry in `hours` — same wind-rotated
-    WIND_DECAY_SCALE widening as composite_grid (downwind axis only, never
-    crosswind); None reproduces the original fixed-DIST_DECAY_KM behaviour
-    exactly.
+    is a raw observation, never a model's own output.
+
+    `wind_from_deg`/`wind_ms`: one value per entry in `hours` — citywide
+    REPRESENTATIVE wind, used as-is when the fire_wind_* args below are not
+    given, and as the per-fire FALLBACK when they are given but NaN for a
+    particular fire (e.g. that fire's location falls outside current
+    weather-grid coverage).
+
+    `fire_wind_from_deg`/`fire_wind_ms`: optional, one value per row of
+    `fires` (SAME length and order as `fires` itself, before this function's
+    own internal ts-filtering) — the wind AT EACH FIRE'S OWN LOCATION and
+    hour, resolved by the caller (see features.py's build_features, which
+    looks each fire's lat/lon up against the real weather grid). The fire is
+    the physical anchor for "which way is this smoke plume going" — using
+    wind sampled at the RECEIVING cell (or a citywide average) answers a
+    related but different question. NaN entries (fire outside weather-grid
+    coverage) fall back to the citywide `wind_from_deg`/`wind_ms` for THAT
+    fire only, never silently propagate -- one fire's missing location data
+    must not poison every cell's accumulated pressure for that hour.
     """
     n_c, n_h = len(cells), len(hours)
     spine_cell = np.tile(np.asarray(cells), n_h)
@@ -199,7 +225,12 @@ def fire_pressure(cells: list[str], fires: pd.DataFrame,
 
     f = fires.copy()
     f["ts"] = pd.to_datetime(f.ts, utc=True).dt.floor("h")
-    f = f[f.ts.isin(hours)]
+    _keep = f.ts.isin(hours).to_numpy()
+    if fire_wind_from_deg is not None:
+        fire_wind_from_deg = np.asarray(fire_wind_from_deg, dtype=float)[_keep]
+    if fire_wind_ms is not None:
+        fire_wind_ms = np.asarray(fire_wind_ms, dtype=float)[_keep]
+    f = f[_keep]
     if f.empty:
         return pd.DataFrame({"cell": spine_cell, "ts": spine_ts, "fire_pressure_regional": 0.0})
 
@@ -227,7 +258,16 @@ def fire_pressure(cells: list[str], fires: pd.DataFrame,
     bearing_fire_to_cell = (np.degrees(np.arctan2(dx, dy)) + 360.0) % 360.0
 
     hour_of = pd.Index(hours).get_indexer(f.ts)                # (n_f,) fire -> hour index
-    wind_to_per_fire = (wind_from_deg[hour_of] + 180.0) % 360.0  # (n_f,) wind at each fire's own hour
+    # Fire's own-location wind when given, falling back to citywide-at-that-
+    # hour PER FIRE where the per-location value is NaN (missing weather-grid
+    # coverage for that fire's spot) -- np.where evaluates both branches, so
+    # this never raises even when wind_from_deg[hour_of] is the only source.
+    if fire_wind_from_deg is not None:
+        wind_at_fire_dir = np.where(np.isnan(fire_wind_from_deg),
+                                     wind_from_deg[hour_of], fire_wind_from_deg)
+    else:
+        wind_at_fire_dir = wind_from_deg[hour_of]
+    wind_to_per_fire = (wind_at_fire_dir + 180.0) % 360.0        # (n_f,) wind at each fire's own hour
     off = np.abs(((bearing_fire_to_cell - wind_to_per_fire[None, :] + 180.0) % 360.0) - 180.0)
     align = np.clip(np.cos(np.radians(off)), 0.0, None)          # (n_c, n_f)
 
@@ -239,7 +279,11 @@ def fire_pressure(cells: list[str], fires: pd.DataFrame,
         off_rad = np.radians(off)
         x_down = dist_km * np.cos(off_rad)
         y_cross = dist_km * np.sin(off_rad)
-        along_km = (DIST_DECAY_KM * (1.0 + WIND_DECAY_SCALE * wind_ms[hour_of]))[None, :]  # (1, n_f)
+        if fire_wind_ms is not None:
+            wind_at_fire_ms = np.where(np.isnan(fire_wind_ms), wind_ms[hour_of], fire_wind_ms)
+        else:
+            wind_at_fire_ms = wind_ms[hour_of]
+        along_km = (DIST_DECAY_KM * (1.0 + WIND_DECAY_SCALE * wind_at_fire_ms))[None, :]  # (1, n_f)
         r_eff = np.sqrt((x_down / along_km) ** 2 + (y_cross / DIST_DECAY_KM) ** 2)
         decay = np.exp(-r_eff)
     weight = np.where(within, decay * align, 0.0)

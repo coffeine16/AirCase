@@ -14,7 +14,7 @@ from pathlib import Path
 import pandas as pd
 
 from shared.config import ROOT, DATA_RAW_BASE
-from shared.grid import city_cells
+from shared.grid import city_cells, cell_to_weather_cell
 from shared.wards import attach_wards
 from ingestion.preprocessing.panel import _landuse_features, _fire_features
 
@@ -48,6 +48,7 @@ def build_historical_panel(city: str, hist_dir: Path | None = None,
             f"check {hist}/manifest.json")
 
     landuse = _landuse_features(cells, osm)  # static, built once outside the loop
+    weather_cell_of = {c: cell_to_weather_cell(c) for c in cells}  # exact H3 parent lookup
 
     chunk_hours = CHUNK_DAYS * 24
     chunks = []
@@ -58,7 +59,8 @@ def build_historical_panel(city: str, hist_dir: Path | None = None,
         st = (stations[stations.ts.isin(chunk)].groupby(["cell", "ts"], as_index=False)
                       .pm25.median().rename(columns={"pm25": "pm25_station"}))
         part = part.merge(st, on=["cell", "ts"], how="left")
-        part = part.merge(weather, on="ts", how="left")
+        part["weather_cell"] = part["cell"].map(weather_cell_of)
+        part = part.merge(weather, on=["weather_cell", "ts"], how="left").drop(columns="weather_cell")
         part = part.merge(_fire_features(cells, fires, chunk), on=["cell", "ts"], how="left")
         part = part.merge(landuse, on="cell", how="left")
         chunks.append(part)

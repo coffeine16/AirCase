@@ -258,6 +258,103 @@ def test_build_features_loso_exclude_masks_own_history():
     # last-24h/168h history, defeating the point of loso_exclude.
     assert np.isnan(loso_row["roll_med_24"])
     assert np.isnan(loso_row["roll_med_168"])
+    # Same masking requirement for the daily-resampled long windows -- they
+    # bypass the composite fill too, straight from the raw per-cell groupby.
+    assert np.isnan(loso_row["roll_med_720"])
+    assert np.isnan(loso_row["roll_med_2160"])
+
+
+def test_roll_med_720_matches_hand_computed_daily_median():
+    # 50 days, hourly, one station cell with a value that steps up every day
+    # (day d -> 100+d for every hour of that day) so the daily median is
+    # exact and distinct per day, and a second, always-NaN cell to exercise
+    # the "non-station cell stays NaN" path in the same run.
+    cells = city_cells()[:2]
+    hours = pd.date_range("2024-01-01", periods=50 * 24, freq="h", tz="UTC")
+    rows = []
+    for i, c in enumerate(cells):
+        for h in hours:
+            day = (h - hours[0]).days
+            rows.append({
+                "cell": c, "ts": h, "ward_id": "W1", "ward_name": "Ward 1",
+                "city": "bengaluru",
+                "pm25_station": float(100 + day) if i == 0 else np.nan,
+                "wind_from_deg": 90.0, "wind_ms": 2.0, "blh_m": 400.0, "temp_c": 27.0,
+                "fires_6h": 0, "frp_6h": 0.0,
+                "lu_industrial": 0, "lu_construction": 0, "lu_waste_burning": 0,
+                "lu_traffic": 0, "lu_road": 1, "lu_sensitive": 0,
+                "hour": h.hour, "dow": h.dayofweek,
+            })
+    panel = pd.DataFrame(rows)
+    frame = build_features(panel, horizons=[3])
+
+    station_rows = frame[frame.cell == cells[0]].sort_values("ts")
+    other_rows = frame[frame.cell == cells[1]]
+    # Non-station cell: no history to roll over, must stay NaN throughout.
+    assert other_rows["roll_med_720"].isna().all()
+    assert other_rows["roll_med_2160"].isna().all()
+
+    # Day 49 (the last day, 0-indexed) sees days [19, 48] in its trailing
+    # 30-day window (shift(1) excludes day 49 itself) -- daily values are
+    # 100+19 .. 100+48, an even count, so the median is the mean of the two
+    # middle daily values: (100+33 + 100+34) / 2 = 133.5. Full window
+    # (count=30 -> weight=1.0), so the shrinkage fallback contributes
+    # nothing here -- byte-identical to the pre-shrinkage mature behaviour.
+    last_row = station_rows.iloc[-1]
+    assert last_row["roll_med_720"] == pytest.approx(133.5)
+
+
+def test_roll_med_720_shrinks_toward_climatology_during_lead_in():
+    # Regression/behaviour test for the climatology-shrinkage fallback:
+    # shift(1) means day d's 30-day window can only ever see d prior days,
+    # so day 9 has count=9 (weight=9/30=0.3) instead of the old hard NaN
+    # below min_periods=10. Same fixture as the mature-value test above.
+    cells = city_cells()[:2]
+    hours = pd.date_range("2024-01-01", periods=50 * 24, freq="h", tz="UTC")
+    rows = []
+    for i, c in enumerate(cells):
+        for h in hours:
+            day = (h - hours[0]).days
+            rows.append({
+                "cell": c, "ts": h, "ward_id": "W1", "ward_name": "Ward 1",
+                "city": "bengaluru",
+                "pm25_station": float(100 + day) if i == 0 else np.nan,
+                "wind_from_deg": 90.0, "wind_ms": 2.0, "blh_m": 400.0, "temp_c": 27.0,
+                "fires_6h": 0, "frp_6h": 0.0,
+                "lu_industrial": 0, "lu_construction": 0, "lu_waste_burning": 0,
+                "lu_traffic": 0, "lu_road": 1, "lu_sensitive": 0,
+                "hour": h.hour, "dow": h.dayofweek,
+            })
+    panel = pd.DataFrame(rows)
+    frame = build_features(panel, horizons=[3])
+
+    # Non-station cell must still stay NaN throughout -- the fallback is
+    # gated to real station cells (see build_features' _is_station_cell),
+    # not a general "borrow the ward's climatology" rule.
+    other_rows = frame[frame.cell == cells[1]]
+    assert other_rows["roll_med_720"].isna().all()
+    assert other_rows["roll_med_2160"].isna().all()
+
+    station_rows = frame[frame.cell == cells[0]].sort_values("ts")
+    day9_row = station_rows[station_rows.ts.dt.floor("D") == hours[0] + pd.Timedelta(days=9)].iloc[0]
+    # No longer NaN -- day 9 has real (if thin) trailing data now.
+    assert np.isfinite(day9_row["roll_med_720"])
+
+    # Reproduce the exact blend independently (weight * raw + (1-weight) *
+    # climatology) using the same climatology_at_obs_time this function
+    # calls internally, and confirm build_features' output matches it --
+    # not just "is finite", but genuinely implements the documented formula.
+    from intelligence.models.forecast.climatology import build_climatology
+    from intelligence.models.forecast.features import climatology_at_obs_time
+    clim_tables = build_climatology(panel)
+    day9_ts = hours[0] + pd.Timedelta(days=9)
+    clim_at_day9 = climatology_at_obs_time(
+        pd.Series([cells[0]]), pd.Series(["W1"]), pd.Series(["bengaluru"]),
+        pd.Series([day9_ts]), clim_tables)[0]
+    # Day 9's trailing 9 real days are 100..108 (days 0-8) -> median 104.0.
+    weight = 9 / 30
+    expected = 104.0 * weight + clim_at_day9 * (1 - weight)
+    assert day9_row["roll_med_720"] == pytest.approx(expected)
 
 
 def test_build_features_loso_exclude_falls_back_to_ward_climatology():

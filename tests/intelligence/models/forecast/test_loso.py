@@ -6,6 +6,20 @@ from shared.grid import city_cells
 from intelligence.models.forecast.validation import spatial_loso, run_city_loso
 
 
+def _nan_safe_equal(a, b):
+    """Plain == treats NaN as never equal to itself, so a dict containing a
+    legitimately-NaN value (e.g. a station whose baseline had no valid
+    comparison rows) never compares equal via == even to an identical
+    cached copy of itself. Used by the checkpoint-resume tests below, where
+    "the second call returned exactly the cached result" is genuinely true
+    even when one of the cached fields is NaN."""
+    if isinstance(a, dict) and isinstance(b, dict):
+        return a.keys() == b.keys() and all(_nan_safe_equal(a[k], b[k]) for k in a)
+    if isinstance(a, float) and isinstance(b, float) and np.isnan(a) and np.isnan(b):
+        return True
+    return a == b
+
+
 def _panel_with_two_stations():
     cells = city_cells()[:4]
     hours = pd.date_range("2024-01-01", periods=200, freq="h", tz="UTC")
@@ -62,6 +76,47 @@ def test_spatial_loso_runs_one_fold_per_station():
     assert "overall_rmse" in result
     # not just "a key exists" -- the number has to be real
     assert np.isfinite(result["overall_rmse"])
+
+
+def test_spatial_loso_resumes_from_checkpoint_without_recomputing(tmp_path):
+    # Regression test for the checkpointing feature: a second call with the
+    # SAME checkpoint_dir must return the cached result, not recompute.
+    from intelligence.models.forecast.features import FEATURE_COLUMNS
+    panel = _panel_with_two_stations()
+    ckpt = str(tmp_path / "ckpt")
+
+    first = spatial_loso(panel, horizons=[3], feature_cols=FEATURE_COLUMNS, checkpoint_dir=ckpt)
+    ckpt_files = list((tmp_path / "ckpt" / "spatial_loso").glob("*.pkl"))
+    assert len(ckpt_files) == 2   # one per station, both real (non-empty) folds
+
+    # Scale every station's readings 1000x -- same cells still report (so
+    # the checkpoint-loading loop still runs, unlike an all-NaN panel which
+    # would short-circuit before ever reaching it), but a REAL recomputation
+    # on this panel would produce wildly different RMSE/per_station numbers.
+    # If the second call still matches `first` exactly, it proves the
+    # checkpoint was actually used, not just coincidentally reproduced.
+    scaled = panel.copy()
+    scaled["pm25_station"] = scaled["pm25_station"] * 1000.0
+    second = spatial_loso(scaled, horizons=[3], feature_cols=FEATURE_COLUMNS, checkpoint_dir=ckpt)
+    assert _nan_safe_equal(second, first)
+
+
+def test_spatial_loso_parallel_resume_also_skips_completed_folds(tmp_path):
+    # Same guarantee on the ProcessPoolExecutor path -- checkpointed
+    # stations must be filtered out BEFORE submission, not after (see
+    # spatial_loso's own comment on why), so this needs its own test: the
+    # sequential test above never exercises that branch.
+    from intelligence.models.forecast.features import FEATURE_COLUMNS
+    panel = _panel_with_five_stations()
+    ckpt = str(tmp_path / "ckpt")
+
+    first = spatial_loso(panel, horizons=[3], feature_cols=FEATURE_COLUMNS,
+                          max_workers=2, checkpoint_dir=ckpt)
+    scaled = panel.copy()
+    scaled["pm25_station"] = scaled["pm25_station"] * 1000.0
+    second = spatial_loso(scaled, horizons=[3], feature_cols=FEATURE_COLUMNS,
+                           max_workers=2, checkpoint_dir=ckpt)
+    assert _nan_safe_equal(second, first)
 
 
 def test_spatial_loso_baseline_rmse_is_real_persistence_not_a_copy_of_overall():
@@ -235,3 +290,17 @@ def test_run_city_loso_covers_every_city():
     result = run_city_loso(panels, horizons=[3], feature_cols=FEATURE_COLUMNS)
 
     assert set(result["per_city"]) == {"bengaluru", "delhi"}
+
+
+def test_run_city_loso_resumes_from_checkpoint_without_recomputing(tmp_path):
+    panels = {c: _panel_with_two_stations().assign(city=c) for c in ("bengaluru", "delhi")}
+    from intelligence.models.forecast.features import FEATURE_COLUMNS
+    ckpt = str(tmp_path / "ckpt")
+
+    first = run_city_loso(panels, horizons=[3], feature_cols=FEATURE_COLUMNS, checkpoint_dir=ckpt)
+    ckpt_files = list((tmp_path / "ckpt" / "city_loso").glob("*.pkl"))
+    assert len(ckpt_files) == 2   # one per city
+
+    scaled = {c: p.assign(pm25_station=p.pm25_station * 1000.0) for c, p in panels.items()}
+    second = run_city_loso(scaled, horizons=[3], feature_cols=FEATURE_COLUMNS, checkpoint_dir=ckpt)
+    assert _nan_safe_equal(second, first)

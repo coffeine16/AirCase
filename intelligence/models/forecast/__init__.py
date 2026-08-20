@@ -124,11 +124,14 @@ def _predict_field(panels: dict, served_manifest: dict, served_models: dict,
     return fields
 
 
-def run(cities: list[str] | None = None) -> dict:
+def run(cities: list[str] | None = None, checkpoint_dir: str | None = None) -> dict:
     """New entrypoint. Trains on each city's historical panel if
     data/historical/<city>/panel.parquet exists (richer, longer window),
     else falls back to that city's operational data/outputs/<city>/panel.parquet
-    (matches the old model's data source, for a city with no backfill yet)."""
+    (matches the old model's data source, for a city with no backfill yet).
+
+    `checkpoint_dir`: passed straight through to train_and_promote -- see
+    its own docstring and checkpoint.py. None (default) disables it."""
     from shared.config import CITIES, DATA_OUT_BASE, DATA_RAW_BASE
     cities = cities or list(CITIES)
     panels, fires_by_city = {}, {}
@@ -171,7 +174,8 @@ def run(cities: list[str] | None = None) -> dict:
             prior = None
 
     manifest = train_and_promote(panels, HORIZONS, FEATURE_COLUMNS, out_dir,
-                                  prior_manifest=prior, fires_by_city=fires_by_city)
+                                  prior_manifest=prior, fires_by_city=fires_by_city,
+                                  checkpoint_dir=checkpoint_dir)
 
     # forecast.json must reflect whichever model is ACTUALLY served now —
     # NOT a third model trained separately here. train_and_promote already

@@ -18,7 +18,7 @@ import pandas as pd
 from shared.config import (BBOX, DATA_RAW, OPENAQ_URL, OPENMETEO_URL,
                            OPENMETEO_ARCHIVE_URL, FIRMS_URL, OVERPASS_URL,
                            PANEL_HOURS, window_end)
-from shared.grid import latlng_to_cell
+from shared.grid import latlng_to_cell, weather_grid_cells, cell_center
 
 
 def _get(url: str, headers: dict | None = None, timeout: int = 30) -> bytes:
@@ -158,15 +158,25 @@ def _qc_stations(df: pd.DataFrame) -> pd.DataFrame:
 
 # ------------------------------------------------------------ Open-Meteo
 def fetch_weather(days: int | None = None) -> pd.DataFrame:
-    """Hourly wind, temp, boundary layer height for the city centre. Keyless.
+    """Hourly wind, temp, boundary layer height, per weather-grid cell. Keyless.
+
+    One point was a real bug, not just low resolution: wind speed/direction and
+    boundary layer height genuinely vary across a city (confirmed live -- res-6
+    H3 cells on real Delhi return distinct values, not noise, see
+    shared.grid.WEATHER_GRID_RES), and the anisotropic wind-decay physics this
+    project depends on needs a real per-cell wind vector, not one citywide number
+    stretched over every cell. Open-Meteo takes comma-joined multi-point
+    lat/lon on both endpoints used below, so this is one request per city, not N.
 
     Must cover the SAME window as the stations: build_panel() intersects the two,
     so whichever is shorter silently truncates the panel. `past_days` was 14 while
     the panel spans 60. (Open-Meteo allows up to 92.)
     """
     days = days or PANEL_HOURS // 24
-    lat = (BBOX["lat_min"] + BBOX["lat_max"]) / 2
-    lon = (BBOX["lon_min"] + BBOX["lon_max"]) / 2
+    grid_cells = weather_grid_cells()
+    centers = [cell_center(c) for c in grid_cells]
+    lats = ",".join(f"{lat:.4f}" for lat, _ in centers)
+    lons = ",".join(f"{lon:.4f}" for _, lon in centers)
     end = window_end()
     start = end - pd.Timedelta(days=days)
 
@@ -188,7 +198,7 @@ def fetch_weather(days: int | None = None) -> pd.DataFrame:
     historical = days > 92 or (pd.Timestamp.now("UTC").normalize() - end).days > 60
     if historical:
         q = urllib.parse.urlencode({
-            "latitude": lat, "longitude": lon,
+            "latitude": lats, "longitude": lons,
             "start_date": str(start.date()), "end_date": str(end.date()),
             "hourly": "wind_speed_10m,wind_direction_10m,temperature_2m,boundary_layer_height",
             "wind_speed_unit": "ms",
@@ -196,19 +206,29 @@ def fetch_weather(days: int | None = None) -> pd.DataFrame:
         url = f"{OPENMETEO_ARCHIVE_URL}?{q}"
     else:
         q = urllib.parse.urlencode({
-            "latitude": lat, "longitude": lon,
+            "latitude": lats, "longitude": lons,
             "hourly": "wind_speed_10m,wind_direction_10m,temperature_2m,boundary_layer_height",
             "past_days": min(days, 92), "forecast_days": 3, "wind_speed_unit": "ms",
         })
         url = f"{OPENMETEO_URL}?{q}"
-    j = json.loads(_get(url, timeout=90))["hourly"]
-    return pd.DataFrame({
-        "ts": pd.to_datetime(j["time"]),
-        "wind_from_deg": j["wind_direction_10m"],
-        "wind_ms": j["wind_speed_10m"],
-        "blh_m": j["boundary_layer_height"],
-        "temp_c": j["temperature_2m"],
-    })
+    # A single-point request returns one bare object; multi-point returns a list
+    # in the SAME order the points were submitted (verified against a live 5-point
+    # response) -- so a length-1 grid still has to be handled here without an extra
+    # query.
+    parsed = json.loads(_get(url, timeout=180))
+    locations = parsed if isinstance(parsed, list) else [parsed]
+    frames = []
+    for cell, loc in zip(grid_cells, locations):
+        j = loc["hourly"]
+        frames.append(pd.DataFrame({
+            "weather_cell": cell,
+            "ts": pd.to_datetime(j["time"]),
+            "wind_from_deg": j["wind_direction_10m"],
+            "wind_ms": j["wind_speed_10m"],
+            "blh_m": j["boundary_layer_height"],
+            "temp_c": j["temperature_2m"],
+        }))
+    return pd.concat(frames, ignore_index=True)
 
 
 # ----------------------------------------------------------------- FIRMS

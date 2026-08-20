@@ -11,6 +11,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 warnings.filterwarnings("ignore")
 import pandas as pd
 from shared.config import CITY, window_end
+from shared.grid import cell_to_weather_cell
 from shared.wards import attach_wards
 from ingestion.collectors.pollers import fetch_stations, fetch_weather
 from intelligence.models.forecast import evaluate, HORIZONS, TEST_TAIL_DAYS
@@ -21,7 +22,8 @@ st["ts"] = pd.to_datetime(st.ts, utc=True).dt.floor("h")
 wx["ts"] = pd.to_datetime(wx.ts, utc=True).dt.floor("h")
 # minimal panel: one row per (station cell, hour) with pm25_station + met
 sta = st.groupby(["cell", "ts"], as_index=False).pm25.median().rename(columns={"pm25": "pm25_station"})
-panel = sta.merge(wx, on="ts", how="left")
+sta["weather_cell"] = sta["cell"].map(cell_to_weather_cell)
+panel = sta.merge(wx, on=["weather_cell", "ts"], how="left").drop(columns="weather_cell")
 panel["city"] = CITY
 for c in ["lu_road", "lu_industrial", "lu_traffic"]:
     panel[c] = 0

@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from shared.grid import city_cells
+from shared.grid import city_cells, weather_grid_cells
 from ingestion.preprocessing.historical_panel import build_historical_panel
 
 
@@ -19,10 +19,16 @@ def test_build_historical_panel_shape(tmp_path):
         "station_id": ["S1"] * 48, "ts": hours, "lat": [12.97] * 48,
         "lon": [77.59] * 48, "pm25": [50.0] * 48, "cell": [real_cell] * 48,
     }).to_parquet(hist / "stations.parquet")
-    pd.DataFrame({
-        "ts": hours, "wind_from_deg": [180.0] * 48, "wind_ms": [2.0] * 48,
-        "blh_m": [500.0] * 48, "temp_c": [28.0] * 48,
-    }).to_parquet(hist / "weather.parquet")
+    # weather_cell is the coarse H3 parent every fine cell resolves to (see
+    # shared.grid.cell_to_weather_cell) -- broadcast the same series to every
+    # weather grid cell, matching synthetic.py's own fixture convention.
+    pd.concat([
+        pd.DataFrame({
+            "ts": hours, "wind_from_deg": [180.0] * 48, "wind_ms": [2.0] * 48,
+            "blh_m": [500.0] * 48, "temp_c": [28.0] * 48, "weather_cell": wc,
+        })
+        for wc in weather_grid_cells()
+    ], ignore_index=True).to_parquet(hist / "weather.parquet")
     pd.DataFrame(columns=["ts", "lat", "lon", "frp", "confidence"]).to_parquet(hist / "fires.parquet")
     pd.DataFrame({
         "name": ["test_site"], "kind": ["industrial"], "tag": ["test"],

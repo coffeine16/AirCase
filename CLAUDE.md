@@ -209,6 +209,20 @@ leakage before you assume success.
   collector (satellite is synthetic-only today — live mode silently mixes real
   stations with a synthetic satellite, which is scientifically invalid).
 
+## Working notes: the scratchfile_notes/ second brain
+`scratchfile_notes/` is a running second brain for this project — Markdown
+notes, wikilinked (`[[note-name]]`), one topic per file, with `index.md`
+listing and linking every note. It is gitignored globally (the
+`scratchfile_*` prefix is in the machine's global gitignore), so it never
+gets committed and is safe to write to freely.
+
+After any substantive investigation, audit, or design discussion, dispatch
+the `notekeeper` sidecar agent (`.claude/agents/notekeeper.md`, runs on
+Haiku) as a background `Agent` call to write or update the relevant note(s)
+and keep `index.md` current. Don't write these notes yourself inline —
+delegate to the sidecar so it doesn't block the main conversation or eat
+main-loop context.
+
 ## Conventions
 - Python 3.11, type hints on function signatures, no framework beyond what's
   already imported per file (pandas/numpy/lightgbm/h3/fastapi).

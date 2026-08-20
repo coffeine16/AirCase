@@ -40,15 +40,53 @@ requests forecast_days=3 (72h, this model's max horizon) from Open-Meteo's
 live endpoint whenever the window is recent, so the panel handed to
 _predict_field already carries genuine forecast values at the target hours
 with no separate wiring needed here.
+
+WEATHER PER CELL for blh_m/temp_c/wind, by default: a live multi-point probe
+showed real, not noise-level, spatial wind/BLH variation across a city (see
+shared.grid.WEATHER_GRID_RES). blh_m/temp_c ARE ALWAYS looked up per (cell,
+target ts) -- both are ambient atmospheric-column state, not advected, so a
+cell's own local reading is physically correct regardless of `wind_scope`.
+wind_ms/wind_from_deg follow `wind_scope` (see build_features' own
+docstring): default "per_cell" makes them per-cell too, consistently with
+composite_grid/positional_block's spatial weighting -- consistency is the
+part that matters. An earlier attempt changed ONLY wind_u/wind_v to
+per-cell while leaving composite_grid etc. on citywide wind (two different
+wind readings, different scopes, no shared key) and measured worse than
+citywide (pooled mean -0.55pp) -- but that measured the inconsistency, not
+per-cell wind's real value. Once made consistent and tested on the real
+pooled 8-city architecture (not per-city-isolated models), no city was
+robustly harmed and several were robustly helped -- see scratchfile_notes
+for the full validation history. `wind_scope="citywide"` is kept for
+comparison/rollback. A genuinely propagation-aware wind feature (what's
+upwind, what's downwind, wind speed setting how far) is real follow-on
+work, not this fix -- see scratchfile_notes.
 """
 import numpy as np
 import pandas as pd
 
 from intelligence.models.forecast.spatial import composite_grid, positional_block, fire_pressure
 from intelligence.models.forecast.climatology import build_climatology, SCOPES
-from shared.grid import cell_center, haversine_km
+from shared.grid import cell_center, haversine_km, circular_mean_deg, latlng_to_cell, cell_to_weather_cell
 
 LAGS = [0, 1, 3, 6, 24]
+# roll_med_720 (30d) / roll_med_2160 (90d) fill the memory gap between
+# roll_med_168 (7 days) and clim_month (the stationary all-time seasonal
+# average) -- "is THIS October running hotter than a typical October" has
+# no other feature answering it. Lead-in cost verified directly against
+# real data/historical/<city>/panel.parquet ts min/max (not the manifest's
+# requested-days field) for all 8 cities: 30d costs 4.1-5.5% of history,
+# 90d costs 12.3-16.6%, worst case both on Pune/Ahmedabad (543d, the
+# shortest real span) -- safe everywhere. A 365-day window was also
+# checked and REJECTED: 50-67% lead-in would leave Pune/Ahmedabad non-NaN
+# for barely a third of their rows, at which sparsity the feature trains
+# as a disguised city/history-length proxy rather than genuine annual
+# memory, compounding the walk-forward city-mix confound already
+# documented in scratchfile_notes/forecast-data-scale-and-coverage.md.
+# See the computation itself, below the horizon-independent lag/roll_med_24/
+# 168 block, for why these two are built from a daily-resampled series
+# rather than a naive hourly rolling window, and for the climatology-
+# shrinkage fallback that fills the lead-in population (the 4.1-16.6%
+# above) with a confidence-weighted blend instead of leaving it NaN.
 _MET = ["blh_m", "wind_ms", "wind_from_deg", "temp_c"]
 _STATIC = ["lu_road", "lu_industrial", "lu_traffic"]
 
@@ -79,9 +117,17 @@ _CYCLICAL_MODEL_COLS = [f"{c}_{trig}" for c in _CYCLICAL for trig in ("sin", "co
 _WIND_VECTOR_COLS = ["wind_u", "wind_v"]
 
 FEATURE_COLUMNS = (
-    [f"lag_{k}" for k in LAGS] + ["roll_med_24", "roll_med_168",
+    [f"lag_{k}" for k in LAGS] + ["roll_med_24", "roll_med_168", "roll_med_720", "roll_med_2160",
     "has_station", "distance_to_nearest_station_km", "nearby_stations_delta"]
-    + [f"pos_{i}" for i in range(7)] + ["fire_pressure_regional", "fires_6h", "frp_6h"]
+    # pos_0 excluded deliberately: it is an exact algebraic duplicate of
+    # nearby_stations_delta + lag_0 (diffed real code output, max
+    # discrepancy 3e-8) -- both are composite_grid evaluated at the cell's
+    # own center with the same inputs, computed twice. positional_block
+    # still computes it (index 0 of its fixed 7-column shape; see that
+    # function's docstring), so this doesn't touch the spatial computation
+    # at all, only what the model actually trains on. pos_1..pos_6 (the
+    # up-to-6 real neighbor cells) are genuinely distinct spatial info.
+    + [f"pos_{i}" for i in range(1, 7)] + ["fire_pressure_regional", "fires_6h", "frp_6h"]
     + _MET_MODEL_COLS + _WIND_VECTOR_COLS + _STATIC + ["clim_dow_hour", "clim_month"]
     + _CYCLICAL_MODEL_COLS + ["horizon", "city"]
 )
@@ -160,6 +206,27 @@ def _station_matrix(panel: pd.DataFrame):
     return lat, lon, val, cells
 
 
+def _lookup_scale(keys: pd.DataFrame, key_col: str, tables: dict[str, pd.Series], scale: str) -> np.ndarray:
+    """cell -> ward -> city fallback merge for ONE climatology scale, most-
+    specific-scope-wins (same semantics as climatology.lookup_climatology).
+    `keys` must carry cell/ward_id/city (as str) plus an int64 `key_col` --
+    the caller decides what time reference produced that key (climatology_
+    columns uses target time; climatology_at_obs_time below uses raw
+    observation time), this function only does the fallback merge."""
+    vals = None
+    for scope, ident_col in zip(SCOPES, ("cell", "ward_id", "city")):
+        table = tables.get(f"{scope}_{scale}")
+        if table is None or len(table) == 0:
+            continue
+        td = table.rename("_v").reset_index()
+        td.columns = [ident_col, key_col, "_v"]
+        td[ident_col] = td[ident_col].astype(str)
+        td[key_col] = td[key_col].astype("int64")
+        merged = keys[[ident_col, key_col]].merge(td, on=[ident_col, key_col], how="left")["_v"]
+        vals = merged if vals is None else vals.fillna(merged)
+    return np.full(len(keys), np.nan) if vals is None else vals.to_numpy(dtype=float)
+
+
 def climatology_columns(frame: pd.DataFrame, tables: dict[str, pd.Series]):
     """Vectorised cell -> ward -> city climatology lookup, keyed on each row's
     TARGET time (ts + horizon). Returns (clim_dow_hour, clim_month) arrays.
@@ -176,23 +243,31 @@ def climatology_columns(frame: pd.DataFrame, tables: dict[str, pd.Series]):
         "ward_id": frame["ward_id"].astype(str).values,
         "city": frame["city"].astype(str).values,
         "how": (tgt.dt.dayofweek * 24 + tgt.dt.hour).astype("int64").values,
-        "month": tgt.dt.month.astype("int64").values,
+        # "month" scale keys on day-of-year now, matching climatology.py's
+        # _smoothed_doy_table (fixes the calendar-month hard-boundary
+        # discontinuity — see that module's docstring). clip, not the
+        # scalar min() lookup_climatology uses, since this is a Series.
+        "month": tgt.dt.dayofyear.clip(upper=365).astype("int64").values,
     })
-    out = []
-    for scale, key_col in (("dow_hour", "how"), ("month", "month")):
-        vals = None
-        for scope, ident_col in zip(SCOPES, ("cell", "ward_id", "city")):
-            table = tables.get(f"{scope}_{scale}")
-            if table is None or len(table) == 0:
-                continue
-            td = table.rename("_v").reset_index()
-            td.columns = [ident_col, key_col, "_v"]
-            td[ident_col] = td[ident_col].astype(str)
-            td[key_col] = td[key_col].astype("int64")
-            merged = keys[[ident_col, key_col]].merge(td, on=[ident_col, key_col], how="left")["_v"]
-            vals = merged if vals is None else vals.fillna(merged)
-        out.append(np.full(len(keys), np.nan) if vals is None else vals.to_numpy(dtype=float))
-    return out[0], out[1]
+    return (_lookup_scale(keys, "how", tables, "dow_hour"),
+            _lookup_scale(keys, "month", tables, "month"))
+
+
+def climatology_at_obs_time(cell: pd.Series, ward_id: pd.Series, city: pd.Series,
+                             ts: pd.Series, tables: dict[str, pd.Series]) -> np.ndarray:
+    """The "month"-scale climatology (cell -> ward -> city fallback), keyed
+    on `ts` directly -- NOT target time (ts + horizon) like climatology_
+    columns above. roll_med_720/roll_med_2160 are horizon-INDEPENDENT
+    (computed once per (cell, ts), before horizon expansion -- see the
+    horizon-independent block in build_features), so their climatology-
+    shrinkage fallback needs "what's typical for this cell RIGHT NOW", not
+    "what's typical at the time we're forecasting for" -- a different
+    question from what clim_month answers, hence its own lookup rather than
+    reusing that column."""
+    doy = ts.dt.dayofyear.clip(upper=365).astype("int64")
+    keys = pd.DataFrame({"cell": cell.astype(str).values, "ward_id": ward_id.astype(str).values,
+                          "city": city.astype(str).values, "month": doy.values})
+    return _lookup_scale(keys, "month", tables, "month")
 
 
 def attach_climatology(frame: pd.DataFrame, tables: dict[str, pd.Series]) -> pd.DataFrame:
@@ -209,7 +284,9 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
                     loso_exclude: str | None = None,
                     fires: pd.DataFrame | None = None,
                     clim_tables: dict[str, pd.Series] | None = None,
-                    restrict_to_station_cells: bool = False) -> pd.DataFrame:
+                    restrict_to_station_cells: bool = False,
+                    wind_scope: str = "per_cell",
+                    weather: pd.DataFrame | None = None) -> pd.DataFrame:
     """`clim_tables`, when given, is used verbatim instead of building the
     climatology from `panel` — the hook a time-split caller needs so that a
     test row's climatology is never computed from that row's own future. A
@@ -230,7 +307,46 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
     cells) that is the difference between a training run that fits in memory
     and one that needs tens of GB to hold rows nobody was going to use.
     Leave False for any prediction path (e.g. _predict_field) that needs
-    every cell, station or not."""
+    every cell, station or not.
+
+    `wind_scope`: "per_cell" (default, SHIPPED) or "citywide" (kept for
+    comparison/rollback, no longer the default). "per_cell" feeds wind_u/
+    wind_v AND composite_grid/positional_block's spatial weighting from each
+    cell's OWN local weather-grid value consistently (fire_pressure stays
+    citywide-representative regardless of this flag — its natural physical
+    anchor is the FIRE's location, not the receiving cell's, a different
+    question; see fire_pressure's own per-fire-location wind lookup instead).
+    "citywide" feeds all of those from ONE representative city-average value.
+
+    History: an earlier experiment changed ONLY wind_u/wind_v to per-cell
+    while leaving composite_grid etc. on citywide wind — two different wind
+    readings, at different scopes, feeding the same model with no shared
+    key, which was a confounded test (it measured "does an internally
+    inconsistent wind design hurt", not "does per-cell wind data help").
+    Once fixed to be consistent, a seed+thread-pinned sweep across the real
+    pooled 8-city architecture (not per-city-isolated models) found no city
+    robustly harmed by per_cell wind, and several robustly helped
+    (Chennai/Kolkata/Pune/Ahmedabad consistent-positive across 3 seeds) —
+    see scratchfile_notes for the full validation history before changing
+    this default again.
+
+    `weather`: optional raw weather data (ts, weather_cell, wind_from_deg,
+    wind_ms -- the shape ingestion/collectors/pollers.py::fetch_weather()
+    returns, e.g. data/historical/<city>/weather.parquet). When given,
+    fire_pressure_regional is computed with wind sampled AT EACH FIRE'S OWN
+    LOCATION (its lat/lon resolved to a weather-grid cell) rather than one
+    citywide value -- the fire is the physical anchor for "which way is this
+    smoke plume going", not the receiving cell or the city average. This is
+    independent of `wind_scope` above: it improves fire_pressure's own
+    accuracy in EITHER wind_scope arm, it does not make fire_pressure
+    per-cell in the same sense wind_u/wind_v or composite_grid can be.
+    Deliberately NOT derived from `panel`/`cells` alone -- a training call
+    typically pre-filters `panel` to station cells only (a few dozen), which
+    would leave most of a city's fires with no matching weather-grid
+    coverage to look up; `weather` carries the full city's spatial coverage
+    independent of whatever rows survived that filtering. None (default,
+    backward compatible) reproduces the existing citywide-only behaviour
+    exactly for every caller that hasn't been updated to pass it."""
     # reset_index is required, not cosmetic: the fire_pressure merge below
     # produces a fresh 0..n-1 RangeIndex on X, and later code re-joins X
     # against THIS frame (p) positionally. Any caller that passes a sliced
@@ -243,17 +359,57 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
     # wind_by_hour is ISSUE-time wind, used below only to weight composite_grid/
     # positional_block's spatial fill (which real stations are upwind of a
     # cell RIGHT NOW) -- unrelated to _MET's TARGET-time lookup further down.
-    wind_by_hour = p.drop_duplicates("ts").set_index("ts")["wind_from_deg"].reindex(hours).values
+    #
+    # Weather now varies by cell (see shared.grid.WEATHER_GRID_RES): `p` is one
+    # row per (cell, ts), so a naive drop_duplicates("ts") would keep whichever
+    # cell happens to sort first -- an arbitrary pick, not "the citywide value".
+    # composite_grid/positional_block still take one representative wind value
+    # per hour (their query-point-specific wind is a separate, not-yet-built
+    # extension), so aggregate properly instead: wind_from_deg is circular (350
+    # and 10 degrees are 20 degrees apart, not 340), hence sin/cos averaging,
+    # not a plain mean. Row-weighted by H3 cell (not by weather grid cell) on
+    # purpose -- a weather cell covering more of the city's area should count
+    # for more of "what's the city's wind right now". Inlined rather than
+    # calling circular_mean_deg per group: a per-group Python call over
+    # thousands of groups is the exact pattern this file vectorises elsewhere
+    # (see _fire_features).
+    _wind_rad = np.radians(p["wind_from_deg"].values)
+    # index=p["ts"] (the tz-aware Series), not p["ts"].values -- grouping on
+    # the bare numpy array loses the tz-aware dtype `hours` is built from, so
+    # the reindex below would silently mismatch and come back all-NaN.
+    _sin_by_ts = pd.Series(np.sin(_wind_rad), index=p["ts"]).groupby(level=0).mean()
+    _cos_by_ts = pd.Series(np.cos(_wind_rad), index=p["ts"]).groupby(level=0).mean()
+    wind_by_hour = (np.degrees(np.arctan2(_sin_by_ts, _cos_by_ts)) % 360.0).reindex(hours).values
     # Same issue-time semantics, for spatial.py's wind-speed-scaled decay --
     # a calm hour and a gale should not spread a station's/fire's influence
-    # by the same fixed distance. None (not present in `p`) falls back to
-    # composite_grid/fire_pressure's original fixed-DIST_DECAY_KM behaviour.
-    wind_ms_by_hour = (p.drop_duplicates("ts").set_index("ts")["wind_ms"].reindex(hours).values
+    # by the same fixed distance. Median (not mean) across cells per this
+    # project's own "never the mean" rule. None (not present in `p`) falls
+    # back to composite_grid/fire_pressure's original fixed-DIST_DECAY_KM
+    # behaviour.
+    wind_ms_by_hour = (p.groupby("ts").wind_ms.median().reindex(hours).values
                         if "wind_ms" in p else None)
-    # One row per hour (met is a single city-centroid point, shared by every
-    # cell), looked up at TARGET time in the horizon-dependent block below.
-    _met_cols = [m for m in _MET if m in p]
-    met_lookup = p.drop_duplicates("ts")[["ts"] + _met_cols].rename(columns={"ts": "_met_ts"})
+    # blh_m/temp_c: per (cell, ts). Both are ambient atmospheric-column state
+    # -- set by local surface heating and regional synoptic conditions, not
+    # carried in from elsewhere -- so a cell's own local reading is physically
+    # the right value to look up at target time (see notekeeper physics audit,
+    # 2026-08-20).
+    #
+    # wind_ms/wind_from_deg: per-cell by default (wind_scope="per_cell") --
+    # see this function's own docstring for the validation history. Every
+    # wind-derived quantity in this function (wind_u/wind_v here, and
+    # composite_grid/positional_block's spatial weighting at the call sites
+    # further down) reads the SAME scope consistently -- that consistency is
+    # what an earlier, confounded attempt got wrong (per-cell wind_u/wind_v
+    # paired against citywide composite features, two different wind
+    # readings with no shared key), not per-cell wind itself.
+    _met_cols_percell = [m for m in ("blh_m", "temp_c") if m in p]
+    if wind_scope == "per_cell":
+        _met_cols_percell = _met_cols_percell + [m for m in ("wind_ms", "wind_from_deg") if m in p]
+    elif wind_scope != "citywide":
+        raise ValueError(f"wind_scope must be 'citywide' or 'per_cell', got {wind_scope!r}")
+    met_lookup = p[["cell", "ts"] + _met_cols_percell].rename(columns={"ts": "_met_ts"})
+    _wind_dir_by_ts = pd.Series(wind_by_hour, index=hours)
+    _wind_ms_by_ts = pd.Series(wind_ms_by_hour, index=hours) if wind_ms_by_hour is not None else None
 
     if clim_tables is None:
         clim_tables = build_climatology(p, exclude_cell=loso_exclude)
@@ -262,6 +418,25 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
     cell_centers = {c: cell_center(c) for c in cells}
     for s in station_cells:
         cell_centers.setdefault(s, cell_center(s))
+
+    # Per-cell wind for composite_grid/positional_block's spatial weighting,
+    # only built when wind_scope="per_cell" -- see the docstring and
+    # met_lookup's construction comment above. Columns aligned to `cells`'
+    # own order via reindex, so column i here is cells[i] everywhere below.
+    # NaN where a cell's weather-grid parent has no data that hour (e.g. the
+    # still-open boundary gap in shared.grid.weather_grid_cells' pre-fix
+    # data) -- composite_grid already treats NaN wind as "no weight from any
+    # station for this query point, this hour", isolated to that one column,
+    # the same missing-value convention used everywhere else in this file.
+    if wind_scope == "per_cell":
+        wind_dir_kernel = (p.pivot(index="ts", columns="cell", values="wind_from_deg")
+                            .reindex(index=hours, columns=cells).to_numpy())
+        wind_ms_kernel = (p.pivot(index="ts", columns="cell", values="wind_ms")
+                           .reindex(index=hours, columns=cells).to_numpy()
+                           if "wind_ms" in p else None)
+    else:
+        wind_dir_kernel = wind_by_hour
+        wind_ms_kernel = wind_ms_by_hour
 
     # loso_exclude masks the station's READINGS; it must mask its IDENTITY too.
     # A held-out cell that still reports has_station=True / distance 0.0 is a
@@ -284,6 +459,105 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
     feats = {f"lag_{k}": g.pm25_station.shift(k) for k in LAGS}
     feats["roll_med_24"] = g.pm25_station.transform(lambda s: s.shift(1).rolling(24, min_periods=6).median())
     feats["roll_med_168"] = g.pm25_station.transform(lambda s: s.shift(1).rolling(168, min_periods=24).median())
+
+    # roll_med_720 (30d) / roll_med_2160 (90d): fill the memory gap noted
+    # above LAGS. Computed via daily median first, THEN a rolling median
+    # over that short (~550-730 point) daily series -- not a naive
+    # hourly-window rolling median (~13k-17.5k points). This is the vectorised
+    # form of "share one buffer across window sizes instead of recomputing
+    # each independently": one groupby-median pass builds the daily series
+    # once, and BOTH windows roll over that same series. A hand-rolled
+    # per-row Python sliding-window (deque + slice + median) was considered
+    # and rejected -- pandas' own rolling().median() already maintains an
+    # O(log w) order-statistic structure internally, in compiled code, so a
+    # Python-level loop across ~1e4-1e7 rows would lose to it on constant
+    # factor alone despite being "more clever" in big-O. Daily-first is the
+    # actual win because it shrinks n (the number of points rolled over),
+    # not because it reimplements the rolling primitive.
+    #
+    # This also isn't merely a compute shortcut: a true hourly rolling
+    # median over 720/2160 raw readings implicitly weights a day with more
+    # station uptime more heavily than a sparse day. Medianing per day first
+    # gives every day equal say before the second median runs over days --
+    # more consistent with this project's own robust-statistics principle
+    # (never let sampling density masquerade as signal).
+    _date = p["ts"].dt.floor("D")
+    _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+              .median().sort_index())
+    _dg = _daily.groupby(level="cell", group_keys=False)
+    # min_periods=1, not 10/30 -- the OLD hard cutoff just returned NaN for
+    # every lead-in row (the first ~30d/90d of each cell's own history,
+    # ~5.5-16.6% of the panel). Shrinkage below replaces that cliff: use
+    # whatever real trailing days exist, down-weighted by how few there
+    # are, blended with this cell's own climatology instead of thrown away.
+    _roll_720 = _dg.transform(lambda s: s.shift(1).rolling(30, min_periods=1).median())
+    _roll_2160 = _dg.transform(lambda s: s.shift(1).rolling(90, min_periods=1).median())
+    # Real trailing-day COUNT within the window, same shift/rolling shape --
+    # the confidence weight below needs "how much real data is actually in
+    # this window", which .median() alone doesn't expose.
+    _cnt_720 = _dg.transform(lambda s: s.shift(1).rolling(30, min_periods=1).count())
+    _cnt_2160 = _dg.transform(lambda s: s.shift(1).rolling(90, min_periods=1).count())
+    # Broadcast the daily-cadence values back onto every hourly row for that
+    # (cell, date) via an explicit merge, NOT a MultiIndex built from
+    # `.values` -- `Series.dt.floor("D").values` silently strips the tz off
+    # a tz-aware datetime (documented gotcha, this project's own CLAUDE.md),
+    # which desynced this exact merge key from `_daily`'s own tz-aware
+    # groupby index and made every row NaN until caught by the test below.
+    _roll_lookup = pd.DataFrame({
+        "cell": _roll_720.index.get_level_values("cell"),
+        "_date": _roll_720.index.get_level_values("_date"),
+        "roll_med_720": _roll_720.to_numpy(),
+        "roll_med_2160": _roll_2160.to_numpy(),
+        "cnt_720": _cnt_720.to_numpy(),
+        "cnt_2160": _cnt_2160.to_numpy(),
+    })
+    _merged = p[["cell"]].assign(_date=_date).merge(_roll_lookup, on=["cell", "_date"], how="left")
+
+    # Climatology-shrinkage fallback for the lead-in population (pre-flight
+    # audit, 2026-08-20; see the earlier LAGS comment for the underlying
+    # gap and scratchfile_notes for the sanity-check discussion this rests
+    # on). w = fraction of the FULL window that's real data (1.0 once a
+    # cell has 30/90 real trailing days -- the mature ~83-88% of the panel,
+    # byte-identical to the old hard-cutoff behaviour there). Below that,
+    # blend the raw (noisy, few-point) trailing median with this cell's own
+    # obs-time climatology, weighted by how little real data backs the raw
+    # side -- textbook empirical-Bayes/cold-start shrinkage, same family as
+    # a Kalman filter's warm-up prior or a meteorological "climatological
+    # normal" fallback for a too-short station record. Deliberately NOT a
+    # bigger window for cities with more history: the window's own target
+    # size (30d/90d) stays IDENTICAL for every cell everywhere -- varying
+    # it by how much history a city happens to have is exactly the
+    # disguised city/history-length proxy that got the naive 365d window
+    # rejected. Only how the SAME window degrades when it isn't yet full
+    # changes here.
+    #
+    # GATED to real station cells only (`_is_station_cell`, via the same
+    # `station_cells` this function already resolved above) -- without this,
+    # a non-station cell's ALL-NaN raw series (count=0 everywhere) still
+    # falls to the `_has_raw=False` branch below and picks up its WARD's
+    # climatology, silently giving every non-station cell in a ward that
+    # contains any real station a borrowed trend value it never earned.
+    # roll_med_720/2160 mean "this cell's own recent trend" -- a non-station
+    # cell has none, and must stay NaN, exactly as before this fix (LAGS'
+    # composite-grid spatial fill already covers that population a
+    # different, deliberately spatial way -- see the fill block above).
+    # `_has_raw=True` can only occur for a real station cell in the first
+    # place (a non-station cell's raw rolling median is always NaN, never
+    # partially populated), so only the fallback branch needs the guard.
+    _clim_at_obs = climatology_at_obs_time(p["cell"], p["ward_id"], p["city"], p["ts"], clim_tables)
+    _is_station_cell = p["cell"].isin(station_cells).to_numpy()
+    for _w, _raw_col, _cnt_col, _out_col in (
+        (30, "roll_med_720", "cnt_720", "roll_med_720"),
+        (90, "roll_med_2160", "cnt_2160", "roll_med_2160"),
+    ):
+        _raw = _merged[_raw_col].to_numpy()
+        _weight = np.clip(_merged[_cnt_col].to_numpy() / _w, 0.0, 1.0)
+        _has_clim = ~np.isnan(_clim_at_obs)
+        _has_raw = ~np.isnan(_raw)
+        _blended = np.where(_has_clim & _has_raw, _raw * _weight + _clim_at_obs * (1 - _weight),
+                             np.where(_has_clim & _is_station_cell, _clim_at_obs, _raw))
+        feats[_out_col] = _blended
+
     for m in _STATIC:
         if m in p:
             feats[m] = p[m]
@@ -296,13 +570,14 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
     X["distance_to_nearest_station_km"] = p.cell.map(nearest_station_km).fillna(0.0)
     X.loc[X.has_station, "distance_to_nearest_station_km"] = 0.0
 
-    # roll_med_24/168 are computed from the RAW per-cell groupby above,
-    # which is correct for every station cell and already NaN for every
-    # non-station cell (no history to roll over) -- except the ONE case
-    # that matters: the loso_exclude cell IS a station, so its rolling
+    # roll_med_24/168/720/2160 are computed from the RAW per-cell groupby
+    # above, which is correct for every station cell and already NaN for
+    # every non-station cell (no history to roll over) -- except the ONE
+    # case that matters: the loso_exclude cell IS a station, so its rolling
     # medians are its own real history unless explicitly nulled here.
     if loso_exclude is not None:
-        X.loc[X.cell == loso_exclude, ["roll_med_24", "roll_med_168"]] = np.nan
+        X.loc[X.cell == loso_exclude,
+              ["roll_med_24", "roll_med_168", "roll_med_720", "roll_med_2160"]] = np.nan
 
     # composite-based fill for non-station cells (and a LOSO station's own rows)
     if len(station_cells) > 0:
@@ -320,21 +595,28 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
             shifted_val = np.roll(station_val, k, axis=0)
             shifted_val[:k, :] = np.nan
             comp = composite_grid(q_lat, q_lon, station_lat, station_lon,
-                                   shifted_val, wind_by_hour, wind_ms_by_hour, exclude=excl)
+                                   shifted_val, wind_dir_kernel, wind_ms_kernel, exclude=excl)
             merged = _grid_to_rows(comp, hours, cells, X, f"_comp_{k}")
             X.loc[needs_fill, f"lag_{k}"] = merged[needs_fill]
 
         comp_now = composite_grid(q_lat, q_lon, station_lat, station_lon,
-                                   station_val, wind_by_hour, wind_ms_by_hour, exclude=excl)
+                                   station_val, wind_dir_kernel, wind_ms_kernel, exclude=excl)
         X["nearby_stations_delta"] = _grid_to_rows(comp_now, hours, cells, X, "_comp_now") - X["lag_0"].values
 
         # ONE merge for all 7 positional columns instead of 7 masked
         # assignments per cell (that inner loop was O(n_cells) full-frame
         # boolean writes -- 8k passes over a 1.7M-row frame on a real panel).
+        # wind_dir_kernel/wind_ms_kernel: (n_t,) citywide broadcasts across
+        # this cell's own positional block unchanged; (n_t, n_cells) per_cell
+        # passes THIS cell's own column, applied uniformly to its 7-point
+        # block (its own centre + neighbours) -- neighbours are ~460m away,
+        # almost always inside the same ~3.2km weather-grid parent anyway.
         pos = np.full((len(hours), len(cells), 7), np.nan)
         for ci, c in enumerate(cells):
+            cell_wind_dir = wind_dir_kernel[:, ci] if wind_scope == "per_cell" else wind_dir_kernel
+            cell_wind_ms = (wind_ms_kernel[:, ci] if wind_scope == "per_cell" else wind_ms_kernel)
             pos[:, ci, :] = positional_block(
-                c, station_lat, station_lon, station_val, wind_by_hour, wind_ms_by_hour,
+                c, station_lat, station_lon, station_val, cell_wind_dir, cell_wind_ms,
                 exclude=(excl[[ci]] if excl is not None else None))
         pos_df = pd.DataFrame(pos.reshape(len(hours) * len(cells), 7),
                                columns=[f"pos_{i}" for i in range(7)])
@@ -349,7 +631,57 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
         for i in range(7):
             X[f"pos_{i}"] = np.nan
 
-    fp = fire_pressure(cells, fires, hours, wind_by_hour, wind_ms_by_hour)
+    # Real per-fire-location wind, when `weather` (raw, weather_cell-keyed)
+    # is available -- see build_features' own docstring for why this can't
+    # be derived from `p`/`cells` alone. A merge, not a per-row Python loop:
+    # fire counts are small (hundreds-thousands per city per window, not
+    # panel-sized), but a merge is exactly as fast and stays consistent with
+    # this project's vectorisation discipline elsewhere.
+    fire_wind_from_deg = fire_wind_ms = None
+    if weather is not None and len(fires) > 0:
+        wx_cols = ["ts", "weather_cell", "wind_from_deg"] + (["wind_ms"] if "wind_ms" in weather else [])
+        wx = weather[wx_cols].copy()
+        wx["ts"] = pd.to_datetime(wx.ts, utc=True).dt.floor("h")
+        # weather_grid_cells() is a UNIFORM, complete grid by construction
+        # (shared.grid.weather_grid_cells's own docstring) -- gaps here are
+        # in the FETCHED data, not the grid definition (e.g. weather.parquet
+        # pulled before a coverage fix, or a one-off fetch failure), and
+        # coverage is complete-or-absent PER CELL, never partial-by-hour
+        # (measured: every weather cell checked had 100% hourly coverage
+        # over its full history -- see scratchfile_notes/wind coherence
+        # measurement). So "which cells have data at all" is a static set,
+        # computed once, not a per-hour search.
+        present_wc = set(wx.weather_cell.unique())
+        fire_wc_raw = [cell_to_weather_cell(latlng_to_cell(lat, lon))
+                        for lat, lon in zip(fires.lat, fires.lon)]
+        if present_wc:
+            # A real neighbouring cell's actual reading is a much closer
+            # approximation than a citywide average -- wind rarely changes
+            # much across one ~3.2km weather-grid cell, and the gap orphans
+            # SPECIFIC cells, not their surroundings. Citywide (in
+            # fire_pressure's own NaN fallback below) is the last resort,
+            # only when NO weather cell has data at all.
+            _present_centers = {wc: cell_center(wc) for wc in present_wc}
+            def _nearest_present(wc):
+                if wc in present_wc:
+                    return wc
+                lat0, lon0 = cell_center(wc)
+                return min(present_wc, key=lambda c: haversine_km(lat0, lon0, *_present_centers[c]))
+            fire_wc = [_nearest_present(wc) for wc in fire_wc_raw]
+        else:
+            fire_wc = fire_wc_raw   # nothing fetched at all; every lookup below
+                                     # misses, fire_pressure's own NaN handling
+                                     # falls back to citywide as the true last resort
+        fire_lookup = pd.DataFrame({
+            "ts": pd.to_datetime(fires.ts, utc=True).dt.floor("h"),
+            "weather_cell": fire_wc,
+        })
+        merged = fire_lookup.merge(wx, on=["ts", "weather_cell"], how="left")
+        fire_wind_from_deg = merged["wind_from_deg"].to_numpy()
+        fire_wind_ms = merged["wind_ms"].to_numpy() if "wind_ms" in merged else None
+
+    fp = fire_pressure(cells, fires, hours, wind_by_hour, wind_ms_by_hour,
+                        fire_wind_from_deg=fire_wind_from_deg, fire_wind_ms=fire_wind_ms)
     X = X.merge(fp, on=["cell", "ts"], how="left")
     if "fires_6h" in p:
         X["fires_6h"] = p.fires_6h.values
@@ -374,15 +706,22 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
     out["horizon"] = np.repeat(np.asarray(horizons, dtype="int64"), n)
     tgt = out["ts"] + pd.to_timedelta(out["horizon"], unit="h")
     # Weather AT TARGET TIME, not issue time -- see the module docstring.
-    # met_lookup has one row per hour (unique `_met_ts`), so this left-merge
-    # cannot duplicate or reorder `out`'s rows -- each stays matched to at
-    # most one weather row. A target hour past the panel's own coverage
-    # (the training tail, or a live run whose forecast fetch didn't reach
-    # this horizon) comes back NaN, same as `y` already does near a panel's
-    # tail -- LightGBM treats it as a native missing value, not a new
-    # failure mode.
+    # blh_m/temp_c via met_lookup (per-cell, one row per (cell, hour), so this
+    # left-merge on both keys cannot duplicate or reorder `out`'s rows).
+    # wind_scope="per_cell" (default): wind_ms/wind_from_deg already came
+    # through the met_lookup merge itself (added to _met_cols_percell
+    # above), consistent with blh_m/temp_c and with composite_grid/
+    # positional_block's per-cell wind further up. A
+    # target hour past the panel's own coverage (the training tail, or a live
+    # run whose forecast fetch didn't reach this horizon) comes back NaN
+    # either way, same as `y` already does near a panel's tail -- LightGBM
+    # treats it as a native missing value, not a new failure mode.
     out["_met_ts"] = tgt
-    out = out.merge(met_lookup, on="_met_ts", how="left").drop(columns="_met_ts")
+    out = out.merge(met_lookup, on=["cell", "_met_ts"], how="left")
+    if wind_scope == "citywide":
+        out["wind_from_deg"] = out["_met_ts"].map(_wind_dir_by_ts)
+        out["wind_ms"] = out["_met_ts"].map(_wind_ms_by_ts) if _wind_ms_by_ts is not None else np.nan
+    out = out.drop(columns="_met_ts")
     out["target_hour"] = tgt.dt.hour
     out["target_dow"] = tgt.dt.dayofweek
     out["target_month"] = tgt.dt.month
