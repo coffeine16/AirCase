@@ -75,3 +75,40 @@ def test_composite_grid_native_matches_pandas_on_a_second_city():
     actual = composite_grid_native(query_lat, query_lon, station_lat, station_lon,
                                     station_val, wind_from_deg, wind_ms=wind_ms)
     np.testing.assert_allclose(actual, expected, rtol=1e-9, atol=1e-9, equal_nan=True)
+
+
+def test_composite_grid_native_matches_pandas_with_genuine_2d_wind():
+    """Test real per-query-cell wind broadcasting (n_t, n_q) arrays, not
+    just 1-D broadcast to every column. Each query cell gets its own wind
+    reading from the panel."""
+    panel = pd.read_parquet("data/historical/chennai/panel.parquet")
+    station_cells = sorted(panel.loc[panel.pm25_station.notna(), "cell"].unique())
+    station_lat = np.array([cell_center(c)[0] for c in station_cells])
+    station_lon = np.array([cell_center(c)[1] for c in station_cells])
+
+    wide = (panel[panel.cell.isin(station_cells)]
+            .pivot(index="ts", columns="cell", values="pm25_station")
+            .reindex(columns=station_cells).iloc[:500])
+    station_val = wide.to_numpy(dtype=np.float64)
+
+    # Use a wider set of query cells to genuinely exercise per-cell wind variation.
+    query_cells = sorted(panel.cell.unique())[:15]
+    query_lat = np.array([cell_center(c)[0] for c in query_cells])
+    query_lon = np.array([cell_center(c)[1] for c in query_cells])
+    n_q = len(query_cells)
+    n_t = station_val.shape[0]
+
+    # Build genuine (n_t, n_q) wind arrays by extracting each query cell's own wind data.
+    wind_from_deg_2d = np.empty((n_t, n_q), dtype=np.float64)
+    wind_ms_2d = np.empty((n_t, n_q), dtype=np.float64)
+    for qi, qc in enumerate(query_cells):
+        qc_rows = panel[panel.cell == qc].set_index("ts").iloc[:n_t]
+        wind_from_deg_2d[:, qi] = qc_rows["wind_from_deg"].to_numpy(dtype=np.float64)
+        wind_ms_2d[:, qi] = qc_rows["wind_ms"].to_numpy(dtype=np.float64)
+
+    # Test with per-query-cell wind (not broadcast from a single cell).
+    expected = composite_grid(query_lat, query_lon, station_lat, station_lon,
+                               station_val, wind_from_deg_2d, wind_ms=wind_ms_2d)
+    actual = composite_grid_native(query_lat, query_lon, station_lat, station_lon,
+                                    station_val, wind_from_deg_2d, wind_ms=wind_ms_2d)
+    np.testing.assert_allclose(actual, expected, rtol=1e-9, atol=1e-9, equal_nan=True)

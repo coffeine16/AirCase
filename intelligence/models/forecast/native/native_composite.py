@@ -74,9 +74,11 @@ def _composite_grid_kernel(query_lat, query_lon, station_lat, station_lon,
     return out
 
 
-def composite_grid_native(query_lat, query_lon, station_lat, station_lon,
-                           station_val, wind_from_deg, wind_ms=None,
-                           exclude=None):
+def composite_grid_native(query_lat: np.ndarray, query_lon: np.ndarray,
+                           station_lat: np.ndarray, station_lon: np.ndarray,
+                           station_val: np.ndarray, wind_from_deg: np.ndarray,
+                           wind_ms: np.ndarray | None = None,
+                           exclude: np.ndarray | None = None) -> np.ndarray:
     """Drop-in, numerically-identical replacement for
     spatial.composite_grid -- identical signature, identical broadcasting
     rules for wind_from_deg/wind_ms (1-D (n_t,) or 2-D (n_t, n_q)),
