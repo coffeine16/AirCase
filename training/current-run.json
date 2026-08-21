@@ -1,8 +1,0 @@
-{
-  "job_id": "MagmaCubes1133/6a878fc2c81709766c803044",
-  "launched_at": "2026-08-20T23:37:38Z",
-  "cities": "",
-  "flavor": "cpu-performance",
-  "trained_from_branch": "saum/upgrades",
-  "image": "ghcr.io/coffeine16/aircase-trainer:776658aaaa503dd43ef418953e76c5a545bdcb1d"
-}
