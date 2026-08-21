@@ -61,6 +61,20 @@ on:
           took 11+ hours and still wasn't done. Give real margin.
         required: false
         default: "20h"
+      resume_git_sha:
+        description: >-
+          ADVANCED. Overrides the GIT_SHA checkpoint fingerprint WITHOUT
+          changing what code runs (that's still built from `branch`/this
+          ref, as normal) -- lets a run resume another commit's Hub
+          checkpoints on purpose. Checkpoints are fingerprinted by commit by
+          default because a different commit CAN mean different feature/fold
+          logic that would silently corrupt a resumed run if reused blindly
+          -- only set this after manually confirming the commits between the
+          interrupted run and now don't touch any CV-stage computation (e.g.
+          a concurrency/orchestration-only fix, not a feature change). Blank
+          (default): use this run's own real commit SHA, as normal.
+        required: false
+        default: ""
 
 concurrency:
   group: train-forecast
@@ -159,11 +173,21 @@ jobs:
           # of THIS SAME commit resumes from them; any other commit starts
           # clean, since a different commit can mean different feature
           # logic that a stale checkpoint would silently misapply.
+          #
+          # resume_git_sha (blank by default) overrides ONLY this
+          # fingerprint value, never the image tag below -- the code that
+          # actually runs is always built from the real current commit.
+          # Deliberately manual and off by default; see that input's own
+          # description for when it's safe to set.
+          FINGERPRINT_SHA="${{ inputs.resume_git_sha }}"
+          if [ -z "$FINGERPRINT_SHA" ]; then
+            FINGERPRINT_SHA="${{ github.sha }}"
+          fi
           OUTPUT=$(hf jobs run -d \
             --flavor "${{ inputs.flavor }}" \
             --timeout "${{ inputs.timeout }}" \
             --secrets HF_TOKEN \
-            --env GIT_SHA=${{ github.sha }} \
+            --env GIT_SHA=$FINGERPRINT_SHA \
             $CITIES_ARG \
             "${{ env.IMAGE }}:${{ github.sha }}" \
             python train_and_upload.py 2>&1)
