@@ -12,6 +12,7 @@ limit, not a silent gap."""
 import json
 import os
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import numpy as np
@@ -335,14 +336,42 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     final_train = mask_unknown_city(frame.dropna(subset=["y"]))
     import lightgbm as lgb
     from intelligence.models.forecast.model import PARAMS, QUANTILES
+
+    # p10/p50/p90 are three FULLY INDEPENDENT fits (same data, same rounds,
+    # only `alpha` differs) that used to run one after another. FIXED (pre-
+    # launch audit, 2026-08-21): this stage is the single most expensive
+    # part of a real run (~95min measured on the real 8-city dataset) and
+    # was leaving that independence on the table.
+    #
+    # ThreadPoolExecutor, not ProcessPoolExecutor (the pattern every CV
+    # stage above uses): LightGBM's C++ training loop releases the GIL
+    # while it runs, so genuine wall-clock parallelism is achievable
+    # without process isolation -- and staying single-process means all
+    # three fits can share ONE lgb.Dataset instead of each paying to
+    # rebuild it (real cost on 13M+ rows) and without 3x-ing this stage's
+    # memory footprint the way three separate processes would.
+    # num_threads split 3 ways (not left at "auto-detected/uncapped", the
+    # prior behaviour) so the three concurrent fits don't oversubscribe the
+    # container fighting each other for the same cores.
+    ds = lgb.Dataset(final_train[feature_cols], label=final_train["y"],
+                      weight=event_weights(final_train), categorical_feature=["city"])
+    # Force binning to happen once, up front, single-threaded -- if left
+    # lazy, two threads calling train() on the same not-yet-constructed
+    # Dataset at once would race on that first construction step.
+    ds.construct()
+    threads_per_quantile = max(1, _available_cpus() // len(QUANTILES))
+
+    def _fit_one(q: float):
+        params = {**PARAMS, "alpha": q, "num_threads": threads_per_quantile}
+        return q, lgb.train(params, ds, num_boost_round=500)
+
     final_models = {}
-    for q in QUANTILES:
-        ds = lgb.Dataset(final_train[feature_cols], label=final_train["y"],
-                          weight=event_weights(final_train), categorical_feature=["city"])
-        final_models[q] = lgb.train({**PARAMS, "alpha": q}, ds, num_boost_round=500)
+    with ThreadPoolExecutor(max_workers=len(QUANTILES)) as ex:
+        for q, model in ex.map(_fit_one, QUANTILES):
+            final_models[q] = model
     print(f"[train_and_promote] final model fit done in {time.perf_counter() - t0:.0f}s "
-          f"({len(final_train):,} rows, 500 rounds x {len(QUANTILES)} quantiles, "
-          f"threads=auto-detected/uncapped)")
+          f"({len(final_train):,} rows, 500 rounds x {len(QUANTILES)} quantiles concurrently, "
+          f"{threads_per_quantile} threads/quantile)")
 
     # quantile_coverage / ceiling_skill / quiet_vs_event are scored on the
     # walk-forward folds' OUT-OF-SAMPLE predictions, never on final_train.
