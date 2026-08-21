@@ -51,8 +51,19 @@ CITIES = [c.strip() for c in os.environ["CITIES"].split(",")] if os.environ.get(
 # just won't distinguish it from another "unknown"-tagged run.
 GIT_SHA = os.environ.get("GIT_SHA", "unknown")
 RUN_FINGERPRINT = f"{GIT_SHA}-{'-'.join(sorted(CITIES))}"
-CHECKPOINT_DIR = Path("checkpoints")
+# CHECKPOINT_DIR *is* the fingerprinted path, not a flat "checkpoints/" that
+# a download then has to be moved into. FIXED (real crash on a real resume
+# attempt, 2026-08-21): the first version downloaded to CHECKPOINT_HUB_PREFIX
+# then shutil.move()'d it to a separate flat CHECKPOINT_DIR -- and that move
+# failed with FileNotFoundError even though the download itself had reported
+# "Reconstruction complete: 100%" moments earlier (an apparent HF `xet`-
+# backend timing quirk: files not all fully materialized on disk the instant
+# the progress bar completes). validation.py's fold-runners don't care what
+# the local checkpoint_dir string IS, only that save/load agree on it -- so
+# making it identically equal to the Hub prefix means the download lands
+# EXACTLY where it's read from, with no move/rename step to race or fail.
 CHECKPOINT_HUB_PREFIX = f"checkpoints/{RUN_FINGERPRINT}"
+CHECKPOINT_DIR = Path(CHECKPOINT_HUB_PREFIX)
 CHECKPOINT_SYNC_INTERVAL_S = 600   # 10 minutes -- "periodic", not per-fold:
 # a Hub upload is a real network round-trip and 82+19+8=109 folds at maybe
 # a few minutes each would otherwise mean well over a hundred API calls
@@ -63,30 +74,22 @@ def download_checkpoints() -> None:
     """Pull any checkpoints a PRIOR, killed attempt at this same run (same
     RUN_FINGERPRINT) already pushed to the Hub -- the actual resume path.
     No matching prefix (first attempt, or a genuinely different run) is not
-    an error, just nothing to resume."""
+    an error, just nothing to resume. Wrapped as ONE broad try/except, not
+    just around the download call -- a checkpoint restore going wrong must
+    never be worse than never having checkpointed at all; any failure here
+    degrades to "start fresh", exactly like a genuinely first-ever run."""
     try:
         from huggingface_hub import snapshot_download
         snapshot_download(repo_id=HF_MODEL_REPO, allow_patterns=f"{CHECKPOINT_HUB_PREFIX}/**",
                            local_dir=".")
-    except Exception as e:   # noqa: BLE001 -- no checkpoints to resume is not fatal
-        print(f"[train_and_upload] no checkpoints to resume ({type(e).__name__}: {e})")
-        return
-    src = Path(CHECKPOINT_HUB_PREFIX)
-    if not src.exists():
-        print("[train_and_upload] no prior checkpoints found for this run — starting fresh")
-        return
-    n = sum(1 for _ in src.rglob("*.pkl"))
-    if n == 0:
-        print("[train_and_upload] no prior checkpoints found for this run — starting fresh")
-        return
-    # Downloaded under the fingerprinted Hub path; build_features'/
-    # validation.py's own checkpoint_dir contract just wants ONE flat
-    # local directory (see checkpoint.py) -- move it into place rather
-    # than thread the fingerprint through every fold-runner call.
-    if CHECKPOINT_DIR.exists():
-        shutil.rmtree(CHECKPOINT_DIR)
-    shutil.move(str(src), str(CHECKPOINT_DIR))
-    print(f"[train_and_upload] resumed {n} fold checkpoint(s) from a prior attempt at this run")
+        n = sum(1 for _ in CHECKPOINT_DIR.rglob("*.pkl")) if CHECKPOINT_DIR.exists() else 0
+        if n == 0:
+            print("[train_and_upload] no prior checkpoints found for this run — starting fresh")
+        else:
+            print(f"[train_and_upload] resumed {n} fold checkpoint(s) from a prior attempt at this run")
+    except Exception as e:   # noqa: BLE001 -- a restore failure must degrade, never crash the run
+        print(f"[train_and_upload] checkpoint restore failed, starting fresh "
+              f"({type(e).__name__}: {e})")
 
 
 def upload_checkpoints() -> None:
