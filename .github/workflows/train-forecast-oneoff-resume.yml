@@ -1,0 +1,145 @@
+name: train-forecast-oneoff-resume
+
+# ONE-OFF, TEMPORARY. Built for a single specific relaunch: recompute
+# walk-forward only (with the ceiling-baseline regularization fix,
+# fdeea37) while spatial-LOSO (82/82) and city-LOSO (8/8) resume from
+# already-restored Hub checkpoints, then run the final fit. Every input
+# below is hardcoded to exactly what THIS relaunch needs -- no manual
+# form-filling, no chance of mistyping the resume SHA under time/cost
+# pressure (which is exactly the kind of mistake this project's own
+# history this session has repeatedly paid real money for). Delete this
+# file once the run completes -- it is not meant to be reused.
+#
+# Real cost estimate for this specific run: ~$4.91 on cpu-performance
+# (~60min walk-forward recompute + ~95min unavoidable final fit;
+# spatial-LOSO/city-LOSO resume near-instantly from cache).
+on:
+  workflow_dispatch: {}
+
+concurrency:
+  group: train-forecast
+  cancel-in-progress: false
+
+env:
+  IMAGE: ghcr.io/${{ github.repository }}-trainer
+
+permissions:
+  contents: write   # commit the tracked-job record to main
+  packages: write   # push the training image to GHCR
+
+jobs:
+  launch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout training source (saum/upgrades, has every fix)
+        uses: actions/checkout@v4
+        with:
+          ref: saum/upgrades
+          lfs: true   # data/historical/**/*.parquet is git-lfs tracked
+          path: train-src
+
+      - name: Checkout main (where the job record + eventual model land)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-repo
+
+      # ghcr.io rejects uppercase repo names (ours has "AirCase") -- lowercase
+      # it into IMAGE, overriding the job-level env default set above.
+      - name: Compute lowercase image name
+        run: echo "IMAGE=$(echo 'ghcr.io/${{ github.repository }}-trainer' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_ENV"
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push training image
+        uses: docker/build-push-action@v6
+        with:
+          context: train-src
+          file: train-src/training/Dockerfile
+          push: true
+          tags: ${{ env.IMAGE }}:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Make the training image pullable by HF Jobs
+        run: |
+          gh api --method PATCH \
+            -H "Accept: application/vnd.github+json" \
+            "/user/packages/container/$(echo '${{ github.event.repository.name }}-trainer' | tr '[:upper:]' '[:lower:]')/visibility" \
+            -f visibility=public || \
+          gh api --method PATCH \
+            -H "Accept: application/vnd.github+json" \
+            "/orgs/${{ github.repository_owner }}/packages/container/$(echo '${{ github.event.repository.name }}-trainer' | tr '[:upper:]' '[:lower:]')/visibility" \
+            -f visibility=public || \
+          echo "::warning::couldn't set package visibility automatically -- if the launch below fails to pull the image, make ${{ env.IMAGE }} public manually once in the repo's Packages settings"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install the hf CLI
+        run: pip install -U "huggingface_hub[cli]"
+
+      - name: Launch training on Hugging Face Jobs (detached)
+        id: launch
+        # Every value hardcoded for this one relaunch:
+        #   --flavor cpu-performance   -- the only flavor this workload has
+        #                                 been verified to run safely on
+        #                                 (see session notes on cpu-upgrade's
+        #                                 real OOM risk at this data scale).
+        #   --timeout 6h               -- real estimate is ~2.6h; generous
+        #                                 margin without being excessive.
+        #   GIT_SHA=776658a...         -- the fingerprint spatial_loso/
+        #                                 city_loso's restored checkpoints
+        #                                 are stored under. MUST match
+        #                                 exactly or the resume silently
+        #                                 misses and everything recomputes
+        #                                 from scratch.
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          OUTPUT=$(hf jobs run -d \
+            --flavor cpu-performance \
+            --timeout 6h \
+            --secrets HF_TOKEN \
+            --env GIT_SHA=776658aaaa503dd43ef418953e76c5a545bdcb1d \
+            "${{ env.IMAGE }}:${{ github.sha }}" \
+            python train_and_upload.py 2>&1)
+          echo "$OUTPUT"
+          # Parse the URL line, not the bare `id:` line: it yields the
+          # NAMESPACE/ID form, which is what both `hf jobs inspect` (in
+          # sync-forecast-model.yml) and the huggingface.co/jobs/ URL need.
+          JOB_ID=$(echo "$OUTPUT" | grep -oP 'huggingface\.co/jobs/\K[^/[:space:]]+/[^/[:space:]]+' | head -1)
+          if [ -z "$JOB_ID" ]; then
+            echo "::error::couldn't parse a job ID out of hf jobs run -d's output -- see the raw output above"
+            exit 1
+          fi
+          echo "Launched job $JOB_ID -- view at https://huggingface.co/jobs/$JOB_ID"
+          echo "job_id=$JOB_ID" >> "$GITHUB_OUTPUT"
+
+      - name: Record the launched job for sync-forecast-model.yml to find
+        working-directory: main-repo
+        run: |
+          mkdir -p training
+          cat > training/current-run.json <<JSON
+          {
+            "job_id": "${{ steps.launch.outputs.job_id }}",
+            "launched_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "cities": "",
+            "flavor": "cpu-performance",
+            "trained_from_branch": "saum/upgrades",
+            "image": "${{ env.IMAGE }}:${{ github.sha }}",
+            "note": "one-off resume, GIT_SHA fingerprint pinned to 776658a... (not this run's real commit) to reuse restored spatial_loso/city_loso checkpoints"
+          }
+          JSON
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add training/current-run.json
+          git commit -m "chore(training): record launched job ${{ steps.launch.outputs.job_id }} (one-off resume) [skip ci]"
+          git push
