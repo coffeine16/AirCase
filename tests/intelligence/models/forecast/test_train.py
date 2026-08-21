@@ -5,7 +5,8 @@ import pandas as pd
 import pytest
 
 from shared.grid import city_cells
-from intelligence.models.forecast.train import train_and_promote, _mature_oof
+from intelligence.models.forecast.train import train_and_promote, _mature_oof, _resolve_workers
+import intelligence.models.forecast.train as train_module
 
 
 def test_mature_oof_keeps_only_the_later_better_trained_folds():
@@ -153,6 +154,37 @@ def test_regression_tolerance_band_works_for_negative_priors():
     # positive priors keep their existing behaviour
     assert _regressed(9.6, 10.0, higher_is_better=True, tolerance_pct=5.0) is False
     assert _regressed(9.4, 10.0, higher_is_better=True, tolerance_pct=5.0) is True
+
+
+def test_resolve_workers_grows_threads_into_memory_bound_idle_cpu(monkeypatch):
+    # Regression test for a real finding: worker count used to be memory-
+    # bound (by_mem, independent of thread count) while threads_per_fold
+    # stayed fixed at whatever the caller passed -- on a real run, memory
+    # capped workers at 8 on a 32-core box, but threads_per_fold=2 was
+    # never grown, leaving 16 cores idle for the whole run. by_mem doesn't
+    # depend on thread count, so once workers are memory-bound, growing
+    # threads_per_fold costs no extra memory and just uses the idle cores.
+    monkeypatch.setattr(train_module, "_available_cpus", lambda: 32)
+    monkeypatch.setattr(train_module, "_available_memory_bytes", lambda: 275_000_000_000)
+
+    # payload/multiplier chosen so by_mem lands at 8 (matching the real run):
+    # spendable = (275e9 - payload) * 0.5; by_mem = spendable // (payload * 2.5) == 8
+    payload_bytes = 6_240_000_000   # ~6.24GB, the real run's own measured payload
+    workers, threads = _resolve_workers(threads_per_fold=2, payload_bytes=payload_bytes)
+    assert workers == 8
+    # 32 cpus // 8 workers = 4 -- grown well past the caller's floor of 2,
+    # using every core the memory-bound worker count leaves idle.
+    assert threads == 4
+    assert workers * threads <= 32
+
+
+def test_resolve_workers_never_shrinks_below_the_callers_floor(monkeypatch):
+    # A tiny container (few cores) must never come back with FEWER threads
+    # than the caller asked for, even if the arithmetic would suggest it.
+    monkeypatch.setattr(train_module, "_available_cpus", lambda: 4)
+    monkeypatch.setattr(train_module, "_available_memory_bytes", lambda: 275_000_000_000)
+    workers, threads = _resolve_workers(threads_per_fold=2, payload_bytes=6_240_000_000)
+    assert threads >= 2
 
 
 def test_train_and_promote_refuses_regression(tmp_path):

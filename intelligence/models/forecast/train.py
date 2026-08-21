@@ -110,8 +110,23 @@ def _available_memory_bytes() -> int | None:
     return None
 
 
-def _resolve_workers(threads_per_fold: int, payload_bytes: int) -> int:
-    """How many folds to run concurrently.
+def _resolve_workers(threads_per_fold: int, payload_bytes: int) -> tuple[int, int]:
+    """How many folds to run concurrently, and how many LightGBM threads
+    each one gets. Returns (max_workers, threads_per_fold) -- the second
+    value may come back LARGER than the argument of the same name.
+
+    FIXED (pre-launch audit, 2026-08-21): threads_per_fold used to be a
+    fixed external constant, with only worker count auto-tuned to memory.
+    Real waste this caused: a real run picked 8 workers (memory-bound) x 2
+    threads/fold (the untouched default) on a 32-core box -- 16 cores sat
+    completely idle for the ENTIRE walk-forward and spatial-LOSO stages,
+    because by_mem (worker count) never depended on thread count at all,
+    and nothing grew thread count to use the CPU headroom memory's own cap
+    left behind. Now: once memory determines the safe worker count,
+    threads_per_fold is grown (never shrunk below the caller's own floor)
+    to use whatever CPU that worker count leaves idle -- identical fold
+    computation, identical quality, just not leaving half a rented box
+    unused for hours.
 
     Capped by MEMORY as well as by CPU, because each ProcessPoolExecutor
     worker receives its own PICKLED COPY of the frame passed through
@@ -129,16 +144,23 @@ def _resolve_workers(threads_per_fold: int, payload_bytes: int) -> int:
         Dataset on top -- hence _WORKER_PEAK_MULTIPLE;
       - only half of what remains is spent, leaving room for the final
         served model's own three 500-round boosters.
-    Returning 1 means "run sequentially in this process", which copies
-    nothing at all and is the correct answer on a small container.
+    Returning (1, threads_per_fold) means "run sequentially in this
+    process", which copies nothing at all and is the correct answer on a
+    small container.
     """
-    by_cpu = max(1, _available_cpus() // threads_per_fold)
+    cpus = _available_cpus()
+    by_cpu = max(1, cpus // threads_per_fold)
     available = _available_memory_bytes()
     if available is None or payload_bytes <= 0:
-        return max(1, min(by_cpu, _MAX_WORKERS))
+        return max(1, min(by_cpu, _MAX_WORKERS)), threads_per_fold
     spendable = (available - payload_bytes) * _MEMORY_SAFETY_FRACTION
     by_mem = int(spendable // (payload_bytes * _WORKER_PEAK_MULTIPLE))
-    return max(1, min(by_cpu, by_mem, _MAX_WORKERS))
+    workers = max(1, min(by_cpu, by_mem, _MAX_WORKERS))
+    # Memory (or the general ceiling) binding below what pure CPU division
+    # would allow leaves cores idle -- threads_per_fold is free to grow
+    # into that headroom, same worker count, no extra memory spent.
+    grown_threads = max(threads_per_fold, cpus // workers)
+    return workers, grown_threads
 
 
 def _mature_oof(oof: pd.DataFrame) -> pd.DataFrame:
@@ -271,17 +293,18 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     # its own pickled copy of the frame -- capping each fold's own
     # LightGBM threads so N concurrent folds don't oversubscribe the CPU.
     resolved_max_workers = max_workers
+    resolved_threads_per_fold = threads_per_fold
     if resolved_max_workers is None:
         payload_bytes = int(frame.memory_usage(deep=True).sum()
                             + full_panel.memory_usage(deep=True).sum())
-        resolved_max_workers = _resolve_workers(threads_per_fold, payload_bytes)
+        resolved_max_workers, resolved_threads_per_fold = _resolve_workers(threads_per_fold, payload_bytes)
         mem = _available_memory_bytes()
         print(f"[train_and_promote] container: cpus={_available_cpus()} "
               f"memory={'unknown' if mem is None else f'{mem / 1e9:.1f}GB'} "
               f"per-worker payload={payload_bytes / 1e9:.2f}GB "
               f"(budgeted peak {payload_bytes * _WORKER_PEAK_MULTIPLE / 1e9:.2f}GB each)")
     print(f"[train_and_promote] concurrency: {resolved_max_workers} workers x "
-          f"{threads_per_fold} threads/fold")
+          f"{resolved_threads_per_fold} threads/fold")
 
     folds = walk_forward_folds(frame, **(walk_forward_kwargs or {}))
     # Derived from the folds themselves, not from walk_forward_kwargs --
@@ -297,25 +320,31 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     print(f"[train_and_promote] starting walk-forward ({len(folds)} fold(s))")
     wf_result = run_walk_forward(full_panel, frame, feature_cols, num_cols, folds,
                                   max_workers=resolved_max_workers,
-                                  threads_per_fold=threads_per_fold,
+                                  threads_per_fold=resolved_threads_per_fold,
                                   checkpoint_dir=checkpoint_dir)
     fold_skills, o = wf_result["fold_skills"], wf_result["oof"]
 
     print("[train_and_promote] starting spatial-LOSO")
     loso_result = spatial_loso(full_panel, horizons, feature_cols, fires=all_fires,
                                 max_workers=resolved_max_workers,
-                                threads_per_fold=threads_per_fold,
+                                threads_per_fold=resolved_threads_per_fold,
                                 checkpoint_dir=checkpoint_dir)
     # min(), not resolved_max_workers directly -- see _CITY_LOSO_MAX_WORKERS'
     # own comment for why city_loso needs a separate, much lower ceiling.
+    # Its OWN threads_per_fold is grown separately too: city_loso's worker
+    # count is usually much smaller than the other two stages', so it has
+    # even MORE idle CPU per worker to fill (real case: 2 workers left 30
+    # of 32 cores unused if threads_per_fold had stayed at the base value).
     city_loso_max_workers = min(resolved_max_workers, _CITY_LOSO_MAX_WORKERS)
+    city_loso_threads_per_fold = max(resolved_threads_per_fold,
+                                      _available_cpus() // city_loso_max_workers)
     print(f"[train_and_promote] starting city-LOSO ({city_loso_max_workers} "
-          f"concurrent worker(s), capped separately from the {resolved_max_workers} "
-          f"used above -- see _CITY_LOSO_MAX_WORKERS)")
+          f"concurrent worker(s) x {city_loso_threads_per_fold} threads/fold, capped "
+          f"separately from the {resolved_max_workers} used above -- see _CITY_LOSO_MAX_WORKERS)")
     city_result = run_city_loso(panels_by_city, horizons, feature_cols,
                                  fires_by_city=fires_by_city,
                                  max_workers=city_loso_max_workers,
-                                 threads_per_fold=threads_per_fold,
+                                 threads_per_fold=city_loso_threads_per_fold,
                                  checkpoint_dir=checkpoint_dir)
     print("[train_and_promote] fitting final served model")
 
