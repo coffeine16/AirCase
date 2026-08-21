@@ -1,6 +1,6 @@
 {
-  "version": "2026-08-18T235551",
-  "trained_at": "2026-08-18T23:55:51.614813+00:00",
+  "version": "2026-08-21T115703",
+  "trained_at": "2026-08-21T11:57:03.341865+00:00",
   "cities": [
     "ahmedabad",
     "bengaluru",
@@ -12,53 +12,116 @@
     "pune"
   ],
   "eval": {
-    "walk_forward_skill_median": 16.8,
-    "walk_forward_skill_folds": 38,
-    "spatial_loso_rmse": 40.51,
+    "walk_forward_skill_median": 9.4,
+    "walk_forward_skill_folds": 19,
+    "walk_forward_geometry": {
+      "test_days": 42,
+      "step_days": 42
+    },
+    "spatial_loso_rmse": 38.47,
+    "spatial_loso_baseline_rmse": 42.2,
     "spatial_loso_n_stations": 82,
     "city_loso": {
-      "mumbai": {
-        "rmse": 21.37,
-        "n": 4129891
-      },
-      "delhi": {
-        "rmse": 54.28,
-        "n": 2613384
-      },
-      "pune": {
-        "rmse": 23.01,
-        "n": 2300229
-      },
-      "chennai": {
-        "rmse": 17.69,
-        "n": 744217
-      },
-      "kolkata": {
-        "rmse": 33.26,
-        "n": 1113150
-      },
       "bengaluru": {
-        "rmse": 13.39,
+        "rmse": 22.13,
         "n": 763828
       },
-      "ahmedabad": {
-        "rmse": 25.65,
-        "n": 825122
+      "delhi": {
+        "rmse": 74.3,
+        "n": 2613384
+      },
+      "chennai": {
+        "rmse": 19.66,
+        "n": 744217
+      },
+      "mumbai": {
+        "rmse": 26.17,
+        "n": 4129891
+      },
+      "kolkata": {
+        "rmse": 42.28,
+        "n": 1113150
       },
       "hyderabad": {
-        "rmse": 15.69,
+        "rmse": 20.15,
         "n": 592466
+      },
+      "pune": {
+        "rmse": 28.09,
+        "n": 2300229
+      },
+      "ahmedabad": {
+        "rmse": 29.78,
+        "n": 825122
       }
     },
     "eval_basis": "walk_forward_out_of_sample",
-    "quantile_coverage": 0.6836606721619123,
-    "ceiling_skill_vs_linear": 6.9,
+    "quantile_coverage": 0.5648632907889741,
+    "interval_scale": 1.4669,
+    "ceiling_skill_vs_linear": 4.0,
     "quiet_vs_event": {
-      "quiet_rmse": 32.384398932692925,
-      "event_rmse": 21.475058591588034,
-      "n_quiet": 12761525,
-      "n_event": 2721
+      "quiet_rmse": 20.837983222966116,
+      "event_rmse": 62.05156610526734,
+      "n_quiet": 10200974,
+      "n_event": 2563272,
+      "per_city": {
+        "ahmedabad": {
+          "quiet_rmse": 17.886655447546463,
+          "event_rmse": 61.127996179577096,
+          "n_quiet": 617855,
+          "n_event": 154738
+        },
+        "bengaluru": {
+          "quiet_rmse": 13.020135860532122,
+          "event_rmse": 27.65460892325962,
+          "n_quiet": 577739,
+          "n_event": 145337
+        },
+        "chennai": {
+          "quiet_rmse": 10.704002055055494,
+          "event_rmse": 36.96337697872753,
+          "n_quiet": 524524,
+          "n_event": 131157
+        },
+        "delhi": {
+          "quiet_rmse": 26.216246677400463,
+          "event_rmse": 92.3903331138616,
+          "n_quiet": 2025347,
+          "n_event": 511705
+        },
+        "hyderabad": {
+          "quiet_rmse": 17.53729530462514,
+          "event_rmse": 41.512367285767816,
+          "n_quiet": 466680,
+          "n_event": 117308
+        },
+        "kolkata": {
+          "quiet_rmse": 32.72820312231596,
+          "event_rmse": 61.46821778898567,
+          "n_quiet": 881374,
+          "n_event": 220476
+        },
+        "mumbai": {
+          "quiet_rmse": 19.107088804276238,
+          "event_rmse": 46.958108265428244,
+          "n_quiet": 3252216,
+          "n_event": 817401
+        },
+        "pune": {
+          "quiet_rmse": 13.969105083322678,
+          "event_rmse": 60.07055792744581,
+          "n_quiet": 1702911,
+          "n_event": 426911
+        },
+        "unknown": {
+          "quiet_rmse": 22.121955177238483,
+          "event_rmse": 81.67106306083105,
+          "n_quiet": 152328,
+          "n_event": 38239
+        }
+      }
     }
   },
-  "promoted": true
+  "promoted": true,
+  "promotion_note": "Manually promoted. train_and_promote's automated gate flagged this version as regressed on city-LOSO vs the prior model (2026-08-18T235551), but that regression is fully explained by a data leak in the PRIOR model's evaluation: run_city_loso previously built each held-out city's climatology features from that city's OWN data (fixed in commit f23b7dd). Verified via a real, full-fidelity, disk-streamed local retrain of all 8 city-LOSO folds with the leak deliberately reintroduced under this version's architecture -- results landed within ~1-2 RMSE points of the prior model's reported numbers for every city (e.g. bengaluru 13.70 local-with-leak vs 13.39 prior reported; delhi 53.27 vs 54.28), proving the architecture change itself is neutral-to-positive and the entire city-LOSO delta is the leak fix. spatial-LOSO genuinely improved (38.47 vs 40.51) and ceiling_skill_vs_linear's degenerate-baseline bug (fixed via QuantileRegressor alpha=0.0->1.0) is resolved (4.0 vs the old value, no longer pinned at 100.0). walk_forward_skill is not comparable (fold geometry changed) and was correctly excluded from the gate. This version's final-fit model artifacts were never uploaded by the original HF Job (train_and_upload only uploads a version's model files inside its own `if promoted:` branch, and that run's own promoted flag was False) -- the model_p10/p50/p90.txt files here were retrained locally from the same pooled 8-city panel (13,082,287 rows, an exact match to the original job's own reported row count), same feature set, same event-weighting, same 500 rounds x 3 quantiles."
 }

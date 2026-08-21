@@ -50,16 +50,40 @@ from shared.config import DATA_OUT
 # by gain — i.e. LightGBM was busily fitting retrieval error, and LOSO R2 collapsed
 # from 0.90 (synthetic) to 0.48. A tree ensemble handed a noise column WILL find
 # structure in it, and will generalise worse for having done so.
+#
+# wind_from_deg/hour/dow are periodic, fed as sin/cos pairs (via
+# _with_cyclical below), never as the raw degree/ordinal value -- same
+# reasoning as intelligence/models/forecast/features.py's _CYCLICAL: a raw
+# encoding makes the model discover the wrap-adjacency (23:00 next to
+# 00:00, 359 deg next to 1 deg) from data instead of having it be true by
+# construction. Directly relevant here: this file's own note above says the
+# old absolute-level model spent real capacity "re-learning the citywide
+# temporal signal" via hour and wind.
+_CYCLICAL = {"wind_from_deg": 360.0, "hour": 24.0, "dow": 7.0}
+
 FEATURES = ["no2_col",                                   # satellite (NO2 only)
-            "wind_from_deg", "wind_ms", "blh_m", "temp_c",  # meteorology
+            "wind_ms", "blh_m", "temp_c",                 # meteorology (scalar)
+            "wind_from_deg_sin", "wind_from_deg_cos",     # meteorology (cyclical)
             "fires_6h", "frp_6h",                         # fire activity
             "lu_industrial", "lu_construction", "lu_waste_burning", "lu_traffic",  # land use
             "lu_road",                                    # road density: the spatial background proxy
-            "hour", "dow"]                                # time
+            "hour_sin", "hour_cos", "dow_sin", "dow_cos"] # time (cyclical)
 LABEL = "pm25_station"
 PARAMS = dict(objective="regression", metric="rmse", num_leaves=63,
               learning_rate=0.06, feature_fraction=0.9, bagging_fraction=0.8,
               bagging_freq=1, min_data_in_leaf=40, verbose=-1)
+
+
+def _with_cyclical(df: pd.DataFrame) -> pd.DataFrame:
+    """Adds sin/cos pairs for every periodic raw column in `_CYCLICAL`. The
+    single place both _train and _predict get them from, so no caller can
+    train or predict on the raw (broken) encoding by forgetting a step."""
+    out = df.copy()
+    for col, period in _CYCLICAL.items():
+        rad = 2 * np.pi * out[col].astype(float) / period
+        out[f"{col}_sin"] = np.sin(rad)
+        out[f"{col}_cos"] = np.cos(rad)
+    return out
 
 
 # PREDICT THE DEVIATION, NOT THE LEVEL.
@@ -92,6 +116,7 @@ def _city_baseline(df: pd.DataFrame) -> pd.Series:
 def _train(df: pd.DataFrame, baseline: pd.Series, rounds: int = 400) -> lgb.Booster:
     resid = df[LABEL] - df.ts.map(baseline)
     ok = resid.notna()
+    df = _with_cyclical(df)
     ds = lgb.Dataset(df.loc[ok, FEATURES], label=resid[ok])
     return lgb.train(PARAMS, ds, num_boost_round=rounds)
 
@@ -99,6 +124,7 @@ def _train(df: pd.DataFrame, baseline: pd.Series, rounds: int = 400) -> lgb.Boos
 def _predict(model: lgb.Booster, df: pd.DataFrame, baseline: pd.Series) -> np.ndarray:
     base = df.ts.map(baseline)
     base = base.fillna(baseline.median())
+    df = _with_cyclical(df)
     return base.values + model.predict(df[FEATURES])
 
 

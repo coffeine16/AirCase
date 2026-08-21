@@ -38,7 +38,7 @@ import numpy as np
 import pandas as pd
 
 from shared.config import BBOX, PANEL_HOURS, SAT_BLUR_SIGMA_KM, SYNTHETIC_ANCHOR, CITY
-from shared.grid import city_cells, cell_center, bearing_deg
+from shared.grid import city_cells, cell_center, bearing_deg, weather_grid_cells
 
 WORLD_SEED = 42
 RNG = np.random.default_rng(WORLD_SEED)
@@ -135,7 +135,15 @@ def hours_index(n_hours: int = PANEL_HOURS) -> pd.DatetimeIndex:
 
 
 def weather(n_hours: int = PANEL_HOURS) -> pd.DataFrame:
-    """Hourly wind + boundary layer height with diurnal structure."""
+    """Hourly wind + boundary layer height with diurnal structure.
+
+    One citywide series, broadcast to every weather-grid cell (`weather_cell`
+    column, matching live/historical's schema post multi-point upgrade). The
+    synthetic world's job is a controlled, reproducible truth to test the
+    PIPELINE against, not to fabricate sub-city wind variation we have not
+    actually modelled -- real spatial variation is measured from live data
+    only (see shared.grid.WEATHER_GRID_RES).
+    """
     idx = hours_index(n_hours)
     hrs = idx.hour.values
     # BLH: low at night (traps pollution), high mid-afternoon
@@ -145,8 +153,10 @@ def weather(n_hours: int = PANEL_HOURS) -> pd.DataFrame:
     wind_dir = (base_dir + RNG.normal(0, 12, len(idx))) % 360   # direction wind comes FROM
     wind_spd = np.clip(1.5 + 1.8 * np.sin((hrs - 10) / 12 * np.pi) + RNG.normal(0, 0.4, len(idx)), 0.3, None)
     temp = 22 + 6 * np.sin((hrs - 8) / 12 * np.pi) + RNG.normal(0, 0.8, len(idx))
-    return pd.DataFrame({"ts": idx, "wind_from_deg": wind_dir, "wind_ms": wind_spd,
-                         "blh_m": np.clip(blh, 150, None), "temp_c": temp})
+    one_point = pd.DataFrame({"ts": idx, "wind_from_deg": wind_dir, "wind_ms": wind_spd,
+                              "blh_m": np.clip(blh, 150, None), "temp_c": temp})
+    return pd.concat([one_point.assign(weather_cell=c) for c in weather_grid_cells()],
+                     ignore_index=True)
 
 
 # --------------------------------------------------------------- dispersion

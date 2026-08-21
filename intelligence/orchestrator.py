@@ -6,12 +6,14 @@ WHAT THIS IS AND IS NOT
       detection -> attribution -> forecast -> prioritisation -> memo
                 -> advisory -> voice -> ledger -> audit
 
-  Ingestion, the panel build and fusion/LOSO are deliberately OUTSIDE the graph.
-  They are heavy batch data-engineering (LOSO retrains 12 LightGBM models), not
-  agents, and they must never be reachable from a request handler — the agents
-  read their precomputed artifacts. That split is what makes POST /run/agent
-  safe to expose: the worst case is ~a minute of deterministic agent compute
-  over data already on disk.
+  Ingestion, the panel build, fusion/LOSO, AND forecast training are all
+  deliberately OUTSIDE the graph. They are heavy batch data-engineering (LOSO
+  retrains 12 LightGBM models; forecast trains 2 more), not agents, and they
+  must never be reachable from a request handler — the agents read their
+  precomputed artifacts. That split is what makes POST /run/agent safe to
+  expose: the worst case is ~a minute of deterministic agent compute over data
+  already on disk. _forecast() below is a presence check on forecast.json, not
+  a call into forecast.py's training — see its docstring for why that changed.
 
 WHY A GRAPH AT ALL (it is a straight line)
   Three reasons, in honesty order:
@@ -54,8 +56,26 @@ def _attribution():
     run()
 
 def _forecast():
-    from intelligence.models.forecast import run
-    run()
+    """Existence check ONLY — forecast training does not belong in a live request.
+
+    forecast.run() trains TWO LightGBM models from scratch (the eval model in
+    evaluate(), the field model in _forecast_field()) — real batch compute, the
+    same category as fusion's LOSO retrain, which orchestrator.py already keeps
+    OUT of this graph on purpose. Forecast never got the same treatment: it sat
+    in this live chain training on every POST /run/agent call, which is what
+    pushed a Cloud Run request past its budget and got the container killed
+    mid-chain (see intelligence/models/forecast.py's RUN_ORACLE_DEFAULT comment).
+
+    forecast.run() now runs ONLY from scripts/run_pipeline.py --full, alongside
+    fusion. This node just confirms that batch artifact exists, so a pipeline
+    that was never run for this city surfaces as a clear per-node chain error
+    instead of the frontend silently reading stale or missing JSON.
+    """
+    from shared.config import DATA_OUT
+    if not (DATA_OUT / "forecast.json").exists():
+        raise RuntimeError(
+            "forecast.json missing — run scripts/run_pipeline.py --full "
+            "(forecast training happens in the batch pipeline, not live)")
 
 def _prioritisation(dispatch_config: dict | None = None):
     from intelligence.agents.prioritise import run

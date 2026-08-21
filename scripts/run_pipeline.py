@@ -42,6 +42,15 @@ def main():
         print("      may be stale. Re-run with --full, or run detect.py + attribution.py.")
         return
 
+    # Forecast training happens HERE, not inside the agent chain below. It trains
+    # two LightGBM models (see intelligence/models/forecast.py), which is batch
+    # compute exactly like fusion two lines up — orchestrator.py's live chain only
+    # checks that forecast.json exists, it never trains. Same reason fusion is
+    # called directly in this file instead of living in the agent graph.
+    from intelligence.models.forecast import run as forecast_run
+    print(RULE)
+    forecast_run()
+
     # The agent chain is defined ONCE, in intelligence/orchestrator.py — the same
     # LangGraph graph the API's POST /run/agent executes, so chain order cannot
     # drift between the pipeline and the serving layer (a drift bit us once).

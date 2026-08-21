@@ -1,9 +1,18 @@
 name: train-forecast
 
-# Manual only — this is a real compute spend (~$0.03/hr on HF Jobs' CPU
-# Upgrade flavor, but still a live job you kick off on purpose), not
-# something to fire on every push. Trigger from the Actions tab, or
-# `gh workflow run train-forecast.yml`.
+# Manual only — this is a real compute spend (cpu-performance, the default
+# flavor below, is $1.90/hr — verified against HF's own Jobs hardware
+# table; a real 8-city run costs ~$7.50 at ~4h), not something to fire on
+# every push. Trigger from the Actions tab, or `gh workflow run
+# train-forecast.yml`.
+#
+# The flavor input below defaults to cpu-performance (32 vCPU/256GB, 11-12
+# concurrent fold workers), NOT cpu-upgrade (8 vCPU/32GB, 1 worker --
+# effectively sequential). Every cost/runtime figure in this repo's own
+# docs assumes cpu-performance; launching on cpu-upgrade silently runs
+# 10x+ slower for a fraction of the per-hour price, not a real saving once
+# wall-clock is priced in. Override `flavor` explicitly if you genuinely
+# want the cheaper/slower flavor for a small/test run.
 #
 # LAUNCH ONLY. This job builds the training image and fires the HF Job
 # DETACHED (`-d`) -- it does not wait for training to finish. GitHub Actions
@@ -41,7 +50,7 @@ on:
       flavor:
         description: "HF Jobs hardware flavor"
         required: false
-        default: "cpu-upgrade"
+        default: "cpu-performance"
       timeout:
         description: >-
           Max HF JOB duration before HF kills it (e.g. 12h, 16h, 24h) --
@@ -52,6 +61,20 @@ on:
           took 11+ hours and still wasn't done. Give real margin.
         required: false
         default: "20h"
+      resume_git_sha:
+        description: >-
+          ADVANCED. Overrides the GIT_SHA checkpoint fingerprint WITHOUT
+          changing what code runs (that's still built from `branch`/this
+          ref, as normal) -- lets a run resume another commit's Hub
+          checkpoints on purpose. Checkpoints are fingerprinted by commit by
+          default because a different commit CAN mean different feature/fold
+          logic that would silently corrupt a resumed run if reused blindly
+          -- only set this after manually confirming the commits between the
+          interrupted run and now don't touch any CV-stage computation (e.g.
+          a concurrency/orchestration-only fix, not a feature change). Blank
+          (default): use this run's own real commit SHA, as normal.
+        required: false
+        default: ""
 
 concurrency:
   group: train-forecast
@@ -145,15 +168,34 @@ jobs:
           if [ -n "${{ inputs.cities }}" ]; then
             CITIES_ARG="--env CITIES=${{ inputs.cities }}"
           fi
+          # GIT_SHA fingerprints this Job's checkpoints (see
+          # training/train_and_upload.py's RUN_FINGERPRINT) -- a relaunch
+          # of THIS SAME commit resumes from them; any other commit starts
+          # clean, since a different commit can mean different feature
+          # logic that a stale checkpoint would silently misapply.
+          #
+          # resume_git_sha (blank by default) overrides ONLY this
+          # fingerprint value, never the image tag below -- the code that
+          # actually runs is always built from the real current commit.
+          # Deliberately manual and off by default; see that input's own
+          # description for when it's safe to set.
+          FINGERPRINT_SHA="${{ inputs.resume_git_sha }}"
+          if [ -z "$FINGERPRINT_SHA" ]; then
+            FINGERPRINT_SHA="${{ github.sha }}"
+          fi
           OUTPUT=$(hf jobs run -d \
             --flavor "${{ inputs.flavor }}" \
             --timeout "${{ inputs.timeout }}" \
             --secrets HF_TOKEN \
+            --env GIT_SHA=$FINGERPRINT_SHA \
             $CITIES_ARG \
             "${{ env.IMAGE }}:${{ github.sha }}" \
-            python train_and_upload.py)
+            python train_and_upload.py 2>&1)
           echo "$OUTPUT"
-          JOB_ID=$(echo "$OUTPUT" | grep -oP 'Job started with ID: \K\S+')
+          # Parse the URL line, not the bare `id:` line: it yields the
+          # NAMESPACE/ID form, which is what both `hf jobs inspect` (in
+          # sync-forecast-model.yml) and the huggingface.co/jobs/ URL need.
+          JOB_ID=$(echo "$OUTPUT" | grep -oP 'huggingface\.co/jobs/\K[^/[:space:]]+/[^/[:space:]]+' | head -1)
           if [ -z "$JOB_ID" ]; then
             echo "::error::couldn't parse a job ID out of hf jobs run -d's output -- see the raw output above"
             exit 1
