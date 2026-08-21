@@ -38,6 +38,25 @@ _MEMORY_SAFETY_FRACTION = 0.5
 # processes than the fold loops can keep busy.
 _MAX_WORKERS = 16
 
+# city_loso's OWN concurrency ceiling -- deliberately separate from, and much
+# lower than, resolved_max_workers. That number is sized (_resolve_workers,
+# below) from `payload_bytes`: the pre-built, station-filtered pooled `frame`
+# walk_forward/spatial_loso workers each receive ONE pickled copy of via
+# initargs -- an accurate, known size for THOSE two stages. city_loso's
+# workers are a different shape of cost entirely: each one receives the FULL
+# panels_by_city (every city's raw, unfiltered panel) via its own initargs,
+# THEN builds its own (N-1)-city feature frame from scratch inside the worker
+# -- composite_grid, positional_block, and all. Reusing resolved_max_workers
+# here silently assumes a per-worker footprint city_loso never has.
+#
+# This is not theoretical: a real 8-city run (cpu-performance, resolved to 8
+# concurrent workers) completed walk-forward (19/19 folds) and spatial-LOSO
+# (82/82 folds) cleanly at that concurrency, then died with exit code 137
+# (OOM kill) within the first few seconds of city-LOSO, before a single fold
+# finished. Only 8 city-LOSO folds ever exist (one per city) -- a low cap
+# costs little wall-clock even at the extreme of running fully sequential.
+_CITY_LOSO_MAX_WORKERS = 2
+
 
 def _available_cpus() -> int:
     """CPUs this CONTAINER may actually use.
@@ -286,10 +305,15 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
                                 max_workers=resolved_max_workers,
                                 threads_per_fold=threads_per_fold,
                                 checkpoint_dir=checkpoint_dir)
-    print("[train_and_promote] starting city-LOSO")
+    # min(), not resolved_max_workers directly -- see _CITY_LOSO_MAX_WORKERS'
+    # own comment for why city_loso needs a separate, much lower ceiling.
+    city_loso_max_workers = min(resolved_max_workers, _CITY_LOSO_MAX_WORKERS)
+    print(f"[train_and_promote] starting city-LOSO ({city_loso_max_workers} "
+          f"concurrent worker(s), capped separately from the {resolved_max_workers} "
+          f"used above -- see _CITY_LOSO_MAX_WORKERS)")
     city_result = run_city_loso(panels_by_city, horizons, feature_cols,
                                  fires_by_city=fires_by_city,
-                                 max_workers=resolved_max_workers,
+                                 max_workers=city_loso_max_workers,
                                  threads_per_fold=threads_per_fold,
                                  checkpoint_dir=checkpoint_dir)
     print("[train_and_promote] fitting final served model")
