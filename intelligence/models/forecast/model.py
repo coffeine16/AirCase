@@ -75,9 +75,24 @@ def train_ceiling_baseline(train: pd.DataFrame, feature_cols: list[str],
                             label_col: str = "y") -> QuantileRegressor:
     """Linear quantile regression (median) — the 'is tree complexity
     earning its keep' sanity check (spec 4.1). Reported in eval only,
-    never served."""
+    never served.
+
+    FIXED (real production bug, 2026-08-21): this used to force alpha=0.0,
+    explicitly turning OFF QuantileRegressor's own default L1 regularization
+    (alpha=1.0). Fine on small/toy data; on the real 8-city dataset it let
+    the fit produce huge, unstable coefficients that then exploded when
+    applied OOF to real feature combinations outside the 50k-row training
+    sample's range -- an unregularized linear fit has nothing bounding its
+    extrapolation. That surfaced as `ceiling_skill_vs_linear` jumping from a
+    real v1 baseline of 6.9% to a suspiciously exact 100.0 on the real run:
+    skill_vs_baseline's formula only rounds to exactly 100.0 when the
+    baseline's RMSE is roughly 2000x the model's, i.e. the "ceiling" wasn't
+    predicting anything sane, not that the model was actually that much
+    better. Restored to sklearn's own default (alpha=1.0) rather than
+    inventing a new value -- this baseline is supposed to be a crude,
+    stable sanity check, not a competitive model in its own right."""
     X = train[feature_cols].select_dtypes(include=[np.number]).fillna(0.0)
-    reg = QuantileRegressor(quantile=0.5, alpha=0.0, solver="highs")
+    reg = QuantileRegressor(quantile=0.5, alpha=1.0, solver="highs")
     reg.fit(X, train[label_col])
     return reg
 

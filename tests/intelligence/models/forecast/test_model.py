@@ -62,3 +62,39 @@ def test_ceiling_baseline_fits_without_error():
     reg = train_ceiling_baseline(frame, ["lag_0", "wind_ms"])
     pred = reg.predict(frame[["lag_0", "wind_ms"]])
     assert len(pred) == len(frame)
+
+
+def test_ceiling_baseline_regularization_bounds_extrapolation():
+    # Regression test for a real production bug: train_ceiling_baseline
+    # used to force alpha=0.0 (no regularization), which let the fit
+    # produce unstable coefficients that exploded when applied OOF to real
+    # feature combinations outside the training sample's range -- on the
+    # real 8-city run, ceiling_skill_vs_linear jumped from a genuine 6.9%
+    # (v1) to a suspiciously exact 100.0 (v2), meaning the "ceiling"
+    # baseline's own RMSE had exploded to ~2000x the model's, not that the
+    # model actually got that much better. Near-collinear columns are the
+    # classic condition that exposes this: an unregularized fit can't
+    # distinguish how to split weight between them, so its coefficients
+    # (and therefore its extrapolated predictions) become arbitrarily
+    # unstable, while a regularized fit stays bounded.
+    rng = np.random.default_rng(0)
+    n = 60
+    a = rng.uniform(0, 10, n)
+    frame = pd.DataFrame({
+        "a": a,
+        "b": a + rng.normal(0, 1e-6, n),   # near-perfectly collinear with "a"
+        "y": 2 * a + rng.normal(0, 1.0, n),
+    })
+    from sklearn.linear_model import QuantileRegressor
+    unregularized = QuantileRegressor(quantile=0.5, alpha=0.0, solver="highs")
+    unregularized.fit(frame[["a", "b"]], frame["y"])
+    regularized = train_ceiling_baseline(frame, ["a", "b"])
+
+    # Far outside the training range (a, b in [0, 10]) -- the shape of a
+    # real OOF row whose feature combination the small training sample
+    # never saw, which is exactly where an unregularized fit's instability
+    # shows up.
+    extreme = pd.DataFrame({"a": [1000.0], "b": [1000.0]})
+    pred_unreg = abs(unregularized.predict(extreme)[0])
+    pred_reg = abs(regularized.predict(extreme)[0])
+    assert pred_reg < pred_unreg
