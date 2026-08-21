@@ -1,9 +1,0 @@
-{
-  "job_id": "MagmaCubes1133/6a882e3b73304676c8ec4fd4",
-  "launched_at": "2026-08-21T10:53:47Z",
-  "cities": "",
-  "flavor": "cpu-performance",
-  "trained_from_branch": "saum/upgrades",
-  "image": "ghcr.io/coffeine16/aircase-trainer:8a2e722cfb14a1985a1304006250da0927d5c5d6",
-  "note": "one-off resume, GIT_SHA fingerprint pinned to 776658a... (not this run's real commit) to reuse restored spatial_loso/city_loso checkpoints"
-}
