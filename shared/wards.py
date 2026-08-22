@@ -70,6 +70,12 @@ def _ward_name(props: dict, idx: int) -> str:
     for k in ("KGISWardName", "Ward_Name", "ward_name", "WARD_NAME", "name", "Name", "ward"):
         if props.get(k):
             return str(props[k])
+    # Kolkata (KMC, Datameet): the only property is WARD, and its value is a bare
+    # number as a string ("93"). Returning that raw would label the ward "93" on
+    # a legal notice; it needs the noun. Kept ahead of the Ward_No branch because
+    # KMC has no zone to compose with.
+    if props.get("WARD") is not None:
+        return f"Ward {props['WARD']}"
     # Chennai (GCC): wards are NUMBERED, not named — Ward_No inside a named Zone.
     # Compose from the REAL ward number; falling through to the positional index
     # below would label Ward 119 as "Ward 042" by list order, i.e. wrong on every
