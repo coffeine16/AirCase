@@ -58,7 +58,7 @@ def main():
     print(f"native baseline (persistence) rmse: {native_result['baseline_rmse']}")
     print(f"\nper-station native results:")
     for station, r in sorted(native_result["per_station"].items()):
-        print(f"  {station}: rmse={r['rmse']} n={r['n']}")
+        print(f"  {station}: rmse={r['rmse']} baseline_rmse={r['baseline_rmse']} n={r['n']}")
 
 
 if __name__ == "__main__":
