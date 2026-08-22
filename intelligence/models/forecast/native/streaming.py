@@ -83,6 +83,11 @@ from intelligence.models.forecast.native.native_composite import composite_grid_
 
 _real_composite_grid = features_module.composite_grid
 _CHUNK = 2000  # rows of the (n_t, n_q, n_s)-equivalent working set per call
+# Both currently unused by run_city_loso_native itself -- kept rather than
+# deleted because Task 5's run_final_fit_native appends to this SAME file
+# and its brief was not available to check when this comment was written
+# (see the plan's progress.md pre-flight conflict scan, "4 -> 5" row).
+# Delete if Task 5 lands without needing them.
 
 
 def _install_native_composite_grid():
@@ -96,12 +101,57 @@ def _install_native_composite_grid():
 
 def run_city_loso_native(panels_by_city: dict, horizons: list[int],
                           feature_cols: list[str],
-                          fires_by_city: dict | None = None) -> dict:
+                          fires_by_city: dict | None = None,
+                          num_threads: int | None = None) -> dict:
     """Same return shape as validation.run_city_loso:
     {"per_city": {city: {"rmse": float, "n": int}}}. Streams each
     training city's features to disk one at a time instead of pooling all
     N-1 cities into one pandas frame -- see this module's own docstring
-    for why."""
+    for why.
+
+    Calls `station_cells_only` on every city's panel (training AND
+    held-out) before building features -- matching validation.run_city_
+    loso's own robustness contract (it tolerates receiving raw, unfiltered
+    panels). Without this, a caller that hands in unfiltered panels (a
+    reasonable assumption given run_city_loso's own contract) would make
+    this function build composite/positional features over every
+    non-station cell in each city's full grid before discarding them --
+    directly undermining the memory-bounding goal disk-streaming exists
+    for (found in review, not by a test -- the parity test's own
+    `_load_panels` helper happened to pre-filter, masking the gap).
+
+    `num_threads`: None (default) leaves LightGBM to auto-detect, same as
+    before this parameter existed. Pass an explicit value to pin it --
+    needed when comparing this function's RMSE against validation.
+    run_city_loso's for parity: the two paths build their lgb.Dataset from
+    different objects (a raw float32 ndarray here vs. a pandas DataFrame
+    there), which can carry different auto-detected thread defaults, and
+    LightGBM's histogram reduction order (hence its exact numeric output)
+    is not guaranteed identical across thread counts even with the same
+    data. MEASURED (real 3-city run, review fix round): pinning both paths
+    to num_threads=4, then again to num_threads=1 (fully removing thread
+    count as a variable), gave the IDENTICAL per-city RMSE delta as the
+    unpinned baseline in both cases -- thread-count divergence is not a
+    contributor here (see this package's parity test / the task report
+    for the full before/after numbers).
+
+    Each training city's build_features call below runs on THAT CITY's
+    panel alone, unlike validation.run_city_loso's pooled build (all N-1
+    cities concatenated into one panel first) -- so composite_grid's
+    station pool for e.g. a Chennai cell draws only from Chennai stations
+    here, vs. Chennai+Hyderabad+Ahmedabad stations (at effectively-zero
+    weight) in the pandas path. QUANTIFIED, not assumed: composite_grid's
+    weight is align*decay, decay=exp(-dist_km/DIST_DECAY_KM) with
+    DIST_DECAY_KM=2.0 (spatial.py). At the real chennai-hyderabad distance
+    (515km, the closest of this test's 3 city pairs), even the
+    best-case/most-favorable weight (align=1.0, i.e. perfectly downwind)
+    at an unrealistically extreme 20 m/s sustained surface wind is
+    ~4.7e-6; at a genuinely realistic wind speed the weight is <1e-10.
+    Real in-city station weights at real intra-city distances (0-50km)
+    are O(0.01-1). The cross-city contribution is therefore many orders
+    of magnitude below any feature's float32 precision floor and
+    genuinely negligible, not merely assumed so (see
+    scratch_out/finding2_composite_weight_check.py for the computation)."""
     _install_native_composite_grid()
     fires_by_city = fires_by_city or {}
     cities = sorted(panels_by_city)
@@ -111,13 +161,14 @@ def run_city_loso_native(panels_by_city: dict, horizons: list[int],
     for held_out in cities:
         train_cities = [c for c in cities if c != held_out]
         clim_tables = build_climatology(downcast_panel(pd.concat(
-            [panels_by_city[c] for c in train_cities], ignore_index=True)))
+            [station_cells_only(panels_by_city[c]) for c in train_cities],
+            ignore_index=True)))
 
         work_dir = Path("scratch_out") / "native_city_loso" / held_out
         paths = []
         for i, city in enumerate(train_cities):
             frame = mask_unknown_city(
-                build_features(panels_by_city[city], horizons,
+                build_features(station_cells_only(panels_by_city[city]), horizons,
                                 fires=fires_by_city.get(city),
                                 restrict_to_station_cells=True,
                                 clim_tables=clim_tables).dropna(subset=["y"]),
@@ -135,12 +186,15 @@ def run_city_loso_native(panels_by_city: dict, horizons: list[int],
 
         import lightgbm as lgb
         from intelligence.models.forecast.model import PARAMS
+        params = {**PARAMS, "alpha": 0.5}
+        if num_threads is not None:
+            params["num_threads"] = num_threads
         ds = lgb.Dataset(X, label=y, categorical_feature=[city_col_idx])
-        model = lgb.train({**PARAMS, "alpha": 0.5}, ds, num_boost_round=200)
+        model = lgb.train(params, ds, num_boost_round=200)
         del combined, X, y, ds
         gc.collect()
 
-        test_frame = build_features(panels_by_city[held_out], horizons,
+        test_frame = build_features(station_cells_only(panels_by_city[held_out]), horizons,
                                      fires=fires_by_city.get(held_out),
                                      restrict_to_station_cells=True,
                                      clim_tables=clim_tables)
