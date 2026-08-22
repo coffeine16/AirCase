@@ -268,3 +268,10 @@ def test_walk_forward_regression_ignored_against_a_manifest_with_no_geometry_rec
                                 prior_manifest=fake_prior)
 
     assert second["promoted"] is True
+
+
+def test_train_and_promote_default_engine_is_pandas():
+    import inspect
+    from intelligence.models.forecast.train import train_and_promote
+    sig = inspect.signature(train_and_promote)
+    assert sig.parameters["engine"].default == "pandas"

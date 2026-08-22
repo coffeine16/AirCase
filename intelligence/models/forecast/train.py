@@ -223,7 +223,8 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
                        walk_forward_kwargs: dict | None = None,
                        max_workers: int | None = None,
                        threads_per_fold: int = 2,
-                       checkpoint_dir: str | None = None) -> dict:
+                       checkpoint_dir: str | None = None,
+                       engine: str = "pandas") -> dict:
     """`checkpoint_dir`: None (default) disables checkpointing, unchanged
     from before this parameter existed -- every existing caller (tests,
     the operational pipeline) is unaffected. When set, each of the three CV
@@ -233,7 +234,16 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     served-model fit is NOT checkpointed (a single LightGBM training call,
     not decomposable into independent folds the way the three CV stages
     are); a Job killed during that stage restarts it from scratch, same as
-    today."""
+    today.
+
+    `engine`: "pandas" (default, unchanged behavior) or "native". When
+    "native", the city-LOSO and final-fit stages run via
+    intelligence.models.forecast.native.streaming's disk-streamed,
+    Numba-composite-grid path instead of the in-process pandas path --
+    see docs/superpowers/specs/2026-08-21-local-native-training-pipeline-
+    design.md. walk-forward and spatial-LOSO are NOT affected by this
+    flag yet (Phase 1/2 of that spec); they always run the pandas path
+    regardless of `engine`'s value."""
     out_dir = Path(out_dir)
     # concat silently reverts each city's own categorical columns back to
     # plain string dtype whenever their category sets differ (every city's
@@ -341,11 +351,16 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     print(f"[train_and_promote] starting city-LOSO ({city_loso_max_workers} "
           f"concurrent worker(s) x {city_loso_threads_per_fold} threads/fold, capped "
           f"separately from the {resolved_max_workers} used above -- see _CITY_LOSO_MAX_WORKERS)")
-    city_result = run_city_loso(panels_by_city, horizons, feature_cols,
-                                 fires_by_city=fires_by_city,
-                                 max_workers=city_loso_max_workers,
-                                 threads_per_fold=city_loso_threads_per_fold,
-                                 checkpoint_dir=checkpoint_dir)
+    if engine == "native":
+        from intelligence.models.forecast.native.streaming import run_city_loso_native
+        city_result = run_city_loso_native(panels_by_city, horizons, feature_cols,
+                                            fires_by_city=fires_by_city)
+    else:
+        city_result = run_city_loso(panels_by_city, horizons, feature_cols,
+                                     fires_by_city=fires_by_city,
+                                     max_workers=city_loso_max_workers,
+                                     threads_per_fold=city_loso_threads_per_fold,
+                                     checkpoint_dir=checkpoint_dir)
     print("[train_and_promote] fitting final served model")
 
     # LightGBM's Dataset already built inside train_quantile_models doesn't
@@ -358,49 +373,56 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     # result unused — doubling the cost of the single most expensive stage
     # in this function for nothing.
     t0 = time.perf_counter()
-    # Masked HERE, not when `frame` was built above -- this is the one
-    # place the "unknown" category actually needs to reach a model: the
-    # served one. See the comment at `frame`'s construction for why it
-    # must stay unmasked until here.
-    final_train = mask_unknown_city(frame.dropna(subset=["y"]))
-    import lightgbm as lgb
-    from intelligence.models.forecast.model import PARAMS, QUANTILES
+    if engine == "native":
+        from intelligence.models.forecast.native.streaming import run_final_fit_native
+        final_models = run_final_fit_native(panels_by_city, horizons, feature_cols,
+                                             fires_by_city=fires_by_city)
+        print(f"[train_and_promote] native final model fit done in "
+              f"{time.perf_counter() - t0:.0f}s")
+    else:
+        # Masked HERE, not when `frame` was built above -- this is the one
+        # place the "unknown" category actually needs to reach a model: the
+        # served one. See the comment at `frame`'s construction for why it
+        # must stay unmasked until here.
+        final_train = mask_unknown_city(frame.dropna(subset=["y"]))
+        import lightgbm as lgb
+        from intelligence.models.forecast.model import PARAMS, QUANTILES
 
-    # p10/p50/p90 are three FULLY INDEPENDENT fits (same data, same rounds,
-    # only `alpha` differs) that used to run one after another. FIXED (pre-
-    # launch audit, 2026-08-21): this stage is the single most expensive
-    # part of a real run (~95min measured on the real 8-city dataset) and
-    # was leaving that independence on the table.
-    #
-    # ThreadPoolExecutor, not ProcessPoolExecutor (the pattern every CV
-    # stage above uses): LightGBM's C++ training loop releases the GIL
-    # while it runs, so genuine wall-clock parallelism is achievable
-    # without process isolation -- and staying single-process means all
-    # three fits can share ONE lgb.Dataset instead of each paying to
-    # rebuild it (real cost on 13M+ rows) and without 3x-ing this stage's
-    # memory footprint the way three separate processes would.
-    # num_threads split 3 ways (not left at "auto-detected/uncapped", the
-    # prior behaviour) so the three concurrent fits don't oversubscribe the
-    # container fighting each other for the same cores.
-    ds = lgb.Dataset(final_train[feature_cols], label=final_train["y"],
-                      weight=event_weights(final_train), categorical_feature=["city"])
-    # Force binning to happen once, up front, single-threaded -- if left
-    # lazy, two threads calling train() on the same not-yet-constructed
-    # Dataset at once would race on that first construction step.
-    ds.construct()
-    threads_per_quantile = max(1, _available_cpus() // len(QUANTILES))
+        # p10/p50/p90 are three FULLY INDEPENDENT fits (same data, same rounds,
+        # only `alpha` differs) that used to run one after another. FIXED (pre-
+        # launch audit, 2026-08-21): this stage is the single most expensive
+        # part of a real run (~95min measured on the real 8-city dataset) and
+        # was leaving that independence on the table.
+        #
+        # ThreadPoolExecutor, not ProcessPoolExecutor (the pattern every CV
+        # stage above uses): LightGBM's C++ training loop releases the GIL
+        # while it runs, so genuine wall-clock parallelism is achievable
+        # without process isolation -- and staying single-process means all
+        # three fits can share ONE lgb.Dataset instead of each paying to
+        # rebuild it (real cost on 13M+ rows) and without 3x-ing this stage's
+        # memory footprint the way three separate processes would.
+        # num_threads split 3 ways (not left at "auto-detected/uncapped", the
+        # prior behaviour) so the three concurrent fits don't oversubscribe the
+        # container fighting each other for the same cores.
+        ds = lgb.Dataset(final_train[feature_cols], label=final_train["y"],
+                          weight=event_weights(final_train), categorical_feature=["city"])
+        # Force binning to happen once, up front, single-threaded -- if left
+        # lazy, two threads calling train() on the same not-yet-constructed
+        # Dataset at once would race on that first construction step.
+        ds.construct()
+        threads_per_quantile = max(1, _available_cpus() // len(QUANTILES))
 
-    def _fit_one(q: float):
-        params = {**PARAMS, "alpha": q, "num_threads": threads_per_quantile}
-        return q, lgb.train(params, ds, num_boost_round=500)
+        def _fit_one(q: float):
+            params = {**PARAMS, "alpha": q, "num_threads": threads_per_quantile}
+            return q, lgb.train(params, ds, num_boost_round=500)
 
-    final_models = {}
-    with ThreadPoolExecutor(max_workers=len(QUANTILES)) as ex:
-        for q, model in ex.map(_fit_one, QUANTILES):
-            final_models[q] = model
-    print(f"[train_and_promote] final model fit done in {time.perf_counter() - t0:.0f}s "
-          f"({len(final_train):,} rows, 500 rounds x {len(QUANTILES)} quantiles concurrently, "
-          f"{threads_per_quantile} threads/quantile)")
+        final_models = {}
+        with ThreadPoolExecutor(max_workers=len(QUANTILES)) as ex:
+            for q, model in ex.map(_fit_one, QUANTILES):
+                final_models[q] = model
+        print(f"[train_and_promote] final model fit done in {time.perf_counter() - t0:.0f}s "
+              f"({len(final_train):,} rows, 500 rounds x {len(QUANTILES)} quantiles concurrently, "
+              f"{threads_per_quantile} threads/quantile)")
 
     # quantile_coverage / ceiling_skill / quiet_vs_event are scored on the
     # walk-forward folds' OUT-OF-SAMPLE predictions, never on final_train.
