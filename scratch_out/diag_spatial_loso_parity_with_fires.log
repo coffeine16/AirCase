@@ -1,0 +1,851 @@
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\validation.py:136: RuntimeWarning: Mean of empty slice
+  baseline_rmse = float(np.sqrt(np.nanmean((truth - test_frame["lag_0"].values) ** 2)))
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+C:\Users\saumy\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\lightgbm\basic.py:668: UserWarning: Usage of np.ndarray subset (sliced data) is not recommended due to it will double the peak memory cost in LightGBM.
+  _log_warning(
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+C:\Users\saumy\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\lightgbm\basic.py:668: UserWarning: Usage of np.ndarray subset (sliced data) is not recommended due to it will double the peak memory cost in LightGBM.
+  _log_warning(
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+C:\Users\saumy\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\lightgbm\basic.py:668: UserWarning: Usage of np.ndarray subset (sliced data) is not recommended due to it will double the peak memory cost in LightGBM.
+  _log_warning(
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+C:\Users\saumy\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\lightgbm\basic.py:668: UserWarning: Usage of np.ndarray subset (sliced data) is not recommended due to it will double the peak memory cost in LightGBM.
+  _log_warning(
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+C:\Users\saumy\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\lightgbm\basic.py:668: UserWarning: Usage of np.ndarray subset (sliced data) is not recommended due to it will double the peak memory cost in LightGBM.
+  _log_warning(
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+C:\Users\saumy\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\lightgbm\basic.py:668: UserWarning: Usage of np.ndarray subset (sliced data) is not recommended due to it will double the peak memory cost in LightGBM.
+  _log_warning(
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+C:\Users\saumy\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\lightgbm\basic.py:668: UserWarning: Usage of np.ndarray subset (sliced data) is not recommended due to it will double the peak memory cost in LightGBM.
+  _log_warning(
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+C:\Users\saumy\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\lightgbm\basic.py:668: UserWarning: Usage of np.ndarray subset (sliced data) is not recommended due to it will double the peak memory cost in LightGBM.
+  _log_warning(
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+C:\Users\saumy\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\lightgbm\basic.py:668: UserWarning: Usage of np.ndarray subset (sliced data) is not recommended due to it will double the peak memory cost in LightGBM.
+  _log_warning(
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+C:\Users\saumy\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\lightgbm\basic.py:668: UserWarning: Usage of np.ndarray subset (sliced data) is not recommended due to it will double the peak memory cost in LightGBM.
+  _log_warning(
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\native\streaming.py:509: RuntimeWarning: Mean of empty slice
+  test_frame = test_frame.copy()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+C:\Users\saumy\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\lightgbm\basic.py:668: UserWarning: Usage of np.ndarray subset (sliced data) is not recommended due to it will double the peak memory cost in LightGBM.
+  _log_warning(
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+C:\Users\saumy\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\lightgbm\basic.py:668: UserWarning: Usage of np.ndarray subset (sliced data) is not recommended due to it will double the peak memory cost in LightGBM.
+  _log_warning(
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+C:\Users\saumy\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\lightgbm\basic.py:668: UserWarning: Usage of np.ndarray subset (sliced data) is not recommended due to it will double the peak memory cost in LightGBM.
+  _log_warning(
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:120: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "cell_dow_hour": p.groupby(["cell", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:122: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "ward_dow_hour": p.groupby(["ward_id", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:124: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  "city_dow_hour": p.groupby(["city", "how"]).pm25_station.median(),
+F:\CodingProj\AirCase\intelligence\models\forecast\climatology.py:87: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  daily = p.assign(_doy=doy).groupby([id_col, "_doy"])["pm25_station"].median()
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+C:\Users\saumy\.pyenv\pyenv-win\versions\3.12.10\Lib\site-packages\lightgbm\basic.py:668: UserWarning: Usage of np.ndarray subset (sliced data) is not recommended due to it will double the peak memory cost in LightGBM.
+  _log_warning(
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:458: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  g = p.groupby("cell", group_keys=False)
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:485: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _daily = (p.assign(_date=_date).groupby(["cell", "_date"])["pm25_station"]
+F:\CodingProj\AirCase\intelligence\models\forecast\features.py:487: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  _dg = _daily.groupby(level="cell", group_keys=False)
+loaded 311 real fire events across 3 cities
+[spatial_loso] fold 1/14: holding out 8842cea629fffff
+[spatial_loso] fold 1/14 done in 115s
+[spatial_loso] fold 2/14: holding out 8842cea647fffff
+[spatial_loso] fold 2/14 done in 141s
+[spatial_loso] fold 3/14: holding out 8842cea741fffff
+[spatial_loso] fold 3/14 done in 146s
+[spatial_loso] fold 4/14: holding out 8842ceb5d9fffff
+[spatial_loso] fold 4/14 done in 190s
+[spatial_loso] fold 5/14: holding out 8860a24b6dfffff
+[spatial_loso] fold 5/14 done in 160s
+[spatial_loso] fold 6/14: holding out 8860a25869fffff
+[spatial_loso] fold 6/14 done in 146s
+[spatial_loso] fold 7/14: holding out 8860a25a3dfffff
+[spatial_loso] fold 7/14 done in 136s
+[spatial_loso] fold 8/14: holding out 8860b52dcbfffff
+[spatial_loso] fold 8/14 done in 121s
+[spatial_loso] fold 9/14: holding out 88618c419bfffff
+[spatial_loso] fold 9/14 done in 129s
+[spatial_loso] fold 10/14: holding out 88618c48e3fffff
+[spatial_loso] fold 10/14 done in 115s
+[spatial_loso] fold 11/14: holding out 88618c4d09fffff
+[spatial_loso] fold 11/14 done in 111s
+[spatial_loso] fold 12/14: holding out 88618c4f5dfffff
+[spatial_loso] fold 12/14 done in 106s
+[spatial_loso] fold 13/14: holding out 88618eb269fffff
+[spatial_loso] fold 13/14 done in 105s
+[spatial_loso] fold 14/14: holding out 88618eb357fffff
+[spatial_loso] fold 14/14 done in 113s
+[spatial_loso_native] fold 1/14: 8842cea629fffff rmse=26.02
+[spatial_loso_native] fold 2/14: 8842cea647fffff rmse=25.54
+[spatial_loso_native] fold 3/14: 8842cea741fffff rmse=37.34
+[spatial_loso_native] fold 4/14: 8842ceb5d9fffff rmse=23.39
+[spatial_loso_native] fold 5/14: 8860a24b6dfffff rmse=22.42
+[spatial_loso_native] fold 6/14: 8860a25869fffff rmse=29.97
+[spatial_loso_native] fold 7/14: 8860a25a3dfffff rmse=25.3
+[spatial_loso_native] fold 8/14: 8860b52dcbfffff rmse=21.43
+[spatial_loso_native] fold 9/14: 88618c419bfffff rmse=15.49
+[spatial_loso_native] fold 10/14: 88618c48e3fffff rmse=24.08
+[spatial_loso_native] fold 11/14: 88618c4d09fffff rmse=17.52
+[spatial_loso_native] fold 12/14: 88618c4f5dfffff rmse=19.14
+[spatial_loso_native] fold 13/14: 88618eb269fffff rmse=15.16
+[spatial_loso_native] fold 14/14: 88618eb357fffff rmse=27.37
+PANDAS_DONE {'overall_rmse': 25.75, 'baseline_rmse': 32.55, 'per_station': {'8842cea629fffff': {'rmse': 25.98, 'n': 302760, 'baseline_rmse': 41.64}, '8842cea647fffff': {'rmse': 25.66, 'n': 302760, 'baseline_rmse': 35.58}, '8842cea741fffff': {'rmse': 37.11, 'n': 302760, 'baseline_rmse': 44.35}, '8842ceb5d9fffff': {'rmse': 24.48, 'n': 302760, 'baseline_rmse': 28.22}, '8860a24b6dfffff': {'rmse': 23.98, 'n': 374256, 'baseline_rmse': 26.67}, '8860a25869fffff': {'rmse': 30.56, 'n': 374256, 'baseline_rmse': 28.72}, '8860a25a3dfffff': {'rmse': 25.81, 'n': 374256, 'baseline_rmse': 34.3}, '8860b52dcbfffff': {'rmse': 22.95, 'n': 374256, 'baseline_rmse': 22.11}, '88618c419bfffff': {'rmse': 15.36, 'n': 305520, 'baseline_rmse': 24.19}, '88618c48e3fffff': {'rmse': 23.24, 'n': 305520, 'baseline_rmse': nan}, '88618c4d09fffff': {'rmse': 17.66, 'n': 305520, 'baseline_rmse': 24.29}, '88618c4f5dfffff': {'rmse': 19.35, 'n': 305520, 'baseline_rmse': 20.79}, '88618eb269fffff': {'rmse': 15.32, 'n': 305520, 'baseline_rmse': 26.04}, '88618eb357fffff': {'rmse': 27.91, 'n': 305520, 'baseline_rmse': 27.27}}, 'n_stations': 14}
+NATIVE_DONE {'overall_rmse': 25.48, 'baseline_rmse': 32.55, 'per_station': {'8842cea629fffff': {'rmse': 26.02, 'n': 302760, 'baseline_rmse': 41.65}, '8842cea647fffff': {'rmse': 25.54, 'n': 302760, 'baseline_rmse': 35.48}, '8842cea741fffff': {'rmse': 37.34, 'n': 302760, 'baseline_rmse': 44.41}, '8842ceb5d9fffff': {'rmse': 23.39, 'n': 302760, 'baseline_rmse': 28.08}, '8860a24b6dfffff': {'rmse': 22.42, 'n': 374256, 'baseline_rmse': 26.65}, '8860a25869fffff': {'rmse': 29.97, 'n': 374256, 'baseline_rmse': 28.72}, '8860a25a3dfffff': {'rmse': 25.3, 'n': 374256, 'baseline_rmse': 34.3}, '8860b52dcbfffff': {'rmse': 21.43, 'n': 374256, 'baseline_rmse': 22.11}, '88618c419bfffff': {'rmse': 15.49, 'n': 305520, 'baseline_rmse': 24.1}, '88618c48e3fffff': {'rmse': 24.08, 'n': 305520, 'baseline_rmse': nan}, '88618c4d09fffff': {'rmse': 17.52, 'n': 305520, 'baseline_rmse': 24.39}, '88618c4f5dfffff': {'rmse': 19.14, 'n': 305520, 'baseline_rmse': 20.79}, '88618eb269fffff': {'rmse': 15.16, 'n': 305520, 'baseline_rmse': 26.03}, '88618eb357fffff': {'rmse': 27.37, 'n': 305520, 'baseline_rmse': 27.27}}, 'n_stations': 14}
+STATION 8842cea629fffff pandas= 25.98 native= 26.02 delta= 0.03999999999999915
+STATION 8842cea647fffff pandas= 25.66 native= 25.54 delta= 0.120000000000001
+STATION 8842cea741fffff pandas= 37.11 native= 37.34 delta= 0.23000000000000398
+STATION 8842ceb5d9fffff pandas= 24.48 native= 23.39 delta= 1.0899999999999999
+STATION 8860a24b6dfffff pandas= 23.98 native= 22.42 delta= 1.5599999999999987
+STATION 8860a25869fffff pandas= 30.56 native= 29.97 delta= 0.5899999999999999
+STATION 8860a25a3dfffff pandas= 25.81 native= 25.3 delta= 0.509999999999998
+STATION 8860b52dcbfffff pandas= 22.95 native= 21.43 delta= 1.5199999999999996
+STATION 88618c419bfffff pandas= 15.36 native= 15.49 delta= 0.13000000000000078
+STATION 88618c48e3fffff pandas= 23.24 native= 24.08 delta= 0.8399999999999999
+STATION 88618c4d09fffff pandas= 17.66 native= 17.52 delta= 0.14000000000000057
+STATION 88618c4f5dfffff pandas= 19.35 native= 19.14 delta= 0.21000000000000085
+STATION 88618eb269fffff pandas= 15.32 native= 15.16 delta= 0.16000000000000014
+STATION 88618eb357fffff pandas= 27.91 native= 27.37 delta= 0.5399999999999991
+MAX_DELTA 1.5599999999999987
+OVERALL_DELTA 0.2699999999999996
+
+[exited with code 0]

@@ -30,13 +30,16 @@ Real wall-clock: expect the same order of magnitude as the original
 diagnostic (~30 min there; real fires add per-fire wind-alignment lookups
 inside fire_pressure, so this run may take longer).
 
-STATUS: superseded as the closing evidence for this finding. A smaller,
-faster check (single city, 2 real stations, real fires:
-scratch_out/_fast_check_fires_ahmedabad.py) was judged sufficient --
-deltas 0.18/0.20, same range as the no-fires diagnostic -- so this
-3-city/14-station script was not required to complete before closing the
-finding. Left here, runnable, for anyone who wants the fuller cross-city
-confirmation later; not a routine gate."""
+STATUS: this DID complete (not just left runnable) -- a smaller, faster
+check (single city, 2 real stations, real fires:
+scratch_out/_fast_check_fires_ahmedabad.py, deltas 0.18/0.20) was judged
+sufficient to close the finding before this full run finished, but it
+finished anyway shortly after and confirms the same conclusion at the
+scale that actually exercises the cross-city wind-population divergence
+this diagnostic exists to check: max per-station delta 1.56, overall_rmse
+delta 0.27 (25.75 vs 25.48) -- comfortably under the 2.0 tolerance and the
+same order of magnitude as the no-fires diagnostic's 1.49 ceiling. See
+scratch_out/diag_spatial_loso_parity_with_fires.log for the full output."""
 import pandas as pd
 from intelligence.models.forecast import HORIZONS
 from intelligence.models.forecast.features import FEATURE_COLUMNS, station_cells_only, downcast_panel

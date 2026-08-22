@@ -379,15 +379,18 @@ def run_spatial_loso_native(panel: pd.DataFrame, horizons: list[int],
     alignment term. The pandas pooled path computes that average over ALL
     cities in one call; this function calls build_features per-city (`city_
     panel = panel[panel.city == city]`), so the average is over that ONE
-    city's cells only -- a different population, not a bug. MEASURED on a
-    real single-city fast check (ahmedabad, 2 real stations, real fires,
-    scratch_out/_fast_check_fires_ahmedabad.py): deltas 0.18 and 0.20, the
-    same rough range as this function's no-fires deltas (0.03-1.49) --
-    consistent with the other two documented causes, no separate,
-    larger divergence found. A single-city check cannot itself exercise the
-    cross-city wind-population difference (with one city there is no
-    difference to observe), but it does confirm the with-fires code path
-    runs cleanly end-to-end and produces a sane, non-degenerate delta.
+    city's cells only -- a different population, not a bug. MEASURED first
+    on a real single-city fast check (ahmedabad, 2 real stations, real
+    fires, scratch_out/_fast_check_fires_ahmedabad.py): deltas 0.18 and
+    0.20, the same rough range as this function's no-fires deltas
+    (0.03-1.49). CONFIRMED at the full real 3-city/14-station scale that
+    actually exercises the cross-city wind-population difference this
+    cause describes (chennai/hyderabad/ahmedabad, all real stations, real
+    fires: scratch_out/diag_spatial_loso_parity_with_fires.py/.log): max
+    per-station delta 1.56 (station 8842ceb5d9fffff and 8860b52dcbfffff
+    both ~1.5), overall_rmse delta 0.27 (25.75 vs 25.48) -- comfortably
+    under the 2.0 tolerance and the same order of magnitude as the
+    no-fires diagnostic's 1.49 ceiling, not a new, larger divergence.
 
     KNOWN, DELIBERATE DIVERGENCE from the pandas reference for a real (if
     rare) edge case: validation.py's own _align_city docstring documents "a

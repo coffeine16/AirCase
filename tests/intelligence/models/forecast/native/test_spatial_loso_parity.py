@@ -171,15 +171,19 @@ def test_spatial_loso_native_matches_pandas_on_a_real_station_subset():
         # fire_pressure's wind-alignment term) is a circular mean over
         # whatever cells are in the panel passed to it -- pooled across
         # ALL cities in the pandas path, but per-CITY here (this function
-        # calls build_features once per city). Checked with a real
+        # calls build_features once per city). First checked with a real
         # single-city fast check (ahmedabad, 2 real stations, real fires:
-        # scratch_out/_fast_check_fires_ahmedabad.py) rather than a full
-        # 3-city re-run of this diagnostic (a single city can't exercise
-        # the cross-city wind-population difference itself, but does
-        # confirm the with-fires path runs cleanly and produces a sane
-        # delta): observed deltas 0.18 and 0.20, comfortably inside the
-        # 0.03-1.49 no-fires range above, not a larger, separate
-        # divergence. See run_spatial_loso_native's own docstring
-        # (streaming.py) for the full writeup of this third cause.
+        # scratch_out/_fast_check_fires_ahmedabad.py -- deltas 0.18/0.20,
+        # inside the 0.03-1.49 no-fires range, but a single city can't
+        # exercise the cross-city wind-population difference itself).
+        # CONFIRMED at the full real 3-city/14-station scale that DOES
+        # exercise it (real fires, same cities as this diagnostic:
+        # scratch_out/diag_spatial_loso_parity_with_fires.py/.log): max
+        # per-station delta 1.56, overall_rmse delta 0.27 (25.75 vs
+        # 25.48) -- comfortably under 2.0 and the same order of
+        # magnitude as the 1.49 no-fires ceiling above, not a larger,
+        # separate divergence. See run_spatial_loso_native's own
+        # docstring (streaming.py) for the full writeup of this third
+        # cause.
         assert abs(native_r - pandas_r) < 2.0, (
             f"{station}: pandas={pandas_r}, native={native_r}, delta={abs(native_r - pandas_r)}")
