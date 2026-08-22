@@ -54,6 +54,10 @@ def main():
     committed_overall = committed["eval"]["spatial_loso_rmse"]
 
     print(f"\ncommitted overall spatial_loso_rmse (all 82 real stations): {committed_overall}")
+    print("NOTE: the two numbers above are NOT directly comparable -- different, smaller "
+          "station population (a representative subset vs all 82 real stations). This "
+          "checks the native path is plausible and non-degenerate, not that it beats the "
+          "committed model.")
     print(f"native overall rmse (this {len(subset)}-station subset): {native_result['overall_rmse']}")
     print(f"native baseline (persistence) rmse: {native_result['baseline_rmse']}")
     print(f"\nper-station native results:")

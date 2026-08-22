@@ -132,25 +132,54 @@ def test_spatial_loso_native_matches_pandas_on_a_real_station_subset():
         # pandas=21.68, native=23.17). overall_rmse delta 0.23 (25.43 vs
         # 25.66).
         #
-        # The two causes are the SAME ones Phase 0 already identified for
+        # The causes are the SAME ones Phase 0 already identified for
         # city-LOSO (per-city mask_unknown_city seeding draws a different
         # ~5% "unknown" subset than the pandas path's single pooled draw;
         # stream_unit_to_disk's float32 downcast shifts LightGBM's
-        # histogram bin edges vs pandas' float64 path) -- confirmed by a
-        # prior bug hunt on this same function that ruled out a THIRD,
-        # much larger cause first: an earlier version of the native
-        # training loop forgot to drop the held-out station's own rows
-        # from its training frame (loso_exclude only self-excludes a cell
-        # from its OWN composite feature, it does not remove that cell's
-        # rows from build_features' output -- the pandas reference does
-        # this explicitly via `frame[frame.cell != held_out]`). That bug
-        # gave deltas of 6-10 RMSE points on a real single-city sanity
-        # check -- an order of magnitude past what float32/seeding noise
-        # can explain -- and was fixed before this tolerance was set.
+        # histogram bin edges vs pandas' float64 path), PLUS a third cause
+        # structural to this function specifically: model.py's PARAMS sets
+        # bagging_fraction=0.8, bagging_freq=1, so which rows land in each
+        # boosting round's bagging sample depends on ROW ORDER, and this
+        # function's combine_streamed_units concatenates per-city arrays in
+        # `cities` (sorted) order -- a different row order than the pandas
+        # path's single pooled build_features call produces. Same class of
+        # divergence as the other two (a training-set construction detail
+        # that shifts which exact rows/bins LightGBM sees), not a fourth,
+        # unexplained one. -- confirmed by a prior bug hunt on this same
+        # function that ruled out a much larger, FOURTH cause first: an
+        # earlier version of the native training loop forgot to drop the
+        # held-out station's own rows from its training frame (loso_exclude
+        # only self-excludes a cell from its OWN composite feature, it does
+        # not remove that cell's rows from build_features' output -- the
+        # pandas reference does this explicitly via
+        # `frame[frame.cell != held_out]`). That bug gave deltas of 6-10
+        # RMSE points on a real single-city sanity check -- an order of
+        # magnitude past what float32/seeding/row-order noise can explain
+        # -- and was fixed before this tolerance was set.
         #
         # 2.0 is chosen comfortably above the observed 1.49 ceiling (a
         # ~34% margin, matching Phase 0's own ~27% margin on city-LOSO)
         # -- tight enough to catch a real regression, clear of the
         # measured, explained divergence.
+        #
+        # This diagnostic (like the routine test above it) passes
+        # fires=None to both paths -- production's engine="native"
+        # dispatch (train.py) passes real fires instead, and real fires
+        # exercise a THIRD divergence cause fires=None never touches: the
+        # "citywide representative wind" build_features averages over
+        # (features.py's wind_by_hour/wind_ms_by_hour, fed into
+        # fire_pressure's wind-alignment term) is a circular mean over
+        # whatever cells are in the panel passed to it -- pooled across
+        # ALL cities in the pandas path, but per-CITY here (this function
+        # calls build_features once per city). Checked with a real
+        # single-city fast check (ahmedabad, 2 real stations, real fires:
+        # scratch_out/_fast_check_fires_ahmedabad.py) rather than a full
+        # 3-city re-run of this diagnostic (a single city can't exercise
+        # the cross-city wind-population difference itself, but does
+        # confirm the with-fires path runs cleanly and produces a sane
+        # delta): observed deltas 0.18 and 0.20, comfortably inside the
+        # 0.03-1.49 no-fires range above, not a larger, separate
+        # divergence. See run_spatial_loso_native's own docstring
+        # (streaming.py) for the full writeup of this third cause.
         assert abs(native_r - pandas_r) < 2.0, (
             f"{station}: pandas={pandas_r}, native={native_r}, delta={abs(native_r - pandas_r)}")

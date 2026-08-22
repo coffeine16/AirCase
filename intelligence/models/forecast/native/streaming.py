@@ -368,6 +368,27 @@ def run_spatial_loso_native(panel: pd.DataFrame, horizons: list[int],
     a single-station ward's climatology being that station's own history
     in disguise -- see climatology.py's own docstring).
 
+    THIRD UNDERSTOOD DIVERGENCE CAUSE (alongside per-city mask_unknown_city
+    seeding and the float32 downcast, both already documented in the parity
+    test): when real `fires` are passed (production's engine="native"
+    dispatch does, via train.py's all_fires -- every parity test/diagnostic
+    before this note used fires=None and never exercised this), build_
+    features computes a "citywide representative wind" as a circular mean
+    over whatever cells are in the panel handed to IT (see features.py's
+    wind_by_hour/wind_ms_by_hour), which feeds fire_pressure's wind-
+    alignment term. The pandas pooled path computes that average over ALL
+    cities in one call; this function calls build_features per-city (`city_
+    panel = panel[panel.city == city]`), so the average is over that ONE
+    city's cells only -- a different population, not a bug. MEASURED on a
+    real single-city fast check (ahmedabad, 2 real stations, real fires,
+    scratch_out/_fast_check_fires_ahmedabad.py): deltas 0.18 and 0.20, the
+    same rough range as this function's no-fires deltas (0.03-1.49) --
+    consistent with the other two documented causes, no separate,
+    larger divergence found. A single-city check cannot itself exercise the
+    cross-city wind-population difference (with one city there is no
+    difference to observe), but it does confirm the with-fires code path
+    runs cleanly end-to-end and produces a sane, non-degenerate delta.
+
     KNOWN, DELIBERATE DIVERGENCE from the pandas reference for a real (if
     rare) edge case: validation.py's own _align_city docstring documents "a
     spatial_loso city with exactly one real station, whose held-out cell
@@ -447,6 +468,17 @@ def run_spatial_loso_native(panel: pd.DataFrame, horizons: list[int],
                 gc.collect()
 
             combined = combine_streamed_units(paths)
+            if combined.shape[0] == 0:
+                # Matches validation.py::_run_one_loso_fold's own
+                # `train_frame.empty` guard (`if train_frame.empty or
+                # test_frame.empty: return None`) -- Phase 0's
+                # run_city_loso_native has the equivalent `if not paths:
+                # continue`. Without this, a fold where every city streams
+                # zero training rows (e.g. the only city has a single
+                # station and it's the held-out one) would hand lgb.Dataset
+                # a (0, n) array and lgb.train would raise instead of the
+                # fold being gracefully skipped, same as the pandas path.
+                continue
             city_col_idx = feature_cols.index("city")
             X, y = combined[:, :-1], combined[:, -1]
 

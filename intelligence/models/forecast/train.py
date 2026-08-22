@@ -242,7 +242,13 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     Numba-composite-grid path instead of the in-process pandas path --
     see docs/superpowers/specs/2026-08-21-local-native-training-pipeline-
     design.md. walk-forward is NOT affected by this flag yet (a later
-    phase); it always runs the pandas path regardless of `engine`'s value."""
+    phase); it always runs the pandas path regardless of `engine`'s value.
+    The native path also does not checkpoint spatial-LOSO (same gap as
+    Phase 0 already left for native city-LOSO): `checkpoint_dir` is not
+    threaded through to `run_spatial_loso_native` at all, so a killed
+    engine="native" run restarts spatial-LOSO from fold 1, not from
+    wherever it died -- this matters more here than for city-LOSO, since
+    spatial-LOSO is the 82-fold, ~162-minute stage."""
     out_dir = Path(out_dir)
     # concat silently reverts each city's own categorical columns back to
     # plain string dtype whenever their category sets differ (every city's
