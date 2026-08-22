@@ -340,7 +340,19 @@ def _load_panels(cities: list[str] | None, prefer_historical: bool = True):
         if not path.exists():
             print(f"[forecast] {city}: no panel at {path}, skipping")
             continue
-        panels[city] = downcast_panel(pd.read_parquet(path))
+        panel = pd.read_parquet(path)
+        # `city` is a constant provenance label (panel.py: `panel["city"] = CITY`),
+        # not measured data — but build_features groups on it, so a panel built
+        # before that line existed dies with KeyError: 'city' deep inside the
+        # feature build. Every operational panel written before this column was
+        # added is otherwise perfectly good real data, and we know exactly which
+        # city it belongs to: we just read it out of that city's directory.
+        # Backfilling it here means an existing panel does NOT have to be
+        # re-ingested (live APIs + GEE auth) just to be forecast from.
+        if "city" not in panel.columns:
+            panel["city"] = city
+            print(f"[forecast] {city}: panel predates the `city` column — labelled in place")
+        panels[city] = downcast_panel(panel)
         fires_p = (hist if use_hist else DATA_RAW_BASE / city) / "fires.parquet"
         if fires_p.exists():
             fires_by_city[city] = pd.read_parquet(fires_p)
@@ -420,7 +432,19 @@ def run(cities: list[str] | None = None, checkpoint_dir: str | None = None) -> d
         if not path.exists():
             print(f"[forecast] {city}: no panel at {path}, skipping")
             continue
-        panels[city] = downcast_panel(pd.read_parquet(path))
+        panel = pd.read_parquet(path)
+        # `city` is a constant provenance label (panel.py: `panel["city"] = CITY`),
+        # not measured data — but build_features groups on it, so a panel built
+        # before that line existed dies with KeyError: 'city' deep inside the
+        # feature build. Every operational panel written before this column was
+        # added is otherwise perfectly good real data, and we know exactly which
+        # city it belongs to: we just read it out of that city's directory.
+        # Backfilling it here means an existing panel does NOT have to be
+        # re-ingested (live APIs + GEE auth) just to be forecast from.
+        if "city" not in panel.columns:
+            panel["city"] = city
+            print(f"[forecast] {city}: panel predates the `city` column — labelled in place")
+        panels[city] = downcast_panel(panel)
         # The RAW per-fire-event table (lat/lon/frp), not the panel's
         # pre-aggregated fires_6h/frp_6h columns: spatial.fire_pressure needs
         # each detection's own position to weight it by distance and wind.
