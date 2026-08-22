@@ -223,18 +223,41 @@ def _ward_series(field: list[dict], city_out) -> list[dict]:
             for r in g.itertuples()]
 
 
-def _write_city_outputs(city_out, field: list[dict], eval_payload: dict) -> None:
-    """forecast.json + forecast_ward.json + forecast_eval.json for one city.
+def _write_city_outputs(city_out, field: list[dict], eval_payload: dict,
+                        write_forecast_eval: bool = False) -> None:
+    """forecast.json + forecast_ward.json (+ the model's own metrics) for one city.
 
     Compact, not pretty-printed: 24 horizons x ~1700 cells is 40k rows, and
     `indent=2` alone cost 1.7 MB of leading spaces in a file the browser
     downloads. Nothing reads it by eye.
+
+    TWO DIFFERENT EVAL FILES, because they answer different questions and have
+    incompatible shapes:
+
+      forecast_eval.json        per-HORIZON skill against persistence + diurnal
+                                ({"h24": {"rmse_model", "skill_vs_persistence_pct"}}).
+                                This is the rubric's number and what the admin
+                                Validation page renders.
+      forecast_model_eval.json  the served model's own training metrics
+                                (walk-forward, spatial-LOSO, per-city LOSO,
+                                interval_scale). Nothing reads this by horizon.
+
+    The manifest's eval is the SECOND kind. Writing it into forecast_eval.json
+    silently blanks the Validation page, whose lookup is
+    `fe[city][h].skill_vs_persistence_pct` -- every horizon key is simply absent
+    from the new shape. So SERVING never touches forecast_eval.json: predicting
+    with an already-trained model produces no new evaluation, and overwriting
+    last evaluation's answer with a differently-shaped one is a loss, not an
+    update. Only a training run (`write_forecast_eval=True`) may replace it.
     """
     city_out.mkdir(parents=True, exist_ok=True)
     (city_out / "forecast.json").write_text(
         json.dumps(field, separators=(",", ":")), encoding="utf-8")
-    (city_out / "forecast_eval.json").write_text(
+    (city_out / "forecast_model_eval.json").write_text(
         json.dumps(eval_payload, indent=2), encoding="utf-8")
+    if write_forecast_eval:
+        (city_out / "forecast_eval.json").write_text(
+            json.dumps(eval_payload, indent=2), encoding="utf-8")
     print(f"[forecast] {city_out.name}: wrote forecast.json "
           f"({len(field)} cell-horizons)")
 
@@ -463,6 +486,7 @@ def run(cities: list[str] | None = None, checkpoint_dir: str | None = None) -> d
     fields = _predict_field(panels, served_manifest, served_models, FEATURE_COLUMNS,
                              fires_by_city=fires_by_city)
     for city, field in fields.items():
-        _write_city_outputs(DATA_OUT_BASE / city, field, manifest["eval"])
+        _write_city_outputs(DATA_OUT_BASE / city, field, manifest["eval"],
+                            write_forecast_eval=True)
 
     return manifest
