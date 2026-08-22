@@ -7,6 +7,7 @@ Sentinel-5P via Google Earth Engine lives in ingest/sentinel_gee.py (needs
 a GEE service account; synthetic satellite is used until that's configured).
 """
 import os
+import socket
 import sys
 import json
 import time
@@ -19,6 +20,40 @@ from shared.config import (BBOX, DATA_RAW, OPENAQ_URL, OPENMETEO_URL,
                            OPENMETEO_ARCHIVE_URL, FIRMS_URL, OVERPASS_URL,
                            PANEL_HOURS, window_end)
 from shared.grid import latlng_to_cell, weather_grid_cells, cell_center
+
+
+# Prefer IPv4 when resolving any host this module talks to.
+#
+# On an IPv6-only mobile network with DNS64/NAT64 (India's carriers do this --
+# the giveaway is a synthesised AAAA under the well-known 64:ff9b::/96 prefix),
+# every collector host resolves to an IPv6 address first. urllib then connects
+# to THAT and only that: unlike curl and the browsers, it has no Happy Eyeballs
+# (RFC 8305), so it never races the A record and never falls back. The NAT64
+# path here silently eats the TLS ClientHello, so the handshake sits until it
+# times out. Measured on api.openaq.org: three consecutive 60-second timeouts
+# from urllib while `curl https://api.openaq.org` returned 200 in 1.1s from the
+# same shell, and the same request forced to IPv4 returned 200 in 0.9s.
+#
+# The failure is worth defending against because of WHERE it lands: a collector
+# raising mid-ingest sends pollers.run() into its synthetic fallback, and a live
+# run that quietly turns synthetic is exactly the scientifically-invalid mix this
+# file's NO_FALLBACK guard exists to prevent. (It did prevent it -- the Mumbai
+# run aborted rather than emit a fake world -- but the right outcome is the real
+# fetch succeeding.)
+#
+# This REORDERS, it does not filter: IPv6 entries stay in the list, just after
+# the IPv4 ones, so a genuinely IPv6-only host is still reachable and a normal
+# dual-stack network is unaffected. socket.create_connection walks the list in
+# order, so "first that connects" is all this changes.
+_getaddrinfo_orig = socket.getaddrinfo
+
+
+def _ipv4_first(*args, **kwargs):
+    res = _getaddrinfo_orig(*args, **kwargs)
+    return sorted(res, key=lambda r: 0 if r[0] == socket.AF_INET else 1)
+
+
+socket.getaddrinfo = _ipv4_first
 
 
 def _get(url: str, headers: dict | None = None, timeout: int = 30) -> bytes:
