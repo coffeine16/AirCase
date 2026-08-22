@@ -5,7 +5,7 @@
     "zone_id": "Z00",
     "ward_id": "W038",
     "ward_name": "Ward 106 Serilingampally",
-    "issued_at": "2026-08-22T18:41:52.884324+00:00",
+    "issued_at": "2026-08-22T19:23:49.987028+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -155,7 +155,7 @@
     "zone_id": "Z01",
     "ward_id": "W002",
     "ward_name": "Ward 105 Gachibowli",
-    "issued_at": "2026-08-22T18:41:52.884738+00:00",
+    "issued_at": "2026-08-22T19:23:51.698643+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -301,7 +301,7 @@
     "zone_id": "Z02",
     "ward_id": "W006",
     "ward_name": "Ward 59 Mailardevpally",
-    "issued_at": "2026-08-22T18:41:52.884902+00:00",
+    "issued_at": "2026-08-22T19:23:51.698794+00:00",
     "status": "draft",
     "situation": {
       "source": "traffic",
@@ -324,11 +324,21 @@
       "blh_m": 245,
       "nearest_candidate_km": null
     },
-    "legal_basis": [],
+    "legal_basis": [
+      {
+        "id": "AIR-1981-20",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 20",
+        "summary": "Power to give instructions to the authority in charge of registration of motor vehicles to ensure compliance with emission standards.",
+        "authority": "State Government / Transport Department, on SPCB advice",
+        "action": "Direct PUC enforcement drives and lane/corridor checks on this stretch; verify PUC compliance of commercial fleets using it.",
+        "penalty": "Driving in contravention of emission standards is punishable under s.190(2) of the Motor Vehicles Act, 1988."
+      }
+    ],
     "subject": "Air pollution source detected — traffic — Ward 59 Mailardevpally (zone Z02)",
     "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 12 cell(s) in Ward 59 Mailardevpally. The zone is classified 'acute'. Estimated PM2.5 in the zone is 61.4 ug/m3, corresponding to an AQI of 106 (Moderate).",
     "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.46. Supporting evidence: Inner Ring Road is 2.31 km away, wind alignment 0.95; NO2 column at p99 citywide; shallow boundary layer (245 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: .",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20.",
     "evidence_chain": [
       "Inner Ring Road is 2.31 km away, wind alignment 0.95",
       "NO2 column at p99 citywide",

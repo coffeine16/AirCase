@@ -5,7 +5,7 @@
     "zone_id": "Z01",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T18:47:54.130407+00:00",
+    "issued_at": "2026-08-22T19:23:53.877115+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -151,7 +151,7 @@
     "zone_id": "Z00",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T18:47:54.130535+00:00",
+    "issued_at": "2026-08-22T19:23:55.588790+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",

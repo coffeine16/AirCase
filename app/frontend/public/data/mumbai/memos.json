@@ -5,7 +5,7 @@
     "zone_id": "Z01",
     "ward_id": "W005",
     "ward_name": "E",
-    "issued_at": "2026-08-22T18:29:08.581509+00:00",
+    "issued_at": "2026-08-22T19:23:42.225206+00:00",
     "status": "draft",
     "situation": {
       "source": "traffic",
@@ -28,11 +28,21 @@
       "blh_m": 192,
       "nearest_candidate_km": null
     },
-    "legal_basis": [],
+    "legal_basis": [
+      {
+        "id": "AIR-1981-20",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 20",
+        "summary": "Power to give instructions to the authority in charge of registration of motor vehicles to ensure compliance with emission standards.",
+        "authority": "State Government / Transport Department, on SPCB advice",
+        "action": "Direct PUC enforcement drives and lane/corridor checks on this stretch; verify PUC compliance of commercial fleets using it.",
+        "penalty": "Driving in contravention of emission standards is punishable under s.190(2) of the Motor Vehicles Act, 1988."
+      }
+    ],
     "subject": "Air pollution source detected — traffic — E (zone Z01)",
     "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 17 cell(s) in E. The zone is classified 'acute'. Estimated PM2.5 in the zone is 87.3 ug/m3, corresponding to an AQI of 191 (Moderate).",
     "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.50. Supporting evidence: Dr Babasaheb Ambedkar Marg is 0.37 km away, wind alignment 0.62; NO2 column at p96 citywide; shallow boundary layer (192 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: .",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20.",
     "evidence_chain": [
       "Dr Babasaheb Ambedkar Marg is 0.37 km away, wind alignment 0.62",
       "NO2 column at p96 citywide",
@@ -143,7 +153,7 @@
     "zone_id": "Z02",
     "ward_id": "W002",
     "ward_name": "B",
-    "issued_at": "2026-08-22T18:29:08.581605+00:00",
+    "issued_at": "2026-08-22T19:23:43.592505+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -289,7 +299,7 @@
     "zone_id": "Z05",
     "ward_id": "W008",
     "ward_name": "F/N",
-    "issued_at": "2026-08-22T18:29:08.581653+00:00",
+    "issued_at": "2026-08-22T19:23:43.592706+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -437,7 +447,7 @@
     "zone_id": "Z06",
     "ward_id": "W008",
     "ward_name": "F/N",
-    "issued_at": "2026-08-22T18:29:08.581692+00:00",
+    "issued_at": "2026-08-22T19:23:43.592841+00:00",
     "status": "draft",
     "situation": {
       "source": "waste_burning",
@@ -587,7 +597,7 @@
     "zone_id": "Z03",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T18:29:08.581726+00:00",
+    "issued_at": "2026-08-22T19:23:43.592954+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -733,7 +743,7 @@
     "zone_id": "Z07",
     "ward_id": "W009",
     "ward_name": "G/N",
-    "issued_at": "2026-08-22T18:29:08.581758+00:00",
+    "issued_at": "2026-08-22T19:23:43.593068+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -879,7 +889,7 @@
     "zone_id": "Z04",
     "ward_id": "W014",
     "ward_name": "K/W",
-    "issued_at": "2026-08-22T18:29:08.581788+00:00",
+    "issued_at": "2026-08-22T19:23:43.593190+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -1025,7 +1035,7 @@
     "zone_id": "Z08",
     "ward_id": "W008",
     "ward_name": "F/N",
-    "issued_at": "2026-08-22T18:29:08.581817+00:00",
+    "issued_at": "2026-08-22T19:23:43.593280+00:00",
     "status": "draft",
     "situation": {
       "source": "waste_burning",
@@ -1171,7 +1181,7 @@
     "zone_id": "Z10",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T18:29:08.581847+00:00",
+    "issued_at": "2026-08-22T19:23:43.593372+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",

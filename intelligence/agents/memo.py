@@ -119,6 +119,35 @@ LEGAL_RULES = [
         "penalty": "Environmental compensation per CPCB dust-mitigation schedule.",
     },
     {
+        # Vehicular emissions are a real statutory head, and s.20 is the one that
+        # fits: it empowers the State to instruct the registering authority on
+        # emission standards for automobiles. Added because traffic was the ONLY
+        # attributable source category with no rule at all, which produced memos
+        # carrying an empty legal_basis -- see rule_based_prose's directive, which
+        # then rendered "act under the provisions cited below: ." with nothing
+        # after the colon. A notice an officer cannot act on is worse than no
+        # notice, so the gap is closed rather than papered over.
+        #
+        # NOTE this does not make a traffic corridor enforceable as a SITE.
+        # detect.py deliberately keeps `traffic` out of ENFORCEABLE_KINDS -- you
+        # cannot serve a notice on a road. A zone reaches this rule only when some
+        # OTHER instrument already made it attributable and the category scoring
+        # then named traffic as the dominant contributor; the directive is a
+        # corridor-level enforcement action, not a site inspection.
+        "id": "AIR-1981-20",
+        "when": [("source", "eq", "traffic")],
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 20",
+        "summary": "Power to give instructions to the authority in charge of "
+                   "registration of motor vehicles to ensure compliance with "
+                   "emission standards.",
+        "authority": "State Government / Transport Department, on SPCB advice",
+        "action": "Direct PUC enforcement drives and lane/corridor checks on this "
+                  "stretch; verify PUC compliance of commercial fleets using it.",
+        "penalty": "Driving in contravention of emission standards is punishable "
+                   "under s.190(2) of the Motor Vehicles Act, 1988.",
+    },
+    {
         "id": "GRAP-STAGE",
         "when": [("aqi", "gte", 201)],
         "statute": "Graded Response Action Plan (CAQM)",
@@ -221,10 +250,20 @@ def rule_based_prose(sit: dict, legal: list[dict]) -> dict:
         "finding": (
             f"The evidence indicates {src} as the primary source, at a computed "
             f"confidence of {conf:.2f}. Supporting evidence: {factors}. {hedge}"),
+        # An empty `legal` list used to render "...cited below: ." -- a sentence
+        # that stops at the colon. The rule engine is allowed to match nothing
+        # (that is a real state, not a bug), so the prose has to have something
+        # honest to say when it does, rather than a citation-shaped hole.
         "directive": (
-            f"The addressee is directed to inspect the zone and act under the "
-            f"provisions cited below: "
-            + "; ".join(f"{l['statute']}, {l['provision']}" for l in legal) + "."),
+            (f"The addressee is directed to inspect the zone and act under the "
+             f"provisions cited below: "
+             + "; ".join(f"{l['statute']}, {l['provision']}" for l in legal) + ".")
+            if legal else
+            (f"The addressee is directed to inspect the zone and determine the "
+             f"applicable enforcement provision: no statutory head in this "
+             f"engine's rule set matched a {src} source at AQI {sit['aqi']}. "
+             f"This memo carries the evidence chain but NO legal citation, and "
+             f"must not be served until one is identified by the issuing officer.")),
     }
 
 

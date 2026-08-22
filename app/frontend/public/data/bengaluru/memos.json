@@ -5,7 +5,7 @@
     "zone_id": "Z01",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T18:59:44.276539+00:00",
+    "issued_at": "2026-08-22T19:23:38.645292+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -149,7 +149,7 @@
     "zone_id": "Z04",
     "ward_id": "W047",
     "ward_name": "Srinivasa Nagar",
-    "issued_at": "2026-08-22T18:59:44.276643+00:00",
+    "issued_at": "2026-08-22T19:23:40.050167+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -295,7 +295,7 @@
     "zone_id": "Z06",
     "ward_id": "W216",
     "ward_name": "K R Puram",
-    "issued_at": "2026-08-22T18:59:44.276693+00:00",
+    "issued_at": "2026-08-22T19:23:40.050279+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -439,7 +439,7 @@
     "zone_id": "Z05",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T18:59:44.276735+00:00",
+    "issued_at": "2026-08-22T19:23:40.050336+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -583,7 +583,7 @@
     "zone_id": "Z02",
     "ward_id": "W231",
     "ward_name": "Govindaraja Nagar",
-    "issued_at": "2026-08-22T18:59:44.276775+00:00",
+    "issued_at": "2026-08-22T19:23:40.050395+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -729,7 +729,7 @@
     "zone_id": "Z00",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T18:59:44.276810+00:00",
+    "issued_at": "2026-08-22T19:23:40.050447+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -873,7 +873,7 @@
     "zone_id": "Z03",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T18:59:44.276843+00:00",
+    "issued_at": "2026-08-22T19:23:40.050493+00:00",
     "status": "draft",
     "situation": {
       "source": "traffic",
@@ -895,11 +895,21 @@
       "blh_m": 515,
       "nearest_candidate_km": null
     },
-    "legal_basis": [],
+    "legal_basis": [
+      {
+        "id": "AIR-1981-20",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 20",
+        "summary": "Power to give instructions to the authority in charge of registration of motor vehicles to ensure compliance with emission standards.",
+        "authority": "State Government / Transport Department, on SPCB advice",
+        "action": "Direct PUC enforcement drives and lane/corridor checks on this stretch; verify PUC compliance of commercial fleets using it.",
+        "penalty": "Driving in contravention of emission standards is punishable under s.190(2) of the Motor Vehicles Act, 1988."
+      }
+    ],
     "subject": "Air pollution source detected — traffic — Outside city limits (zone Z03)",
     "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 3 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 46.5 ug/m3, corresponding to an AQI of 78 (Satisfactory).",
     "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.52. Supporting evidence: NICE Road is 2.03 km away, wind alignment 0.93; NO2 column at p98 citywide. This finding is INDICATIVE and requires verification on site.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: .",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20.",
     "evidence_chain": [
       "NICE Road is 2.03 km away, wind alignment 0.93",
       "NO2 column at p98 citywide"

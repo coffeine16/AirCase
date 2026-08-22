@@ -5,7 +5,7 @@
     "zone_id": "Z00",
     "ward_id": "W100",
     "ward_name": "Ward 102 (Annanagar)",
-    "issued_at": "2026-08-22T19:17:34.797658+00:00",
+    "issued_at": "2026-08-22T19:23:36.096586+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -149,7 +149,7 @@
     "zone_id": "Z01",
     "ward_id": "W100",
     "ward_name": "Ward 102 (Annanagar)",
-    "issued_at": "2026-08-22T19:17:34.797751+00:00",
+    "issued_at": "2026-08-22T19:23:37.190765+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -293,7 +293,7 @@
     "zone_id": "Z02",
     "ward_id": "W048",
     "ward_name": "Ward 35 (Tondiarpet)",
-    "issued_at": "2026-08-22T19:17:34.797795+00:00",
+    "issued_at": "2026-08-22T19:23:37.190906+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -437,7 +437,7 @@
     "zone_id": "Z10",
     "ward_id": "W042",
     "ward_name": "Ward 28 (Madhavaram)",
-    "issued_at": "2026-08-22T19:17:34.797828+00:00",
+    "issued_at": "2026-08-22T19:23:37.190960+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -581,7 +581,7 @@
     "zone_id": "Z05",
     "ward_id": "W168",
     "ward_name": "Ward 156 (Alandur)",
-    "issued_at": "2026-08-22T19:17:34.797859+00:00",
+    "issued_at": "2026-08-22T19:23:37.191010+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -725,7 +725,7 @@
     "zone_id": "Z07",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T19:17:34.797893+00:00",
+    "issued_at": "2026-08-22T19:23:37.191056+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -869,7 +869,7 @@
     "zone_id": "Z04",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T19:17:34.797926+00:00",
+    "issued_at": "2026-08-22T19:23:37.191089+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -1013,7 +1013,7 @@
     "zone_id": "Z09",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T19:17:34.797956+00:00",
+    "issued_at": "2026-08-22T19:23:37.191128+00:00",
     "status": "draft",
     "situation": {
       "source": "traffic",
@@ -1035,11 +1035,21 @@
       "blh_m": 805,
       "nearest_candidate_km": null
     },
-    "legal_basis": [],
+    "legal_basis": [
+      {
+        "id": "AIR-1981-20",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 20",
+        "summary": "Power to give instructions to the authority in charge of registration of motor vehicles to ensure compliance with emission standards.",
+        "authority": "State Government / Transport Department, on SPCB advice",
+        "action": "Direct PUC enforcement drives and lane/corridor checks on this stretch; verify PUC compliance of commercial fleets using it.",
+        "penalty": "Driving in contravention of emission standards is punishable under s.190(2) of the Motor Vehicles Act, 1988."
+      }
+    ],
     "subject": "Air pollution source detected — traffic — Outside city limits (zone Z09)",
     "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 13 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 50.5 ug/m3, corresponding to an AQI of 84 (Satisfactory).",
     "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.68. Supporting evidence: Maduravoyal Interchange is 0.56 km away, wind alignment 0.92; NO2 column at p96 citywide. The evidence is consistent and independently corroborated.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: .",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20.",
     "evidence_chain": [
       "Maduravoyal Interchange is 0.56 km away, wind alignment 0.92",
       "NO2 column at p96 citywide"
@@ -1149,7 +1159,7 @@
     "zone_id": "Z08",
     "ward_id": "W167",
     "ward_name": "Ward 159 (Alandur)",
-    "issued_at": "2026-08-22T19:17:34.797984+00:00",
+    "issued_at": "2026-08-22T19:23:37.191161+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -1293,7 +1303,7 @@
     "zone_id": "Z06",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T19:17:34.798015+00:00",
+    "issued_at": "2026-08-22T19:23:37.191195+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",

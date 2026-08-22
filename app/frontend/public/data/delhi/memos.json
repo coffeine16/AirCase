@@ -5,7 +5,7 @@
     "zone_id": "Z06",
     "ward_id": "W219",
     "ward_name": "SAMAYPUR BADLI",
-    "issued_at": "2026-08-22T19:11:44.148582+00:00",
+    "issued_at": "2026-08-22T19:23:33.290741+00:00",
     "status": "draft",
     "situation": {
       "source": "waste_burning",
@@ -171,7 +171,7 @@
     "zone_id": "Z04",
     "ward_id": "W094",
     "ward_name": "BADAR PUR",
-    "issued_at": "2026-08-22T19:11:44.148732+00:00",
+    "issued_at": "2026-08-22T19:23:34.658756+00:00",
     "status": "draft",
     "situation": {
       "source": "waste_burning",
@@ -335,7 +335,7 @@
     "zone_id": "Z01",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T19:11:44.148834+00:00",
+    "issued_at": "2026-08-22T19:23:34.658894+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -490,7 +490,7 @@
     "zone_id": "Z05",
     "ward_id": "W223",
     "ward_name": "KAPASHERA",
-    "issued_at": "2026-08-22T19:11:44.148895+00:00",
+    "issued_at": "2026-08-22T19:23:34.658968+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
