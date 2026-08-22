@@ -343,6 +343,16 @@ main-loop context.
   chronic landfill.) `detect.py::_reconcile_zones` clusters cells within 2 km and
   makes every cell inherit its zone's most persistent verdict. Do not classify
   cells independently.
+- **`--synthetic` OVERWRITES the live outputs of whatever `AQ_CITY` is set.**
+  Both modes write to `data/outputs/<city>/`, and `AQ_CITY` defaults to
+  `bengaluru`, so a bare `python scripts/run_pipeline.py --synthetic --full`
+  silently replaces Bengaluru's real Nov-2025 run with the synthetic world —
+  same filenames, no warning, and `data/outputs/` is gitignored so there is
+  nothing to `git checkout`. The tell is the timestamp: synthetic is anchored to
+  `SYNTHETIC_ANCHOR` (2026-05-02 .. 2026-07-01), live is the real window. The
+  committed static bundle under `app/frontend/public/data/<city>/` is the only
+  copy that survives, so check there before re-running anything live. Set
+  `AQ_CITY` to a throwaway city for synthetic work, or re-run the real city after.
 - Windows PowerShell: use `$env:PYTHONPATH = "."` not `PYTHONPATH=. cmd`, and
   `Remove-Item -Recurse -Force` not `rm -rf`.
 - `fusion.py` LOSO retrains 12 LightGBM models (one per held-out station).

@@ -8,17 +8,17 @@
       "8860145189fffff",
       "88601451c5fffff",
       "88601451c7fffff",
-      "88601451c3fffff",
       "88601451d5fffff",
+      "88601451c3fffff",
       "88601451c1fffff"
     ],
     "centroid": {
       "lat": 12.8779,
       "lon": 77.4646
     },
-    "eps": 64.7,
+    "eps": 65.9,
     "components": {
-      "severity": 0.837,
+      "severity": 0.873,
       "attribution_conf": 0.74,
       "actionability": 0.8,
       "vulnerability": 0.044
@@ -27,72 +27,72 @@
     "source": "construction",
     "confidence": 0.74,
     "n_cells": 6,
-    "pm25_med": 43.8,
+    "pm25_med": 52.4,
     "status": "pending"
   },
   {
-    "action_id": "A04",
+    "action_id": "A05",
     "zone_id": "Z04",
-    "ward_id": "W047",
-    "ward_name": "Srinivasa Nagar",
+    "ward_id": "W167",
+    "ward_name": "Avalahalli",
     "cells": [
-      "8860145a63fffff",
       "8860145a05fffff",
+      "8860145a63fffff",
       "8860145a0dfffff"
     ],
     "centroid": {
       "lat": 12.9462,
       "lon": 77.552
     },
-    "eps": 63.6,
+    "eps": 62.8,
     "components": {
-      "severity": 0.632,
-      "attribution_conf": 0.46,
+      "severity": 0.617,
+      "attribution_conf": 0.45,
       "actionability": 0.6,
       "vulnerability": 0.897
     },
     "kind": "chronic",
     "source": "industrial",
-    "confidence": 0.46,
+    "confidence": 0.45,
     "n_cells": 3,
-    "pm25_med": 45.5,
+    "pm25_med": 45.8,
     "status": "pending"
   },
   {
-    "action_id": "A05",
+    "action_id": "A04",
     "zone_id": "Z06",
-    "ward_id": "W216",
-    "ward_name": "K R Puram",
+    "ward_id": "W213",
+    "ward_name": "Medahalli",
     "cells": [
-      "8861892e3dfffff",
       "8861892e35fffff",
+      "8861892e3dfffff",
       "8861892e37fffff",
-      "8861892e33fffff",
-      "8861892e31fffff",
       "8861892e39fffff",
+      "8861892e31fffff",
+      "8861892e33fffff",
+      "8861892c59fffff",
       "8861892e07fffff",
       "8861892e3bfffff",
       "8861892e15fffff",
-      "8861892e17fffff",
       "8861892eedfffff",
-      "8861892c59fffff"
+      "8861892e17fffff"
     ],
     "centroid": {
       "lat": 13.005,
       "lon": 77.6734
     },
-    "eps": 62.9,
+    "eps": 61.3,
     "components": {
-      "severity": 0.626,
-      "attribution_conf": 0.46,
+      "severity": 0.637,
+      "attribution_conf": 0.38,
       "actionability": 0.8,
       "vulnerability": 0.676
     },
     "kind": "emerging",
-    "source": "industrial",
-    "confidence": 0.46,
+    "source": "construction",
+    "confidence": 0.38,
     "n_cells": 12,
-    "pm25_med": 47.5,
+    "pm25_med": 58.2,
     "status": "pending"
   },
   {
@@ -116,9 +116,9 @@
       "lat": 13.0933,
       "lon": 77.7231
     },
-    "eps": 60.4,
+    "eps": 61.0,
     "components": {
-      "severity": 0.885,
+      "severity": 0.904,
       "attribution_conf": 0.5,
       "actionability": 0.8,
       "vulnerability": 0.044
@@ -127,11 +127,11 @@
     "source": "industrial",
     "confidence": 0.5,
     "n_cells": 10,
-    "pm25_med": 51.6,
+    "pm25_med": 57.8,
     "status": "pending"
   },
   {
-    "action_id": "A07",
+    "action_id": "A06",
     "zone_id": "Z02",
     "ward_id": "W231",
     "ward_name": "Govindaraja Nagar",
@@ -142,9 +142,9 @@
       "lat": 12.9787,
       "lon": 77.5314
     },
-    "eps": 60.0,
+    "eps": 60.7,
     "components": {
-      "severity": 0.571,
+      "severity": 0.589,
       "attribution_conf": 0.44,
       "actionability": 0.6,
       "vulnerability": 0.853
@@ -153,7 +153,7 @@
     "source": "industrial",
     "confidence": 0.44,
     "n_cells": 1,
-    "pm25_med": 34.4,
+    "pm25_med": 39.6,
     "status": "pending"
   },
   {
@@ -163,19 +163,19 @@
     "ward_name": "Outside city limits",
     "cells": [
       "886014434dfffff",
-      "88601451a5fffff",
-      "88601451a1fffff",
-      "88601451a3fffff",
-      "88601451a7fffff",
-      "8860145185fffff",
-      "88601451e3fffff",
-      "88601451adfffff",
       "88601451ebfffff",
-      "8860145181fffff",
-      "88601451a9fffff",
+      "88601451e3fffff",
       "886014518dfffff",
-      "8860145187fffff",
+      "8860145181fffff",
+      "8860145185fffff",
       "88601451abfffff",
+      "8860145187fffff",
+      "88601451a9fffff",
+      "88601451a5fffff",
+      "88601451adfffff",
+      "88601451a1fffff",
+      "88601451a7fffff",
+      "88601451a3fffff",
       "88601451e7fffff",
       "88601451e1fffff"
     ],
@@ -183,9 +183,9 @@
       "lat": 12.9041,
       "lon": 77.4608
     },
-    "eps": 59.0,
+    "eps": 59.6,
     "components": {
-      "severity": 0.883,
+      "severity": 0.9,
       "attribution_conf": 0.4,
       "actionability": 0.8,
       "vulnerability": 0.103
@@ -194,11 +194,11 @@
     "source": "industrial",
     "confidence": 0.4,
     "n_cells": 16,
-    "pm25_med": 51.2,
+    "pm25_med": 57.1,
     "status": "pending"
   },
   {
-    "action_id": "A06",
+    "action_id": "A07",
     "zone_id": "Z03",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
@@ -211,9 +211,9 @@
       "lat": 13.0138,
       "lon": 77.4647
     },
-    "eps": 49.8,
+    "eps": 48.7,
     "components": {
-      "severity": 0.587,
+      "severity": 0.555,
       "attribution_conf": 0.52,
       "actionability": 0.8,
       "vulnerability": 0.015
@@ -222,7 +222,7 @@
     "source": "traffic",
     "confidence": 0.52,
     "n_cells": 3,
-    "pm25_med": 46.5,
+    "pm25_med": 43.7,
     "status": "pending"
   }
 ]

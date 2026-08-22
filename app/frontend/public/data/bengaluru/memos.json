@@ -5,13 +5,13 @@
     "zone_id": "Z01",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T19:23:38.645292+00:00",
+    "issued_at": "2026-08-22T19:38:16.585654+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
       "confidence": 0.74,
-      "pm25": 43.8,
-      "aqi": 74,
+      "pm25": 52.4,
+      "aqi": 88,
       "aqi_category": "Satisfactory",
       "kind": "emerging",
       "zone_id": "Z01",
@@ -38,7 +38,7 @@
       }
     ],
     "subject": "Air pollution source detected — construction — Outside city limits (zone Z01)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 6 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 43.8 ug/m3, corresponding to an AQI of 74 (Satisfactory).",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 6 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 52.4 ug/m3, corresponding to an AQI of 88 (Satisfactory).",
     "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.74. Supporting evidence: Good Earth Ochre is 0.39 km away, wind alignment 0.93. The evidence is consistent and independently corroborated.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Construction and Demolition Waste Management Rules, 2016, Rules 4 & 8.",
     "evidence_chain": [
@@ -48,7 +48,7 @@
       "cell": "8860145189fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 32.5,
+      "pm25_estimate": 37.2,
       "candidates": [
         {
           "name": "Good Earth Ochre",
@@ -145,25 +145,25 @@
   },
   {
     "memo_id": "AQ/BEN/20260822/Z04",
-    "action_id": "A04",
+    "action_id": "A05",
     "zone_id": "Z04",
-    "ward_id": "W047",
-    "ward_name": "Srinivasa Nagar",
-    "issued_at": "2026-08-22T19:23:40.050167+00:00",
+    "ward_id": "W167",
+    "ward_name": "Avalahalli",
+    "issued_at": "2026-08-22T19:38:17.996784+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
-      "confidence": 0.46,
-      "pm25": 45.5,
-      "aqi": 76,
+      "confidence": 0.45,
+      "pm25": 45.8,
+      "aqi": 77,
       "aqi_category": "Satisfactory",
       "kind": "chronic",
       "zone_id": "Z04",
-      "ward_id": "W047",
-      "ward_name": "Srinivasa Nagar",
+      "ward_id": "W167",
+      "ward_name": "Avalahalli",
       "n_cells": 3,
       "evidence_factors": [
-        "Kempabudhi Sewage Treatment Planet is 0.45 km away, wind alignment 0.63",
+        "industrial_1203069041 is 0.57 km away, wind alignment 0.7",
         "shallow boundary layer (440 m) trapping emissions"
       ],
       "fire_hours": 0,
@@ -182,67 +182,67 @@
         "penalty": "Contravention punishable under s.15."
       }
     ],
-    "subject": "Air pollution source detected — industrial — Srinivasa Nagar (zone Z04)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 3 cell(s) in Srinivasa Nagar. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 45.5 ug/m3, corresponding to an AQI of 76 (Satisfactory).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.46. Supporting evidence: Kempabudhi Sewage Treatment Planet is 0.45 km away, wind alignment 0.63; shallow boundary layer (440 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "subject": "Air pollution source detected — industrial — Avalahalli (zone Z04)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 3 cell(s) in Avalahalli. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 45.8 ug/m3, corresponding to an AQI of 77 (Satisfactory).",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.45. Supporting evidence: industrial_1203069041 is 0.57 km away, wind alignment 0.7; shallow boundary layer (440 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
     "evidence_chain": [
-      "Kempabudhi Sewage Treatment Planet is 0.45 km away, wind alignment 0.63",
+      "industrial_1203069041 is 0.57 km away, wind alignment 0.7",
       "shallow boundary layer (440 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "8860145a63fffff",
+      "cell": "8860145a05fffff",
       "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W047",
-      "pm25_estimate": 41.8,
+      "ward_id": "W167",
+      "pm25_estimate": 39.9,
       "candidates": [
+        {
+          "name": "industrial_1203069041",
+          "type": "industrial",
+          "distance_km": 0.57,
+          "wind_alignment": 0.7
+        },
         {
           "name": "Kempabudhi Sewage Treatment Planet",
           "type": "industrial",
-          "distance_km": 0.45,
-          "wind_alignment": 0.63
+          "distance_km": 1.15,
+          "wind_alignment": 0.75
         },
         {
           "name": "TR Mills",
           "type": "industrial",
-          "distance_km": 0.84,
-          "wind_alignment": 0.67
+          "distance_km": 1.51,
+          "wind_alignment": 0.76
         },
         {
-          "name": "construction_411067252",
-          "type": "construction",
-          "distance_km": 1.54,
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 0.94,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 0.95,
+          "wind_alignment": 0.57
+        },
+        {
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 1.55,
           "wind_alignment": 0.72
         },
         {
-          "name": "industrial_1205832167",
+          "name": "Mysore Road",
+          "type": "traffic",
+          "distance_km": 1.58,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "industrial_55684007",
           "type": "industrial",
-          "distance_km": 1.66,
-          "wind_alignment": 0.68
-        },
-        {
-          "name": "construction_1205832164",
-          "type": "construction",
-          "distance_km": 1.98,
-          "wind_alignment": 0.75
-        },
-        {
-          "name": "BGS Flyover",
-          "type": "traffic",
-          "distance_km": 1.89,
-          "wind_alignment": 0.71
-        },
-        {
-          "name": "Bala Gangadhara Swamy Flyover",
-          "type": "traffic",
-          "distance_km": 1.54,
-          "wind_alignment": 0.62
-        },
-        {
-          "name": "BGS Flyover",
-          "type": "traffic",
-          "distance_km": 1.91,
-          "wind_alignment": 0.7
+          "distance_km": 1.05,
+          "wind_alignment": 0.56
         }
       ],
       "pollutant_signature": {
@@ -291,25 +291,25 @@
   },
   {
     "memo_id": "AQ/BEN/20260822/Z06",
-    "action_id": "A05",
+    "action_id": "A04",
     "zone_id": "Z06",
-    "ward_id": "W216",
-    "ward_name": "K R Puram",
-    "issued_at": "2026-08-22T19:23:40.050279+00:00",
+    "ward_id": "W213",
+    "ward_name": "Medahalli",
+    "issued_at": "2026-08-22T19:38:17.996932+00:00",
     "status": "draft",
     "situation": {
-      "source": "industrial",
-      "confidence": 0.46,
-      "pm25": 47.5,
-      "aqi": 80,
+      "source": "construction",
+      "confidence": 0.38,
+      "pm25": 58.2,
+      "aqi": 97,
       "aqi_category": "Satisfactory",
       "kind": "emerging",
       "zone_id": "Z06",
-      "ward_id": "W216",
-      "ward_name": "K R Puram",
+      "ward_id": "W213",
+      "ward_name": "Medahalli",
       "n_cells": 12,
       "evidence_factors": [
-        "industrial_1410389264 is 0.64 km away, wind alignment 0.89"
+        "construction_1415322418 is 2.37 km away, wind alignment 0.89"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
@@ -318,75 +318,75 @@
     },
     "legal_basis": [
       {
-        "id": "EPA-1986-5",
-        "statute": "Environment (Protection) Act, 1986",
-        "provision": "Section 5",
-        "summary": "Power to give directions in writing to any person, officer or authority, who shall be bound to comply.",
-        "authority": "State Pollution Control Board / CPCB",
-        "action": "Inspect consent conditions and stack emission compliance; issue show-cause under s.5.",
-        "penalty": "Contravention punishable under s.15."
+        "id": "CND-2016",
+        "statute": "Construction and Demolition Waste Management Rules, 2016",
+        "provision": "Rules 4 & 8",
+        "summary": "Every waste generator shall prevent dust and segregate and store C&D waste; the local authority shall enforce dust mitigation.",
+        "authority": "Municipal Commissioner / Local Body",
+        "action": "Inspect for anti-smog guns, barricading, covered transport and water sprinkling; issue notice for dust-control non-compliance.",
+        "penalty": "Environmental compensation per CPCB dust-mitigation schedule."
       }
     ],
-    "subject": "Air pollution source detected — industrial — K R Puram (zone Z06)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 12 cell(s) in K R Puram. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 47.5 ug/m3, corresponding to an AQI of 80 (Satisfactory).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.46. Supporting evidence: industrial_1410389264 is 0.64 km away, wind alignment 0.89. This finding is INDICATIVE and requires verification on site.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
+    "subject": "Air pollution source detected — construction — Medahalli (zone Z06)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 12 cell(s) in Medahalli. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 58.2 ug/m3, corresponding to an AQI of 97 (Satisfactory).",
+    "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.38. Supporting evidence: construction_1415322418 is 2.37 km away, wind alignment 0.89. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Construction and Demolition Waste Management Rules, 2016, Rules 4 & 8.",
     "evidence_chain": [
-      "industrial_1410389264 is 0.64 km away, wind alignment 0.89"
+      "construction_1415322418 is 2.37 km away, wind alignment 0.89"
     ],
     "evidence_full": {
-      "cell": "8861892e3dfffff",
+      "cell": "8861892e35fffff",
       "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W216",
-      "pm25_estimate": 38.4,
+      "ward_id": "W213",
+      "pm25_estimate": 40.6,
       "candidates": [
-        {
-          "name": "industrial_1410389264",
-          "type": "industrial",
-          "distance_km": 0.64,
-          "wind_alignment": 0.89
-        },
         {
           "name": "industrial_1410389583",
           "type": "industrial",
-          "distance_km": 1.17,
-          "wind_alignment": 0.9
-        },
-        {
-          "name": "Old Madras Road",
-          "type": "traffic",
-          "distance_km": 0.94,
+          "distance_km": 1.26,
           "wind_alignment": 0.78
-        },
-        {
-          "name": "Old Madras Road",
-          "type": "traffic",
-          "distance_km": 0.54,
-          "wind_alignment": 0.59
-        },
-        {
-          "name": "Old Madras Road",
-          "type": "traffic",
-          "distance_km": 0.58,
-          "wind_alignment": 0.6
         },
         {
           "name": "KR Puram Phase I 20MLD Sewage Treatment Planet",
           "type": "industrial",
-          "distance_km": 1.44,
+          "distance_km": 1.53,
+          "wind_alignment": 0.81
+        },
+        {
+          "name": "industrial_1410389264",
+          "type": "industrial",
+          "distance_km": 0.95,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_1506885577",
+          "type": "industrial",
+          "distance_km": 2.4,
+          "wind_alignment": 0.92
+        },
+        {
+          "name": "construction_1415322418",
+          "type": "construction",
+          "distance_km": 2.37,
+          "wind_alignment": 0.89
+        },
+        {
+          "name": "construction_363106212",
+          "type": "construction",
+          "distance_km": 2.53,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "construction_1415322425",
+          "type": "construction",
+          "distance_km": 2.97,
           "wind_alignment": 0.91
         },
         {
-          "name": "Old Madras Road",
-          "type": "traffic",
-          "distance_km": 1.13,
-          "wind_alignment": 0.79
-        },
-        {
-          "name": "Old Madras Road",
-          "type": "traffic",
-          "distance_km": 1.14,
-          "wind_alignment": 0.78
+          "name": "construction_1415322354",
+          "type": "construction",
+          "distance_km": 2.68,
+          "wind_alignment": 0.8
         }
       ],
       "pollutant_signature": {
@@ -439,13 +439,13 @@
     "zone_id": "Z05",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T19:23:40.050336+00:00",
+    "issued_at": "2026-08-22T19:38:17.997016+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
       "confidence": 0.5,
-      "pm25": 51.6,
-      "aqi": 86,
+      "pm25": 57.8,
+      "aqi": 96,
       "aqi_category": "Satisfactory",
       "kind": "emerging",
       "zone_id": "Z05",
@@ -472,7 +472,7 @@
       }
     ],
     "subject": "Air pollution source detected — industrial — Outside city limits (zone Z05)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 10 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 51.6 ug/m3, corresponding to an AQI of 86 (Satisfactory).",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 10 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 57.8 ug/m3, corresponding to an AQI of 96 (Satisfactory).",
     "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.50. Supporting evidence: industrial_1435373384 is 1.61 km away, wind alignment 0.64. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
     "evidence_chain": [
@@ -482,7 +482,7 @@
       "cell": "8861892897fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 42.4,
+      "pm25_estimate": 47.2,
       "candidates": [
         {
           "name": "industrial_1435373384",
@@ -579,17 +579,17 @@
   },
   {
     "memo_id": "AQ/BEN/20260822/Z02",
-    "action_id": "A07",
+    "action_id": "A06",
     "zone_id": "Z02",
     "ward_id": "W231",
     "ward_name": "Govindaraja Nagar",
-    "issued_at": "2026-08-22T19:23:40.050395+00:00",
+    "issued_at": "2026-08-22T19:38:17.997105+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
       "confidence": 0.44,
-      "pm25": 34.4,
-      "aqi": 58,
+      "pm25": 39.6,
+      "aqi": 67,
       "aqi_category": "Satisfactory",
       "kind": "chronic",
       "zone_id": "Z02",
@@ -617,7 +617,7 @@
       }
     ],
     "subject": "Air pollution source detected — industrial — Govindaraja Nagar (zone Z02)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 1 cell(s) in Govindaraja Nagar. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 34.4 ug/m3, corresponding to an AQI of 58 (Satisfactory).",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 1 cell(s) in Govindaraja Nagar. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 39.6 ug/m3, corresponding to an AQI of 67 (Satisfactory).",
     "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.44. Supporting evidence: industrial_1206777021 is 0.38 km away, wind alignment 0.76; shallow boundary layer (425 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
     "evidence_chain": [
@@ -628,7 +628,7 @@
       "cell": "8860145841fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W231",
-      "pm25_estimate": 28.0,
+      "pm25_estimate": 33.8,
       "candidates": [
         {
           "name": "industrial_1206777021",
@@ -729,13 +729,13 @@
     "zone_id": "Z00",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T19:23:40.050447+00:00",
+    "issued_at": "2026-08-22T19:38:17.997174+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
       "confidence": 0.4,
-      "pm25": 51.2,
-      "aqi": 86,
+      "pm25": 57.1,
+      "aqi": 95,
       "aqi_category": "Satisfactory",
       "kind": "emerging",
       "zone_id": "Z00",
@@ -762,7 +762,7 @@
       }
     ],
     "subject": "Air pollution source detected — industrial — Outside city limits (zone Z00)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 16 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 51.2 ug/m3, corresponding to an AQI of 86 (Satisfactory).",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 16 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 57.1 ug/m3, corresponding to an AQI of 95 (Satisfactory).",
     "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.40. Supporting evidence: STP-2 is 1.23 km away, wind alignment 0.75. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
     "evidence_chain": [
@@ -772,7 +772,7 @@
       "cell": "886014434dfffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 49.7,
       "candidates": [
         {
           "name": "STP-2",
@@ -869,17 +869,17 @@
   },
   {
     "memo_id": "AQ/BEN/20260822/Z03",
-    "action_id": "A06",
+    "action_id": "A07",
     "zone_id": "Z03",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-22T19:23:40.050493+00:00",
+    "issued_at": "2026-08-22T19:38:17.997238+00:00",
     "status": "draft",
     "situation": {
       "source": "traffic",
       "confidence": 0.52,
-      "pm25": 46.5,
-      "aqi": 78,
+      "pm25": 43.7,
+      "aqi": 73,
       "aqi_category": "Satisfactory",
       "kind": "emerging",
       "zone_id": "Z03",
@@ -907,7 +907,7 @@
       }
     ],
     "subject": "Air pollution source detected — traffic — Outside city limits (zone Z03)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 3 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 46.5 ug/m3, corresponding to an AQI of 78 (Satisfactory).",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 3 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 43.7 ug/m3, corresponding to an AQI of 73 (Satisfactory).",
     "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.52. Supporting evidence: NICE Road is 2.03 km away, wind alignment 0.93; NO2 column at p98 citywide. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20.",
     "evidence_chain": [
@@ -918,7 +918,7 @@
       "cell": "88601458a1fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 43.8,
+      "pm25_estimate": 42.6,
       "candidates": [
         {
           "name": "NICE Road",
