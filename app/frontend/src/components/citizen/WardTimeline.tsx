@@ -52,6 +52,15 @@ export default function WardTimeline({ city, wardId }: { city: string; wardId: s
   if (points.length < 2) return null;
 
   const aqis = points.map((p) => pm25ToAqi(p.pm25_hat));
+
+  // Scaled to the MEDIAN line only, deliberately. The rows now also carry an
+  // 80% prediction interval (pm25_p10/pm25_p90, see WardForecastPoint), but it
+  // is not drawn — and it must not be allowed to set the y-scale either.
+  // Measured on real Delhi: that interval spans 0->296 ug/m3 while the line
+  // sits near 131, so including it here flattens the whole series into a
+  // straight line in the middle of the plot and destroys the diurnal swing
+  // this chart exists to show. See the note in the SVG below for why the band
+  // itself is withheld until the model ships a per-horizon interval scale.
   const lo = Math.min(...aqis);
   const hi = Math.max(...aqis);
   const span = Math.max(hi - lo, 1);
@@ -107,6 +116,23 @@ export default function WardTimeline({ city, wardId }: { city: string; wardId: s
           ) : null
         )}
 
+        {/* The p10/p90 band is DELIBERATELY NOT DRAWN YET — the data carries it
+            (WardForecastPoint.pm25_p10/p90) but the served model's interval is
+            not calibrated enough to show a citizen.
+
+            Measured on real Delhi, 2026-08-22: the 80% interval spans 0->296
+            ug/m3 at h=3 and 0->310 at h=72. Two things are wrong with that.
+            It is wider than the signal it brackets (p50 ~131), so it tells a
+            resident nothing they can act on; and it barely widens with lead
+            time — 5% growth across a 24x change in horizon — because
+            `interval_scale` in the manifest is ONE global number applied at
+            every horizon, which erases the structure a prediction interval
+            exists to show. A 3-hour forecast must be tighter than a 3-day one.
+
+            Drawing it anyway would claim a precision the model has not earned,
+            which is the same failure this project deleted the SO2 channel over.
+            Flip `hasBand` into the render below once the model ships a
+            per-horizon interval scale; everything else is already in place. */}
         <polygon points={area} fill="url(#wt-fill)" />
         <polyline
           points={line}

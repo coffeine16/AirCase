@@ -181,18 +181,29 @@ export interface DispatchConfig {
 
 // ─── Forecast ─────────────────────────────────────────────────────────────────
 
+/**
+ * The forecaster is a QUANTILE model: it predicts a distribution, not a point.
+ * `pm25_hat` is the median (p50); p10/p90 are the 80% prediction interval.
+ *
+ * Optional because a bundle generated before the quantile model was promoted
+ * carries only pm25_hat — every consumer must degrade to the point estimate
+ * rather than render NaN.
+ */
 export interface ForecastCell {
   cell: string;
   horizon_h: number;      // 3-hourly: 3, 6, ... 72
-  pm25_hat: number;
-  urgency: boolean;       // worsening met conditions
+  pm25_hat: number;       // p50 — the median prediction
+  pm25_p10?: number;      // lower bound of the 80% interval
+  pm25_p90?: number;      // upper bound
 }
 
 /** One ward, one lead time. The citizen timeline's unit. */
 export interface WardForecastPoint {
   ward_id: string;
   horizon_h: number;      // 3-hourly: 3, 6, ... 72
-  pm25_hat: number;       // MEDIAN across the ward's cells
+  pm25_hat: number;       // MEDIAN across the ward's cells (p50)
+  pm25_p10?: number;      // 80% interval, medianed across the ward's cells
+  pm25_p90?: number;      // optional: bundles predating the quantile model omit both
   n_cells: number;
 }
 

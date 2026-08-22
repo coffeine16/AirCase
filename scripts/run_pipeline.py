@@ -42,14 +42,27 @@ def main():
         print("      may be stale. Re-run with --full, or run detect.py + attribution.py.")
         return
 
-    # Forecast training happens HERE, not inside the agent chain below. It trains
-    # two LightGBM models (see intelligence/models/forecast.py), which is batch
-    # compute exactly like fusion two lines up — orchestrator.py's live chain only
-    # checks that forecast.json exists, it never trains. Same reason fusion is
-    # called directly in this file instead of living in the agent graph.
-    from intelligence.models.forecast import run as forecast_run
+    # Forecast SERVING happens here — predict with the already-promoted weights.
+    # Deliberately serve() and not run(): run() trains, gate-checks and promotes,
+    # which its own timing comment measures at 4.3h on the real 8-city panel and
+    # has no skip-if-fresh guard. Regenerating one city's outputs must not cost
+    # hours, and must not depend on a training run succeeding.
+    #
+    # Training lives in .github/workflows/train-forecast.yml (HF Jobs), which
+    # syncs promoted weights back into models/. Persisting weights is pointless
+    # if the pipeline retrains anyway — this is the line that actually cashes in
+    # that work. orchestrator.py's live chain, one level further in, only checks
+    # that forecast.json exists.
+    # [CITY], not every city in CITIES: shared.config resolves CITY/DATA_OUT at
+    # IMPORT time, so this whole script is single-city by construction (the same
+    # constraint scripts/backfill_historical.py documents). Serving the default
+    # of all 8 loads all 8 panels into one process — measured, that exhausts RAM
+    # inside features.py's merge — and would write 7 other cities' forecast.json
+    # from a run that only rebuilt this city's panel.
+    from shared.config import CITY
+    from intelligence.models.forecast import serve as forecast_serve
     print(RULE)
-    forecast_run()
+    forecast_serve(cities=[CITY])
 
     # The agent chain is defined ONCE, in intelligence/orchestrator.py — the same
     # LangGraph graph the API's POST /run/agent executes, so chain order cannot

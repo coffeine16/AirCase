@@ -316,7 +316,11 @@ def run() -> list[dict]:
             # tomorrow's forecast if we have it, else today's estimate
             "pm25": float(f["pm25_hat"]) if f else float(now.get(cell, float("nan"))),
             "vuln": int(vuln.get(cell, 0)),
-            "worsening": bool(f["urgency"]) if f else False,
+            # .get, not ["urgency"]: a forecast row missing this key took the
+            # whole advisory agent down with a KeyError when the forecaster was
+            # swapped out. An absent worsening flag means "we don't know", which
+            # is a milder advisory — never a crash (principle 2).
+            "worsening": bool(f.get("urgency", False)) if f else False,
         })
     df = pd.DataFrame(rows).dropna(subset=["pm25"])
 

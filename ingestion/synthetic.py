@@ -194,7 +194,22 @@ def truth_field(n_hours: int = PANEL_HOURS):
     """
     cells = city_cells()
     centers = np.array([cell_center(c) for c in cells])           # (n_cells, 2)
-    wx = weather(n_hours)
+
+    # weather() returns one row per (hour x weather-grid cell) since the
+    # multi-point met upgrade — 36 weather cells here, so 36 rows per hour.
+    # Every line below treats one wx row as one HOUR (`n_hours_ = len(wx)`, the
+    # per-hour dispersion loop, `np.repeat(wx.ts, n_cells)`), so handing it the
+    # broadcast frame silently multiplies the world by 36: a 60-day run became
+    # 51,840 "hours" and died allocating a 3.5 GiB cell array before it could
+    # emit anything. `--synthetic` and CI's pipeline-smoke both fail on it.
+    #
+    # The synthetic met series is IDENTICAL across weather cells by construction
+    # (see weather()'s docstring — one citywide series, broadcast), so collapsing
+    # to unique timestamps is exact here, not an approximation. The full frame is
+    # still what gets returned: weather.parquet must keep the weather_cell
+    # dimension that panel.py now joins on.
+    wx_all = weather(n_hours)
+    wx = wx_all.drop_duplicates("ts").sort_values("ts").reset_index(drop=True)
     kinds = ["industrial", "construction", "waste_burning", "traffic"]
     urban = urban_field()
 
@@ -245,7 +260,9 @@ def truth_field(n_hours: int = PANEL_HOURS):
         **{f"c_{k}": surf[k].ravel() for k in kinds},
         **{f"col_{k}": col[k].ravel() for k in kinds},
     })
-    return truth, wx
+    # wx_all, not the per-hour `wx` used for the physics above: the caller writes
+    # this out as weather.parquet, which must carry every weather_cell.
+    return truth, wx_all
 
 
 @lru_cache(maxsize=1)

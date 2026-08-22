@@ -1,11 +1,31 @@
 """Quantile forecaster package (spec:
 docs/superpowers/specs/2026-08-15-forecast-rework-design.md). Public API:
-run(), evaluate(), HORIZONS, TEST_TAIL_DAYS — kept import-compatible with
-the old single-file forecast.py so scripts/run_pipeline.py and
+serve(), run(), evaluate(), HORIZONS, TEST_TAIL_DAYS — kept import-compatible
+with the old single-file forecast.py so scripts/run_pipeline.py and
 scripts/eval_forecast_live.py need no changes beyond what Task 11 already
-makes."""
+makes.
+
+TRAINING AND SERVING ARE TWO DIFFERENT ENTRYPOINTS, ON PURPOSE
+
+    serve()  — load the promoted weights, predict, write the JSON. Seconds.
+    run()    — train + gate-check + promote, THEN serve. Hours.
+
+`run()` used to be the only entrypoint, and scripts/run_pipeline.py --full
+called it. That made the routine "regenerate the city's outputs" command
+retrain every model from scratch: train_and_promote has no skip-if-fresh
+guard (by design — a training run should always train), and its own timing
+comment records 4.3h for the real 8-city run. Neither the operational
+pipeline nor CI can afford that, and neither should have to: a pipeline run
+must not fail because a TRAINING run failed.
+
+Training already has a home: .github/workflows/train-forecast.yml, which
+runs it on HF Jobs and syncs the promoted weights back into models/. That is
+the only thing that should be paying for training. Everything downstream
+just serves what was promoted, which is the whole point of persisting
+weights in the first place."""
 import json
 
+import numpy as np
 import pandas as pd
 
 from shared.config import ROOT
@@ -117,11 +137,245 @@ def _predict_field(panels: dict, served_manifest: dict, served_models: dict,
             continue
         pred = predict_quantiles(served_models, latest_rows, feature_cols)
         p10, p90 = apply_interval_scale(pred.pm25_p10, pred.pm25_p50, pred.pm25_p90, scale)
-        fields[city] = [{"cell": c, "horizon_h": int(h), "pm25_hat": round(float(m), 1),
-                         "pm25_p10": round(float(lo), 1), "pm25_p90": round(float(hi), 1)}
-                        for c, h, m, lo, hi in zip(latest_rows.cell, latest_rows.horizon,
-                                                    pred.pm25_p50, p10, p90)]
+        # PM2.5 has a hard physical floor at zero. Widening the raw quantiles by
+        # `interval_scale` pushes p10 below it on 93% of Delhi's ward rows
+        # (measured), and a forecast that reports a negative concentration is
+        # exactly the class of physically-impossible output this project deleted
+        # the SO2 channel over. Clamp at 0 — a lower bound of "clean air" is the
+        # honest floor, not a negative number the instrument cannot mean.
+        #
+        # NOTE this only fixes the SIGN. The width is still miscalibrated: a
+        # single global scale is applied at every lead time, so h=3's band is
+        # ~298 ug/m3 against h=72's ~317 — a 6% spread across a 24x change in
+        # horizon, when a 3-hour forecast should be far tighter than a 3-day
+        # one. Genuinely fixing that needs a per-horizon scale from the held-out
+        # folds; see the note in the PR.
+        # np.clip, not Series.clip: apply_interval_scale returns numpy arrays,
+        # and Series.clip's `lower=` kwarg does not exist there.
+        p10 = np.clip(p10, 0.0, None)
+        p90 = np.clip(p90, 0.0, None)
+        # `urgency` — is this cell forecast to get materially WORSE than it is
+        # right now (>= 20 ug/m3)? Carried by the old single-file forecast.py,
+        # dropped when this package replaced it, and read by
+        # intelligence/agents/advisory.py::"worsening" — so its absence took the
+        # advisory agent down with a KeyError mid-chain. lag_0 is the cell's most
+        # recent observed value, which is exactly the "now" the old code compared
+        # against (it used `now.get(cell)`).
+        now_obs = latest_rows["lag_0"].to_numpy(dtype=float)
+        p50 = np.asarray(pred.pm25_p50, dtype=float)
+        urgency = np.isfinite(now_obs) & ((p50 - now_obs) >= 20.0)
+        fields[city] = [{"cell": c, "horizon_h": int(h), "pm25_hat": round(max(float(m), 0.0), 1),
+                         "pm25_p10": round(float(lo), 1), "pm25_p90": round(float(hi), 1),
+                         "urgency": bool(u)}
+                        for c, h, m, lo, hi, u in zip(latest_rows.cell, latest_rows.horizon,
+                                                       pred.pm25_p50, p10, p90, urgency)]
     return fields
+
+
+def _ward_series(field: list[dict], city_out) -> list[dict]:
+    """Collapse the cell forecast to a per-ward, per-horizon MEDIAN.
+
+    Ported from the old single-file forecast.py, which wrote this file and
+    which this package replaced. Dropping it silently broke the citizen ward
+    timeline: app/frontend/.../WardTimeline.tsx reads forecast_ward.json with
+    a [] fallback, then returns null on fewer than 2 points — so the panel
+    vanished from the page with no error anywhere to notice it by.
+
+    Median, not mean, like every other aggregate in this project: one hot cell
+    beside a landfill must not drag the whole ward's timeline up.
+
+    The quantiles are medianed the same way and travel with it. A ward-level
+    band is the honest shape of this number — the citizen timeline draws
+    "how sure are we", and the p50 alone cannot say that.
+
+    `city_out` is passed in rather than read from the module-level DATA_OUT:
+    DATA_OUT binds at import time to whichever single AQ_CITY started the
+    process, and this runs inside a loop over several cities (the same trap
+    _predict_field documents).
+    """
+    wards_p = city_out / "wards.json"
+    if not wards_p.exists() or not field:
+        return []
+    try:
+        cells = json.loads(wards_p.read_text(encoding="utf-8"))["cells"]
+    except (json.JSONDecodeError, OSError, KeyError):
+        # A missing/!malformed ward layer must not kill the run — the cell
+        # forecast is already written and is the primary product.
+        return []
+    cell_to_ward = {c["cell"]: c["ward_id"] for c in cells}
+
+    df = pd.DataFrame(field)
+    df["ward_id"] = df.cell.map(cell_to_ward)
+    df = df[df.ward_id.notna() & (df.ward_id != "unassigned")]
+    if df.empty:
+        return []
+    g = (df.groupby(["ward_id", "horizon_h"])
+           .agg(pm25_hat=("pm25_hat", "median"),
+                pm25_p10=("pm25_p10", "median"),
+                pm25_p90=("pm25_p90", "median"),
+                n_cells=("cell", "size"))
+           .reset_index())
+    return [{"ward_id": r.ward_id, "horizon_h": int(r.horizon_h),
+             "pm25_hat": round(float(r.pm25_hat), 1),
+             "pm25_p10": round(float(r.pm25_p10), 1),
+             "pm25_p90": round(float(r.pm25_p90), 1),
+             "n_cells": int(r.n_cells)}
+            for r in g.itertuples()]
+
+
+def _write_city_outputs(city_out, field: list[dict], eval_payload: dict) -> None:
+    """forecast.json + forecast_ward.json + forecast_eval.json for one city.
+
+    Compact, not pretty-printed: 24 horizons x ~1700 cells is 40k rows, and
+    `indent=2` alone cost 1.7 MB of leading spaces in a file the browser
+    downloads. Nothing reads it by eye.
+    """
+    city_out.mkdir(parents=True, exist_ok=True)
+    (city_out / "forecast.json").write_text(
+        json.dumps(field, separators=(",", ":")), encoding="utf-8")
+    (city_out / "forecast_eval.json").write_text(
+        json.dumps(eval_payload, indent=2), encoding="utf-8")
+    print(f"[forecast] {city_out.name}: wrote forecast.json "
+          f"({len(field)} cell-horizons)")
+
+    ward_rows = _ward_series(field, city_out)
+    if ward_rows:
+        (city_out / "forecast_ward.json").write_text(
+            json.dumps(ward_rows, separators=(",", ":")), encoding="utf-8")
+        print(f"[forecast] {city_out.name}: wrote forecast_ward.json "
+              f"({len(ward_rows)} ward-horizons)")
+    else:
+        # Loud, because the citizen timeline reads this file and renders
+        # nothing at all when it is missing — the exact silent failure this
+        # function exists to stop recurring.
+        print(f"[forecast] {city_out.name}: NO forecast_ward.json — wards.json "
+              f"missing or no cell mapped to a ward; the citizen ward timeline "
+              f"will not render for this city")
+
+
+def _load_promoted(out_dir, manifest: dict):
+    """The three promoted quantile boosters, or None with a reason printed.
+
+    Shared by run() and serve() so a stale/corrupt/feature-mismatched model
+    is diagnosed identically no matter which entrypoint hit it.
+    """
+    import lightgbm as lgb
+    model_dir = out_dir / manifest["version"]
+    try:
+        models = {
+            0.1: lgb.Booster(model_file=str(model_dir / "model_p10.txt")),
+            0.5: lgb.Booster(model_file=str(model_dir / "model_p50.txt")),
+            0.9: lgb.Booster(model_file=str(model_dir / "model_p90.txt")),
+        }
+    except Exception as e:   # noqa: BLE001 — a missing/corrupted model dir must not crash the run
+        print(f"[forecast] served model at {model_dir} failed to load "
+              f"({type(e).__name__}: {e}) — skipping forecast.json this run")
+        return None
+
+    # Loading a booster succeeds regardless of how many features it was
+    # trained on; the mismatch only surfaces as a raise deep inside predict().
+    stale = {q: m.num_feature() for q, m in models.items()
+             if m.num_feature() != len(FEATURE_COLUMNS)}
+    if stale:
+        print(f"[forecast] served model at {model_dir} was trained on {stale} features "
+              f"but FEATURE_COLUMNS now has {len(FEATURE_COLUMNS)} — the feature set "
+              f"changed since it was trained; skipping forecast.json until a model "
+              f"trained on the current features is promoted")
+        return None
+    return models
+
+
+def _load_panels(cities: list[str] | None, prefer_historical: bool = True):
+    """Per-city (panel, fires).
+
+    `prefer_historical` picks WHICH panel, and the two callers want opposite
+    things:
+
+      TRAINING (run()) wants data/historical/<city>/ — the 2-year backfill.
+      A model learns seasonality it can only see over years.
+
+      SERVING (serve()) wants the OPERATIONAL panel the rest of this pipeline
+      just built. Two reasons, and the first is a correctness bug, not a
+      preference. Under --synthetic the operational panel IS the synthetic
+      world, while data/historical/ is real scraped data: preferring historical
+      there silently forecasts a real city from inside a synthetic run, the same
+      class of error as live mode mixing real stations with a synthetic
+      satellite. Second, _predict_field only ever keeps the LAST timestamp and
+      trims to PREDICT_LOOKBACK_HOURS (10 days) before building features, so a
+      2-year panel is thrown away almost entirely — it just costs the memory.
+      Loading 8 cities of it is what exhausted RAM mid-merge in features.py.
+    """
+    from shared.config import CITIES, DATA_OUT_BASE, DATA_RAW_BASE
+    cities = cities or list(CITIES)
+    panels, fires_by_city = {}, {}
+    for city in cities:
+        hist = ROOT / "data" / "historical" / city
+        hist_panel = hist / "panel.parquet"
+        operational = DATA_OUT_BASE / city / "panel.parquet"
+        use_hist = hist_panel.exists() and (prefer_historical or not operational.exists())
+        path = hist_panel if use_hist else operational
+        if not path.exists():
+            print(f"[forecast] {city}: no panel at {path}, skipping")
+            continue
+        panels[city] = downcast_panel(pd.read_parquet(path))
+        fires_p = (hist if use_hist else DATA_RAW_BASE / city) / "fires.parquet"
+        if fires_p.exists():
+            fires_by_city[city] = pd.read_parquet(fires_p)
+        else:
+            print(f"[forecast] {city}: no fires at {fires_p} — fire_pressure_regional will be 0")
+    return panels, fires_by_city
+
+
+def serve(cities: list[str] | None = None) -> dict:
+    """Predict with the ALREADY-PROMOTED weights. No training. Seconds, not hours.
+
+    This is what the operational pipeline calls. It is the serving half of
+    run(): same feature build, same model, same output files — it simply does
+    not train first, because the weights it needs were trained offline and
+    committed (models/, synced by .github/workflows/sync-forecast-model.yml).
+
+    Returns the served manifest, or {} when there is nothing promoted to serve
+    (a fresh checkout that has never trained), which is a clear state, not an
+    error — the caller keeps going and the rest of the pipeline still runs.
+    """
+    from shared.config import DATA_OUT_BASE
+
+    out_dir = ROOT / "data" / "outputs" / "_forecast_models"
+    manifest_p = out_dir / "manifest.json"
+    if not manifest_p.exists():
+        # Fall back to the repo-committed models/ directory, which is where
+        # the training workflow syncs promoted weights to.
+        out_dir = ROOT / "models"
+        manifest_p = out_dir / "manifest.json"
+    if not manifest_p.exists():
+        print("[forecast] no promoted model found (looked in data/outputs/"
+              "_forecast_models/ and models/) — run the training workflow, or "
+              "intelligence.models.forecast.run() locally. Skipping forecast.")
+        return {}
+
+    try:
+        manifest = json.loads(manifest_p.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as e:
+        print(f"[forecast] manifest at {manifest_p} is unreadable "
+              f"({type(e).__name__}: {e}) — skipping forecast")
+        return {}
+
+    models = _load_promoted(out_dir, manifest)
+    if models is None:
+        return manifest
+
+    panels, fires_by_city = _load_panels(cities, prefer_historical=False)
+    if not panels:
+        print("[forecast] no city panels available — run the operational pipeline "
+              "or the historical backfill first. Skipping forecast.")
+        return manifest
+
+    fields = _predict_field(panels, manifest, models, FEATURE_COLUMNS,
+                            fires_by_city=fires_by_city)
+    eval_payload = manifest.get("eval") or {}
+    for city, field in fields.items():
+        _write_city_outputs(DATA_OUT_BASE / city, field, eval_payload)
+    return manifest
 
 
 def run(cities: list[str] | None = None, checkpoint_dir: str | None = None) -> dict:
@@ -192,32 +446,12 @@ def run(cities: list[str] | None = None, checkpoint_dir: str | None = None) -> d
               "model exists) — skipping forecast.json")
         return manifest
 
-    import lightgbm as lgb
-    model_dir = out_dir / served_manifest["version"]
-    try:
-        served_models = {
-            0.1: lgb.Booster(model_file=str(model_dir / "model_p10.txt")),
-            0.5: lgb.Booster(model_file=str(model_dir / "model_p50.txt")),
-            0.9: lgb.Booster(model_file=str(model_dir / "model_p90.txt")),
-        }
-    except Exception as e:   # noqa: BLE001 — a missing/corrupted model dir must not crash the whole run
-        print(f"[forecast] served model at {model_dir} failed to load "
-              f"({type(e).__name__}: {e}) — skipping forecast.json this run")
-        return manifest
-
-    # Loading a booster succeeds regardless of how many features it was
-    # trained on; the mismatch only surfaces as a raise deep inside
-    # predict(). That happens whenever this run was REFUSED and the prior
-    # model predates a change to FEATURE_COLUMNS -- a routine event, not a
-    # corrupted file, and it must not take the whole run down after
-    # training has already succeeded.
-    stale = {q: m.num_feature() for q, m in served_models.items()
-             if m.num_feature() != len(FEATURE_COLUMNS)}
-    if stale:
-        print(f"[forecast] served model at {model_dir} was trained on {stale} features "
-              f"but FEATURE_COLUMNS now has {len(FEATURE_COLUMNS)} — the feature set "
-              f"changed since it was trained; skipping forecast.json until a model "
-              f"trained on the current features is promoted")
+    # A booster whose feature count no longer matches FEATURE_COLUMNS is a
+    # routine event here, not a corrupted file: it happens whenever this run
+    # was REFUSED and the prior model predates a change to FEATURE_COLUMNS.
+    # It must not take the whole run down after training has already succeeded.
+    served_models = _load_promoted(out_dir, served_manifest)
+    if served_models is None:
         return manifest
 
     # DATA_OUT_BASE / city, NOT the singular DATA_OUT: DATA_OUT is bound at
@@ -229,10 +463,6 @@ def run(cities: list[str] | None = None, checkpoint_dir: str | None = None) -> d
     fields = _predict_field(panels, served_manifest, served_models, FEATURE_COLUMNS,
                              fires_by_city=fires_by_city)
     for city, field in fields.items():
-        city_out = DATA_OUT_BASE / city
-        city_out.mkdir(parents=True, exist_ok=True)
-        (city_out / "forecast.json").write_text(json.dumps(field, separators=(",", ":")))
-        (city_out / "forecast_eval.json").write_text(json.dumps(manifest["eval"], indent=2))
-        print(f"[forecast] {city}: wrote forecast.json ({len(field)} cell-horizons)")
+        _write_city_outputs(DATA_OUT_BASE / city, field, manifest["eval"])
 
     return manifest
