@@ -1,0 +1,1546 @@
+[
+  {
+    "ward_id": "W007",
+    "ward_name": "42 INDRAPURI",
+    "pm25": 68.8,
+    "aqi": 130,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 16,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 42 INDRAPURI is moderate (AQI 130). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W008",
+    "ward_name": "41 VASTRAL",
+    "pm25": 66.7,
+    "aqi": 123,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 22,
+    "vulnerability": {
+      "schools_hospitals_nearby": 10,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 41 VASTRAL is moderate (AQI 123). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W009",
+    "ward_name": "40 ODHAV",
+    "pm25": 66.9,
+    "aqi": 124,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 7,
+    "vulnerability": {
+      "schools_hospitals_nearby": 12,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 40 ODHAV is moderate (AQI 124). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W010",
+    "ward_name": "39 AMRAIWADI",
+    "pm25": 70.1,
+    "aqi": 134,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 6,
+    "vulnerability": {
+      "schools_hospitals_nearby": 33,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 39 AMRAIWADI is moderate (AQI 134). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W023",
+    "ward_name": "26 BAPUNAGAR",
+    "pm25": 66.9,
+    "aqi": 124,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 24,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 26 BAPUNAGAR is moderate (AQI 124). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W024",
+    "ward_name": "25 VIRATNAGAR",
+    "pm25": 66.9,
+    "aqi": 124,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 6,
+    "vulnerability": {
+      "schools_hospitals_nearby": 21,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 25 VIRATNAGAR is moderate (AQI 124). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W027",
+    "ward_name": "22 INDIA COLONY",
+    "pm25": 66.5,
+    "aqi": 122,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 7,
+    "vulnerability": {
+      "schools_hospitals_nearby": 24,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 22 INDIA COLONY is moderate (AQI 122). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W029",
+    "ward_name": "20 JODHPUR",
+    "pm25": 67.7,
+    "aqi": 126,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 9,
+    "vulnerability": {
+      "schools_hospitals_nearby": 54,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 20 JODHPUR is moderate (AQI 126). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W030",
+    "ward_name": "19 BODAKDEV",
+    "pm25": 67.9,
+    "aqi": 127,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 11,
+    "vulnerability": {
+      "schools_hospitals_nearby": 63,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 19 BODAKDEV is moderate (AQI 127). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W031",
+    "ward_name": "18 NAVRANGPURA",
+    "pm25": 68.3,
+    "aqi": 128,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 18,
+    "vulnerability": {
+      "schools_hospitals_nearby": 71,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 18 NAVRANGPURA is moderate (AQI 128). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W032",
+    "ward_name": "17 SHAHPUR",
+    "pm25": 67.2,
+    "aqi": 125,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 5,
+    "vulnerability": {
+      "schools_hospitals_nearby": 53,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 17 SHAHPUR is moderate (AQI 125). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W033",
+    "ward_name": "16 SHAHIBAG",
+    "pm25": 67.3,
+    "aqi": 125,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 6,
+    "vulnerability": {
+      "schools_hospitals_nearby": 48,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 16 SHAHIBAG is moderate (AQI 125). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W034",
+    "ward_name": "15 ASARWA",
+    "pm25": 66.3,
+    "aqi": 122,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 45,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 15 ASARWA is moderate (AQI 122). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W035",
+    "ward_name": "14 KUBERNAGR",
+    "pm25": 67.4,
+    "aqi": 125,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 13,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 14 KUBERNAGR is moderate (AQI 125). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W039",
+    "ward_name": "10 S.P.STADIUM",
+    "pm25": 67.0,
+    "aqi": 124,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 8,
+    "vulnerability": {
+      "schools_hospitals_nearby": 75,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 10 S.P.STADIUM is moderate (AQI 124). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W040",
+    "ward_name": "09 NARANPURA",
+    "pm25": 67.4,
+    "aqi": 125,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 5,
+    "vulnerability": {
+      "schools_hospitals_nearby": 65,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 09 NARANPURA is moderate (AQI 125). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W041",
+    "ward_name": "08 THALTEJ",
+    "pm25": 66.6,
+    "aqi": 123,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 11,
+    "vulnerability": {
+      "schools_hospitals_nearby": 64,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 08 THALTEJ is moderate (AQI 123). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W042",
+    "ward_name": "07 GHATLODIA",
+    "pm25": 67.2,
+    "aqi": 125,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 44,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 07 GHATLODIA is moderate (AQI 125). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W043",
+    "ward_name": "06 NEW WADAJ",
+    "pm25": 67.3,
+    "aqi": 125,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 5,
+    "vulnerability": {
+      "schools_hospitals_nearby": 41,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 06 NEW WADAJ is moderate (AQI 125). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W044",
+    "ward_name": "05 RANIP",
+    "pm25": 67.0,
+    "aqi": 124,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 10,
+    "vulnerability": {
+      "schools_hospitals_nearby": 21,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 05 RANIP is moderate (AQI 124). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W045",
+    "ward_name": "04 SABARMATI",
+    "pm25": 66.5,
+    "aqi": 122,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 13,
+    "vulnerability": {
+      "schools_hospitals_nearby": 26,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 04 SABARMATI is moderate (AQI 122). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W047",
+    "ward_name": "02 CHANDLODIA",
+    "pm25": 67.1,
+    "aqi": 124,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 21,
+    "vulnerability": {
+      "schools_hospitals_nearby": 18,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 02 CHANDLODIA is moderate (AQI 124). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W048",
+    "ward_name": "01 GOTA",
+    "pm25": 67.1,
+    "aqi": 124,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 48,
+    "vulnerability": {
+      "schools_hospitals_nearby": 38,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 01 GOTA is moderate (AQI 124). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W026",
+    "ward_name": "23 THAKKARBAPANAGAR",
+    "pm25": 45.0,
+    "aqi": 76,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 5,
+    "vulnerability": {
+      "schools_hospitals_nearby": 21,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 23 THAKKARBAPANAGAR is satisfactory (AQI 76). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W036",
+    "ward_name": "13 SAIJPUR BOGHA",
+    "pm25": 50.5,
+    "aqi": 84,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 5,
+    "vulnerability": {
+      "schools_hospitals_nearby": 25,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 13 SAIJPUR BOGHA is satisfactory (AQI 84). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "unassigned",
+    "ward_name": "Outside city limits",
+    "pm25": 44.5,
+    "aqi": 75,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 170,
+    "vulnerability": {
+      "schools_hospitals_nearby": 33,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Outside city limits is satisfactory (AQI 75). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W002",
+    "ward_name": "47 VATVA",
+    "pm25": 70.2,
+    "aqi": 135,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 7,
+    "vulnerability": {
+      "schools_hospitals_nearby": 45,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 47 VATVA is moderate (AQI 135). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W003",
+    "ward_name": "46 LAMBHA",
+    "pm25": 69.8,
+    "aqi": 134,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 38,
+    "vulnerability": {
+      "schools_hospitals_nearby": 40,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 46 LAMBHA is moderate (AQI 134). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W004",
+    "ward_name": "45 ISANPUR",
+    "pm25": 70.5,
+    "aqi": 136,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 6,
+    "vulnerability": {
+      "schools_hospitals_nearby": 71,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 45 ISANPUR is moderate (AQI 136). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W005",
+    "ward_name": "44 KHOKHRA",
+    "pm25": 70.3,
+    "aqi": 135,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 5,
+    "vulnerability": {
+      "schools_hospitals_nearby": 57,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 44 KHOKHRA is moderate (AQI 135). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W006",
+    "ward_name": "43 BHAIPURA HATKESHWAR",
+    "pm25": 70.0,
+    "aqi": 134,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 20,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 43 BHAIPURA HATKESHWAR is moderate (AQI 134). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W011",
+    "ward_name": "38 GOMTIPUR",
+    "pm25": 81.8,
+    "aqi": 173,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 11,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 38 GOMTIPUR is moderate (AQI 173). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W012",
+    "ward_name": "37 MANINAGAR",
+    "pm25": 70.1,
+    "aqi": 134,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 7,
+    "vulnerability": {
+      "schools_hospitals_nearby": 74,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 37 MANINAGAR is moderate (AQI 134). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W013",
+    "ward_name": "36 DANILIMDA",
+    "pm25": 70.3,
+    "aqi": 135,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 5,
+    "vulnerability": {
+      "schools_hospitals_nearby": 40,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 36 DANILIMDA is moderate (AQI 135). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W014",
+    "ward_name": "35 BAHERAMPURA",
+    "pm25": 69.3,
+    "aqi": 132,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 15,
+    "vulnerability": {
+      "schools_hospitals_nearby": 43,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 35 BAHERAMPURA is moderate (AQI 132). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W015",
+    "ward_name": "34 MAKTAMPURA",
+    "pm25": 69.5,
+    "aqi": 132,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 15,
+    "vulnerability": {
+      "schools_hospitals_nearby": 21,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 34 MAKTAMPURA is moderate (AQI 132). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W016",
+    "ward_name": "33 SARKHEJ",
+    "pm25": 69.5,
+    "aqi": 133,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 10,
+    "vulnerability": {
+      "schools_hospitals_nearby": 18,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 33 SARKHEJ is moderate (AQI 133). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W017",
+    "ward_name": "32 VEJALPUR",
+    "pm25": 69.2,
+    "aqi": 132,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 35,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 32 VEJALPUR is moderate (AQI 132). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W018",
+    "ward_name": "31 VASNA",
+    "pm25": 69.7,
+    "aqi": 133,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 8,
+    "vulnerability": {
+      "schools_hospitals_nearby": 54,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 31 VASNA is moderate (AQI 133). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W019",
+    "ward_name": "30 PALDI",
+    "pm25": 69.6,
+    "aqi": 133,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 9,
+    "vulnerability": {
+      "schools_hospitals_nearby": 80,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 30 PALDI is moderate (AQI 133). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W020",
+    "ward_name": "29 JAMALPUR",
+    "pm25": 69.4,
+    "aqi": 132,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 5,
+    "vulnerability": {
+      "schools_hospitals_nearby": 40,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 29 JAMALPUR is moderate (AQI 132). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W021",
+    "ward_name": "28 KHADIA",
+    "pm25": 69.9,
+    "aqi": 134,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 25,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 28 KHADIA is moderate (AQI 134). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W022",
+    "ward_name": "27 SARASPUR-RAKHIYAL",
+    "pm25": 68.9,
+    "aqi": 130,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 19,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 27 SARASPUR-RAKHIYAL is moderate (AQI 130). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W028",
+    "ward_name": "21 DARIYAPUR",
+    "pm25": 69.0,
+    "aqi": 131,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 38,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 21 DARIYAPUR is moderate (AQI 131). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W046",
+    "ward_name": "03 CHANDKHEDA",
+    "pm25": 61.4,
+    "aqi": 106,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 17,
+    "vulnerability": {
+      "schools_hospitals_nearby": 35,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 03 CHANDKHEDA is moderate (AQI 106). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W038",
+    "ward_name": "11 SARDARNAGAR",
+    "pm25": 49.2,
+    "aqi": 82,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.395,
+    "worsening": true,
+    "n_cells": 14,
+    "vulnerability": {
+      "schools_hospitals_nearby": 7,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 11 SARDARNAGAR is satisfactory (AQI 82). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W001",
+    "ward_name": "48 RAMOL HATHIJAN",
+    "pm25": 59.1,
+    "aqi": 99,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 24,
+    "vulnerability": {
+      "schools_hospitals_nearby": 18,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 48 RAMOL HATHIJAN is satisfactory (AQI 99). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W037",
+    "ward_name": "12 NARODA",
+    "pm25": 44.5,
+    "aqi": 75,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 20,
+    "vulnerability": {
+      "schools_hospitals_nearby": 20,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 12 NARODA is satisfactory (AQI 75). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W025",
+    "ward_name": "24 NIKOL",
+    "pm25": 41.8,
+    "aqi": 70,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.23,
+    "worsening": false,
+    "n_cells": 16,
+    "vulnerability": {
+      "schools_hospitals_nearby": 6,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in 24 NIKOL is satisfactory (AQI 70). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  }
+]

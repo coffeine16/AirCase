@@ -1,17 +1,17 @@
 [
   {
-    "memo_id": "AQ/DEL/20260722/Z06",
+    "memo_id": "AQ/DEL/20260822/Z06",
     "action_id": "A02",
     "zone_id": "Z06",
     "ward_id": "W219",
     "ward_name": "SAMAYPUR BADLI",
-    "issued_at": "2026-07-22T14:28:05.568824+00:00",
+    "issued_at": "2026-08-22T19:11:44.148582+00:00",
     "status": "draft",
     "situation": {
       "source": "waste_burning",
-      "confidence": 0.76,
-      "pm25": 215.5,
-      "aqi": 374,
+      "confidence": 0.84,
+      "pm25": 233.7,
+      "aqi": 388,
       "aqi_category": "Very Poor",
       "kind": "emerging",
       "zone_id": "Z06",
@@ -19,14 +19,13 @@
       "ward_name": "SAMAYPUR BADLI",
       "n_cells": 9,
       "evidence_factors": [
-        "Highest deterministic score of 3.45 for waste burning",
-        "30 fire hours (0.1786 hour fraction)",
-        "AAI at the 70th city percentile",
-        "Trapped air with low boundary layer height of 120m"
+        "waste_burning_1181342843 is 1.53 km away, wind alignment 0.47",
+        "satellite fire detections in 30 hours (18% of the window)",
+        "shallow boundary layer (100 m) trapping emissions"
       ],
       "fire_hours": 30,
       "fire_fraction": 0.1786,
-      "blh_m": 120,
+      "blh_m": 100,
       "nearest_candidate_km": null
     },
     "legal_basis": [
@@ -58,75 +57,74 @@
         "penalty": "As notified per stage."
       }
     ],
-    "subject": "Enforcement directive regarding emerging waste burning in Ward W219 (Samaypur Badli), Zone Z06",
-    "background": "An emerging waste burning source covering 9 cells was detected in Ward W219 (Samaypur Badli), Zone Z06, over a period of 30 fire hours. Monitoring data recorded an AQI of 374 in the Very Poor category, a PM2.5 concentration of 215.5, and an atmospheric boundary layer height of 120m. The detection reflects a fire fraction of 0.1786 with an Absorbing Aerosol Index at the 70th city percentile.",
-    "finding": "The gathered evidence supports the presence of open waste burning with a confidence score of 0.76. This finding is established by the highest deterministic score of 3.45 for waste burning alongside trapped air conditions caused by low boundary layer height.",
-    "directive": "The competent local authority is directed under Rule 15(zg) of the Solid Waste Management Rules, 2016 to immediately prohibit the open burning of solid waste in streets and open spaces within Ward W219. Action must be taken under Section 31A of the Air (Prevention and Control of Pollution) Act, 1981 to issue directions for the regulation or prohibition of contributing processes. Additionally, strict enforcement of restrictions under the Graded Response Action Plan (CAQM) corresponding to the Very Poor AQI band must be implemented.",
+    "subject": "Air pollution source detected — waste burning — SAMAYPUR BADLI (zone Z06)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 9 cell(s) in SAMAYPUR BADLI. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 233.7 ug/m3, corresponding to an AQI of 388 (Very Poor).",
+    "finding": "The evidence indicates waste burning as the primary source, at a computed confidence of 0.84. Supporting evidence: waste_burning_1181342843 is 1.53 km away, wind alignment 0.47; satellite fire detections in 30 hours (18% of the window); shallow boundary layer (100 m) trapping emissions. The evidence is consistent and independently corroborated.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Solid Waste Management Rules, 2016, Rule 15(zg); Air (Prevention and Control of Pollution) Act, 1981, Section 31A; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
     "evidence_chain": [
-      "Highest deterministic score of 3.45 for waste burning",
-      "30 fire hours (0.1786 hour fraction)",
-      "AAI at the 70th city percentile",
-      "Trapped air with low boundary layer height of 120m"
+      "waste_burning_1181342843 is 1.53 km away, wind alignment 0.47",
+      "satellite fire detections in 30 hours (18% of the window)",
+      "shallow boundary layer (100 m) trapping emissions"
     ],
     "evidence_full": {
       "cell": "883da18cd7fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W219",
-      "pm25_estimate": 196.4,
+      "pm25_estimate": 213.8,
       "candidates": [
         {
           "name": "industrial_1162625780",
           "type": "industrial",
           "distance_km": 0.67,
-          "wind_alignment": 0.77
+          "wind_alignment": 0.83
         },
         {
-          "name": "Outer Ring Road",
+          "name": "Grand Trunk Road",
           "type": "traffic",
-          "distance_km": 0.35,
-          "wind_alignment": 0.36
+          "distance_km": 1.17,
+          "wind_alignment": 0.63
         },
         {
-          "name": "Outer Ring Road",
+          "name": "Grand Trunk Road",
           "type": "traffic",
-          "distance_km": 0.2,
-          "wind_alignment": 0.32
+          "distance_km": 0.41,
+          "wind_alignment": 0.4
         },
         {
-          "name": "Outer Ring Road",
+          "name": "Grand Trunk Road",
           "type": "traffic",
-          "distance_km": 0.47,
-          "wind_alignment": 0.38
-        },
-        {
-          "name": "Outer Ring Road",
-          "type": "traffic",
-          "distance_km": 0.35,
-          "wind_alignment": 0.34
-        },
-        {
-          "name": "Outer Ring Road",
-          "type": "traffic",
-          "distance_km": 0.23,
-          "wind_alignment": 0.29
+          "distance_km": 1.33,
+          "wind_alignment": 0.64
         },
         {
           "name": "industrial_261546480",
           "type": "industrial",
           "distance_km": 2.54,
-          "wind_alignment": 0.83
+          "wind_alignment": 0.84
         },
         {
-          "name": "Outer Ring Road",
-          "type": "traffic",
-          "distance_km": 0.68,
-          "wind_alignment": 0.39
+          "name": "waste_burning_1181342843",
+          "type": "waste_burning",
+          "distance_km": 1.53,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "waste_burning_1180003625",
+          "type": "waste_burning",
+          "distance_km": 1.23,
+          "wind_alignment": 0.41
+        },
+        {
+          "name": "waste_burning_1179943437",
+          "type": "waste_burning",
+          "distance_km": 1.23,
+          "wind_alignment": 0.4
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 98.3,
-          "city_percentile": 54
+          "city_percentile": 53
         },
         "so2_col": {
           "value": 107.6,
@@ -154,9 +152,9 @@
         "traffic": 28
       },
       "meteorology": {
-        "wind_from_deg": 301,
+        "wind_from_deg": 314,
         "wind_ms": 1.2,
-        "blh_m": 120,
+        "blh_m": 100,
         "hour_local": 12,
         "air_trapped": true
       },
@@ -164,37 +162,35 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "drafted_by": "gemini",
+    "drafted_by": "rules",
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/DEL/20260722/Z04",
+    "memo_id": "AQ/DEL/20260822/Z04",
     "action_id": "A03",
     "zone_id": "Z04",
-    "ward_id": "W110",
-    "ward_name": "MADANPUR KHADAR",
-    "issued_at": "2026-07-22T14:28:12.727010+00:00",
+    "ward_id": "W094",
+    "ward_name": "BADAR PUR",
+    "issued_at": "2026-08-22T19:11:44.148732+00:00",
     "status": "draft",
     "situation": {
       "source": "waste_burning",
-      "confidence": 0.48,
-      "pm25": 181.1,
-      "aqi": 348,
-      "aqi_category": "Very Poor",
+      "confidence": 0.42,
+      "pm25": 265.2,
+      "aqi": 403,
+      "aqi_category": "Severe",
       "kind": "emerging",
       "zone_id": "Z04",
-      "ward_id": "W110",
-      "ward_name": "MADANPUR KHADAR",
+      "ward_id": "W094",
+      "ward_name": "BADAR PUR",
       "n_cells": 16,
       "evidence_factors": [
-        "Highest deterministic score of 1.238 for waste burning",
-        "Elevated PM2.5 estimate of 211.1 with trapped air",
-        "Low boundary layer height of 120 m and light wind (1.2 m/s)",
-        "NO2 concentration at the 96th city percentile"
+        "satellite fire detections in 2 hours (1% of the window)",
+        "shallow boundary layer (105 m) trapping emissions"
       ],
       "fire_hours": 2,
       "fire_fraction": 0.0119,
-      "blh_m": 120,
+      "blh_m": 105,
       "nearest_candidate_km": null
     },
     "legal_basis": [
@@ -226,69 +222,67 @@
         "penalty": "As notified per stage."
       }
     ],
-    "subject": "Enforcement directive regarding indicative open waste burning in Ward W110 (Madanpur Khadar), Zone Z04",
-    "background": "An emerging waste burning event spanning 16 cells was detected in Ward W110 (Madanpur Khadar), Zone Z04, active over a duration of 2 hours. The surrounding area recorded a PM2.5 level of 181.1 and an AQI of 348 in the Very Poor category, accompanied by a boundary layer height of 120 m and elevated NO2 levels.",
-    "finding": "The gathered evidence, including a deterministic score of 1.238 and elevated NO2 concentrations at the 96th city percentile, supports the occurrence of waste burning. Given the calculated confidence level of 0.48, this finding is indicative and requires on-site verification.",
-    "directive": "The local authority is directed to enforce Rule 15(zg) of the Solid Waste Management Rules, 2016 to prohibit open burning of solid waste on streets and open spaces. Necessary measures and directions must be executed under Section 31A of the Air (Prevention and Control of Pollution) Act, 1981, alongside implementing relevant Stage escalation restrictions under the Graded Response Action Plan (CAQM) corresponding to the Very Poor AQI band.",
+    "subject": "Air pollution source detected — waste burning — BADAR PUR (zone Z04)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 16 cell(s) in BADAR PUR. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 265.2 ug/m3, corresponding to an AQI of 403 (Severe).",
+    "finding": "The evidence indicates waste burning as the primary source, at a computed confidence of 0.42. Supporting evidence: satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Solid Waste Management Rules, 2016, Rule 15(zg); Air (Prevention and Control of Pollution) Act, 1981, Section 31A; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
     "evidence_chain": [
-      "Highest deterministic score of 1.238 for waste burning",
-      "Elevated PM2.5 estimate of 211.1 with trapped air",
-      "Low boundary layer height of 120 m and light wind (1.2 m/s)",
-      "NO2 concentration at the 96th city percentile"
+      "satellite fire detections in 2 hours (1% of the window)",
+      "shallow boundary layer (105 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "883da10733fffff",
+      "cell": "883da10723fffff",
       "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W110",
-      "pm25_estimate": 211.1,
+      "ward_id": "W094",
+      "pm25_estimate": 233.3,
       "candidates": [
         {
-          "name": "construction_1248051449",
-          "type": "construction",
-          "distance_km": 1.48,
-          "wind_alignment": 0.83
-        },
-        {
-          "name": "DND-KMP Expressway",
+          "name": "Mathura Road",
           "type": "traffic",
-          "distance_km": 1.92,
+          "distance_km": 0.78,
           "wind_alignment": 0.79
         },
         {
-          "name": "DND-KMP Expressway",
+          "name": "Mathura Road",
           "type": "traffic",
-          "distance_km": 1.69,
-          "wind_alignment": 0.7
+          "distance_km": 0.84,
+          "wind_alignment": 0.81
         },
         {
-          "name": "DND KMP Expressway",
+          "name": "Mathura Road",
           "type": "traffic",
-          "distance_km": 1.67,
-          "wind_alignment": 0.58
+          "distance_km": 0.59,
+          "wind_alignment": 0.55
         },
         {
-          "name": "DND KMP Expressway",
+          "name": "Mathura Road",
           "type": "traffic",
-          "distance_km": 1.69,
-          "wind_alignment": 0.58
+          "distance_km": 0.6,
+          "wind_alignment": 0.51
         },
         {
-          "name": "Indian Oil Madanpur Khadar Bottling Plant",
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 1.68,
+          "wind_alignment": 0.81
+        },
+        {
+          "name": "Mathura Road",
+          "type": "traffic",
+          "distance_km": 1.72,
+          "wind_alignment": 0.8
+        },
+        {
+          "name": "Tughlakabad Inland Container Depot",
           "type": "industrial",
-          "distance_km": 2.91,
+          "distance_km": 1.59,
+          "wind_alignment": 0.67
+        },
+        {
+          "name": "industrial_204969676",
+          "type": "industrial",
+          "distance_km": 2.22,
           "wind_alignment": 0.79
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 3.48,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "Mathura Road",
-          "type": "traffic",
-          "distance_km": 3.48,
-          "wind_alignment": 0.78
         }
       ],
       "pollutant_signature": {
@@ -322,9 +316,9 @@
         "traffic": 5
       },
       "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.2,
-        "blh_m": 120,
+        "wind_from_deg": 313,
+        "wind_ms": 1.4,
+        "blh_m": 105,
         "hour_local": 12,
         "air_trapped": true
       },
@@ -332,22 +326,22 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "drafted_by": "gemini",
+    "drafted_by": "rules",
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/DEL/20260722/Z01",
+    "memo_id": "AQ/DEL/20260822/Z01",
     "action_id": "A04",
     "zone_id": "Z01",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-07-22T14:28:20.618019+00:00",
+    "issued_at": "2026-08-22T19:11:44.148834+00:00",
     "status": "draft",
     "situation": {
-      "source": "traffic",
-      "confidence": 0.14,
-      "pm25": 189.6,
-      "aqi": 354,
+      "source": "construction",
+      "confidence": 0.26,
+      "pm25": 212.8,
+      "aqi": 372,
       "aqi_category": "Very Poor",
       "kind": "acute",
       "zone_id": "Z01",
@@ -355,16 +349,24 @@
       "ward_name": "Outside city limits",
       "n_cells": 13,
       "evidence_factors": [
-        "Highest deterministic score for traffic (0.303)",
-        "Multiple traffic candidates with strong wind alignment (up to 0.97)",
-        "Low boundary layer height (150m) and trapped air condition at night"
+        "construction_1434658088 is 1.24 km away, wind alignment 0.85",
+        "shallow boundary layer (90 m) trapping emissions"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
-      "blh_m": 150,
+      "blh_m": 90,
       "nearest_candidate_km": null
     },
     "legal_basis": [
+      {
+        "id": "CND-2016",
+        "statute": "Construction and Demolition Waste Management Rules, 2016",
+        "provision": "Rules 4 & 8",
+        "summary": "Every waste generator shall prevent dust and segregate and store C&D waste; the local authority shall enforce dust mitigation.",
+        "authority": "Municipal Commissioner / Local Body",
+        "action": "Inspect for anti-smog guns, barricading, covered transport and water sprinkling; issue notice for dust-control non-compliance.",
+        "penalty": "Environmental compensation per CPCB dust-mitigation schedule."
+      },
       {
         "id": "GRAP-STAGE",
         "statute": "Graded Response Action Plan (CAQM)",
@@ -375,74 +377,73 @@
         "penalty": "As notified per stage."
       }
     ],
-    "subject": "Enforcement action under Graded Response Action Plan (CAQM) for acute Very Poor air quality in Zone Z01",
-    "background": "An acute air pollution event was recorded across 13 cells in Zone Z01, located in an unassigned ward outside city limits. The recorded PM2.5 level reached 189.6 µg/m³, yielding an AQI of 354 categorized as Very Poor, with a boundary layer height of 150 meters under trapped air conditions. Zero fire hours and a fire fraction of 0.0 were recorded for the area.",
-    "finding": "The evidence supports traffic as the potential source, based on a highest deterministic score of 0.303 and wind alignment reaching up to 0.97 across candidate sources. Because the confidence level is 0.14, this finding is indicative and requires verification on site.",
-    "directive": "In accordance with the Graded Response Action Plan (CAQM) provision on stage escalation by AQI band, designated officers must enforce graded restrictions on construction, DG sets, and dust-generating activity matching the Very Poor AQI band. Field personnel are directed to undertake physical verification in Zone Z01 to confirm the indicative traffic source and monitor local compliance.",
+    "subject": "Air pollution source detected — construction — Outside city limits (zone Z01)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 13 cell(s) in Outside city limits. The zone is classified 'acute'. Estimated PM2.5 in the zone is 212.8 ug/m3, corresponding to an AQI of 372 (Very Poor).",
+    "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.26. Supporting evidence: construction_1434658088 is 1.24 km away, wind alignment 0.85; shallow boundary layer (90 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Construction and Demolition Waste Management Rules, 2016, Rules 4 & 8; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
     "evidence_chain": [
-      "Highest deterministic score for traffic (0.303)",
-      "Multiple traffic candidates with strong wind alignment (up to 0.97)",
-      "Low boundary layer height (150m) and trapped air condition at night"
+      "construction_1434658088 is 1.24 km away, wind alignment 0.85",
+      "shallow boundary layer (90 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "883da11a97fffff",
+      "cell": "883da10365fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 152.3,
+      "pm25_estimate": 137.2,
       "candidates": [
         {
-          "name": "Mehrauli Gurgaon Road",
-          "type": "traffic",
-          "distance_km": 2.24,
-          "wind_alignment": 0.93
+          "name": "construction_1434658088",
+          "type": "construction",
+          "distance_km": 1.24,
+          "wind_alignment": 0.85
         },
         {
-          "name": "Mehrauli Gurgaon Road",
-          "type": "traffic",
-          "distance_km": 2.33,
-          "wind_alignment": 0.94
-        },
-        {
-          "name": "Mehrauli Gurgaon Road",
-          "type": "traffic",
-          "distance_km": 2.44,
-          "wind_alignment": 0.96
-        },
-        {
-          "name": "Mehrauli Gurgaon Road",
-          "type": "traffic",
-          "distance_km": 2.55,
-          "wind_alignment": 0.97
-        },
-        {
-          "name": "Mehrauli Gurgaon Road",
-          "type": "traffic",
-          "distance_km": 1.95,
-          "wind_alignment": 0.78
+          "name": "construction_1379318627",
+          "type": "construction",
+          "distance_km": 1.54,
+          "wind_alignment": 0.86
         },
         {
           "name": "indus",
           "type": "industrial",
-          "distance_km": 2.07,
-          "wind_alignment": 0.81
+          "distance_km": 3.44,
+          "wind_alignment": 0.96
+        },
+        {
+          "name": "construction_1442123108",
+          "type": "construction",
+          "distance_km": 2.8,
+          "wind_alignment": 0.82
+        },
+        {
+          "name": "construction_1442123110",
+          "type": "construction",
+          "distance_km": 2.89,
+          "wind_alignment": 0.79
         },
         {
           "name": "Mehrauli Gurgaon Road",
           "type": "traffic",
-          "distance_km": 1.97,
-          "wind_alignment": 0.78
+          "distance_km": 3.77,
+          "wind_alignment": 0.89
         },
         {
-          "name": "Delhi-Gurugram Expressway",
+          "name": "Mehrauli Gurgaon Road",
           "type": "traffic",
-          "distance_km": 2.78,
-          "wind_alignment": 0.97
+          "distance_km": 3.79,
+          "wind_alignment": 0.89
+        },
+        {
+          "name": "Mehrauli Gurgaon Road",
+          "type": "traffic",
+          "distance_km": 4.08,
+          "wind_alignment": 0.94
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 86.8,
-          "city_percentile": 45
+          "city_percentile": 44
         },
         "so2_col": {
           "value": -65.2,
@@ -470,9 +471,9 @@
         "traffic": 0
       },
       "meteorology": {
-        "wind_from_deg": 301,
-        "wind_ms": 1.7,
-        "blh_m": 150,
+        "wind_from_deg": 306,
+        "wind_ms": 2.1,
+        "blh_m": 90,
         "hour_local": 23,
         "air_trapped": true
       },
@@ -480,40 +481,56 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "drafted_by": "gemini",
+    "drafted_by": "rules",
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/DEL/20260722/Z05",
+    "memo_id": "AQ/DEL/20260822/Z05",
     "action_id": "A01",
     "zone_id": "Z05",
     "ward_id": "W223",
     "ward_name": "KAPASHERA",
-    "issued_at": "2026-07-22T14:28:29.685872+00:00",
+    "issued_at": "2026-08-22T19:11:44.148895+00:00",
     "status": "draft",
     "situation": {
-      "source": "traffic",
-      "confidence": 0.5,
-      "pm25": 230.5,
-      "aqi": 385,
-      "aqi_category": "Very Poor",
+      "source": "industrial",
+      "confidence": 0.39,
+      "pm25": 263.8,
+      "aqi": 403,
+      "aqi_category": "Severe",
       "kind": "chronic",
       "zone_id": "Z05",
       "ward_id": "W223",
       "ward_name": "KAPASHERA",
       "n_cells": 15,
       "evidence_factors": [
-        "Highest deterministic category score of 0.798",
-        "Landuse context with 7 traffic sources",
-        "Elevated NO2 column value of 117.6 (67th city percentile)",
-        "Multiple traffic candidates within 1 km"
+        "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
+        "shallow boundary layer (85 m) trapping emissions"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
-      "blh_m": 130,
+      "blh_m": 85,
       "nearest_candidate_km": null
     },
     "legal_basis": [
+      {
+        "id": "AIR-1981-31A",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 31A",
+        "summary": "Power to issue directions, including closure, prohibition or regulation of any industry, operation or process, and stoppage of electricity or water supply.",
+        "authority": "State Pollution Control Board",
+        "action": "Issue direction under s.31A; consider stoppage of operations pending compliance.",
+        "penalty": "Non-compliance attracts prosecution under s.37."
+      },
+      {
+        "id": "EPA-1986-5",
+        "statute": "Environment (Protection) Act, 1986",
+        "provision": "Section 5",
+        "summary": "Power to give directions in writing to any person, officer or authority, who shall be bound to comply.",
+        "authority": "State Pollution Control Board / CPCB",
+        "action": "Inspect consent conditions and stack emission compliance; issue show-cause under s.5.",
+        "penalty": "Contravention punishable under s.15."
+      },
       {
         "id": "GRAP-STAGE",
         "statute": "Graded Response Action Plan (CAQM)",
@@ -524,69 +541,67 @@
         "penalty": "As notified per stage."
       }
     ],
-    "subject": "Enforcement Notice: Air Quality Escalation and Traffic Source Verification in Ward W223 KAPASHERA",
-    "background": "Monitoring in Ward W223 KAPASHERA, Zone Z05, recorded a PM2.5 concentration of 230.5 and an AQI of 385, falling under the Very Poor category across 15 cells. The chronic measurement indicates a boundary layer height of 130 meters, with zero fire hours and a fire fraction of 0.0.",
-    "finding": "The evidence indicates traffic as the likely source, based on a category score of 0.798, an NO2 column value of 117.6, and 7 landuse traffic sources within 1 km. Because the confidence level is 0.5, this finding is indicative and requires verification on site.",
-    "directive": "Pursuant to Stage escalation by AQI band under the Graded Response Action Plan (CAQM), the addressee is instructed to perform immediate on-site inspection in Ward W223 KAPASHERA. Upon site verification, the addressee must implement the applicable graded restrictions on construction, DG sets, and dust-generating activity.",
+    "subject": "Air pollution source detected — industrial — KAPASHERA (zone Z05)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 15 cell(s) in KAPASHERA. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 263.8 ug/m3, corresponding to an AQI of 403 (Severe).",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.39. Supporting evidence: Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 31A; Environment (Protection) Act, 1986, Section 5; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
     "evidence_chain": [
-      "Highest deterministic category score of 0.798",
-      "Landuse context with 7 traffic sources",
-      "Elevated NO2 column value of 117.6 (67th city percentile)",
-      "Multiple traffic candidates within 1 km"
+      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
+      "shallow boundary layer (85 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "883da111dbfffff",
+      "cell": "883da110e5fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W223",
-      "pm25_estimate": 222.1,
+      "pm25_estimate": 213.2,
       "candidates": [
         {
-          "name": "traffic_25524703",
-          "type": "traffic",
-          "distance_km": 1.31,
+          "name": "Delhi Airport Bus Depot",
+          "type": "industrial",
+          "distance_km": 1.54,
+          "wind_alignment": 0.65
+        },
+        {
+          "name": "Delhi Airport Bus Depot",
+          "type": "industrial",
+          "distance_km": 1.29,
+          "wind_alignment": 0.57
+        },
+        {
+          "name": "Delhi Airport Bus Depot",
+          "type": "industrial",
+          "distance_km": 1.77,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "construction_1182398042",
+          "type": "construction",
+          "distance_km": 2.35,
           "wind_alignment": 0.67
-        },
-        {
-          "name": "traffic_1283639344",
-          "type": "traffic",
-          "distance_km": 0.94,
-          "wind_alignment": 0.53
-        },
-        {
-          "name": "traffic_1431236197",
-          "type": "traffic",
-          "distance_km": 2.06,
-          "wind_alignment": 0.75
         },
         {
           "name": "traffic_1431236203",
           "type": "traffic",
-          "distance_km": 2.16,
-          "wind_alignment": 0.76
+          "distance_km": 1.86,
+          "wind_alignment": 0.56
+        },
+        {
+          "name": "construction_1182398043",
+          "type": "construction",
+          "distance_km": 2.32,
+          "wind_alignment": 0.65
+        },
+        {
+          "name": "traffic_1431236197",
+          "type": "traffic",
+          "distance_km": 1.79,
+          "wind_alignment": 0.54
         },
         {
           "name": "traffic_35307401",
           "type": "traffic",
-          "distance_km": 2.26,
-          "wind_alignment": 0.76
-        },
-        {
-          "name": "traffic_1283639345",
-          "type": "traffic",
-          "distance_km": 0.8,
-          "wind_alignment": 0.39
-        },
-        {
-          "name": "traffic_1429639987",
-          "type": "traffic",
-          "distance_km": 2.68,
-          "wind_alignment": 0.77
-        },
-        {
-          "name": "traffic_1448200087",
-          "type": "traffic",
-          "distance_km": 0.74,
-          "wind_alignment": 0.34
+          "distance_km": 1.95,
+          "wind_alignment": 0.57
         }
       ],
       "pollutant_signature": {
@@ -620,9 +635,9 @@
         "traffic": 7
       },
       "meteorology": {
-        "wind_from_deg": 283,
-        "wind_ms": 1.5,
-        "blh_m": 130,
+        "wind_from_deg": 285,
+        "wind_ms": 1.6,
+        "blh_m": 85,
         "hour_local": 12,
         "air_trapped": true
       },
@@ -630,7 +645,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "drafted_by": "gemini",
+    "drafted_by": "rules",
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   }
 ]

@@ -1,0 +1,6449 @@
+[
+  {
+    "cell": "883cf2c663fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W060",
+    "pm25_estimate": 67.7,
+    "primary_source": "industrial",
+    "confidence": 0.43,
+    "scores": {
+      "industrial": 0.688,
+      "construction": 0.518,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101757267 is 2.32 km away, wind alignment 0.76; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101757267 is 2.32 km away, wind alignment 0.76",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c663fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W060",
+      "pm25_estimate": 67.7,
+      "candidates": [
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.94,
+          "wind_alignment": 0.69
+        },
+        {
+          "name": "construction_828171881",
+          "type": "construction",
+          "distance_km": 1.64,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.32,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 1.53,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.72,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 3.05,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 3.41,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 3.48,
+          "wind_alignment": 0.79
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 91.4,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 81.3,
+          "city_percentile": 51
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 3,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.7,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883cf2c66bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W060",
+    "pm25_estimate": 67.7,
+    "primary_source": "industrial",
+    "confidence": 0.43,
+    "scores": {
+      "industrial": 0.688,
+      "construction": 0.518,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101757267 is 2.32 km away, wind alignment 0.76; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101757267 is 2.32 km away, wind alignment 0.76",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c663fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W060",
+      "pm25_estimate": 67.7,
+      "candidates": [
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.94,
+          "wind_alignment": 0.69
+        },
+        {
+          "name": "construction_828171881",
+          "type": "construction",
+          "distance_km": 1.64,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.32,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 1.53,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.72,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 3.05,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 3.41,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 3.48,
+          "wind_alignment": 0.79
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 91.4,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 81.3,
+          "city_percentile": 51
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 3,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.7,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883cf2c629fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W060",
+    "pm25_estimate": 67.7,
+    "primary_source": "industrial",
+    "confidence": 0.43,
+    "scores": {
+      "industrial": 0.688,
+      "construction": 0.518,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101757267 is 2.32 km away, wind alignment 0.76; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101757267 is 2.32 km away, wind alignment 0.76",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c663fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W060",
+      "pm25_estimate": 67.7,
+      "candidates": [
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.94,
+          "wind_alignment": 0.69
+        },
+        {
+          "name": "construction_828171881",
+          "type": "construction",
+          "distance_km": 1.64,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.32,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 1.53,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.72,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 3.05,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 3.41,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 3.48,
+          "wind_alignment": 0.79
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 91.4,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 81.3,
+          "city_percentile": 51
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 3,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.7,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883cf2c44dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W060",
+    "pm25_estimate": 67.7,
+    "primary_source": "industrial",
+    "confidence": 0.43,
+    "scores": {
+      "industrial": 0.688,
+      "construction": 0.518,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101757267 is 2.32 km away, wind alignment 0.76; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101757267 is 2.32 km away, wind alignment 0.76",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c663fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W060",
+      "pm25_estimate": 67.7,
+      "candidates": [
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.94,
+          "wind_alignment": 0.69
+        },
+        {
+          "name": "construction_828171881",
+          "type": "construction",
+          "distance_km": 1.64,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.32,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 1.53,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.72,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 3.05,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 3.41,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 3.48,
+          "wind_alignment": 0.79
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 91.4,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 81.3,
+          "city_percentile": 51
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 3,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.7,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883cf2c627fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W060",
+    "pm25_estimate": 67.7,
+    "primary_source": "industrial",
+    "confidence": 0.43,
+    "scores": {
+      "industrial": 0.688,
+      "construction": 0.518,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101757267 is 2.32 km away, wind alignment 0.76; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101757267 is 2.32 km away, wind alignment 0.76",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c663fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W060",
+      "pm25_estimate": 67.7,
+      "candidates": [
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.94,
+          "wind_alignment": 0.69
+        },
+        {
+          "name": "construction_828171881",
+          "type": "construction",
+          "distance_km": 1.64,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.32,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 1.53,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.72,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 3.05,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 3.41,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 3.48,
+          "wind_alignment": 0.79
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 91.4,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 81.3,
+          "city_percentile": 51
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 3,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.7,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883cf2c621fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W060",
+    "pm25_estimate": 67.7,
+    "primary_source": "industrial",
+    "confidence": 0.43,
+    "scores": {
+      "industrial": 0.688,
+      "construction": 0.518,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101757267 is 2.32 km away, wind alignment 0.76; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101757267 is 2.32 km away, wind alignment 0.76",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c663fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W060",
+      "pm25_estimate": 67.7,
+      "candidates": [
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.94,
+          "wind_alignment": 0.69
+        },
+        {
+          "name": "construction_828171881",
+          "type": "construction",
+          "distance_km": 1.64,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.32,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 1.53,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.72,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 3.05,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 3.41,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 3.48,
+          "wind_alignment": 0.79
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 91.4,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 81.3,
+          "city_percentile": 51
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 3,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.7,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "rules",
+    "zone_id": "Z04"
+  },
+  {
+    "cell": "883cf2c661fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W067",
+    "pm25_estimate": 67.4,
+    "primary_source": "industrial",
+    "confidence": 0.47,
+    "scores": {
+      "industrial": 0.752,
+      "construction": 0.486,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Industrial sources scored the highest deterministic attribution score of 0.752, supported by a land-use context of 7 industrial sites and several closely aligned upwind candidates, including industrial_101757267 (1.90 km, 0.78 wind alignment) and industrial_101757335 (2.44 km, 0.77 wind alignment). This is further substantiated by elevated NO2 levels at the 83rd city percentile and trapped air conditions with a low boundary layer height of 195 m.",
+    "evidence_factors": [
+      "Highest deterministic category score (0.752) for industrial",
+      "Presence of 7 industrial land-use features and multiple upwind industrial candidates with wind alignment up to 0.78",
+      "High NO2 column density at the 83rd city percentile",
+      "Stagnant dispersion conditions with trapped air and low boundary layer height of 195 m"
+    ],
+    "evidence": {
+      "cell": "883cf2c661fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W067",
+      "pm25_estimate": 67.4,
+      "candidates": [
+        {
+          "name": "construction_828171881",
+          "type": "construction",
+          "distance_km": 1.26,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 1.9,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.44,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.85,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 3.28,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 3.33,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.64,
+          "wind_alignment": 0.73
+        },
+        {
+          "name": "industrial_102036207",
+          "type": "industrial",
+          "distance_km": 2.27,
+          "wind_alignment": 0.51
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 92.6,
+          "city_percentile": 83
+        },
+        "so2_col": {
+          "value": 83.7,
+          "city_percentile": 52
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 7,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 337,
+        "wind_ms": 1.7,
+        "blh_m": 195,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "gemini",
+    "zone_id": "Z08"
+  },
+  {
+    "cell": "883cf2c62dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W067",
+    "pm25_estimate": 67.4,
+    "primary_source": "industrial",
+    "confidence": 0.47,
+    "scores": {
+      "industrial": 0.752,
+      "construction": 0.486,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Industrial sources scored the highest deterministic attribution score of 0.752, supported by a land-use context of 7 industrial sites and several closely aligned upwind candidates, including industrial_101757267 (1.90 km, 0.78 wind alignment) and industrial_101757335 (2.44 km, 0.77 wind alignment). This is further substantiated by elevated NO2 levels at the 83rd city percentile and trapped air conditions with a low boundary layer height of 195 m.",
+    "evidence_factors": [
+      "Highest deterministic category score (0.752) for industrial",
+      "Presence of 7 industrial land-use features and multiple upwind industrial candidates with wind alignment up to 0.78",
+      "High NO2 column density at the 83rd city percentile",
+      "Stagnant dispersion conditions with trapped air and low boundary layer height of 195 m"
+    ],
+    "evidence": {
+      "cell": "883cf2c661fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W067",
+      "pm25_estimate": 67.4,
+      "candidates": [
+        {
+          "name": "construction_828171881",
+          "type": "construction",
+          "distance_km": 1.26,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 1.9,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.44,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.85,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 3.28,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 3.33,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.64,
+          "wind_alignment": 0.73
+        },
+        {
+          "name": "industrial_102036207",
+          "type": "industrial",
+          "distance_km": 2.27,
+          "wind_alignment": 0.51
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 92.6,
+          "city_percentile": 83
+        },
+        "so2_col": {
+          "value": 83.7,
+          "city_percentile": 52
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 7,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 337,
+        "wind_ms": 1.7,
+        "blh_m": 195,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "gemini",
+    "zone_id": "Z08"
+  },
+  {
+    "cell": "883cf2c667fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W067",
+    "pm25_estimate": 67.4,
+    "primary_source": "industrial",
+    "confidence": 0.47,
+    "scores": {
+      "industrial": 0.752,
+      "construction": 0.486,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Industrial sources scored the highest deterministic attribution score of 0.752, supported by a land-use context of 7 industrial sites and several closely aligned upwind candidates, including industrial_101757267 (1.90 km, 0.78 wind alignment) and industrial_101757335 (2.44 km, 0.77 wind alignment). This is further substantiated by elevated NO2 levels at the 83rd city percentile and trapped air conditions with a low boundary layer height of 195 m.",
+    "evidence_factors": [
+      "Highest deterministic category score (0.752) for industrial",
+      "Presence of 7 industrial land-use features and multiple upwind industrial candidates with wind alignment up to 0.78",
+      "High NO2 column density at the 83rd city percentile",
+      "Stagnant dispersion conditions with trapped air and low boundary layer height of 195 m"
+    ],
+    "evidence": {
+      "cell": "883cf2c661fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W067",
+      "pm25_estimate": 67.4,
+      "candidates": [
+        {
+          "name": "construction_828171881",
+          "type": "construction",
+          "distance_km": 1.26,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 1.9,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.44,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.85,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 3.28,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 3.33,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.64,
+          "wind_alignment": 0.73
+        },
+        {
+          "name": "industrial_102036207",
+          "type": "industrial",
+          "distance_km": 2.27,
+          "wind_alignment": 0.51
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 92.6,
+          "city_percentile": 83
+        },
+        "so2_col": {
+          "value": 83.7,
+          "city_percentile": 52
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 7,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 337,
+        "wind_ms": 1.7,
+        "blh_m": 195,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "gemini",
+    "zone_id": "Z08"
+  },
+  {
+    "cell": "883cf2c71bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W067",
+    "pm25_estimate": 67.4,
+    "primary_source": "industrial",
+    "confidence": 0.47,
+    "scores": {
+      "industrial": 0.752,
+      "construction": 0.486,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Industrial sources scored the highest deterministic attribution score of 0.752, supported by a land-use context of 7 industrial sites and several closely aligned upwind candidates, including industrial_101757267 (1.90 km, 0.78 wind alignment) and industrial_101757335 (2.44 km, 0.77 wind alignment). This is further substantiated by elevated NO2 levels at the 83rd city percentile and trapped air conditions with a low boundary layer height of 195 m.",
+    "evidence_factors": [
+      "Highest deterministic category score (0.752) for industrial",
+      "Presence of 7 industrial land-use features and multiple upwind industrial candidates with wind alignment up to 0.78",
+      "High NO2 column density at the 83rd city percentile",
+      "Stagnant dispersion conditions with trapped air and low boundary layer height of 195 m"
+    ],
+    "evidence": {
+      "cell": "883cf2c661fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W067",
+      "pm25_estimate": 67.4,
+      "candidates": [
+        {
+          "name": "construction_828171881",
+          "type": "construction",
+          "distance_km": 1.26,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 1.9,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.44,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.85,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 3.28,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 3.33,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.64,
+          "wind_alignment": 0.73
+        },
+        {
+          "name": "industrial_102036207",
+          "type": "industrial",
+          "distance_km": 2.27,
+          "wind_alignment": 0.51
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 92.6,
+          "city_percentile": 83
+        },
+        "so2_col": {
+          "value": 83.7,
+          "city_percentile": 52
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 7,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 337,
+        "wind_ms": 1.7,
+        "blh_m": 195,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "gemini",
+    "zone_id": "Z08"
+  },
+  {
+    "cell": "883cf2c625fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W067",
+    "pm25_estimate": 67.4,
+    "primary_source": "industrial",
+    "confidence": 0.47,
+    "scores": {
+      "industrial": 0.752,
+      "construction": 0.486,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Industrial sources scored the highest deterministic attribution score of 0.752, supported by a land-use context of 7 industrial sites and several closely aligned upwind candidates, including industrial_101757267 (1.90 km, 0.78 wind alignment) and industrial_101757335 (2.44 km, 0.77 wind alignment). This is further substantiated by elevated NO2 levels at the 83rd city percentile and trapped air conditions with a low boundary layer height of 195 m.",
+    "evidence_factors": [
+      "Highest deterministic category score (0.752) for industrial",
+      "Presence of 7 industrial land-use features and multiple upwind industrial candidates with wind alignment up to 0.78",
+      "High NO2 column density at the 83rd city percentile",
+      "Stagnant dispersion conditions with trapped air and low boundary layer height of 195 m"
+    ],
+    "evidence": {
+      "cell": "883cf2c661fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W067",
+      "pm25_estimate": 67.4,
+      "candidates": [
+        {
+          "name": "construction_828171881",
+          "type": "construction",
+          "distance_km": 1.26,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 1.9,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.44,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.85,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 3.28,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 3.33,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.64,
+          "wind_alignment": 0.73
+        },
+        {
+          "name": "industrial_102036207",
+          "type": "industrial",
+          "distance_km": 2.27,
+          "wind_alignment": 0.51
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 92.6,
+          "city_percentile": 83
+        },
+        "so2_col": {
+          "value": 83.7,
+          "city_percentile": 52
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 7,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 337,
+        "wind_ms": 1.7,
+        "blh_m": 195,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "gemini",
+    "zone_id": "Z08"
+  },
+  {
+    "cell": "883cf2c713fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W067",
+    "pm25_estimate": 67.4,
+    "primary_source": "industrial",
+    "confidence": 0.47,
+    "scores": {
+      "industrial": 0.752,
+      "construction": 0.486,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Industrial sources scored the highest deterministic attribution score of 0.752, supported by a land-use context of 7 industrial sites and several closely aligned upwind candidates, including industrial_101757267 (1.90 km, 0.78 wind alignment) and industrial_101757335 (2.44 km, 0.77 wind alignment). This is further substantiated by elevated NO2 levels at the 83rd city percentile and trapped air conditions with a low boundary layer height of 195 m.",
+    "evidence_factors": [
+      "Highest deterministic category score (0.752) for industrial",
+      "Presence of 7 industrial land-use features and multiple upwind industrial candidates with wind alignment up to 0.78",
+      "High NO2 column density at the 83rd city percentile",
+      "Stagnant dispersion conditions with trapped air and low boundary layer height of 195 m"
+    ],
+    "evidence": {
+      "cell": "883cf2c661fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W067",
+      "pm25_estimate": 67.4,
+      "candidates": [
+        {
+          "name": "construction_828171881",
+          "type": "construction",
+          "distance_km": 1.26,
+          "wind_alignment": 0.76
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 1.9,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.44,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.85,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 3.28,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 3.33,
+          "wind_alignment": 0.74
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.64,
+          "wind_alignment": 0.73
+        },
+        {
+          "name": "industrial_102036207",
+          "type": "industrial",
+          "distance_km": 2.27,
+          "wind_alignment": 0.51
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 92.6,
+          "city_percentile": 83
+        },
+        "so2_col": {
+          "value": 83.7,
+          "city_percentile": 52
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 7,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 337,
+        "wind_ms": 1.7,
+        "blh_m": 195,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "gemini",
+    "zone_id": "Z08"
+  },
+  {
+    "cell": "883cf2c60dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W128",
+    "pm25_estimate": 61.2,
+    "primary_source": "industrial",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.664,
+      "construction": 0.535,
+      "waste_burning": 0.0,
+      "traffic": 0.15
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101750901 is 2.57 km away, wind alignment 0.75; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101750901 is 2.57 km away, wind alignment 0.75",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c60dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W128",
+      "pm25_estimate": 61.2,
+      "candidates": [
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 0.56,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.34,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.57,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.37,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 2.84,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.15,
+          "wind_alignment": 0.6
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 88.8,
+          "city_percentile": 81
+        },
+        "so2_col": {
+          "value": 73.1,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 12,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 1
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.6,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "883cf2c441fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W128",
+    "pm25_estimate": 61.2,
+    "primary_source": "industrial",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.664,
+      "construction": 0.535,
+      "waste_burning": 0.0,
+      "traffic": 0.15
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101750901 is 2.57 km away, wind alignment 0.75; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101750901 is 2.57 km away, wind alignment 0.75",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c60dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W128",
+      "pm25_estimate": 61.2,
+      "candidates": [
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 0.56,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.34,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.57,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.37,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 2.84,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.15,
+          "wind_alignment": 0.6
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 88.8,
+          "city_percentile": 81
+        },
+        "so2_col": {
+          "value": 73.1,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 12,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 1
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.6,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "883cf2c62bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W128",
+    "pm25_estimate": 61.2,
+    "primary_source": "industrial",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.664,
+      "construction": 0.535,
+      "waste_burning": 0.0,
+      "traffic": 0.15
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101750901 is 2.57 km away, wind alignment 0.75; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101750901 is 2.57 km away, wind alignment 0.75",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c60dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W128",
+      "pm25_estimate": 61.2,
+      "candidates": [
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 0.56,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.34,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.57,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.37,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 2.84,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.15,
+          "wind_alignment": 0.6
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 88.8,
+          "city_percentile": 81
+        },
+        "so2_col": {
+          "value": 73.1,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 12,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 1
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.6,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "883cf2c605fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W128",
+    "pm25_estimate": 61.2,
+    "primary_source": "industrial",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.664,
+      "construction": 0.535,
+      "waste_burning": 0.0,
+      "traffic": 0.15
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101750901 is 2.57 km away, wind alignment 0.75; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101750901 is 2.57 km away, wind alignment 0.75",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c60dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W128",
+      "pm25_estimate": 61.2,
+      "candidates": [
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 0.56,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.34,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.57,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.37,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 2.84,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.15,
+          "wind_alignment": 0.6
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 88.8,
+          "city_percentile": 81
+        },
+        "so2_col": {
+          "value": 73.1,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 12,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 1
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.6,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "883cf2c607fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W128",
+    "pm25_estimate": 61.2,
+    "primary_source": "industrial",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.664,
+      "construction": 0.535,
+      "waste_burning": 0.0,
+      "traffic": 0.15
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101750901 is 2.57 km away, wind alignment 0.75; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101750901 is 2.57 km away, wind alignment 0.75",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c60dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W128",
+      "pm25_estimate": 61.2,
+      "candidates": [
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 0.56,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.34,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.57,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.37,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 2.84,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.15,
+          "wind_alignment": 0.6
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 88.8,
+          "city_percentile": 81
+        },
+        "so2_col": {
+          "value": 73.1,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 12,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 1
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.6,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "883cf2c449fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W128",
+    "pm25_estimate": 61.2,
+    "primary_source": "industrial",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.664,
+      "construction": 0.535,
+      "waste_burning": 0.0,
+      "traffic": 0.15
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101750901 is 2.57 km away, wind alignment 0.75; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101750901 is 2.57 km away, wind alignment 0.75",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c60dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W128",
+      "pm25_estimate": 61.2,
+      "candidates": [
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 0.56,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.34,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.57,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.37,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 2.84,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.15,
+          "wind_alignment": 0.6
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 88.8,
+          "city_percentile": 81
+        },
+        "so2_col": {
+          "value": 73.1,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 12,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 1
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.6,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "883cf2c603fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W128",
+    "pm25_estimate": 61.2,
+    "primary_source": "industrial",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.664,
+      "construction": 0.535,
+      "waste_burning": 0.0,
+      "traffic": 0.15
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101750901 is 2.57 km away, wind alignment 0.75; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101750901 is 2.57 km away, wind alignment 0.75",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c60dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W128",
+      "pm25_estimate": 61.2,
+      "candidates": [
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 0.56,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.34,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.57,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.37,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 2.84,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.15,
+          "wind_alignment": 0.6
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 88.8,
+          "city_percentile": 81
+        },
+        "so2_col": {
+          "value": 73.1,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 12,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 1
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.6,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "883cf2c601fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W128",
+    "pm25_estimate": 61.2,
+    "primary_source": "industrial",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.664,
+      "construction": 0.535,
+      "waste_burning": 0.0,
+      "traffic": 0.15
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101750901 is 2.57 km away, wind alignment 0.75; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101750901 is 2.57 km away, wind alignment 0.75",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c60dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W128",
+      "pm25_estimate": 61.2,
+      "candidates": [
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 0.56,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.34,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.57,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.37,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 2.84,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.15,
+          "wind_alignment": 0.6
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 88.8,
+          "city_percentile": 81
+        },
+        "so2_col": {
+          "value": 73.1,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 12,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 1
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.6,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "883cf2c623fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W128",
+    "pm25_estimate": 61.2,
+    "primary_source": "industrial",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.664,
+      "construction": 0.535,
+      "waste_burning": 0.0,
+      "traffic": 0.15
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101750901 is 2.57 km away, wind alignment 0.75; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101750901 is 2.57 km away, wind alignment 0.75",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c60dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W128",
+      "pm25_estimate": 61.2,
+      "candidates": [
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 0.56,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.34,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.57,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.37,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 2.84,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.15,
+          "wind_alignment": 0.6
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 88.8,
+          "city_percentile": 81
+        },
+        "so2_col": {
+          "value": 73.1,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 12,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 1
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.6,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "883cf2c63dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W128",
+    "pm25_estimate": 61.2,
+    "primary_source": "industrial",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.664,
+      "construction": 0.535,
+      "waste_burning": 0.0,
+      "traffic": 0.15
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_101750901 is 2.57 km away, wind alignment 0.75; shallow boundary layer (200 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_101750901 is 2.57 km away, wind alignment 0.75",
+      "shallow boundary layer (200 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c60dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W128",
+      "pm25_estimate": 61.2,
+      "candidates": [
+        {
+          "name": "Shree Mani Haat",
+          "type": "construction",
+          "distance_km": 0.56,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "Bowbazar Shaft",
+          "type": "construction",
+          "distance_km": 0.34,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_101750901",
+          "type": "industrial",
+          "distance_km": 2.57,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_101757335",
+          "type": "industrial",
+          "distance_km": 2.37,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "Mayo Hospital",
+          "type": "construction",
+          "distance_km": 2.84,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_101750926",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_101765730",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_101757267",
+          "type": "industrial",
+          "distance_km": 2.15,
+          "wind_alignment": 0.6
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 88.8,
+          "city_percentile": 81
+        },
+        "so2_col": {
+          "value": 73.1,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": 0.0,
+          "city_percentile": 71
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 12,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 1
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 1.6,
+        "blh_m": 200,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "883cf2c733fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W001",
+    "pm25_estimate": 58.7,
+    "primary_source": "industrial",
+    "confidence": 0.7,
+    "scores": {
+      "industrial": 0.973,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W001",
+      "pm25_estimate": 58.7,
+      "candidates": [
+        {
+          "name": "industrial_118521436",
+          "type": "industrial",
+          "distance_km": 0.8,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_118642914",
+          "type": "industrial",
+          "distance_km": 1.4,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_121905881",
+          "type": "industrial",
+          "distance_km": 2.44,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_121764538",
+          "type": "industrial",
+          "distance_km": 1.63,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_121905848",
+          "type": "industrial",
+          "distance_km": 2.7,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_118114915",
+          "type": "industrial",
+          "distance_km": 1.74,
+          "wind_alignment": 0.57
+        },
+        {
+          "name": "industrial_121760861",
+          "type": "industrial",
+          "distance_km": 1.51,
+          "wind_alignment": 0.52
+        },
+        {
+          "name": "industrial_121904566",
+          "type": "industrial",
+          "distance_km": 2.77,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 94.4,
+          "city_percentile": 84
+        },
+        "so2_col": {
+          "value": 90.2,
+          "city_percentile": 53
+        },
+        "aai": {
+          "value": -0.0,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 333,
+        "wind_ms": 1.7,
+        "blh_m": 195,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 7
+    },
+    "explained_by": "rules",
+    "zone_id": "Z07"
+  },
+  {
+    "cell": "883cf2c73bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W001",
+    "pm25_estimate": 58.7,
+    "primary_source": "industrial",
+    "confidence": 0.7,
+    "scores": {
+      "industrial": 0.973,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W001",
+      "pm25_estimate": 58.7,
+      "candidates": [
+        {
+          "name": "industrial_118521436",
+          "type": "industrial",
+          "distance_km": 0.8,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_118642914",
+          "type": "industrial",
+          "distance_km": 1.4,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_121905881",
+          "type": "industrial",
+          "distance_km": 2.44,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_121764538",
+          "type": "industrial",
+          "distance_km": 1.63,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_121905848",
+          "type": "industrial",
+          "distance_km": 2.7,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_118114915",
+          "type": "industrial",
+          "distance_km": 1.74,
+          "wind_alignment": 0.57
+        },
+        {
+          "name": "industrial_121760861",
+          "type": "industrial",
+          "distance_km": 1.51,
+          "wind_alignment": 0.52
+        },
+        {
+          "name": "industrial_121904566",
+          "type": "industrial",
+          "distance_km": 2.77,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 94.4,
+          "city_percentile": 84
+        },
+        "so2_col": {
+          "value": 90.2,
+          "city_percentile": 53
+        },
+        "aai": {
+          "value": -0.0,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 333,
+        "wind_ms": 1.7,
+        "blh_m": 195,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 7
+    },
+    "explained_by": "rules",
+    "zone_id": "Z07"
+  },
+  {
+    "cell": "883cf2c559fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W001",
+    "pm25_estimate": 58.7,
+    "primary_source": "industrial",
+    "confidence": 0.7,
+    "scores": {
+      "industrial": 0.973,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W001",
+      "pm25_estimate": 58.7,
+      "candidates": [
+        {
+          "name": "industrial_118521436",
+          "type": "industrial",
+          "distance_km": 0.8,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_118642914",
+          "type": "industrial",
+          "distance_km": 1.4,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_121905881",
+          "type": "industrial",
+          "distance_km": 2.44,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_121764538",
+          "type": "industrial",
+          "distance_km": 1.63,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_121905848",
+          "type": "industrial",
+          "distance_km": 2.7,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_118114915",
+          "type": "industrial",
+          "distance_km": 1.74,
+          "wind_alignment": 0.57
+        },
+        {
+          "name": "industrial_121760861",
+          "type": "industrial",
+          "distance_km": 1.51,
+          "wind_alignment": 0.52
+        },
+        {
+          "name": "industrial_121904566",
+          "type": "industrial",
+          "distance_km": 2.77,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 94.4,
+          "city_percentile": 84
+        },
+        "so2_col": {
+          "value": 90.2,
+          "city_percentile": 53
+        },
+        "aai": {
+          "value": -0.0,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 333,
+        "wind_ms": 1.7,
+        "blh_m": 195,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 7
+    },
+    "explained_by": "rules",
+    "zone_id": "Z07"
+  },
+  {
+    "cell": "883cf2c71dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W001",
+    "pm25_estimate": 58.7,
+    "primary_source": "industrial",
+    "confidence": 0.7,
+    "scores": {
+      "industrial": 0.973,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W001",
+      "pm25_estimate": 58.7,
+      "candidates": [
+        {
+          "name": "industrial_118521436",
+          "type": "industrial",
+          "distance_km": 0.8,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_118642914",
+          "type": "industrial",
+          "distance_km": 1.4,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_121905881",
+          "type": "industrial",
+          "distance_km": 2.44,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_121764538",
+          "type": "industrial",
+          "distance_km": 1.63,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_121905848",
+          "type": "industrial",
+          "distance_km": 2.7,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_118114915",
+          "type": "industrial",
+          "distance_km": 1.74,
+          "wind_alignment": 0.57
+        },
+        {
+          "name": "industrial_121760861",
+          "type": "industrial",
+          "distance_km": 1.51,
+          "wind_alignment": 0.52
+        },
+        {
+          "name": "industrial_121904566",
+          "type": "industrial",
+          "distance_km": 2.77,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 94.4,
+          "city_percentile": 84
+        },
+        "so2_col": {
+          "value": 90.2,
+          "city_percentile": 53
+        },
+        "aai": {
+          "value": -0.0,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 333,
+        "wind_ms": 1.7,
+        "blh_m": 195,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 7
+    },
+    "explained_by": "rules",
+    "zone_id": "Z07"
+  },
+  {
+    "cell": "883cf2c715fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W001",
+    "pm25_estimate": 58.7,
+    "primary_source": "industrial",
+    "confidence": 0.7,
+    "scores": {
+      "industrial": 0.973,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W001",
+      "pm25_estimate": 58.7,
+      "candidates": [
+        {
+          "name": "industrial_118521436",
+          "type": "industrial",
+          "distance_km": 0.8,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_118642914",
+          "type": "industrial",
+          "distance_km": 1.4,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_121905881",
+          "type": "industrial",
+          "distance_km": 2.44,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_121764538",
+          "type": "industrial",
+          "distance_km": 1.63,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_121905848",
+          "type": "industrial",
+          "distance_km": 2.7,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_118114915",
+          "type": "industrial",
+          "distance_km": 1.74,
+          "wind_alignment": 0.57
+        },
+        {
+          "name": "industrial_121760861",
+          "type": "industrial",
+          "distance_km": 1.51,
+          "wind_alignment": 0.52
+        },
+        {
+          "name": "industrial_121904566",
+          "type": "industrial",
+          "distance_km": 2.77,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 94.4,
+          "city_percentile": 84
+        },
+        "so2_col": {
+          "value": 90.2,
+          "city_percentile": 53
+        },
+        "aai": {
+          "value": -0.0,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 333,
+        "wind_ms": 1.7,
+        "blh_m": 195,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 7
+    },
+    "explained_by": "rules",
+    "zone_id": "Z07"
+  },
+  {
+    "cell": "883cf2c757fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W001",
+    "pm25_estimate": 58.7,
+    "primary_source": "industrial",
+    "confidence": 0.7,
+    "scores": {
+      "industrial": 0.973,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W001",
+      "pm25_estimate": 58.7,
+      "candidates": [
+        {
+          "name": "industrial_118521436",
+          "type": "industrial",
+          "distance_km": 0.8,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_118642914",
+          "type": "industrial",
+          "distance_km": 1.4,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_121905881",
+          "type": "industrial",
+          "distance_km": 2.44,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_121764538",
+          "type": "industrial",
+          "distance_km": 1.63,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_121905848",
+          "type": "industrial",
+          "distance_km": 2.7,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_118114915",
+          "type": "industrial",
+          "distance_km": 1.74,
+          "wind_alignment": 0.57
+        },
+        {
+          "name": "industrial_121760861",
+          "type": "industrial",
+          "distance_km": 1.51,
+          "wind_alignment": 0.52
+        },
+        {
+          "name": "industrial_121904566",
+          "type": "industrial",
+          "distance_km": 2.77,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 94.4,
+          "city_percentile": 84
+        },
+        "so2_col": {
+          "value": 90.2,
+          "city_percentile": 53
+        },
+        "aai": {
+          "value": -0.0,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 333,
+        "wind_ms": 1.7,
+        "blh_m": 195,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 7
+    },
+    "explained_by": "rules",
+    "zone_id": "Z07"
+  },
+  {
+    "cell": "883cf2c703fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W001",
+    "pm25_estimate": 58.7,
+    "primary_source": "industrial",
+    "confidence": 0.7,
+    "scores": {
+      "industrial": 0.973,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c733fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W001",
+      "pm25_estimate": 58.7,
+      "candidates": [
+        {
+          "name": "industrial_118521436",
+          "type": "industrial",
+          "distance_km": 0.8,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_118642914",
+          "type": "industrial",
+          "distance_km": 1.4,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_121905881",
+          "type": "industrial",
+          "distance_km": 2.44,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_121764538",
+          "type": "industrial",
+          "distance_km": 1.63,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_121905848",
+          "type": "industrial",
+          "distance_km": 2.7,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_118114915",
+          "type": "industrial",
+          "distance_km": 1.74,
+          "wind_alignment": 0.57
+        },
+        {
+          "name": "industrial_121760861",
+          "type": "industrial",
+          "distance_km": 1.51,
+          "wind_alignment": 0.52
+        },
+        {
+          "name": "industrial_121904566",
+          "type": "industrial",
+          "distance_km": 2.77,
+          "wind_alignment": 0.78
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 94.4,
+          "city_percentile": 84
+        },
+        "so2_col": {
+          "value": 90.2,
+          "city_percentile": 53
+        },
+        "aai": {
+          "value": -0.0,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 16,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 333,
+        "wind_ms": 1.7,
+        "blh_m": 195,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 7
+    },
+    "explained_by": "rules",
+    "zone_id": "Z07"
+  },
+  {
+    "cell": "883cf2c711fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W003",
+    "pm25_estimate": 59.2,
+    "primary_source": "industrial",
+    "confidence": 0.69,
+    "scores": {
+      "industrial": 0.935,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_121904566 is 0.42 km away, wind alignment 0.59; shallow boundary layer (208 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_121904566 is 0.42 km away, wind alignment 0.59",
+      "shallow boundary layer (208 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c711fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W003",
+      "pm25_estimate": 59.2,
+      "candidates": [
+        {
+          "name": "industrial_121904566",
+          "type": "industrial",
+          "distance_km": 0.42,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_121988224",
+          "type": "industrial",
+          "distance_km": 0.95,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Laundry",
+          "type": "industrial",
+          "distance_km": 0.76,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_122033771",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "GE Project",
+          "type": "industrial",
+          "distance_km": 1.37,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_122033772",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_143896404",
+          "type": "industrial",
+          "distance_km": 1.25,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_121905888",
+          "type": "industrial",
+          "distance_km": 0.77,
+          "wind_alignment": 0.46
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 94.4,
+          "city_percentile": 84
+        },
+        "so2_col": {
+          "value": 83.7,
+          "city_percentile": 52
+        },
+        "aai": {
+          "value": -0.0,
+          "city_percentile": 68
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 23,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 335,
+        "wind_ms": 1.6,
+        "blh_m": 208,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "883cf2c719fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W003",
+    "pm25_estimate": 59.2,
+    "primary_source": "industrial",
+    "confidence": 0.69,
+    "scores": {
+      "industrial": 0.935,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_121904566 is 0.42 km away, wind alignment 0.59; shallow boundary layer (208 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_121904566 is 0.42 km away, wind alignment 0.59",
+      "shallow boundary layer (208 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c711fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W003",
+      "pm25_estimate": 59.2,
+      "candidates": [
+        {
+          "name": "industrial_121904566",
+          "type": "industrial",
+          "distance_km": 0.42,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_121988224",
+          "type": "industrial",
+          "distance_km": 0.95,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Laundry",
+          "type": "industrial",
+          "distance_km": 0.76,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_122033771",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "GE Project",
+          "type": "industrial",
+          "distance_km": 1.37,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_122033772",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_143896404",
+          "type": "industrial",
+          "distance_km": 1.25,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_121905888",
+          "type": "industrial",
+          "distance_km": 0.77,
+          "wind_alignment": 0.46
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 94.4,
+          "city_percentile": 84
+        },
+        "so2_col": {
+          "value": 83.7,
+          "city_percentile": 52
+        },
+        "aai": {
+          "value": -0.0,
+          "city_percentile": 68
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 23,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 335,
+        "wind_ms": 1.6,
+        "blh_m": 208,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "883cf2c717fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W003",
+    "pm25_estimate": 59.2,
+    "primary_source": "industrial",
+    "confidence": 0.69,
+    "scores": {
+      "industrial": 0.935,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_121904566 is 0.42 km away, wind alignment 0.59; shallow boundary layer (208 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_121904566 is 0.42 km away, wind alignment 0.59",
+      "shallow boundary layer (208 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c711fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W003",
+      "pm25_estimate": 59.2,
+      "candidates": [
+        {
+          "name": "industrial_121904566",
+          "type": "industrial",
+          "distance_km": 0.42,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_121988224",
+          "type": "industrial",
+          "distance_km": 0.95,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Laundry",
+          "type": "industrial",
+          "distance_km": 0.76,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_122033771",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "GE Project",
+          "type": "industrial",
+          "distance_km": 1.37,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_122033772",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_143896404",
+          "type": "industrial",
+          "distance_km": 1.25,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_121905888",
+          "type": "industrial",
+          "distance_km": 0.77,
+          "wind_alignment": 0.46
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 94.4,
+          "city_percentile": 84
+        },
+        "so2_col": {
+          "value": 83.7,
+          "city_percentile": 52
+        },
+        "aai": {
+          "value": -0.0,
+          "city_percentile": 68
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 23,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 335,
+        "wind_ms": 1.6,
+        "blh_m": 208,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "883cf2c46dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W003",
+    "pm25_estimate": 59.2,
+    "primary_source": "industrial",
+    "confidence": 0.69,
+    "scores": {
+      "industrial": 0.935,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_121904566 is 0.42 km away, wind alignment 0.59; shallow boundary layer (208 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_121904566 is 0.42 km away, wind alignment 0.59",
+      "shallow boundary layer (208 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c711fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W003",
+      "pm25_estimate": 59.2,
+      "candidates": [
+        {
+          "name": "industrial_121904566",
+          "type": "industrial",
+          "distance_km": 0.42,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_121988224",
+          "type": "industrial",
+          "distance_km": 0.95,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Laundry",
+          "type": "industrial",
+          "distance_km": 0.76,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_122033771",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "GE Project",
+          "type": "industrial",
+          "distance_km": 1.37,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_122033772",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_143896404",
+          "type": "industrial",
+          "distance_km": 1.25,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_121905888",
+          "type": "industrial",
+          "distance_km": 0.77,
+          "wind_alignment": 0.46
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 94.4,
+          "city_percentile": 84
+        },
+        "so2_col": {
+          "value": 83.7,
+          "city_percentile": 52
+        },
+        "aai": {
+          "value": -0.0,
+          "city_percentile": 68
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 23,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 335,
+        "wind_ms": 1.6,
+        "blh_m": 208,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "883cf2c465fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W003",
+    "pm25_estimate": 59.2,
+    "primary_source": "industrial",
+    "confidence": 0.69,
+    "scores": {
+      "industrial": 0.935,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_121904566 is 0.42 km away, wind alignment 0.59; shallow boundary layer (208 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_121904566 is 0.42 km away, wind alignment 0.59",
+      "shallow boundary layer (208 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c711fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W003",
+      "pm25_estimate": 59.2,
+      "candidates": [
+        {
+          "name": "industrial_121904566",
+          "type": "industrial",
+          "distance_km": 0.42,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_121988224",
+          "type": "industrial",
+          "distance_km": 0.95,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Laundry",
+          "type": "industrial",
+          "distance_km": 0.76,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_122033771",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "GE Project",
+          "type": "industrial",
+          "distance_km": 1.37,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_122033772",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_143896404",
+          "type": "industrial",
+          "distance_km": 1.25,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_121905888",
+          "type": "industrial",
+          "distance_km": 0.77,
+          "wind_alignment": 0.46
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 94.4,
+          "city_percentile": 84
+        },
+        "so2_col": {
+          "value": 83.7,
+          "city_percentile": 52
+        },
+        "aai": {
+          "value": -0.0,
+          "city_percentile": 68
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 23,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 335,
+        "wind_ms": 1.6,
+        "blh_m": 208,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "883cf2c753fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W003",
+    "pm25_estimate": 59.2,
+    "primary_source": "industrial",
+    "confidence": 0.69,
+    "scores": {
+      "industrial": 0.935,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_121904566 is 0.42 km away, wind alignment 0.59; shallow boundary layer (208 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_121904566 is 0.42 km away, wind alignment 0.59",
+      "shallow boundary layer (208 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c711fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W003",
+      "pm25_estimate": 59.2,
+      "candidates": [
+        {
+          "name": "industrial_121904566",
+          "type": "industrial",
+          "distance_km": 0.42,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_121988224",
+          "type": "industrial",
+          "distance_km": 0.95,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "Laundry",
+          "type": "industrial",
+          "distance_km": 0.76,
+          "wind_alignment": 0.66
+        },
+        {
+          "name": "industrial_122033771",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "GE Project",
+          "type": "industrial",
+          "distance_km": 1.37,
+          "wind_alignment": 0.77
+        },
+        {
+          "name": "industrial_122033772",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.78
+        },
+        {
+          "name": "industrial_143896404",
+          "type": "industrial",
+          "distance_km": 1.25,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_121905888",
+          "type": "industrial",
+          "distance_km": 0.77,
+          "wind_alignment": 0.46
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 94.4,
+          "city_percentile": 84
+        },
+        "so2_col": {
+          "value": 83.7,
+          "city_percentile": 52
+        },
+        "aai": {
+          "value": -0.0,
+          "city_percentile": 68
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 23,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 335,
+        "wind_ms": 1.6,
+        "blh_m": 208,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 6
+    },
+    "explained_by": "rules",
+    "zone_id": "Z05"
+  },
+  {
+    "cell": "883cf2c519fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W094",
+    "pm25_estimate": 72.1,
+    "primary_source": "industrial",
+    "confidence": 0.16,
+    "scores": {
+      "industrial": 0.159,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118840253 is 2.69 km away, wind alignment 0.61; shallow boundary layer (95 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118840253 is 2.69 km away, wind alignment 0.61",
+      "shallow boundary layer (95 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c519fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W094",
+      "pm25_estimate": 72.1,
+      "candidates": [
+        {
+          "name": "industrial_118840253",
+          "type": "industrial",
+          "distance_km": 2.69,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_120564610",
+          "type": "industrial",
+          "distance_km": 2.71,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120008363",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "industrial_120230900",
+          "type": "industrial",
+          "distance_km": 3.22,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120230913",
+          "type": "industrial",
+          "distance_km": 3.29,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120327177",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_120230423",
+          "type": "industrial",
+          "distance_km": 3.25,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120229556",
+          "type": "industrial",
+          "distance_km": 3.41,
+          "wind_alignment": 0.58
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 0.9,
+        "blh_m": 95,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 9
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "883cf2c51bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W094",
+    "pm25_estimate": 72.1,
+    "primary_source": "industrial",
+    "confidence": 0.16,
+    "scores": {
+      "industrial": 0.159,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118840253 is 2.69 km away, wind alignment 0.61; shallow boundary layer (95 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118840253 is 2.69 km away, wind alignment 0.61",
+      "shallow boundary layer (95 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c519fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W094",
+      "pm25_estimate": 72.1,
+      "candidates": [
+        {
+          "name": "industrial_118840253",
+          "type": "industrial",
+          "distance_km": 2.69,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_120564610",
+          "type": "industrial",
+          "distance_km": 2.71,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120008363",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "industrial_120230900",
+          "type": "industrial",
+          "distance_km": 3.22,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120230913",
+          "type": "industrial",
+          "distance_km": 3.29,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120327177",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_120230423",
+          "type": "industrial",
+          "distance_km": 3.25,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120229556",
+          "type": "industrial",
+          "distance_km": 3.41,
+          "wind_alignment": 0.58
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 0.9,
+        "blh_m": 95,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 9
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "883cf2c42dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W094",
+    "pm25_estimate": 72.1,
+    "primary_source": "industrial",
+    "confidence": 0.16,
+    "scores": {
+      "industrial": 0.159,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118840253 is 2.69 km away, wind alignment 0.61; shallow boundary layer (95 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118840253 is 2.69 km away, wind alignment 0.61",
+      "shallow boundary layer (95 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c519fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W094",
+      "pm25_estimate": 72.1,
+      "candidates": [
+        {
+          "name": "industrial_118840253",
+          "type": "industrial",
+          "distance_km": 2.69,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_120564610",
+          "type": "industrial",
+          "distance_km": 2.71,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120008363",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "industrial_120230900",
+          "type": "industrial",
+          "distance_km": 3.22,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120230913",
+          "type": "industrial",
+          "distance_km": 3.29,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120327177",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_120230423",
+          "type": "industrial",
+          "distance_km": 3.25,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120229556",
+          "type": "industrial",
+          "distance_km": 3.41,
+          "wind_alignment": 0.58
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 0.9,
+        "blh_m": 95,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 9
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "883cf2c467fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W094",
+    "pm25_estimate": 72.1,
+    "primary_source": "industrial",
+    "confidence": 0.16,
+    "scores": {
+      "industrial": 0.159,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118840253 is 2.69 km away, wind alignment 0.61; shallow boundary layer (95 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118840253 is 2.69 km away, wind alignment 0.61",
+      "shallow boundary layer (95 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c519fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W094",
+      "pm25_estimate": 72.1,
+      "candidates": [
+        {
+          "name": "industrial_118840253",
+          "type": "industrial",
+          "distance_km": 2.69,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_120564610",
+          "type": "industrial",
+          "distance_km": 2.71,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120008363",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "industrial_120230900",
+          "type": "industrial",
+          "distance_km": 3.22,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120230913",
+          "type": "industrial",
+          "distance_km": 3.29,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120327177",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_120230423",
+          "type": "industrial",
+          "distance_km": 3.25,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120229556",
+          "type": "industrial",
+          "distance_km": 3.41,
+          "wind_alignment": 0.58
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 0.9,
+        "blh_m": 95,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 9
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "883cf2c425fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W094",
+    "pm25_estimate": 72.1,
+    "primary_source": "industrial",
+    "confidence": 0.16,
+    "scores": {
+      "industrial": 0.159,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118840253 is 2.69 km away, wind alignment 0.61; shallow boundary layer (95 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118840253 is 2.69 km away, wind alignment 0.61",
+      "shallow boundary layer (95 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c519fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W094",
+      "pm25_estimate": 72.1,
+      "candidates": [
+        {
+          "name": "industrial_118840253",
+          "type": "industrial",
+          "distance_km": 2.69,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_120564610",
+          "type": "industrial",
+          "distance_km": 2.71,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120008363",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "industrial_120230900",
+          "type": "industrial",
+          "distance_km": 3.22,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120230913",
+          "type": "industrial",
+          "distance_km": 3.29,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120327177",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_120230423",
+          "type": "industrial",
+          "distance_km": 3.25,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120229556",
+          "type": "industrial",
+          "distance_km": 3.41,
+          "wind_alignment": 0.58
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 0.9,
+        "blh_m": 95,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 9
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "883cf2c553fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W094",
+    "pm25_estimate": 72.1,
+    "primary_source": "industrial",
+    "confidence": 0.16,
+    "scores": {
+      "industrial": 0.159,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118840253 is 2.69 km away, wind alignment 0.61; shallow boundary layer (95 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118840253 is 2.69 km away, wind alignment 0.61",
+      "shallow boundary layer (95 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c519fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W094",
+      "pm25_estimate": 72.1,
+      "candidates": [
+        {
+          "name": "industrial_118840253",
+          "type": "industrial",
+          "distance_km": 2.69,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_120564610",
+          "type": "industrial",
+          "distance_km": 2.71,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120008363",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "industrial_120230900",
+          "type": "industrial",
+          "distance_km": 3.22,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120230913",
+          "type": "industrial",
+          "distance_km": 3.29,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120327177",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_120230423",
+          "type": "industrial",
+          "distance_km": 3.25,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120229556",
+          "type": "industrial",
+          "distance_km": 3.41,
+          "wind_alignment": 0.58
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 0.9,
+        "blh_m": 95,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 9
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "883cf2c469fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W094",
+    "pm25_estimate": 72.1,
+    "primary_source": "industrial",
+    "confidence": 0.16,
+    "scores": {
+      "industrial": 0.159,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118840253 is 2.69 km away, wind alignment 0.61; shallow boundary layer (95 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118840253 is 2.69 km away, wind alignment 0.61",
+      "shallow boundary layer (95 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c519fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W094",
+      "pm25_estimate": 72.1,
+      "candidates": [
+        {
+          "name": "industrial_118840253",
+          "type": "industrial",
+          "distance_km": 2.69,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_120564610",
+          "type": "industrial",
+          "distance_km": 2.71,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120008363",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "industrial_120230900",
+          "type": "industrial",
+          "distance_km": 3.22,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120230913",
+          "type": "industrial",
+          "distance_km": 3.29,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120327177",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_120230423",
+          "type": "industrial",
+          "distance_km": 3.25,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120229556",
+          "type": "industrial",
+          "distance_km": 3.41,
+          "wind_alignment": 0.58
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 0.9,
+        "blh_m": 95,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 9
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "883cf2c461fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W094",
+    "pm25_estimate": 72.1,
+    "primary_source": "industrial",
+    "confidence": 0.16,
+    "scores": {
+      "industrial": 0.159,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118840253 is 2.69 km away, wind alignment 0.61; shallow boundary layer (95 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118840253 is 2.69 km away, wind alignment 0.61",
+      "shallow boundary layer (95 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c519fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W094",
+      "pm25_estimate": 72.1,
+      "candidates": [
+        {
+          "name": "industrial_118840253",
+          "type": "industrial",
+          "distance_km": 2.69,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_120564610",
+          "type": "industrial",
+          "distance_km": 2.71,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120008363",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "industrial_120230900",
+          "type": "industrial",
+          "distance_km": 3.22,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120230913",
+          "type": "industrial",
+          "distance_km": 3.29,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120327177",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_120230423",
+          "type": "industrial",
+          "distance_km": 3.25,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120229556",
+          "type": "industrial",
+          "distance_km": 3.41,
+          "wind_alignment": 0.58
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 0.9,
+        "blh_m": 95,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 9
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "883cf2c55bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W094",
+    "pm25_estimate": 72.1,
+    "primary_source": "industrial",
+    "confidence": 0.16,
+    "scores": {
+      "industrial": 0.159,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118840253 is 2.69 km away, wind alignment 0.61; shallow boundary layer (95 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_118840253 is 2.69 km away, wind alignment 0.61",
+      "shallow boundary layer (95 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c519fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W094",
+      "pm25_estimate": 72.1,
+      "candidates": [
+        {
+          "name": "industrial_118840253",
+          "type": "industrial",
+          "distance_km": 2.69,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_120564610",
+          "type": "industrial",
+          "distance_km": 2.71,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120008363",
+          "type": "industrial",
+          "distance_km": 3.1,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "industrial_120230900",
+          "type": "industrial",
+          "distance_km": 3.22,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120230913",
+          "type": "industrial",
+          "distance_km": 3.29,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_120327177",
+          "type": "industrial",
+          "distance_km": 2.93,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_120230423",
+          "type": "industrial",
+          "distance_km": 3.25,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "industrial_120229556",
+          "type": "industrial",
+          "distance_km": 3.41,
+          "wind_alignment": 0.58
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 340,
+        "wind_ms": 0.9,
+        "blh_m": 95,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 9
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "883cf2c405fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W054",
+    "pm25_estimate": 73.5,
+    "primary_source": "industrial",
+    "confidence": 0.64,
+    "scores": {
+      "industrial": 0.602,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_117961786 is 1.2 km away, wind alignment 0.55; shallow boundary layer (122 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_117961786 is 1.2 km away, wind alignment 0.55",
+      "shallow boundary layer (122 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c405fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W054",
+      "pm25_estimate": 73.5,
+      "candidates": [
+        {
+          "name": "industrial_117961786",
+          "type": "industrial",
+          "distance_km": 1.2,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_117856402",
+          "type": "industrial",
+          "distance_km": 1.81,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_117856399",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "Kasba Industrial Estate",
+          "type": "industrial",
+          "distance_km": 1.04,
+          "wind_alignment": 0.43
+        },
+        {
+          "name": "industrial_117856409",
+          "type": "industrial",
+          "distance_km": 2.05,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "industrial_117856411",
+          "type": "industrial",
+          "distance_km": 2.03,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_117975077",
+          "type": "industrial",
+          "distance_km": 2.02,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "industrial_117975070",
+          "type": "industrial",
+          "distance_km": 2.09,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 341,
+        "wind_ms": 0.9,
+        "blh_m": 122,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 11
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "883cf2c429fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W054",
+    "pm25_estimate": 73.5,
+    "primary_source": "industrial",
+    "confidence": 0.64,
+    "scores": {
+      "industrial": 0.602,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_117961786 is 1.2 km away, wind alignment 0.55; shallow boundary layer (122 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_117961786 is 1.2 km away, wind alignment 0.55",
+      "shallow boundary layer (122 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c405fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W054",
+      "pm25_estimate": 73.5,
+      "candidates": [
+        {
+          "name": "industrial_117961786",
+          "type": "industrial",
+          "distance_km": 1.2,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_117856402",
+          "type": "industrial",
+          "distance_km": 1.81,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_117856399",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "Kasba Industrial Estate",
+          "type": "industrial",
+          "distance_km": 1.04,
+          "wind_alignment": 0.43
+        },
+        {
+          "name": "industrial_117856409",
+          "type": "industrial",
+          "distance_km": 2.05,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "industrial_117856411",
+          "type": "industrial",
+          "distance_km": 2.03,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_117975077",
+          "type": "industrial",
+          "distance_km": 2.02,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "industrial_117975070",
+          "type": "industrial",
+          "distance_km": 2.09,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 341,
+        "wind_ms": 0.9,
+        "blh_m": 122,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 11
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "883cf2c421fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W054",
+    "pm25_estimate": 73.5,
+    "primary_source": "industrial",
+    "confidence": 0.64,
+    "scores": {
+      "industrial": 0.602,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_117961786 is 1.2 km away, wind alignment 0.55; shallow boundary layer (122 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_117961786 is 1.2 km away, wind alignment 0.55",
+      "shallow boundary layer (122 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c405fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W054",
+      "pm25_estimate": 73.5,
+      "candidates": [
+        {
+          "name": "industrial_117961786",
+          "type": "industrial",
+          "distance_km": 1.2,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_117856402",
+          "type": "industrial",
+          "distance_km": 1.81,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_117856399",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "Kasba Industrial Estate",
+          "type": "industrial",
+          "distance_km": 1.04,
+          "wind_alignment": 0.43
+        },
+        {
+          "name": "industrial_117856409",
+          "type": "industrial",
+          "distance_km": 2.05,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "industrial_117856411",
+          "type": "industrial",
+          "distance_km": 2.03,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_117975077",
+          "type": "industrial",
+          "distance_km": 2.02,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "industrial_117975070",
+          "type": "industrial",
+          "distance_km": 2.09,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 341,
+        "wind_ms": 0.9,
+        "blh_m": 122,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 11
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "883cf2c40dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W054",
+    "pm25_estimate": 73.5,
+    "primary_source": "industrial",
+    "confidence": 0.64,
+    "scores": {
+      "industrial": 0.602,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_117961786 is 1.2 km away, wind alignment 0.55; shallow boundary layer (122 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_117961786 is 1.2 km away, wind alignment 0.55",
+      "shallow boundary layer (122 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c405fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W054",
+      "pm25_estimate": 73.5,
+      "candidates": [
+        {
+          "name": "industrial_117961786",
+          "type": "industrial",
+          "distance_km": 1.2,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_117856402",
+          "type": "industrial",
+          "distance_km": 1.81,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_117856399",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "Kasba Industrial Estate",
+          "type": "industrial",
+          "distance_km": 1.04,
+          "wind_alignment": 0.43
+        },
+        {
+          "name": "industrial_117856409",
+          "type": "industrial",
+          "distance_km": 2.05,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "industrial_117856411",
+          "type": "industrial",
+          "distance_km": 2.03,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_117975077",
+          "type": "industrial",
+          "distance_km": 2.02,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "industrial_117975070",
+          "type": "industrial",
+          "distance_km": 2.09,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 341,
+        "wind_ms": 0.9,
+        "blh_m": 122,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 11
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "883cf2c46bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W054",
+    "pm25_estimate": 73.5,
+    "primary_source": "industrial",
+    "confidence": 0.64,
+    "scores": {
+      "industrial": 0.602,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_117961786 is 1.2 km away, wind alignment 0.55; shallow boundary layer (122 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_117961786 is 1.2 km away, wind alignment 0.55",
+      "shallow boundary layer (122 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c405fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W054",
+      "pm25_estimate": 73.5,
+      "candidates": [
+        {
+          "name": "industrial_117961786",
+          "type": "industrial",
+          "distance_km": 1.2,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_117856402",
+          "type": "industrial",
+          "distance_km": 1.81,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_117856399",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "Kasba Industrial Estate",
+          "type": "industrial",
+          "distance_km": 1.04,
+          "wind_alignment": 0.43
+        },
+        {
+          "name": "industrial_117856409",
+          "type": "industrial",
+          "distance_km": 2.05,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "industrial_117856411",
+          "type": "industrial",
+          "distance_km": 2.03,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_117975077",
+          "type": "industrial",
+          "distance_km": 2.02,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "industrial_117975070",
+          "type": "industrial",
+          "distance_km": 2.09,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 341,
+        "wind_ms": 0.9,
+        "blh_m": 122,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 11
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "883cf2c447fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W054",
+    "pm25_estimate": 73.5,
+    "primary_source": "industrial",
+    "confidence": 0.64,
+    "scores": {
+      "industrial": 0.602,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_117961786 is 1.2 km away, wind alignment 0.55; shallow boundary layer (122 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_117961786 is 1.2 km away, wind alignment 0.55",
+      "shallow boundary layer (122 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c405fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W054",
+      "pm25_estimate": 73.5,
+      "candidates": [
+        {
+          "name": "industrial_117961786",
+          "type": "industrial",
+          "distance_km": 1.2,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_117856402",
+          "type": "industrial",
+          "distance_km": 1.81,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_117856399",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "Kasba Industrial Estate",
+          "type": "industrial",
+          "distance_km": 1.04,
+          "wind_alignment": 0.43
+        },
+        {
+          "name": "industrial_117856409",
+          "type": "industrial",
+          "distance_km": 2.05,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "industrial_117856411",
+          "type": "industrial",
+          "distance_km": 2.03,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_117975077",
+          "type": "industrial",
+          "distance_km": 2.02,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "industrial_117975070",
+          "type": "industrial",
+          "distance_km": 2.09,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 341,
+        "wind_ms": 0.9,
+        "blh_m": 122,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 11
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "883cf2c445fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W054",
+    "pm25_estimate": 73.5,
+    "primary_source": "industrial",
+    "confidence": 0.64,
+    "scores": {
+      "industrial": 0.602,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_117961786 is 1.2 km away, wind alignment 0.55; shallow boundary layer (122 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_117961786 is 1.2 km away, wind alignment 0.55",
+      "shallow boundary layer (122 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c405fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W054",
+      "pm25_estimate": 73.5,
+      "candidates": [
+        {
+          "name": "industrial_117961786",
+          "type": "industrial",
+          "distance_km": 1.2,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_117856402",
+          "type": "industrial",
+          "distance_km": 1.81,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_117856399",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "Kasba Industrial Estate",
+          "type": "industrial",
+          "distance_km": 1.04,
+          "wind_alignment": 0.43
+        },
+        {
+          "name": "industrial_117856409",
+          "type": "industrial",
+          "distance_km": 2.05,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "industrial_117856411",
+          "type": "industrial",
+          "distance_km": 2.03,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_117975077",
+          "type": "industrial",
+          "distance_km": 2.02,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "industrial_117975070",
+          "type": "industrial",
+          "distance_km": 2.09,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 341,
+        "wind_ms": 0.9,
+        "blh_m": 122,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 11
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "883cf2c427fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W054",
+    "pm25_estimate": 73.5,
+    "primary_source": "industrial",
+    "confidence": 0.64,
+    "scores": {
+      "industrial": 0.602,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_117961786 is 1.2 km away, wind alignment 0.55; shallow boundary layer (122 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_117961786 is 1.2 km away, wind alignment 0.55",
+      "shallow boundary layer (122 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c405fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W054",
+      "pm25_estimate": 73.5,
+      "candidates": [
+        {
+          "name": "industrial_117961786",
+          "type": "industrial",
+          "distance_km": 1.2,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_117856402",
+          "type": "industrial",
+          "distance_km": 1.81,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_117856399",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "Kasba Industrial Estate",
+          "type": "industrial",
+          "distance_km": 1.04,
+          "wind_alignment": 0.43
+        },
+        {
+          "name": "industrial_117856409",
+          "type": "industrial",
+          "distance_km": 2.05,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "industrial_117856411",
+          "type": "industrial",
+          "distance_km": 2.03,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_117975077",
+          "type": "industrial",
+          "distance_km": 2.02,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "industrial_117975070",
+          "type": "industrial",
+          "distance_km": 2.09,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 341,
+        "wind_ms": 0.9,
+        "blh_m": 122,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 11
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "883cf2c463fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W054",
+    "pm25_estimate": 73.5,
+    "primary_source": "industrial",
+    "confidence": 0.64,
+    "scores": {
+      "industrial": 0.602,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_117961786 is 1.2 km away, wind alignment 0.55; shallow boundary layer (122 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_117961786 is 1.2 km away, wind alignment 0.55",
+      "shallow boundary layer (122 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c405fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W054",
+      "pm25_estimate": 73.5,
+      "candidates": [
+        {
+          "name": "industrial_117961786",
+          "type": "industrial",
+          "distance_km": 1.2,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_117856402",
+          "type": "industrial",
+          "distance_km": 1.81,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_117856399",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "Kasba Industrial Estate",
+          "type": "industrial",
+          "distance_km": 1.04,
+          "wind_alignment": 0.43
+        },
+        {
+          "name": "industrial_117856409",
+          "type": "industrial",
+          "distance_km": 2.05,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "industrial_117856411",
+          "type": "industrial",
+          "distance_km": 2.03,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_117975077",
+          "type": "industrial",
+          "distance_km": 2.02,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "industrial_117975070",
+          "type": "industrial",
+          "distance_km": 2.09,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 341,
+        "wind_ms": 0.9,
+        "blh_m": 122,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 11
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "883cf2c42bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W054",
+    "pm25_estimate": 73.5,
+    "primary_source": "industrial",
+    "confidence": 0.64,
+    "scores": {
+      "industrial": 0.602,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_117961786 is 1.2 km away, wind alignment 0.55; shallow boundary layer (122 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_117961786 is 1.2 km away, wind alignment 0.55",
+      "shallow boundary layer (122 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c405fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W054",
+      "pm25_estimate": 73.5,
+      "candidates": [
+        {
+          "name": "industrial_117961786",
+          "type": "industrial",
+          "distance_km": 1.2,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_117856402",
+          "type": "industrial",
+          "distance_km": 1.81,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_117856399",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "Kasba Industrial Estate",
+          "type": "industrial",
+          "distance_km": 1.04,
+          "wind_alignment": 0.43
+        },
+        {
+          "name": "industrial_117856409",
+          "type": "industrial",
+          "distance_km": 2.05,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "industrial_117856411",
+          "type": "industrial",
+          "distance_km": 2.03,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_117975077",
+          "type": "industrial",
+          "distance_km": 2.02,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "industrial_117975070",
+          "type": "industrial",
+          "distance_km": 2.09,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 341,
+        "wind_ms": 0.9,
+        "blh_m": 122,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 11
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "883cf2c423fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W054",
+    "pm25_estimate": 73.5,
+    "primary_source": "industrial",
+    "confidence": 0.64,
+    "scores": {
+      "industrial": 0.602,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_117961786 is 1.2 km away, wind alignment 0.55; shallow boundary layer (122 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_117961786 is 1.2 km away, wind alignment 0.55",
+      "shallow boundary layer (122 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "883cf2c405fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W054",
+      "pm25_estimate": 73.5,
+      "candidates": [
+        {
+          "name": "industrial_117961786",
+          "type": "industrial",
+          "distance_km": 1.2,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "industrial_117856402",
+          "type": "industrial",
+          "distance_km": 1.81,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_117856399",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "Kasba Industrial Estate",
+          "type": "industrial",
+          "distance_km": 1.04,
+          "wind_alignment": 0.43
+        },
+        {
+          "name": "industrial_117856409",
+          "type": "industrial",
+          "distance_km": 2.05,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "industrial_117856411",
+          "type": "industrial",
+          "distance_km": 2.03,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "industrial_117975077",
+          "type": "industrial",
+          "distance_km": 2.02,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "industrial_117975070",
+          "type": "industrial",
+          "distance_km": 2.09,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 49
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 41
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 341,
+        "wind_ms": 0.9,
+        "blh_m": 122,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 11
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  }
+]

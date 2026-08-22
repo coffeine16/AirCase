@@ -1,0 +1,514 @@
+[
+  {
+    "ward_id": "W002",
+    "ward_name": "Admin Ward 02 Ghole Road",
+    "pm25": 77.3,
+    "aqi": 158,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 20,
+    "vulnerability": {
+      "schools_hospitals_nearby": 106,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 02 Ghole Road is moderate (AQI 158). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W003",
+    "ward_name": "Admin Ward 03 Kothrud Karveroad",
+    "pm25": 70.0,
+    "aqi": 134,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 22,
+    "vulnerability": {
+      "schools_hospitals_nearby": 45,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 03 Kothrud Karveroad is moderate (AQI 134). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W004",
+    "ward_name": "Admin Ward 04 Warje Karvenagar",
+    "pm25": 71.1,
+    "aqi": 138,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 23,
+    "vulnerability": {
+      "schools_hospitals_nearby": 53,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 04 Warje Karvenagar is moderate (AQI 138). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W005",
+    "ward_name": "Admin Ward 05 Dhole Patil Rd",
+    "pm25": 77.5,
+    "aqi": 159,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 26,
+    "vulnerability": {
+      "schools_hospitals_nearby": 60,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 05 Dhole Patil Rd is moderate (AQI 159). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W006",
+    "ward_name": "Admin Ward 06 Yerawda - Sangamwadi",
+    "pm25": 77.6,
+    "aqi": 159,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 49,
+    "vulnerability": {
+      "schools_hospitals_nearby": 22,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 06 Yerawda - Sangamwadi is moderate (AQI 159). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W007",
+    "ward_name": "Admin Ward 07 Nagar Road",
+    "pm25": 77.5,
+    "aqi": 159,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 35,
+    "vulnerability": {
+      "schools_hospitals_nearby": 30,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 07 Nagar Road is moderate (AQI 159). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W008",
+    "ward_name": "Admin Ward 08 KasbaVishrambaugwada",
+    "pm25": 78.4,
+    "aqi": 162,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 5,
+    "vulnerability": {
+      "schools_hospitals_nearby": 107,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 08 KasbaVishrambaugwada is moderate (AQI 162). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W009",
+    "ward_name": "Admin Ward 09 Tilak Road",
+    "pm25": 71.7,
+    "aqi": 140,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 25,
+    "vulnerability": {
+      "schools_hospitals_nearby": 114,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 09 Tilak Road is moderate (AQI 140). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W010",
+    "ward_name": "Admin Ward 10 Sahakarnagar",
+    "pm25": 78.7,
+    "aqi": 163,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 9,
+    "vulnerability": {
+      "schools_hospitals_nearby": 76,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 10 Sahakarnagar is moderate (AQI 163). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W011",
+    "ward_name": "Admin Ward 11 Bibwewadi",
+    "pm25": 78.2,
+    "aqi": 161,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 9,
+    "vulnerability": {
+      "schools_hospitals_nearby": 36,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 11 Bibwewadi is moderate (AQI 161). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W012",
+    "ward_name": "Admin Ward 12 Bhavani Peth",
+    "pm25": 78.3,
+    "aqi": 162,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 73,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 12 Bhavani Peth is moderate (AQI 162). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W013",
+    "ward_name": "Admin Ward 13 Hadapsar",
+    "pm25": 70.4,
+    "aqi": 135,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 25,
+    "vulnerability": {
+      "schools_hospitals_nearby": 28,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 13 Hadapsar is moderate (AQI 135). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W014",
+    "ward_name": "Admin Ward 14 Dhankawadi",
+    "pm25": 60.3,
+    "aqi": 102,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 9,
+    "vulnerability": {
+      "schools_hospitals_nearby": 27,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 14 Dhankawadi is moderate (AQI 102). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W015",
+    "ward_name": "Admin Ward 15 Kondhwa Wanavdi",
+    "pm25": 78.0,
+    "aqi": 160,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 29,
+    "vulnerability": {
+      "schools_hospitals_nearby": 21,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 15 Kondhwa Wanavdi is moderate (AQI 160). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "unassigned",
+    "ward_name": "Outside city limits",
+    "pm25": 83.6,
+    "aqi": 179,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 328,
+    "vulnerability": {
+      "schools_hospitals_nearby": 50,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Outside city limits is moderate (AQI 179). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W001",
+    "ward_name": "Admin Ward 01 Aundh",
+    "pm25": 53.8,
+    "aqi": 90,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 59,
+    "vulnerability": {
+      "schools_hospitals_nearby": 36,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Admin Ward 01 Aundh is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  }
+]

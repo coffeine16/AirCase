@@ -21,10 +21,17 @@ import { createContext, useContext, useEffect, useLayoutEffect, useState, useCal
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
+// The three the product was built and tuned on come first; the five added with
+// the 8-city forecast model follow. Order is the order of the city switcher.
 export const CITIES = [
   { id: "delhi", label: "Delhi" },
   { id: "chennai", label: "Chennai" },
   { id: "bengaluru", label: "Bengaluru" },
+  { id: "mumbai", label: "Mumbai" },
+  { id: "kolkata", label: "Kolkata" },
+  { id: "hyderabad", label: "Hyderabad" },
+  { id: "pune", label: "Pune" },
+  { id: "ahmedabad", label: "Ahmedabad" },
 ] as const;
 
 export type CityId = (typeof CITIES)[number]["id"];

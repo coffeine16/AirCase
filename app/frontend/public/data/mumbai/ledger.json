@@ -1,0 +1,226 @@
+{
+  "generated_at": "2026-08-22T18:29:40.936451+00:00",
+  "response_time_claim": "Signal-to-memo is automated and deterministic: a cited enforcement memo and dispatch route are produced in seconds. The manual baseline — correlating a satellite signal to a served notice across agencies — is measured in weeks. This is the response-time reduction.",
+  "effectiveness_claim": "NOT yet measured. Intervention effectiveness requires a real intervention between the frozen counterfactual and a realized outcome. The ledger freezes the counterfactual and awaits actioned outcomes from the inspector loop; it does not attribute natural change to itself.",
+  "n_actions": 9,
+  "n_actioned": 0,
+  "counterfactual_horizon_h": 48,
+  "entries": [
+    {
+      "action_id": "A06",
+      "zone_id": "Z01",
+      "ward_id": "W005",
+      "ward_name": "E",
+      "source": "traffic",
+      "eps": 74.2,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-22T18:29:08.581509+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 58.0,
+        "aqi_counterfactual": 97,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A08",
+      "zone_id": "Z02",
+      "ward_id": "W002",
+      "ward_name": "B",
+      "source": "industrial",
+      "eps": 70.6,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-22T18:29:08.581605+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 59.5,
+        "aqi_counterfactual": 99,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A01",
+      "zone_id": "Z05",
+      "ward_id": "W008",
+      "ward_name": "F/N",
+      "source": "construction",
+      "eps": 68.2,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-22T18:29:08.581653+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 61.9,
+        "aqi_counterfactual": 107,
+        "band_counterfactual": "Moderate",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A02",
+      "zone_id": "Z06",
+      "ward_id": "W008",
+      "ward_name": "F/N",
+      "source": "waste_burning",
+      "eps": 67.8,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-22T18:29:08.581692+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 62.0,
+        "aqi_counterfactual": 107,
+        "band_counterfactual": "Moderate",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A09",
+      "zone_id": "Z03",
+      "ward_id": "unassigned",
+      "ward_name": "Outside city limits",
+      "source": "industrial",
+      "eps": 66.5,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-22T18:29:08.581726+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 43.2,
+        "aqi_counterfactual": 73,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A05",
+      "zone_id": "Z07",
+      "ward_id": "W009",
+      "ward_name": "G/N",
+      "source": "construction",
+      "eps": 63.3,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-22T18:29:08.581758+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 63.0,
+        "aqi_counterfactual": 111,
+        "band_counterfactual": "Moderate",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A07",
+      "zone_id": "Z04",
+      "ward_id": "W014",
+      "ward_name": "K/W",
+      "source": "construction",
+      "eps": 58.0,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-22T18:29:08.581788+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 52.1,
+        "aqi_counterfactual": 87,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A03",
+      "zone_id": "Z08",
+      "ward_id": "W008",
+      "ward_name": "F/N",
+      "source": "waste_burning",
+      "eps": 50.7,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-22T18:29:08.581817+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 46.8,
+        "aqi_counterfactual": 78,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A04",
+      "zone_id": "Z10",
+      "ward_id": "unassigned",
+      "ward_name": "Outside city limits",
+      "source": "construction",
+      "eps": 46.6,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-22T18:29:08.581847+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 41.4,
+        "aqi_counterfactual": 70,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    }
+  ]
+}

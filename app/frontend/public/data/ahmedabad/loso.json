@@ -1,0 +1,31 @@
+{
+  "overall": {
+    "rmse": 25.94,
+    "r2": 0.459,
+    "n_stations": 4,
+    "mean_pm25": 51.0,
+    "naive_citymean_rmse": 25.22
+  },
+  "per_station": {
+    "8842cc690bfffff": {
+      "rmse": 21.8,
+      "r2": 0.498,
+      "n": 1363
+    },
+    "8842cc6b0dfffff": {
+      "rmse": 20.33,
+      "r2": 0.555,
+      "n": 1365
+    },
+    "8842cea407fffff": {
+      "rmse": 31.53,
+      "r2": 0.138,
+      "n": 1323
+    },
+    "8842cea617fffff": {
+      "rmse": 28.63,
+      "r2": 0.533,
+      "n": 1357
+    }
+  }
+}

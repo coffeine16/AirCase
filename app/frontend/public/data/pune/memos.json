@@ -1,0 +1,294 @@
+[
+  {
+    "memo_id": "AQ/PUN/20260822/Z01",
+    "action_id": "A02",
+    "zone_id": "Z01",
+    "ward_id": "unassigned",
+    "ward_name": "Outside city limits",
+    "issued_at": "2026-08-22T18:47:54.130407+00:00",
+    "status": "draft",
+    "situation": {
+      "source": "construction",
+      "confidence": 0.41,
+      "pm25": 73.9,
+      "aqi": 147,
+      "aqi_category": "Moderate",
+      "kind": "acute",
+      "zone_id": "Z01",
+      "ward_id": "unassigned",
+      "ward_name": "Outside city limits",
+      "n_cells": 5,
+      "evidence_factors": [
+        "construction_1107282096 is 0.13 km away, wind alignment 0.79",
+        "shallow boundary layer (322 m) trapping emissions"
+      ],
+      "fire_hours": 0,
+      "fire_fraction": 0.0,
+      "blh_m": 322,
+      "nearest_candidate_km": null
+    },
+    "legal_basis": [
+      {
+        "id": "CND-2016",
+        "statute": "Construction and Demolition Waste Management Rules, 2016",
+        "provision": "Rules 4 & 8",
+        "summary": "Every waste generator shall prevent dust and segregate and store C&D waste; the local authority shall enforce dust mitigation.",
+        "authority": "Municipal Commissioner / Local Body",
+        "action": "Inspect for anti-smog guns, barricading, covered transport and water sprinkling; issue notice for dust-control non-compliance.",
+        "penalty": "Environmental compensation per CPCB dust-mitigation schedule."
+      }
+    ],
+    "subject": "Air pollution source detected — construction — Outside city limits (zone Z01)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 5 cell(s) in Outside city limits. The zone is classified 'acute'. Estimated PM2.5 in the zone is 73.9 ug/m3, corresponding to an AQI of 147 (Moderate).",
+    "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.41. Supporting evidence: construction_1107282096 is 0.13 km away, wind alignment 0.79; shallow boundary layer (322 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Construction and Demolition Waste Management Rules, 2016, Rules 4 & 8.",
+    "evidence_chain": [
+      "construction_1107282096 is 0.13 km away, wind alignment 0.79",
+      "shallow boundary layer (322 m) trapping emissions"
+    ],
+    "evidence_full": {
+      "cell": "8860884055fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 52.3,
+      "candidates": [
+        {
+          "name": "construction_1107282096",
+          "type": "construction",
+          "distance_km": 0.13,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "construction_1291192936",
+          "type": "construction",
+          "distance_km": 0.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "Athens",
+          "type": "construction",
+          "distance_km": 0.54,
+          "wind_alignment": 0.81
+        },
+        {
+          "name": "construction_1143808514",
+          "type": "construction",
+          "distance_km": 1.19,
+          "wind_alignment": 0.82
+        },
+        {
+          "name": "construction_1360349488",
+          "type": "construction",
+          "distance_km": 1.51,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "construction_1084221350",
+          "type": "construction",
+          "distance_km": 1.55,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "construction_1360354280",
+          "type": "construction",
+          "distance_km": 1.54,
+          "wind_alignment": 0.42
+        },
+        {
+          "name": "ThyssenKrupp",
+          "type": "industrial",
+          "distance_km": 4.89,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 81.0,
+          "city_percentile": 89
+        },
+        "so2_col": {
+          "value": 87.9,
+          "city_percentile": 67
+        },
+        "aai": {
+          "value": 1.1,
+          "city_percentile": 99
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 16
+      },
+      "meteorology": {
+        "wind_from_deg": 72,
+        "wind_ms": 2.5,
+        "blh_m": 322,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 5
+    },
+    "drafted_by": "rules",
+    "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
+  },
+  {
+    "memo_id": "AQ/PUN/20260822/Z00",
+    "action_id": "A01",
+    "zone_id": "Z00",
+    "ward_id": "unassigned",
+    "ward_name": "Outside city limits",
+    "issued_at": "2026-08-22T18:47:54.130535+00:00",
+    "status": "draft",
+    "situation": {
+      "source": "industrial",
+      "confidence": 0.27,
+      "pm25": 67.0,
+      "aqi": 124,
+      "aqi_category": "Moderate",
+      "kind": "chronic",
+      "zone_id": "Z00",
+      "ward_id": "unassigned",
+      "ward_name": "Outside city limits",
+      "n_cells": 17,
+      "evidence_factors": [
+        "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+        "shallow boundary layer (170 m) trapping emissions"
+      ],
+      "fire_hours": 0,
+      "fire_fraction": 0.0,
+      "blh_m": 170,
+      "nearest_candidate_km": null
+    },
+    "legal_basis": [
+      {
+        "id": "EPA-1986-5",
+        "statute": "Environment (Protection) Act, 1986",
+        "provision": "Section 5",
+        "summary": "Power to give directions in writing to any person, officer or authority, who shall be bound to comply.",
+        "authority": "State Pollution Control Board / CPCB",
+        "action": "Inspect consent conditions and stack emission compliance; issue show-cause under s.5.",
+        "penalty": "Contravention punishable under s.15."
+      }
+    ],
+    "subject": "Air pollution source detected — industrial — Outside city limits (zone Z00)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 17 cell(s) in Outside city limits. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 67.0 ug/m3, corresponding to an AQI of 124 (Moderate).",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.27. Supporting evidence: industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
+    "evidence_chain": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence_full": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "drafted_by": "rules",
+    "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
+  }
+]

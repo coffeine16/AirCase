@@ -1,0 +1,85 @@
+{
+  "city": "pune",
+  "claim": "No single source being stale can silence source detection.",
+  "why": [
+    "Detection reads satellite NO₂ contrast + FIRMS fire persistence only — never a station. Measured: eval_station_sensitivity.py moves station siting from realistic to none and recall does not change.",
+    "Every aggregate is a MEDIAN over a 24h/7d/30d window, never a mean over the latest reading, so a source missing a third of its days still produces a valid estimate.",
+    "The two detection instruments are independent: cloud blinds the satellite, cloud does not blind thermal fire detection.",
+    "Critical sources refuse to fake. A live run ABORTS rather than substitute synthetic satellite, fire or OSM data (pollers.NO_FALLBACK), because each of those invents a place we would then accuse."
+  ],
+  "honest_limit": "The instruments fail TOGETHER in monsoon: cloud masks NO₂ and nothing burns when it is wet. Real FIRMS returns 2 fires over Bengaluru in 60 days of July. Redundancy across sources is not redundancy against a season.",
+  "sources": [
+    {
+      "source": "OpenAQ / CPCB stations",
+      "cadence": "hourly, best effort",
+      "observed": "9 stations over 1382 hours",
+      "completeness_pct": 82.0,
+      "feeds": [
+        "fusion exposure field",
+        "citizen AQI display"
+      ],
+      "if_stale": "Detection is UNAFFECTED — it never reads a station. The exposure map and the citizen AQI number degrade.",
+      "load_bearing_for_detection": false
+    },
+    {
+      "source": "Sentinel-5P (TROPOMI) NO₂",
+      "cadence": "one overpass per day, cloud-masked",
+      "observed": "677 cells × 60 days",
+      "completeness_pct": 58.9,
+      "feeds": [
+        "detection (NO₂ neighbourhood contrast)"
+      ],
+      "if_stale": "41% of cell-days are already cloud-masked and detection still works: the 24h/7d/30d medians absorb gaps by construction. Sustained loss degrades the NO₂ tier; the fire tier is independent.",
+      "load_bearing_for_detection": true
+    },
+    {
+      "source": "NASA FIRMS thermal anomalies",
+      "cadence": "event-driven, several passes daily",
+      "observed": "7 detections in the window",
+      "completeness_pct": null,
+      "completeness_note": "not a rate — event-driven",
+      "feeds": [
+        "detection (fire persistence)",
+        "attribution (fire evidence)"
+      ],
+      "if_stale": "Sparsity is the NORMAL case, not a failure — this is why persistence is a fraction of window-hours rather than a count. Sustained loss degrades the thermal tier; the NO₂ tier is independent.",
+      "load_bearing_for_detection": true
+    },
+    {
+      "source": "Open-Meteo (wind, boundary layer)",
+      "cadence": "hourly",
+      "observed": "32,208 hourly records",
+      "completeness_pct": 100.0,
+      "feeds": [
+        "attribution (plume alignment)",
+        "advisory (trapped-air flag)"
+      ],
+      "if_stale": "Attribution loses wind alignment but keeps land-use and fire evidence, and the confidence drops accordingly because it counts agreeing instruments.",
+      "load_bearing_for_detection": false
+    },
+    {
+      "source": "OpenStreetMap land use",
+      "cadence": "static per run",
+      "observed": "3,285 features",
+      "completeness_pct": null,
+      "completeness_note": "not a rate — static snapshot",
+      "feeds": [
+        "attribution (named candidate sites)"
+      ],
+      "if_stale": "Attribution loses named candidates but not the finding: the two burning landfills we detect appear on NO map at all, and were named from fire evidence alone.",
+      "load_bearing_for_detection": false
+    },
+    {
+      "source": "Citizen reports (Telegram / web)",
+      "cadence": "event-driven",
+      "observed": "0 reports synced",
+      "completeness_pct": null,
+      "completeness_note": "not a rate — event-driven",
+      "feeds": [
+        "attribution (corroboration)"
+      ],
+      "if_stale": "Nothing breaks. Corroboration is capped at +0.75 and can never out-vote an instrument — it is deliberately not load-bearing.",
+      "load_bearing_for_detection": false
+    }
+  ]
+}

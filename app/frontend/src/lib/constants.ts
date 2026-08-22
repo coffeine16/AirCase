@@ -25,6 +25,13 @@ export const CITY_VIEW_STATE: Record<string, { longitude: number; latitude: numb
   delhi:     { longitude: 77.15, latitude: 28.60 },
   chennai:   { longitude: 80.24, latitude: 13.05 },
   bengaluru: { longitude: 77.59, latitude: 12.97 },
+  // Each is the centre of that city's shared/config.py BBOX, so the opening
+  // frame matches the extent the pipeline actually generated data for.
+  mumbai:    { longitude: 72.88, latitude: 19.08 },
+  kolkata:   { longitude: 88.37, latitude: 22.55 },
+  hyderabad: { longitude: 78.47, latitude: 17.43 },
+  pune:      { longitude: 73.85, latitude: 18.55 },
+  ahmedabad: { longitude: 72.60, latitude: 23.05 },
 };
 
 export const INITIAL_VIEW_STATE = {
