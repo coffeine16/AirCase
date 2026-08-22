@@ -275,3 +275,9 @@ def test_train_and_promote_default_engine_is_pandas():
     from intelligence.models.forecast.train import train_and_promote
     sig = inspect.signature(train_and_promote)
     assert sig.parameters["engine"].default == "pandas"
+
+
+def test_train_and_promote_docstring_mentions_spatial_loso_native_support():
+    from intelligence.models.forecast.train import train_and_promote
+    assert "spatial-LOSO" in train_and_promote.__doc__
+    assert "walk-forward" in train_and_promote.__doc__.lower() or "walk_forward" in train_and_promote.__doc__

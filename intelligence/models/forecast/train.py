@@ -237,13 +237,12 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     today.
 
     `engine`: "pandas" (default, unchanged behavior) or "native". When
-    "native", the city-LOSO and final-fit stages run via
+    "native", the spatial-LOSO, city-LOSO, and final-fit stages run via
     intelligence.models.forecast.native.streaming's disk-streamed,
     Numba-composite-grid path instead of the in-process pandas path --
     see docs/superpowers/specs/2026-08-21-local-native-training-pipeline-
-    design.md. walk-forward and spatial-LOSO are NOT affected by this
-    flag yet (Phase 1/2 of that spec); they always run the pandas path
-    regardless of `engine`'s value."""
+    design.md. walk-forward is NOT affected by this flag yet (a later
+    phase); it always runs the pandas path regardless of `engine`'s value."""
     out_dir = Path(out_dir)
     # concat silently reverts each city's own categorical columns back to
     # plain string dtype whenever their category sets differ (every city's
@@ -335,10 +334,15 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
     fold_skills, o = wf_result["fold_skills"], wf_result["oof"]
 
     print("[train_and_promote] starting spatial-LOSO")
-    loso_result = spatial_loso(full_panel, horizons, feature_cols, fires=all_fires,
-                                max_workers=resolved_max_workers,
-                                threads_per_fold=resolved_threads_per_fold,
-                                checkpoint_dir=checkpoint_dir)
+    if engine == "native":
+        from intelligence.models.forecast.native.streaming import run_spatial_loso_native
+        loso_result = run_spatial_loso_native(full_panel, horizons, feature_cols,
+                                               fires=all_fires)
+    else:
+        loso_result = spatial_loso(full_panel, horizons, feature_cols, fires=all_fires,
+                                    max_workers=resolved_max_workers,
+                                    threads_per_fold=resolved_threads_per_fold,
+                                    checkpoint_dir=checkpoint_dir)
     # min(), not resolved_max_workers directly -- see _CITY_LOSO_MAX_WORKERS'
     # own comment for why city_loso needs a separate, much lower ceiling.
     # Its OWN threads_per_fold is grown separately too: city_loso's worker
