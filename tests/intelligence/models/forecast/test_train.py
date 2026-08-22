@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -281,3 +282,49 @@ def test_train_and_promote_docstring_mentions_spatial_loso_native_support():
     from intelligence.models.forecast.train import train_and_promote
     assert "spatial-LOSO" in train_and_promote.__doc__
     assert "walk-forward" in train_and_promote.__doc__.lower() or "walk_forward" in train_and_promote.__doc__
+
+
+def test_train_and_promote_native_engine_dispatches_to_run_spatial_loso_native(tmp_path, monkeypatch):
+    """The docstring test above checks prose, which said "spatial-LOSO" even
+    in the OLD text ("...are NOT affected by this flag yet") -- it would
+    have passed before this task's change too, so it proves nothing about
+    actual dispatch. This test stubs all three native entry points
+    (spatial-LOSO, city-LOSO, final-fit -- engine="native" drives all
+    three from the same flag) and asserts engine="native" actually routes
+    through run_spatial_loso_native, not just through the pandas
+    spatial_loso it replaces."""
+    from intelligence.models.forecast.features import FEATURE_COLUMNS
+    from intelligence.models.forecast.model import QUANTILES
+    import intelligence.models.forecast.native.streaming as streaming
+
+    calls = {}
+
+    def fake_spatial_loso_native(panel, horizons, feature_cols, fires=None, num_threads=None):
+        calls["spatial_loso_native"] = {"n_rows": len(panel), "horizons": list(horizons)}
+        return {"overall_rmse": 12.3, "baseline_rmse": 20.0, "per_station": {}, "n_stations": 0}
+
+    def fake_city_loso_native(panels_by_city, horizons, feature_cols, fires_by_city=None):
+        return {"per_city": {}}
+
+    class _StubModel:
+        def save_model(self, path):
+            Path(path).write_text("stub")
+
+    def fake_final_fit_native(panels_by_city, horizons, feature_cols, fires_by_city=None):
+        return {q: _StubModel() for q in QUANTILES}
+
+    monkeypatch.setattr(streaming, "run_spatial_loso_native", fake_spatial_loso_native)
+    monkeypatch.setattr(streaming, "run_city_loso_native", fake_city_loso_native)
+    monkeypatch.setattr(streaming, "run_final_fit_native", fake_final_fit_native)
+
+    panels = {"bengaluru": _panel("bengaluru"), "delhi": _panel("delhi", seed=1)}
+    manifest = train_and_promote(panels, horizons=[3], feature_cols=FEATURE_COLUMNS,
+                                  out_dir=tmp_path, walk_forward_kwargs=_SHORT_FOLDS,
+                                  engine="native")
+
+    assert "spatial_loso_native" in calls, "engine=\"native\" never called run_spatial_loso_native"
+    assert calls["spatial_loso_native"]["horizons"] == [3]
+    # the stub's return value must flow through into the manifest, proving
+    # the native branch's result -- not the pandas one -- was used
+    assert manifest["eval"]["spatial_loso_rmse"] == 12.3
+    assert manifest["eval"]["spatial_loso_baseline_rmse"] == 20.0
