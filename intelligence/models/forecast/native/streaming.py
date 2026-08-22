@@ -366,7 +366,38 @@ def run_spatial_loso_native(panel: pd.DataFrame, horizons: list[int],
     matching build_climatology's own documented exclude_cell contract (it
     must drop that cell from all three scopes, not just its own, to avoid
     a single-station ward's climatology being that station's own history
-    in disguise -- see climatology.py's own docstring)."""
+    in disguise -- see climatology.py's own docstring).
+
+    KNOWN, DELIBERATE DIVERGENCE from the pandas reference for a real (if
+    rare) edge case: validation.py's own _align_city docstring documents "a
+    spatial_loso city with exactly one real station, whose held-out cell
+    leaves train with zero rows from that city" as something that actually
+    happens. In that scenario, distance_to_nearest_station_km for the
+    held-out cell diverges: _run_one_loso_fold builds features on the FULL
+    pooled (all-8-cities) panel, so the held-out cell's nearest station is
+    a real cross-city distance (~hundreds of km); this function builds each
+    city's features on that city ALONE (the whole point of streaming
+    per-city, see above), so with its one in-city station excluded, that
+    city's local candidate list is empty and the feature falls back to 0.0
+    (features.py's own .fillna(0.0)) -- a real value, just a different one
+    from what the pooled pandas path computes. NOT fixed here: a correct
+    fix means threading a pooled-panel station list into build_features'
+    per-city call, a real interface change to a function every other
+    caller (pandas AND native) already depends on, for a scenario that does
+    not occur ANYWHERE in this project's actual 8-city data today --
+    checked directly, every real city has >=4 stations (ahmedabad/
+    hyderabad the minimum), so no city ever hits zero training rows on real
+    data. Accepted as a documented, bounded, currently-unreached limitation
+    rather than an architectural change to a shared function for a
+    scenario nothing here exercises -- revisit if this project ever trains
+    on a city with exactly one station.
+
+    The `city` categorical ENCODING for this same scenario IS fixed: see
+    the n_rows_by_city/UNKNOWN_CITY relabeling below, which matches
+    pandas' _align_city(relabel_unknown=False) trigger exactly (a city
+    with zero rows in this fold's actual training data gets its test rows
+    relabelled to UNKNOWN_CITY, never encoded under a category the model
+    never trained on)."""
     panel = downcast_panel(station_cells_only(panel))
     station_cells = sorted(panel[panel.pm25_station.notna()].cell.unique())
     if not station_cells:
@@ -386,6 +417,7 @@ def run_spatial_loso_native(panel: pd.DataFrame, horizons: list[int],
 
             work_dir = Path("scratch_out") / "native_spatial_loso" / held_out
             paths = []
+            n_rows_by_city = {}
             for i, city in enumerate(cities):
                 city_panel = panel[panel.city == city]
                 loso_exclude = held_out if city == held_out_city else None
@@ -408,7 +440,8 @@ def run_spatial_loso_native(panel: pd.DataFrame, horizons: list[int],
                     seed=i,
                 )
                 path = work_dir / f"{city}.npy"
-                stream_unit_to_disk(frame, path, feature_cols, city_codes=city_codes)
+                n_rows_by_city[city] = stream_unit_to_disk(frame, path, feature_cols,
+                                                            city_codes=city_codes)
                 paths.append(path)
                 del frame
                 gc.collect()
@@ -442,6 +475,21 @@ def run_spatial_loso_native(panel: pd.DataFrame, horizons: list[int],
         if test_frame.empty:
             continue
         test_frame = test_frame.copy()
+        # A city with exactly one real station leaves ZERO training rows
+        # from itself once that station is the held-out one (a real,
+        # documented scenario -- see validation.py::_align_city's own
+        # docstring on this exact case for the pandas path). Pandas'
+        # _run_one_loso_fold handles it via _align_city(relabel_unknown=
+        # False): a city absent from train_frame's category set gets its
+        # test rows relabelled to UNKNOWN_CITY rather than encoded under a
+        # category the model never trained on. This function's fixed
+        # `city_codes` (built once from every city, not from what actually
+        # survived training) would otherwise silently feed LightGBM the
+        # real city code here instead -- match pandas' trigger exactly:
+        # relabel iff held_out_city contributed zero rows to this fold's
+        # combined training data.
+        if n_rows_by_city.get(held_out_city, 0) == 0:
+            test_frame["city"] = UNKNOWN_CITY
         test_arr = _encode(test_frame, feature_cols, "y", city_codes)
         pred = model.predict(test_arr[:, :-1])
         truth = test_arr[:, -1]

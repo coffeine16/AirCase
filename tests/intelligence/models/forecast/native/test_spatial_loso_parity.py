@@ -1,12 +1,78 @@
+import numpy as np
 import pandas as pd
 import pytest
 
+from shared.grid import city_cells
 from intelligence.models.forecast import HORIZONS
 from intelligence.models.forecast.features import FEATURE_COLUMNS, station_cells_only, downcast_panel
 from intelligence.models.forecast.validation import spatial_loso
 from intelligence.models.forecast.native.streaming import run_spatial_loso_native
+import intelligence.models.forecast.native.streaming as streaming
 
 REAL_CITIES = ["chennai", "hyderabad", "ahmedabad"]
+
+
+def _tiny_panel_with_two_stations():
+    """Minimal synthetic fixture for the structural regression test below --
+    NOT a real-data run, deliberately small so the test runs in seconds.
+    Same shape as test_loso.py's own `_panel_with_two_stations` (kept as a
+    local copy rather than a cross-test-file import -- no shared test-fixture
+    module exists in this repo yet and one fixture doesn't justify adding
+    one)."""
+    cells = city_cells()[:4]
+    hours = pd.date_range("2024-01-01", periods=200, freq="h", tz="UTC")
+    rng = np.random.default_rng(0)
+    rows = []
+    for i, c in enumerate(cells):
+        is_station = i < 2
+        for h in hours:
+            rows.append({
+                "cell": c, "ts": h, "ward_id": "W1", "ward_name": "Ward 1", "city": "bengaluru",
+                "pm25_station": float(50 + i * 5 + rng.normal(0, 3)) if is_station else np.nan,
+                "wind_from_deg": 90.0, "wind_ms": 2.0, "blh_m": 400.0, "temp_c": 27.0,
+                "fires_6h": 0, "frp_6h": 0.0, "lu_industrial": 0, "lu_construction": 0,
+                "lu_waste_burning": 0, "lu_traffic": 0, "lu_road": 1, "lu_sensitive": 0,
+                "hour": h.hour, "dow": h.dayofweek,
+            })
+    return pd.DataFrame(rows)
+
+
+def test_run_spatial_loso_native_never_streams_the_held_out_cells_own_rows(monkeypatch):
+    """Structural regression test for the leakage bug found while building
+    this function: an earlier version of the training loop never dropped
+    the held-out station's own rows before streaming a fold's training data
+    to disk -- `loso_exclude` only self-excludes a cell from its OWN
+    composite feature (spec 3.1's self-exclusion rule), it does not remove
+    that cell's rows from build_features' output. Left unfixed, the model
+    trains on and is scored against the same station's real labels (see
+    this function's own `built.cell != held_out` comment).
+
+    The 2.0-tolerance real-data parity test above WOULD catch a leak this
+    size (it moved RMSE 6-10 points), but a narrower future leak could slip
+    under that tolerance silently. This test instead asserts the structural
+    invariant directly -- monkeypatches stream_unit_to_disk to capture every
+    frame written for training, keyed by which station that fold is holding
+    out (recovered from `path.parent.name`, since run_spatial_loso_native's
+    own work_dir is `scratch_out/native_spatial_loso/<held_out>/<city>.npy`)
+    -- and fails immediately if that cell's own rows are ever in it, with no
+    dependency on a real multi-minute training run or an RMSE threshold."""
+    panel = _tiny_panel_with_two_stations()
+    captured = []
+    real_stream = streaming.stream_unit_to_disk
+
+    def _spy(frame, path, feature_columns, label_col="y", city_codes=None):
+        captured.append((path.parent.name, set(frame["cell"].astype(str).unique())))
+        return real_stream(frame, path, feature_columns, label_col=label_col, city_codes=city_codes)
+
+    monkeypatch.setattr(streaming, "stream_unit_to_disk", _spy)
+
+    streaming.run_spatial_loso_native(panel, horizons=[3], feature_cols=FEATURE_COLUMNS)
+
+    assert captured, "run_spatial_loso_native never streamed a training frame"
+    for held_out, cells_in_frame in captured:
+        assert held_out not in cells_in_frame, (
+            f"leak: held-out station {held_out}'s own rows were streamed into "
+            f"its own fold's training data ({cells_in_frame})")
 
 
 def _load_pooled_panel(cities):
@@ -56,8 +122,10 @@ def test_spatial_loso_native_matches_pandas_on_a_real_station_subset():
         # Tolerance rationale, from a REAL diagnostic run (not the plan's
         # placeholder guess -- that turned out to be too tight, see below):
         # real 3-city run (chennai/hyderabad/ahmedabad), ALL 14 real
-        # stations, PYTHONPATH=. python <diagnostic script running
-        # spatial_loso + run_spatial_loso_native on the full pooled panel>.
+        # stations, PYTHONPATH=. python scratch_out/diag_spatial_loso_parity.py
+        # -- script and full captured output (incl. the per-station numbers
+        # below) committed at scratch_out/diag_spatial_loso_parity.py /
+        # .log, same precedent as Phase 0's diag_city_loso_parity_timed.py.
         #
         # Observed per-station deltas (pandas vs native rmse): 0.03-1.49
         # across all 14 real stations; max 1.49 (station 8860a24b6dfffff,
