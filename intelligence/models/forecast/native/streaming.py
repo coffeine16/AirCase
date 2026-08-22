@@ -344,3 +344,122 @@ def run_final_fit_native(panels_by_city: dict, horizons: list[int],
         gc.collect()
 
     return final_models
+
+
+def run_spatial_loso_native(panel: pd.DataFrame, horizons: list[int],
+                             feature_cols: list[str],
+                             fires: pd.DataFrame | None = None,
+                             num_threads: int | None = None) -> dict:
+    """Same return shape as validation.spatial_loso:
+    {"overall_rmse": float, "baseline_rmse": float,
+     "per_station": {cell: {"rmse", "n", "baseline_rmse"}}, "n_stations": int}.
+
+    Unlike city-LOSO (whose training pool is N-1 CITIES), spatial-LOSO's
+    training pool is ALL 8 cities minus ONE STATION -- so every fold needs
+    every city's features, not a small per-city subset. This still
+    decomposes per-city, exactly like Phase 0: each of the (up to) 8
+    cities' build_features call is independent and small; only the ONE
+    city containing the held-out station passes `loso_exclude`. Climatology
+    is rebuilt from the pooled (all-cities, held-out-cell-EXCLUDED) station
+    panel once per fold -- cheap, since it's pre-horizon-expansion -- and
+    shared into every city's build_features call via `clim_tables`, exactly
+    matching build_climatology's own documented exclude_cell contract (it
+    must drop that cell from all three scopes, not just its own, to avoid
+    a single-station ward's climatology being that station's own history
+    in disguise -- see climatology.py's own docstring)."""
+    panel = downcast_panel(station_cells_only(panel))
+    station_cells = sorted(panel[panel.pm25_station.notna()].cell.unique())
+    if not station_cells:
+        return {"overall_rmse": float("nan"), "baseline_rmse": float("nan"),
+                "per_station": {}, "n_stations": 0}
+
+    cities = sorted(panel.city.unique())
+    city_codes = sorted(set(cities) | {UNKNOWN_CITY})
+    per_station = {}
+    all_true, all_pred, all_baseline = [], [], []
+
+    for fold_i, held_out in enumerate(station_cells):
+        held_out_city = panel.loc[panel.cell == held_out, "city"].iloc[0]
+
+        with _native_composite_grid():
+            clim_tables = build_climatology(panel, exclude_cell=held_out)
+
+            work_dir = Path("scratch_out") / "native_spatial_loso" / held_out
+            paths = []
+            for i, city in enumerate(cities):
+                city_panel = panel[panel.city == city]
+                loso_exclude = held_out if city == held_out_city else None
+                built = build_features(city_panel, horizons, loso_exclude=loso_exclude,
+                                        fires=fires, restrict_to_station_cells=True,
+                                        clim_tables=clim_tables)
+                # frame.cell != held_out, matching _run_one_loso_fold's own
+                # train_frame filter exactly -- loso_exclude only excludes
+                # the held-out cell from its OWN composite feature (self-
+                # exclusion), it does not drop that cell's rows from the
+                # output. Without this filter the held-out station's real
+                # historical y labels stream straight into training, and
+                # the model is scored against data it was trained on --
+                # caught by the fast single-city sanity check the plan's
+                # own review step called for (RMSE undershot pandas by
+                # 6-10 points on a real ahmedabad 2-station check, far past
+                # any float32/mask_unknown_city noise floor).
+                frame = mask_unknown_city(
+                    built[built.cell != held_out].dropna(subset=["y"]),
+                    seed=i,
+                )
+                path = work_dir / f"{city}.npy"
+                stream_unit_to_disk(frame, path, feature_cols, city_codes=city_codes)
+                paths.append(path)
+                del frame
+                gc.collect()
+
+            combined = combine_streamed_units(paths)
+            city_col_idx = feature_cols.index("city")
+            X, y = combined[:, :-1], combined[:, -1]
+
+            params = {**PARAMS, "alpha": 0.5}
+            if num_threads is not None:
+                params["num_threads"] = num_threads
+            ds = lgb.Dataset(X, label=y, categorical_feature=[city_col_idx])
+            model = lgb.train(params, ds, num_boost_round=200)
+            del combined, X, y, ds
+            gc.collect()
+
+            # Test frame: the held-out city's own panel, same clim_tables,
+            # loso_exclude applied -- matches _run_one_loso_fold's own
+            # "one build, filter after" discipline (features.py's
+            # composite_grid needs the held-out station's neighbours
+            # present to compose a real, non-degenerate self-exclusion
+            # value; slicing to that one cell BEFORE building would leave
+            # every spatial feature NaN).
+            held_out_city_panel = panel[panel.city == held_out_city]
+            test_frame_full = build_features(held_out_city_panel, horizons,
+                                              loso_exclude=held_out, fires=fires,
+                                              restrict_to_station_cells=True,
+                                              clim_tables=clim_tables)
+            test_frame = test_frame_full[test_frame_full.cell == held_out]
+
+        if test_frame.empty:
+            continue
+        test_frame = test_frame.copy()
+        test_arr = _encode(test_frame, feature_cols, "y", city_codes)
+        pred = model.predict(test_arr[:, :-1])
+        truth = test_arr[:, -1]
+        rmse = float(np.sqrt(np.nanmean((truth - pred) ** 2)))
+        baseline_pred = test_frame["lag_0"].to_numpy(dtype=np.float32)
+        baseline_rmse = float(np.sqrt(np.nanmean((truth - baseline_pred) ** 2)))
+        per_station[held_out] = {"rmse": round(rmse, 2), "n": len(test_frame),
+                                  "baseline_rmse": round(baseline_rmse, 2)}
+        all_true.extend(truth.tolist())
+        all_pred.extend(pred.tolist())
+        all_baseline.extend(baseline_pred.tolist())
+
+        print(f"[spatial_loso_native] fold {fold_i + 1}/{len(station_cells)}: "
+              f"{held_out} rmse={per_station.get(held_out, {}).get('rmse')}")
+
+    overall = (float(np.sqrt(np.nanmean((np.array(all_true) - np.array(all_pred)) ** 2)))
+               if all_true else float("nan"))
+    baseline_overall = (float(np.sqrt(np.nanmean((np.array(all_true) - np.array(all_baseline)) ** 2)))
+                        if all_true else float("nan"))
+    return {"overall_rmse": round(overall, 2), "baseline_rmse": round(baseline_overall, 2),
+            "per_station": per_station, "n_stations": len(per_station)}
