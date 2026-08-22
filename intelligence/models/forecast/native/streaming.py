@@ -214,3 +214,90 @@ def run_city_loso_native(panels_by_city: dict, horizons: list[int],
         per_city[held_out] = {"rmse": round(rmse, 2), "n": len(scored)}
 
     return {"per_city": per_city}
+
+
+import os
+from concurrent.futures import ThreadPoolExecutor
+
+from intelligence.models.forecast.validation import event_weights
+from intelligence.models.forecast.model import PARAMS, QUANTILES
+
+
+def run_final_fit_native(panels_by_city: dict, horizons: list[int],
+                          feature_cols: list[str],
+                          fires_by_city: dict | None = None) -> dict:
+    """Same return shape as train.py's train_and_promote `final_models`
+    dict: one lgb.Booster per quantile in QUANTILES, weighted the same
+    way (event_weights, 4x boost on rows with real trailing FIRMS
+    activity) as the pandas served model there. Unlike city-LOSO, there
+    is no held-out city here -- climatology is built once from ALL
+    cities pooled and every city streams into ONE combined training set.
+
+    Calls `station_cells_only` on every city's panel before building
+    features -- both for the pooled climatology build and for each
+    city's own feature frame. Same fix run_city_loso_native needed (see
+    its docstring): a caller handing in an unfiltered panel would
+    otherwise build composite/positional features over every non-station
+    cell in a city's full grid before discarding them, defeating the
+    memory-bounding point of streaming to disk in the first place.
+    station_cells_only is a pure subset filter, so this is idempotent
+    when the caller already filtered (as this module's own parity
+    test's `_load_panels` helper does)."""
+    _install_native_composite_grid()
+    fires_by_city = fires_by_city or {}
+    cities = sorted(panels_by_city)
+    city_codes = cities + [UNKNOWN_CITY]
+
+    pooled_station_panel = downcast_panel(pd.concat(
+        [station_cells_only(panels_by_city[c]) for c in cities], ignore_index=True))
+    clim_tables = build_climatology(pooled_station_panel)
+    del pooled_station_panel
+    gc.collect()
+
+    work_dir = Path("scratch_out") / "native_final_fit"
+    paths = []
+    for i, city in enumerate(cities):
+        frame = mask_unknown_city(
+            build_features(station_cells_only(panels_by_city[city]), horizons,
+                            fires=fires_by_city.get(city),
+                            restrict_to_station_cells=True,
+                            clim_tables=clim_tables).dropna(subset=["y"]),
+            seed=i,
+        )
+        path = work_dir / f"{city}.npy"
+        stream_unit_to_disk(frame, path, feature_cols, city_codes=city_codes)
+        paths.append(path)
+        del frame
+        gc.collect()
+
+    combined = combine_streamed_units(paths)
+    city_col_idx = feature_cols.index("city")
+    fires_col_idx = feature_cols.index("fires_6h")
+    X, y = combined[:, :-1], combined[:, -1]
+    # Same weighting train.py's train_and_promote applies to the served
+    # model -- reused via event_weights rather than reimplemented inline,
+    # so a future change to the boost factor or fire column name doesn't
+    # have to be kept in sync by hand across the pandas and native paths.
+    weight = event_weights(pd.DataFrame({"fires_6h": X[:, fires_col_idx]})).astype(np.float32)
+
+    import lightgbm as lgb
+    ds = lgb.Dataset(X, label=y, weight=weight, categorical_feature=[city_col_idx])
+    # Force binning up front, single-threaded -- if left lazy, two threads
+    # calling train() on the same not-yet-constructed Dataset at once
+    # would race on that first construction step (same reasoning as
+    # train.py's train_and_promote for its own concurrent quantile fits).
+    ds.construct()
+    threads_per_quantile = max(1, (os.cpu_count() or 4) // len(QUANTILES))
+
+    def _fit_one(q):
+        params = {**PARAMS, "alpha": q, "num_threads": threads_per_quantile}
+        return q, lgb.train(params, ds, num_boost_round=500)
+
+    final_models = {}
+    with ThreadPoolExecutor(max_workers=len(QUANTILES)) as ex:
+        for q, model in ex.map(_fit_one, QUANTILES):
+            final_models[q] = model
+
+    del combined, X, y, ds
+    gc.collect()
+    return final_models
