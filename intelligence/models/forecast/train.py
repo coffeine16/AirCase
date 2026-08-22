@@ -352,6 +352,9 @@ def train_and_promote(panels_by_city: dict[str, pd.DataFrame], horizons: list[in
           f"concurrent worker(s) x {city_loso_threads_per_fold} threads/fold, capped "
           f"separately from the {resolved_max_workers} used above -- see _CITY_LOSO_MAX_WORKERS)")
     if engine == "native":
+        if checkpoint_dir is not None:
+            print(f"[train_and_promote] engine=native: checkpoint_dir/max_workers/"
+                  f"threads_per_fold do not apply to the native city-LOSO stage")
         from intelligence.models.forecast.native.streaming import run_city_loso_native
         city_result = run_city_loso_native(panels_by_city, horizons, feature_cols,
                                             fires_by_city=fires_by_city)

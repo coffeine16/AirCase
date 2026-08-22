@@ -24,6 +24,13 @@ def test_city_loso_native_matches_pandas_on_a_real_3_city_slice():
     parity requirement. Full 8-city parity is Task 7's acceptance check,
     not a routine test."""
     panels = _load_panels(REAL_CITIES)
+    # Must run before any native call in this process, though
+    # streaming.py's _native_composite_grid is now a context manager that
+    # installs/restores composite_grid around each native orchestrator
+    # call -- so this ordering is no longer load-bearing the way it used
+    # to be when the monkeypatch was permanent and unrestored. Kept in
+    # this order anyway: it is the natural "reference first" reading, and
+    # the comment stays as documentation of what USED to be a silent trap.
     pandas_result = run_city_loso(panels, HORIZONS, FEATURE_COLUMNS)
     native_result = run_city_loso_native(panels, HORIZONS, FEATURE_COLUMNS)
 

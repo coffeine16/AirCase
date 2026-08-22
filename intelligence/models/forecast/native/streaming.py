@@ -11,10 +11,78 @@ dropna().reset_index() needs during its own internal block consolidation
 docs/superpowers/specs/2026-08-21-local-native-training-pipeline-design.md
 section 1)."""
 import gc
+import os
+from concurrent.futures import ThreadPoolExecutor
+from contextlib import contextmanager
 from pathlib import Path
 
+import lightgbm as lgb
 import numpy as np
 import pandas as pd
+
+import intelligence.models.forecast.features as features_module
+from intelligence.models.forecast.climatology import build_climatology
+from intelligence.models.forecast.features import (
+    build_features, downcast_panel, station_cells_only,
+)
+from intelligence.models.forecast.model import (
+    mask_unknown_city, UNKNOWN_CITY, PARAMS, QUANTILES,
+)
+from intelligence.models.forecast.native.native_composite import composite_grid_native
+from intelligence.models.forecast.validation import _align_city, city_loso_splits, event_weights
+
+_real_composite_grid = features_module.composite_grid
+
+
+@contextmanager
+def _native_composite_grid():
+    """Monkeypatches features_module's composite_grid reference (build_
+    features does `from spatial import composite_grid`, a name binding in
+    ITS OWN namespace -- patching spatial.composite_grid directly would not
+    reach build_features' already-bound reference) for the duration of the
+    `with` block, then restores the real pandas/NumPy implementation on
+    exit -- including on an exception, via the `finally`.
+
+    Not restoring this (an earlier version rebound composite_grid
+    permanently and never put it back) meant every build_features call
+    later in the SAME process -- including one a caller intended to run the
+    real pandas path -- would silently run the Numba kernel instead. That
+    is a trapdoor: test_city_loso_parity.py's ordering (pandas path called
+    BEFORE the native path) happened to save it, but a harmless-looking
+    reordering of two test calls would have made the pandas assertion
+    compare native output against itself and pass vacuously. The context
+    manager removes the ordering dependency entirely: each call to either
+    orchestrator below is bracketed by its own install/restore."""
+    features_module.composite_grid = composite_grid_native
+    try:
+        yield
+    finally:
+        features_module.composite_grid = _real_composite_grid
+
+
+def _encode(frame: pd.DataFrame, feature_columns: list[str], label_col: str,
+            city_codes: list[str] | None = None) -> np.ndarray:
+    """Encodes `feature_columns` + `label_col` from `frame` into one float32
+    array -- the shared logic behind both `stream_unit_to_disk` (writes it to
+    disk) and the held-out test frame scoring in `run_city_loso_native`
+    (keeps it in memory). `city_codes`, when given, fixes the integer
+    encoding for the `city` column (so codes agree across every unit/frame
+    encoded this way) -- required whenever `feature_columns` includes
+    "city"."""
+    out = np.empty((len(frame), len(feature_columns) + 1), dtype=np.float32)
+    for i, col in enumerate(feature_columns):
+        if col == "city":
+            if city_codes is None:
+                raise ValueError("city_codes is required when 'city' is a feature column")
+            codes = pd.Categorical(frame["city"].astype(str), categories=city_codes).codes
+            if (codes < 0).any():
+                unmapped = sorted(set(frame["city"].astype(str)[codes < 0]))
+                raise ValueError(f"city value(s) not present in city_codes: {unmapped}")
+            out[:, i] = codes.astype(np.float32)
+        else:
+            out[:, i] = frame[col].to_numpy(dtype=np.float32)
+    out[:, -1] = frame[label_col].to_numpy(dtype=np.float32)
+    return out
 
 
 def stream_unit_to_disk(frame: pd.DataFrame, path: Path,
@@ -23,18 +91,12 @@ def stream_unit_to_disk(frame: pd.DataFrame, path: Path,
     """Writes `feature_columns` + `label_col` as one float32 .npy array to
     `path`. `city_codes`, when given, fixes the integer encoding for the
     `city` column (so codes agree across every unit written this way) --
-    required whenever `feature_columns` includes "city"."""
+    required whenever `feature_columns` includes "city". A city value not
+    present in `city_codes` raises (see `_encode`) rather than silently
+    encoding as -1, which LightGBM would otherwise read as a missing
+    value instead of a mapping bug."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    out = np.empty((len(frame), len(feature_columns) + 1), dtype=np.float32)
-    for i, col in enumerate(feature_columns):
-        if col == "city":
-            if city_codes is None:
-                raise ValueError("city_codes is required when 'city' is a feature column")
-            codes = pd.Categorical(frame["city"].astype(str), categories=city_codes).codes
-            out[:, i] = codes.astype(np.float32)
-        else:
-            out[:, i] = frame[col].to_numpy(dtype=np.float32)
-    out[:, -1] = frame[label_col].to_numpy(dtype=np.float32)
+    out = _encode(frame, feature_columns, label_col, city_codes)
     np.save(path, out)
     n = len(out)
     del out
@@ -72,33 +134,6 @@ def combine_streamed_units(paths: list[Path]) -> np.ndarray:
     return combined
 
 
-import intelligence.models.forecast.features as features_module
-from intelligence.models.forecast.climatology import build_climatology
-from intelligence.models.forecast.features import (
-    build_features, downcast_panel, station_cells_only,
-)
-from intelligence.models.forecast.model import mask_unknown_city, UNKNOWN_CITY
-from intelligence.models.forecast.validation import _align_city
-from intelligence.models.forecast.native.native_composite import composite_grid_native
-
-_real_composite_grid = features_module.composite_grid
-_CHUNK = 2000  # rows of the (n_t, n_q, n_s)-equivalent working set per call
-# Both currently unused by run_city_loso_native itself -- kept rather than
-# deleted because Task 5's run_final_fit_native appends to this SAME file
-# and its brief was not available to check when this comment was written
-# (see the plan's progress.md pre-flight conflict scan, "4 -> 5" row).
-# Delete if Task 5 lands without needing them.
-
-
-def _install_native_composite_grid():
-    """Monkeypatches features_module's composite_grid reference (build_
-    features does `from spatial import composite_grid`, a name binding in
-    ITS OWN namespace -- patching spatial.composite_grid directly would not
-    reach build_features' already-bound reference). Idempotent: safe to
-    call more than once."""
-    features_module.composite_grid = composite_grid_native
-
-
 def run_city_loso_native(panels_by_city: dict, horizons: list[int],
                           feature_cols: list[str],
                           fires_by_city: dict | None = None,
@@ -119,6 +154,14 @@ def run_city_loso_native(panels_by_city: dict, horizons: list[int],
     directly undermining the memory-bounding goal disk-streaming exists
     for (found in review, not by a test -- the parity test's own
     `_load_panels` helper happened to pre-filter, masking the gap).
+
+    Uses `validation.city_loso_splits` for the (held_out, train_cities)
+    pairs, same as validation.run_city_loso, instead of re-deriving
+    train_cities inline -- a single-city `panels_by_city` (or any input
+    that leaves a city with no training peers) then yields an empty
+    `train_cities` for that split, and the fold is skipped (excluded from
+    `per_city`, matching run_city_loso's own `if t` filter on its splits)
+    rather than crashing on `pd.concat([])` or `combine_streamed_units([])`.
 
     `num_threads`: None (default) leaves LightGBM to auto-detect, same as
     before this parameter existed. Pass an explicit value to pin it --
@@ -152,21 +195,111 @@ def run_city_loso_native(panels_by_city: dict, horizons: list[int],
     of magnitude below any feature's float32 precision floor and
     genuinely negligible, not merely assumed so (see
     scratch_out/finding2_composite_weight_check.py for the computation)."""
-    _install_native_composite_grid()
     fires_by_city = fires_by_city or {}
     cities = sorted(panels_by_city)
-    city_codes = cities + [UNKNOWN_CITY]
+    city_codes = sorted(set(cities) | {UNKNOWN_CITY})
     per_city = {}
 
-    for held_out in cities:
-        train_cities = [c for c in cities if c != held_out]
-        clim_tables = build_climatology(downcast_panel(pd.concat(
-            [station_cells_only(panels_by_city[c]) for c in train_cities],
-            ignore_index=True)))
+    with _native_composite_grid():
+        for held_out, train_cities in city_loso_splits(cities):
+            if not train_cities:
+                continue
+            clim_tables = build_climatology(downcast_panel(pd.concat(
+                [station_cells_only(panels_by_city[c]) for c in train_cities],
+                ignore_index=True)))
 
-        work_dir = Path("scratch_out") / "native_city_loso" / held_out
+            work_dir = Path("scratch_out") / "native_city_loso" / held_out
+            paths = []
+            for i, city in enumerate(train_cities):
+                frame = mask_unknown_city(
+                    build_features(station_cells_only(panels_by_city[city]), horizons,
+                                    fires=fires_by_city.get(city),
+                                    restrict_to_station_cells=True,
+                                    clim_tables=clim_tables).dropna(subset=["y"]),
+                    seed=i,
+                )
+                path = work_dir / f"{city}.npy"
+                stream_unit_to_disk(frame, path, feature_cols, city_codes=city_codes)
+                paths.append(path)
+                del frame
+                gc.collect()
+
+            if not paths:
+                continue
+
+            combined = combine_streamed_units(paths)
+            city_col_idx = feature_cols.index("city")
+            X, y = combined[:, :-1], combined[:, -1]
+
+            params = {**PARAMS, "alpha": 0.5}
+            if num_threads is not None:
+                params["num_threads"] = num_threads
+            ds = lgb.Dataset(X, label=y, categorical_feature=[city_col_idx])
+            model = lgb.train(params, ds, num_boost_round=200)
+            del combined, X, y, ds
+            gc.collect()
+
+            test_frame = build_features(station_cells_only(panels_by_city[held_out]), horizons,
+                                         fires=fires_by_city.get(held_out),
+                                         restrict_to_station_cells=True,
+                                         clim_tables=clim_tables)
+            test_frame = _align_city(test_frame, city_codes, relabel_unknown=True)
+            scored = test_frame.dropna(subset=["y"])
+            test_arr = _encode(scored, feature_cols, "y", city_codes)
+
+            pred = model.predict(test_arr[:, :-1])
+            rmse = float(np.sqrt(np.nanmean((test_arr[:, -1] - pred) ** 2)))
+            per_city[held_out] = {"rmse": round(rmse, 2), "n": len(scored)}
+
+    return {"per_city": per_city}
+
+
+def run_final_fit_native(panels_by_city: dict, horizons: list[int],
+                          feature_cols: list[str],
+                          fires_by_city: dict | None = None) -> dict:
+    """Same return shape as train.py's train_and_promote `final_models`
+    dict: one lgb.Booster per quantile in QUANTILES, weighted the same
+    way (event_weights, 4x boost on rows with real trailing FIRMS
+    activity) as the pandas served model there. Unlike city-LOSO, there
+    is no held-out city here -- climatology is built once from ALL
+    cities pooled and every city streams into ONE combined training set.
+
+    POSITIONAL ENCODING, not name-realigned: unlike the pandas-served
+    path (`intelligence/models/forecast/__init__.py::_predict_field`),
+    which hands LightGBM a pandas Categorical column that gets realigned
+    by category NAME at predict time, this function builds its
+    lgb.Dataset from a raw float32 ndarray with `city` pre-encoded to an
+    integer via `city_codes`. The trained booster therefore has no
+    name-based recovery: whatever code later calls .predict() on it MUST
+    encode `city` using this exact same `city_codes` ordering
+    (`sorted(set(cities) | {UNKNOWN_CITY})`, matching the serving path's
+    own convention in `__init__.py`'s `city_categories`) or predictions
+    silently corrupt rather than raise.
+
+    Calls `station_cells_only` on every city's panel before building
+    features -- both for the pooled climatology build and for each
+    city's own feature frame. Same fix run_city_loso_native needed (see
+    its docstring): a caller handing in an unfiltered panel would
+    otherwise build composite/positional features over every non-station
+    cell in a city's full grid before discarding them, defeating the
+    memory-bounding point of streaming to disk in the first place.
+    station_cells_only is a pure subset filter, so this is idempotent
+    when the caller already filtered (as this module's own parity
+    test's `_load_panels` helper does)."""
+    fires_by_city = fires_by_city or {}
+    cities = sorted(panels_by_city)
+    city_codes = sorted(set(cities) | {UNKNOWN_CITY})
+
+    with _native_composite_grid():
+        pooled_station_panel = downcast_panel(pd.concat(
+            [station_cells_only(panels_by_city[c]) for c in cities], ignore_index=True))
+        clim_tables = build_climatology(pooled_station_panel)
+        del pooled_station_panel
+        gc.collect()
+
+        work_dir = Path("scratch_out") / "native_final_fit"
         paths = []
-        for i, city in enumerate(train_cities):
+        for i, city in enumerate(cities):
             frame = mask_unknown_city(
                 build_features(station_cells_only(panels_by_city[city]), horizons,
                                 fires=fires_by_city.get(city),
@@ -182,122 +315,32 @@ def run_city_loso_native(panels_by_city: dict, horizons: list[int],
 
         combined = combine_streamed_units(paths)
         city_col_idx = feature_cols.index("city")
+        fires_col_idx = feature_cols.index("fires_6h")
         X, y = combined[:, :-1], combined[:, -1]
+        # Same weighting train.py's train_and_promote applies to the served
+        # model -- reused via event_weights rather than reimplemented inline,
+        # so a future change to the boost factor or fire column name doesn't
+        # have to be kept in sync by hand across the pandas and native paths.
+        weight = event_weights(pd.DataFrame({"fires_6h": X[:, fires_col_idx]})).astype(np.float32)
 
-        import lightgbm as lgb
-        from intelligence.models.forecast.model import PARAMS
-        params = {**PARAMS, "alpha": 0.5}
-        if num_threads is not None:
-            params["num_threads"] = num_threads
-        ds = lgb.Dataset(X, label=y, categorical_feature=[city_col_idx])
-        model = lgb.train(params, ds, num_boost_round=200)
+        ds = lgb.Dataset(X, label=y, weight=weight, categorical_feature=[city_col_idx])
+        # Force binning up front, single-threaded -- if left lazy, two threads
+        # calling train() on the same not-yet-constructed Dataset at once
+        # would race on that first construction step (same reasoning as
+        # train.py's train_and_promote for its own concurrent quantile fits).
+        ds.construct()
+        threads_per_quantile = max(1, (os.cpu_count() or 4) // len(QUANTILES))
+
+        def _fit_one(q):
+            params = {**PARAMS, "alpha": q, "num_threads": threads_per_quantile}
+            return q, lgb.train(params, ds, num_boost_round=500)
+
+        final_models = {}
+        with ThreadPoolExecutor(max_workers=len(QUANTILES)) as ex:
+            for q, model in ex.map(_fit_one, QUANTILES):
+                final_models[q] = model
+
         del combined, X, y, ds
         gc.collect()
 
-        test_frame = build_features(station_cells_only(panels_by_city[held_out]), horizons,
-                                     fires=fires_by_city.get(held_out),
-                                     restrict_to_station_cells=True,
-                                     clim_tables=clim_tables)
-        test_frame = _align_city(test_frame, city_codes, relabel_unknown=True)
-        scored = test_frame.dropna(subset=["y"])
-        test_arr = np.empty((len(scored), len(feature_cols) + 1), dtype=np.float32)
-        for i, col in enumerate(feature_cols):
-            if col == "city":
-                codes = pd.Categorical(scored["city"].astype(str), categories=city_codes).codes
-                test_arr[:, i] = codes.astype(np.float32)
-            else:
-                test_arr[:, i] = scored[col].to_numpy(dtype=np.float32)
-        test_arr[:, -1] = scored["y"].to_numpy(dtype=np.float32)
-
-        pred = model.predict(test_arr[:, :-1])
-        rmse = float(np.sqrt(np.mean((test_arr[:, -1] - pred) ** 2)))
-        per_city[held_out] = {"rmse": round(rmse, 2), "n": len(scored)}
-
-    return {"per_city": per_city}
-
-
-import os
-from concurrent.futures import ThreadPoolExecutor
-
-from intelligence.models.forecast.validation import event_weights
-from intelligence.models.forecast.model import PARAMS, QUANTILES
-
-
-def run_final_fit_native(panels_by_city: dict, horizons: list[int],
-                          feature_cols: list[str],
-                          fires_by_city: dict | None = None) -> dict:
-    """Same return shape as train.py's train_and_promote `final_models`
-    dict: one lgb.Booster per quantile in QUANTILES, weighted the same
-    way (event_weights, 4x boost on rows with real trailing FIRMS
-    activity) as the pandas served model there. Unlike city-LOSO, there
-    is no held-out city here -- climatology is built once from ALL
-    cities pooled and every city streams into ONE combined training set.
-
-    Calls `station_cells_only` on every city's panel before building
-    features -- both for the pooled climatology build and for each
-    city's own feature frame. Same fix run_city_loso_native needed (see
-    its docstring): a caller handing in an unfiltered panel would
-    otherwise build composite/positional features over every non-station
-    cell in a city's full grid before discarding them, defeating the
-    memory-bounding point of streaming to disk in the first place.
-    station_cells_only is a pure subset filter, so this is idempotent
-    when the caller already filtered (as this module's own parity
-    test's `_load_panels` helper does)."""
-    _install_native_composite_grid()
-    fires_by_city = fires_by_city or {}
-    cities = sorted(panels_by_city)
-    city_codes = cities + [UNKNOWN_CITY]
-
-    pooled_station_panel = downcast_panel(pd.concat(
-        [station_cells_only(panels_by_city[c]) for c in cities], ignore_index=True))
-    clim_tables = build_climatology(pooled_station_panel)
-    del pooled_station_panel
-    gc.collect()
-
-    work_dir = Path("scratch_out") / "native_final_fit"
-    paths = []
-    for i, city in enumerate(cities):
-        frame = mask_unknown_city(
-            build_features(station_cells_only(panels_by_city[city]), horizons,
-                            fires=fires_by_city.get(city),
-                            restrict_to_station_cells=True,
-                            clim_tables=clim_tables).dropna(subset=["y"]),
-            seed=i,
-        )
-        path = work_dir / f"{city}.npy"
-        stream_unit_to_disk(frame, path, feature_cols, city_codes=city_codes)
-        paths.append(path)
-        del frame
-        gc.collect()
-
-    combined = combine_streamed_units(paths)
-    city_col_idx = feature_cols.index("city")
-    fires_col_idx = feature_cols.index("fires_6h")
-    X, y = combined[:, :-1], combined[:, -1]
-    # Same weighting train.py's train_and_promote applies to the served
-    # model -- reused via event_weights rather than reimplemented inline,
-    # so a future change to the boost factor or fire column name doesn't
-    # have to be kept in sync by hand across the pandas and native paths.
-    weight = event_weights(pd.DataFrame({"fires_6h": X[:, fires_col_idx]})).astype(np.float32)
-
-    import lightgbm as lgb
-    ds = lgb.Dataset(X, label=y, weight=weight, categorical_feature=[city_col_idx])
-    # Force binning up front, single-threaded -- if left lazy, two threads
-    # calling train() on the same not-yet-constructed Dataset at once
-    # would race on that first construction step (same reasoning as
-    # train.py's train_and_promote for its own concurrent quantile fits).
-    ds.construct()
-    threads_per_quantile = max(1, (os.cpu_count() or 4) // len(QUANTILES))
-
-    def _fit_one(q):
-        params = {**PARAMS, "alpha": q, "num_threads": threads_per_quantile}
-        return q, lgb.train(params, ds, num_boost_round=500)
-
-    final_models = {}
-    with ThreadPoolExecutor(max_workers=len(QUANTILES)) as ex:
-        for q, model in ex.map(_fit_one, QUANTILES):
-            final_models[q] = model
-
-    del combined, X, y, ds
-    gc.collect()
     return final_models

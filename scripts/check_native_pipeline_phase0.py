@@ -1,10 +1,18 @@
-"""Phase 0 acceptance check: full 8-city native city-LOSO + final-fit run,
-compared against the real, already-committed v2 manifest
-(models/manifest.json). Not a pytest -- this is the slow, full-scale
-real-data run the spec's Phase 0 acceptance bar calls for. Run with:
+"""Phase 0 acceptance check: full 8-city native city-LOSO run, compared
+against the real, already-committed v2 manifest (models/manifest.json).
+Not a pytest -- this is the slow, full-scale real-data run the spec's
+Phase 0 acceptance bar calls for. Run with:
 
     PYTHONPATH=. python scripts/check_native_pipeline_phase0.py
-"""
+
+SCOPE: this script covers city-LOSO only. run_final_fit_native is not
+imported or invoked here, and final-fit has NO numeric parity evidence
+beyond Task 5's plausibility checks (quantile ordering p10<=p50<=p90,
+plausible PM2.5 value range) in
+tests/intelligence/models/forecast/native/test_final_fit_parity.py --
+there is no committed pandas final-fit run to diff it against at this
+scale. That is a known, accepted scope gap for Phase 0, not something
+this script silently papers over."""
 import json
 from pathlib import Path
 
