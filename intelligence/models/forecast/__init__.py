@@ -371,7 +371,7 @@ def _load_panels(cities: list[str] | None, prefer_historical: bool = True):
     return panels, fires_by_city
 
 
-def _climatology_panel(city: str):
+def _climatology_panel(city: str, operational=None):
     """The LONG panel to build this city's climatology from, ward ids realigned.
 
     Climatology is the one thing serving genuinely wants years of, not the 60-day
@@ -424,6 +424,25 @@ def _climatology_panel(city: str):
               f"ward_ids are ALSO what training would group climatology by.")
     panel["ward_id"] = fresh
     panel["city"] = city
+
+    # DO NOT mix two different worlds. Under --synthetic the operational panel is
+    # the generated world (anchored to SYNTHETIC_ANCHOR) while data/historical/ is
+    # real scraped data, and building climatology from the latter to forecast the
+    # former is the same scientifically-invalid mix that NO_FALLBACK exists to
+    # prevent on the satellite side. A stale data/raw/<city>/truth.parquet cannot
+    # be used to detect this -- it survives from whichever synthetic run wrote it
+    # and is present beside live outputs -- so the test is on the DATA: if the
+    # window being forecast does not overlap the history at all, the two are not
+    # describing the same world and the history is not usable for it.
+    if operational is not None and len(operational):
+        op_lo, op_hi = operational.ts.min(), operational.ts.max()
+        if op_hi < panel.ts.min() or op_lo > panel.ts.max():
+            print(f"[forecast] {city}: operational window "
+                  f"{op_lo.date()}..{op_hi.date()} does not overlap the historical "
+                  f"panel {panel.ts.min().date()}..{panel.ts.max().date()} — these are "
+                  f"different worlds (synthetic run?). Climatology falls back to the "
+                  f"operational window.")
+            return None
     return panel
 
 
@@ -473,7 +492,7 @@ def serve(cities: list[str] | None = None) -> dict:
 
     clim_panels = {}
     for city in panels:
-        cp = _climatology_panel(city)
+        cp = _climatology_panel(city, operational=panels[city])
         if cp is not None:
             span = (cp.ts.max() - cp.ts.min()).days
             print(f"[forecast] {city}: climatology from {span} days of history "
