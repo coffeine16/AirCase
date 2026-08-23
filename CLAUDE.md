@@ -172,29 +172,31 @@ leakage before you assume success.
     skill measured there is memorisation — measured, it inflates to +33..60%
     against the +9.4% the trainer earned honestly. See the gotcha below.
 
-    So Delhi was re-ingested through 2026-01-15 and scored ONLY on rows after its
-    training ends. 132,718 rows, 2025-11-30 .. 2026-01-14, climatology built from
-    the historical panel truncated at the training cutoff so it cannot leak:
+    So Delhi, Chennai and Bengaluru were re-ingested through 2026-01-15 and
+    scored ONLY on rows after their training cutoff (2025-11-29). Climatology is
+    built from the historical panel truncated at the same cutoff, so it cannot
+    leak either. 175,585 station-cell rows in total, 2025-11-30 .. 2026-01-14:
 
-    | horizon | model RMSE | persistence | skill | 80% band coverage |
+    | horizon | Delhi | Chennai | Bengaluru | verdict |
     |---|---|---|---|---|
-    | 3h | 84.17 | 66.70 | **-26.2%** | 78.3% |
-    | 6h | 87.82 | 92.39 | +4.9% | 78.1% |
-    | 12h | 90.32 | 108.38 | **+16.7%** | 77.4% |
-    | 24h | 91.34 | 92.24 | +1.0% | 76.7% |
-    | 48h | 94.15 | 111.64 | **+15.7%** | 74.8% |
-    | 72h | 94.94 | 116.99 | **+18.8%** | 74.5% |
+    | 3h  | **-21.3%** | +10.1% | +3.2% | persistence wins Delhi |
+    | 24h | +4.6% | +12.4% | +8.4% | **model wins 3/3** |
+    | 48h | +17.5% | +21.2% | +13.0% | **model wins 3/3** |
+    | 72h | +20.3% | +27.1% | +12.1% | **model wins 3/3** |
 
-    Same SHAPE the old single-file model showed — persistence wins short, the
-    model wins long — but now on the new model, out-of-sample, at 24x the sample
-    size. 48-72h is the enforcement-scheduling window ("stagnant winds Thursday,
-    act before"), and that is where it wins. **Quote the direction, not the
+    The old single-file model had persistence winning 3/3 at 24h; the quantile
+    model wins 3/3 at 24h, 48h and 72h out-of-sample. 48-72h is the
+    enforcement-scheduling window ("stagnant winds Thursday, act before"), and
+    that is where the margin is largest. **Quote the direction, not the
     decimal.**
 
-    Interval coverage lands 74.5-78.3% against an 80% target — closer than the
-    forward-prediction band width suggests, i.e. the interval is WIDE because
-    Delhi's air genuinely swings that much, not because it is broken. It still
-    does not widen enough with horizon (see the interval-scale note).
+    Interval coverage lands 74-90% against an 80% target across the three
+    (Delhi 74-78, Bengaluru 80-84, Chennai 82-90) — i.e. the interval is broadly
+    calibrated, and Delhi's band is WIDE because Delhi's air genuinely swings
+    that much, not because it is broken. It still does not widen enough with
+    horizon: Delhi's coverage drifts 78.1% -> 74.4% from h3 to h72 while model
+    RMSE grows 81 -> 92, so `interval_scale` being ONE global number costs a few
+    points at long lead.
 
     The model's own manifest reports **+9.4% walk-forward median over 19 folds**
     across all eight cities. That is the number to quote when a per-city
@@ -366,6 +368,18 @@ main-loop context.
   chronic landfill.) `detect.py::_reconcile_zones` clusters cells within 2 km and
   makes every cell inherit its zone's most persistent verdict. Do not classify
   cells independently.
+- **Climatology must come from YEARS, not the 60-day window — measured, not
+  assumed.** `serve()` builds climatology from `data/historical/<city>/` where it
+  exists. A/B on Bengaluru with identical weights and identical out-of-sample
+  rows, the only difference being the climatology source: mean RMSE **27.14 with
+  2 years vs 30.14 with a short window (~10% better)**, and the gap widens with
+  horizon (-1.7 at h3 to -4.6 at h72). At h3 the short-climatology arm actually
+  LOSES to persistence (-1.9%) while the 2-year arm wins (+5.0%). Caveat on the
+  size: both arms were truncated at the training cutoff to stay leak-free, which
+  left the short arm with 13 days rather than 60, so ~10% overstates the gap
+  against a true 60-day baseline. The DIRECTION is what to rely on. Mechanism:
+  a day-of-year climatology bucket holds ~1 sample over 60 days and 2+ over two
+  years; Mumbai's cell_month table goes 1,730 -> 7,215 buckets.
 - **The demo window is INSIDE the forecast model's training data. Never measure
   forecast skill on it.** `data/historical/delhi/panel.parquet` runs
   2023-12-01 .. 2025-11-29 and the demo window is 2025-10-01 .. 2025-11-29 — so
