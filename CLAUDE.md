@@ -165,18 +165,41 @@ leakage before you assume success.
     *"satellite fire detections in 30 hours (18% of the window)"*. A real polluter,
     in a real city, from public satellite data, with an evidence chain anyone can
     check by googling "Bhalswa landfill fire November 2025".
-  - **Forecast — THREE real cities, and the DIRECTION is the finding.** Skill vs
-    persistence (Nov 2025, 14-day held-out tail, real CPCB/TNPCB stations):
-    | horizon | Delhi | Chennai | Bengaluru | verdict |
+  - **Forecast — the ONLY honest skill number is out-of-sample, and getting one
+    takes work.** The quantile model trains on `data/historical/`, whose windows
+    END 2025-11-29 for Delhi/Chennai/Bengaluru and 2026-08-15 for the other five.
+    The demo window (2025-10-01..11-29) is INSIDE training for all eight, so any
+    skill measured there is memorisation — measured, it inflates to +33..60%
+    against the +9.4% the trainer earned honestly. See the gotcha below.
+
+    So Delhi was re-ingested through 2026-01-15 and scored ONLY on rows after its
+    training ends. 132,718 rows, 2025-11-30 .. 2026-01-14, climatology built from
+    the historical panel truncated at the training cutoff so it cannot leak:
+
+    | horizon | model RMSE | persistence | skill | 80% band coverage |
     |---|---|---|---|---|
-    | 24h | -23% | -6% | -0% | **persistence WINS, 3/3** |
-    | 48h | +12% | -5% | +3% | mixed — the crossover |
-    | 72h | +2% | +14% | +10% | **model WINS, 3/3** |
-    Persistence is excellent short-term and DECAYS with horizon; the model does not.
-    48-72h is the enforcement-scheduling window ("stagnant winds Thursday, act
-    before"). **Quote the direction, not the decimal** — the exact % moves with how
-    many stations OpenAQ serves that day (same Delhi window has returned 26/22/20
-    stations across sessions). Byte-reproducible within a session; drifts across days.
+    | 3h | 84.17 | 66.70 | **-26.2%** | 78.3% |
+    | 6h | 87.82 | 92.39 | +4.9% | 78.1% |
+    | 12h | 90.32 | 108.38 | **+16.7%** | 77.4% |
+    | 24h | 91.34 | 92.24 | +1.0% | 76.7% |
+    | 48h | 94.15 | 111.64 | **+15.7%** | 74.8% |
+    | 72h | 94.94 | 116.99 | **+18.8%** | 74.5% |
+
+    Same SHAPE the old single-file model showed — persistence wins short, the
+    model wins long — but now on the new model, out-of-sample, at 24x the sample
+    size. 48-72h is the enforcement-scheduling window ("stagnant winds Thursday,
+    act before"), and that is where it wins. **Quote the direction, not the
+    decimal.**
+
+    Interval coverage lands 74.5-78.3% against an 80% target — closer than the
+    forward-prediction band width suggests, i.e. the interval is WIDE because
+    Delhi's air genuinely swings that much, not because it is broken. It still
+    does not widen enough with horizon (see the interval-scale note).
+
+    The model's own manifest reports **+9.4% walk-forward median over 19 folds**
+    across all eight cities. That is the number to quote when a per-city
+    out-of-sample eval has not been run — it is the only other one earned
+    honestly.
   - Okhla -> `waste_burning` (confidence 0.42, 1.33 km). It previously came back
     as `traffic` — defensible, since it sits on Mathura Road, but incomplete.
     That weak spot has closed. Ghazipur -> still not detected (no fires in window).
