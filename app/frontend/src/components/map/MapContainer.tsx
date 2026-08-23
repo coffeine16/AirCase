@@ -12,7 +12,7 @@ import { cellToLatLng } from "h3-js";
 import "maplibre-gl/dist/maplibre-gl.css";
 
 import { initialViewFor, MAP_STYLE } from "@/lib/constants";
-import { pm25ToRgbaArray, SEVERITY_COLORS, hexToRgba, UNKNOWN_HEX } from "@/lib/colors";
+import { pm25ToRgbaArray, SEVERITY_COLORS, hexToRgba, UNKNOWN_HEX, NO_FORECAST_RGBA } from "@/lib/colors";
 import type { FusionCell, Hotspot, LayerVisibility, MapFilters, DispatchRoute, BlindSpot } from "@/lib/types";
 import type { Station, FireDetection } from "@/hooks/useMapData";
 
@@ -158,7 +158,7 @@ export default function MapContainer({
       // misleading thing this map could do; dropping the cell instead makes the
       // choropleth silently shrink. So it gets its own near-transparent grey,
       // legible as a gap rather than as a reading.
-      getFillColor: (d) => (d.pm25 == null ? [120, 124, 130, 28] : pm25ToRgbaArray(d.pm25, 175)),
+      getFillColor: (d) => (d.pm25 == null ? NO_FORECAST_RGBA : pm25ToRgbaArray(d.pm25, 175)),
       extruded: false,
       wireframe: false,
       pickable: true,
@@ -325,7 +325,15 @@ export default function MapContainer({
       )}
 
       {/* Context-sensitive legend */}
-      {showOverlays && <LegendBar layers={layers} />}
+      {showOverlays && (
+        <LegendBar
+          layers={layers}
+          /* Driven by the DATA, not by the slider position: the row appears
+             exactly when the map actually contains an unvalued cell, so the key
+             can never advertise a swatch that is not on screen. */
+          hasNoForecastCells={fusionCells.some((c) => c.pm25 == null)}
+        />
+      )}
 
       {/* Hover tooltip */}
       {tooltip && (

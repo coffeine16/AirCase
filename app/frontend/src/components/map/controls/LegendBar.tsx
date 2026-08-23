@@ -9,13 +9,15 @@
  * explained were different colours. A legend that lies is worse than no legend.
  */
 import { useState } from "react";
-import { AQI_CATEGORIES, PERSISTENCE_HEX, FIRE_HEX, BLINDSPOT_HEX } from "@/lib/colors";
+import { AQI_CATEGORIES, PERSISTENCE_HEX, FIRE_HEX, BLINDSPOT_HEX, NO_FORECAST_HEX } from "@/lib/colors";
 import { useIsMobile } from "@/hooks/useMediaQuery";
 import { icon, X, ListChecks } from "@/components/Icon";
 import type { LayerVisibility } from "@/lib/types";
 
 interface Props {
   layers: LayerVisibility;
+  /** True when the map currently holds cells with no value — see NO_FORECAST_HEX. */
+  hasNoForecastCells?: boolean;
 }
 
 function Swatch({ color, round = false }: { color: string; round?: boolean }) {
@@ -57,7 +59,7 @@ function Group({ title, children }: { title: string; children: React.ReactNode }
   );
 }
 
-export default function LegendBar({ layers }: Props) {
+export default function LegendBar({ layers, hasNoForecastCells = false }: Props) {
   const isMobile = useIsMobile();
   const [open, setOpen] = useState(true);
 
@@ -69,6 +71,16 @@ export default function LegendBar({ layers }: Props) {
         {AQI_CATEGORIES.map((c) => (
           <Row key={c.label} color={c.color} label={c.label} value={c.range} />
         ))}
+      </Group>
+    );
+  }
+  if (hasNoForecastCells) {
+    sections.push(
+      <Group key="nofc" title="Coverage">
+        <Row color={NO_FORECAST_HEX} label="No forecast here" />
+        <div style={{ fontSize: "0.65rem", color: "var(--text-tertiary)", marginTop: 2 }}>
+          Upwind of every monitor at this hour
+        </div>
       </Group>
     );
   }

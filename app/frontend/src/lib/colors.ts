@@ -139,6 +139,19 @@ export const FIRE_HEX = { high: "#d0603f", low: "#c99a4e" } as const;
 
 export const BLINDSPOT_HEX = "#c9b04e";
 
+/**
+ * Cells with no value at the selected time — at a forecast horizon the model
+ * cannot cover every cell (a cell upwind of every monitor gets zero weight in
+ * the station composite, so its lags are NaN and it is dropped).
+ *
+ * Deliberately a desaturated slate, not a point on the AQI ramp: an absence
+ * must not read as a reading, and least of all as "Good". The map and the
+ * legend both take it from here, for the reason LegendBar's own docstring
+ * gives — a legend that disagrees with the layer is worse than no legend.
+ */
+export const NO_FORECAST_HEX = "#6b7280";
+export const NO_FORECAST_RGBA: [number, number, number, number] = [107, 114, 128, 70];
+
 // ─── Satellite channel ramps ─────────────────────────────────────────────────
 
 export const SAT_CHANNEL_COLORS: Record<string, [string, string]> = {
