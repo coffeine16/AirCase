@@ -99,7 +99,8 @@ PREDICT_LOOKBACK_HOURS = 24 * 10   # 168h roll_med window + 24h max lag + 3-day 
 
 def _predict_field(panels: dict, served_manifest: dict, served_models: dict,
                     feature_cols: list[str],
-                    fires_by_city: dict | None = None) -> dict[str, list[dict]]:
+                    fires_by_city: dict | None = None,
+                    clim_panels: dict | None = None) -> dict[str, list[dict]]:
     """Per-city forecast.json field, predicted with the SERVED model.
 
     DEFENSIVE, not a live bugfix. `city_categories` is pinned to
@@ -114,6 +115,7 @@ def _predict_field(panels: dict, served_manifest: dict, served_models: dict,
     passes a raw string `city` column (which gets no name-based realignment).
     """
     fires_by_city = fires_by_city or {}
+    clim_panels = clim_panels or {}
     city_categories = sorted(set(served_manifest["cities"]) | {UNKNOWN_CITY})
     # Raw p10/p90 measured 0.684 coverage against a 0.80 target on the first
     # real 8-city run -- bands a third too narrow. Widen by whatever the
@@ -125,7 +127,15 @@ def _predict_field(panels: dict, served_manifest: dict, served_models: dict,
         # has a few dozen samples a year) -- built here, from the untrimmed
         # panel, and passed in explicitly so build_features below doesn't
         # rebuild it (and doesn't silently rebuild it from the trimmed slice).
-        clim_tables = build_climatology(panel)
+        # Years of history where we have it (see _climatology_panel), else this
+        # city's own 60-day window. The lags/features below always come from
+        # `panel` — only the climatology tables use the longer history.
+        clim_src = clim_panels.get(city)
+        if clim_src is None:
+            clim_src = panel
+            print(f"[forecast] {city}: climatology from the 60-day operational "
+                  f"window (no historical panel) — clim_month buckets hold ~1 sample")
+        clim_tables = build_climatology(clim_src)
         cutoff = panel.ts.max() - pd.Timedelta(hours=PREDICT_LOOKBACK_HOURS)
         recent_panel = panel[panel.ts > cutoff]
         frame = build_features(recent_panel, HORIZONS, fires=fires_by_city.get(city),
@@ -361,6 +371,62 @@ def _load_panels(cities: list[str] | None, prefer_historical: bool = True):
     return panels, fires_by_city
 
 
+def _climatology_panel(city: str):
+    """The LONG panel to build this city's climatology from, ward ids realigned.
+
+    Climatology is the one thing serving genuinely wants years of, not the 60-day
+    operational window. Its buckets are (scope, day-of-week x hour) and (scope,
+    day-of-year): over 60 days a dow_hour bucket holds ~8 samples and a
+    day-of-year bucket holds exactly ONE, so `clim_month` degenerates into "that
+    single day's reading" wearing a climatology label. Over two years the same
+    buckets hold ~104 and 2+. The model was TRAINED on climatology built from the
+    2-year panels, so feeding it 60-day climatology at serve time is train/serve
+    skew in the features it leans on hardest for the 98%+ of cells that have no
+    station of their own.
+
+    WARD IDS ARE REMAPPED, and skipping that would silently corrupt the result.
+    lookup_climatology falls back cell -> ward -> city, and a historical panel
+    carries whatever ward layer existed when it was BUILT. Measured: Delhi's
+    historical ward ids match the current map 100% (it always had a real ward
+    file), but Mumbai's match 0% -- 60 Voronoi wards then, 25 real BMC wards now.
+    Joining those by id pairs "W005" the Voronoi polygon with "W005" the ward of
+    Mumbai's E division, which are not the same place. So ward_id is recomputed
+    here from the CURRENT ward layer rather than trusted from the file.
+
+    Returns None when there is no historical panel, and the caller falls back to
+    the operational one.
+    """
+    hist = ROOT / "data" / "historical" / city / "panel.parquet"
+    if not hist.exists():
+        return None
+    from shared.wards import ward_map
+    cols = ["cell", "ts", "pm25_station", "ward_id", "city"]
+    try:
+        panel = pd.read_parquet(hist, columns=cols)
+    except Exception as e:   # noqa: BLE001 — a bad historical file must not sink serving
+        print(f"[forecast] {city}: historical panel unreadable ({type(e).__name__}) "
+              f"— climatology falls back to the operational window")
+        return None
+    panel["ts"] = pd.to_datetime(panel.ts, utc=True)
+    wm = ward_map()
+    fresh = panel.cell.map(wm).fillna("unassigned")
+    # The files are correct as of the ward-realignment pass, so this should agree.
+    # It is kept as a GUARD, not a patch: if a historical panel is ever rebuilt
+    # against a different ward layer than the one serving uses, that must be
+    # visible, because it silently corrupts the ward-scope climatology that 98%+
+    # of cells fall back to. Loud, then corrected — never silently corrected.
+    disagree = float((panel.ward_id != fresh).mean())
+    if disagree > 0.001:
+        print(f"[forecast] {city}: WARNING — {100*disagree:.1f}% of the historical "
+              f"panel's ward_ids disagree with the current ward layer "
+              f"({panel.ward_id.nunique()} in file vs {fresh.nunique()} now). "
+              f"Using the current layer. Rebuild the historical panel: its stale "
+              f"ward_ids are ALSO what training would group climatology by.")
+    panel["ward_id"] = fresh
+    panel["city"] = city
+    return panel
+
+
 def serve(cities: list[str] | None = None) -> dict:
     """Predict with the ALREADY-PROMOTED weights. No training. Seconds, not hours.
 
@@ -405,8 +471,16 @@ def serve(cities: list[str] | None = None) -> dict:
               "or the historical backfill first. Skipping forecast.")
         return manifest
 
+    clim_panels = {}
+    for city in panels:
+        cp = _climatology_panel(city)
+        if cp is not None:
+            span = (cp.ts.max() - cp.ts.min()).days
+            print(f"[forecast] {city}: climatology from {span} days of history "
+                  f"({len(cp):,} rows)")
+            clim_panels[city] = cp
     fields = _predict_field(panels, manifest, models, FEATURE_COLUMNS,
-                            fires_by_city=fires_by_city)
+                            fires_by_city=fires_by_city, clim_panels=clim_panels)
     eval_payload = manifest.get("eval") or {}
     for city, field in fields.items():
         _write_city_outputs(DATA_OUT_BASE / city, field, eval_payload)
