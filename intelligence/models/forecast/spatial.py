@@ -160,7 +160,41 @@ def composite_grid(query_lat: np.ndarray, query_lon: np.ndarray,
 
     total = weight.sum(axis=2)                                          # (n_t, n_q)
     num = (weight * vals).sum(axis=2)
-    return np.divide(num, total, out=np.full_like(total, np.nan), where=total > 1e-9)
+    out = np.divide(num, total, out=np.full_like(total, np.nan), where=total > 1e-9)
+
+    # GAP FILL — distance only, where the wind kernel gave nothing at all.
+    #
+    # `align` is clip(cos(offset), 0, None), so a query point UPWIND of every
+    # station gets zero weight from all of them and comes back NaN. Downstream
+    # that is fatal rather than degraded: build_features drops any row whose
+    # lag_0/lag_24 is NaN, so the cell has no forecast at all. Measured on real
+    # Delhi that was 470 of 1,703 cells (28%) — and which cells depends on the
+    # wind at ONE hour, so a 72-hour forecast had its whole map coverage decided
+    # by a single hour's wind direction.
+    #
+    # Zeroing upwind entirely is too strong a claim. A cell 500 m upwind of a
+    # monitor is not independent of it; advection makes it LESS informative,
+    # not uninformative. So where the anisotropic kernel yields nothing, fall
+    # back to plain distance weighting — the isotropic form this function used
+    # before wind was introduced.
+    #
+    # This only ever WRITES INTO NaN. Every query point the wind kernel could
+    # already answer keeps its exact previous value, so no existing feature
+    # moves and nothing the model was trained against changes.
+    gap = total <= 1e-9
+    if gap.any():
+        # (n_q, n_s), time-independent — computed as a matmul rather than
+        # another (n_t, n_q, n_s) array, which on a real panel is the
+        # difference between a few MB and tens of GB.
+        iso = np.exp(-dist / DIST_DECAY_KM)
+        if exclude is not None:
+            iso = iso * (~exclude)
+        vals2d = np.nan_to_num(station_val, nan=0.0)                    # (n_t, n_s)
+        inum = vals2d @ iso.T                                           # (n_t, n_q)
+        itot = has_val.astype(float) @ iso.T                            # (n_t, n_q)
+        filled = np.divide(inum, itot, out=np.full_like(itot, np.nan), where=itot > 1e-9)
+        out = np.where(gap, filled, out)
+    return out
 
 
 def positional_block(cell: str, station_lat: np.ndarray, station_lon: np.ndarray,
