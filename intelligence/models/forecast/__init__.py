@@ -89,12 +89,31 @@ def evaluate(panel: pd.DataFrame, oracle_met: bool = False,
 # build_features call below, so exploding the WHOLE historical panel (up to
 # 2 years) across HORIZONS just to throw away all but the last timestamp is
 # pure waste -- on a real multi-city panel this is the single biggest
-# contributor to the training Job's OOM. roll_med_168 (7-day rolling
-# median) is the longest lookback any feature needs, so trimming the panel
-# to this many trailing hours before build_features leaves the kept row's
-# features byte-identical while cutting the exploded frame's row count by
-# roughly (panel span in hours / this constant).
-PREDICT_LOOKBACK_HOURS = 24 * 10   # 168h roll_med window + 24h max lag + 3-day buffer
+# contributor to the training Job's OOM. So the panel is trimmed to the
+# trailing window the kept row's features actually depend on.
+#
+# DERIVED, NOT HARDCODED, and that is the point. This was 24*10 hours with a
+# comment stating "roll_med_168 is the longest lookback any feature needs" --
+# true when it was written, false once roll_med_720 (30d) and roll_med_2160
+# (90d) were added. The trim silently starved both: measured on real Delhi at
+# the served timestamp, roll_med_720 came out 10.45 ug/m3 off and roll_med_2160
+# 28.66 ug/m3 off (210.72 served against 185.44 correct). Nothing raised,
+# because a rolling median over too little history is still a number.
+#
+# Reading the window out of FEATURE_COLUMNS means adding a longer feature can
+# never again quietly outrun the trim.
+def _longest_feature_lookback_h() -> int:
+    import re
+    windows = [int(m.group(1)) for c in FEATURE_COLUMNS
+               if (m := re.fullmatch(r"roll_med_(\d+)", c))]
+    lags = [int(m.group(1)) for c in FEATURE_COLUMNS
+            if (m := re.fullmatch(r"lag_(\d+)", c))]
+    return max(windows + lags + [24])
+
+
+# + the largest lag, since the rolling window is computed on lagged rows, + 3
+# days of slack for the gaps a real feed leaves.
+PREDICT_LOOKBACK_HOURS = _longest_feature_lookback_h() + 24 + 72
 
 
 def _predict_field(panels: dict, served_manifest: dict, served_models: dict,
