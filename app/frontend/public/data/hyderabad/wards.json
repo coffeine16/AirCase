@@ -1,0 +1,4897 @@
+{
+ "city": "hyderabad",
+ "synthetic": false,
+ "n_wards": 141,
+ "cells": [
+  {
+   "cell": "8860a2432dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24341fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24345fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24347fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24349fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a2434bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a2434dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24361fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24363fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24365fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24367fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24369fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a2436bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a2436dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a2490dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24941fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24943fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24945fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24947fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24949fffff",
+   "ward_id": "W034",
+   "ward_name": "Ward 108 Miyapur"
+  },
+  {
+   "cell": "8860a2494bfffff",
+   "ward_id": "W034",
+   "ward_name": "Ward 108 Miyapur"
+  },
+  {
+   "cell": "8860a2494dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24961fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24963fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24969fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a2496bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a2496dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24a2dfffff",
+   "ward_id": "W038",
+   "ward_name": "Ward 106 Serilingampally"
+  },
+  {
+   "cell": "8860a24a41fffff",
+   "ward_id": "W002",
+   "ward_name": "Ward 105 Gachibowli"
+  },
+  {
+   "cell": "8860a24a45fffff",
+   "ward_id": "W002",
+   "ward_name": "Ward 105 Gachibowli"
+  },
+  {
+   "cell": "8860a24a47fffff",
+   "ward_id": "W002",
+   "ward_name": "Ward 105 Gachibowli"
+  },
+  {
+   "cell": "8860a24a49fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24a4bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24a4dfffff",
+   "ward_id": "W002",
+   "ward_name": "Ward 105 Gachibowli"
+  },
+  {
+   "cell": "8860a24a61fffff",
+   "ward_id": "W038",
+   "ward_name": "Ward 106 Serilingampally"
+  },
+  {
+   "cell": "8860a24a63fffff",
+   "ward_id": "W002",
+   "ward_name": "Ward 105 Gachibowli"
+  },
+  {
+   "cell": "8860a24a65fffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a24a67fffff",
+   "ward_id": "W038",
+   "ward_name": "Ward 106 Serilingampally"
+  },
+  {
+   "cell": "8860a24a69fffff",
+   "ward_id": "W002",
+   "ward_name": "Ward 105 Gachibowli"
+  },
+  {
+   "cell": "8860a24a6bfffff",
+   "ward_id": "W002",
+   "ward_name": "Ward 105 Gachibowli"
+  },
+  {
+   "cell": "8860a24a6dfffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a24b01fffff",
+   "ward_id": "W033",
+   "ward_name": "Ward 114 KPHB Colony"
+  },
+  {
+   "cell": "8860a24b03fffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a24b05fffff",
+   "ward_id": "W033",
+   "ward_name": "Ward 114 KPHB Colony"
+  },
+  {
+   "cell": "8860a24b07fffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a24b09fffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a24b0bfffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a24b0dfffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a24b11fffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a24b15fffff",
+   "ward_id": "W036",
+   "ward_name": "Ward 109 Hafeezpet"
+  },
+  {
+   "cell": "8860a24b19fffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a24b1dfffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a24b21fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24b23fffff",
+   "ward_id": "W034",
+   "ward_name": "Ward 108 Miyapur"
+  },
+  {
+   "cell": "8860a24b25fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24b27fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24b29fffff",
+   "ward_id": "W097",
+   "ward_name": "Ward 123 Hydernagar"
+  },
+  {
+   "cell": "8860a24b2bfffff",
+   "ward_id": "W034",
+   "ward_name": "Ward 108 Miyapur"
+  },
+  {
+   "cell": "8860a24b2dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a24b31fffff",
+   "ward_id": "W034",
+   "ward_name": "Ward 108 Miyapur"
+  },
+  {
+   "cell": "8860a24b35fffff",
+   "ward_id": "W034",
+   "ward_name": "Ward 108 Miyapur"
+  },
+  {
+   "cell": "8860a24b37fffff",
+   "ward_id": "W034",
+   "ward_name": "Ward 108 Miyapur"
+  },
+  {
+   "cell": "8860a24b39fffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a24b3bfffff",
+   "ward_id": "W034",
+   "ward_name": "Ward 108 Miyapur"
+  },
+  {
+   "cell": "8860a24b3dfffff",
+   "ward_id": "W034",
+   "ward_name": "Ward 108 Miyapur"
+  },
+  {
+   "cell": "8860a24b41fffff",
+   "ward_id": "W033",
+   "ward_name": "Ward 114 KPHB Colony"
+  },
+  {
+   "cell": "8860a24b43fffff",
+   "ward_id": "W032",
+   "ward_name": "Ward 116 Allapur"
+  },
+  {
+   "cell": "8860a24b45fffff",
+   "ward_id": "W033",
+   "ward_name": "Ward 114 KPHB Colony"
+  },
+  {
+   "cell": "8860a24b47fffff",
+   "ward_id": "W033",
+   "ward_name": "Ward 114 KPHB Colony"
+  },
+  {
+   "cell": "8860a24b49fffff",
+   "ward_id": "W103",
+   "ward_name": "Ward 115 Balaji Nagar"
+  },
+  {
+   "cell": "8860a24b4bfffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a24b4dfffff",
+   "ward_id": "W103",
+   "ward_name": "Ward 115 Balaji Nagar"
+  },
+  {
+   "cell": "8860a24b51fffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a24b53fffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a24b55fffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a24b57fffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a24b59fffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a24b5bfffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a24b5dfffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a24b61fffff",
+   "ward_id": "W033",
+   "ward_name": "Ward 114 KPHB Colony"
+  },
+  {
+   "cell": "8860a24b63fffff",
+   "ward_id": "W033",
+   "ward_name": "Ward 114 KPHB Colony"
+  },
+  {
+   "cell": "8860a24b65fffff",
+   "ward_id": "W097",
+   "ward_name": "Ward 123 Hydernagar"
+  },
+  {
+   "cell": "8860a24b67fffff",
+   "ward_id": "W097",
+   "ward_name": "Ward 123 Hydernagar"
+  },
+  {
+   "cell": "8860a24b69fffff",
+   "ward_id": "W103",
+   "ward_name": "Ward 115 Balaji Nagar"
+  },
+  {
+   "cell": "8860a24b6bfffff",
+   "ward_id": "W033",
+   "ward_name": "Ward 114 KPHB Colony"
+  },
+  {
+   "cell": "8860a24b6dfffff",
+   "ward_id": "W097",
+   "ward_name": "Ward 123 Hydernagar"
+  },
+  {
+   "cell": "8860a25121fffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25123fffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25125fffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25127fffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a2512dfffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25135fffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25137fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a251a1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a251a3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a251a5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a251a7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a251adfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a251b5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25801fffff",
+   "ward_id": "W075",
+   "ward_name": "Ward 71 Gudimalkapur"
+  },
+  {
+   "cell": "8860a25803fffff",
+   "ward_id": "W078",
+   "ward_name": "Ward 67 Golconda"
+  },
+  {
+   "cell": "8860a25805fffff",
+   "ward_id": "W074",
+   "ward_name": "Ward 70 Mehdipatnam"
+  },
+  {
+   "cell": "8860a25807fffff",
+   "ward_id": "W076",
+   "ward_name": "Ward 69 Nanal Nagar"
+  },
+  {
+   "cell": "8860a25809fffff",
+   "ward_id": "W132",
+   "ward_name": "Ward 65 Karwan"
+  },
+  {
+   "cell": "8860a2580bfffff",
+   "ward_id": "W132",
+   "ward_name": "Ward 65 Karwan"
+  },
+  {
+   "cell": "8860a2580dfffff",
+   "ward_id": "W073",
+   "ward_name": "Ward 72 Asif Nagar"
+  },
+  {
+   "cell": "8860a25811fffff",
+   "ward_id": "W079",
+   "ward_name": "Ward 66 Langar Houz"
+  },
+  {
+   "cell": "8860a25813fffff",
+   "ward_id": "W079",
+   "ward_name": "Ward 66 Langar Houz"
+  },
+  {
+   "cell": "8860a25815fffff",
+   "ward_id": "W078",
+   "ward_name": "Ward 67 Golconda"
+  },
+  {
+   "cell": "8860a25817fffff",
+   "ward_id": "W078",
+   "ward_name": "Ward 67 Golconda"
+  },
+  {
+   "cell": "8860a25819fffff",
+   "ward_id": "W140",
+   "ward_name": "Ward 61 Attapur"
+  },
+  {
+   "cell": "8860a2581bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a2581dfffff",
+   "ward_id": "W079",
+   "ward_name": "Ward 66 Langar Houz"
+  },
+  {
+   "cell": "8860a25821fffff",
+   "ward_id": "W024",
+   "ward_name": "Ward 93 Banjara Hills"
+  },
+  {
+   "cell": "8860a25823fffff",
+   "ward_id": "W024",
+   "ward_name": "Ward 93 Banjara Hills"
+  },
+  {
+   "cell": "8860a25825fffff",
+   "ward_id": "W023",
+   "ward_name": "Ward 92 Venkateshwara Colony"
+  },
+  {
+   "cell": "8860a25827fffff",
+   "ward_id": "W024",
+   "ward_name": "Ward 93 Banjara Hills"
+  },
+  {
+   "cell": "8860a25829fffff",
+   "ward_id": "W145",
+   "ward_name": "Ward 74 Ahmed Nagar"
+  },
+  {
+   "cell": "8860a2582bfffff",
+   "ward_id": "W076",
+   "ward_name": "Ward 69 Nanal Nagar"
+  },
+  {
+   "cell": "8860a2582dfffff",
+   "ward_id": "W024",
+   "ward_name": "Ward 93 Banjara Hills"
+  },
+  {
+   "cell": "8860a25831fffff",
+   "ward_id": "W068",
+   "ward_name": "Ward 94 Shaikpet"
+  },
+  {
+   "cell": "8860a25833fffff",
+   "ward_id": "W068",
+   "ward_name": "Ward 94 Shaikpet"
+  },
+  {
+   "cell": "8860a25835fffff",
+   "ward_id": "W076",
+   "ward_name": "Ward 69 Nanal Nagar"
+  },
+  {
+   "cell": "8860a25837fffff",
+   "ward_id": "W068",
+   "ward_name": "Ward 94 Shaikpet"
+  },
+  {
+   "cell": "8860a25839fffff",
+   "ward_id": "W078",
+   "ward_name": "Ward 67 Golconda"
+  },
+  {
+   "cell": "8860a2583bfffff",
+   "ward_id": "W077",
+   "ward_name": "Ward 68 Tolichowki"
+  },
+  {
+   "cell": "8860a2583dfffff",
+   "ward_id": "W076",
+   "ward_name": "Ward 69 Nanal Nagar"
+  },
+  {
+   "cell": "8860a25841fffff",
+   "ward_id": "W132",
+   "ward_name": "Ward 65 Karwan"
+  },
+  {
+   "cell": "8860a25843fffff",
+   "ward_id": "W140",
+   "ward_name": "Ward 61 Attapur"
+  },
+  {
+   "cell": "8860a25845fffff",
+   "ward_id": "W071",
+   "ward_name": "Ward 64 Dattatreya Nagar"
+  },
+  {
+   "cell": "8860a25847fffff",
+   "ward_id": "W075",
+   "ward_name": "Ward 71 Gudimalkapur"
+  },
+  {
+   "cell": "8860a25849fffff",
+   "ward_id": "W131",
+   "ward_name": "Ward 62 Ziaguda"
+  },
+  {
+   "cell": "8860a2584bfffff",
+   "ward_id": "W139",
+   "ward_name": "Ward 56 Kishanbagh"
+  },
+  {
+   "cell": "8860a2584dfffff",
+   "ward_id": "W070",
+   "ward_name": "Ward 63 Mangalhat"
+  },
+  {
+   "cell": "8860a25851fffff",
+   "ward_id": "W140",
+   "ward_name": "Ward 61 Attapur"
+  },
+  {
+   "cell": "8860a25853fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25855fffff",
+   "ward_id": "W140",
+   "ward_name": "Ward 61 Attapur"
+  },
+  {
+   "cell": "8860a25857fffff",
+   "ward_id": "W140",
+   "ward_name": "Ward 61 Attapur"
+  },
+  {
+   "cell": "8860a25859fffff",
+   "ward_id": "W140",
+   "ward_name": "Ward 61 Attapur"
+  },
+  {
+   "cell": "8860a2585bfffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a2585dfffff",
+   "ward_id": "W140",
+   "ward_name": "Ward 61 Attapur"
+  },
+  {
+   "cell": "8860a25861fffff",
+   "ward_id": "W072",
+   "ward_name": "Ward 73 Vijay Nagar Colony"
+  },
+  {
+   "cell": "8860a25863fffff",
+   "ward_id": "W074",
+   "ward_name": "Ward 70 Mehdipatnam"
+  },
+  {
+   "cell": "8860a25865fffff",
+   "ward_id": "W072",
+   "ward_name": "Ward 73 Vijay Nagar Colony"
+  },
+  {
+   "cell": "8860a25867fffff",
+   "ward_id": "W145",
+   "ward_name": "Ward 74 Ahmed Nagar"
+  },
+  {
+   "cell": "8860a25869fffff",
+   "ward_id": "W069",
+   "ward_name": "Ward 76 Mallepally"
+  },
+  {
+   "cell": "8860a2586bfffff",
+   "ward_id": "W073",
+   "ward_name": "Ward 72 Asif Nagar"
+  },
+  {
+   "cell": "8860a2586dfffff",
+   "ward_id": "W069",
+   "ward_name": "Ward 76 Mallepally"
+  },
+  {
+   "cell": "8860a25881fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25883fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25885fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25887fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25889fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a2588bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a2588dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25895fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25899fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a2589dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258a1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258a3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258a5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258a7fffff",
+   "ward_id": "W002",
+   "ward_name": "Ward 105 Gachibowli"
+  },
+  {
+   "cell": "8860a258a9fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258abfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258adfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258b1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258b5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258b9fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258bdfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258c1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258c3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258c5fffff",
+   "ward_id": "W079",
+   "ward_name": "Ward 66 Langar Houz"
+  },
+  {
+   "cell": "8860a258c7fffff",
+   "ward_id": "W079",
+   "ward_name": "Ward 66 Langar Houz"
+  },
+  {
+   "cell": "8860a258c9fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258cbfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258cdfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258d1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258d3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258d5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258d7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258d9fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258dbfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258ddfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258e1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258e3fffff",
+   "ward_id": "W079",
+   "ward_name": "Ward 66 Langar Houz"
+  },
+  {
+   "cell": "8860a258e5fffff",
+   "ward_id": "W068",
+   "ward_name": "Ward 94 Shaikpet"
+  },
+  {
+   "cell": "8860a258e7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a258e9fffff",
+   "ward_id": "W079",
+   "ward_name": "Ward 66 Langar Houz"
+  },
+  {
+   "cell": "8860a258ebfffff",
+   "ward_id": "W079",
+   "ward_name": "Ward 66 Langar Houz"
+  },
+  {
+   "cell": "8860a258edfffff",
+   "ward_id": "W077",
+   "ward_name": "Ward 68 Tolichowki"
+  },
+  {
+   "cell": "8860a25901fffff",
+   "ward_id": "W081",
+   "ward_name": "Ward 98 Ameerpet"
+  },
+  {
+   "cell": "8860a25903fffff",
+   "ward_id": "W081",
+   "ward_name": "Ward 98 Ameerpet"
+  },
+  {
+   "cell": "8860a25905fffff",
+   "ward_id": "W090",
+   "ward_name": "Ward 149 Begumpet"
+  },
+  {
+   "cell": "8860a25907fffff",
+   "ward_id": "W090",
+   "ward_name": "Ward 149 Begumpet"
+  },
+  {
+   "cell": "8860a25909fffff",
+   "ward_id": "W001",
+   "ward_name": "Ward 91 Khairatabad"
+  },
+  {
+   "cell": "8860a2590bfffff",
+   "ward_id": "W082",
+   "ward_name": "Ward 97 Somajiguda"
+  },
+  {
+   "cell": "8860a2590dfffff",
+   "ward_id": "W090",
+   "ward_name": "Ward 149 Begumpet"
+  },
+  {
+   "cell": "8860a25911fffff",
+   "ward_id": "W023",
+   "ward_name": "Ward 92 Venkateshwara Colony"
+  },
+  {
+   "cell": "8860a25913fffff",
+   "ward_id": "W004",
+   "ward_name": "Ward 95 Jubilee Hills"
+  },
+  {
+   "cell": "8860a25915fffff",
+   "ward_id": "W081",
+   "ward_name": "Ward 98 Ameerpet"
+  },
+  {
+   "cell": "8860a25917fffff",
+   "ward_id": "W087",
+   "ward_name": "Ward 99 Vengal Rao Nagar"
+  },
+  {
+   "cell": "8860a25919fffff",
+   "ward_id": "W023",
+   "ward_name": "Ward 92 Venkateshwara Colony"
+  },
+  {
+   "cell": "8860a2591bfffff",
+   "ward_id": "W023",
+   "ward_name": "Ward 92 Venkateshwara Colony"
+  },
+  {
+   "cell": "8860a2591dfffff",
+   "ward_id": "W082",
+   "ward_name": "Ward 97 Somajiguda"
+  },
+  {
+   "cell": "8860a25921fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25923fffff",
+   "ward_id": "W093",
+   "ward_name": "Ward 118 Fateh Nagar"
+  },
+  {
+   "cell": "8860a25925fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25927fffff",
+   "ward_id": "W095",
+   "ward_name": "Ward 120 Balanagar"
+  },
+  {
+   "cell": "8860a25929fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a2592bfffff",
+   "ward_id": "W090",
+   "ward_name": "Ward 149 Begumpet"
+  },
+  {
+   "cell": "8860a2592dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25931fffff",
+   "ward_id": "W080",
+   "ward_name": "Ward 100 Sanath Nagar"
+  },
+  {
+   "cell": "8860a25933fffff",
+   "ward_id": "W085",
+   "ward_name": "Ward 101 Erragadda"
+  },
+  {
+   "cell": "8860a25935fffff",
+   "ward_id": "W080",
+   "ward_name": "Ward 100 Sanath Nagar"
+  },
+  {
+   "cell": "8860a25937fffff",
+   "ward_id": "W080",
+   "ward_name": "Ward 100 Sanath Nagar"
+  },
+  {
+   "cell": "8860a25939fffff",
+   "ward_id": "W081",
+   "ward_name": "Ward 98 Ameerpet"
+  },
+  {
+   "cell": "8860a2593bfffff",
+   "ward_id": "W081",
+   "ward_name": "Ward 98 Ameerpet"
+  },
+  {
+   "cell": "8860a2593dfffff",
+   "ward_id": "W093",
+   "ward_name": "Ward 118 Fateh Nagar"
+  },
+  {
+   "cell": "8860a25941fffff",
+   "ward_id": "W001",
+   "ward_name": "Ward 91 Khairatabad"
+  },
+  {
+   "cell": "8860a25943fffff",
+   "ward_id": "W001",
+   "ward_name": "Ward 91 Khairatabad"
+  },
+  {
+   "cell": "8860a25945fffff",
+   "ward_id": "W001",
+   "ward_name": "Ward 91 Khairatabad"
+  },
+  {
+   "cell": "8860a25947fffff",
+   "ward_id": "W090",
+   "ward_name": "Ward 149 Begumpet"
+  },
+  {
+   "cell": "8860a25949fffff",
+   "ward_id": "W091",
+   "ward_name": "Ward 90 Kavadiguda"
+  },
+  {
+   "cell": "8860a2594bfffff",
+   "ward_id": "W001",
+   "ward_name": "Ward 91 Khairatabad"
+  },
+  {
+   "cell": "8860a2594dfffff",
+   "ward_id": "W091",
+   "ward_name": "Ward 90 Kavadiguda"
+  },
+  {
+   "cell": "8860a25951fffff",
+   "ward_id": "W001",
+   "ward_name": "Ward 91 Khairatabad"
+  },
+  {
+   "cell": "8860a25953fffff",
+   "ward_id": "W024",
+   "ward_name": "Ward 93 Banjara Hills"
+  },
+  {
+   "cell": "8860a25955fffff",
+   "ward_id": "W001",
+   "ward_name": "Ward 91 Khairatabad"
+  },
+  {
+   "cell": "8860a25957fffff",
+   "ward_id": "W001",
+   "ward_name": "Ward 91 Khairatabad"
+  },
+  {
+   "cell": "8860a25959fffff",
+   "ward_id": "W001",
+   "ward_name": "Ward 91 Khairatabad"
+  },
+  {
+   "cell": "8860a2595bfffff",
+   "ward_id": "W127",
+   "ward_name": "Ward 75 Red Hills"
+  },
+  {
+   "cell": "8860a2595dfffff",
+   "ward_id": "W001",
+   "ward_name": "Ward 91 Khairatabad"
+  },
+  {
+   "cell": "8860a25961fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25963fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25965fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25967fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25969fffff",
+   "ward_id": "W089",
+   "ward_name": "Ward 148 Ramgopalpet"
+  },
+  {
+   "cell": "8860a2596bfffff",
+   "ward_id": "W090",
+   "ward_name": "Ward 149 Begumpet"
+  },
+  {
+   "cell": "8860a2596dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25981fffff",
+   "ward_id": "W004",
+   "ward_name": "Ward 95 Jubilee Hills"
+  },
+  {
+   "cell": "8860a25983fffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a25985fffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a25987fffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a25989fffff",
+   "ward_id": "W004",
+   "ward_name": "Ward 95 Jubilee Hills"
+  },
+  {
+   "cell": "8860a2598bfffff",
+   "ward_id": "W004",
+   "ward_name": "Ward 95 Jubilee Hills"
+  },
+  {
+   "cell": "8860a2598dfffff",
+   "ward_id": "W004",
+   "ward_name": "Ward 95 Jubilee Hills"
+  },
+  {
+   "cell": "8860a25991fffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a25993fffff",
+   "ward_id": "W002",
+   "ward_name": "Ward 105 Gachibowli"
+  },
+  {
+   "cell": "8860a25995fffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a25997fffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a25999fffff",
+   "ward_id": "W002",
+   "ward_name": "Ward 105 Gachibowli"
+  },
+  {
+   "cell": "8860a2599bfffff",
+   "ward_id": "W002",
+   "ward_name": "Ward 105 Gachibowli"
+  },
+  {
+   "cell": "8860a2599dfffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a259a1fffff",
+   "ward_id": "W032",
+   "ward_name": "Ward 116 Allapur"
+  },
+  {
+   "cell": "8860a259a3fffff",
+   "ward_id": "W032",
+   "ward_name": "Ward 116 Allapur"
+  },
+  {
+   "cell": "8860a259a5fffff",
+   "ward_id": "W103",
+   "ward_name": "Ward 115 Balaji Nagar"
+  },
+  {
+   "cell": "8860a259a7fffff",
+   "ward_id": "W103",
+   "ward_name": "Ward 115 Balaji Nagar"
+  },
+  {
+   "cell": "8860a259a9fffff",
+   "ward_id": "W086",
+   "ward_name": "Ward 103 Borabanda"
+  },
+  {
+   "cell": "8860a259abfffff",
+   "ward_id": "W032",
+   "ward_name": "Ward 116 Allapur"
+  },
+  {
+   "cell": "8860a259adfffff",
+   "ward_id": "W032",
+   "ward_name": "Ward 116 Allapur"
+  },
+  {
+   "cell": "8860a259b1fffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a259b3fffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a259b5fffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a259b7fffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a259b9fffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a259bbfffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a259bdfffff",
+   "ward_id": "W035",
+   "ward_name": "Ward 107 Madhapur"
+  },
+  {
+   "cell": "8860a259c1fffff",
+   "ward_id": "W023",
+   "ward_name": "Ward 92 Venkateshwara Colony"
+  },
+  {
+   "cell": "8860a259c3fffff",
+   "ward_id": "W004",
+   "ward_name": "Ward 95 Jubilee Hills"
+  },
+  {
+   "cell": "8860a259c5fffff",
+   "ward_id": "W004",
+   "ward_name": "Ward 95 Jubilee Hills"
+  },
+  {
+   "cell": "8860a259c7fffff",
+   "ward_id": "W004",
+   "ward_name": "Ward 95 Jubilee Hills"
+  },
+  {
+   "cell": "8860a259c9fffff",
+   "ward_id": "W024",
+   "ward_name": "Ward 93 Banjara Hills"
+  },
+  {
+   "cell": "8860a259cbfffff",
+   "ward_id": "W004",
+   "ward_name": "Ward 95 Jubilee Hills"
+  },
+  {
+   "cell": "8860a259cdfffff",
+   "ward_id": "W023",
+   "ward_name": "Ward 92 Venkateshwara Colony"
+  },
+  {
+   "cell": "8860a259d1fffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a259d3fffff",
+   "ward_id": "W002",
+   "ward_name": "Ward 105 Gachibowli"
+  },
+  {
+   "cell": "8860a259d5fffff",
+   "ward_id": "W004",
+   "ward_name": "Ward 95 Jubilee Hills"
+  },
+  {
+   "cell": "8860a259d7fffff",
+   "ward_id": "W039",
+   "ward_name": "Ward 104 Kondapur"
+  },
+  {
+   "cell": "8860a259d9fffff",
+   "ward_id": "W068",
+   "ward_name": "Ward 94 Shaikpet"
+  },
+  {
+   "cell": "8860a259dbfffff",
+   "ward_id": "W068",
+   "ward_name": "Ward 94 Shaikpet"
+  },
+  {
+   "cell": "8860a259ddfffff",
+   "ward_id": "W004",
+   "ward_name": "Ward 95 Jubilee Hills"
+  },
+  {
+   "cell": "8860a259e1fffff",
+   "ward_id": "W084",
+   "ward_name": "Ward 102 Rahmath Nagar"
+  },
+  {
+   "cell": "8860a259e3fffff",
+   "ward_id": "W083",
+   "ward_name": "Ward 96 Yousufguda"
+  },
+  {
+   "cell": "8860a259e5fffff",
+   "ward_id": "W085",
+   "ward_name": "Ward 101 Erragadda"
+  },
+  {
+   "cell": "8860a259e7fffff",
+   "ward_id": "W085",
+   "ward_name": "Ward 101 Erragadda"
+  },
+  {
+   "cell": "8860a259e9fffff",
+   "ward_id": "W083",
+   "ward_name": "Ward 96 Yousufguda"
+  },
+  {
+   "cell": "8860a259ebfffff",
+   "ward_id": "W083",
+   "ward_name": "Ward 96 Yousufguda"
+  },
+  {
+   "cell": "8860a259edfffff",
+   "ward_id": "W087",
+   "ward_name": "Ward 99 Vengal Rao Nagar"
+  },
+  {
+   "cell": "8860a25a01fffff",
+   "ward_id": "W060",
+   "ward_name": "Ward 47 Nawab Saheb Kunta"
+  },
+  {
+   "cell": "8860a25a03fffff",
+   "ward_id": "W137",
+   "ward_name": "Ward 58 Shastripuram"
+  },
+  {
+   "cell": "8860a25a05fffff",
+   "ward_id": "W061",
+   "ward_name": "Ward 54 Jahanuma"
+  },
+  {
+   "cell": "8860a25a07fffff",
+   "ward_id": "W061",
+   "ward_name": "Ward 54 Jahanuma"
+  },
+  {
+   "cell": "8860a25a09fffff",
+   "ward_id": "W059",
+   "ward_name": "Ward 46 Falaknuma"
+  },
+  {
+   "cell": "8860a25a0bfffff",
+   "ward_id": "W137",
+   "ward_name": "Ward 58 Shastripuram"
+  },
+  {
+   "cell": "8860a25a0dfffff",
+   "ward_id": "W059",
+   "ward_name": "Ward 46 Falaknuma"
+  },
+  {
+   "cell": "8860a25a11fffff",
+   "ward_id": "W137",
+   "ward_name": "Ward 58 Shastripuram"
+  },
+  {
+   "cell": "8860a25a13fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25a15fffff",
+   "ward_id": "W137",
+   "ward_name": "Ward 58 Shastripuram"
+  },
+  {
+   "cell": "8860a25a17fffff",
+   "ward_id": "W138",
+   "ward_name": "Ward 57 Suleman Nagar"
+  },
+  {
+   "cell": "8860a25a19fffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25a1bfffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25a1dfffff",
+   "ward_id": "W137",
+   "ward_name": "Ward 58 Shastripuram"
+  },
+  {
+   "cell": "8860a25a21fffff",
+   "ward_id": "W063",
+   "ward_name": "Ward 53 Doodh Bowli"
+  },
+  {
+   "cell": "8860a25a23fffff",
+   "ward_id": "W063",
+   "ward_name": "Ward 53 Doodh Bowli"
+  },
+  {
+   "cell": "8860a25a25fffff",
+   "ward_id": "W067",
+   "ward_name": "Ward 49 Ghansi Bazar"
+  },
+  {
+   "cell": "8860a25a27fffff",
+   "ward_id": "W065",
+   "ward_name": "Ward 52 Puranapool"
+  },
+  {
+   "cell": "8860a25a29fffff",
+   "ward_id": "W057",
+   "ward_name": "Ward 48 Shalibanda"
+  },
+  {
+   "cell": "8860a25a2bfffff",
+   "ward_id": "W063",
+   "ward_name": "Ward 53 Doodh Bowli"
+  },
+  {
+   "cell": "8860a25a2dfffff",
+   "ward_id": "W067",
+   "ward_name": "Ward 49 Ghansi Bazar"
+  },
+  {
+   "cell": "8860a25a31fffff",
+   "ward_id": "W062",
+   "ward_name": "Ward 55 Ramnaspura"
+  },
+  {
+   "cell": "8860a25a33fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25a35fffff",
+   "ward_id": "W062",
+   "ward_name": "Ward 55 Ramnaspura"
+  },
+  {
+   "cell": "8860a25a37fffff",
+   "ward_id": "W139",
+   "ward_name": "Ward 56 Kishanbagh"
+  },
+  {
+   "cell": "8860a25a39fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25a3bfffff",
+   "ward_id": "W137",
+   "ward_name": "Ward 58 Shastripuram"
+  },
+  {
+   "cell": "8860a25a3dfffff",
+   "ward_id": "W062",
+   "ward_name": "Ward 55 Ramnaspura"
+  },
+  {
+   "cell": "8860a25a41fffff",
+   "ward_id": "W144",
+   "ward_name": "Ward 42 Barkas"
+  },
+  {
+   "cell": "8860a25a43fffff",
+   "ward_id": "W144",
+   "ward_name": "Ward 42 Barkas"
+  },
+  {
+   "cell": "8860a25a45fffff",
+   "ward_id": "W058",
+   "ward_name": "Ward 43 Chandrayangutta"
+  },
+  {
+   "cell": "8860a25a47fffff",
+   "ward_id": "W059",
+   "ward_name": "Ward 46 Falaknuma"
+  },
+  {
+   "cell": "8860a25a49fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25a4bfffff",
+   "ward_id": "W144",
+   "ward_name": "Ward 42 Barkas"
+  },
+  {
+   "cell": "8860a25a4dfffff",
+   "ward_id": "W126",
+   "ward_name": "Ward 41 Kanchanbagh"
+  },
+  {
+   "cell": "8860a25a51fffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25a53fffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25a55fffff",
+   "ward_id": "W137",
+   "ward_name": "Ward 58 Shastripuram"
+  },
+  {
+   "cell": "8860a25a57fffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25a59fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25a5bfffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25a5dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25a61fffff",
+   "ward_id": "W054",
+   "ward_name": "Ward 35 Gowlipura"
+  },
+  {
+   "cell": "8860a25a63fffff",
+   "ward_id": "W057",
+   "ward_name": "Ward 48 Shalibanda"
+  },
+  {
+   "cell": "8860a25a65fffff",
+   "ward_id": "W133",
+   "ward_name": "Ward 34 Talab Chanchalam"
+  },
+  {
+   "cell": "8860a25a67fffff",
+   "ward_id": "W054",
+   "ward_name": "Ward 35 Gowlipura"
+  },
+  {
+   "cell": "8860a25a69fffff",
+   "ward_id": "W055",
+   "ward_name": "Ward 44 Uppuguda"
+  },
+  {
+   "cell": "8860a25a6bfffff",
+   "ward_id": "W056",
+   "ward_name": "Ward 45 Jangammet"
+  },
+  {
+   "cell": "8860a25a6dfffff",
+   "ward_id": "W053",
+   "ward_name": "Ward 36 Lalithabagh"
+  },
+  {
+   "cell": "8860a25a81fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25a83fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25a85fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25a87fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25a89fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25a8bfffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25a8dfffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25a91fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25a93fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25a95fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25a97fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25a99fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25a9bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25a9dfffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25aa1fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25aa3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25aa5fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25aa7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25aa9fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25aabfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25aadfffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25ab1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25ab3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25ab5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25ab7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25ab9fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25abbfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25abdfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25ac1fffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25ac3fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25ac5fffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25ac7fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25ac9fffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25acbfffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25acdfffff",
+   "ward_id": "W006",
+   "ward_name": "Ward 59 Mailardevpally"
+  },
+  {
+   "cell": "8860a25ad1fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25ad3fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25ad5fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25ad7fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25ad9fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25adbfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860a25addfffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25ae1fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25ae3fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25ae5fffff",
+   "ward_id": "W138",
+   "ward_name": "Ward 57 Suleman Nagar"
+  },
+  {
+   "cell": "8860a25ae7fffff",
+   "ward_id": "W138",
+   "ward_name": "Ward 57 Suleman Nagar"
+  },
+  {
+   "cell": "8860a25ae9fffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25aebfffff",
+   "ward_id": "W003",
+   "ward_name": "Ward 60 Rajendra Nagar"
+  },
+  {
+   "cell": "8860a25aedfffff",
+   "ward_id": "W138",
+   "ward_name": "Ward 57 Suleman Nagar"
+  },
+  {
+   "cell": "8860a25b01fffff",
+   "ward_id": "W136",
+   "ward_name": "Ward 80 Kachiguda"
+  },
+  {
+   "cell": "8860a25b03fffff",
+   "ward_id": "W040",
+   "ward_name": "Ward 78 Gunfoundry"
+  },
+  {
+   "cell": "8860a25b05fffff",
+   "ward_id": "W136",
+   "ward_name": "Ward 80 Kachiguda"
+  },
+  {
+   "cell": "8860a25b07fffff",
+   "ward_id": "W041",
+   "ward_name": "Ward 79 Himayath Nagar"
+  },
+  {
+   "cell": "8860a25b09fffff",
+   "ward_id": "W121",
+   "ward_name": "Ward 28 Azampura"
+  },
+  {
+   "cell": "8860a25b0bfffff",
+   "ward_id": "W143",
+   "ward_name": "Ward 30 Dabeerpura"
+  },
+  {
+   "cell": "8860a25b0dfffff",
+   "ward_id": "W135",
+   "ward_name": "Ward 82 Golnaka"
+  },
+  {
+   "cell": "8860a25b11fffff",
+   "ward_id": "W130",
+   "ward_name": "Ward 51 Goshamahal"
+  },
+  {
+   "cell": "8860a25b13fffff",
+   "ward_id": "W070",
+   "ward_name": "Ward 63 Mangalhat"
+  },
+  {
+   "cell": "8860a25b15fffff",
+   "ward_id": "W128",
+   "ward_name": "Ward 77 Jambagh"
+  },
+  {
+   "cell": "8860a25b17fffff",
+   "ward_id": "W128",
+   "ward_name": "Ward 77 Jambagh"
+  },
+  {
+   "cell": "8860a25b19fffff",
+   "ward_id": "W129",
+   "ward_name": "Ward 50 Begum Bazar"
+  },
+  {
+   "cell": "8860a25b1bfffff",
+   "ward_id": "W130",
+   "ward_name": "Ward 51 Goshamahal"
+  },
+  {
+   "cell": "8860a25b1dfffff",
+   "ward_id": "W129",
+   "ward_name": "Ward 50 Begum Bazar"
+  },
+  {
+   "cell": "8860a25b21fffff",
+   "ward_id": "W046",
+   "ward_name": "Ward 89 Gandhinagar"
+  },
+  {
+   "cell": "8860a25b23fffff",
+   "ward_id": "W091",
+   "ward_name": "Ward 90 Kavadiguda"
+  },
+  {
+   "cell": "8860a25b25fffff",
+   "ward_id": "W049",
+   "ward_name": "Ward 88 Bholakpur"
+  },
+  {
+   "cell": "8860a25b27fffff",
+   "ward_id": "W049",
+   "ward_name": "Ward 88 Bholakpur"
+  },
+  {
+   "cell": "8860a25b29fffff",
+   "ward_id": "W045",
+   "ward_name": "Ward 87 Ramnagar"
+  },
+  {
+   "cell": "8860a25b2bfffff",
+   "ward_id": "W041",
+   "ward_name": "Ward 79 Himayath Nagar"
+  },
+  {
+   "cell": "8860a25b2dfffff",
+   "ward_id": "W045",
+   "ward_name": "Ward 87 Ramnagar"
+  },
+  {
+   "cell": "8860a25b31fffff",
+   "ward_id": "W040",
+   "ward_name": "Ward 78 Gunfoundry"
+  },
+  {
+   "cell": "8860a25b33fffff",
+   "ward_id": "W127",
+   "ward_name": "Ward 75 Red Hills"
+  },
+  {
+   "cell": "8860a25b35fffff",
+   "ward_id": "W091",
+   "ward_name": "Ward 90 Kavadiguda"
+  },
+  {
+   "cell": "8860a25b37fffff",
+   "ward_id": "W001",
+   "ward_name": "Ward 91 Khairatabad"
+  },
+  {
+   "cell": "8860a25b39fffff",
+   "ward_id": "W040",
+   "ward_name": "Ward 78 Gunfoundry"
+  },
+  {
+   "cell": "8860a25b3bfffff",
+   "ward_id": "W127",
+   "ward_name": "Ward 75 Red Hills"
+  },
+  {
+   "cell": "8860a25b3dfffff",
+   "ward_id": "W041",
+   "ward_name": "Ward 79 Himayath Nagar"
+  },
+  {
+   "cell": "8860a25b41fffff",
+   "ward_id": "W117",
+   "ward_name": "Ward 27 Akbarbagh"
+  },
+  {
+   "cell": "8860a25b43fffff",
+   "ward_id": "W117",
+   "ward_name": "Ward 27 Akbarbagh"
+  },
+  {
+   "cell": "8860a25b45fffff",
+   "ward_id": "W119",
+   "ward_name": "Ward 25 Moosarambagh"
+  },
+  {
+   "cell": "8860a25b47fffff",
+   "ward_id": "W120",
+   "ward_name": "Ward 26 Old Malakpet"
+  },
+  {
+   "cell": "8860a25b49fffff",
+   "ward_id": "W118",
+   "ward_name": "Ward 24 Saidabad"
+  },
+  {
+   "cell": "8860a25b4bfffff",
+   "ward_id": "W117",
+   "ward_name": "Ward 27 Akbarbagh"
+  },
+  {
+   "cell": "8860a25b4dfffff",
+   "ward_id": "W119",
+   "ward_name": "Ward 25 Moosarambagh"
+  },
+  {
+   "cell": "8860a25b51fffff",
+   "ward_id": "W143",
+   "ward_name": "Ward 30 Dabeerpura"
+  },
+  {
+   "cell": "8860a25b53fffff",
+   "ward_id": "W066",
+   "ward_name": "Ward 32 Patthergatti"
+  },
+  {
+   "cell": "8860a25b55fffff",
+   "ward_id": "W121",
+   "ward_name": "Ward 28 Azampura"
+  },
+  {
+   "cell": "8860a25b57fffff",
+   "ward_id": "W066",
+   "ward_name": "Ward 32 Patthergatti"
+  },
+  {
+   "cell": "8860a25b59fffff",
+   "ward_id": "W123",
+   "ward_name": "Ward 37 Rein Bazar"
+  },
+  {
+   "cell": "8860a25b5bfffff",
+   "ward_id": "W133",
+   "ward_name": "Ward 34 Talab Chanchalam"
+  },
+  {
+   "cell": "8860a25b5dfffff",
+   "ward_id": "W122",
+   "ward_name": "Ward 29 Chawni"
+  },
+  {
+   "cell": "8860a25b61fffff",
+   "ward_id": "W042",
+   "ward_name": "Ward 84 Bagh Amberpet"
+  },
+  {
+   "cell": "8860a25b63fffff",
+   "ward_id": "W135",
+   "ward_name": "Ward 82 Golnaka"
+  },
+  {
+   "cell": "8860a25b65fffff",
+   "ward_id": "W042",
+   "ward_name": "Ward 84 Bagh Amberpet"
+  },
+  {
+   "cell": "8860a25b67fffff",
+   "ward_id": "W044",
+   "ward_name": "Ward 85 Adikmet"
+  },
+  {
+   "cell": "8860a25b69fffff",
+   "ward_id": "W135",
+   "ward_name": "Ward 82 Golnaka"
+  },
+  {
+   "cell": "8860a25b6bfffff",
+   "ward_id": "W135",
+   "ward_name": "Ward 82 Golnaka"
+  },
+  {
+   "cell": "8860a25b6dfffff",
+   "ward_id": "W042",
+   "ward_name": "Ward 84 Bagh Amberpet"
+  },
+  {
+   "cell": "8860b19281fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19283fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19289fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1928bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1928dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19291fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19293fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19295fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19297fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19299fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1929bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1929dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b192c3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b192c7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b192cbfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b192d1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b192d3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b192d5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b192d7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b192d9fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b192dbfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b192ddfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19401fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19403fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19405fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19407fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19409fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1940bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1940dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19411fffff",
+   "ward_id": "W029",
+   "ward_name": "Ward 130 Subash Nagar"
+  },
+  {
+   "cell": "8860b19413fffff",
+   "ward_id": "W030",
+   "ward_name": "Ward 129 Suraram"
+  },
+  {
+   "cell": "8860b19415fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19417fffff",
+   "ward_id": "W029",
+   "ward_name": "Ward 130 Subash Nagar"
+  },
+  {
+   "cell": "8860b19419fffff",
+   "ward_id": "W029",
+   "ward_name": "Ward 130 Subash Nagar"
+  },
+  {
+   "cell": "8860b1941bfffff",
+   "ward_id": "W030",
+   "ward_name": "Ward 129 Suraram"
+  },
+  {
+   "cell": "8860b1941dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19439fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1943bfffff",
+   "ward_id": "W029",
+   "ward_name": "Ward 130 Subash Nagar"
+  },
+  {
+   "cell": "8860b19441fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19443fffff",
+   "ward_id": "W028",
+   "ward_name": "Ward 132 Jeedimetla"
+  },
+  {
+   "cell": "8860b19445fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19447fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19449fffff",
+   "ward_id": "W028",
+   "ward_name": "Ward 132 Jeedimetla"
+  },
+  {
+   "cell": "8860b1944bfffff",
+   "ward_id": "W028",
+   "ward_name": "Ward 132 Jeedimetla"
+  },
+  {
+   "cell": "8860b1944dfffff",
+   "ward_id": "W028",
+   "ward_name": "Ward 132 Jeedimetla"
+  },
+  {
+   "cell": "8860b19451fffff",
+   "ward_id": "W029",
+   "ward_name": "Ward 130 Subash Nagar"
+  },
+  {
+   "cell": "8860b19453fffff",
+   "ward_id": "W029",
+   "ward_name": "Ward 130 Subash Nagar"
+  },
+  {
+   "cell": "8860b19455fffff",
+   "ward_id": "W029",
+   "ward_name": "Ward 130 Subash Nagar"
+  },
+  {
+   "cell": "8860b19457fffff",
+   "ward_id": "W029",
+   "ward_name": "Ward 130 Subash Nagar"
+  },
+  {
+   "cell": "8860b19459fffff",
+   "ward_id": "W029",
+   "ward_name": "Ward 130 Subash Nagar"
+  },
+  {
+   "cell": "8860b1945bfffff",
+   "ward_id": "W029",
+   "ward_name": "Ward 130 Subash Nagar"
+  },
+  {
+   "cell": "8860b1945dfffff",
+   "ward_id": "W028",
+   "ward_name": "Ward 132 Jeedimetla"
+  },
+  {
+   "cell": "8860b19461fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19463fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19469fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1946bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1946dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19481fffff",
+   "ward_id": "W031",
+   "ward_name": "Ward 125 Gajularamaram"
+  },
+  {
+   "cell": "8860b19483fffff",
+   "ward_id": "W031",
+   "ward_name": "Ward 125 Gajularamaram"
+  },
+  {
+   "cell": "8860b19485fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19487fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19489fffff",
+   "ward_id": "W031",
+   "ward_name": "Ward 125 Gajularamaram"
+  },
+  {
+   "cell": "8860b1948bfffff",
+   "ward_id": "W031",
+   "ward_name": "Ward 125 Gajularamaram"
+  },
+  {
+   "cell": "8860b1948dfffff",
+   "ward_id": "W030",
+   "ward_name": "Ward 129 Suraram"
+  },
+  {
+   "cell": "8860b19491fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19493fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19495fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19497fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19499fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1949bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1949dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b194b9fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b194bbfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b194c1fffff",
+   "ward_id": "W031",
+   "ward_name": "Ward 125 Gajularamaram"
+  },
+  {
+   "cell": "8860b194c3fffff",
+   "ward_id": "W031",
+   "ward_name": "Ward 125 Gajularamaram"
+  },
+  {
+   "cell": "8860b194c5fffff",
+   "ward_id": "W031",
+   "ward_name": "Ward 125 Gajularamaram"
+  },
+  {
+   "cell": "8860b194c7fffff",
+   "ward_id": "W031",
+   "ward_name": "Ward 125 Gajularamaram"
+  },
+  {
+   "cell": "8860b194c9fffff",
+   "ward_id": "W031",
+   "ward_name": "Ward 125 Gajularamaram"
+  },
+  {
+   "cell": "8860b194cbfffff",
+   "ward_id": "W031",
+   "ward_name": "Ward 125 Gajularamaram"
+  },
+  {
+   "cell": "8860b194cdfffff",
+   "ward_id": "W031",
+   "ward_name": "Ward 125 Gajularamaram"
+  },
+  {
+   "cell": "8860b194d1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b194d3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b194d5fffff",
+   "ward_id": "W031",
+   "ward_name": "Ward 125 Gajularamaram"
+  },
+  {
+   "cell": "8860b194d7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b194d9fffff",
+   "ward_id": "W026",
+   "ward_name": "Ward 124 Alwyn Colony"
+  },
+  {
+   "cell": "8860b194dbfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b194ddfffff",
+   "ward_id": "W031",
+   "ward_name": "Ward 125 Gajularamaram"
+  },
+  {
+   "cell": "8860b194e1fffff",
+   "ward_id": "W030",
+   "ward_name": "Ward 129 Suraram"
+  },
+  {
+   "cell": "8860b194e3fffff",
+   "ward_id": "W030",
+   "ward_name": "Ward 129 Suraram"
+  },
+  {
+   "cell": "8860b194e9fffff",
+   "ward_id": "W030",
+   "ward_name": "Ward 129 Suraram"
+  },
+  {
+   "cell": "8860b194ebfffff",
+   "ward_id": "W030",
+   "ward_name": "Ward 129 Suraram"
+  },
+  {
+   "cell": "8860b194edfffff",
+   "ward_id": "W030",
+   "ward_name": "Ward 129 Suraram"
+  },
+  {
+   "cell": "8860b19601fffff",
+   "ward_id": "W100",
+   "ward_name": "Ward 135 Venkatapuram"
+  },
+  {
+   "cell": "8860b19603fffff",
+   "ward_id": "W099",
+   "ward_name": "Ward 119 Old Bowenpally"
+  },
+  {
+   "cell": "8860b19605fffff",
+   "ward_id": "W100",
+   "ward_name": "Ward 135 Venkatapuram"
+  },
+  {
+   "cell": "8860b19607fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19609fffff",
+   "ward_id": "W100",
+   "ward_name": "Ward 135 Venkatapuram"
+  },
+  {
+   "cell": "8860b1960bfffff",
+   "ward_id": "W100",
+   "ward_name": "Ward 135 Venkatapuram"
+  },
+  {
+   "cell": "8860b1960dfffff",
+   "ward_id": "W100",
+   "ward_name": "Ward 135 Venkatapuram"
+  },
+  {
+   "cell": "8860b19611fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19613fffff",
+   "ward_id": "W095",
+   "ward_name": "Ward 120 Balanagar"
+  },
+  {
+   "cell": "8860b19615fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19617fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19619fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1961bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1961dfffff",
+   "ward_id": "W099",
+   "ward_name": "Ward 119 Old Bowenpally"
+  },
+  {
+   "cell": "8860b19621fffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b19623fffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b19625fffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b19627fffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b19629fffff",
+   "ward_id": "W101",
+   "ward_name": "Ward 134 Alwal"
+  },
+  {
+   "cell": "8860b1962bfffff",
+   "ward_id": "W101",
+   "ward_name": "Ward 134 Alwal"
+  },
+  {
+   "cell": "8860b1962dfffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b19631fffff",
+   "ward_id": "W028",
+   "ward_name": "Ward 132 Jeedimetla"
+  },
+  {
+   "cell": "8860b19633fffff",
+   "ward_id": "W028",
+   "ward_name": "Ward 132 Jeedimetla"
+  },
+  {
+   "cell": "8860b19635fffff",
+   "ward_id": "W028",
+   "ward_name": "Ward 132 Jeedimetla"
+  },
+  {
+   "cell": "8860b19637fffff",
+   "ward_id": "W028",
+   "ward_name": "Ward 132 Jeedimetla"
+  },
+  {
+   "cell": "8860b19639fffff",
+   "ward_id": "W028",
+   "ward_name": "Ward 132 Jeedimetla"
+  },
+  {
+   "cell": "8860b1963bfffff",
+   "ward_id": "W028",
+   "ward_name": "Ward 132 Jeedimetla"
+  },
+  {
+   "cell": "8860b1963dfffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b19641fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19643fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19645fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19647fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19649fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1964bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1964dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19651fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19653fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19655fffff",
+   "ward_id": "W099",
+   "ward_name": "Ward 119 Old Bowenpally"
+  },
+  {
+   "cell": "8860b19657fffff",
+   "ward_id": "W099",
+   "ward_name": "Ward 119 Old Bowenpally"
+  },
+  {
+   "cell": "8860b19659fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1965bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1965dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19661fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19663fffff",
+   "ward_id": "W100",
+   "ward_name": "Ward 135 Venkatapuram"
+  },
+  {
+   "cell": "8860b19665fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19667fffff",
+   "ward_id": "W101",
+   "ward_name": "Ward 134 Alwal"
+  },
+  {
+   "cell": "8860b19669fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1966bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1966dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19681fffff",
+   "ward_id": "W094",
+   "ward_name": "Ward 127 Rangareddy Nagar"
+  },
+  {
+   "cell": "8860b19683fffff",
+   "ward_id": "W096",
+   "ward_name": "Ward 121 Kukatpally"
+  },
+  {
+   "cell": "8860b19685fffff",
+   "ward_id": "W094",
+   "ward_name": "Ward 127 Rangareddy Nagar"
+  },
+  {
+   "cell": "8860b19687fffff",
+   "ward_id": "W096",
+   "ward_name": "Ward 121 Kukatpally"
+  },
+  {
+   "cell": "8860b19689fffff",
+   "ward_id": "W095",
+   "ward_name": "Ward 120 Balanagar"
+  },
+  {
+   "cell": "8860b1968bfffff",
+   "ward_id": "W096",
+   "ward_name": "Ward 121 Kukatpally"
+  },
+  {
+   "cell": "8860b1968dfffff",
+   "ward_id": "W094",
+   "ward_name": "Ward 127 Rangareddy Nagar"
+  },
+  {
+   "cell": "8860b19691fffff",
+   "ward_id": "W103",
+   "ward_name": "Ward 115 Balaji Nagar"
+  },
+  {
+   "cell": "8860b19693fffff",
+   "ward_id": "W103",
+   "ward_name": "Ward 115 Balaji Nagar"
+  },
+  {
+   "cell": "8860b19695fffff",
+   "ward_id": "W096",
+   "ward_name": "Ward 121 Kukatpally"
+  },
+  {
+   "cell": "8860b19697fffff",
+   "ward_id": "W103",
+   "ward_name": "Ward 115 Balaji Nagar"
+  },
+  {
+   "cell": "8860b19699fffff",
+   "ward_id": "W103",
+   "ward_name": "Ward 115 Balaji Nagar"
+  },
+  {
+   "cell": "8860b1969bfffff",
+   "ward_id": "W103",
+   "ward_name": "Ward 115 Balaji Nagar"
+  },
+  {
+   "cell": "8860b1969dfffff",
+   "ward_id": "W096",
+   "ward_name": "Ward 121 Kukatpally"
+  },
+  {
+   "cell": "8860b196a1fffff",
+   "ward_id": "W027",
+   "ward_name": "Ward 128 Chintal"
+  },
+  {
+   "cell": "8860b196a3fffff",
+   "ward_id": "W025",
+   "ward_name": "Ward 126 Jagathgirigutta"
+  },
+  {
+   "cell": "8860b196a5fffff",
+   "ward_id": "W030",
+   "ward_name": "Ward 129 Suraram"
+  },
+  {
+   "cell": "8860b196a7fffff",
+   "ward_id": "W031",
+   "ward_name": "Ward 125 Gajularamaram"
+  },
+  {
+   "cell": "8860b196a9fffff",
+   "ward_id": "W027",
+   "ward_name": "Ward 128 Chintal"
+  },
+  {
+   "cell": "8860b196abfffff",
+   "ward_id": "W027",
+   "ward_name": "Ward 128 Chintal"
+  },
+  {
+   "cell": "8860b196adfffff",
+   "ward_id": "W027",
+   "ward_name": "Ward 128 Chintal"
+  },
+  {
+   "cell": "8860b196b1fffff",
+   "ward_id": "W026",
+   "ward_name": "Ward 124 Alwyn Colony"
+  },
+  {
+   "cell": "8860b196b3fffff",
+   "ward_id": "W026",
+   "ward_name": "Ward 124 Alwyn Colony"
+  },
+  {
+   "cell": "8860b196b5fffff",
+   "ward_id": "W025",
+   "ward_name": "Ward 126 Jagathgirigutta"
+  },
+  {
+   "cell": "8860b196b7fffff",
+   "ward_id": "W026",
+   "ward_name": "Ward 124 Alwyn Colony"
+  },
+  {
+   "cell": "8860b196b9fffff",
+   "ward_id": "W096",
+   "ward_name": "Ward 121 Kukatpally"
+  },
+  {
+   "cell": "8860b196bbfffff",
+   "ward_id": "W098",
+   "ward_name": "Ward 122 Vivekananda Nagar Colony"
+  },
+  {
+   "cell": "8860b196bdfffff",
+   "ward_id": "W025",
+   "ward_name": "Ward 126 Jagathgirigutta"
+  },
+  {
+   "cell": "8860b196c1fffff",
+   "ward_id": "W095",
+   "ward_name": "Ward 120 Balanagar"
+  },
+  {
+   "cell": "8860b196c3fffff",
+   "ward_id": "W095",
+   "ward_name": "Ward 120 Balanagar"
+  },
+  {
+   "cell": "8860b196c5fffff",
+   "ward_id": "W095",
+   "ward_name": "Ward 120 Balanagar"
+  },
+  {
+   "cell": "8860b196c7fffff",
+   "ward_id": "W095",
+   "ward_name": "Ward 120 Balanagar"
+  },
+  {
+   "cell": "8860b196c9fffff",
+   "ward_id": "W095",
+   "ward_name": "Ward 120 Balanagar"
+  },
+  {
+   "cell": "8860b196cbfffff",
+   "ward_id": "W093",
+   "ward_name": "Ward 118 Fateh Nagar"
+  },
+  {
+   "cell": "8860b196cdfffff",
+   "ward_id": "W095",
+   "ward_name": "Ward 120 Balanagar"
+  },
+  {
+   "cell": "8860b196d1fffff",
+   "ward_id": "W093",
+   "ward_name": "Ward 118 Fateh Nagar"
+  },
+  {
+   "cell": "8860b196d3fffff",
+   "ward_id": "W092",
+   "ward_name": "Ward 117 Moosapet"
+  },
+  {
+   "cell": "8860b196d5fffff",
+   "ward_id": "W095",
+   "ward_name": "Ward 120 Balanagar"
+  },
+  {
+   "cell": "8860b196d7fffff",
+   "ward_id": "W103",
+   "ward_name": "Ward 115 Balaji Nagar"
+  },
+  {
+   "cell": "8860b196d9fffff",
+   "ward_id": "W085",
+   "ward_name": "Ward 101 Erragadda"
+  },
+  {
+   "cell": "8860b196dbfffff",
+   "ward_id": "W092",
+   "ward_name": "Ward 117 Moosapet"
+  },
+  {
+   "cell": "8860b196ddfffff",
+   "ward_id": "W093",
+   "ward_name": "Ward 118 Fateh Nagar"
+  },
+  {
+   "cell": "8860b196e1fffff",
+   "ward_id": "W102",
+   "ward_name": "Ward 131 Quthbullapur"
+  },
+  {
+   "cell": "8860b196e3fffff",
+   "ward_id": "W027",
+   "ward_name": "Ward 128 Chintal"
+  },
+  {
+   "cell": "8860b196e5fffff",
+   "ward_id": "W028",
+   "ward_name": "Ward 132 Jeedimetla"
+  },
+  {
+   "cell": "8860b196e7fffff",
+   "ward_id": "W027",
+   "ward_name": "Ward 128 Chintal"
+  },
+  {
+   "cell": "8860b196e9fffff",
+   "ward_id": "W102",
+   "ward_name": "Ward 131 Quthbullapur"
+  },
+  {
+   "cell": "8860b196ebfffff",
+   "ward_id": "W027",
+   "ward_name": "Ward 128 Chintal"
+  },
+  {
+   "cell": "8860b196edfffff",
+   "ward_id": "W102",
+   "ward_name": "Ward 131 Quthbullapur"
+  },
+  {
+   "cell": "8860b19701fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19703fffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b19705fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19707fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19709fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1970bfffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b1970dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19711fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19713fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19715fffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b19717fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19719fffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b1971bfffff",
+   "ward_id": "W028",
+   "ward_name": "Ward 132 Jeedimetla"
+  },
+  {
+   "cell": "8860b1971dfffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b19739fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1973bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19741fffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b19743fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19745fffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b19747fffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b19749fffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b1974bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1974dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19751fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19753fffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b19755fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19757fffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b19759fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1975bfffff",
+   "ward_id": "W007",
+   "ward_name": "Ward 133 Macha Bolarum"
+  },
+  {
+   "cell": "8860b1975dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19763fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b19769fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b1976bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52421fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52423fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52425fffff",
+   "ward_id": "W016",
+   "ward_name": "Ward 14 BN Reddy Nagar"
+  },
+  {
+   "cell": "8860b52427fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b5242dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52435fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52437fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b524a1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b524a3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b524a5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b524a7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b524adfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b524b5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b524b7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52501fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52503fffff",
+   "ward_id": "W017",
+   "ward_name": "Ward 15 Vanasthalipuram"
+  },
+  {
+   "cell": "8860b52505fffff",
+   "ward_id": "W014",
+   "ward_name": "Ward 12 Mansoorabad"
+  },
+  {
+   "cell": "8860b52507fffff",
+   "ward_id": "W014",
+   "ward_name": "Ward 12 Mansoorabad"
+  },
+  {
+   "cell": "8860b52509fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b5250bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b5250dfffff",
+   "ward_id": "W014",
+   "ward_name": "Ward 12 Mansoorabad"
+  },
+  {
+   "cell": "8860b52511fffff",
+   "ward_id": "W017",
+   "ward_name": "Ward 15 Vanasthalipuram"
+  },
+  {
+   "cell": "8860b52513fffff",
+   "ward_id": "W015",
+   "ward_name": "Ward 16 Hasthinapuram"
+  },
+  {
+   "cell": "8860b52515fffff",
+   "ward_id": "W017",
+   "ward_name": "Ward 15 Vanasthalipuram"
+  },
+  {
+   "cell": "8860b52517fffff",
+   "ward_id": "W017",
+   "ward_name": "Ward 15 Vanasthalipuram"
+  },
+  {
+   "cell": "8860b52519fffff",
+   "ward_id": "W016",
+   "ward_name": "Ward 14 BN Reddy Nagar"
+  },
+  {
+   "cell": "8860b5251bfffff",
+   "ward_id": "W016",
+   "ward_name": "Ward 14 BN Reddy Nagar"
+  },
+  {
+   "cell": "8860b5251dfffff",
+   "ward_id": "W016",
+   "ward_name": "Ward 14 BN Reddy Nagar"
+  },
+  {
+   "cell": "8860b52521fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52523fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52525fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52527fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52529fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b5252bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b5252dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52531fffff",
+   "ward_id": "W014",
+   "ward_name": "Ward 12 Mansoorabad"
+  },
+  {
+   "cell": "8860b52533fffff",
+   "ward_id": "W014",
+   "ward_name": "Ward 12 Mansoorabad"
+  },
+  {
+   "cell": "8860b52535fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52537fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52539fffff",
+   "ward_id": "W014",
+   "ward_name": "Ward 12 Mansoorabad"
+  },
+  {
+   "cell": "8860b5253bfffff",
+   "ward_id": "W014",
+   "ward_name": "Ward 12 Mansoorabad"
+  },
+  {
+   "cell": "8860b5253dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52541fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52543fffff",
+   "ward_id": "W016",
+   "ward_name": "Ward 14 BN Reddy Nagar"
+  },
+  {
+   "cell": "8860b52547fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b5254bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52551fffff",
+   "ward_id": "W016",
+   "ward_name": "Ward 14 BN Reddy Nagar"
+  },
+  {
+   "cell": "8860b52553fffff",
+   "ward_id": "W016",
+   "ward_name": "Ward 14 BN Reddy Nagar"
+  },
+  {
+   "cell": "8860b52555fffff",
+   "ward_id": "W016",
+   "ward_name": "Ward 14 BN Reddy Nagar"
+  },
+  {
+   "cell": "8860b52557fffff",
+   "ward_id": "W016",
+   "ward_name": "Ward 14 BN Reddy Nagar"
+  },
+  {
+   "cell": "8860b52559fffff",
+   "ward_id": "W016",
+   "ward_name": "Ward 14 BN Reddy Nagar"
+  },
+  {
+   "cell": "8860b5255bfffff",
+   "ward_id": "W016",
+   "ward_name": "Ward 14 BN Reddy Nagar"
+  },
+  {
+   "cell": "8860b5255dfffff",
+   "ward_id": "W016",
+   "ward_name": "Ward 14 BN Reddy Nagar"
+  },
+  {
+   "cell": "8860b52563fffff",
+   "ward_id": "W014",
+   "ward_name": "Ward 12 Mansoorabad"
+  },
+  {
+   "cell": "8860b52567fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b5256bfffff",
+   "ward_id": "W014",
+   "ward_name": "Ward 12 Mansoorabad"
+  },
+  {
+   "cell": "8860b52581fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52583fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52585fffff",
+   "ward_id": "W116",
+   "ward_name": "Ward 17 Champapet"
+  },
+  {
+   "cell": "8860b52587fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52589fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b5258bfffff",
+   "ward_id": "W015",
+   "ward_name": "Ward 16 Hasthinapuram"
+  },
+  {
+   "cell": "8860b5258dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52591fffff",
+   "ward_id": "W126",
+   "ward_name": "Ward 41 Kanchanbagh"
+  },
+  {
+   "cell": "8860b52593fffff",
+   "ward_id": "W058",
+   "ward_name": "Ward 43 Chandrayangutta"
+  },
+  {
+   "cell": "8860b52595fffff",
+   "ward_id": "W126",
+   "ward_name": "Ward 41 Kanchanbagh"
+  },
+  {
+   "cell": "8860b52597fffff",
+   "ward_id": "W126",
+   "ward_name": "Ward 41 Kanchanbagh"
+  },
+  {
+   "cell": "8860b52599fffff",
+   "ward_id": "W126",
+   "ward_name": "Ward 41 Kanchanbagh"
+  },
+  {
+   "cell": "8860b5259bfffff",
+   "ward_id": "W126",
+   "ward_name": "Ward 41 Kanchanbagh"
+  },
+  {
+   "cell": "8860b5259dfffff",
+   "ward_id": "W126",
+   "ward_name": "Ward 41 Kanchanbagh"
+  },
+  {
+   "cell": "8860b525a1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b525a3fffff",
+   "ward_id": "W115",
+   "ward_name": "Ward 38 IS Sadan"
+  },
+  {
+   "cell": "8860b525a5fffff",
+   "ward_id": "W111",
+   "ward_name": "Ward 23 Gaddiannaram"
+  },
+  {
+   "cell": "8860b525a7fffff",
+   "ward_id": "W118",
+   "ward_name": "Ward 24 Saidabad"
+  },
+  {
+   "cell": "8860b525a9fffff",
+   "ward_id": "W114",
+   "ward_name": "Ward 18 Lingojiguda"
+  },
+  {
+   "cell": "8860b525abfffff",
+   "ward_id": "W115",
+   "ward_name": "Ward 38 IS Sadan"
+  },
+  {
+   "cell": "8860b525adfffff",
+   "ward_id": "W113",
+   "ward_name": "Ward 19 Saroornagar"
+  },
+  {
+   "cell": "8860b525b1fffff",
+   "ward_id": "W125",
+   "ward_name": "Ward 39 Santhosh Nagar"
+  },
+  {
+   "cell": "8860b525b3fffff",
+   "ward_id": "W053",
+   "ward_name": "Ward 36 Lalithabagh"
+  },
+  {
+   "cell": "8860b525b5fffff",
+   "ward_id": "W115",
+   "ward_name": "Ward 38 IS Sadan"
+  },
+  {
+   "cell": "8860b525b7fffff",
+   "ward_id": "W124",
+   "ward_name": "Ward 37 Kurmaguda"
+  },
+  {
+   "cell": "8860b525b9fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b525bbfffff",
+   "ward_id": "W052",
+   "ward_name": "Ward 40 Riyasat Nagar"
+  },
+  {
+   "cell": "8860b525bdfffff",
+   "ward_id": "W116",
+   "ward_name": "Ward 17 Champapet"
+  },
+  {
+   "cell": "8860b525c1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b525c3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b525c5fffff",
+   "ward_id": "W015",
+   "ward_name": "Ward 16 Hasthinapuram"
+  },
+  {
+   "cell": "8860b525c7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b525c9fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b525cbfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b525cdfffff",
+   "ward_id": "W015",
+   "ward_name": "Ward 16 Hasthinapuram"
+  },
+  {
+   "cell": "8860b525d1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b525d3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b525d5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b525d7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b525d9fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b525dbfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b525ddfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b525e1fffff",
+   "ward_id": "W116",
+   "ward_name": "Ward 17 Champapet"
+  },
+  {
+   "cell": "8860b525e3fffff",
+   "ward_id": "W116",
+   "ward_name": "Ward 17 Champapet"
+  },
+  {
+   "cell": "8860b525e5fffff",
+   "ward_id": "W114",
+   "ward_name": "Ward 18 Lingojiguda"
+  },
+  {
+   "cell": "8860b525e7fffff",
+   "ward_id": "W114",
+   "ward_name": "Ward 18 Lingojiguda"
+  },
+  {
+   "cell": "8860b525e9fffff",
+   "ward_id": "W015",
+   "ward_name": "Ward 16 Hasthinapuram"
+  },
+  {
+   "cell": "8860b525ebfffff",
+   "ward_id": "W015",
+   "ward_name": "Ward 16 Hasthinapuram"
+  },
+  {
+   "cell": "8860b525edfffff",
+   "ward_id": "W017",
+   "ward_name": "Ward 15 Vanasthalipuram"
+  },
+  {
+   "cell": "8860b52735fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52737fffff",
+   "ward_id": "W016",
+   "ward_name": "Ward 14 BN Reddy Nagar"
+  },
+  {
+   "cell": "8860b52c01fffff",
+   "ward_id": "W011",
+   "ward_name": "Ward 5 Mallapur"
+  },
+  {
+   "cell": "8860b52c03fffff",
+   "ward_id": "W011",
+   "ward_name": "Ward 5 Mallapur"
+  },
+  {
+   "cell": "8860b52c05fffff",
+   "ward_id": "W011",
+   "ward_name": "Ward 5 Mallapur"
+  },
+  {
+   "cell": "8860b52c07fffff",
+   "ward_id": "W011",
+   "ward_name": "Ward 5 Mallapur"
+  },
+  {
+   "cell": "8860b52c09fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c0bfffff",
+   "ward_id": "W011",
+   "ward_name": "Ward 5 Mallapur"
+  },
+  {
+   "cell": "8860b52c0dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c11fffff",
+   "ward_id": "W005",
+   "ward_name": "Ward 6 Nacharam"
+  },
+  {
+   "cell": "8860b52c13fffff",
+   "ward_id": "W005",
+   "ward_name": "Ward 6 Nacharam"
+  },
+  {
+   "cell": "8860b52c15fffff",
+   "ward_id": "W005",
+   "ward_name": "Ward 6 Nacharam"
+  },
+  {
+   "cell": "8860b52c17fffff",
+   "ward_id": "W018",
+   "ward_name": "Ward 139 East Anand Bagh"
+  },
+  {
+   "cell": "8860b52c19fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c1bfffff",
+   "ward_id": "W005",
+   "ward_name": "Ward 6 Nacharam"
+  },
+  {
+   "cell": "8860b52c1dfffff",
+   "ward_id": "W011",
+   "ward_name": "Ward 5 Mallapur"
+  },
+  {
+   "cell": "8860b52c21fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c23fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c25fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c27fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c29fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c2bfffff",
+   "ward_id": "W011",
+   "ward_name": "Ward 5 Mallapur"
+  },
+  {
+   "cell": "8860b52c2dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c31fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c33fffff",
+   "ward_id": "W018",
+   "ward_name": "Ward 139 East Anand Bagh"
+  },
+  {
+   "cell": "8860b52c35fffff",
+   "ward_id": "W010",
+   "ward_name": "Ward 2 Dr A S Rao Nagar"
+  },
+  {
+   "cell": "8860b52c37fffff",
+   "ward_id": "W018",
+   "ward_name": "Ward 139 East Anand Bagh"
+  },
+  {
+   "cell": "8860b52c39fffff",
+   "ward_id": "W011",
+   "ward_name": "Ward 5 Mallapur"
+  },
+  {
+   "cell": "8860b52c3bfffff",
+   "ward_id": "W011",
+   "ward_name": "Ward 5 Mallapur"
+  },
+  {
+   "cell": "8860b52c3dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c41fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c43fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c47fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c4bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c51fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c53fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c55fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c57fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c59fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c5bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c5dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c63fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c67fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c6bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52c81fffff",
+   "ward_id": "W105",
+   "ward_name": "Ward 144 Mettuguda"
+  },
+  {
+   "cell": "8860b52c83fffff",
+   "ward_id": "W107",
+   "ward_name": "Ward 142 Addagutta"
+  },
+  {
+   "cell": "8860b52c85fffff",
+   "ward_id": "W108",
+   "ward_name": "Ward 141 Gautham Nagar"
+  },
+  {
+   "cell": "8860b52c87fffff",
+   "ward_id": "W088",
+   "ward_name": "Ward 150 Monda Market"
+  },
+  {
+   "cell": "8860b52c89fffff",
+   "ward_id": "W105",
+   "ward_name": "Ward 144 Mettuguda"
+  },
+  {
+   "cell": "8860b52c8bfffff",
+   "ward_id": "W105",
+   "ward_name": "Ward 144 Mettuguda"
+  },
+  {
+   "cell": "8860b52c8dfffff",
+   "ward_id": "W107",
+   "ward_name": "Ward 142 Addagutta"
+  },
+  {
+   "cell": "8860b52c91fffff",
+   "ward_id": "W051",
+   "ward_name": "Ward 147 Bansilapet"
+  },
+  {
+   "cell": "8860b52c93fffff",
+   "ward_id": "W089",
+   "ward_name": "Ward 148 Ramgopalpet"
+  },
+  {
+   "cell": "8860b52c95fffff",
+   "ward_id": "W088",
+   "ward_name": "Ward 150 Monda Market"
+  },
+  {
+   "cell": "8860b52c97fffff",
+   "ward_id": "W088",
+   "ward_name": "Ward 150 Monda Market"
+  },
+  {
+   "cell": "8860b52c99fffff",
+   "ward_id": "W051",
+   "ward_name": "Ward 147 Bansilapet"
+  },
+  {
+   "cell": "8860b52c9bfffff",
+   "ward_id": "W051",
+   "ward_name": "Ward 147 Bansilapet"
+  },
+  {
+   "cell": "8860b52c9dfffff",
+   "ward_id": "W105",
+   "ward_name": "Ward 144 Mettuguda"
+  },
+  {
+   "cell": "8860b52ca1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52ca3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52ca5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52ca7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52ca9fffff",
+   "ward_id": "W108",
+   "ward_name": "Ward 141 Gautham Nagar"
+  },
+  {
+   "cell": "8860b52cabfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52cadfffff",
+   "ward_id": "W110",
+   "ward_name": "Ward 140 Malkajgiri"
+  },
+  {
+   "cell": "8860b52cb1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52cb3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52cb5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52cb7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52cb9fffff",
+   "ward_id": "W088",
+   "ward_name": "Ward 150 Monda Market"
+  },
+  {
+   "cell": "8860b52cbbfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52cbdfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52cc1fffff",
+   "ward_id": "W005",
+   "ward_name": "Ward 6 Nacharam"
+  },
+  {
+   "cell": "8860b52cc3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52cc5fffff",
+   "ward_id": "W104",
+   "ward_name": "Ward 143 Tarnaka"
+  },
+  {
+   "cell": "8860b52cc7fffff",
+   "ward_id": "W105",
+   "ward_name": "Ward 144 Mettuguda"
+  },
+  {
+   "cell": "8860b52cc9fffff",
+   "ward_id": "W021",
+   "ward_name": "Ward 8 Habsiguda"
+  },
+  {
+   "cell": "8860b52ccbfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52ccdfffff",
+   "ward_id": "W005",
+   "ward_name": "Ward 6 Nacharam"
+  },
+  {
+   "cell": "8860b52cd1fffff",
+   "ward_id": "W048",
+   "ward_name": "Ward 146 Boudha Nagar"
+  },
+  {
+   "cell": "8860b52cd3fffff",
+   "ward_id": "W047",
+   "ward_name": "Ward 86 Musheerabad"
+  },
+  {
+   "cell": "8860b52cd5fffff",
+   "ward_id": "W104",
+   "ward_name": "Ward 143 Tarnaka"
+  },
+  {
+   "cell": "8860b52cd7fffff",
+   "ward_id": "W050",
+   "ward_name": "Ward 145 Seethaphalmandi"
+  },
+  {
+   "cell": "8860b52cd9fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52cdbfffff",
+   "ward_id": "W044",
+   "ward_name": "Ward 85 Adikmet"
+  },
+  {
+   "cell": "8860b52cddfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52ce1fffff",
+   "ward_id": "W018",
+   "ward_name": "Ward 139 East Anand Bagh"
+  },
+  {
+   "cell": "8860b52ce3fffff",
+   "ward_id": "W108",
+   "ward_name": "Ward 141 Gautham Nagar"
+  },
+  {
+   "cell": "8860b52ce5fffff",
+   "ward_id": "W018",
+   "ward_name": "Ward 139 East Anand Bagh"
+  },
+  {
+   "cell": "8860b52ce7fffff",
+   "ward_id": "W110",
+   "ward_name": "Ward 140 Malkajgiri"
+  },
+  {
+   "cell": "8860b52ce9fffff",
+   "ward_id": "W104",
+   "ward_name": "Ward 143 Tarnaka"
+  },
+  {
+   "cell": "8860b52cebfffff",
+   "ward_id": "W104",
+   "ward_name": "Ward 143 Tarnaka"
+  },
+  {
+   "cell": "8860b52cedfffff",
+   "ward_id": "W018",
+   "ward_name": "Ward 139 East Anand Bagh"
+  },
+  {
+   "cell": "8860b52d11fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52d13fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52d15fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52d17fffff",
+   "ward_id": "W010",
+   "ward_name": "Ward 2 Dr A S Rao Nagar"
+  },
+  {
+   "cell": "8860b52d19fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52d1bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52d31fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52d33fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52d37fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52d3bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52d81fffff",
+   "ward_id": "W008",
+   "ward_name": "Ward 1 Kapra"
+  },
+  {
+   "cell": "8860b52d83fffff",
+   "ward_id": "W008",
+   "ward_name": "Ward 1 Kapra"
+  },
+  {
+   "cell": "8860b52d85fffff",
+   "ward_id": "W008",
+   "ward_name": "Ward 1 Kapra"
+  },
+  {
+   "cell": "8860b52d87fffff",
+   "ward_id": "W009",
+   "ward_name": "Ward 136 Neredmet"
+  },
+  {
+   "cell": "8860b52d89fffff",
+   "ward_id": "W010",
+   "ward_name": "Ward 2 Dr A S Rao Nagar"
+  },
+  {
+   "cell": "8860b52d8bfffff",
+   "ward_id": "W008",
+   "ward_name": "Ward 1 Kapra"
+  },
+  {
+   "cell": "8860b52d8dfffff",
+   "ward_id": "W008",
+   "ward_name": "Ward 1 Kapra"
+  },
+  {
+   "cell": "8860b52d91fffff",
+   "ward_id": "W009",
+   "ward_name": "Ward 136 Neredmet"
+  },
+  {
+   "cell": "8860b52d93fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52d95fffff",
+   "ward_id": "W009",
+   "ward_name": "Ward 136 Neredmet"
+  },
+  {
+   "cell": "8860b52d97fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52d99fffff",
+   "ward_id": "W009",
+   "ward_name": "Ward 136 Neredmet"
+  },
+  {
+   "cell": "8860b52d9bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52d9dfffff",
+   "ward_id": "W009",
+   "ward_name": "Ward 136 Neredmet"
+  },
+  {
+   "cell": "8860b52da1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52da3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52da5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52da7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52da9fffff",
+   "ward_id": "W008",
+   "ward_name": "Ward 1 Kapra"
+  },
+  {
+   "cell": "8860b52dabfffff",
+   "ward_id": "W009",
+   "ward_name": "Ward 136 Neredmet"
+  },
+  {
+   "cell": "8860b52dadfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52db1fffff",
+   "ward_id": "W009",
+   "ward_name": "Ward 136 Neredmet"
+  },
+  {
+   "cell": "8860b52db3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52db5fffff",
+   "ward_id": "W009",
+   "ward_name": "Ward 136 Neredmet"
+  },
+  {
+   "cell": "8860b52db7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52db9fffff",
+   "ward_id": "W009",
+   "ward_name": "Ward 136 Neredmet"
+  },
+  {
+   "cell": "8860b52dbbfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52dbdfffff",
+   "ward_id": "W009",
+   "ward_name": "Ward 136 Neredmet"
+  },
+  {
+   "cell": "8860b52dc1fffff",
+   "ward_id": "W010",
+   "ward_name": "Ward 2 Dr A S Rao Nagar"
+  },
+  {
+   "cell": "8860b52dc3fffff",
+   "ward_id": "W010",
+   "ward_name": "Ward 2 Dr A S Rao Nagar"
+  },
+  {
+   "cell": "8860b52dc5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52dc7fffff",
+   "ward_id": "W010",
+   "ward_name": "Ward 2 Dr A S Rao Nagar"
+  },
+  {
+   "cell": "8860b52dc9fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52dcbfffff",
+   "ward_id": "W010",
+   "ward_name": "Ward 2 Dr A S Rao Nagar"
+  },
+  {
+   "cell": "8860b52dcdfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52dd1fffff",
+   "ward_id": "W106",
+   "ward_name": "Ward 138 Moula Ali"
+  },
+  {
+   "cell": "8860b52dd3fffff",
+   "ward_id": "W109",
+   "ward_name": "Ward 137 Vinayak Nagar"
+  },
+  {
+   "cell": "8860b52dd5fffff",
+   "ward_id": "W106",
+   "ward_name": "Ward 138 Moula Ali"
+  },
+  {
+   "cell": "8860b52dd7fffff",
+   "ward_id": "W109",
+   "ward_name": "Ward 137 Vinayak Nagar"
+  },
+  {
+   "cell": "8860b52dd9fffff",
+   "ward_id": "W106",
+   "ward_name": "Ward 138 Moula Ali"
+  },
+  {
+   "cell": "8860b52ddbfffff",
+   "ward_id": "W018",
+   "ward_name": "Ward 139 East Anand Bagh"
+  },
+  {
+   "cell": "8860b52dddfffff",
+   "ward_id": "W106",
+   "ward_name": "Ward 138 Moula Ali"
+  },
+  {
+   "cell": "8860b52de1fffff",
+   "ward_id": "W008",
+   "ward_name": "Ward 1 Kapra"
+  },
+  {
+   "cell": "8860b52de3fffff",
+   "ward_id": "W008",
+   "ward_name": "Ward 1 Kapra"
+  },
+  {
+   "cell": "8860b52de5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52de7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52de9fffff",
+   "ward_id": "W010",
+   "ward_name": "Ward 2 Dr A S Rao Nagar"
+  },
+  {
+   "cell": "8860b52debfffff",
+   "ward_id": "W008",
+   "ward_name": "Ward 1 Kapra"
+  },
+  {
+   "cell": "8860b52dedfffff",
+   "ward_id": "W010",
+   "ward_name": "Ward 2 Dr A S Rao Nagar"
+  },
+  {
+   "cell": "8860b52e11fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52e13fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52e15fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52e17fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52e19fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52e1bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52e1dfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52e31fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52e33fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52e35fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52e37fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52e39fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52e3bfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52e53fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52e81fffff",
+   "ward_id": "W013",
+   "ward_name": "Ward 10 Uppal"
+  },
+  {
+   "cell": "8860b52e83fffff",
+   "ward_id": "W022",
+   "ward_name": "Ward 9 Ramanthapur"
+  },
+  {
+   "cell": "8860b52e85fffff",
+   "ward_id": "W013",
+   "ward_name": "Ward 10 Uppal"
+  },
+  {
+   "cell": "8860b52e87fffff",
+   "ward_id": "W013",
+   "ward_name": "Ward 10 Uppal"
+  },
+  {
+   "cell": "8860b52e89fffff",
+   "ward_id": "W020",
+   "ward_name": "Ward 21 Kothapet"
+  },
+  {
+   "cell": "8860b52e8bfffff",
+   "ward_id": "W020",
+   "ward_name": "Ward 21 Kothapet"
+  },
+  {
+   "cell": "8860b52e8dfffff",
+   "ward_id": "W013",
+   "ward_name": "Ward 10 Uppal"
+  },
+  {
+   "cell": "8860b52e91fffff",
+   "ward_id": "W022",
+   "ward_name": "Ward 9 Ramanthapur"
+  },
+  {
+   "cell": "8860b52e93fffff",
+   "ward_id": "W134",
+   "ward_name": "Ward 83 Amberpet"
+  },
+  {
+   "cell": "8860b52e95fffff",
+   "ward_id": "W022",
+   "ward_name": "Ward 9 Ramanthapur"
+  },
+  {
+   "cell": "8860b52e97fffff",
+   "ward_id": "W134",
+   "ward_name": "Ward 83 Amberpet"
+  },
+  {
+   "cell": "8860b52e99fffff",
+   "ward_id": "W112",
+   "ward_name": "Ward 22 Chaitanyapuri"
+  },
+  {
+   "cell": "8860b52e9bfffff",
+   "ward_id": "W112",
+   "ward_name": "Ward 22 Chaitanyapuri"
+  },
+  {
+   "cell": "8860b52e9dfffff",
+   "ward_id": "W112",
+   "ward_name": "Ward 22 Chaitanyapuri"
+  },
+  {
+   "cell": "8860b52ea1fffff",
+   "ward_id": "W012",
+   "ward_name": "Ward 7 Chilka Nagar"
+  },
+  {
+   "cell": "8860b52ea3fffff",
+   "ward_id": "W021",
+   "ward_name": "Ward 8 Habsiguda"
+  },
+  {
+   "cell": "8860b52ea5fffff",
+   "ward_id": "W012",
+   "ward_name": "Ward 7 Chilka Nagar"
+  },
+  {
+   "cell": "8860b52ea7fffff",
+   "ward_id": "W012",
+   "ward_name": "Ward 7 Chilka Nagar"
+  },
+  {
+   "cell": "8860b52ea9fffff",
+   "ward_id": "W012",
+   "ward_name": "Ward 7 Chilka Nagar"
+  },
+  {
+   "cell": "8860b52eabfffff",
+   "ward_id": "W021",
+   "ward_name": "Ward 8 Habsiguda"
+  },
+  {
+   "cell": "8860b52eadfffff",
+   "ward_id": "W013",
+   "ward_name": "Ward 10 Uppal"
+  },
+  {
+   "cell": "8860b52eb1fffff",
+   "ward_id": "W021",
+   "ward_name": "Ward 8 Habsiguda"
+  },
+  {
+   "cell": "8860b52eb3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52eb5fffff",
+   "ward_id": "W021",
+   "ward_name": "Ward 8 Habsiguda"
+  },
+  {
+   "cell": "8860b52eb7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52eb9fffff",
+   "ward_id": "W022",
+   "ward_name": "Ward 9 Ramanthapur"
+  },
+  {
+   "cell": "8860b52ebbfffff",
+   "ward_id": "W021",
+   "ward_name": "Ward 8 Habsiguda"
+  },
+  {
+   "cell": "8860b52ebdfffff",
+   "ward_id": "W021",
+   "ward_name": "Ward 8 Habsiguda"
+  },
+  {
+   "cell": "8860b52ec1fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52ec3fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52ec5fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52ec7fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52ec9fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52ecbfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52ecdfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52ed1fffff",
+   "ward_id": "W019",
+   "ward_name": "Ward 20 RK Puram"
+  },
+  {
+   "cell": "8860b52ed3fffff",
+   "ward_id": "W113",
+   "ward_name": "Ward 19 Saroornagar"
+  },
+  {
+   "cell": "8860b52ed5fffff",
+   "ward_id": "W020",
+   "ward_name": "Ward 21 Kothapet"
+  },
+  {
+   "cell": "8860b52ed7fffff",
+   "ward_id": "W020",
+   "ward_name": "Ward 21 Kothapet"
+  },
+  {
+   "cell": "8860b52ed9fffff",
+   "ward_id": "W019",
+   "ward_name": "Ward 20 RK Puram"
+  },
+  {
+   "cell": "8860b52edbfffff",
+   "ward_id": "W113",
+   "ward_name": "Ward 19 Saroornagar"
+  },
+  {
+   "cell": "8860b52eddfffff",
+   "ward_id": "W019",
+   "ward_name": "Ward 20 RK Puram"
+  },
+  {
+   "cell": "8860b52ee1fffff",
+   "ward_id": "W013",
+   "ward_name": "Ward 10 Uppal"
+  },
+  {
+   "cell": "8860b52ee3fffff",
+   "ward_id": "W013",
+   "ward_name": "Ward 10 Uppal"
+  },
+  {
+   "cell": "8860b52ee5fffff",
+   "ward_id": "W013",
+   "ward_name": "Ward 10 Uppal"
+  },
+  {
+   "cell": "8860b52ee7fffff",
+   "ward_id": "W013",
+   "ward_name": "Ward 10 Uppal"
+  },
+  {
+   "cell": "8860b52ee9fffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  },
+  {
+   "cell": "8860b52eebfffff",
+   "ward_id": "W013",
+   "ward_name": "Ward 10 Uppal"
+  },
+  {
+   "cell": "8860b52eedfffff",
+   "ward_id": "unassigned",
+   "ward_name": "Outside city limits"
+  }
+ ]
+}

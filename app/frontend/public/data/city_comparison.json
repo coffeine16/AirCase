@@ -1,79 +1,214 @@
 [
-  {
-    "city": "bengaluru",
-    "window_end": "2025-11-30",
-    "mode": "live",
-    "detection": {
-      "hotspot_cells": 51,
-      "zones": 6,
-      "enforceable_cells": 51
-    },
-    "attribution": {
-      "named": 51,
-      "by_source": {
-        "industrial": 48,
-        "traffic": 3
-      },
-      "mean_confidence": 0.423
-    },
-    "forecast_skill_vs_persistence_pct": {
-      "h24": 2.2,
-      "h48": -0.4,
-      "h72": 8.2
-    },
-    "fusion_loso_r2": -0.974,
-    "actions_queued": 6,
-    "advisory_wards": 227
+ {
+  "city": "delhi",
+  "window_end": "now",
+  "mode": "live/now",
+  "detection": {
+   "hotspot_cells": 70,
+   "zones": 7,
+   "enforceable_cells": 53
   },
-  {
-    "city": "chennai",
-    "window_end": "2025-11-30",
-    "mode": "live",
-    "detection": {
-      "hotspot_cells": 157,
-      "zones": 2,
-      "enforceable_cells": 157
-    },
-    "attribution": {
-      "named": 100,
-      "by_source": {
-        "industrial": 100
-      },
-      "mean_confidence": 0.471
-    },
-    "forecast_skill_vs_persistence_pct": {
-      "h24": -23.1,
-      "h48": -8.6,
-      "h72": 2.7
-    },
-    "fusion_loso_r2": -0.181,
-    "actions_queued": 2,
-    "advisory_wards": 177
+  "attribution": {
+   "named": 53,
+   "by_source": {
+    "industrial": 15,
+    "waste_burning": 25,
+    "construction": 13
+   },
+   "mean_confidence": 0.444
   },
-  {
-    "city": "delhi",
-    "window_end": "2025-11-30",
-    "mode": "live",
-    "detection": {
-      "hotspot_cells": 70,
-      "zones": 6,
-      "enforceable_cells": 70
-    },
-    "attribution": {
-      "named": 70,
-      "by_source": {
-        "traffic": 40,
-        "waste_burning": 30
-      },
-      "mean_confidence": 0.414
-    },
-    "forecast_skill_vs_persistence_pct": {
-      "h24": -8.7,
-      "h48": 14.7,
-      "h72": 11.0
-    },
-    "fusion_loso_r2": 0.62,
-    "actions_queued": 6,
-    "advisory_wards": 267
-  }
+  "forecast_skill_vs_persistence_pct": {
+   "h24": 2.9,
+   "h48": 12.8,
+   "h72": 7.1
+  },
+  "fusion_loso_r2": 0.377,
+  "actions_queued": 4,
+  "advisory_wards": 267
+ },
+ {
+  "city": "chennai",
+  "window_end": "now",
+  "mode": "live/now",
+  "detection": {
+   "hotspot_cells": 157,
+   "zones": 12,
+   "enforceable_cells": 157
+  },
+  "attribution": {
+   "named": 100,
+   "by_source": {
+    "industrial": 81,
+    "construction": 14,
+    "traffic": 5
+   },
+   "mean_confidence": 0.528
+  },
+  "forecast_skill_vs_persistence_pct": {
+   "h24": -20.6,
+   "h48": -4.9,
+   "h72": 5.9
+  },
+  "fusion_loso_r2": -0.009,
+  "actions_queued": 12,
+  "advisory_wards": 177
+ },
+ {
+  "city": "bengaluru",
+  "window_end": "now",
+  "mode": "live/now",
+  "detection": {
+   "hotspot_cells": 51,
+   "zones": 7,
+   "enforceable_cells": 51
+  },
+  "attribution": {
+   "named": 51,
+   "by_source": {
+    "industrial": 42,
+    "construction": 6,
+    "traffic": 3
+   },
+   "mean_confidence": 0.485
+  },
+  "forecast_skill_vs_persistence_pct": {
+   "h24": null,
+   "h48": null,
+   "h72": null
+  },
+  "fusion_loso_r2": -0.243,
+  "actions_queued": 7,
+  "advisory_wards": 227
+ },
+ {
+  "city": "mumbai",
+  "window_end": "now",
+  "mode": "live/now",
+  "detection": {
+   "hotspot_cells": 115,
+   "zones": 11,
+   "enforceable_cells": 103
+  },
+  "attribution": {
+   "named": 100,
+   "by_source": {
+    "construction": 41,
+    "waste_burning": 22,
+    "traffic": 16,
+    "industrial": 21
+   },
+   "mean_confidence": 0.452
+  },
+  "forecast_skill_vs_persistence_pct": {
+   "h24": null,
+   "h48": null,
+   "h72": null
+  },
+  "fusion_loso_r2": 0.064,
+  "actions_queued": 9,
+  "advisory_wards": 25
+ },
+ {
+  "city": "kolkata",
+  "window_end": "now",
+  "mode": "live/now",
+  "detection": {
+   "hotspot_cells": 59,
+   "zones": 9,
+   "enforceable_cells": 55
+  },
+  "attribution": {
+   "named": 55,
+   "by_source": {
+    "industrial": 55
+   },
+   "mean_confidence": 0.491
+  },
+  "forecast_skill_vs_persistence_pct": {
+   "h24": null,
+   "h48": null,
+   "h72": null
+  },
+  "fusion_loso_r2": 0.646,
+  "actions_queued": 7,
+  "advisory_wards": 102
+ },
+ {
+  "city": "hyderabad",
+  "window_end": "now",
+  "mode": "live/now",
+  "detection": {
+   "hotspot_cells": 60,
+   "zones": 8,
+   "enforceable_cells": 39
+  },
+  "attribution": {
+   "named": 39,
+   "by_source": {
+    "construction": 27,
+    "traffic": 12
+   },
+   "mean_confidence": 0.489
+  },
+  "forecast_skill_vs_persistence_pct": {
+   "h24": null,
+   "h48": null,
+   "h72": null
+  },
+  "fusion_loso_r2": -0.338,
+  "actions_queued": 3,
+  "advisory_wards": 141
+ },
+ {
+  "city": "pune",
+  "window_end": "now",
+  "mode": "live/now",
+  "detection": {
+   "hotspot_cells": 27,
+   "zones": 5,
+   "enforceable_cells": 22
+  },
+  "attribution": {
+   "named": 22,
+   "by_source": {
+    "industrial": 17,
+    "construction": 5
+   },
+   "mean_confidence": 0.302
+  },
+  "forecast_skill_vs_persistence_pct": {
+   "h24": null,
+   "h48": null,
+   "h72": null
+  },
+  "fusion_loso_r2": 0.352,
+  "actions_queued": 2,
+  "advisory_wards": 16
+ },
+ {
+  "city": "ahmedabad",
+  "window_end": "now",
+  "mode": "live/now",
+  "detection": {
+   "hotspot_cells": 41,
+   "zones": 4,
+   "enforceable_cells": 27
+  },
+  "attribution": {
+   "named": 27,
+   "by_source": {
+    "waste_burning": 22,
+    "industrial": 5
+   },
+   "mean_confidence": 0.745
+  },
+  "forecast_skill_vs_persistence_pct": {
+   "h24": null,
+   "h48": null,
+   "h72": null
+  },
+  "fusion_loso_r2": 0.459,
+  "actions_queued": 2,
+  "advisory_wards": 49
+ }
 ]

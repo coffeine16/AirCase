@@ -1,389 +1,46 @@
 {
-  "h3": {
-    "n_test": 574,
-    "rmse_model": 29.94,
-    "rmse_persistence": 17.68,
-    "rmse_diurnal": 31.05,
-    "skill_vs_persistence_pct": -69.3,
-    "skill_vs_diurnal_pct": 3.6
-  },
-  "h6": {
-    "n_test": 568,
-    "rmse_model": 31.65,
-    "rmse_persistence": 20.96,
-    "rmse_diurnal": 30.9,
-    "skill_vs_persistence_pct": -51.0,
-    "skill_vs_diurnal_pct": -2.4
-  },
-  "h9": {
-    "n_test": 562,
-    "rmse_model": 32.77,
-    "rmse_persistence": 22.08,
-    "rmse_diurnal": 30.01,
-    "skill_vs_persistence_pct": -48.4,
-    "skill_vs_diurnal_pct": -9.2
-  },
-  "h12": {
-    "n_test": 556,
-    "rmse_model": 32.76,
-    "rmse_persistence": 22.69,
-    "rmse_diurnal": 29.98,
-    "skill_vs_persistence_pct": -44.4,
-    "skill_vs_diurnal_pct": -9.3
-  },
-  "h15": {
-    "n_test": 550,
-    "rmse_model": 32.24,
-    "rmse_persistence": 24.59,
-    "rmse_diurnal": 30.02,
-    "skill_vs_persistence_pct": -31.1,
-    "skill_vs_diurnal_pct": -7.4
-  },
-  "h18": {
-    "n_test": 544,
-    "rmse_model": 31.87,
-    "rmse_persistence": 25.9,
-    "rmse_diurnal": 29.52,
-    "skill_vs_persistence_pct": -23.0,
-    "skill_vs_diurnal_pct": -8.0
-  },
-  "h21": {
-    "n_test": 538,
-    "rmse_model": 31.73,
-    "rmse_persistence": 26.44,
-    "rmse_diurnal": 28.41,
-    "skill_vs_persistence_pct": -20.0,
-    "skill_vs_diurnal_pct": -11.7
-  },
-  "h24": {
-    "n_test": 532,
-    "rmse_model": 31.43,
-    "rmse_persistence": 26.07,
-    "rmse_diurnal": 28.07,
-    "skill_vs_persistence_pct": -20.6,
-    "skill_vs_diurnal_pct": -12.0
-  },
-  "h27": {
-    "n_test": 526,
-    "rmse_model": 31.52,
-    "rmse_persistence": 27.0,
-    "rmse_diurnal": 28.15,
-    "skill_vs_persistence_pct": -16.8,
-    "skill_vs_diurnal_pct": -12.0
-  },
-  "h30": {
-    "n_test": 520,
-    "rmse_model": 32.17,
-    "rmse_persistence": 28.31,
-    "rmse_diurnal": 27.62,
-    "skill_vs_persistence_pct": -13.6,
-    "skill_vs_diurnal_pct": -16.5
-  },
-  "h33": {
-    "n_test": 514,
-    "rmse_model": 32.45,
-    "rmse_persistence": 28.15,
-    "rmse_diurnal": 26.81,
-    "skill_vs_persistence_pct": -15.3,
-    "skill_vs_diurnal_pct": -21.0
-  },
-  "h36": {
-    "n_test": 508,
-    "rmse_model": 33.22,
-    "rmse_persistence": 28.89,
-    "rmse_diurnal": 26.3,
-    "skill_vs_persistence_pct": -15.0,
-    "skill_vs_diurnal_pct": -26.3
-  },
-  "h39": {
-    "n_test": 502,
-    "rmse_model": 33.8,
-    "rmse_persistence": 30.27,
-    "rmse_diurnal": 25.96,
-    "skill_vs_persistence_pct": -11.7,
-    "skill_vs_diurnal_pct": -30.2
-  },
-  "h42": {
-    "n_test": 496,
-    "rmse_model": 34.01,
-    "rmse_persistence": 31.36,
-    "rmse_diurnal": 25.84,
-    "skill_vs_persistence_pct": -8.5,
-    "skill_vs_diurnal_pct": -31.6
-  },
-  "h45": {
-    "n_test": 490,
-    "rmse_model": 34.29,
-    "rmse_persistence": 32.23,
-    "rmse_diurnal": 25.36,
-    "skill_vs_persistence_pct": -6.4,
-    "skill_vs_diurnal_pct": -35.2
-  },
-  "h48": {
-    "n_test": 484,
-    "rmse_model": 34.1,
-    "rmse_persistence": 32.5,
-    "rmse_diurnal": 24.13,
-    "skill_vs_persistence_pct": -4.9,
-    "skill_vs_diurnal_pct": -41.3
-  },
-  "h51": {
-    "n_test": 478,
-    "rmse_model": 33.98,
-    "rmse_persistence": 33.68,
-    "rmse_diurnal": 24.56,
-    "skill_vs_persistence_pct": -0.9,
-    "skill_vs_diurnal_pct": -38.3
-  },
-  "h54": {
-    "n_test": 472,
-    "rmse_model": 34.26,
-    "rmse_persistence": 34.74,
-    "rmse_diurnal": 23.93,
-    "skill_vs_persistence_pct": 1.4,
-    "skill_vs_diurnal_pct": -43.2
-  },
-  "h57": {
-    "n_test": 466,
-    "rmse_model": 34.64,
-    "rmse_persistence": 35.49,
-    "rmse_diurnal": 24.17,
-    "skill_vs_persistence_pct": 2.4,
-    "skill_vs_diurnal_pct": -43.3
-  },
-  "h60": {
-    "n_test": 460,
-    "rmse_model": 35.05,
-    "rmse_persistence": 36.07,
-    "rmse_diurnal": 24.24,
-    "skill_vs_persistence_pct": 2.8,
-    "skill_vs_diurnal_pct": -44.6
-  },
-  "h63": {
-    "n_test": 454,
-    "rmse_model": 35.24,
-    "rmse_persistence": 36.82,
-    "rmse_diurnal": 24.91,
-    "skill_vs_persistence_pct": 4.3,
-    "skill_vs_diurnal_pct": -41.5
-  },
-  "h66": {
-    "n_test": 448,
-    "rmse_model": 35.32,
-    "rmse_persistence": 37.99,
-    "rmse_diurnal": 24.6,
-    "skill_vs_persistence_pct": 7.0,
-    "skill_vs_diurnal_pct": -43.6
-  },
-  "h69": {
-    "n_test": 442,
-    "rmse_model": 35.6,
-    "rmse_persistence": 38.51,
-    "rmse_diurnal": 24.18,
-    "skill_vs_persistence_pct": 7.6,
-    "skill_vs_diurnal_pct": -47.2
-  },
-  "h72": {
-    "n_test": 436,
-    "rmse_model": 35.72,
-    "rmse_persistence": 37.96,
-    "rmse_diurnal": 23.58,
-    "skill_vs_persistence_pct": 5.9,
-    "skill_vs_diurnal_pct": -51.5
-  },
-  "_oracle_met": {
-    "h3": {
-      "n_test": 574,
-      "rmse_model": 28.29,
-      "rmse_persistence": 17.68,
-      "rmse_diurnal": 31.05,
-      "skill_vs_persistence_pct": -60.0,
-      "skill_vs_diurnal_pct": 8.9
-    },
-    "h6": {
-      "n_test": 568,
-      "rmse_model": 28.84,
-      "rmse_persistence": 20.96,
-      "rmse_diurnal": 30.9,
-      "skill_vs_persistence_pct": -37.6,
-      "skill_vs_diurnal_pct": 6.7
-    },
-    "h9": {
-      "n_test": 562,
-      "rmse_model": 29.41,
-      "rmse_persistence": 22.08,
-      "rmse_diurnal": 30.01,
-      "skill_vs_persistence_pct": -33.2,
-      "skill_vs_diurnal_pct": 2.0
-    },
-    "h12": {
-      "n_test": 556,
-      "rmse_model": 29.76,
-      "rmse_persistence": 22.69,
-      "rmse_diurnal": 29.98,
-      "skill_vs_persistence_pct": -31.2,
-      "skill_vs_diurnal_pct": 0.7
-    },
-    "h15": {
-      "n_test": 550,
-      "rmse_model": 30.05,
-      "rmse_persistence": 24.59,
-      "rmse_diurnal": 30.02,
-      "skill_vs_persistence_pct": -22.2,
-      "skill_vs_diurnal_pct": -0.1
-    },
-    "h18": {
-      "n_test": 544,
-      "rmse_model": 30.45,
-      "rmse_persistence": 25.9,
-      "rmse_diurnal": 29.52,
-      "skill_vs_persistence_pct": -17.5,
-      "skill_vs_diurnal_pct": -3.1
-    },
-    "h21": {
-      "n_test": 538,
-      "rmse_model": 30.66,
-      "rmse_persistence": 26.44,
-      "rmse_diurnal": 28.41,
-      "skill_vs_persistence_pct": -16.0,
-      "skill_vs_diurnal_pct": -7.9
-    },
-    "h24": {
-      "n_test": 532,
-      "rmse_model": 30.92,
-      "rmse_persistence": 26.07,
-      "rmse_diurnal": 28.07,
-      "skill_vs_persistence_pct": -18.6,
-      "skill_vs_diurnal_pct": -10.2
-    },
-    "h27": {
-      "n_test": 526,
-      "rmse_model": 31.19,
-      "rmse_persistence": 27.0,
-      "rmse_diurnal": 28.15,
-      "skill_vs_persistence_pct": -15.5,
-      "skill_vs_diurnal_pct": -10.8
-    },
-    "h30": {
-      "n_test": 520,
-      "rmse_model": 31.45,
-      "rmse_persistence": 28.31,
-      "rmse_diurnal": 27.62,
-      "skill_vs_persistence_pct": -11.1,
-      "skill_vs_diurnal_pct": -13.9
-    },
-    "h33": {
-      "n_test": 514,
-      "rmse_model": 31.71,
-      "rmse_persistence": 28.15,
-      "rmse_diurnal": 26.81,
-      "skill_vs_persistence_pct": -12.7,
-      "skill_vs_diurnal_pct": -18.3
-    },
-    "h36": {
-      "n_test": 508,
-      "rmse_model": 32.08,
-      "rmse_persistence": 28.89,
-      "rmse_diurnal": 26.3,
-      "skill_vs_persistence_pct": -11.0,
-      "skill_vs_diurnal_pct": -22.0
-    },
-    "h39": {
-      "n_test": 502,
-      "rmse_model": 32.52,
-      "rmse_persistence": 30.27,
-      "rmse_diurnal": 25.96,
-      "skill_vs_persistence_pct": -7.4,
-      "skill_vs_diurnal_pct": -25.2
-    },
-    "h42": {
-      "n_test": 496,
-      "rmse_model": 32.87,
-      "rmse_persistence": 31.36,
-      "rmse_diurnal": 25.84,
-      "skill_vs_persistence_pct": -4.8,
-      "skill_vs_diurnal_pct": -27.2
-    },
-    "h45": {
-      "n_test": 490,
-      "rmse_model": 33.31,
-      "rmse_persistence": 32.23,
-      "rmse_diurnal": 25.36,
-      "skill_vs_persistence_pct": -3.3,
-      "skill_vs_diurnal_pct": -31.3
-    },
-    "h48": {
-      "n_test": 484,
-      "rmse_model": 33.42,
-      "rmse_persistence": 32.5,
-      "rmse_diurnal": 24.13,
-      "skill_vs_persistence_pct": -2.8,
-      "skill_vs_diurnal_pct": -38.5
-    },
-    "h51": {
-      "n_test": 478,
-      "rmse_model": 33.71,
-      "rmse_persistence": 33.68,
-      "rmse_diurnal": 24.56,
-      "skill_vs_persistence_pct": -0.1,
-      "skill_vs_diurnal_pct": -37.2
-    },
-    "h54": {
-      "n_test": 472,
-      "rmse_model": 34.0,
-      "rmse_persistence": 34.74,
-      "rmse_diurnal": 23.93,
-      "skill_vs_persistence_pct": 2.1,
-      "skill_vs_diurnal_pct": -42.1
-    },
-    "h57": {
-      "n_test": 466,
-      "rmse_model": 34.29,
-      "rmse_persistence": 35.49,
-      "rmse_diurnal": 24.17,
-      "skill_vs_persistence_pct": 3.4,
-      "skill_vs_diurnal_pct": -41.9
-    },
-    "h60": {
-      "n_test": 460,
-      "rmse_model": 34.51,
-      "rmse_persistence": 36.07,
-      "rmse_diurnal": 24.24,
-      "skill_vs_persistence_pct": 4.3,
-      "skill_vs_diurnal_pct": -42.3
-    },
-    "h63": {
-      "n_test": 454,
-      "rmse_model": 34.7,
-      "rmse_persistence": 36.82,
-      "rmse_diurnal": 24.91,
-      "skill_vs_persistence_pct": 5.7,
-      "skill_vs_diurnal_pct": -39.3
-    },
-    "h66": {
-      "n_test": 448,
-      "rmse_model": 34.9,
-      "rmse_persistence": 37.99,
-      "rmse_diurnal": 24.6,
-      "skill_vs_persistence_pct": 8.1,
-      "skill_vs_diurnal_pct": -41.9
-    },
-    "h69": {
-      "n_test": 442,
-      "rmse_model": 35.39,
-      "rmse_persistence": 38.51,
-      "rmse_diurnal": 24.18,
-      "skill_vs_persistence_pct": 8.1,
-      "skill_vs_diurnal_pct": -46.4
-    },
-    "h72": {
-      "n_test": 436,
-      "rmse_model": 35.58,
-      "rmse_persistence": 37.96,
-      "rmse_diurnal": 23.58,
-      "skill_vs_persistence_pct": 6.3,
-      "skill_vs_diurnal_pct": -50.9
-    }
-  },
-  "_note": "_oracle_met feeds the OBSERVED meteorology at the target hour. That is deliberate leakage and is NOT a result: it is an upper bound on what adding an Open-Meteo met forecast could buy, since a deployed system gets a forecast of that met and forecasts are wrong."
+ "h3": {
+  "n_test": 2547,
+  "rmse_model": 28.83,
+  "rmse_persistence": 32.07,
+  "skill_vs_persistence_pct": 10.1,
+  "interval_coverage_80_pct": 89.6
+ },
+ "h6": {
+  "n_test": 2523,
+  "rmse_model": 30.74,
+  "rmse_persistence": 36.94,
+  "skill_vs_persistence_pct": 16.8,
+  "interval_coverage_80_pct": 86.9
+ },
+ "h12": {
+  "n_test": 2482,
+  "rmse_model": 32.82,
+  "rmse_persistence": 37.7,
+  "skill_vs_persistence_pct": 12.9,
+  "interval_coverage_80_pct": 84.6
+ },
+ "h24": {
+  "n_test": 2420,
+  "rmse_model": 35.58,
+  "rmse_persistence": 40.59,
+  "skill_vs_persistence_pct": 12.4,
+  "interval_coverage_80_pct": 82.1
+ },
+ "h48": {
+  "n_test": 2335,
+  "rmse_model": 37.01,
+  "rmse_persistence": 46.96,
+  "skill_vs_persistence_pct": 21.2,
+  "interval_coverage_80_pct": 82.2
+ },
+ "h72": {
+  "n_test": 2258,
+  "rmse_model": 33.9,
+  "rmse_persistence": 46.51,
+  "skill_vs_persistence_pct": 27.1,
+  "interval_coverage_80_pct": 82.6
+ },
+ "_method": "OUT-OF-SAMPLE. The served quantile model scored only on rows AFTER its training cutoff (2025-11-29), over 2025-11-30..2026-01-10 (14,565 station-cell rows). Climatology is built from the historical panel truncated at the same cutoff, so it cannot leak either. The demo window itself sits INSIDE training for every city, so any skill measured there is memorisation and is not reported here.",
+ "_baseline": "persistence: y_hat(T+h) = y(T)"
 }

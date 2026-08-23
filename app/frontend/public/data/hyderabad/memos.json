@@ -1,0 +1,446 @@
+[
+  {
+    "memo_id": "AQ/HYD/20260822/Z00",
+    "action_id": "A02",
+    "zone_id": "Z00",
+    "ward_id": "W038",
+    "ward_name": "Ward 106 Serilingampally",
+    "issued_at": "2026-08-22T19:23:49.987028+00:00",
+    "status": "draft",
+    "situation": {
+      "source": "construction",
+      "confidence": 0.52,
+      "pm25": 59.0,
+      "aqi": 98,
+      "aqi_category": "Satisfactory",
+      "kind": "emerging",
+      "zone_id": "Z00",
+      "ward_id": "W038",
+      "ward_name": "Ward 106 Serilingampally",
+      "n_cells": 19,
+      "evidence_factors": [
+        "Highest category score of 1.095 for construction",
+        "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
+        "Landuse context includes 7 construction features",
+        "Trapped air conditions with a low boundary layer height of 260 m"
+      ],
+      "fire_hours": 0,
+      "fire_fraction": 0.0,
+      "blh_m": 260,
+      "nearest_candidate_km": null
+    },
+    "legal_basis": [
+      {
+        "id": "CND-2016",
+        "statute": "Construction and Demolition Waste Management Rules, 2016",
+        "provision": "Rules 4 & 8",
+        "summary": "Every waste generator shall prevent dust and segregate and store C&D waste; the local authority shall enforce dust mitigation.",
+        "authority": "Municipal Commissioner / Local Body",
+        "action": "Inspect for anti-smog guns, barricading, covered transport and water sprinkling; issue notice for dust-control non-compliance.",
+        "penalty": "Environmental compensation per CPCB dust-mitigation schedule."
+      }
+    ],
+    "subject": "Air pollution source detected — construction — Ward 106 Serilingampally (zone Z00)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 19 cell(s) in Ward 106 Serilingampally. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 59.0 ug/m3, corresponding to an AQI of 98 (Satisfactory).",
+    "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.52. Supporting evidence: Highest category score of 1.095 for construction; Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment); Landuse context includes 7 construction features. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Construction and Demolition Waste Management Rules, 2016, Rules 4 & 8.",
+    "evidence_chain": [
+      "Highest category score of 1.095 for construction",
+      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
+      "Landuse context includes 7 construction features",
+      "Trapped air conditions with a low boundary layer height of 260 m"
+    ],
+    "evidence_full": {
+      "cell": "8860a24a67fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W038",
+      "pm25_estimate": 49.8,
+      "candidates": [
+        {
+          "name": "construction_915093556",
+          "type": "construction",
+          "distance_km": 0.74,
+          "wind_alignment": 0.67
+        },
+        {
+          "name": "construction_717882945",
+          "type": "construction",
+          "distance_km": 0.17,
+          "wind_alignment": 0.44
+        },
+        {
+          "name": "waste_burning_846897833",
+          "type": "waste_burning",
+          "distance_km": 1.89,
+          "wind_alignment": 0.81
+        },
+        {
+          "name": "construction_1120726024",
+          "type": "construction",
+          "distance_km": 1.62,
+          "wind_alignment": 0.72
+        },
+        {
+          "name": "construction_1152313449",
+          "type": "construction",
+          "distance_km": 1.98,
+          "wind_alignment": 0.68
+        },
+        {
+          "name": "traffic_1415599121",
+          "type": "traffic",
+          "distance_km": 0.87,
+          "wind_alignment": 0.4
+        },
+        {
+          "name": "PJR Flyover",
+          "type": "traffic",
+          "distance_km": 0.87,
+          "wind_alignment": 0.4
+        },
+        {
+          "name": "traffic_1466377021",
+          "type": "traffic",
+          "distance_km": 0.87,
+          "wind_alignment": 0.4
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 108.5,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 21.5,
+          "city_percentile": 48
+        },
+        "aai": {
+          "value": -0.2,
+          "city_percentile": 57
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 15
+      },
+      "meteorology": {
+        "wind_from_deg": 77,
+        "wind_ms": 2.0,
+        "blh_m": 260,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 19
+    },
+    "drafted_by": "rules",
+    "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
+  },
+  {
+    "memo_id": "AQ/HYD/20260822/Z01",
+    "action_id": "A01",
+    "zone_id": "Z01",
+    "ward_id": "W002",
+    "ward_name": "Ward 105 Gachibowli",
+    "issued_at": "2026-08-22T19:23:51.698643+00:00",
+    "status": "draft",
+    "situation": {
+      "source": "construction",
+      "confidence": 0.46,
+      "pm25": 70.9,
+      "aqi": 137,
+      "aqi_category": "Moderate",
+      "kind": "emerging",
+      "zone_id": "Z01",
+      "ward_id": "W002",
+      "ward_name": "Ward 105 Gachibowli",
+      "n_cells": 8,
+      "evidence_factors": [
+        "construction_1523267640 is 5.0 km away, wind alignment 0.85",
+        "shallow boundary layer (270 m) trapping emissions"
+      ],
+      "fire_hours": 0,
+      "fire_fraction": 0.0,
+      "blh_m": 270,
+      "nearest_candidate_km": null
+    },
+    "legal_basis": [
+      {
+        "id": "CND-2016",
+        "statute": "Construction and Demolition Waste Management Rules, 2016",
+        "provision": "Rules 4 & 8",
+        "summary": "Every waste generator shall prevent dust and segregate and store C&D waste; the local authority shall enforce dust mitigation.",
+        "authority": "Municipal Commissioner / Local Body",
+        "action": "Inspect for anti-smog guns, barricading, covered transport and water sprinkling; issue notice for dust-control non-compliance.",
+        "penalty": "Environmental compensation per CPCB dust-mitigation schedule."
+      }
+    ],
+    "subject": "Air pollution source detected — construction — Ward 105 Gachibowli (zone Z01)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 8 cell(s) in Ward 105 Gachibowli. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 70.9 ug/m3, corresponding to an AQI of 137 (Moderate).",
+    "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.46. Supporting evidence: construction_1523267640 is 5.0 km away, wind alignment 0.85; shallow boundary layer (270 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Construction and Demolition Waste Management Rules, 2016, Rules 4 & 8.",
+    "evidence_chain": [
+      "construction_1523267640 is 5.0 km away, wind alignment 0.85",
+      "shallow boundary layer (270 m) trapping emissions"
+    ],
+    "evidence_full": {
+      "cell": "8860a258a7fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W002",
+      "pm25_estimate": 51.9,
+      "candidates": [
+        {
+          "name": "industrial_332096196",
+          "type": "industrial",
+          "distance_km": 3.51,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "industrial_1451064955",
+          "type": "industrial",
+          "distance_km": 3.04,
+          "wind_alignment": 0.65
+        },
+        {
+          "name": "construction_1523267640",
+          "type": "construction",
+          "distance_km": 5.0,
+          "wind_alignment": 0.85
+        },
+        {
+          "name": "construction_1496345308",
+          "type": "construction",
+          "distance_km": 2.71,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Prestige Oberoi (u/c)",
+          "type": "construction",
+          "distance_km": 2.8,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "construction_764360781",
+          "type": "construction",
+          "distance_km": 2.77,
+          "wind_alignment": 0.45
+        },
+        {
+          "name": "construction_253458326",
+          "type": "construction",
+          "distance_km": 4.19,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "construction_1496345303",
+          "type": "construction",
+          "distance_km": 3.42,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 108.5,
+          "city_percentile": 96
+        },
+        "so2_col": {
+          "value": 225.9,
+          "city_percentile": 81
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 52
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 10
+      },
+      "meteorology": {
+        "wind_from_deg": 77,
+        "wind_ms": 2.0,
+        "blh_m": 270,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 8
+    },
+    "drafted_by": "rules",
+    "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
+  },
+  {
+    "memo_id": "AQ/HYD/20260822/Z02",
+    "action_id": "A03",
+    "zone_id": "Z02",
+    "ward_id": "W006",
+    "ward_name": "Ward 59 Mailardevpally",
+    "issued_at": "2026-08-22T19:23:51.698794+00:00",
+    "status": "draft",
+    "situation": {
+      "source": "traffic",
+      "confidence": 0.46,
+      "pm25": 61.4,
+      "aqi": 106,
+      "aqi_category": "Moderate",
+      "kind": "acute",
+      "zone_id": "Z02",
+      "ward_id": "W006",
+      "ward_name": "Ward 59 Mailardevpally",
+      "n_cells": 12,
+      "evidence_factors": [
+        "Inner Ring Road is 2.31 km away, wind alignment 0.95",
+        "NO2 column at p99 citywide",
+        "shallow boundary layer (245 m) trapping emissions"
+      ],
+      "fire_hours": 0,
+      "fire_fraction": 0.0,
+      "blh_m": 245,
+      "nearest_candidate_km": null
+    },
+    "legal_basis": [
+      {
+        "id": "AIR-1981-20",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 20",
+        "summary": "Power to give instructions to the authority in charge of registration of motor vehicles to ensure compliance with emission standards.",
+        "authority": "State Government / Transport Department, on SPCB advice",
+        "action": "Direct PUC enforcement drives and lane/corridor checks on this stretch; verify PUC compliance of commercial fleets using it.",
+        "penalty": "Driving in contravention of emission standards is punishable under s.190(2) of the Motor Vehicles Act, 1988."
+      }
+    ],
+    "subject": "Air pollution source detected — traffic — Ward 59 Mailardevpally (zone Z02)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 12 cell(s) in Ward 59 Mailardevpally. The zone is classified 'acute'. Estimated PM2.5 in the zone is 61.4 ug/m3, corresponding to an AQI of 106 (Moderate).",
+    "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.46. Supporting evidence: Inner Ring Road is 2.31 km away, wind alignment 0.95; NO2 column at p99 citywide; shallow boundary layer (245 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20.",
+    "evidence_chain": [
+      "Inner Ring Road is 2.31 km away, wind alignment 0.95",
+      "NO2 column at p99 citywide",
+      "shallow boundary layer (245 m) trapping emissions"
+    ],
+    "evidence_full": {
+      "cell": "8860a25123fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W006",
+      "pm25_estimate": 53.5,
+      "candidates": [
+        {
+          "name": "Katedan Industrial Area",
+          "type": "industrial",
+          "distance_km": 0.89,
+          "wind_alignment": 0.92
+        },
+        {
+          "name": "Katedan Industrial Area",
+          "type": "industrial",
+          "distance_km": 1.43,
+          "wind_alignment": 0.95
+        },
+        {
+          "name": "Inner Ring Road",
+          "type": "traffic",
+          "distance_km": 2.31,
+          "wind_alignment": 0.95
+        },
+        {
+          "name": "Inner Ring Road",
+          "type": "traffic",
+          "distance_km": 2.39,
+          "wind_alignment": 0.96
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 1.3,
+          "wind_alignment": 0.64
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 1.3,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "Inner Ring Road",
+          "type": "traffic",
+          "distance_km": 2.17,
+          "wind_alignment": 0.85
+        },
+        {
+          "name": "Inner Ring Road",
+          "type": "traffic",
+          "distance_km": 2.18,
+          "wind_alignment": 0.85
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 132.4,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": -348.8,
+          "city_percentile": 3
+        },
+        "aai": {
+          "value": -0.6,
+          "city_percentile": 35
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 1,
+        "waste_burning": 0,
+        "traffic": 33
+      },
+      "meteorology": {
+        "wind_from_deg": 55,
+        "wind_ms": 1.9,
+        "blh_m": 245,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 12
+    },
+    "drafted_by": "rules",
+    "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
+  }
+]

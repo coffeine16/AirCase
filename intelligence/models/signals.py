@@ -28,7 +28,7 @@ import numpy as np
 import pandas as pd
 import h3
 
-from shared.config import DETECT_WINDOWS_H, CONTRAST_INNER_K, CONTRAST_OUTER_K
+from shared.config import CONTRAST_INNER_K, CONTRAST_OUTER_K
 from shared.grid import circular_mean_deg
 
 MAD_SCALE = 1.4826   # makes MAD comparable to sigma for normally-distributed data
@@ -60,24 +60,6 @@ def robust_z(values: pd.Series | np.ndarray) -> np.ndarray:
     if scale < EPS:
         return np.zeros_like(v)
     return (v - med) / scale
-
-
-def window_medians(df: pd.DataFrame, value_col: str, at: pd.Timestamp,
-                   windows: dict[str, int] | None = None) -> pd.DataFrame:
-    """Per-cell median of `value_col` over each trailing window ending at `at`.
-
-    Returns one row per cell, one column per window (`w24h`, `w7d`, `w30d`), plus
-    a per-window robust z against the citywide distribution of those medians.
-    """
-    windows = windows or DETECT_WINDOWS_H
-    out = None
-    for name, hours in windows.items():
-        w = df[(df.ts > at - pd.Timedelta(hours=hours)) & (df.ts <= at)]
-        med = w.groupby("cell")[value_col].median().rename(name)
-        part = med.to_frame()
-        part[f"z_{name}"] = robust_z(med.values)
-        out = part if out is None else out.join(part, how="outer")
-    return out.reset_index()
 
 
 def neighbourhood_contrast(values: pd.Series, inner_k: int = CONTRAST_INNER_K,

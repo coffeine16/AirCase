@@ -24,6 +24,7 @@ from shared.config import DATA_RAW, DATA_OUT
 from shared.grid import cell_center, haversine_km, bearing_deg, wind_alignment, circular_mean_deg
 from shared.wards import ward_frame
 from intelligence.agents.llm_gateway import complete_json
+from intelligence.models.forecast.spatial import DIST_DECAY_KM
 
 CATEGORIES = ["industrial", "construction", "waste_burning", "traffic"]
 MAX_SOURCE_KM = 5.0
@@ -131,7 +132,12 @@ def category_scores(ev: dict) -> dict:
         #
         # The right question is "how strong is the BEST candidate of this type",
         # which is what an inspector would ask.
-        v = cand["wind_alignment"] * np.exp(-cand["distance_km"] / 2.0)
+        # DIST_DECAY_KM, not a second, unreconciled literal -- imported from
+        # spatial.py so the two kernels can never silently diverge (they
+        # did: this used to hardcode its own 2.0, and the test meant to
+        # catch a mismatch only ever re-checked spatial.py's own constant
+        # against itself, never attribution.py's actual behaviour).
+        v = cand["wind_alignment"] * np.exp(-cand["distance_km"] / DIST_DECAY_KM)
         s[cand["type"]] = max(s[cand["type"]], v)
     # SO2 -> industrial and AAI -> burning are GONE as scoring signals.
     #

@@ -7,6 +7,7 @@ Sentinel-5P via Google Earth Engine lives in ingest/sentinel_gee.py (needs
 a GEE service account; synthetic satellite is used until that's configured).
 """
 import os
+import socket
 import sys
 import json
 import time
@@ -18,7 +19,41 @@ import pandas as pd
 from shared.config import (BBOX, DATA_RAW, OPENAQ_URL, OPENMETEO_URL,
                            OPENMETEO_ARCHIVE_URL, FIRMS_URL, OVERPASS_URL,
                            PANEL_HOURS, window_end)
-from shared.grid import latlng_to_cell
+from shared.grid import latlng_to_cell, weather_grid_cells, cell_center
+
+
+# Prefer IPv4 when resolving any host this module talks to.
+#
+# On an IPv6-only mobile network with DNS64/NAT64 (India's carriers do this --
+# the giveaway is a synthesised AAAA under the well-known 64:ff9b::/96 prefix),
+# every collector host resolves to an IPv6 address first. urllib then connects
+# to THAT and only that: unlike curl and the browsers, it has no Happy Eyeballs
+# (RFC 8305), so it never races the A record and never falls back. The NAT64
+# path here silently eats the TLS ClientHello, so the handshake sits until it
+# times out. Measured on api.openaq.org: three consecutive 60-second timeouts
+# from urllib while `curl https://api.openaq.org` returned 200 in 1.1s from the
+# same shell, and the same request forced to IPv4 returned 200 in 0.9s.
+#
+# The failure is worth defending against because of WHERE it lands: a collector
+# raising mid-ingest sends pollers.run() into its synthetic fallback, and a live
+# run that quietly turns synthetic is exactly the scientifically-invalid mix this
+# file's NO_FALLBACK guard exists to prevent. (It did prevent it -- the Mumbai
+# run aborted rather than emit a fake world -- but the right outcome is the real
+# fetch succeeding.)
+#
+# This REORDERS, it does not filter: IPv6 entries stay in the list, just after
+# the IPv4 ones, so a genuinely IPv6-only host is still reachable and a normal
+# dual-stack network is unaffected. socket.create_connection walks the list in
+# order, so "first that connects" is all this changes.
+_getaddrinfo_orig = socket.getaddrinfo
+
+
+def _ipv4_first(*args, **kwargs):
+    res = _getaddrinfo_orig(*args, **kwargs)
+    return sorted(res, key=lambda r: 0 if r[0] == socket.AF_INET else 1)
+
+
+socket.getaddrinfo = _ipv4_first
 
 
 def _get(url: str, headers: dict | None = None, timeout: int = 30) -> bytes:
@@ -158,26 +193,47 @@ def _qc_stations(df: pd.DataFrame) -> pd.DataFrame:
 
 # ------------------------------------------------------------ Open-Meteo
 def fetch_weather(days: int | None = None) -> pd.DataFrame:
-    """Hourly wind, temp, boundary layer height for the city centre. Keyless.
+    """Hourly wind, temp, boundary layer height, per weather-grid cell. Keyless.
+
+    One point was a real bug, not just low resolution: wind speed/direction and
+    boundary layer height genuinely vary across a city (confirmed live -- res-6
+    H3 cells on real Delhi return distinct values, not noise, see
+    shared.grid.WEATHER_GRID_RES), and the anisotropic wind-decay physics this
+    project depends on needs a real per-cell wind vector, not one citywide number
+    stretched over every cell. Open-Meteo takes comma-joined multi-point
+    lat/lon on both endpoints used below, so this is one request per city, not N.
 
     Must cover the SAME window as the stations: build_panel() intersects the two,
     so whichever is shorter silently truncates the panel. `past_days` was 14 while
     the panel spans 60. (Open-Meteo allows up to 92.)
     """
     days = days or PANEL_HOURS // 24
-    lat = (BBOX["lat_min"] + BBOX["lat_max"]) / 2
-    lon = (BBOX["lon_min"] + BBOX["lon_max"]) / 2
+    grid_cells = weather_grid_cells()
+    centers = [cell_center(c) for c in grid_cells]
+    lats = ",".join(f"{lat:.4f}" for lat, _ in centers)
+    lons = ",".join(f"{lon:.4f}" for _, lon in centers)
     end = window_end()
     start = end - pd.Timedelta(days=days)
 
-    # The forecast endpoint only reaches ~92 days back. A historical episode needs
-    # the ERA5 archive, which is a different host entirely — and still carries
-    # boundary_layer_height, which is the single strongest meteorological predictor
-    # we have (a shallow boundary layer traps everything).
-    historical = (pd.Timestamp.now("UTC").normalize() - end).days > 60
+    # The forecast endpoint only reaches ~92 days back FROM NOW — its past_days
+    # param is always relative to the current moment, it cannot target an
+    # arbitrary end date. A historical episode needs the ERA5 archive, which is
+    # a different host entirely — and still carries boundary_layer_height, the
+    # single strongest meteorological predictor we have (a shallow boundary
+    # layer traps everything).
+    #
+    # Checking only how far END is in the past silently breaks a long backfill
+    # that ends "now" (AQ_WINDOW_END unset): end - now is always ~0 days, so
+    # this always picked the forecast endpoint regardless of `days`, capping a
+    # requested 730-day window at past_days's 92-day ceiling with no error.
+    # Measured: 5 cities backfilled with `--days 730` and no AQ_WINDOW_END all
+    # got ~95 days of weather (92 past + 3 forecast) while their station pulls
+    # correctly covered the full 2 years — a silent truncation, not a failure,
+    # so nothing here ever raised.
+    historical = days > 92 or (pd.Timestamp.now("UTC").normalize() - end).days > 60
     if historical:
         q = urllib.parse.urlencode({
-            "latitude": lat, "longitude": lon,
+            "latitude": lats, "longitude": lons,
             "start_date": str(start.date()), "end_date": str(end.date()),
             "hourly": "wind_speed_10m,wind_direction_10m,temperature_2m,boundary_layer_height",
             "wind_speed_unit": "ms",
@@ -185,19 +241,29 @@ def fetch_weather(days: int | None = None) -> pd.DataFrame:
         url = f"{OPENMETEO_ARCHIVE_URL}?{q}"
     else:
         q = urllib.parse.urlencode({
-            "latitude": lat, "longitude": lon,
+            "latitude": lats, "longitude": lons,
             "hourly": "wind_speed_10m,wind_direction_10m,temperature_2m,boundary_layer_height",
             "past_days": min(days, 92), "forecast_days": 3, "wind_speed_unit": "ms",
         })
         url = f"{OPENMETEO_URL}?{q}"
-    j = json.loads(_get(url, timeout=90))["hourly"]
-    return pd.DataFrame({
-        "ts": pd.to_datetime(j["time"]),
-        "wind_from_deg": j["wind_direction_10m"],
-        "wind_ms": j["wind_speed_10m"],
-        "blh_m": j["boundary_layer_height"],
-        "temp_c": j["temperature_2m"],
-    })
+    # A single-point request returns one bare object; multi-point returns a list
+    # in the SAME order the points were submitted (verified against a live 5-point
+    # response) -- so a length-1 grid still has to be handled here without an extra
+    # query.
+    parsed = json.loads(_get(url, timeout=180))
+    locations = parsed if isinstance(parsed, list) else [parsed]
+    frames = []
+    for cell, loc in zip(grid_cells, locations):
+        j = loc["hourly"]
+        frames.append(pd.DataFrame({
+            "weather_cell": cell,
+            "ts": pd.to_datetime(j["time"]),
+            "wind_from_deg": j["wind_direction_10m"],
+            "wind_ms": j["wind_speed_10m"],
+            "blh_m": j["boundary_layer_height"],
+            "temp_c": j["temperature_2m"],
+        }))
+    return pd.concat(frames, ignore_index=True)
 
 
 # ----------------------------------------------------------------- FIRMS

@@ -1,0 +1,3189 @@
+[
+  {
+    "ward_id": "W001",
+    "ward_name": "Ward 93",
+    "pm25": 76.0,
+    "aqi": 154,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 26,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 93 is moderate (AQI 154). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W003",
+    "ward_name": "Ward 86",
+    "pm25": 71.3,
+    "aqi": 138,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 41,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 86 is moderate (AQI 138). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W004",
+    "ward_name": "Ward 90",
+    "pm25": 72.0,
+    "aqi": 141,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 36,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 90 is moderate (AQI 141). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W005",
+    "ward_name": "Ward 26",
+    "pm25": 70.7,
+    "aqi": 136,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 14,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 26 is moderate (AQI 136). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W006",
+    "ward_name": "Ward 72",
+    "pm25": 76.4,
+    "aqi": 155,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 39,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 72 is moderate (AQI 155). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W008",
+    "ward_name": "Ward 99",
+    "pm25": 76.4,
+    "aqi": 155,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 14,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 99 is moderate (AQI 155). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W010",
+    "ward_name": "Ward 118",
+    "pm25": 73.0,
+    "aqi": 144,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 10,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 118 is moderate (AQI 144). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W011",
+    "ward_name": "Ward 83",
+    "pm25": 73.6,
+    "aqi": 146,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 31,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 83 is moderate (AQI 146). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W014",
+    "ward_name": "Ward 115",
+    "pm25": 73.3,
+    "aqi": 145,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 10,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 115 is moderate (AQI 145). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W015",
+    "ward_name": "Ward 68",
+    "pm25": 72.0,
+    "aqi": 141,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 29,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 68 is moderate (AQI 141). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W017",
+    "ward_name": "Ward 12",
+    "pm25": 71.2,
+    "aqi": 138,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 14,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 12 is moderate (AQI 138). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W018",
+    "ward_name": "Ward 108",
+    "pm25": 75.7,
+    "aqi": 153,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 13,
+    "vulnerability": {
+      "schools_hospitals_nearby": 10,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 108 is moderate (AQI 153). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W019",
+    "ward_name": "Ward 110",
+    "pm25": 75.9,
+    "aqi": 153,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 13,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 110 is moderate (AQI 153). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W022",
+    "ward_name": "Ward 7",
+    "pm25": 70.5,
+    "aqi": 136,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 11,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 7 is moderate (AQI 136). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W023",
+    "ward_name": "Ward 16",
+    "pm25": 69.8,
+    "aqi": 133,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 18,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 16 is moderate (AQI 133). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W027",
+    "ward_name": "Ward 25",
+    "pm25": 70.7,
+    "aqi": 136,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 24,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 25 is moderate (AQI 136). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W028",
+    "ward_name": "Ward 60",
+    "pm25": 70.8,
+    "aqi": 137,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 50,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 60 is moderate (AQI 137). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W029",
+    "ward_name": "Ward 10",
+    "pm25": 70.9,
+    "aqi": 137,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 10,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 10 is moderate (AQI 137). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W031",
+    "ward_name": "Ward 71",
+    "pm25": 73.9,
+    "aqi": 147,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 33,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 71 is moderate (AQI 147). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W032",
+    "ward_name": "Ward 91",
+    "pm25": 77.2,
+    "aqi": 158,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 21,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 91 is moderate (AQI 158). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W034",
+    "ward_name": "Ward 96",
+    "pm25": 75.9,
+    "aqi": 154,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 21,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 96 is moderate (AQI 154). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W036",
+    "ward_name": "Ward 44",
+    "pm25": 71.7,
+    "aqi": 140,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 28,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 44 is moderate (AQI 140). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W037",
+    "ward_name": "Ward 85",
+    "pm25": 74.8,
+    "aqi": 150,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 42,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 85 is moderate (AQI 150). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W039",
+    "ward_name": "Ward 67",
+    "pm25": 77.1,
+    "aqi": 157,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 17,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 67 is moderate (AQI 157). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W041",
+    "ward_name": "Ward 74",
+    "pm25": 73.1,
+    "aqi": 144,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 38,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 74 is moderate (AQI 144). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W042",
+    "ward_name": "Ward 87",
+    "pm25": 73.8,
+    "aqi": 147,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 25,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 87 is moderate (AQI 147). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W044",
+    "ward_name": "Ward 69",
+    "pm25": 70.5,
+    "aqi": 136,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 55,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 69 is moderate (AQI 136). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W049",
+    "ward_name": "Ward 29",
+    "pm25": 76.2,
+    "aqi": 154,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 19,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 29 is moderate (AQI 154). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W051",
+    "ward_name": "Ward 32",
+    "pm25": 71.4,
+    "aqi": 139,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 21,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 32 is moderate (AQI 139). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W052",
+    "ward_name": "Ward 57",
+    "pm25": 75.4,
+    "aqi": 152,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 13,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 57 is moderate (AQI 152). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W054",
+    "ward_name": "Ward 106",
+    "pm25": 75.6,
+    "aqi": 152,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 12,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 106 is moderate (AQI 152). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W058",
+    "ward_name": "Ward 81",
+    "pm25": 73.2,
+    "aqi": 145,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 16,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 81 is moderate (AQI 145). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W060",
+    "ward_name": "Ward 53",
+    "pm25": 71.0,
+    "aqi": 137,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 38,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 53 is moderate (AQI 137). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W064",
+    "ward_name": "Ward 105",
+    "pm25": 76.1,
+    "aqi": 154,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 18,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 105 is moderate (AQI 154). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W067",
+    "ward_name": "Ward 46",
+    "pm25": 73.7,
+    "aqi": 146,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 22,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 46 is moderate (AQI 146). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W069",
+    "ward_name": "Ward 82",
+    "pm25": 73.5,
+    "aqi": 146,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 21,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 82 is moderate (AQI 146). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W071",
+    "ward_name": "Ward 56",
+    "pm25": 75.6,
+    "aqi": 152,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 26,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 56 is moderate (AQI 152). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W073",
+    "ward_name": "Ward 36",
+    "pm25": 76.2,
+    "aqi": 154,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 32,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 36 is moderate (AQI 154). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W075",
+    "ward_name": "Ward 37",
+    "pm25": 71.0,
+    "aqi": 137,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 32,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 37 is moderate (AQI 137). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W077",
+    "ward_name": "Ward 23",
+    "pm25": 71.7,
+    "aqi": 140,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 15,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 23 is moderate (AQI 140). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W080",
+    "ward_name": "Ward 33",
+    "pm25": 76.4,
+    "aqi": 155,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 18,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 33 is moderate (AQI 155). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W081",
+    "ward_name": "Ward 103",
+    "pm25": 76.6,
+    "aqi": 156,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 12,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 103 is moderate (AQI 156). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W082",
+    "ward_name": "Ward 13",
+    "pm25": 71.2,
+    "aqi": 138,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 13,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 13 is moderate (AQI 138). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W083",
+    "ward_name": "Ward 66",
+    "pm25": 76.7,
+    "aqi": 156,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 24,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 66 is moderate (AQI 156). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W085",
+    "ward_name": "Ward 63",
+    "pm25": 75.2,
+    "aqi": 151,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 5,
+    "vulnerability": {
+      "schools_hospitals_nearby": 45,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 63 is moderate (AQI 151). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W086",
+    "ward_name": "Ward 21",
+    "pm25": 72.6,
+    "aqi": 143,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 13,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 21 is moderate (AQI 143). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W088",
+    "ward_name": "Ward 70",
+    "pm25": 70.4,
+    "aqi": 135,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 49,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 70 is moderate (AQI 135). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W089",
+    "ward_name": "Ward 45",
+    "pm25": 72.0,
+    "aqi": 141,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 12,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 45 is moderate (AQI 141). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W090",
+    "ward_name": "Ward 100",
+    "pm25": 76.1,
+    "aqi": 154,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 15,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 100 is moderate (AQI 154). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W091",
+    "ward_name": "Ward 92",
+    "pm25": 77.2,
+    "aqi": 158,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 27,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 92 is moderate (AQI 158). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W093",
+    "ward_name": "Ward 114",
+    "pm25": 73.1,
+    "aqi": 144,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 11,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 114 is moderate (AQI 144). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W094",
+    "ward_name": "Ward 101",
+    "pm25": 75.7,
+    "aqi": 153,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 16,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 101 is moderate (AQI 153). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W096",
+    "ward_name": "Ward 31",
+    "pm25": 76.1,
+    "aqi": 154,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 24,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 31 is moderate (AQI 154). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W097",
+    "ward_name": "Ward 104",
+    "pm25": 75.6,
+    "aqi": 152,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 18,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 104 is moderate (AQI 152). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W098",
+    "ward_name": "Ward 5",
+    "pm25": 71.3,
+    "aqi": 138,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 10,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 5 is moderate (AQI 138). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W100",
+    "ward_name": "Ward 14",
+    "pm25": 71.2,
+    "aqi": 138,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 19,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 14 is moderate (AQI 138). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W101",
+    "ward_name": "Ward 111",
+    "pm25": 76.0,
+    "aqi": 154,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 10,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 111 is moderate (AQI 154). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W102",
+    "ward_name": "Ward 130",
+    "pm25": 73.6,
+    "aqi": 146,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 12,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 130 is moderate (AQI 146). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W103",
+    "ward_name": "Ward 19",
+    "pm25": 72.8,
+    "aqi": 143,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 10,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 19 is moderate (AQI 143). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W104",
+    "ward_name": "Ward 78",
+    "pm25": 74.2,
+    "aqi": 148,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 17,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 78 is moderate (AQI 148). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W106",
+    "ward_name": "Ward 98",
+    "pm25": 75.9,
+    "aqi": 153,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 10,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 98 is moderate (AQI 153). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W107",
+    "ward_name": "Ward 6",
+    "pm25": 74.8,
+    "aqi": 150,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 13,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 6 is moderate (AQI 150). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W108",
+    "ward_name": "Ward 2",
+    "pm25": 75.2,
+    "aqi": 151,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 13,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 2 is moderate (AQI 151). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W109",
+    "ward_name": "Ward 59",
+    "pm25": 76.2,
+    "aqi": 154,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 17,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 59 is moderate (AQI 154). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W114",
+    "ward_name": "Ward 120",
+    "pm25": 73.5,
+    "aqi": 146,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 12,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 120 is moderate (AQI 146). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W116",
+    "ward_name": "Ward 1",
+    "pm25": 66.4,
+    "aqi": 122,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 12,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 1 is moderate (AQI 122). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W117",
+    "ward_name": "Ward 80",
+    "pm25": 74.1,
+    "aqi": 148,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 12,
+    "vulnerability": {
+      "schools_hospitals_nearby": 13,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 80 is moderate (AQI 148). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W118",
+    "ward_name": "Ward 55",
+    "pm25": 75.7,
+    "aqi": 153,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 37,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 55 is moderate (AQI 153). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W120",
+    "ward_name": "Ward 107",
+    "pm25": 75.9,
+    "aqi": 153,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 11,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 107 is moderate (AQI 153). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W121",
+    "ward_name": "Ward 77",
+    "pm25": 73.7,
+    "aqi": 146,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 16,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 77 is moderate (AQI 146). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W122",
+    "ward_name": "Ward 28",
+    "pm25": 70.2,
+    "aqi": 135,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 18,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 28 is moderate (AQI 135). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W125",
+    "ward_name": "Ward 65",
+    "pm25": 71.3,
+    "aqi": 138,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 38,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 65 is moderate (AQI 138). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W128",
+    "ward_name": "Ward 50",
+    "pm25": 70.5,
+    "aqi": 136,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 36,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 50 is moderate (AQI 136). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W130",
+    "ward_name": "Ward 94",
+    "pm25": 74.5,
+    "aqi": 149,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 19,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 94 is moderate (AQI 149). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W131",
+    "ward_name": "Ward 79",
+    "pm25": 74.0,
+    "aqi": 147,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 17,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 79 is moderate (AQI 147). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W135",
+    "ward_name": "Ward 97",
+    "pm25": 73.9,
+    "aqi": 147,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 12,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 97 is moderate (AQI 147). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W137",
+    "ward_name": "Ward 35",
+    "pm25": 75.7,
+    "aqi": 153,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 21,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 35 is moderate (AQI 153). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W139",
+    "ward_name": "Ward 95",
+    "pm25": 73.2,
+    "aqi": 145,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 13,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 95 is moderate (AQI 145). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W140",
+    "ward_name": "Ward 30",
+    "pm25": 76.3,
+    "aqi": 155,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 19,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 30 is moderate (AQI 155). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W141",
+    "ward_name": "Ward 58",
+    "pm25": 75.7,
+    "aqi": 153,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 15,
+    "vulnerability": {
+      "schools_hospitals_nearby": 14,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 58 is moderate (AQI 153). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "unassigned",
+    "ward_name": "Outside city limits",
+    "pm25": 73.0,
+    "aqi": 144,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.43,
+    "worsening": false,
+    "n_cells": 257,
+    "vulnerability": {
+      "schools_hospitals_nearby": 38,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Outside city limits is moderate (AQI 144). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W063",
+    "ward_name": "Ward 117",
+    "pm25": 73.8,
+    "aqi": 147,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.415,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 9,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 117 is moderate (AQI 147). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W072",
+    "ward_name": "Ward 3",
+    "pm25": 75.5,
+    "aqi": 152,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.415,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 9,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 3 is moderate (AQI 152). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W084",
+    "ward_name": "Ward 123",
+    "pm25": 73.8,
+    "aqi": 147,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.415,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 9,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 123 is moderate (AQI 147). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W123",
+    "ward_name": "Ward 112",
+    "pm25": 74.9,
+    "aqi": 150,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.415,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 9,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 112 is moderate (AQI 150). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W127",
+    "ward_name": "Ward 128",
+    "pm25": 73.8,
+    "aqi": 147,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.415,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 9,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 128 is moderate (AQI 147). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W046",
+    "ward_name": "Ward 119",
+    "pm25": 72.8,
+    "aqi": 143,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.4,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 8,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 119 is moderate (AQI 143). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W048",
+    "ward_name": "Ward 122",
+    "pm25": 73.6,
+    "aqi": 146,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.4,
+    "worsening": false,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 8,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 122 is moderate (AQI 146). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W050",
+    "ward_name": "Ward 109",
+    "pm25": 76.1,
+    "aqi": 154,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.4,
+    "worsening": false,
+    "n_cells": 7,
+    "vulnerability": {
+      "schools_hospitals_nearby": 8,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 109 is moderate (AQI 154). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W055",
+    "ward_name": "Ward 4",
+    "pm25": 75.1,
+    "aqi": 151,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.4,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 8,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 4 is moderate (AQI 151). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W070",
+    "ward_name": "Ward 124",
+    "pm25": 73.0,
+    "aqi": 144,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.4,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 8,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 124 is moderate (AQI 144). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W112",
+    "ward_name": "Ward 129",
+    "pm25": 73.8,
+    "aqi": 147,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.4,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 8,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 129 is moderate (AQI 147). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W129",
+    "ward_name": "Ward 113",
+    "pm25": 73.3,
+    "aqi": 145,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.4,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 8,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 113 is moderate (AQI 145). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W138",
+    "ward_name": "Ward 116",
+    "pm25": 73.5,
+    "aqi": 146,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.4,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 8,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 116 is moderate (AQI 146). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W043",
+    "ward_name": "Ward 132",
+    "pm25": 73.1,
+    "aqi": 144,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.385,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 7,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 132 is moderate (AQI 144). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W009",
+    "ward_name": "Ward 125",
+    "pm25": 73.7,
+    "aqi": 146,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "moderate",
+    "risk_score": 0.37,
+    "worsening": false,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 6,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 125 is moderate (AQI 146). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W099",
+    "ward_name": "Ward 126",
+    "pm25": 73.8,
+    "aqi": 146,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "low",
+    "risk_score": 0.31,
+    "worsening": false,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 2,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 126 is moderate (AQI 146). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W110",
+    "ward_name": "Ward 131",
+    "pm25": 73.4,
+    "aqi": 145,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "low",
+    "risk_score": 0.31,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 2,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 131 is moderate (AQI 145). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W007",
+    "ward_name": "Ward 134",
+    "pm25": 73.5,
+    "aqi": 146,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "low",
+    "risk_score": 0.295,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 1,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 134 is moderate (AQI 146). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W059",
+    "ward_name": "Ward 127",
+    "pm25": 73.8,
+    "aqi": 147,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "low",
+    "risk_score": 0.295,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 1,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 127 is moderate (AQI 147). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W062",
+    "ward_name": "Ward 135",
+    "pm25": 73.4,
+    "aqi": 145,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "low",
+    "risk_score": 0.28,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 0,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 135 is moderate (AQI 145). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W124",
+    "ward_name": "Ward 133",
+    "pm25": 73.5,
+    "aqi": 146,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "low",
+    "risk_score": 0.28,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 0,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 133 is moderate (AQI 146). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  }
+]

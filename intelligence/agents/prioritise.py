@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 from shared.config import DATA_OUT, BBOX
 from shared.grid import cell_center, haversine_km
 from shared.routing import route_waypoints
+from intelligence.agents.detect import ATTRIBUTABLE_KM
 
 COVER_RADIUS_KM = 2.0
 
@@ -34,8 +35,16 @@ def calculate_eps(zone_cells: List[Dict], attributions: Dict[str, Dict], panel: 
     kind = zone_cells[0].get("kind", "chronic")
     kind_weight = {"acute": 1.0, "emerging": 0.8, "chronic": 0.6}.get(kind, 0.6)
     
+    # Reuse detect.py's OWN attributability distance rather than a second,
+    # independent number: detect.py measured that 3km was a tautology on real
+    # cities (every hotspot in 3 real cities sat within 3km of SOME candidate,
+    # so the test never discriminated) and moved to 0.5km. A zone only reaches
+    # this function at all if it's already `attributable` at that threshold, so
+    # re-testing against a stale 3.0km here silently drifted back to the number
+    # detect.py explicitly rejected — always reading 1.0 for distance-attributed
+    # zones and hiding the real 0.5km/fire-only distinction.
     nearest_candidate_km = min(cell.get("nearest_candidate_km", 99.0) for cell in zone_cells)
-    locatable = 1.0 if nearest_candidate_km <= 3.0 else 0.6
+    locatable = 1.0 if nearest_candidate_km <= ATTRIBUTABLE_KM else 0.6
     
     attributable = zone_cells[0].get("attributable", True)
     base = 1.0 if attributable else 0.0
@@ -52,7 +61,15 @@ def calculate_eps(zone_cells: List[Dict], attributions: Dict[str, Dict], panel: 
         zone_panel = panel[panel.cell.isin(cell_ids)]
         if not zone_panel.empty:
             max_sensitive = zone_panel["lu_sensitive"].max()
-            vulnerability = min(max_sensitive / 5.0, 1.0)
+            # City-relative, not a fixed count of 5. Bengaluru, Delhi and Chennai
+            # carry very different school/hospital densities per 1.5km — the same
+            # "constant tuned once" problem as detect.py's old pm25 denominator.
+            # p95 across every cell in THIS city's panel is "how crowded with
+            # sensitive sites does it get here", so a zone scores high for
+            # standing out in its own city, not against an arbitrary count.
+            city_ref = float(panel["lu_sensitive"].quantile(0.95))
+            city_ref = max(city_ref, 1.0)
+            vulnerability = min(max_sensitive / city_ref, 1.0)
         else:
             vulnerability = 0.0
     else:

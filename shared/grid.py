@@ -9,16 +9,53 @@ import numpy as np
 
 from shared.config import BBOX, H3_RES
 
+# Coarse H3 res for weather query points: ~3.2 km edge. Matched to two things
+# measured, not guessed: (1) a live Open-Meteo multi-point probe shows real,
+# distinct wind_speed/wind_direction/boundary_layer_height at this spacing
+# across Delhi's bbox, not just noise; (2) it lands in the same order of
+# magnitude as real inter-station spacing (Delhi ~2.8 km, Bengaluru ~4.2 km
+# median), which independently correlates with each city's own best-fit spatial
+# decay length. H3_RES - 3 (~8.5 km) was tried first and undershoots badly (2-4
+# points citywide); H3_RES - 1 (~1.2 km) queries well past what a 2-year, 34-
+# point pull already costs (61s/city at res 6 -- res 7 would be ~7x the points).
+# Derived from H3_RES rather than hardcoded so a city's grid scales with its own
+# bbox: a bigger city gets more weather points for free, no per-city config.
+WEATHER_GRID_RES = H3_RES - 2
 
-def city_cells(res: int = H3_RES) -> list[str]:
-    """All H3 cells whose center falls inside the city bbox."""
-    poly = h3.LatLngPoly([
+
+def _bbox_poly() -> "h3.LatLngPoly":
+    return h3.LatLngPoly([
         (BBOX["lat_min"], BBOX["lon_min"]),
         (BBOX["lat_min"], BBOX["lon_max"]),
         (BBOX["lat_max"], BBOX["lon_max"]),
         (BBOX["lat_max"], BBOX["lon_min"]),
     ])
-    return sorted(h3.polygon_to_cells(poly, res))
+
+
+def city_cells(res: int = H3_RES) -> list[str]:
+    """All H3 cells whose center falls inside the city bbox."""
+    return sorted(h3.polygon_to_cells(_bbox_poly(), res))
+
+
+def weather_grid_cells(res: int = WEATHER_GRID_RES) -> list[str]:
+    """Coarse H3 cells covering the city bbox -- one weather query point each.
+
+    Derived from city_cells()'s ACTUAL parents at `res`, not a second,
+    independent polygon_to_cells(bbox, res) call. Those two are not the same
+    set: polygon_to_cells only keeps a coarse cell whose OWN center falls
+    inside the bbox, but a boundary fine cell's parent center can sit just
+    outside it -- measured on real Chennai data, that gap orphaned 11% of the
+    city's cells (every one of their weather columns silently NaN). Deriving
+    the coarse grid from the fine cells' real parents instead guarantees
+    every fine cell has a covering point, by construction.
+    """
+    return sorted({cell_to_weather_cell(c, res) for c in city_cells()})
+
+
+def cell_to_weather_cell(cell: str, res: int = WEATHER_GRID_RES) -> str:
+    """The weather grid cell a fine H3 cell belongs to -- exact parent lookup,
+    no nearest-neighbour search needed (H3 cells are hierarchical)."""
+    return h3.cell_to_parent(cell, res)
 
 
 def cell_center(cell: str) -> tuple[float, float]:

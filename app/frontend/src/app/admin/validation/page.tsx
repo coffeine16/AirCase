@@ -86,7 +86,7 @@ export default function ValidationPage() {
       {/* ── Forecast skill: the brief's explicit metric ─────────────────────── */}
       <Section
         title="Forecast skill vs persistence"
-        sub="The brief asks for RMSE against a persistence baseline. Persistence (&ldquo;tomorrow ≈ today&rdquo;) is excellent short-term and decays with horizon; the model does not. Live runs, real stations."
+        sub="The brief asks for RMSE against a persistence baseline. Persistence (&ldquo;tomorrow ≈ today&rdquo;) is excellent short-term and decays with horizon; the model does not. Measured OUT OF SAMPLE: the served model is scored only on hours after its training cutoff (30 Nov 2025 &ndash; 14 Jan 2026), with climatology truncated at the same cutoff so it cannot leak. A dash means that city has not been scored out of sample &mdash; its training runs to Aug 2026, leaving too short a window to measure honestly, so we report nothing rather than a number from data the model has already seen."
       >
         <div className="card" style={{ padding: 0, overflow: "hidden" }}>
           <div className="scroll-x">

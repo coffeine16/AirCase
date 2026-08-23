@@ -1,0 +1,64 @@
+[
+  {
+    "team_id": "T1",
+    "stops": [
+      {
+        "seq": 1,
+        "action_id": "A03",
+        "zone_id": "Z02",
+        "ward_id": "W006",
+        "eps": 51.4,
+        "lat": 17.3149,
+        "lon": 78.4234
+      }
+    ],
+    "route_km": 0.0,
+    "route_duration_min": 0.0,
+    "coverage_pct": 65.8,
+    "route_geometry": []
+  },
+  {
+    "team_id": "T2",
+    "stops": [
+      {
+        "seq": 1,
+        "action_id": "A01",
+        "zone_id": "Z01",
+        "ward_id": "W002",
+        "eps": 55.1,
+        "lat": 17.4173,
+        "lon": 78.3684
+      }
+    ],
+    "route_km": 0.0,
+    "route_duration_min": 0.0,
+    "coverage_pct": 65.8,
+    "route_geometry": []
+  },
+  {
+    "team_id": "T3",
+    "stops": [
+      {
+        "seq": 1,
+        "action_id": "A02",
+        "zone_id": "Z00",
+        "ward_id": "W038",
+        "eps": 63.0,
+        "lat": 17.4413,
+        "lon": 78.3681
+      }
+    ],
+    "route_km": 0.0,
+    "route_duration_min": 0.0,
+    "coverage_pct": 65.8,
+    "route_geometry": []
+  },
+  {
+    "team_id": "T4",
+    "stops": [],
+    "route_km": 0.0,
+    "route_duration_min": 0.0,
+    "coverage_pct": 65.8,
+    "route_geometry": []
+  }
+]

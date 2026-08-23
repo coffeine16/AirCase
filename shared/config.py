@@ -48,6 +48,14 @@ CITIES = {
     "bengaluru": {"lat_min": 12.85, "lat_max": 13.10, "lon_min": 77.45, "lon_max": 77.75},
     "delhi":     {"lat_min": 28.45, "lat_max": 28.75, "lon_min": 76.95, "lon_max": 77.35},
     "chennai":   {"lat_min": 12.95, "lat_max": 13.20, "lon_min": 80.12, "lon_max": 80.32},
+    # Added for historical-backfill coverage expansion (data/historical/<city>/).
+    # Each confirmed via a real OpenAQ v3 /locations pm25 query before being added
+    # here — see scratchfile_notes for the per-city station counts.
+    "mumbai":    {"lat_min": 18.89, "lat_max": 19.27, "lon_min": 72.77, "lon_max": 72.99},
+    "kolkata":   {"lat_min": 22.45, "lat_max": 22.65, "lon_min": 88.28, "lon_max": 88.45},
+    "hyderabad": {"lat_min": 17.30, "lat_max": 17.55, "lon_min": 78.35, "lon_max": 78.60},
+    "pune":      {"lat_min": 18.45, "lat_max": 18.65, "lon_min": 73.75, "lon_max": 73.95},
+    "ahmedabad": {"lat_min": 22.95, "lat_max": 23.15, "lon_min": 72.50, "lon_max": 72.70},
 }
 CITY = os.environ.get("AQ_CITY", "bengaluru").lower()
 if CITY not in CITIES:

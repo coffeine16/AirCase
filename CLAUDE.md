@@ -10,7 +10,7 @@ for *why* things are shaped the way they are.
 
 ## Monorepo layout (one deployable unit per top-level folder)
 - `app/` — presentation: FastAPI serving layer (`app/backend/main.py`) +
-  frontend (React+Vite+Leaflet, not yet built)
+  frontend (React+Vite+Leaflet — built, multi-city, deployed on Vercel)
 - `ingestion/` — data platform: `collectors/` (6 sources, live API + synthetic
   fallback per source) + `preprocessing/panel.py` (cell x hour feature table)
   + `synthetic.py` (adversarial hidden-source world for offline dev + truth-scored eval)
@@ -161,26 +161,84 @@ leakage before you assume success.
   - attribution **100%** (16/16, all unregistered); fusion LOSO R2 **0.898**
   - ⚠️ These are small n. Never sell 2/2 as a rate.
 - 🌍 **Real Delhi, November 2025 (every source live).** The number that matters:
-  - **Bhalswa landfill -> `waste_burning`, confidence 0.67**, evidence
+  - **Bhalswa landfill -> `waste_burning`, confidence 0.84**, evidence
     *"satellite fire detections in 30 hours (18% of the window)"*. A real polluter,
     in a real city, from public satellite data, with an evidence chain anyone can
     check by googling "Bhalswa landfill fire November 2025".
-  - **Forecast — THREE real cities, and the DIRECTION is the finding.** Skill vs
-    persistence (Nov 2025, 14-day held-out tail, real CPCB/TNPCB stations):
+  - **Forecast — the ONLY honest skill number is out-of-sample, and getting one
+    takes work.** The quantile model trains on `data/historical/`, whose windows
+    END 2025-11-29 for Delhi/Chennai/Bengaluru and 2026-08-15 for the other five.
+    The demo window (2025-10-01..11-29) is INSIDE training for all eight, so any
+    skill measured there is memorisation — measured, it inflates to +33..60%
+    against the +9.4% the trainer earned honestly. See the gotcha below.
+
+    So Delhi, Chennai and Bengaluru were re-ingested through 2026-01-15 and
+    scored ONLY on rows after their training cutoff (2025-11-29). Climatology is
+    built from the historical panel truncated at the same cutoff, so it cannot
+    leak either. 175,585 station-cell rows in total, 2025-11-30 .. 2026-01-14:
+
     | horizon | Delhi | Chennai | Bengaluru | verdict |
     |---|---|---|---|---|
-    | 24h | -23% | -6% | -0% | **persistence WINS, 3/3** |
-    | 48h | +12% | -5% | +3% | mixed — the crossover |
-    | 72h | +2% | +14% | +10% | **model WINS, 3/3** |
-    Persistence is excellent short-term and DECAYS with horizon; the model does not.
-    48-72h is the enforcement-scheduling window ("stagnant winds Thursday, act
-    before"). **Quote the direction, not the decimal** — the exact % moves with how
-    many stations OpenAQ serves that day (same Delhi window has returned 26/22/20
-    stations across sessions). Byte-reproducible within a session; drifts across days.
-  - Okhla -> `traffic` (it genuinely sits on Mathura Road; defensible, incomplete).
-    Ghazipur -> not detected (no fires in the window).
-  - ❌ **The fusion exposure claim is WITHDRAWN.** On real Delhi it is **14% worse
-    than a naive city-mean** (RMSE 75.4 vs 66.0, LOSO R2 0.52). We tried predicting
+    | 3h  | **-21.3%** | +10.1% | +3.2% | persistence wins Delhi |
+    | 24h | +4.6% | +12.4% | +8.4% | **model wins 3/3** |
+    | 48h | +17.5% | +21.2% | +13.0% | **model wins 3/3** |
+    | 72h | +20.3% | +27.1% | +12.1% | **model wins 3/3** |
+
+    The old single-file model had persistence winning 3/3 at 24h; the quantile
+    model wins 3/3 at 24h, 48h and 72h out-of-sample. 48-72h is the
+    enforcement-scheduling window ("stagnant winds Thursday, act before"), and
+    that is where the margin is largest. **Quote the direction, not the
+    decimal.**
+
+    Interval coverage lands 74-90% against an 80% target across the three
+    (Delhi 74-78, Bengaluru 80-84, Chennai 82-90) — i.e. the interval is broadly
+    calibrated, and Delhi's band is WIDE because Delhi's air genuinely swings
+    that much, not because it is broken. It still does not widen enough with
+    horizon: Delhi's coverage drifts 78.1% -> 74.4% from h3 to h72 while model
+    RMSE grows 81 -> 92, so `interval_scale` being ONE global number costs a few
+    points at long lead.
+
+    The model's own manifest reports **+9.4% walk-forward median over 19 folds**
+    across all eight cities. That is the number to quote when a per-city
+    out-of-sample eval has not been run — it is the only other one earned
+    honestly.
+  - Okhla -> `waste_burning` (confidence 0.42, 1.33 km). It previously came back
+    as `traffic` — defensible, since it sits on Mathura Road, but incomplete.
+    That weak spot has closed. Ghazipur -> still not detected (no fires in window).
+  - 🌏 **EIGHT cities, all live, one window (Oct 1 – Nov 29 2025).** Every city
+    is a full run over real S5P + FIRMS + OpenAQ + OSM, 9/9 agents, on real
+    municipal ward boundaries (Datameet). November is deliberate: it is burning
+    season in the north, when both detector instruments can see. The same run in
+    August is monsoon — cloud masks NO2 and nothing burns.
+
+    | city | cells/zones | stations | FIRMS/60d | fusion vs naive |
+    |---|---|---|---|---|
+    | delhi | 70 / 7 | 22 | many | **30% worse** |
+    | chennai | 157 / 12 | 5 | – | 2% worse |
+    | bengaluru | 51 / 7 | 10 | – | 11% worse |
+    | mumbai | 115 / 11 | 21 | 8 | 12% worse |
+    | kolkata | 59 / 9 | 4 | 3 | 3% *better* (n=4, noise) |
+    | hyderabad | 60 / 8 | 6 | 1 | **19% worse** |
+    | pune | 27 / 5 | 9 | 7 | 8% worse |
+    | ahmedabad | 41 / 4 | 4 | **42** | 3% worse |
+
+  - 🔥 **A SECOND real polluter, found the same way.** Ahmedabad's only chronic
+    `waste_burning` zone sits **0.44 km from Pirana landfill** — 84 hectares, in
+    use since 1982, a long public record of fires. Ahmedabad is also the only new
+    city with real thermal signal (42 FIRMS detections vs Mumbai 8, Pune 7,
+    Kolkata 3, Hyderabad 1), which is exactly why fire-driven detection works
+    there and not elsewhere. Bhalswa was not a fluke; it was the instrument
+    working where the instrument can see.
+  - ⚠️ **Fire detection is season- and geography-dependent, and that is physics,
+    not model quality.** Delhi in November is the case where FIRMS has something
+    to observe. Quote it the same way as the 0/3 construction tier.
+  - ❌ **The fusion exposure claim is WITHDRAWN — now on EIGHT cities, not one.**
+    It loses to a naive city-mean on **7 of 8**, and three of those have a
+    NEGATIVE LOSO R2 (hyderabad -0.338, bengaluru -0.243, chennai -0.009) — worse
+    than predicting the mean. The single win is Kolkata, which has 4 stations, so
+    its leave-one-station-out trains on three and is noise, not skill. Delhi is
+    **30% worse** on this run (RMSE 87.1 vs naive 66.8, R2 0.377) — worse than the
+    14% recorded when this claim was withdrawn on Delhi alone. We tried predicting
     the DEVIATION from the city median instead of the level — a construction that
     *cannot* lose to the baseline, since a zero residual IS the baseline — and it
     still lost. So the residual model predicts non-zero spatial corrections that are
@@ -204,10 +262,49 @@ leakage before you assume success.
   satellite tracer, doesn't burn) recall **0/3**; traffic corridors (NO2
   confounded with the diffuse urban road network) recall **0/2**. Closing these
   needs the OSM permit layer, PM10/PM2.5 coarse fraction, and citizen reports.
-- ⬜ NOT built: forecast agent, prioritisation/dispatch (EPS + routing), memo
-  agent (legal matcher), advisory agent, frontend, n8n channels, GEE Sentinel-5P
-  collector (satellite is synthetic-only today — live mode silently mixes real
-  stations with a synthetic satellite, which is scientifically invalid).
+- ✅ **Full nine-agent pipeline built and serving** — each writes JSON the
+  read-only API reads back: forecast (`forecast.py`: 3-hourly pooled leads vs a
+  persistence baseline), prioritisation/dispatch (`prioritise.py`: EPS = 0.35
+  severity + 0.25 conf + 0.20 actionability + 0.20 vulnerability, then
+  max-coverage set cover + OSRM road-distance routes), memo (`memo.py`:
+  deterministic SWM-2016 / GRAP / Air-Act §31A legal matcher — LLM drafts prose
+  only), advisory (`advisory.py`, per language), voice (`voice.py`, Cloud TTS
+  MP3s), ledger (`ledger.py`), audit (`audit.py`). Endpoints: `/forecast`,
+  `/dispatch`, `/memos`, `/voice/{ward}`, `/ledger`, `/audit`.
+- ✅ **The real Sentinel-5P collector is built** (`ingestion/collectors/sentinel.py`,
+  via Google Earth Engine — NO2/SO2/CO/AAI). The earlier "satellite is
+  synthetic-only today — live mode silently mixes real stations with a synthetic
+  satellite, scientifically invalid" warning is **OBSOLETE**: live mode now runs
+  on the real satellite (this is what produced the real-Delhi Bhalswa result
+  above), and `pollers.run` REFUSES a synthetic-satellite + real-station mix
+  outright.
+- ✅ **Frontend built and deployed** (React+Vite+Leaflet; Cloud Run + Vercel):
+  admin console (map layers + forecast time-slider + EPS action queue + evidence
+  chain) and citizen view (my-ward air, forecast, advisory, accountability). One
+  API instance serves ALL EIGHT cities per request (`?city=`) — Delhi, Chennai,
+  Bengaluru, Mumbai, Kolkata, Hyderabad, Pune, Ahmedabad, each with a full live
+  pipeline run and real municipal ward boundaries; static per-city bundles are
+  demo insurance.
+- ⬜ **Genuinely remaining / partial:** n8n workflow instance (lives outside this
+  repo; an outbound Telegram voice-loop is demonstrated — see README);
+  repeat-offender registry (F3 — no endpoint yet); the ledger's *measured*
+  impacts (real response-times are logged, but counterfactuals are frozen and
+  await accumulated real outcomes). Forecast lines here describe main's model;
+  Saumya's `saum/upgrades` package supersedes it once merged.
+
+## Working notes: the scratchfile_notes/ second brain
+`scratchfile_notes/` is a running second brain for this project — Markdown
+notes, wikilinked (`[[note-name]]`), one topic per file, with `index.md`
+listing and linking every note. It is gitignored globally (the
+`scratchfile_*` prefix is in the machine's global gitignore), so it never
+gets committed and is safe to write to freely.
+
+After any substantive investigation, audit, or design discussion, dispatch
+the `notekeeper` sidecar agent (`.claude/agents/notekeeper.md`, runs on
+Haiku) as a background `Agent` call to write or update the relevant note(s)
+and keep `index.md` current. Don't write these notes yourself inline —
+delegate to the sidecar so it doesn't block the main conversation or eat
+main-loop context.
 
 ## Conventions
 - Python 3.11, type hints on function signatures, no framework beyond what's
@@ -271,6 +368,40 @@ leakage before you assume success.
   chronic landfill.) `detect.py::_reconcile_zones` clusters cells within 2 km and
   makes every cell inherit its zone's most persistent verdict. Do not classify
   cells independently.
+- **Climatology must come from YEARS, not the 60-day window — measured, not
+  assumed.** `serve()` builds climatology from `data/historical/<city>/` where it
+  exists. A/B on Bengaluru with identical weights and identical out-of-sample
+  rows, the only difference being the climatology source: mean RMSE **27.14 with
+  2 years vs 30.14 with a short window (~10% better)**, and the gap widens with
+  horizon (-1.7 at h3 to -4.6 at h72). At h3 the short-climatology arm actually
+  LOSES to persistence (-1.9%) while the 2-year arm wins (+5.0%). Caveat on the
+  size: both arms were truncated at the training cutoff to stay leak-free, which
+  left the short arm with 13 days rather than 60, so ~10% overstates the gap
+  against a true 60-day baseline. The DIRECTION is what to rely on. Mechanism:
+  a day-of-year climatology bucket holds ~1 sample over 60 days and 2+ over two
+  years; Mumbai's cell_month table goes 1,730 -> 7,215 buckets.
+- **The demo window is INSIDE the forecast model's training data. Never measure
+  forecast skill on it.** `data/historical/delhi/panel.parquet` runs
+  2023-12-01 .. 2025-11-29 and the demo window is 2025-10-01 .. 2025-11-29 — so
+  9.2% of Delhi's training rows are the very hours a backtest there would score.
+  Measured: the served model "beats" persistence by +33% to +60% across h=3..48
+  on that window, against the **+9.4% walk-forward median** the model's own
+  manifest reports over 19 properly time-split folds. The gap IS the leak. Quote
+  `manifest["eval"]["walk_forward_skill_median"]`; it is the only forecast skill
+  number here that was earned out-of-sample. (The forecast the product DISPLAYS
+  is fine — `forecast.json` predicts forward from the last observed hour, past
+  where training ends. It is only a backtest *inside* the window that is
+  contaminated.) This is the 100% trap wearing a third hat.
+- **`--synthetic` OVERWRITES the live outputs of whatever `AQ_CITY` is set.**
+  Both modes write to `data/outputs/<city>/`, and `AQ_CITY` defaults to
+  `bengaluru`, so a bare `python scripts/run_pipeline.py --synthetic --full`
+  silently replaces Bengaluru's real Nov-2025 run with the synthetic world —
+  same filenames, no warning, and `data/outputs/` is gitignored so there is
+  nothing to `git checkout`. The tell is the timestamp: synthetic is anchored to
+  `SYNTHETIC_ANCHOR` (2026-05-02 .. 2026-07-01), live is the real window. The
+  committed static bundle under `app/frontend/public/data/<city>/` is the only
+  copy that survives, so check there before re-running anything live. Set
+  `AQ_CITY` to a throwaway city for synthetic work, or re-run the real city after.
 - Windows PowerShell: use `$env:PYTHONPATH = "."` not `PYTHONPATH=. cmd`, and
   `Remove-Item -Recurse -Force` not `rm -rf`.
 - `fusion.py` LOSO retrains 12 LightGBM models (one per held-out station).

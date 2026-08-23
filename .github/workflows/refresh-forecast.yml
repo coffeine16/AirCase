@@ -1,0 +1,122 @@
+name: refresh-forecast
+
+# Re-forecast from fresh live data using the ALREADY-PROMOTED weights. No
+# training: intelligence/models/forecast.serve() loads models/<version>/*.txt,
+# builds features from the current window, and writes forecast.json +
+# forecast_ward.json. Measured at ~95s per city once the panel exists.
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# THE SCHEDULE IS DELIBERATELY NOT ENABLED. Read this before uncommenting.
+#
+# Every artifact in data/outputs/<city>/ is currently built on the Oct-Nov 2025
+# window, because that is when the detector's instruments can SEE. Pointed at
+# "now", this workflow rebuilds the panel on the live window and the demo stops
+# working: measured 2026-08-23, FIRMS returns ZERO detections over Delhi in the
+# trailing 5 days against the 18%-of-hours fire persistence that produced the
+# Bhalswa result. Monsoon also cloud-masks NO2. Detection would legitimately
+# find nothing, the enforcement queue would empty, and forecast.json would
+# describe August while hotspots.json still described November -- a mixed state
+# that is worse than either.
+#
+# Enable it when the product is running on a live rolling window rather than a
+# pinned demo window, or during a burning season. Not before.
+# ─────────────────────────────────────────────────────────────────────────────
+
+on:
+  workflow_dispatch:
+    inputs:
+      city:
+        description: "City to refresh. Blank = the one this hour's rotation selects."
+        required: false
+        default: ""
+      window_end:
+        description: "AQ_WINDOW_END (YYYY-MM-DD). Blank = now. Use 2025-11-30 to refresh the demo window."
+        required: false
+        default: ""
+  # schedule:
+  #   - cron: "17 * * * *"   # hourly, at :17 — see the warning above
+
+concurrency:
+  group: refresh-forecast
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with: { lfs: true }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install -r requirements.txt
+
+      # STAGGERED BY ROTATION, one city per run, not eight at once.
+      #
+      # Eight cities x ~6 min of live ingest does not fit inside an hour with any
+      # margin, and firing them together would burst OpenAQ, FIRMS, Overpass and
+      # GEE simultaneously every hour. Rotating by hour-of-day gives every city a
+      # fresh forecast within 8 hours, which is ample for a product whose shortest
+      # lead is +3h and whose longest is +72h, at an eighth of the API burn.
+      - name: Select city
+        id: pick
+        run: |
+          CITIES=(delhi chennai bengaluru mumbai kolkata hyderabad pune ahmedabad)
+          if [ -n "${{ inputs.city }}" ]; then CITY="${{ inputs.city }}"
+          else CITY="${CITIES[$(( $(date -u +%H) % 8 ))]}"; fi
+          echo "city=$CITY" >> "$GITHUB_OUTPUT"
+          echo "Refreshing: $CITY"
+
+      # Sentinel-5P needs Google Earth Engine credentials. pollers.run REFUSES to
+      # fall back to a synthetic satellite beside real stations, so without this
+      # the run fails loudly rather than emitting an invalid mix -- which is the
+      # correct behaviour, but means the secret is REQUIRED, not optional.
+      - name: Authenticate to Google Earth Engine
+        if: env.GEE_SA_KEY != ''
+        env:
+          GEE_SA_KEY: ${{ secrets.GEE_SA_KEY }}
+        run: |
+          echo "$GEE_SA_KEY" > "$HOME/gee-sa.json"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/gee-sa.json" >> "$GITHUB_ENV"
+
+      - name: Ingest + panel + forecast
+        env:
+          AQ_CITY: ${{ steps.pick.outputs.city }}
+          AQ_WINDOW_END: ${{ inputs.window_end }}
+          OPENAQ_API_KEY: ${{ secrets.OPENAQ_API_KEY }}
+          FIRMS_KEY: ${{ secrets.FIRMS_KEY }}
+          PYTHONPATH: .
+        run: |
+          python - <<'PY'
+          from ingestion.collectors.pollers import run as ingest
+          from ingestion.preprocessing.panel import build_panel
+          from intelligence.models.forecast import serve
+          from shared.config import CITY
+          ingest(synthetic=False)
+          build_panel()
+          serve(cities=[CITY])
+          PY
+
+      - name: Export the static bundle
+        env:
+          AQ_CITY: ${{ steps.pick.outputs.city }}
+          PYTHONPATH: .
+        run: python scripts/export_city_static.py
+
+      # Only the forecast artifacts. A forecast refresh does not re-run detection
+      # or attribution, so committing anything else would publish outputs that no
+      # longer agree with the panel underneath them.
+      - name: Commit refreshed forecast
+        run: |
+          CITY="${{ steps.pick.outputs.city }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "app/frontend/public/data/$CITY/forecast.json" \
+                  "app/frontend/public/data/$CITY/forecast_ward.json" || true
+          if git diff --cached --quiet; then
+            echo "no forecast change for $CITY"
+          else
+            git commit -m "chore(forecast): refresh $CITY from live data [skip ci]"
+            git push
+          fi

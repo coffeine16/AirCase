@@ -314,10 +314,22 @@ def detect(at: pd.Timestamp | None = None) -> pd.DataFrame:
     # breathe there, (c) how durable the signal is. No LLM anywhere near this.
     persistence_weight = {"chronic": 1.0, "emerging": 0.6, "acute": 0.35}
     if len(hot):
+        # City-relative reference, not a fixed 120 ug/m3. A constant denominator
+        # saturates severity at 1.0 above it and can't tell a 130 from a 492
+        # ug/m3 event — and Delhi's real November p99 IS 492 (see CLAUDE.md),
+        # while this constant reads like it was tuned once against Bengaluru's
+        # synthetic range. p95 of the citywide exposure field over the same
+        # 30-day window makes the term travel with whichever city and season
+        # actually ran, instead of a number picked once and never revisited.
+        ref_window = field[(field.ts > at - pd.Timedelta(days=30)) & (field.ts <= at)]
+        pm25_ref = float(ref_window.pm25_hat.quantile(0.95)) if len(ref_window) else float("nan")
+        if not np.isfinite(pm25_ref) or pm25_ref < 1.0:
+            pm25_ref = 120.0   # degenerate fallback: empty/flat field, keep the old constant
+
         zmax = hot[["z_w24h", "z_w7d", "z_w30d"]].max(axis=1)
         hot["severity"] = (
             0.45 * np.clip(zmax / 6.0, 0, 1)
-            + 0.35 * np.clip(hot.pm25_med / 120.0, 0, 1)
+            + 0.35 * np.clip(hot.pm25_med / pm25_ref, 0, 1)
             + 0.20 * hot.kind.map(persistence_weight)
         ).round(3)
         hot["detection_basis"] = [

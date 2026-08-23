@@ -1,0 +1,2576 @@
+[
+  {
+    "cell": "8860884035fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88608841c9fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88608841cdfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "886088403dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860884027fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860884023fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88608841c1fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860884039fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "886088411bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860884003fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "886088402bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860884021fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860884005fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860884001fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860884029fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860884067fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860884007fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 62.2,
+    "primary_source": "industrial",
+    "confidence": 0.27,
+    "scores": {
+      "industrial": 0.274,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.084
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_910115658 is 2.75 km away, wind alignment 0.49; shallow boundary layer (170 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_910115658 is 2.75 km away, wind alignment 0.49",
+      "shallow boundary layer (170 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884035fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 62.2,
+      "candidates": [
+        {
+          "name": "industrial_910115658",
+          "type": "industrial",
+          "distance_km": 2.75,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_342875880",
+          "type": "industrial",
+          "distance_km": 3.31,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "industrial_359324858",
+          "type": "industrial",
+          "distance_km": 3.23,
+          "wind_alignment": 0.5
+        },
+        {
+          "name": "Mather and Platt Pumps Ltd",
+          "type": "industrial",
+          "distance_km": 3.59,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.77,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.78,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.8,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Kandoba Chowk Underpass",
+          "type": "traffic",
+          "distance_km": 3.81,
+          "wind_alignment": 0.55
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.8,
+          "city_percentile": 82
+        },
+        "so2_col": {
+          "value": 33.1,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": -0.1,
+          "city_percentile": 69
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 1.4,
+        "blh_m": 170,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 17
+    },
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "8860884055fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 52.3,
+    "primary_source": "construction",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.08,
+      "construction": 0.595,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1107282096 is 0.13 km away, wind alignment 0.79; shallow boundary layer (322 m) trapping emissions.",
+    "evidence_factors": [
+      "construction_1107282096 is 0.13 km away, wind alignment 0.79",
+      "shallow boundary layer (322 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884055fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 52.3,
+      "candidates": [
+        {
+          "name": "construction_1107282096",
+          "type": "construction",
+          "distance_km": 0.13,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "construction_1291192936",
+          "type": "construction",
+          "distance_km": 0.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "Athens",
+          "type": "construction",
+          "distance_km": 0.54,
+          "wind_alignment": 0.81
+        },
+        {
+          "name": "construction_1143808514",
+          "type": "construction",
+          "distance_km": 1.19,
+          "wind_alignment": 0.82
+        },
+        {
+          "name": "construction_1360349488",
+          "type": "construction",
+          "distance_km": 1.51,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "construction_1084221350",
+          "type": "construction",
+          "distance_km": 1.55,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "construction_1360354280",
+          "type": "construction",
+          "distance_km": 1.54,
+          "wind_alignment": 0.42
+        },
+        {
+          "name": "ThyssenKrupp",
+          "type": "industrial",
+          "distance_km": 4.89,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 81.0,
+          "city_percentile": 89
+        },
+        "so2_col": {
+          "value": 87.9,
+          "city_percentile": 67
+        },
+        "aai": {
+          "value": 1.1,
+          "city_percentile": 99
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 16
+      },
+      "meteorology": {
+        "wind_from_deg": 72,
+        "wind_ms": 2.5,
+        "blh_m": 322,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 5
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "886088400bfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 52.3,
+    "primary_source": "construction",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.08,
+      "construction": 0.595,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1107282096 is 0.13 km away, wind alignment 0.79; shallow boundary layer (322 m) trapping emissions.",
+    "evidence_factors": [
+      "construction_1107282096 is 0.13 km away, wind alignment 0.79",
+      "shallow boundary layer (322 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884055fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 52.3,
+      "candidates": [
+        {
+          "name": "construction_1107282096",
+          "type": "construction",
+          "distance_km": 0.13,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "construction_1291192936",
+          "type": "construction",
+          "distance_km": 0.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "Athens",
+          "type": "construction",
+          "distance_km": 0.54,
+          "wind_alignment": 0.81
+        },
+        {
+          "name": "construction_1143808514",
+          "type": "construction",
+          "distance_km": 1.19,
+          "wind_alignment": 0.82
+        },
+        {
+          "name": "construction_1360349488",
+          "type": "construction",
+          "distance_km": 1.51,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "construction_1084221350",
+          "type": "construction",
+          "distance_km": 1.55,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "construction_1360354280",
+          "type": "construction",
+          "distance_km": 1.54,
+          "wind_alignment": 0.42
+        },
+        {
+          "name": "ThyssenKrupp",
+          "type": "industrial",
+          "distance_km": 4.89,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 81.0,
+          "city_percentile": 89
+        },
+        "so2_col": {
+          "value": 87.9,
+          "city_percentile": 67
+        },
+        "aai": {
+          "value": 1.1,
+          "city_percentile": 99
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 16
+      },
+      "meteorology": {
+        "wind_from_deg": 72,
+        "wind_ms": 2.5,
+        "blh_m": 322,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 5
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "8860884057fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 52.3,
+    "primary_source": "construction",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.08,
+      "construction": 0.595,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1107282096 is 0.13 km away, wind alignment 0.79; shallow boundary layer (322 m) trapping emissions.",
+    "evidence_factors": [
+      "construction_1107282096 is 0.13 km away, wind alignment 0.79",
+      "shallow boundary layer (322 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884055fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 52.3,
+      "candidates": [
+        {
+          "name": "construction_1107282096",
+          "type": "construction",
+          "distance_km": 0.13,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "construction_1291192936",
+          "type": "construction",
+          "distance_km": 0.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "Athens",
+          "type": "construction",
+          "distance_km": 0.54,
+          "wind_alignment": 0.81
+        },
+        {
+          "name": "construction_1143808514",
+          "type": "construction",
+          "distance_km": 1.19,
+          "wind_alignment": 0.82
+        },
+        {
+          "name": "construction_1360349488",
+          "type": "construction",
+          "distance_km": 1.51,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "construction_1084221350",
+          "type": "construction",
+          "distance_km": 1.55,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "construction_1360354280",
+          "type": "construction",
+          "distance_km": 1.54,
+          "wind_alignment": 0.42
+        },
+        {
+          "name": "ThyssenKrupp",
+          "type": "industrial",
+          "distance_km": 4.89,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 81.0,
+          "city_percentile": 89
+        },
+        "so2_col": {
+          "value": 87.9,
+          "city_percentile": 67
+        },
+        "aai": {
+          "value": 1.1,
+          "city_percentile": 99
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 16
+      },
+      "meteorology": {
+        "wind_from_deg": 72,
+        "wind_ms": 2.5,
+        "blh_m": 322,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 5
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "886088401dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 52.3,
+    "primary_source": "construction",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.08,
+      "construction": 0.595,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1107282096 is 0.13 km away, wind alignment 0.79; shallow boundary layer (322 m) trapping emissions.",
+    "evidence_factors": [
+      "construction_1107282096 is 0.13 km away, wind alignment 0.79",
+      "shallow boundary layer (322 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884055fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 52.3,
+      "candidates": [
+        {
+          "name": "construction_1107282096",
+          "type": "construction",
+          "distance_km": 0.13,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "construction_1291192936",
+          "type": "construction",
+          "distance_km": 0.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "Athens",
+          "type": "construction",
+          "distance_km": 0.54,
+          "wind_alignment": 0.81
+        },
+        {
+          "name": "construction_1143808514",
+          "type": "construction",
+          "distance_km": 1.19,
+          "wind_alignment": 0.82
+        },
+        {
+          "name": "construction_1360349488",
+          "type": "construction",
+          "distance_km": 1.51,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "construction_1084221350",
+          "type": "construction",
+          "distance_km": 1.55,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "construction_1360354280",
+          "type": "construction",
+          "distance_km": 1.54,
+          "wind_alignment": 0.42
+        },
+        {
+          "name": "ThyssenKrupp",
+          "type": "industrial",
+          "distance_km": 4.89,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 81.0,
+          "city_percentile": 89
+        },
+        "so2_col": {
+          "value": 87.9,
+          "city_percentile": 67
+        },
+        "aai": {
+          "value": 1.1,
+          "city_percentile": 99
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 16
+      },
+      "meteorology": {
+        "wind_from_deg": 72,
+        "wind_ms": 2.5,
+        "blh_m": 322,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 5
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "8860884009fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 52.3,
+    "primary_source": "construction",
+    "confidence": 0.41,
+    "scores": {
+      "industrial": 0.08,
+      "construction": 0.595,
+      "waste_burning": 0.0,
+      "traffic": 0.45
+    },
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1107282096 is 0.13 km away, wind alignment 0.79; shallow boundary layer (322 m) trapping emissions.",
+    "evidence_factors": [
+      "construction_1107282096 is 0.13 km away, wind alignment 0.79",
+      "shallow boundary layer (322 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "8860884055fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 52.3,
+      "candidates": [
+        {
+          "name": "construction_1107282096",
+          "type": "construction",
+          "distance_km": 0.13,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "construction_1291192936",
+          "type": "construction",
+          "distance_km": 0.48,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "Athens",
+          "type": "construction",
+          "distance_km": 0.54,
+          "wind_alignment": 0.81
+        },
+        {
+          "name": "construction_1143808514",
+          "type": "construction",
+          "distance_km": 1.19,
+          "wind_alignment": 0.82
+        },
+        {
+          "name": "construction_1360349488",
+          "type": "construction",
+          "distance_km": 1.51,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "construction_1084221350",
+          "type": "construction",
+          "distance_km": 1.55,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "construction_1360354280",
+          "type": "construction",
+          "distance_km": 1.54,
+          "wind_alignment": 0.42
+        },
+        {
+          "name": "ThyssenKrupp",
+          "type": "industrial",
+          "distance_km": 4.89,
+          "wind_alignment": 0.92
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 81.0,
+          "city_percentile": 89
+        },
+        "so2_col": {
+          "value": 87.9,
+          "city_percentile": 67
+        },
+        "aai": {
+          "value": 1.1,
+          "city_percentile": 99
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 0,
+        "construction": 7,
+        "waste_burning": 0,
+        "traffic": 16
+      },
+      "meteorology": {
+        "wind_from_deg": 72,
+        "wind_ms": 2.5,
+        "blh_m": 322,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 5
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  }
+]

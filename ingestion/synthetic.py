@@ -38,7 +38,7 @@ import numpy as np
 import pandas as pd
 
 from shared.config import BBOX, PANEL_HOURS, SAT_BLUR_SIGMA_KM, SYNTHETIC_ANCHOR, CITY
-from shared.grid import city_cells, cell_center, bearing_deg
+from shared.grid import city_cells, cell_center, bearing_deg, weather_grid_cells
 
 WORLD_SEED = 42
 RNG = np.random.default_rng(WORLD_SEED)
@@ -135,7 +135,15 @@ def hours_index(n_hours: int = PANEL_HOURS) -> pd.DatetimeIndex:
 
 
 def weather(n_hours: int = PANEL_HOURS) -> pd.DataFrame:
-    """Hourly wind + boundary layer height with diurnal structure."""
+    """Hourly wind + boundary layer height with diurnal structure.
+
+    One citywide series, broadcast to every weather-grid cell (`weather_cell`
+    column, matching live/historical's schema post multi-point upgrade). The
+    synthetic world's job is a controlled, reproducible truth to test the
+    PIPELINE against, not to fabricate sub-city wind variation we have not
+    actually modelled -- real spatial variation is measured from live data
+    only (see shared.grid.WEATHER_GRID_RES).
+    """
     idx = hours_index(n_hours)
     hrs = idx.hour.values
     # BLH: low at night (traps pollution), high mid-afternoon
@@ -145,8 +153,10 @@ def weather(n_hours: int = PANEL_HOURS) -> pd.DataFrame:
     wind_dir = (base_dir + RNG.normal(0, 12, len(idx))) % 360   # direction wind comes FROM
     wind_spd = np.clip(1.5 + 1.8 * np.sin((hrs - 10) / 12 * np.pi) + RNG.normal(0, 0.4, len(idx)), 0.3, None)
     temp = 22 + 6 * np.sin((hrs - 8) / 12 * np.pi) + RNG.normal(0, 0.8, len(idx))
-    return pd.DataFrame({"ts": idx, "wind_from_deg": wind_dir, "wind_ms": wind_spd,
-                         "blh_m": np.clip(blh, 150, None), "temp_c": temp})
+    one_point = pd.DataFrame({"ts": idx, "wind_from_deg": wind_dir, "wind_ms": wind_spd,
+                              "blh_m": np.clip(blh, 150, None), "temp_c": temp})
+    return pd.concat([one_point.assign(weather_cell=c) for c in weather_grid_cells()],
+                     ignore_index=True)
 
 
 # --------------------------------------------------------------- dispersion
@@ -184,7 +194,22 @@ def truth_field(n_hours: int = PANEL_HOURS):
     """
     cells = city_cells()
     centers = np.array([cell_center(c) for c in cells])           # (n_cells, 2)
-    wx = weather(n_hours)
+
+    # weather() returns one row per (hour x weather-grid cell) since the
+    # multi-point met upgrade — 36 weather cells here, so 36 rows per hour.
+    # Every line below treats one wx row as one HOUR (`n_hours_ = len(wx)`, the
+    # per-hour dispersion loop, `np.repeat(wx.ts, n_cells)`), so handing it the
+    # broadcast frame silently multiplies the world by 36: a 60-day run became
+    # 51,840 "hours" and died allocating a 3.5 GiB cell array before it could
+    # emit anything. `--synthetic` and CI's pipeline-smoke both fail on it.
+    #
+    # The synthetic met series is IDENTICAL across weather cells by construction
+    # (see weather()'s docstring — one citywide series, broadcast), so collapsing
+    # to unique timestamps is exact here, not an approximation. The full frame is
+    # still what gets returned: weather.parquet must keep the weather_cell
+    # dimension that panel.py now joins on.
+    wx_all = weather(n_hours)
+    wx = wx_all.drop_duplicates("ts").sort_values("ts").reset_index(drop=True)
     kinds = ["industrial", "construction", "waste_burning", "traffic"]
     urban = urban_field()
 
@@ -235,7 +260,9 @@ def truth_field(n_hours: int = PANEL_HOURS):
         **{f"c_{k}": surf[k].ravel() for k in kinds},
         **{f"col_{k}": col[k].ravel() for k in kinds},
     })
-    return truth, wx
+    # wx_all, not the per-hour `wx` used for the physics above: the caller writes
+    # this out as weather.parquet, which must carry every weather_cell.
+    return truth, wx_all
 
 
 @lru_cache(maxsize=1)

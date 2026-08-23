@@ -298,18 +298,33 @@ export const api = {
     const category =
       payload.category === "construction_dust" ? "construction" : payload.category;
 
-    const res = await fetch(N8N_WEBHOOK_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ward_id: payload.ward_id,
-        category,
-        description: payload.description ?? "",
-        lat: payload.lat ?? null,
-        lon: payload.lon ?? null,
-        source: "web",
-      }),
-    });
+    // A bare fetch here hangs on the browser's default timeout — tens of seconds
+    // of a dead Submit button — whenever the n8n host is unreachable, which is a
+    // single self-hosted box and therefore a real possibility. Fail in 8s with a
+    // sentence the citizen can act on instead of a spinner that never resolves.
+    let res: Response;
+    try {
+      res = await fetch(N8N_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ward_id: payload.ward_id,
+          category,
+          description: payload.description ?? "",
+          lat: payload.lat ?? null,
+          lon: payload.lon ?? null,
+          source: "web",
+        }),
+        signal: AbortSignal.timeout(8000),
+      });
+    } catch {
+      // Network-level failure (unreachable host, DNS, timeout) — never a status
+      // code, so it cannot be distinguished below.
+      throw new Error(
+        "Could not reach the reporting service. Your report was not sent — " +
+        "please try again later."
+      );
+    }
     if (!res.ok) throw new Error(`Report submission failed (HTTP ${res.status})`);
     const ack = (await res.json().catch(() => ({}))) as { status?: string };
 
