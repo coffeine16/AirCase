@@ -53,14 +53,29 @@ export default function WardTimeline({ city, wardId }: { city: string; wardId: s
 
   const aqis = points.map((p) => pm25ToAqi(p.pm25_hat));
 
-  // Scaled to the MEDIAN line only, deliberately. The rows now also carry an
-  // 80% prediction interval (pm25_p10/pm25_p90, see WardForecastPoint), but it
-  // is not drawn — and it must not be allowed to set the y-scale either.
-  // Measured on real Delhi: that interval spans 0->296 ug/m3 while the line
-  // sits near 131, so including it here flattens the whole series into a
-  // straight line in the middle of the plot and destroys the diurnal swing
-  // this chart exists to show. See the note in the SVG below for why the band
-  // itself is withheld until the model ships a per-horizon interval scale.
+  // The 80% prediction interval, when the bundle carries it. Both bounds must be
+  // present on every point — a half-drawn band would misstate precision rather
+  // than partially state it.
+  const hasBand = points.every(
+    (p) => p.pm25_p10 !== undefined && p.pm25_p90 !== undefined
+  );
+  const loBand = hasBand ? points.map((p) => pm25ToAqi(p.pm25_p10!)) : [];
+  const hiBand = hasBand ? points.map((p) => pm25ToAqi(p.pm25_p90!)) : [];
+
+  // SCALED TO THE MEDIAN LINE, WITH THE BAND ALLOWED TO RUN OFF THE PLOT.
+  //
+  // The interval is honest — measured out-of-sample its coverage is 74-90%
+  // against an 80% target — but it is far wider than the line: on a Delhi ward
+  // the median spans AQI 225-316 while the band spans 0-432, and on Bengaluru
+  // 63-73 against 8-114. Scaling to contain it flattens the series into a
+  // stripe and destroys the diurnal shape, which is the ONLY actionable thing
+  // this chart says ("worst overnight, best mid-afternoon").
+  //
+  // So the band is drawn where it overlaps the plot and clipped where it does
+  // not, and the caption states the real numbers rather than letting the
+  // clipping imply the uncertainty stops at the plot edge. Showing the median
+  // alone would claim a precision the model has not earned; letting the band
+  // set the scale would throw away the signal to display the noise.
   const lo = Math.min(...aqis);
   const hi = Math.max(...aqis);
   const span = Math.max(hi - lo, 1);
@@ -72,6 +87,18 @@ export default function WardTimeline({ city, wardId }: { city: string; wardId: s
 
   const line = points.map((p, i) => `${x(i)},${y(pm25ToAqi(p.pm25_hat))}`).join(" ");
   const area = `${line} ${W},${H - PAD_B} 0,${H - PAD_B}`;
+
+  // Closed polygon: p90 left-to-right, then p10 back right-to-left.
+  const bandPath = hasBand
+    ? [...hiBand.map((v, i) => `${x(i)},${y(v)}`),
+       ...loBand.map((v, i) => `${x(loBand.length - 1 - i)},${y(loBand[loBand.length - 1 - i])}`)].join(" ")
+    : "";
+  // The widest the interval gets, in AQI, for the caption.
+  const bandLo = hasBand ? Math.min(...loBand) : 0;
+  const bandHi = hasBand ? Math.max(...hiBand) : 0;
+  // Only claim the band leaves the plot when it actually does — on a ward with a
+  // tight interval it may sit entirely inside, and saying otherwise would be wrong.
+  const bandClipped = hasBand && (bandLo < lo || bandHi > hi);
 
   const worstIdx = aqis.indexOf(hi);
   const bestIdx = aqis.indexOf(lo);
@@ -103,6 +130,11 @@ export default function WardTimeline({ city, wardId }: { city: string; wardId: s
             <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.26" />
             <stop offset="100%" stopColor="var(--accent)" stopOpacity="0.02" />
           </linearGradient>
+          {/* The svg is overflow:visible so the endpoint dots are not cut off;
+              without this the band would paint outside the plot entirely. */}
+          <clipPath id="wt-clip">
+            <rect x="0" y={PAD_T} width={W} height={H - PAD_T - PAD_B} />
+          </clipPath>
         </defs>
 
         {/* day boundaries at +24 / +48 h, so the diurnal rhythm is legible */}
@@ -116,23 +148,16 @@ export default function WardTimeline({ city, wardId }: { city: string; wardId: s
           ) : null
         )}
 
-        {/* The p10/p90 band is DELIBERATELY NOT DRAWN YET — the data carries it
-            (WardForecastPoint.pm25_p10/p90) but the served model's interval is
-            not calibrated enough to show a citizen.
-
-            Measured on real Delhi, 2026-08-22: the 80% interval spans 0->296
-            ug/m3 at h=3 and 0->310 at h=72. Two things are wrong with that.
-            It is wider than the signal it brackets (p50 ~131), so it tells a
-            resident nothing they can act on; and it barely widens with lead
-            time — 5% growth across a 24x change in horizon — because
-            `interval_scale` in the manifest is ONE global number applied at
-            every horizon, which erases the structure a prediction interval
-            exists to show. A 3-hour forecast must be tighter than a 3-day one.
-
-            Drawing it anyway would claim a precision the model has not earned,
-            which is the same failure this project deleted the SO2 channel over.
-            Flip `hasBand` into the render below once the model ships a
-            per-horizon interval scale; everything else is already in place. */}
+        {/* The 80% prediction interval. Clipped to the plot: it is genuinely
+            wider than the median line (Delhi ward: band AQI 0-432 against a line
+            of 225-316), so it is shown where it overlaps and the caption states
+            how far it actually reaches. Behind the line — the median is the
+            answer, the band is how sure we are of it. */}
+        {hasBand && (
+          <g clipPath="url(#wt-clip)">
+            <polygon points={bandPath} fill="var(--accent)" fillOpacity="0.13" />
+          </g>
+        )}
         <polygon points={area} fill="url(#wt-fill)" />
         <polyline
           points={line}
@@ -181,6 +206,7 @@ export default function WardTimeline({ city, wardId }: { city: string; wardId: s
       <p style={{ fontSize: "0.68rem", color: "var(--text-tertiary)", marginTop: 10, lineHeight: 1.5 }}>
         Median across {worst.n_cells} cell{worst.n_cells === 1 ? "" : "s"} in your ward.
         A forecast, not a measurement.
+        {hasBand && ` The shaded band is how sure we are: over the next 3 days the air here should stay between AQI ${bandLo} and ${bandHi} about 8 times out of 10.${bandClipped ? " It reaches beyond the edges of the chart." : ""}`}
       </p>
     </div>
   );
