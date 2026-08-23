@@ -12,10 +12,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -113,7 +115,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -129,10 +131,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -230,7 +234,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -246,10 +250,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -347,7 +353,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -363,10 +369,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -464,7 +472,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -480,10 +488,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -581,7 +591,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -597,10 +607,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -698,7 +710,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -714,10 +726,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -815,7 +829,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -831,10 +845,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -932,7 +948,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -948,10 +964,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -1049,7 +1067,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -1065,10 +1083,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -1166,7 +1186,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -1182,10 +1202,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -1283,7 +1305,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -1299,10 +1321,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -1400,7 +1424,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -1416,10 +1440,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -1517,7 +1543,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -1533,10 +1559,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -1634,7 +1662,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -1650,10 +1678,12 @@
       "waste_burning": 0.0,
       "traffic": 0.671
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65; shallow boundary layer (85 m) trapping emissions.",
+    "reason": "Industrial emissions are identified as the primary source with the highest deterministic category score of 0.751. This is supported by multiple nearby industrial candidates, such as the Delhi Airport Bus Depot as close as 1.29 km with wind alignment up to 0.65, along with an elevated NO2 percentile of 67 under trapped air meteorological conditions.",
     "evidence_factors": [
-      "Delhi Airport Bus Depot is 1.54 km away, wind alignment 0.65",
-      "shallow boundary layer (85 m) trapping emissions"
+      "Highest deterministic score of 0.751 for industrial emissions",
+      "Close proximity to industrial candidates as near as 1.29 km",
+      "High wind alignment up to 0.65 for industrial candidates",
+      "Elevated NO2 levels at the 67th city percentile"
     ],
     "evidence": {
       "cell": "883da110e5fffff",
@@ -1751,7 +1781,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -1767,11 +1797,12 @@
       "waste_burning": 3.672,
       "traffic": 0.801
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. waste_burning_1181342843 is 1.53 km away, wind alignment 0.47; satellite fire detections in 30 hours (18% of the window); shallow boundary layer (100 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source with the highest deterministic category score of 3.672. This classification is supported by active fire detection logging 30 fire hours (0.1786 hour fraction) with an FRP p90 of 0.3, alongside an Absorbing Aerosol Index (AAI) of 0.6 at the 70th city percentile. Additionally, three nearby waste burning candidates are located within 1.53 km of cell 883da18cd7fffff.",
     "evidence_factors": [
-      "waste_burning_1181342843 is 1.53 km away, wind alignment 0.47",
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (100 m) trapping emissions"
+      "Highest deterministic score of 3.672 for waste_burning",
+      "30 fire hours recorded with FRP p90 of 0.3",
+      "Elevated AAI at 70th city percentile (0.6)",
+      "Multiple candidate waste burning locations within 1.53 km"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -1869,7 +1900,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -1885,11 +1916,12 @@
       "waste_burning": 3.672,
       "traffic": 0.801
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. waste_burning_1181342843 is 1.53 km away, wind alignment 0.47; satellite fire detections in 30 hours (18% of the window); shallow boundary layer (100 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source with the highest deterministic category score of 3.672. This classification is supported by active fire detection logging 30 fire hours (0.1786 hour fraction) with an FRP p90 of 0.3, alongside an Absorbing Aerosol Index (AAI) of 0.6 at the 70th city percentile. Additionally, three nearby waste burning candidates are located within 1.53 km of cell 883da18cd7fffff.",
     "evidence_factors": [
-      "waste_burning_1181342843 is 1.53 km away, wind alignment 0.47",
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (100 m) trapping emissions"
+      "Highest deterministic score of 3.672 for waste_burning",
+      "30 fire hours recorded with FRP p90 of 0.3",
+      "Elevated AAI at 70th city percentile (0.6)",
+      "Multiple candidate waste burning locations within 1.53 km"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -1987,7 +2019,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2003,11 +2035,12 @@
       "waste_burning": 3.672,
       "traffic": 0.801
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. waste_burning_1181342843 is 1.53 km away, wind alignment 0.47; satellite fire detections in 30 hours (18% of the window); shallow boundary layer (100 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source with the highest deterministic category score of 3.672. This classification is supported by active fire detection logging 30 fire hours (0.1786 hour fraction) with an FRP p90 of 0.3, alongside an Absorbing Aerosol Index (AAI) of 0.6 at the 70th city percentile. Additionally, three nearby waste burning candidates are located within 1.53 km of cell 883da18cd7fffff.",
     "evidence_factors": [
-      "waste_burning_1181342843 is 1.53 km away, wind alignment 0.47",
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (100 m) trapping emissions"
+      "Highest deterministic score of 3.672 for waste_burning",
+      "30 fire hours recorded with FRP p90 of 0.3",
+      "Elevated AAI at 70th city percentile (0.6)",
+      "Multiple candidate waste burning locations within 1.53 km"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -2105,7 +2138,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2121,11 +2154,12 @@
       "waste_burning": 3.672,
       "traffic": 0.801
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. waste_burning_1181342843 is 1.53 km away, wind alignment 0.47; satellite fire detections in 30 hours (18% of the window); shallow boundary layer (100 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source with the highest deterministic category score of 3.672. This classification is supported by active fire detection logging 30 fire hours (0.1786 hour fraction) with an FRP p90 of 0.3, alongside an Absorbing Aerosol Index (AAI) of 0.6 at the 70th city percentile. Additionally, three nearby waste burning candidates are located within 1.53 km of cell 883da18cd7fffff.",
     "evidence_factors": [
-      "waste_burning_1181342843 is 1.53 km away, wind alignment 0.47",
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (100 m) trapping emissions"
+      "Highest deterministic score of 3.672 for waste_burning",
+      "30 fire hours recorded with FRP p90 of 0.3",
+      "Elevated AAI at 70th city percentile (0.6)",
+      "Multiple candidate waste burning locations within 1.53 km"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -2223,7 +2257,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2239,11 +2273,12 @@
       "waste_burning": 3.672,
       "traffic": 0.801
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. waste_burning_1181342843 is 1.53 km away, wind alignment 0.47; satellite fire detections in 30 hours (18% of the window); shallow boundary layer (100 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source with the highest deterministic category score of 3.672. This classification is supported by active fire detection logging 30 fire hours (0.1786 hour fraction) with an FRP p90 of 0.3, alongside an Absorbing Aerosol Index (AAI) of 0.6 at the 70th city percentile. Additionally, three nearby waste burning candidates are located within 1.53 km of cell 883da18cd7fffff.",
     "evidence_factors": [
-      "waste_burning_1181342843 is 1.53 km away, wind alignment 0.47",
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (100 m) trapping emissions"
+      "Highest deterministic score of 3.672 for waste_burning",
+      "30 fire hours recorded with FRP p90 of 0.3",
+      "Elevated AAI at 70th city percentile (0.6)",
+      "Multiple candidate waste burning locations within 1.53 km"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -2341,7 +2376,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2357,11 +2392,12 @@
       "waste_burning": 3.672,
       "traffic": 0.801
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. waste_burning_1181342843 is 1.53 km away, wind alignment 0.47; satellite fire detections in 30 hours (18% of the window); shallow boundary layer (100 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source with the highest deterministic category score of 3.672. This classification is supported by active fire detection logging 30 fire hours (0.1786 hour fraction) with an FRP p90 of 0.3, alongside an Absorbing Aerosol Index (AAI) of 0.6 at the 70th city percentile. Additionally, three nearby waste burning candidates are located within 1.53 km of cell 883da18cd7fffff.",
     "evidence_factors": [
-      "waste_burning_1181342843 is 1.53 km away, wind alignment 0.47",
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (100 m) trapping emissions"
+      "Highest deterministic score of 3.672 for waste_burning",
+      "30 fire hours recorded with FRP p90 of 0.3",
+      "Elevated AAI at 70th city percentile (0.6)",
+      "Multiple candidate waste burning locations within 1.53 km"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -2459,7 +2495,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2475,11 +2511,12 @@
       "waste_burning": 3.672,
       "traffic": 0.801
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. waste_burning_1181342843 is 1.53 km away, wind alignment 0.47; satellite fire detections in 30 hours (18% of the window); shallow boundary layer (100 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source with the highest deterministic category score of 3.672. This classification is supported by active fire detection logging 30 fire hours (0.1786 hour fraction) with an FRP p90 of 0.3, alongside an Absorbing Aerosol Index (AAI) of 0.6 at the 70th city percentile. Additionally, three nearby waste burning candidates are located within 1.53 km of cell 883da18cd7fffff.",
     "evidence_factors": [
-      "waste_burning_1181342843 is 1.53 km away, wind alignment 0.47",
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (100 m) trapping emissions"
+      "Highest deterministic score of 3.672 for waste_burning",
+      "30 fire hours recorded with FRP p90 of 0.3",
+      "Elevated AAI at 70th city percentile (0.6)",
+      "Multiple candidate waste burning locations within 1.53 km"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -2577,7 +2614,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2593,11 +2630,12 @@
       "waste_burning": 3.672,
       "traffic": 0.801
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. waste_burning_1181342843 is 1.53 km away, wind alignment 0.47; satellite fire detections in 30 hours (18% of the window); shallow boundary layer (100 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source with the highest deterministic category score of 3.672. This classification is supported by active fire detection logging 30 fire hours (0.1786 hour fraction) with an FRP p90 of 0.3, alongside an Absorbing Aerosol Index (AAI) of 0.6 at the 70th city percentile. Additionally, three nearby waste burning candidates are located within 1.53 km of cell 883da18cd7fffff.",
     "evidence_factors": [
-      "waste_burning_1181342843 is 1.53 km away, wind alignment 0.47",
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (100 m) trapping emissions"
+      "Highest deterministic score of 3.672 for waste_burning",
+      "30 fire hours recorded with FRP p90 of 0.3",
+      "Elevated AAI at 70th city percentile (0.6)",
+      "Multiple candidate waste burning locations within 1.53 km"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -2695,7 +2733,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2711,11 +2749,12 @@
       "waste_burning": 3.672,
       "traffic": 0.801
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. waste_burning_1181342843 is 1.53 km away, wind alignment 0.47; satellite fire detections in 30 hours (18% of the window); shallow boundary layer (100 m) trapping emissions.",
+    "reason": "Waste burning is identified as the primary source with the highest deterministic category score of 3.672. This classification is supported by active fire detection logging 30 fire hours (0.1786 hour fraction) with an FRP p90 of 0.3, alongside an Absorbing Aerosol Index (AAI) of 0.6 at the 70th city percentile. Additionally, three nearby waste burning candidates are located within 1.53 km of cell 883da18cd7fffff.",
     "evidence_factors": [
-      "waste_burning_1181342843 is 1.53 km away, wind alignment 0.47",
-      "satellite fire detections in 30 hours (18% of the window)",
-      "shallow boundary layer (100 m) trapping emissions"
+      "Highest deterministic score of 3.672 for waste_burning",
+      "30 fire hours recorded with FRP p90 of 0.3",
+      "Elevated AAI at 70th city percentile (0.6)",
+      "Multiple candidate waste burning locations within 1.53 km"
     ],
     "evidence": {
       "cell": "883da18cd7fffff",
@@ -2813,7 +2852,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z06"
   },
   {
@@ -2829,10 +2868,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -2930,7 +2971,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -2946,10 +2987,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -3047,7 +3090,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3063,10 +3106,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -3164,7 +3209,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3180,10 +3225,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -3281,7 +3328,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3297,10 +3344,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -3398,7 +3447,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3414,10 +3463,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -3515,7 +3566,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3531,10 +3582,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -3632,7 +3685,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3648,10 +3701,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -3749,7 +3804,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3765,10 +3820,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -3866,7 +3923,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3882,10 +3939,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -3983,7 +4042,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3999,10 +4058,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -4100,7 +4161,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4116,10 +4177,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -4217,7 +4280,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4233,10 +4296,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -4334,7 +4399,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4350,10 +4415,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -4451,7 +4518,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4467,10 +4534,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -4568,7 +4637,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4584,10 +4653,12 @@
       "waste_burning": 1.238,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 2 hours (1% of the window); shallow boundary layer (105 m) trapping emissions.",
+    "reason": "Waste burning is the most likely primary source, as it received the highest deterministic category score of 1.238. This attribution is supported by the detection of 2 fire hours in the area, contributing to the high PM2.5 estimate of 233.3 under meteorologically trapped air conditions with a low boundary layer height of 105m.",
     "evidence_factors": [
-      "satellite fire detections in 2 hours (1% of the window)",
-      "shallow boundary layer (105 m) trapping emissions"
+      "Fire activity (2 hours)",
+      "High PM2.5 estimate",
+      "Trapped air conditions",
+      "Low boundary layer height"
     ],
     "evidence": {
       "cell": "883da10723fffff",
@@ -4685,7 +4756,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4701,10 +4772,13 @@
       "waste_burning": 0.0,
       "traffic": 0.135
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1434658088 is 1.24 km away, wind alignment 0.85; shallow boundary layer (90 m) trapping emissions.",
+    "reason": "Construction is the primary source with the highest deterministic score of 0.304, supported by landuse context indicating active construction. Multiple construction candidates are located in close proximity, including construction_1434658088 at 1.24 km and construction_1379318627 at 1.54 km with high wind alignments of 0.85 and 0.86. These emissions are exacerbated by low boundary layer height (90 m) and trapped air conditions, driving the PM2.5 concentration to 137.2.",
     "evidence_factors": [
-      "construction_1434658088 is 1.24 km away, wind alignment 0.85",
-      "shallow boundary layer (90 m) trapping emissions"
+      "Highest category score of 0.304 for construction",
+      "Landuse context indicating active construction (1)",
+      "Close proximity of construction candidate sources (1.24 km and 1.54 km)",
+      "Strong wind alignment with nearby construction sites (0.85 and 0.86)",
+      "Stagnant meteorology with trapped air and a 90 m boundary layer height"
     ],
     "evidence": {
       "cell": "883da10365fffff",
@@ -4802,7 +4876,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -4818,10 +4892,13 @@
       "waste_burning": 0.0,
       "traffic": 0.135
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1434658088 is 1.24 km away, wind alignment 0.85; shallow boundary layer (90 m) trapping emissions.",
+    "reason": "Construction is the primary source with the highest deterministic score of 0.304, supported by landuse context indicating active construction. Multiple construction candidates are located in close proximity, including construction_1434658088 at 1.24 km and construction_1379318627 at 1.54 km with high wind alignments of 0.85 and 0.86. These emissions are exacerbated by low boundary layer height (90 m) and trapped air conditions, driving the PM2.5 concentration to 137.2.",
     "evidence_factors": [
-      "construction_1434658088 is 1.24 km away, wind alignment 0.85",
-      "shallow boundary layer (90 m) trapping emissions"
+      "Highest category score of 0.304 for construction",
+      "Landuse context indicating active construction (1)",
+      "Close proximity of construction candidate sources (1.24 km and 1.54 km)",
+      "Strong wind alignment with nearby construction sites (0.85 and 0.86)",
+      "Stagnant meteorology with trapped air and a 90 m boundary layer height"
     ],
     "evidence": {
       "cell": "883da10365fffff",
@@ -4919,7 +4996,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -4935,10 +5012,13 @@
       "waste_burning": 0.0,
       "traffic": 0.135
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1434658088 is 1.24 km away, wind alignment 0.85; shallow boundary layer (90 m) trapping emissions.",
+    "reason": "Construction is the primary source with the highest deterministic score of 0.304, supported by landuse context indicating active construction. Multiple construction candidates are located in close proximity, including construction_1434658088 at 1.24 km and construction_1379318627 at 1.54 km with high wind alignments of 0.85 and 0.86. These emissions are exacerbated by low boundary layer height (90 m) and trapped air conditions, driving the PM2.5 concentration to 137.2.",
     "evidence_factors": [
-      "construction_1434658088 is 1.24 km away, wind alignment 0.85",
-      "shallow boundary layer (90 m) trapping emissions"
+      "Highest category score of 0.304 for construction",
+      "Landuse context indicating active construction (1)",
+      "Close proximity of construction candidate sources (1.24 km and 1.54 km)",
+      "Strong wind alignment with nearby construction sites (0.85 and 0.86)",
+      "Stagnant meteorology with trapped air and a 90 m boundary layer height"
     ],
     "evidence": {
       "cell": "883da10365fffff",
@@ -5036,7 +5116,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5052,10 +5132,13 @@
       "waste_burning": 0.0,
       "traffic": 0.135
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1434658088 is 1.24 km away, wind alignment 0.85; shallow boundary layer (90 m) trapping emissions.",
+    "reason": "Construction is the primary source with the highest deterministic score of 0.304, supported by landuse context indicating active construction. Multiple construction candidates are located in close proximity, including construction_1434658088 at 1.24 km and construction_1379318627 at 1.54 km with high wind alignments of 0.85 and 0.86. These emissions are exacerbated by low boundary layer height (90 m) and trapped air conditions, driving the PM2.5 concentration to 137.2.",
     "evidence_factors": [
-      "construction_1434658088 is 1.24 km away, wind alignment 0.85",
-      "shallow boundary layer (90 m) trapping emissions"
+      "Highest category score of 0.304 for construction",
+      "Landuse context indicating active construction (1)",
+      "Close proximity of construction candidate sources (1.24 km and 1.54 km)",
+      "Strong wind alignment with nearby construction sites (0.85 and 0.86)",
+      "Stagnant meteorology with trapped air and a 90 m boundary layer height"
     ],
     "evidence": {
       "cell": "883da10365fffff",
@@ -5153,7 +5236,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5169,10 +5252,13 @@
       "waste_burning": 0.0,
       "traffic": 0.135
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1434658088 is 1.24 km away, wind alignment 0.85; shallow boundary layer (90 m) trapping emissions.",
+    "reason": "Construction is the primary source with the highest deterministic score of 0.304, supported by landuse context indicating active construction. Multiple construction candidates are located in close proximity, including construction_1434658088 at 1.24 km and construction_1379318627 at 1.54 km with high wind alignments of 0.85 and 0.86. These emissions are exacerbated by low boundary layer height (90 m) and trapped air conditions, driving the PM2.5 concentration to 137.2.",
     "evidence_factors": [
-      "construction_1434658088 is 1.24 km away, wind alignment 0.85",
-      "shallow boundary layer (90 m) trapping emissions"
+      "Highest category score of 0.304 for construction",
+      "Landuse context indicating active construction (1)",
+      "Close proximity of construction candidate sources (1.24 km and 1.54 km)",
+      "Strong wind alignment with nearby construction sites (0.85 and 0.86)",
+      "Stagnant meteorology with trapped air and a 90 m boundary layer height"
     ],
     "evidence": {
       "cell": "883da10365fffff",
@@ -5270,7 +5356,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5286,10 +5372,13 @@
       "waste_burning": 0.0,
       "traffic": 0.135
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1434658088 is 1.24 km away, wind alignment 0.85; shallow boundary layer (90 m) trapping emissions.",
+    "reason": "Construction is the primary source with the highest deterministic score of 0.304, supported by landuse context indicating active construction. Multiple construction candidates are located in close proximity, including construction_1434658088 at 1.24 km and construction_1379318627 at 1.54 km with high wind alignments of 0.85 and 0.86. These emissions are exacerbated by low boundary layer height (90 m) and trapped air conditions, driving the PM2.5 concentration to 137.2.",
     "evidence_factors": [
-      "construction_1434658088 is 1.24 km away, wind alignment 0.85",
-      "shallow boundary layer (90 m) trapping emissions"
+      "Highest category score of 0.304 for construction",
+      "Landuse context indicating active construction (1)",
+      "Close proximity of construction candidate sources (1.24 km and 1.54 km)",
+      "Strong wind alignment with nearby construction sites (0.85 and 0.86)",
+      "Stagnant meteorology with trapped air and a 90 m boundary layer height"
     ],
     "evidence": {
       "cell": "883da10365fffff",
@@ -5387,7 +5476,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5403,10 +5492,13 @@
       "waste_burning": 0.0,
       "traffic": 0.135
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1434658088 is 1.24 km away, wind alignment 0.85; shallow boundary layer (90 m) trapping emissions.",
+    "reason": "Construction is the primary source with the highest deterministic score of 0.304, supported by landuse context indicating active construction. Multiple construction candidates are located in close proximity, including construction_1434658088 at 1.24 km and construction_1379318627 at 1.54 km with high wind alignments of 0.85 and 0.86. These emissions are exacerbated by low boundary layer height (90 m) and trapped air conditions, driving the PM2.5 concentration to 137.2.",
     "evidence_factors": [
-      "construction_1434658088 is 1.24 km away, wind alignment 0.85",
-      "shallow boundary layer (90 m) trapping emissions"
+      "Highest category score of 0.304 for construction",
+      "Landuse context indicating active construction (1)",
+      "Close proximity of construction candidate sources (1.24 km and 1.54 km)",
+      "Strong wind alignment with nearby construction sites (0.85 and 0.86)",
+      "Stagnant meteorology with trapped air and a 90 m boundary layer height"
     ],
     "evidence": {
       "cell": "883da10365fffff",
@@ -5504,7 +5596,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5520,10 +5612,13 @@
       "waste_burning": 0.0,
       "traffic": 0.135
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1434658088 is 1.24 km away, wind alignment 0.85; shallow boundary layer (90 m) trapping emissions.",
+    "reason": "Construction is the primary source with the highest deterministic score of 0.304, supported by landuse context indicating active construction. Multiple construction candidates are located in close proximity, including construction_1434658088 at 1.24 km and construction_1379318627 at 1.54 km with high wind alignments of 0.85 and 0.86. These emissions are exacerbated by low boundary layer height (90 m) and trapped air conditions, driving the PM2.5 concentration to 137.2.",
     "evidence_factors": [
-      "construction_1434658088 is 1.24 km away, wind alignment 0.85",
-      "shallow boundary layer (90 m) trapping emissions"
+      "Highest category score of 0.304 for construction",
+      "Landuse context indicating active construction (1)",
+      "Close proximity of construction candidate sources (1.24 km and 1.54 km)",
+      "Strong wind alignment with nearby construction sites (0.85 and 0.86)",
+      "Stagnant meteorology with trapped air and a 90 m boundary layer height"
     ],
     "evidence": {
       "cell": "883da10365fffff",
@@ -5621,7 +5716,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5637,10 +5732,13 @@
       "waste_burning": 0.0,
       "traffic": 0.135
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1434658088 is 1.24 km away, wind alignment 0.85; shallow boundary layer (90 m) trapping emissions.",
+    "reason": "Construction is the primary source with the highest deterministic score of 0.304, supported by landuse context indicating active construction. Multiple construction candidates are located in close proximity, including construction_1434658088 at 1.24 km and construction_1379318627 at 1.54 km with high wind alignments of 0.85 and 0.86. These emissions are exacerbated by low boundary layer height (90 m) and trapped air conditions, driving the PM2.5 concentration to 137.2.",
     "evidence_factors": [
-      "construction_1434658088 is 1.24 km away, wind alignment 0.85",
-      "shallow boundary layer (90 m) trapping emissions"
+      "Highest category score of 0.304 for construction",
+      "Landuse context indicating active construction (1)",
+      "Close proximity of construction candidate sources (1.24 km and 1.54 km)",
+      "Strong wind alignment with nearby construction sites (0.85 and 0.86)",
+      "Stagnant meteorology with trapped air and a 90 m boundary layer height"
     ],
     "evidence": {
       "cell": "883da10365fffff",
@@ -5738,7 +5836,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5754,10 +5852,13 @@
       "waste_burning": 0.0,
       "traffic": 0.135
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1434658088 is 1.24 km away, wind alignment 0.85; shallow boundary layer (90 m) trapping emissions.",
+    "reason": "Construction is the primary source with the highest deterministic score of 0.304, supported by landuse context indicating active construction. Multiple construction candidates are located in close proximity, including construction_1434658088 at 1.24 km and construction_1379318627 at 1.54 km with high wind alignments of 0.85 and 0.86. These emissions are exacerbated by low boundary layer height (90 m) and trapped air conditions, driving the PM2.5 concentration to 137.2.",
     "evidence_factors": [
-      "construction_1434658088 is 1.24 km away, wind alignment 0.85",
-      "shallow boundary layer (90 m) trapping emissions"
+      "Highest category score of 0.304 for construction",
+      "Landuse context indicating active construction (1)",
+      "Close proximity of construction candidate sources (1.24 km and 1.54 km)",
+      "Strong wind alignment with nearby construction sites (0.85 and 0.86)",
+      "Stagnant meteorology with trapped air and a 90 m boundary layer height"
     ],
     "evidence": {
       "cell": "883da10365fffff",
@@ -5855,7 +5956,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5871,10 +5972,13 @@
       "waste_burning": 0.0,
       "traffic": 0.135
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1434658088 is 1.24 km away, wind alignment 0.85; shallow boundary layer (90 m) trapping emissions.",
+    "reason": "Construction is the primary source with the highest deterministic score of 0.304, supported by landuse context indicating active construction. Multiple construction candidates are located in close proximity, including construction_1434658088 at 1.24 km and construction_1379318627 at 1.54 km with high wind alignments of 0.85 and 0.86. These emissions are exacerbated by low boundary layer height (90 m) and trapped air conditions, driving the PM2.5 concentration to 137.2.",
     "evidence_factors": [
-      "construction_1434658088 is 1.24 km away, wind alignment 0.85",
-      "shallow boundary layer (90 m) trapping emissions"
+      "Highest category score of 0.304 for construction",
+      "Landuse context indicating active construction (1)",
+      "Close proximity of construction candidate sources (1.24 km and 1.54 km)",
+      "Strong wind alignment with nearby construction sites (0.85 and 0.86)",
+      "Stagnant meteorology with trapped air and a 90 m boundary layer height"
     ],
     "evidence": {
       "cell": "883da10365fffff",
@@ -5972,7 +6076,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -5988,10 +6092,13 @@
       "waste_burning": 0.0,
       "traffic": 0.135
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1434658088 is 1.24 km away, wind alignment 0.85; shallow boundary layer (90 m) trapping emissions.",
+    "reason": "Construction is the primary source with the highest deterministic score of 0.304, supported by landuse context indicating active construction. Multiple construction candidates are located in close proximity, including construction_1434658088 at 1.24 km and construction_1379318627 at 1.54 km with high wind alignments of 0.85 and 0.86. These emissions are exacerbated by low boundary layer height (90 m) and trapped air conditions, driving the PM2.5 concentration to 137.2.",
     "evidence_factors": [
-      "construction_1434658088 is 1.24 km away, wind alignment 0.85",
-      "shallow boundary layer (90 m) trapping emissions"
+      "Highest category score of 0.304 for construction",
+      "Landuse context indicating active construction (1)",
+      "Close proximity of construction candidate sources (1.24 km and 1.54 km)",
+      "Strong wind alignment with nearby construction sites (0.85 and 0.86)",
+      "Stagnant meteorology with trapped air and a 90 m boundary layer height"
     ],
     "evidence": {
       "cell": "883da10365fffff",
@@ -6089,7 +6196,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -6105,10 +6212,13 @@
       "waste_burning": 0.0,
       "traffic": 0.135
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1434658088 is 1.24 km away, wind alignment 0.85; shallow boundary layer (90 m) trapping emissions.",
+    "reason": "Construction is the primary source with the highest deterministic score of 0.304, supported by landuse context indicating active construction. Multiple construction candidates are located in close proximity, including construction_1434658088 at 1.24 km and construction_1379318627 at 1.54 km with high wind alignments of 0.85 and 0.86. These emissions are exacerbated by low boundary layer height (90 m) and trapped air conditions, driving the PM2.5 concentration to 137.2.",
     "evidence_factors": [
-      "construction_1434658088 is 1.24 km away, wind alignment 0.85",
-      "shallow boundary layer (90 m) trapping emissions"
+      "Highest category score of 0.304 for construction",
+      "Landuse context indicating active construction (1)",
+      "Close proximity of construction candidate sources (1.24 km and 1.54 km)",
+      "Strong wind alignment with nearby construction sites (0.85 and 0.86)",
+      "Stagnant meteorology with trapped air and a 90 m boundary layer height"
     ],
     "evidence": {
       "cell": "883da10365fffff",
@@ -6206,7 +6316,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   }
 ]

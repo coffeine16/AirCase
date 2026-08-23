@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T18:42:52.063296+00:00",
+  "generated_at": "2026-08-23T17:48:26.768145+00:00",
   "response_time_claim": "Signal-to-memo is automated and deterministic: a cited enforcement memo and dispatch route are produced in seconds. The manual baseline — correlating a satellite signal to a served notice across agencies — is measured in weeks. This is the response-time reduction.",
   "effectiveness_claim": "NOT yet measured. Intervention effectiveness requires a real intervention between the frozen counterfactual and a realized outcome. The ledger freezes the counterfactual and awaits actioned outcomes from the inspector loop; it does not attribute natural change to itself.",
   "n_actions": 3,
@@ -15,15 +15,15 @@
       "eps": 63.0,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-22T18:41:52.884324+00:00",
+        "memo_drafted_at": "2026-08-23T17:47:52.158452+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 60.9,
-        "aqi_counterfactual": 104,
-        "band_counterfactual": "Moderate",
+        "pm25_counterfactual": 52.6,
+        "aqi_counterfactual": 88,
+        "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
       "observed_change": null,
@@ -39,14 +39,14 @@
       "eps": 55.1,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-22T18:41:52.884738+00:00",
+        "memo_drafted_at": "2026-08-23T17:47:52.158540+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 59.0,
-        "aqi_counterfactual": 98,
+        "pm25_counterfactual": 50.9,
+        "aqi_counterfactual": 85,
         "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
@@ -63,15 +63,15 @@
       "eps": 51.4,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-22T18:41:52.884902+00:00",
+        "memo_drafted_at": "2026-08-23T17:47:52.158598+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 64.7,
-        "aqi_counterfactual": 116,
-        "band_counterfactual": "Moderate",
+        "pm25_counterfactual": 56.7,
+        "aqi_counterfactual": 95,
+        "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
       "observed_change": null,

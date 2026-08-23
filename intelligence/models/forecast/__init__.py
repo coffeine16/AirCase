@@ -155,10 +155,18 @@ def _predict_field(panels: dict, served_manifest: dict, served_models: dict,
             print(f"[forecast] {city}: climatology from the 60-day operational "
                   f"window (no historical panel) — clim_month buckets hold ~1 sample")
         clim_tables = build_climatology(clim_src)
+        # FULL history in, ONE timestamp out. The trim used to happen on the way
+        # IN, which bounded memory but starved the long rolling features -- a
+        # 10-day input window left roll_med_2160 (a 90-day median) 28.66 ug/m3
+        # wrong on Delhi. Trimming on the way OUT instead (only_last_ts) keeps
+        # every feature exact while building the same small frame: serving only
+        # ever uses the final timestamp anyway, and replicating the other ~1,400
+        # hours across 24 horizons is what exhausted memory (2.45M x 24 = 59M
+        # rows on one city).
         cutoff = panel.ts.max() - pd.Timedelta(hours=PREDICT_LOOKBACK_HOURS)
         recent_panel = panel[panel.ts > cutoff]
         frame = build_features(recent_panel, HORIZONS, fires=fires_by_city.get(city),
-                                clim_tables=clim_tables)
+                                clim_tables=clim_tables, only_last_ts=True)
         frame["city"] = pd.Categorical(frame["city"], categories=city_categories)
         latest = frame.ts.max()
         latest_rows = frame[frame.ts == latest].dropna(subset=["lag_0"])

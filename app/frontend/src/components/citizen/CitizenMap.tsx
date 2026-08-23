@@ -18,7 +18,9 @@ import "maplibre-gl/dist/maplibre-gl.css";
 
 import { pm25ToRgbaArray } from "@/lib/colors";
 
-interface FusionCell { cell: string; pm25: number; ward_id?: string }
+// pm25 is nullable for the same reason it is in lib/types: at a forecast horizon
+// some cells have no value, and that is a gap to draw rather than a zero.
+interface FusionCell { cell: string; pm25: number | null; ward_id?: string }
 
 const DARK_STYLE = "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
 const LIGHT_STYLE = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
@@ -81,6 +83,8 @@ export default function CitizenMap({
       data: cells,
       getHexagon: (d) => d.cell,
       getFillColor: (d) => {
+        // No value is a gap, not clean air — same treatment as the admin map.
+        if (d.pm25 == null) return [120, 124, 130, highlightWard ? 18 : 26];
         const base = pm25ToRgbaArray(d.pm25, highlightWard ? 90 : 150);
         if (highlightWard && d.ward_id === highlightWard) return pm25ToRgbaArray(d.pm25, 235);
         return base;

@@ -153,7 +153,12 @@ export default function MapContainer({
       id: "fusion-choropleth",
       data: fusionCells,
       getHexagon: (d) => d.cell,
-      getFillColor: (d) => pm25ToRgbaArray(d.pm25, 175),
+      // A null pm25 is "no value here at this time", not zero. Colouring it on
+      // the AQI ramp would paint an absence as clean air, which is the most
+      // misleading thing this map could do; dropping the cell instead makes the
+      // choropleth silently shrink. So it gets its own near-transparent grey,
+      // legible as a gap rather than as a reading.
+      getFillColor: (d) => (d.pm25 == null ? [120, 124, 130, 28] : pm25ToRgbaArray(d.pm25, 175)),
       extruded: false,
       wireframe: false,
       pickable: true,
@@ -166,9 +171,13 @@ export default function MapContainer({
             x: info.x, y: info.y,
             content: (
               <div>
-                <div style={{ fontWeight: 600, marginBottom: 4 }}>Fusion PM2.5</div>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: "1.1rem" }}>
-                  {d.pm25.toFixed(1)} µg/m³
+                <div style={{ fontWeight: 600, marginBottom: 4 }}>
+                  {d.pm25 == null ? "No forecast" : "Fusion PM2.5"}
+                </div>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: d.pm25 == null ? "0.8rem" : "1.1rem" }}>
+                  {d.pm25 == null
+                    ? "upwind of every monitor at this hour"
+                    : `${d.pm25.toFixed(1)} µg/m³`}
                 </div>
                 <div style={{ color: "var(--text-tertiary)", fontSize: "0.75rem", marginTop: 4 }}>
                   {d.cell} · {d.ward_id}

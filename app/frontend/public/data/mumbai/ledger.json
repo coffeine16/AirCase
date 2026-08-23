@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T18:29:40.936451+00:00",
+  "generated_at": "2026-08-23T17:47:30.312857+00:00",
   "response_time_claim": "Signal-to-memo is automated and deterministic: a cited enforcement memo and dispatch route are produced in seconds. The manual baseline — correlating a satellite signal to a served notice across agencies — is measured in weeks. This is the response-time reduction.",
   "effectiveness_claim": "NOT yet measured. Intervention effectiveness requires a real intervention between the frozen counterfactual and a realized outcome. The ledger freezes the counterfactual and awaits actioned outcomes from the inspector loop; it does not attribute natural change to itself.",
   "n_actions": 9,
@@ -15,14 +15,14 @@
       "eps": 74.2,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-22T18:29:08.581509+00:00",
+        "memo_drafted_at": "2026-08-23T17:46:56.440550+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 58.0,
-        "aqi_counterfactual": 97,
+        "pm25_counterfactual": 53.3,
+        "aqi_counterfactual": 89,
         "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
@@ -39,14 +39,14 @@
       "eps": 70.6,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-22T18:29:08.581605+00:00",
+        "memo_drafted_at": "2026-08-23T17:46:56.440619+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 59.5,
-        "aqi_counterfactual": 99,
+        "pm25_counterfactual": 53.7,
+        "aqi_counterfactual": 90,
         "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
@@ -63,15 +63,15 @@
       "eps": 68.2,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-22T18:29:08.581653+00:00",
+        "memo_drafted_at": "2026-08-23T17:46:56.440669+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 61.9,
-        "aqi_counterfactual": 107,
-        "band_counterfactual": "Moderate",
+        "pm25_counterfactual": 57.1,
+        "aqi_counterfactual": 95,
+        "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
       "observed_change": null,
@@ -87,15 +87,15 @@
       "eps": 67.8,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-22T18:29:08.581692+00:00",
+        "memo_drafted_at": "2026-08-23T17:46:56.440722+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 62.0,
-        "aqi_counterfactual": 107,
-        "band_counterfactual": "Moderate",
+        "pm25_counterfactual": 57.0,
+        "aqi_counterfactual": 95,
+        "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
       "observed_change": null,
@@ -111,14 +111,14 @@
       "eps": 66.5,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-22T18:29:08.581726+00:00",
+        "memo_drafted_at": "2026-08-23T17:46:56.440759+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 43.2,
-        "aqi_counterfactual": 73,
+        "pm25_counterfactual": 45.3,
+        "aqi_counterfactual": 76,
         "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
@@ -135,14 +135,14 @@
       "eps": 63.3,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-22T18:29:08.581758+00:00",
+        "memo_drafted_at": "2026-08-23T17:46:56.440797+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 63.0,
-        "aqi_counterfactual": 111,
+        "pm25_counterfactual": 64.3,
+        "aqi_counterfactual": 115,
         "band_counterfactual": "Moderate",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
@@ -159,14 +159,14 @@
       "eps": 58.0,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-22T18:29:08.581788+00:00",
+        "memo_drafted_at": "2026-08-23T17:46:56.440831+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 52.1,
-        "aqi_counterfactual": 87,
+        "pm25_counterfactual": 49.3,
+        "aqi_counterfactual": 83,
         "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
@@ -183,14 +183,14 @@
       "eps": 50.7,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-22T18:29:08.581817+00:00",
+        "memo_drafted_at": "2026-08-23T17:46:56.440866+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 46.8,
-        "aqi_counterfactual": 78,
+        "pm25_counterfactual": 50.6,
+        "aqi_counterfactual": 85,
         "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
@@ -207,13 +207,13 @@
       "eps": 46.6,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-22T18:29:08.581847+00:00",
+        "memo_drafted_at": "2026-08-23T17:46:56.440898+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 41.4,
+        "pm25_counterfactual": 41.5,
         "aqi_counterfactual": 70,
         "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"

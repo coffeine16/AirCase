@@ -2,8 +2,8 @@
   {
     "ward_id": "W001",
     "ward_name": "Ward 119 (Teynampet)",
-    "pm25": 32.9,
-    "aqi": 56,
+    "pm25": 33.6,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -20,8 +20,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 119 (Teynampet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 119 (Teynampet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 119 (Teynampet) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 119 (Teynampet) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -38,8 +38,8 @@
   {
     "ward_id": "W003",
     "ward_name": "Ward 26 (Madhavaram)",
-    "pm25": 31.4,
-    "aqi": 53,
+    "pm25": 33.0,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -56,8 +56,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 26 (Madhavaram) is satisfactory (AQI 53). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 26 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 53). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 26 (Madhavaram) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 26 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -74,8 +74,8 @@
   {
     "ward_id": "W005",
     "ward_name": "Ward 132 (Kodambakkam)",
-    "pm25": 32.5,
-    "aqi": 55,
+    "pm25": 33.8,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -92,8 +92,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 132 (Kodambakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 132 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 132 (Kodambakkam) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 132 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -110,8 +110,8 @@
   {
     "ward_id": "W006",
     "ward_name": "Ward 37 (Tondiarpet)",
-    "pm25": 40.6,
-    "aqi": 68,
+    "pm25": 38.7,
+    "aqi": 65,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -128,8 +128,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 37 (Tondiarpet) is satisfactory (AQI 68). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 37 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 68). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 37 (Tondiarpet) is satisfactory (AQI 65). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 37 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 65). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -146,8 +146,8 @@
   {
     "ward_id": "W007",
     "ward_name": "Ward 70 (Thiru-Vi-Ka-Nagar)",
-    "pm25": 31.9,
-    "aqi": 54,
+    "pm25": 33.5,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -164,8 +164,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 70 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 70 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 70 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 70 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -182,8 +182,8 @@
   {
     "ward_id": "W008",
     "ward_name": "Ward 101 (Annanagar)",
-    "pm25": 32.8,
-    "aqi": 55,
+    "pm25": 34.2,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -200,8 +200,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 101 (Annanagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 101 (Annanagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 101 (Annanagar) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 101 (Annanagar) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -218,8 +218,8 @@
   {
     "ward_id": "W009",
     "ward_name": "Ward 60 (Royapuram)",
-    "pm25": 33.0,
-    "aqi": 56,
+    "pm25": 33.4,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -236,8 +236,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 60 (Royapuram) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 60 (Royapuram) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 60 (Royapuram) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 60 (Royapuram) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -254,8 +254,8 @@
   {
     "ward_id": "W012",
     "ward_name": "Ward 86 (Ambattur)",
-    "pm25": 32.3,
-    "aqi": 55,
+    "pm25": 33.8,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -272,8 +272,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 86 (Ambattur) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 86 (Ambattur) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 86 (Ambattur) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 86 (Ambattur) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -290,7 +290,7 @@
   {
     "ward_id": "W013",
     "ward_name": "Ward 147 (Valasaravakkam)",
-    "pm25": 32.2,
+    "pm25": 32.6,
     "aqi": 55,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -326,8 +326,8 @@
   {
     "ward_id": "W014",
     "ward_name": "Ward 157 (Alandur)",
-    "pm25": 33.2,
-    "aqi": 56,
+    "pm25": 34.5,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -344,8 +344,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 157 (Alandur) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 157 (Alandur) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 157 (Alandur) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 157 (Alandur) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -362,8 +362,8 @@
   {
     "ward_id": "W015",
     "ward_name": "Ward 0 (St. Thomas Mount)",
-    "pm25": 32.6,
-    "aqi": 55,
+    "pm25": 33.8,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -380,8 +380,44 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 0 (St. Thomas Mount) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 0 (St. Thomas Mount) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 0 (St. Thomas Mount) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 0 (St. Thomas Mount) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "ta": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "ta": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W016",
+    "ward_name": "Ward 189 (Perungudi)",
+    "pm25": 34.1,
+    "aqi": 58,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 14,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "ta"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 189 (Perungudi) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 189 (Perungudi) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -398,8 +434,8 @@
   {
     "ward_id": "W038",
     "ward_name": "Ward 32 (Madhavaram)",
-    "pm25": 32.3,
-    "aqi": 55,
+    "pm25": 33.4,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -416,8 +452,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 32 (Madhavaram) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 32 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 32 (Madhavaram) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 32 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -434,8 +470,8 @@
   {
     "ward_id": "W045",
     "ward_name": "Ward 33 (Madhavaram)",
-    "pm25": 31.9,
-    "aqi": 54,
+    "pm25": 33.4,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -452,8 +488,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 33 (Madhavaram) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 33 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 33 (Madhavaram) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 33 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -470,8 +506,8 @@
   {
     "ward_id": "W048",
     "ward_name": "Ward 35 (Tondiarpet)",
-    "pm25": 30.9,
-    "aqi": 52,
+    "pm25": 32.5,
+    "aqi": 55,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -488,8 +524,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 35 (Tondiarpet) is satisfactory (AQI 52). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 35 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 52). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 35 (Tondiarpet) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 35 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -506,8 +542,8 @@
   {
     "ward_id": "W049",
     "ward_name": "Ward 44 (Tondiarpet)",
-    "pm25": 31.4,
-    "aqi": 53,
+    "pm25": 33.0,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -524,8 +560,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 44 (Tondiarpet) is satisfactory (AQI 53). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 44 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 53). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 44 (Tondiarpet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 44 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -542,8 +578,8 @@
   {
     "ward_id": "W050",
     "ward_name": "Ward 45 (Tondiarpet)",
-    "pm25": 32.5,
-    "aqi": 55,
+    "pm25": 34.1,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -560,8 +596,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 45 (Tondiarpet) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 45 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 45 (Tondiarpet) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 45 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -578,8 +614,8 @@
   {
     "ward_id": "W051",
     "ward_name": "Ward 36 (Tondiarpet)",
-    "pm25": 31.5,
-    "aqi": 53,
+    "pm25": 32.9,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -596,8 +632,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 36 (Tondiarpet) is satisfactory (AQI 53). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 36 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 53). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 36 (Tondiarpet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 36 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -614,8 +650,8 @@
   {
     "ward_id": "W052",
     "ward_name": "Ward 46 (Tondiarpet)",
-    "pm25": 31.1,
-    "aqi": 53,
+    "pm25": 32.6,
+    "aqi": 55,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -632,8 +668,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 46 (Tondiarpet) is satisfactory (AQI 53). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 46 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 53). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 46 (Tondiarpet) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 46 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -650,8 +686,8 @@
   {
     "ward_id": "W053",
     "ward_name": "Ward 47 (Tondiarpet)",
-    "pm25": 30.6,
-    "aqi": 52,
+    "pm25": 32.2,
+    "aqi": 55,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -668,8 +704,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 47 (Tondiarpet) is satisfactory (AQI 52). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 47 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 52). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 47 (Tondiarpet) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 47 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -686,8 +722,8 @@
   {
     "ward_id": "W054",
     "ward_name": "Ward 48 (Tondiarpet)",
-    "pm25": 31.7,
-    "aqi": 54,
+    "pm25": 33.1,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -704,8 +740,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 48 (Tondiarpet) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 48 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 48 (Tondiarpet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 48 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -722,8 +758,8 @@
   {
     "ward_id": "W055",
     "ward_name": "Ward 42 (Tondiarpet)",
-    "pm25": 32.0,
-    "aqi": 54,
+    "pm25": 33.5,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -740,8 +776,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 42 (Tondiarpet) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 42 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 42 (Tondiarpet) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 42 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -758,8 +794,8 @@
   {
     "ward_id": "W056",
     "ward_name": "Ward 43 (Tondiarpet)",
-    "pm25": 32.8,
-    "aqi": 56,
+    "pm25": 34.3,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -776,8 +812,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 43 (Tondiarpet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 43 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 43 (Tondiarpet) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 43 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -794,8 +830,8 @@
   {
     "ward_id": "W058",
     "ward_name": "Ward 40 (Tondiarpet)",
-    "pm25": 31.7,
-    "aqi": 54,
+    "pm25": 33.2,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -812,8 +848,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 40 (Tondiarpet) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 40 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 40 (Tondiarpet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 40 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -830,8 +866,8 @@
   {
     "ward_id": "W059",
     "ward_name": "Ward 41 (Tondiarpet)",
-    "pm25": 32.9,
-    "aqi": 56,
+    "pm25": 34.2,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -848,8 +884,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 41 (Tondiarpet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 41 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 41 (Tondiarpet) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 41 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -866,8 +902,8 @@
   {
     "ward_id": "W060",
     "ward_name": "Ward 38 (Tondiarpet)",
-    "pm25": 31.8,
-    "aqi": 54,
+    "pm25": 33.3,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -884,8 +920,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 38 (Tondiarpet) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 38 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 38 (Tondiarpet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 38 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -896,14 +932,13 @@
       "en": "cpcb_official",
       "ta": "native_speaker"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
     "ward_id": "W061",
     "ward_name": "Ward 64 (Thiru-Vi-Ka-Nagar)",
-    "pm25": 32.8,
-    "aqi": 55,
+    "pm25": 33.8,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -920,8 +955,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 64 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 64 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 64 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 64 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -937,8 +972,8 @@
   {
     "ward_id": "W062",
     "ward_name": "Ward 65 (Thiru-Vi-Ka-Nagar)",
-    "pm25": 32.3,
-    "aqi": 55,
+    "pm25": 33.7,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -955,8 +990,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 65 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 65 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 65 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 65 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -972,8 +1007,8 @@
   {
     "ward_id": "W064",
     "ward_name": "Ward 68 (Thiru-Vi-Ka-Nagar)",
-    "pm25": 32.0,
-    "aqi": 54,
+    "pm25": 33.5,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -990,8 +1025,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 68 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 68 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 68 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 68 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1007,8 +1042,8 @@
   {
     "ward_id": "W065",
     "ward_name": "Ward 66 (Thiru-Vi-Ka-Nagar)",
-    "pm25": 32.9,
-    "aqi": 56,
+    "pm25": 34.0,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1025,8 +1060,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 66 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 66 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 66 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 66 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1042,8 +1077,8 @@
   {
     "ward_id": "W067",
     "ward_name": "Ward 73 (Thiru-Vi-Ka-Nagar)",
-    "pm25": 31.9,
-    "aqi": 54,
+    "pm25": 33.5,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1060,8 +1095,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 73 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 73 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 73 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 73 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1077,8 +1112,8 @@
   {
     "ward_id": "W068",
     "ward_name": "Ward 71 (Thiru-Vi-Ka-Nagar)",
-    "pm25": 32.7,
-    "aqi": 55,
+    "pm25": 33.6,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1095,8 +1130,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 71 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 71 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 71 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 71 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1112,8 +1147,8 @@
   {
     "ward_id": "W069",
     "ward_name": "Ward 69 (Thiru-Vi-Ka-Nagar)",
-    "pm25": 32.0,
-    "aqi": 54,
+    "pm25": 33.2,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1130,8 +1165,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 69 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 69 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 69 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 69 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1147,8 +1182,8 @@
   {
     "ward_id": "W071",
     "ward_name": "Ward 74 (Thiru-Vi-Ka-Nagar)",
-    "pm25": 32.7,
-    "aqi": 55,
+    "pm25": 34.2,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1165,8 +1200,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 74 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 74 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 74 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 74 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1182,8 +1217,8 @@
   {
     "ward_id": "W072",
     "ward_name": "Ward 75 (Thiru-Vi-Ka-Nagar)",
-    "pm25": 32.9,
-    "aqi": 56,
+    "pm25": 34.4,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1200,8 +1235,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 75 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 75 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 75 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 75 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1217,8 +1252,8 @@
   {
     "ward_id": "W073",
     "ward_name": "Ward 78 (Thiru-Vi-Ka-Nagar)",
-    "pm25": 31.9,
-    "aqi": 54,
+    "pm25": 33.5,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1235,8 +1270,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 78 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 78 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 78 (Thiru-Vi-Ka-Nagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 78 (Thiru-Vi-Ka-Nagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1252,8 +1287,8 @@
   {
     "ward_id": "W075",
     "ward_name": "Ward 53 (Royapuram)",
-    "pm25": 30.8,
-    "aqi": 52,
+    "pm25": 32.3,
+    "aqi": 55,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1270,8 +1305,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 53 (Royapuram) is satisfactory (AQI 52). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 53 (Royapuram) ல் காற்று பரவாயில்லை (AQI 52). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 53 (Royapuram) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 53 (Royapuram) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1287,8 +1322,8 @@
   {
     "ward_id": "W077",
     "ward_name": "Ward 49 (Royapuram)",
-    "pm25": 31.7,
-    "aqi": 54,
+    "pm25": 33.1,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1305,8 +1340,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 49 (Royapuram) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 49 (Royapuram) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 49 (Royapuram) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 49 (Royapuram) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1322,8 +1357,8 @@
   {
     "ward_id": "W078",
     "ward_name": "Ward 50 (Royapuram)",
-    "pm25": 32.5,
-    "aqi": 55,
+    "pm25": 34.0,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1340,8 +1375,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 50 (Royapuram) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 50 (Royapuram) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 50 (Royapuram) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 50 (Royapuram) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1357,8 +1392,8 @@
   {
     "ward_id": "W080",
     "ward_name": "Ward 55 (Royapuram)",
-    "pm25": 30.8,
-    "aqi": 52,
+    "pm25": 32.5,
+    "aqi": 55,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1375,8 +1410,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 55 (Royapuram) is satisfactory (AQI 52). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 55 (Royapuram) ல் காற்று பரவாயில்லை (AQI 52). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 55 (Royapuram) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 55 (Royapuram) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1392,8 +1427,8 @@
   {
     "ward_id": "W082",
     "ward_name": "Ward 52 (Royapuram)",
-    "pm25": 31.9,
-    "aqi": 54,
+    "pm25": 33.5,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1410,8 +1445,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 52 (Royapuram) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 52 (Royapuram) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 52 (Royapuram) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 52 (Royapuram) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1427,8 +1462,8 @@
   {
     "ward_id": "W083",
     "ward_name": "Ward 57 (Royapuram)",
-    "pm25": 31.9,
-    "aqi": 54,
+    "pm25": 33.0,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1445,8 +1480,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 57 (Royapuram) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 57 (Royapuram) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 57 (Royapuram) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 57 (Royapuram) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1462,8 +1497,8 @@
   {
     "ward_id": "W084",
     "ward_name": "Ward 61 (Royapuram)",
-    "pm25": 32.5,
-    "aqi": 55,
+    "pm25": 33.5,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1480,8 +1515,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 61 (Royapuram) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 61 (Royapuram) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 61 (Royapuram) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 61 (Royapuram) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1497,8 +1532,8 @@
   {
     "ward_id": "W085",
     "ward_name": "Ward 58 (Royapuram)",
-    "pm25": 32.3,
-    "aqi": 55,
+    "pm25": 33.5,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1515,8 +1550,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 58 (Royapuram) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 58 (Royapuram) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 58 (Royapuram) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 58 (Royapuram) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1532,8 +1567,8 @@
   {
     "ward_id": "W086",
     "ward_name": "Ward 63 (Royapuram)",
-    "pm25": 32.7,
-    "aqi": 55,
+    "pm25": 34.3,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1550,8 +1585,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 63 (Royapuram) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 63 (Royapuram) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 63 (Royapuram) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 63 (Royapuram) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1567,8 +1602,8 @@
   {
     "ward_id": "W087",
     "ward_name": "Ward 62 (Royapuram)",
-    "pm25": 32.7,
-    "aqi": 55,
+    "pm25": 33.7,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1585,8 +1620,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 62 (Royapuram) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 62 (Royapuram) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 62 (Royapuram) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 62 (Royapuram) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1602,8 +1637,8 @@
   {
     "ward_id": "W088",
     "ward_name": "Ward 59 (Royapuram)",
-    "pm25": 32.1,
-    "aqi": 54,
+    "pm25": 38.1,
+    "aqi": 64,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1620,8 +1655,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 59 (Royapuram) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 59 (Royapuram) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 59 (Royapuram) is satisfactory (AQI 64). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 59 (Royapuram) ல் காற்று பரவாயில்லை (AQI 64). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1637,8 +1672,8 @@
   {
     "ward_id": "W089",
     "ward_name": "Ward 94 (Annanagar)",
-    "pm25": 32.5,
-    "aqi": 55,
+    "pm25": 34.0,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1655,8 +1690,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 94 (Annanagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 94 (Annanagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 94 (Annanagar) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 94 (Annanagar) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1672,8 +1707,8 @@
   {
     "ward_id": "W090",
     "ward_name": "Ward 100 (Annanagar)",
-    "pm25": 32.3,
-    "aqi": 55,
+    "pm25": 33.5,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1690,8 +1725,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 100 (Annanagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 100 (Annanagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 100 (Annanagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 100 (Annanagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1707,216 +1742,6 @@
   {
     "ward_id": "W091",
     "ward_name": "Ward 99 (Annanagar)",
-    "pm25": 32.3,
-    "aqi": 55,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 1,
-    "vulnerability": {
-      "schools_hospitals_nearby": 30,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "ta"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 99 (Annanagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 99 (Annanagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "ta": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "ta": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W092",
-    "ward_name": "Ward 95 (Annanagar)",
-    "pm25": 32.5,
-    "aqi": 55,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 5,
-    "vulnerability": {
-      "schools_hospitals_nearby": 32,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "ta"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 95 (Annanagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 95 (Annanagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "ta": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "ta": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W093",
-    "ward_name": "Ward 96 (Annanagar)",
-    "pm25": 32.7,
-    "aqi": 55,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 5,
-    "vulnerability": {
-      "schools_hospitals_nearby": 37,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "ta"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 96 (Annanagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 96 (Annanagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "ta": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "ta": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W095",
-    "ward_name": "Ward 105 (Annanagar)",
-    "pm25": 32.4,
-    "aqi": 55,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 1,
-    "vulnerability": {
-      "schools_hospitals_nearby": 31,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "ta"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 105 (Annanagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 105 (Annanagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "ta": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "ta": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W096",
-    "ward_name": "Ward 104 (Annanagar)",
-    "pm25": 32.8,
-    "aqi": 55,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 72,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "ta"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 104 (Annanagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 104 (Annanagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "ta": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "ta": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W097",
-    "ward_name": "Ward 107 (Annanagar)",
-    "pm25": 32.4,
-    "aqi": 55,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 1,
-    "vulnerability": {
-      "schools_hospitals_nearby": 69,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "ta"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 107 (Annanagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 107 (Annanagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "ta": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "ta": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W098",
-    "ward_name": "Ward 98 (Annanagar)",
     "pm25": 33.2,
     "aqi": 56,
     "aqi_category": "Satisfactory",
@@ -1935,8 +1760,218 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 98 (Annanagar) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 98 (Annanagar) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 99 (Annanagar) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 99 (Annanagar) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "ta": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "ta": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W092",
+    "ward_name": "Ward 95 (Annanagar)",
+    "pm25": 33.8,
+    "aqi": 57,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 5,
+    "vulnerability": {
+      "schools_hospitals_nearby": 32,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "ta"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 95 (Annanagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 95 (Annanagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "ta": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "ta": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W093",
+    "ward_name": "Ward 96 (Annanagar)",
+    "pm25": 33.5,
+    "aqi": 57,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 5,
+    "vulnerability": {
+      "schools_hospitals_nearby": 37,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "ta"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 96 (Annanagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 96 (Annanagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "ta": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "ta": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W095",
+    "ward_name": "Ward 105 (Annanagar)",
+    "pm25": 33.5,
+    "aqi": 57,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 31,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "ta"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 105 (Annanagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 105 (Annanagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "ta": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "ta": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W096",
+    "ward_name": "Ward 104 (Annanagar)",
+    "pm25": 34.0,
+    "aqi": 57,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 72,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "ta"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 104 (Annanagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 104 (Annanagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "ta": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "ta": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W097",
+    "ward_name": "Ward 107 (Annanagar)",
+    "pm25": 33.2,
+    "aqi": 56,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 69,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "ta"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 107 (Annanagar) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 107 (Annanagar) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "ta": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "ta": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W098",
+    "ward_name": "Ward 98 (Annanagar)",
+    "pm25": 33.9,
+    "aqi": 57,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 30,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "ta"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 98 (Annanagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 98 (Annanagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1952,8 +1987,8 @@
   {
     "ward_id": "W099",
     "ward_name": "Ward 103 (Annanagar)",
-    "pm25": 32.7,
-    "aqi": 55,
+    "pm25": 33.7,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -1970,8 +2005,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 103 (Annanagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 103 (Annanagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 103 (Annanagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 103 (Annanagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1987,8 +2022,8 @@
   {
     "ward_id": "W100",
     "ward_name": "Ward 102 (Annanagar)",
-    "pm25": 32.0,
-    "aqi": 54,
+    "pm25": 33.4,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2005,8 +2040,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 102 (Annanagar) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 102 (Annanagar) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 102 (Annanagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 102 (Annanagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2022,8 +2057,8 @@
   {
     "ward_id": "W101",
     "ward_name": "Ward 108 (Annanagar)",
-    "pm25": 32.4,
-    "aqi": 55,
+    "pm25": 33.4,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2040,8 +2075,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 108 (Annanagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 108 (Annanagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 108 (Annanagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 108 (Annanagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2057,8 +2092,8 @@
   {
     "ward_id": "W102",
     "ward_name": "Ward 106 (Annanagar)",
-    "pm25": 32.2,
-    "aqi": 55,
+    "pm25": 33.7,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2075,8 +2110,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 106 (Annanagar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 106 (Annanagar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 106 (Annanagar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 106 (Annanagar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2092,8 +2127,8 @@
   {
     "ward_id": "W103",
     "ward_name": "Ward 109 (Teynampet)",
-    "pm25": 32.4,
-    "aqi": 55,
+    "pm25": 33.9,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2110,8 +2145,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 109 (Teynampet) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 109 (Teynampet) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 109 (Teynampet) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 109 (Teynampet) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2127,8 +2162,8 @@
   {
     "ward_id": "W104",
     "ward_name": "Ward 112 (Teynampet)",
-    "pm25": 32.6,
-    "aqi": 55,
+    "pm25": 33.4,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2145,8 +2180,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 112 (Teynampet) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 112 (Teynampet) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 112 (Teynampet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 112 (Teynampet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2162,8 +2197,8 @@
   {
     "ward_id": "W105",
     "ward_name": "Ward 110 (Teynampet)",
-    "pm25": 32.1,
-    "aqi": 54,
+    "pm25": 33.2,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2180,8 +2215,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 110 (Teynampet) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 110 (Teynampet) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 110 (Teynampet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 110 (Teynampet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2197,8 +2232,8 @@
   {
     "ward_id": "W106",
     "ward_name": "Ward 111 (Teynampet)",
-    "pm25": 32.1,
-    "aqi": 54,
+    "pm25": 33.2,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2215,8 +2250,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 111 (Teynampet) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 111 (Teynampet) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 111 (Teynampet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 111 (Teynampet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2232,8 +2267,8 @@
   {
     "ward_id": "W107",
     "ward_name": "Ward 114 (Teynampet)",
-    "pm25": 32.5,
-    "aqi": 55,
+    "pm25": 33.8,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2250,8 +2285,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 114 (Teynampet) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 114 (Teynampet) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 114 (Teynampet) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 114 (Teynampet) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2267,7 +2302,7 @@
   {
     "ward_id": "W108",
     "ward_name": "Ward 116 (Teynampet)",
-    "pm25": 32.9,
+    "pm25": 33.3,
     "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -2302,8 +2337,8 @@
   {
     "ward_id": "W109",
     "ward_name": "Ward 115 (Teynampet)",
-    "pm25": 32.4,
-    "aqi": 55,
+    "pm25": 32.8,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2320,8 +2355,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 115 (Teynampet) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 115 (Teynampet) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 115 (Teynampet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 115 (Teynampet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2337,8 +2372,8 @@
   {
     "ward_id": "W110",
     "ward_name": "Ward 113 (Teynampet)",
-    "pm25": 32.0,
-    "aqi": 54,
+    "pm25": 33.1,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2355,8 +2390,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 113 (Teynampet) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 113 (Teynampet) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 113 (Teynampet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 113 (Teynampet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2372,8 +2407,8 @@
   {
     "ward_id": "W111",
     "ward_name": "Ward 117 (Teynampet)",
-    "pm25": 32.1,
-    "aqi": 54,
+    "pm25": 33.3,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2390,8 +2425,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 117 (Teynampet) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 117 (Teynampet) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 117 (Teynampet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 117 (Teynampet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2407,8 +2442,8 @@
   {
     "ward_id": "W112",
     "ward_name": "Ward 122 (Teynampet)",
-    "pm25": 32.8,
-    "aqi": 56,
+    "pm25": 33.5,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2425,8 +2460,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 122 (Teynampet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 122 (Teynampet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 122 (Teynampet) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 122 (Teynampet) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2442,8 +2477,8 @@
   {
     "ward_id": "W114",
     "ward_name": "Ward 124 (Teynampet)",
-    "pm25": 32.6,
-    "aqi": 55,
+    "pm25": 33.8,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2460,8 +2495,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 124 (Teynampet) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 124 (Teynampet) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 124 (Teynampet) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 124 (Teynampet) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2477,7 +2512,7 @@
   {
     "ward_id": "W115",
     "ward_name": "Ward 125 (Teynampet)",
-    "pm25": 32.9,
+    "pm25": 33.2,
     "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -2512,8 +2547,8 @@
   {
     "ward_id": "W116",
     "ward_name": "Ward 123 (Teynampet)",
-    "pm25": 33.1,
-    "aqi": 56,
+    "pm25": 33.9,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2530,8 +2565,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 123 (Teynampet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 123 (Teynampet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 123 (Teynampet) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 123 (Teynampet) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2547,8 +2582,8 @@
   {
     "ward_id": "W117",
     "ward_name": "Ward 118 (Teynampet)",
-    "pm25": 32.2,
-    "aqi": 55,
+    "pm25": 32.9,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2565,8 +2600,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 118 (Teynampet) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 118 (Teynampet) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 118 (Teynampet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 118 (Teynampet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2582,8 +2617,8 @@
   {
     "ward_id": "W119",
     "ward_name": "Ward 121 (Teynampet)",
-    "pm25": 32.9,
-    "aqi": 56,
+    "pm25": 33.6,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2600,8 +2635,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 121 (Teynampet) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 121 (Teynampet) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 121 (Teynampet) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 121 (Teynampet) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2617,8 +2652,8 @@
   {
     "ward_id": "W120",
     "ward_name": "Ward 79 (Ambattur)",
-    "pm25": 32.4,
-    "aqi": 55,
+    "pm25": 33.2,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2635,8 +2670,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 79 (Ambattur) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 79 (Ambattur) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 79 (Ambattur) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 79 (Ambattur) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2652,8 +2687,8 @@
   {
     "ward_id": "W121",
     "ward_name": "Ward 80 (Ambattur)",
-    "pm25": 31.9,
-    "aqi": 54,
+    "pm25": 33.1,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2670,8 +2705,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 80 (Ambattur) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 80 (Ambattur) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 80 (Ambattur) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 80 (Ambattur) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2687,8 +2722,8 @@
   {
     "ward_id": "W123",
     "ward_name": "Ward 81 (Ambattur)",
-    "pm25": 32.2,
-    "aqi": 55,
+    "pm25": 33.8,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2705,8 +2740,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 81 (Ambattur) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 81 (Ambattur) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 81 (Ambattur) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 81 (Ambattur) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2722,8 +2757,8 @@
   {
     "ward_id": "W124",
     "ward_name": "Ward 82 (Ambattur)",
-    "pm25": 32.2,
-    "aqi": 55,
+    "pm25": 33.4,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2740,8 +2775,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 82 (Ambattur) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 82 (Ambattur) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 82 (Ambattur) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 82 (Ambattur) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2757,8 +2792,8 @@
   {
     "ward_id": "W125",
     "ward_name": "Ward 85 (Ambattur)",
-    "pm25": 32.4,
-    "aqi": 55,
+    "pm25": 33.8,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2775,8 +2810,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 85 (Ambattur) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 85 (Ambattur) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 85 (Ambattur) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 85 (Ambattur) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2792,8 +2827,8 @@
   {
     "ward_id": "W126",
     "ward_name": "Ward 84 (Ambattur)",
-    "pm25": 32.5,
-    "aqi": 55,
+    "pm25": 34.0,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2810,8 +2845,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 84 (Ambattur) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 84 (Ambattur) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 84 (Ambattur) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 84 (Ambattur) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2827,8 +2862,8 @@
   {
     "ward_id": "W127",
     "ward_name": "Ward 93 (Ambattur)",
-    "pm25": 32.1,
-    "aqi": 55,
+    "pm25": 33.0,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2845,8 +2880,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 93 (Ambattur) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 93 (Ambattur) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 93 (Ambattur) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 93 (Ambattur) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2862,8 +2897,8 @@
   {
     "ward_id": "W128",
     "ward_name": "Ward 90 (Ambattur)",
-    "pm25": 31.9,
-    "aqi": 54,
+    "pm25": 32.8,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2880,8 +2915,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 90 (Ambattur) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 90 (Ambattur) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 90 (Ambattur) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 90 (Ambattur) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2897,8 +2932,8 @@
   {
     "ward_id": "W129",
     "ward_name": "Ward 91 (Ambattur)",
-    "pm25": 32.7,
-    "aqi": 55,
+    "pm25": 34.3,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2915,8 +2950,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 91 (Ambattur) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 91 (Ambattur) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 91 (Ambattur) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 91 (Ambattur) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2932,8 +2967,8 @@
   {
     "ward_id": "W130",
     "ward_name": "Ward 92 (Ambattur)",
-    "pm25": 32.5,
-    "aqi": 55,
+    "pm25": 33.8,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2950,8 +2985,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 92 (Ambattur) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 92 (Ambattur) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 92 (Ambattur) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 92 (Ambattur) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2967,8 +3002,8 @@
   {
     "ward_id": "W131",
     "ward_name": "Ward 88 (Ambattur)",
-    "pm25": 32.2,
-    "aqi": 55,
+    "pm25": 33.2,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -2985,8 +3020,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 88 (Ambattur) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 88 (Ambattur) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 88 (Ambattur) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 88 (Ambattur) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3002,8 +3037,8 @@
   {
     "ward_id": "W133",
     "ward_name": "Ward 89 (Ambattur)",
-    "pm25": 32.2,
-    "aqi": 55,
+    "pm25": 33.7,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3020,8 +3055,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 89 (Ambattur) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 89 (Ambattur) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 89 (Ambattur) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 89 (Ambattur) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3037,8 +3072,8 @@
   {
     "ward_id": "W153",
     "ward_name": "Ward 182 (Adyar)",
-    "pm25": 33.6,
-    "aqi": 57,
+    "pm25": 34.5,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3055,8 +3090,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 182 (Adyar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 182 (Adyar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 182 (Adyar) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 182 (Adyar) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3072,8 +3107,8 @@
   {
     "ward_id": "W154",
     "ward_name": "Ward 181 (Adyar)",
-    "pm25": 32.4,
-    "aqi": 55,
+    "pm25": 33.8,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3090,8 +3125,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 181 (Adyar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 181 (Adyar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 181 (Adyar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 181 (Adyar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3107,8 +3142,8 @@
   {
     "ward_id": "W155",
     "ward_name": "Ward 176 (Adyar)",
-    "pm25": 32.9,
-    "aqi": 56,
+    "pm25": 33.5,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3125,8 +3160,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 176 (Adyar) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 176 (Adyar) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 176 (Adyar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 176 (Adyar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3142,8 +3177,8 @@
   {
     "ward_id": "W156",
     "ward_name": "Ward 173 (Adyar)",
-    "pm25": 32.9,
-    "aqi": 56,
+    "pm25": 33.5,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3160,8 +3195,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 173 (Adyar) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 173 (Adyar) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 173 (Adyar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 173 (Adyar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3177,8 +3212,8 @@
   {
     "ward_id": "W157",
     "ward_name": "Ward 170 (Adyar)",
-    "pm25": 33.7,
-    "aqi": 57,
+    "pm25": 34.6,
+    "aqi": 59,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3195,8 +3230,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 170 (Adyar) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 170 (Adyar) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 170 (Adyar) is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 170 (Adyar) ல் காற்று பரவாயில்லை (AQI 59). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3212,8 +3247,8 @@
   {
     "ward_id": "W158",
     "ward_name": "Ward 171 (Adyar)",
-    "pm25": 32.7,
-    "aqi": 55,
+    "pm25": 33.2,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3230,8 +3265,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 171 (Adyar) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 171 (Adyar) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 171 (Adyar) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 171 (Adyar) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3247,7 +3282,7 @@
   {
     "ward_id": "W159",
     "ward_name": "Ward 175 (Adyar)",
-    "pm25": 32.9,
+    "pm25": 33.2,
     "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3282,7 +3317,7 @@
   {
     "ward_id": "W161",
     "ward_name": "Ward 172 (Adyar)",
-    "pm25": 32.9,
+    "pm25": 33.0,
     "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3317,8 +3352,8 @@
   {
     "ward_id": "W169",
     "ward_name": "Ward 158 (Alandur)",
-    "pm25": 32.5,
-    "aqi": 55,
+    "pm25": 34.0,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3335,8 +3370,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 158 (Alandur) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 158 (Alandur) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 158 (Alandur) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 158 (Alandur) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3352,7 +3387,182 @@
   {
     "ward_id": "W171",
     "ward_name": "Ward 166 (Alandur)",
-    "pm25": 33.5,
+    "pm25": 34.5,
+    "aqi": 58,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 24,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "ta"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 166 (Alandur) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 166 (Alandur) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "ta": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "ta": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W172",
+    "ward_name": "Ward 164 (Alandur)",
+    "pm25": 34.9,
+    "aqi": 59,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 23,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "ta"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 164 (Alandur) is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 164 (Alandur) ல் காற்று பரவாயில்லை (AQI 59). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "ta": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "ta": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W173",
+    "ward_name": "Ward 162 (Alandur)",
+    "pm25": 34.8,
+    "aqi": 59,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 27,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "ta"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 162 (Alandur) is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 162 (Alandur) ல் காற்று பரவாயில்லை (AQI 59). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "ta": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "ta": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W175",
+    "ward_name": "Ward 150 (Valasaravakkam)",
+    "pm25": 32.9,
+    "aqi": 56,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 10,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "ta"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 150 (Valasaravakkam) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 150 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "ta": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "ta": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W176",
+    "ward_name": "Ward 153 (Valasaravakkam)",
+    "pm25": 32.9,
+    "aqi": 56,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.44,
+    "worsening": true,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 10,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "ta"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 153 (Valasaravakkam) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 153 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "ta": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "ta": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W177",
+    "ward_name": "Ward 149 (Valasaravakkam)",
+    "pm25": 33.8,
     "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3370,113 +3580,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 166 (Alandur) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 166 (Alandur) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "ta": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "ta": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W175",
-    "ward_name": "Ward 150 (Valasaravakkam)",
-    "pm25": 31.3,
-    "aqi": 53,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 1,
-    "vulnerability": {
-      "schools_hospitals_nearby": 10,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "ta"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 150 (Valasaravakkam) is satisfactory (AQI 53). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 150 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 53). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "ta": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "ta": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W176",
-    "ward_name": "Ward 153 (Valasaravakkam)",
-    "pm25": 32.4,
-    "aqi": 55,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 3,
-    "vulnerability": {
-      "schools_hospitals_nearby": 10,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "ta"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 153 (Valasaravakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 153 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "ta": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "ta": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W177",
-    "ward_name": "Ward 149 (Valasaravakkam)",
-    "pm25": 32.5,
-    "aqi": 55,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 24,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "ta"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 149 (Valasaravakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 149 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 149 (Valasaravakkam) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 149 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3492,8 +3597,8 @@
   {
     "ward_id": "W178",
     "ward_name": "Ward 152 (Valasaravakkam)",
-    "pm25": 32.6,
-    "aqi": 55,
+    "pm25": 34.0,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3510,8 +3615,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 152 (Valasaravakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 152 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 152 (Valasaravakkam) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 152 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3527,8 +3632,8 @@
   {
     "ward_id": "W179",
     "ward_name": "Ward 155 (Valasaravakkam)",
-    "pm25": 32.7,
-    "aqi": 55,
+    "pm25": 34.1,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3545,8 +3650,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 155 (Valasaravakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 155 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 155 (Valasaravakkam) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 155 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3562,8 +3667,8 @@
   {
     "ward_id": "W180",
     "ward_name": "Ward 154 (Valasaravakkam)",
-    "pm25": 32.7,
-    "aqi": 55,
+    "pm25": 34.1,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3580,8 +3685,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 154 (Valasaravakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 154 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 154 (Valasaravakkam) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 154 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3597,8 +3702,8 @@
   {
     "ward_id": "W181",
     "ward_name": "Ward 151 (Valasaravakkam)",
-    "pm25": 31.9,
-    "aqi": 54,
+    "pm25": 33.4,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3615,8 +3720,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 151 (Valasaravakkam) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 151 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 151 (Valasaravakkam) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 151 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3632,8 +3737,8 @@
   {
     "ward_id": "W183",
     "ward_name": "Ward 143 (Valasaravakkam)",
-    "pm25": 32.2,
-    "aqi": 55,
+    "pm25": 33.6,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3650,8 +3755,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 143 (Valasaravakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 143 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 143 (Valasaravakkam) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 143 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3667,8 +3772,8 @@
   {
     "ward_id": "W184",
     "ward_name": "Ward 145 (Valasaravakkam)",
-    "pm25": 32.5,
-    "aqi": 55,
+    "pm25": 33.3,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3685,8 +3790,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 145 (Valasaravakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 145 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 145 (Valasaravakkam) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 145 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3702,8 +3807,8 @@
   {
     "ward_id": "W186",
     "ward_name": "Ward 148 (Valasaravakkam)",
-    "pm25": 32.6,
-    "aqi": 55,
+    "pm25": 32.9,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3720,8 +3825,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 148 (Valasaravakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 148 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 148 (Valasaravakkam) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 148 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3737,8 +3842,8 @@
   {
     "ward_id": "W187",
     "ward_name": "Ward 127 (Kodambakkam)",
-    "pm25": 32.1,
-    "aqi": 54,
+    "pm25": 33.4,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3755,8 +3860,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 127 (Kodambakkam) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 127 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 127 (Kodambakkam) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 127 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3772,8 +3877,8 @@
   {
     "ward_id": "W188",
     "ward_name": "Ward 136 (Kodambakkam)",
-    "pm25": 32.9,
-    "aqi": 56,
+    "pm25": 33.8,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3790,8 +3895,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 136 (Kodambakkam) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 136 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 136 (Kodambakkam) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 136 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3807,8 +3912,8 @@
   {
     "ward_id": "W189",
     "ward_name": "Ward 128 (Kodambakkam)",
-    "pm25": 32.7,
-    "aqi": 55,
+    "pm25": 34.1,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3825,8 +3930,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 128 (Kodambakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 128 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 128 (Kodambakkam) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 128 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3842,8 +3947,8 @@
   {
     "ward_id": "W190",
     "ward_name": "Ward 129 (Kodambakkam)",
-    "pm25": 32.6,
-    "aqi": 55,
+    "pm25": 33.7,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3860,8 +3965,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 129 (Kodambakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 129 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 129 (Kodambakkam) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 129 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3877,8 +3982,8 @@
   {
     "ward_id": "W191",
     "ward_name": "Ward 138 (Kodambakkam)",
-    "pm25": 32.6,
-    "aqi": 55,
+    "pm25": 34.1,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3895,8 +4000,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 138 (Kodambakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 138 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 138 (Kodambakkam) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 138 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3912,8 +4017,8 @@
   {
     "ward_id": "W192",
     "ward_name": "Ward 137 (Kodambakkam)",
-    "pm25": 32.9,
-    "aqi": 56,
+    "pm25": 34.4,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3930,8 +4035,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 137 (Kodambakkam) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 137 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 137 (Kodambakkam) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 137 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3947,8 +4052,8 @@
   {
     "ward_id": "W193",
     "ward_name": "Ward 142 (Kodambakkam)",
-    "pm25": 32.9,
-    "aqi": 56,
+    "pm25": 33.9,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -3965,8 +4070,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 142 (Kodambakkam) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 142 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 142 (Kodambakkam) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 142 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3982,7 +4087,7 @@
   {
     "ward_id": "W195",
     "ward_name": "Ward 140 (Kodambakkam)",
-    "pm25": 32.9,
+    "pm25": 33.2,
     "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -4017,8 +4122,8 @@
   {
     "ward_id": "W196",
     "ward_name": "Ward 141 (Kodambakkam)",
-    "pm25": 33.2,
-    "aqi": 56,
+    "pm25": 33.9,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4035,8 +4140,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 141 (Kodambakkam) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 141 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 141 (Kodambakkam) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 141 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4052,8 +4157,8 @@
   {
     "ward_id": "W197",
     "ward_name": "Ward 134 (Kodambakkam)",
-    "pm25": 32.8,
-    "aqi": 56,
+    "pm25": 32.6,
+    "aqi": 55,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4070,8 +4175,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 134 (Kodambakkam) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 134 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 134 (Kodambakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 134 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4087,8 +4192,8 @@
   {
     "ward_id": "W198",
     "ward_name": "Ward 135 (Kodambakkam)",
-    "pm25": 32.8,
-    "aqi": 56,
+    "pm25": 32.6,
+    "aqi": 55,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4105,8 +4210,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 135 (Kodambakkam) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 135 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 135 (Kodambakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 135 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4122,8 +4227,8 @@
   {
     "ward_id": "W199",
     "ward_name": "Ward 133 (Kodambakkam)",
-    "pm25": 32.7,
-    "aqi": 55,
+    "pm25": 33.7,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4140,8 +4245,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 133 (Kodambakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 133 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 133 (Kodambakkam) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 133 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4157,8 +4262,8 @@
   {
     "ward_id": "W200",
     "ward_name": "Ward 131 (Kodambakkam)",
-    "pm25": 32.7,
-    "aqi": 55,
+    "pm25": 33.6,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4175,8 +4280,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 131 (Kodambakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 131 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 131 (Kodambakkam) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 131 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4192,8 +4297,8 @@
   {
     "ward_id": "W201",
     "ward_name": "Ward 130 (Kodambakkam)",
-    "pm25": 32.6,
-    "aqi": 55,
+    "pm25": 33.6,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4210,8 +4315,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 130 (Kodambakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 130 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 130 (Kodambakkam) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 130 (Kodambakkam) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4227,8 +4332,8 @@
   {
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "pm25": 32.6,
-    "aqi": 55,
+    "pm25": 33.7,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4245,8 +4350,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Outside city limits is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Outside city limits ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Outside city limits is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Outside city limits ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4262,8 +4367,8 @@
   {
     "ward_id": "W122",
     "ward_name": "Ward 83 (Ambattur)",
-    "pm25": 32.4,
-    "aqi": 55,
+    "pm25": 33.3,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4280,8 +4385,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 83 (Ambattur) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 83 (Ambattur) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 83 (Ambattur) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 83 (Ambattur) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4297,8 +4402,8 @@
   {
     "ward_id": "W182",
     "ward_name": "Ward 146 (Valasaravakkam)",
-    "pm25": 32.2,
-    "aqi": 55,
+    "pm25": 33.7,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4315,8 +4420,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 146 (Valasaravakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 146 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 146 (Valasaravakkam) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 146 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4332,8 +4437,8 @@
   {
     "ward_id": "W047",
     "ward_name": "Ward 34 (Tondiarpet)",
-    "pm25": 32.3,
-    "aqi": 55,
+    "pm25": 33.8,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4350,8 +4455,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 34 (Tondiarpet) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 34 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 34 (Tondiarpet) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 34 (Tondiarpet) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4367,77 +4472,7 @@
   {
     "ward_id": "W046",
     "ward_name": "Ward 31 (Madhavaram)",
-    "pm25": 31.1,
-    "aqi": 53,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.395,
-    "worsening": true,
-    "n_cells": 1,
-    "vulnerability": {
-      "schools_hospitals_nearby": 7,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "ta"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 31 (Madhavaram) is satisfactory (AQI 53). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 31 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 53). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "ta": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "ta": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W168",
-    "ward_name": "Ward 156 (Alandur)",
-    "pm25": 32.8,
-    "aqi": 56,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.395,
-    "worsening": true,
-    "n_cells": 3,
-    "vulnerability": {
-      "schools_hospitals_nearby": 7,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "ta"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 156 (Alandur) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 156 (Alandur) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "ta": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "ta": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W185",
-    "ward_name": "Ward 144 (Valasaravakkam)",
-    "pm25": 32.4,
+    "pm25": 32.7,
     "aqi": 55,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -4455,8 +4490,78 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 144 (Valasaravakkam) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 144 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 31 (Madhavaram) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 31 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "ta": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "ta": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W168",
+    "ward_name": "Ward 156 (Alandur)",
+    "pm25": 34.2,
+    "aqi": 58,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.395,
+    "worsening": true,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 7,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "ta"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 156 (Alandur) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 156 (Alandur) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "ta": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "ta": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W185",
+    "ward_name": "Ward 144 (Valasaravakkam)",
+    "pm25": 32.8,
+    "aqi": 56,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "moderate",
+    "risk_score": 0.395,
+    "worsening": true,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 7,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "ta"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 144 (Valasaravakkam) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 144 (Valasaravakkam) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4472,7 +4577,7 @@
   {
     "ward_id": "W039",
     "ward_name": "Ward 24 (Madhavaram)",
-    "pm25": 31.6,
+    "pm25": 32.1,
     "aqi": 54,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -4507,8 +4612,8 @@
   {
     "ward_id": "W040",
     "ward_name": "Ward 25 (Madhavaram)",
-    "pm25": 30.9,
-    "aqi": 52,
+    "pm25": 32.4,
+    "aqi": 55,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4525,8 +4630,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 25 (Madhavaram) is satisfactory (AQI 52). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 25 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 52). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 25 (Madhavaram) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 25 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4542,8 +4647,8 @@
   {
     "ward_id": "W044",
     "ward_name": "Ward 30 (Madhavaram)",
-    "pm25": 32.2,
-    "aqi": 55,
+    "pm25": 33.7,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4560,8 +4665,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 30 (Madhavaram) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 30 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 30 (Madhavaram) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 30 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4577,8 +4682,8 @@
   {
     "ward_id": "W036",
     "ward_name": "Ward 22 (Madhavaram)",
-    "pm25": 32.1,
-    "aqi": 54,
+    "pm25": 33.3,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4595,8 +4700,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 22 (Madhavaram) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 22 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 22 (Madhavaram) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 22 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4612,8 +4717,8 @@
   {
     "ward_id": "W037",
     "ward_name": "Ward 23 (Madhavaram)",
-    "pm25": 31.4,
-    "aqi": 53,
+    "pm25": 32.9,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4630,8 +4735,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 23 (Madhavaram) is satisfactory (AQI 53). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 23 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 53). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 23 (Madhavaram) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 23 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4647,8 +4752,8 @@
   {
     "ward_id": "W042",
     "ward_name": "Ward 28 (Madhavaram)",
-    "pm25": 32.7,
-    "aqi": 55,
+    "pm25": 34.0,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -4665,8 +4770,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 28 (Madhavaram) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 28 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 28 (Madhavaram) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 28 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4682,8 +4787,8 @@
   {
     "ward_id": "W019",
     "ward_name": "Ward 20 (Manali)",
-    "pm25": 31.9,
-    "aqi": 54,
+    "pm25": 33.2,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4700,8 +4805,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 20 (Manali) is satisfactory (AQI 54). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 20 (Manali) ல் காற்று பரவாயில்லை (AQI 54). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 20 (Manali) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 20 (Manali) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4717,8 +4822,8 @@
   {
     "ward_id": "W041",
     "ward_name": "Ward 29 (Madhavaram)",
-    "pm25": 32.8,
-    "aqi": 56,
+    "pm25": 34.1,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4735,8 +4840,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 29 (Madhavaram) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 29 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 29 (Madhavaram) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 29 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4752,8 +4857,8 @@
   {
     "ward_id": "W043",
     "ward_name": "Ward 27 (Madhavaram)",
-    "pm25": 32.5,
-    "aqi": 55,
+    "pm25": 34.1,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4770,8 +4875,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 27 (Madhavaram) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 27 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 27 (Madhavaram) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 27 (Madhavaram) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4787,8 +4892,8 @@
   {
     "ward_id": "W167",
     "ward_name": "Ward 159 (Alandur)",
-    "pm25": 32.6,
-    "aqi": 55,
+    "pm25": 33.5,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4805,8 +4910,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 159 (Alandur) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 159 (Alandur) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 159 (Alandur) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 159 (Alandur) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4822,8 +4927,8 @@
   {
     "ward_id": "W017",
     "ward_name": "Ward 17 (Manali)",
-    "pm25": 32.2,
-    "aqi": 55,
+    "pm25": 32.9,
+    "aqi": 56,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4840,8 +4945,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 17 (Manali) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 17 (Manali) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 17 (Manali) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 17 (Manali) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4857,8 +4962,8 @@
   {
     "ward_id": "W018",
     "ward_name": "Ward 19 (Manali)",
-    "pm25": 32.2,
-    "aqi": 55,
+    "pm25": 33.5,
+    "aqi": 57,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4875,8 +4980,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 19 (Manali) is satisfactory (AQI 55). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 19 (Manali) ல் காற்று பரவாயில்லை (AQI 55). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 19 (Manali) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 19 (Manali) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4925,45 +5030,10 @@
     "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
-    "ward_id": "W016",
-    "ward_name": "Ward 189 (Perungudi)",
-    "pm25": 34.0,
-    "aqi": 58,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "low",
-    "risk_score": 0.29,
-    "worsening": false,
-    "n_cells": 4,
-    "vulnerability": {
-      "schools_hospitals_nearby": 14,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "ta"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 189 (Perungudi) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 189 (Perungudi) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "ta": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "ta": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
     "ward_id": "W134",
     "ward_name": "Ward 192 (Sozhinganallur)",
-    "pm25": 34.0,
-    "aqi": 58,
+    "pm25": 35.3,
+    "aqi": 60,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4980,8 +5050,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 192 (Sozhinganallur) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 192 (Sozhinganallur) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 192 (Sozhinganallur) is satisfactory (AQI 60). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 192 (Sozhinganallur) ல் காற்று பரவாயில்லை (AQI 60). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4997,8 +5067,8 @@
   {
     "ward_id": "W135",
     "ward_name": "Ward 193 (Sozhinganallur)",
-    "pm25": 34.0,
-    "aqi": 58,
+    "pm25": 35.3,
+    "aqi": 60,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -5015,8 +5085,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 193 (Sozhinganallur) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 193 (Sozhinganallur) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 193 (Sozhinganallur) is satisfactory (AQI 60). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 193 (Sozhinganallur) ல் காற்று பரவாயில்லை (AQI 60). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -5032,8 +5102,8 @@
   {
     "ward_id": "W143",
     "ward_name": "Ward 183 (Perungudi)",
-    "pm25": 34.7,
-    "aqi": 59,
+    "pm25": 35.6,
+    "aqi": 60,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -5050,8 +5120,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 183 (Perungudi) is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 183 (Perungudi) ல் காற்று பரவாயில்லை (AQI 59). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 183 (Perungudi) is satisfactory (AQI 60). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 183 (Perungudi) ல் காற்று பரவாயில்லை (AQI 60). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -5067,8 +5137,8 @@
   {
     "ward_id": "W144",
     "ward_name": "Ward 185 (Perungudi)",
-    "pm25": 34.8,
-    "aqi": 59,
+    "pm25": 35.6,
+    "aqi": 60,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -5085,8 +5155,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 185 (Perungudi) is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 185 (Perungudi) ல் காற்று பரவாயில்லை (AQI 59). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 185 (Perungudi) is satisfactory (AQI 60). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 185 (Perungudi) ல் காற்று பரவாயில்லை (AQI 60). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -5102,8 +5172,8 @@
   {
     "ward_id": "W145",
     "ward_name": "Ward 184 (Perungudi)",
-    "pm25": 34.5,
-    "aqi": 58,
+    "pm25": 35.8,
+    "aqi": 60,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -5120,8 +5190,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 184 (Perungudi) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 184 (Perungudi) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 184 (Perungudi) is satisfactory (AQI 60). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 184 (Perungudi) ல் காற்று பரவாயில்லை (AQI 60). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -5137,8 +5207,8 @@
   {
     "ward_id": "W147",
     "ward_name": "Ward 187 (Perungudi)",
-    "pm25": 33.9,
-    "aqi": 57,
+    "pm25": 34.6,
+    "aqi": 59,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -5155,8 +5225,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 187 (Perungudi) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 187 (Perungudi) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 187 (Perungudi) is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 187 (Perungudi) ல் காற்று பரவாயில்லை (AQI 59). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -5172,7 +5242,7 @@
   {
     "ward_id": "W148",
     "ward_name": "Ward 169 (Perungudi)",
-    "pm25": 34.6,
+    "pm25": 35.0,
     "aqi": 59,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -5207,8 +5277,8 @@
   {
     "ward_id": "W149",
     "ward_name": "Ward 168 (Perungudi)",
-    "pm25": 34.5,
-    "aqi": 58,
+    "pm25": 34.9,
+    "aqi": 59,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -5225,8 +5295,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 168 (Perungudi) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 168 (Perungudi) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 168 (Perungudi) is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 168 (Perungudi) ல் காற்று பரவாயில்லை (AQI 59). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -5242,8 +5312,8 @@
   {
     "ward_id": "W151",
     "ward_name": "Ward 188 (Perungudi)",
-    "pm25": 34.4,
-    "aqi": 58,
+    "pm25": 34.6,
+    "aqi": 59,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -5260,8 +5330,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 188 (Perungudi) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 188 (Perungudi) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 188 (Perungudi) is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 188 (Perungudi) ல் காற்று பரவாயில்லை (AQI 59). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -5277,8 +5347,8 @@
   {
     "ward_id": "W152",
     "ward_name": "Ward 179 (Adyar)",
-    "pm25": 34.8,
-    "aqi": 59,
+    "pm25": 34.5,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -5295,8 +5365,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 179 (Adyar) is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 179 (Adyar) ல் காற்று பரவாயில்லை (AQI 59). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 179 (Adyar) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 179 (Adyar) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -5312,8 +5382,8 @@
   {
     "ward_id": "W160",
     "ward_name": "Ward 180 (Adyar)",
-    "pm25": 34.1,
-    "aqi": 58,
+    "pm25": 34.9,
+    "aqi": 59,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -5330,8 +5400,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 180 (Adyar) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 180 (Adyar) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 180 (Adyar) is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 180 (Adyar) ல் காற்று பரவாயில்லை (AQI 59). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -5347,7 +5417,7 @@
   {
     "ward_id": "W162",
     "ward_name": "Ward 177 (Adyar)",
-    "pm25": 34.6,
+    "pm25": 34.9,
     "aqi": 59,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -5382,8 +5452,8 @@
   {
     "ward_id": "W163",
     "ward_name": "Ward 178 (Adyar)",
-    "pm25": 34.9,
-    "aqi": 59,
+    "pm25": 34.5,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -5400,8 +5470,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 178 (Adyar) is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 178 (Adyar) ல் காற்று பரவாயில்லை (AQI 59). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 178 (Adyar) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 178 (Adyar) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -5417,8 +5487,8 @@
   {
     "ward_id": "W164",
     "ward_name": "Ward 160 (Alandur)",
-    "pm25": 33.7,
-    "aqi": 57,
+    "pm25": 34.7,
+    "aqi": 59,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -5435,8 +5505,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 160 (Alandur) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 160 (Alandur) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 160 (Alandur) is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 160 (Alandur) ல் காற்று பரவாயில்லை (AQI 59). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -5452,8 +5522,8 @@
   {
     "ward_id": "W166",
     "ward_name": "Ward 165 (Alandur)",
-    "pm25": 34.3,
-    "aqi": 58,
+    "pm25": 34.7,
+    "aqi": 59,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -5470,8 +5540,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 165 (Alandur) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 165 (Alandur) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 165 (Alandur) is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 165 (Alandur) ல் காற்று பரவாயில்லை (AQI 59). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -5487,8 +5557,8 @@
   {
     "ward_id": "W170",
     "ward_name": "Ward 167 (Alandur)",
-    "pm25": 34.2,
-    "aqi": 58,
+    "pm25": 34.9,
+    "aqi": 59,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -5505,78 +5575,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 167 (Alandur) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 167 (Alandur) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "ta": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "ta": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W172",
-    "ward_name": "Ward 164 (Alandur)",
-    "pm25": 34.1,
-    "aqi": 58,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "low",
-    "risk_score": 0.29,
-    "worsening": false,
-    "n_cells": 1,
-    "vulnerability": {
-      "schools_hospitals_nearby": 23,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "ta"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 164 (Alandur) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 164 (Alandur) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "ta": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "ta": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W173",
-    "ward_name": "Ward 162 (Alandur)",
-    "pm25": 34.0,
-    "aqi": 57,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "low",
-    "risk_score": 0.29,
-    "worsening": false,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 27,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "ta"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 162 (Alandur) is satisfactory (AQI 57). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 162 (Alandur) ல் காற்று பரவாயில்லை (AQI 57). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 167 (Alandur) is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 167 (Alandur) ல் காற்று பரவாயில்லை (AQI 59). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -5592,8 +5592,8 @@
   {
     "ward_id": "W174",
     "ward_name": "Ward 163 (Alandur)",
-    "pm25": 33.1,
-    "aqi": 56,
+    "pm25": 34.1,
+    "aqi": 58,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -5610,8 +5610,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 163 (Alandur) is satisfactory (AQI 56). Sensitive individuals may feel minor breathing discomfort.",
-      "ta": "Ward 163 (Alandur) ல் காற்று பரவாயில்லை (AQI 56). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
+      "en": "Air quality in Ward 163 (Alandur) is satisfactory (AQI 58). Sensitive individuals may feel minor breathing discomfort.",
+      "ta": "Ward 163 (Alandur) ல் காற்று பரவாயில்லை (AQI 58). மூச்சு பிரச்சனை உள்ளவங்களுக்கு கொஞ்சம் சிரமம் இருக்கலாம்."
     },
     "written_by": "rules",
     "reviewed": {
@@ -5627,8 +5627,8 @@
   {
     "ward_id": "W004",
     "ward_name": "Ward 174 (Adyar)",
-    "pm25": 26.4,
-    "aqi": 44,
+    "pm25": 25.4,
+    "aqi": 42,
     "aqi_category": "Good",
     "health_impact_cpcb": "Minimal impact.",
     "risk_tier": "low",
@@ -5645,8 +5645,8 @@
       "ta"
     ],
     "texts": {
-      "en": "Air quality in Ward 174 (Adyar) is good (AQI 44). No precautions needed.",
-      "ta": "Ward 174 (Adyar) ல் காற்று நல்லா இருக்கு (AQI 44). எந்த பிரச்சனையும் இல்லை."
+      "en": "Air quality in Ward 174 (Adyar) is good (AQI 42). No precautions needed.",
+      "ta": "Ward 174 (Adyar) ல் காற்று நல்லா இருக்கு (AQI 42). எந்த பிரச்சனையும் இல்லை."
     },
     "written_by": "rules",
     "reviewed": {

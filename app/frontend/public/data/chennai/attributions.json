@@ -12,9 +12,13 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1080301446 is 0.8 km away, wind alignment 0.89.",
+    "reason": "The industrial category received the highest attribution score (0.747). This is strongly supported by the presence of nearby industrial facilities, such as \"industrial_1080301446\" at 0.8 km with 0.89 wind alignment, and the landuse context indicating industrial activity. Furthermore, the pollutant signature shows a very high NO2 column value (99th percentile), which is often associated with industrial emissions.",
     "evidence_factors": [
-      "industrial_1080301446 is 0.8 km away, wind alignment 0.89"
+      "Highest industrial category score",
+      "Proximity of industrial facilities",
+      "High wind alignment with industrial sources",
+      "Industrial land use context",
+      "Elevated NO2 levels"
     ],
     "evidence": {
       "cell": "88618c4c53fffff",
@@ -112,7 +116,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z07"
   },
   {
@@ -128,9 +132,13 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1080301446 is 0.8 km away, wind alignment 0.89.",
+    "reason": "The industrial category received the highest attribution score (0.747). This is strongly supported by the presence of nearby industrial facilities, such as \"industrial_1080301446\" at 0.8 km with 0.89 wind alignment, and the landuse context indicating industrial activity. Furthermore, the pollutant signature shows a very high NO2 column value (99th percentile), which is often associated with industrial emissions.",
     "evidence_factors": [
-      "industrial_1080301446 is 0.8 km away, wind alignment 0.89"
+      "Highest industrial category score",
+      "Proximity of industrial facilities",
+      "High wind alignment with industrial sources",
+      "Industrial land use context",
+      "Elevated NO2 levels"
     ],
     "evidence": {
       "cell": "88618c4c53fffff",
@@ -228,7 +236,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z07"
   },
   {
@@ -244,9 +252,13 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1080301446 is 0.8 km away, wind alignment 0.89.",
+    "reason": "The industrial category received the highest attribution score (0.747). This is strongly supported by the presence of nearby industrial facilities, such as \"industrial_1080301446\" at 0.8 km with 0.89 wind alignment, and the landuse context indicating industrial activity. Furthermore, the pollutant signature shows a very high NO2 column value (99th percentile), which is often associated with industrial emissions.",
     "evidence_factors": [
-      "industrial_1080301446 is 0.8 km away, wind alignment 0.89"
+      "Highest industrial category score",
+      "Proximity of industrial facilities",
+      "High wind alignment with industrial sources",
+      "Industrial land use context",
+      "Elevated NO2 levels"
     ],
     "evidence": {
       "cell": "88618c4c53fffff",
@@ -344,7 +356,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z07"
   },
   {
@@ -360,9 +372,13 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1080301446 is 0.8 km away, wind alignment 0.89.",
+    "reason": "The industrial category received the highest attribution score (0.747). This is strongly supported by the presence of nearby industrial facilities, such as \"industrial_1080301446\" at 0.8 km with 0.89 wind alignment, and the landuse context indicating industrial activity. Furthermore, the pollutant signature shows a very high NO2 column value (99th percentile), which is often associated with industrial emissions.",
     "evidence_factors": [
-      "industrial_1080301446 is 0.8 km away, wind alignment 0.89"
+      "Highest industrial category score",
+      "Proximity of industrial facilities",
+      "High wind alignment with industrial sources",
+      "Industrial land use context",
+      "Elevated NO2 levels"
     ],
     "evidence": {
       "cell": "88618c4c53fffff",
@@ -460,7 +476,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z07"
   },
   {
@@ -476,9 +492,13 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1080301446 is 0.8 km away, wind alignment 0.89.",
+    "reason": "The industrial category received the highest attribution score (0.747). This is strongly supported by the presence of nearby industrial facilities, such as \"industrial_1080301446\" at 0.8 km with 0.89 wind alignment, and the landuse context indicating industrial activity. Furthermore, the pollutant signature shows a very high NO2 column value (99th percentile), which is often associated with industrial emissions.",
     "evidence_factors": [
-      "industrial_1080301446 is 0.8 km away, wind alignment 0.89"
+      "Highest industrial category score",
+      "Proximity of industrial facilities",
+      "High wind alignment with industrial sources",
+      "Industrial land use context",
+      "Elevated NO2 levels"
     ],
     "evidence": {
       "cell": "88618c4c53fffff",
@@ -576,7 +596,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z07"
   },
   {
@@ -592,9 +612,13 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1080301446 is 0.8 km away, wind alignment 0.89.",
+    "reason": "The industrial category received the highest attribution score (0.747). This is strongly supported by the presence of nearby industrial facilities, such as \"industrial_1080301446\" at 0.8 km with 0.89 wind alignment, and the landuse context indicating industrial activity. Furthermore, the pollutant signature shows a very high NO2 column value (99th percentile), which is often associated with industrial emissions.",
     "evidence_factors": [
-      "industrial_1080301446 is 0.8 km away, wind alignment 0.89"
+      "Highest industrial category score",
+      "Proximity of industrial facilities",
+      "High wind alignment with industrial sources",
+      "Industrial land use context",
+      "Elevated NO2 levels"
     ],
     "evidence": {
       "cell": "88618c4c53fffff",
@@ -692,7 +716,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z07"
   },
   {
@@ -708,9 +732,13 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1080301446 is 0.8 km away, wind alignment 0.89.",
+    "reason": "The industrial category received the highest attribution score (0.747). This is strongly supported by the presence of nearby industrial facilities, such as \"industrial_1080301446\" at 0.8 km with 0.89 wind alignment, and the landuse context indicating industrial activity. Furthermore, the pollutant signature shows a very high NO2 column value (99th percentile), which is often associated with industrial emissions.",
     "evidence_factors": [
-      "industrial_1080301446 is 0.8 km away, wind alignment 0.89"
+      "Highest industrial category score",
+      "Proximity of industrial facilities",
+      "High wind alignment with industrial sources",
+      "Industrial land use context",
+      "Elevated NO2 levels"
     ],
     "evidence": {
       "cell": "88618c4c53fffff",
@@ -808,7 +836,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z07"
   },
   {
@@ -824,9 +852,13 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1080301446 is 0.8 km away, wind alignment 0.89.",
+    "reason": "The industrial category received the highest attribution score (0.747). This is strongly supported by the presence of nearby industrial facilities, such as \"industrial_1080301446\" at 0.8 km with 0.89 wind alignment, and the landuse context indicating industrial activity. Furthermore, the pollutant signature shows a very high NO2 column value (99th percentile), which is often associated with industrial emissions.",
     "evidence_factors": [
-      "industrial_1080301446 is 0.8 km away, wind alignment 0.89"
+      "Highest industrial category score",
+      "Proximity of industrial facilities",
+      "High wind alignment with industrial sources",
+      "Industrial land use context",
+      "Elevated NO2 levels"
     ],
     "evidence": {
       "cell": "88618c4c53fffff",
@@ -924,7 +956,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z07"
   },
   {
@@ -940,9 +972,13 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1080301446 is 0.8 km away, wind alignment 0.89.",
+    "reason": "The industrial category received the highest attribution score (0.747). This is strongly supported by the presence of nearby industrial facilities, such as \"industrial_1080301446\" at 0.8 km with 0.89 wind alignment, and the landuse context indicating industrial activity. Furthermore, the pollutant signature shows a very high NO2 column value (99th percentile), which is often associated with industrial emissions.",
     "evidence_factors": [
-      "industrial_1080301446 is 0.8 km away, wind alignment 0.89"
+      "Highest industrial category score",
+      "Proximity of industrial facilities",
+      "High wind alignment with industrial sources",
+      "Industrial land use context",
+      "Elevated NO2 levels"
     ],
     "evidence": {
       "cell": "88618c4c53fffff",
@@ -1040,7 +1076,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 9
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z07"
   },
   {
@@ -1056,9 +1092,12 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97.",
+    "reason": "The industrial category received the highest deterministic score of 0.818. This is strongly supported by the presence of multiple industrial candidates, including Ayanavaram MTC Depot (1.94 km, 0.97 wind alignment), and an elevated NO2 pollutant signature at the 82nd city percentile.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97"
+      "Highest industrial category score",
+      "Proximity and wind alignment of industrial candidates",
+      "Elevated NO2 pollutant signature",
+      "Industrial landuse context"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -1156,7 +1195,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -1172,9 +1211,12 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97.",
+    "reason": "The industrial category received the highest deterministic score of 0.818. This is strongly supported by the presence of multiple industrial candidates, including Ayanavaram MTC Depot (1.94 km, 0.97 wind alignment), and an elevated NO2 pollutant signature at the 82nd city percentile.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97"
+      "Highest industrial category score",
+      "Proximity and wind alignment of industrial candidates",
+      "Elevated NO2 pollutant signature",
+      "Industrial landuse context"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -1272,7 +1314,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -1288,9 +1330,12 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97.",
+    "reason": "The industrial category received the highest deterministic score of 0.818. This is strongly supported by the presence of multiple industrial candidates, including Ayanavaram MTC Depot (1.94 km, 0.97 wind alignment), and an elevated NO2 pollutant signature at the 82nd city percentile.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97"
+      "Highest industrial category score",
+      "Proximity and wind alignment of industrial candidates",
+      "Elevated NO2 pollutant signature",
+      "Industrial landuse context"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -1388,7 +1433,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -1404,9 +1449,12 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97.",
+    "reason": "The industrial category received the highest deterministic score of 0.818. This is strongly supported by the presence of multiple industrial candidates, including Ayanavaram MTC Depot (1.94 km, 0.97 wind alignment), and an elevated NO2 pollutant signature at the 82nd city percentile.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97"
+      "Highest industrial category score",
+      "Proximity and wind alignment of industrial candidates",
+      "Elevated NO2 pollutant signature",
+      "Industrial landuse context"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -1504,7 +1552,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -1520,9 +1568,12 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97.",
+    "reason": "The industrial category received the highest deterministic score of 0.818. This is strongly supported by the presence of multiple industrial candidates, including Ayanavaram MTC Depot (1.94 km, 0.97 wind alignment), and an elevated NO2 pollutant signature at the 82nd city percentile.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97"
+      "Highest industrial category score",
+      "Proximity and wind alignment of industrial candidates",
+      "Elevated NO2 pollutant signature",
+      "Industrial landuse context"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -1620,7 +1671,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -1636,9 +1687,12 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97.",
+    "reason": "The industrial category received the highest deterministic score of 0.818. This is strongly supported by the presence of multiple industrial candidates, including Ayanavaram MTC Depot (1.94 km, 0.97 wind alignment), and an elevated NO2 pollutant signature at the 82nd city percentile.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97"
+      "Highest industrial category score",
+      "Proximity and wind alignment of industrial candidates",
+      "Elevated NO2 pollutant signature",
+      "Industrial landuse context"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -1736,7 +1790,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -1752,9 +1806,12 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97.",
+    "reason": "The industrial category received the highest deterministic score of 0.818. This is strongly supported by the presence of multiple industrial candidates, including Ayanavaram MTC Depot (1.94 km, 0.97 wind alignment), and an elevated NO2 pollutant signature at the 82nd city percentile.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97"
+      "Highest industrial category score",
+      "Proximity and wind alignment of industrial candidates",
+      "Elevated NO2 pollutant signature",
+      "Industrial landuse context"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -1852,7 +1909,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -1868,9 +1925,12 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97.",
+    "reason": "The industrial category received the highest deterministic score of 0.818. This is strongly supported by the presence of multiple industrial candidates, including Ayanavaram MTC Depot (1.94 km, 0.97 wind alignment), and an elevated NO2 pollutant signature at the 82nd city percentile.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97"
+      "Highest industrial category score",
+      "Proximity and wind alignment of industrial candidates",
+      "Elevated NO2 pollutant signature",
+      "Industrial landuse context"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -1968,7 +2028,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -1984,9 +2044,12 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97.",
+    "reason": "The industrial category received the highest deterministic score of 0.818. This is strongly supported by the presence of multiple industrial candidates, including Ayanavaram MTC Depot (1.94 km, 0.97 wind alignment), and an elevated NO2 pollutant signature at the 82nd city percentile.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97"
+      "Highest industrial category score",
+      "Proximity and wind alignment of industrial candidates",
+      "Elevated NO2 pollutant signature",
+      "Industrial landuse context"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -2084,7 +2147,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -2100,9 +2163,12 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97.",
+    "reason": "The industrial category received the highest deterministic score of 0.818. This is strongly supported by the presence of multiple industrial candidates, including Ayanavaram MTC Depot (1.94 km, 0.97 wind alignment), and an elevated NO2 pollutant signature at the 82nd city percentile.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97"
+      "Highest industrial category score",
+      "Proximity and wind alignment of industrial candidates",
+      "Elevated NO2 pollutant signature",
+      "Industrial landuse context"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -2200,7 +2266,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -2216,9 +2282,12 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97.",
+    "reason": "The industrial category received the highest deterministic score of 0.818. This is strongly supported by the presence of multiple industrial candidates, including Ayanavaram MTC Depot (1.94 km, 0.97 wind alignment), and an elevated NO2 pollutant signature at the 82nd city percentile.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97"
+      "Highest industrial category score",
+      "Proximity and wind alignment of industrial candidates",
+      "Elevated NO2 pollutant signature",
+      "Industrial landuse context"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -2316,7 +2385,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -2332,9 +2401,12 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97.",
+    "reason": "The industrial category received the highest deterministic score of 0.818. This is strongly supported by the presence of multiple industrial candidates, including Ayanavaram MTC Depot (1.94 km, 0.97 wind alignment), and an elevated NO2 pollutant signature at the 82nd city percentile.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97"
+      "Highest industrial category score",
+      "Proximity and wind alignment of industrial candidates",
+      "Elevated NO2 pollutant signature",
+      "Industrial landuse context"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -2432,7 +2504,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -2448,9 +2520,12 @@
       "waste_burning": 0.261,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97.",
+    "reason": "The industrial category received the highest deterministic score of 0.818. This is strongly supported by the presence of multiple industrial candidates, including Ayanavaram MTC Depot (1.94 km, 0.97 wind alignment), and an elevated NO2 pollutant signature at the 82nd city percentile.",
     "evidence_factors": [
-      "Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97"
+      "Highest industrial category score",
+      "Proximity and wind alignment of industrial candidates",
+      "Elevated NO2 pollutant signature",
+      "Industrial landuse context"
     ],
     "evidence": {
       "cell": "88618c4d61fffff",
@@ -2548,7 +2623,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 13
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -2564,9 +2639,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -2664,7 +2744,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -2680,9 +2760,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -2780,7 +2865,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -2796,9 +2881,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -2896,7 +2986,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -2912,9 +3002,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -3012,7 +3107,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3028,9 +3123,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -3128,7 +3228,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3144,9 +3244,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -3244,7 +3349,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3260,9 +3365,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -3360,7 +3470,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3376,9 +3486,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -3476,7 +3591,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3492,9 +3607,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -3592,7 +3712,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3608,9 +3728,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -3708,7 +3833,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3724,9 +3849,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -3824,7 +3954,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3840,9 +3970,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -3940,7 +4075,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -3956,9 +4091,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -4056,7 +4196,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4072,9 +4212,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -4172,7 +4317,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4188,9 +4333,14 @@
       "waste_burning": 0.0,
       "traffic": 0.985
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1081262450 is 0.11 km away, wind alignment 0.58.",
+    "reason": "The industrial category received the highest score of 1.062, surpassing traffic's score of 0.985. This is strongly supported by the presence of an industrial candidate just 0.11 km away with favorable wind alignment, and a pollutant signature indicating high NO2 (96th percentile) and elevated SO2 (61st percentile), which are characteristic of industrial emissions.",
     "evidence_factors": [
-      "industrial_1081262450 is 0.11 km away, wind alignment 0.58"
+      "Industrial category score",
+      "Proximity to industrial sources",
+      "Wind alignment with industrial sources",
+      "High NO2 levels (96th percentile)",
+      "Elevated SO2 levels (61st percentile)",
+      "Industrial land use context"
     ],
     "evidence": {
       "cell": "88618c4dd9fffff",
@@ -4288,7 +4438,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 15
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z04"
   },
   {
@@ -4304,9 +4454,12 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_122063611 is 1.58 km away, wind alignment 0.78.",
+    "reason": "Industrial activity is the top-ranked source with a deterministic category score of 0.654. This is supported by an exceptionally high NO2 concentration at the 98th city percentile (204.3) and elevated SO2 (61st percentile), alongside five nearby industrial candidates within 1.58 to 2.68 km showing strong wind alignments up to 0.91 under 28° winds.",
     "evidence_factors": [
-      "industrial_122063611 is 1.58 km away, wind alignment 0.78"
+      "Highest category score of 0.654 for industrial",
+      "NO2 column at the 98th city percentile (204.3)",
+      "Multiple industrial candidates within 2.7 km with wind alignment up to 0.91",
+      "Absence of fire activity (0 fire hours) ruling out waste burning"
     ],
     "evidence": {
       "cell": "88618c4c1dfffff",
@@ -4404,7 +4557,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 10
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -4420,9 +4573,12 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_122063611 is 1.58 km away, wind alignment 0.78.",
+    "reason": "Industrial activity is the top-ranked source with a deterministic category score of 0.654. This is supported by an exceptionally high NO2 concentration at the 98th city percentile (204.3) and elevated SO2 (61st percentile), alongside five nearby industrial candidates within 1.58 to 2.68 km showing strong wind alignments up to 0.91 under 28° winds.",
     "evidence_factors": [
-      "industrial_122063611 is 1.58 km away, wind alignment 0.78"
+      "Highest category score of 0.654 for industrial",
+      "NO2 column at the 98th city percentile (204.3)",
+      "Multiple industrial candidates within 2.7 km with wind alignment up to 0.91",
+      "Absence of fire activity (0 fire hours) ruling out waste burning"
     ],
     "evidence": {
       "cell": "88618c4c1dfffff",
@@ -4520,7 +4676,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 10
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -4536,9 +4692,12 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_122063611 is 1.58 km away, wind alignment 0.78.",
+    "reason": "Industrial activity is the top-ranked source with a deterministic category score of 0.654. This is supported by an exceptionally high NO2 concentration at the 98th city percentile (204.3) and elevated SO2 (61st percentile), alongside five nearby industrial candidates within 1.58 to 2.68 km showing strong wind alignments up to 0.91 under 28° winds.",
     "evidence_factors": [
-      "industrial_122063611 is 1.58 km away, wind alignment 0.78"
+      "Highest category score of 0.654 for industrial",
+      "NO2 column at the 98th city percentile (204.3)",
+      "Multiple industrial candidates within 2.7 km with wind alignment up to 0.91",
+      "Absence of fire activity (0 fire hours) ruling out waste burning"
     ],
     "evidence": {
       "cell": "88618c4c1dfffff",
@@ -4636,7 +4795,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 10
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -4652,9 +4811,12 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_122063611 is 1.58 km away, wind alignment 0.78.",
+    "reason": "Industrial activity is the top-ranked source with a deterministic category score of 0.654. This is supported by an exceptionally high NO2 concentration at the 98th city percentile (204.3) and elevated SO2 (61st percentile), alongside five nearby industrial candidates within 1.58 to 2.68 km showing strong wind alignments up to 0.91 under 28° winds.",
     "evidence_factors": [
-      "industrial_122063611 is 1.58 km away, wind alignment 0.78"
+      "Highest category score of 0.654 for industrial",
+      "NO2 column at the 98th city percentile (204.3)",
+      "Multiple industrial candidates within 2.7 km with wind alignment up to 0.91",
+      "Absence of fire activity (0 fire hours) ruling out waste burning"
     ],
     "evidence": {
       "cell": "88618c4c1dfffff",
@@ -4752,7 +4914,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 10
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -4768,9 +4930,12 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_122063611 is 1.58 km away, wind alignment 0.78.",
+    "reason": "Industrial activity is the top-ranked source with a deterministic category score of 0.654. This is supported by an exceptionally high NO2 concentration at the 98th city percentile (204.3) and elevated SO2 (61st percentile), alongside five nearby industrial candidates within 1.58 to 2.68 km showing strong wind alignments up to 0.91 under 28° winds.",
     "evidence_factors": [
-      "industrial_122063611 is 1.58 km away, wind alignment 0.78"
+      "Highest category score of 0.654 for industrial",
+      "NO2 column at the 98th city percentile (204.3)",
+      "Multiple industrial candidates within 2.7 km with wind alignment up to 0.91",
+      "Absence of fire activity (0 fire hours) ruling out waste burning"
     ],
     "evidence": {
       "cell": "88618c4c1dfffff",
@@ -4868,7 +5033,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 10
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -4884,9 +5049,12 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_122063611 is 1.58 km away, wind alignment 0.78.",
+    "reason": "Industrial activity is the top-ranked source with a deterministic category score of 0.654. This is supported by an exceptionally high NO2 concentration at the 98th city percentile (204.3) and elevated SO2 (61st percentile), alongside five nearby industrial candidates within 1.58 to 2.68 km showing strong wind alignments up to 0.91 under 28° winds.",
     "evidence_factors": [
-      "industrial_122063611 is 1.58 km away, wind alignment 0.78"
+      "Highest category score of 0.654 for industrial",
+      "NO2 column at the 98th city percentile (204.3)",
+      "Multiple industrial candidates within 2.7 km with wind alignment up to 0.91",
+      "Absence of fire activity (0 fire hours) ruling out waste burning"
     ],
     "evidence": {
       "cell": "88618c4c1dfffff",
@@ -4984,7 +5152,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 10
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -5000,9 +5168,12 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_122063611 is 1.58 km away, wind alignment 0.78.",
+    "reason": "Industrial activity is the top-ranked source with a deterministic category score of 0.654. This is supported by an exceptionally high NO2 concentration at the 98th city percentile (204.3) and elevated SO2 (61st percentile), alongside five nearby industrial candidates within 1.58 to 2.68 km showing strong wind alignments up to 0.91 under 28° winds.",
     "evidence_factors": [
-      "industrial_122063611 is 1.58 km away, wind alignment 0.78"
+      "Highest category score of 0.654 for industrial",
+      "NO2 column at the 98th city percentile (204.3)",
+      "Multiple industrial candidates within 2.7 km with wind alignment up to 0.91",
+      "Absence of fire activity (0 fire hours) ruling out waste burning"
     ],
     "evidence": {
       "cell": "88618c4c1dfffff",
@@ -5100,7 +5271,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 10
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -5116,9 +5287,12 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_122063611 is 1.58 km away, wind alignment 0.78.",
+    "reason": "Industrial activity is the top-ranked source with a deterministic category score of 0.654. This is supported by an exceptionally high NO2 concentration at the 98th city percentile (204.3) and elevated SO2 (61st percentile), alongside five nearby industrial candidates within 1.58 to 2.68 km showing strong wind alignments up to 0.91 under 28° winds.",
     "evidence_factors": [
-      "industrial_122063611 is 1.58 km away, wind alignment 0.78"
+      "Highest category score of 0.654 for industrial",
+      "NO2 column at the 98th city percentile (204.3)",
+      "Multiple industrial candidates within 2.7 km with wind alignment up to 0.91",
+      "Absence of fire activity (0 fire hours) ruling out waste burning"
     ],
     "evidence": {
       "cell": "88618c4c1dfffff",
@@ -5216,7 +5390,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 10
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -5232,9 +5406,12 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_122063611 is 1.58 km away, wind alignment 0.78.",
+    "reason": "Industrial activity is the top-ranked source with a deterministic category score of 0.654. This is supported by an exceptionally high NO2 concentration at the 98th city percentile (204.3) and elevated SO2 (61st percentile), alongside five nearby industrial candidates within 1.58 to 2.68 km showing strong wind alignments up to 0.91 under 28° winds.",
     "evidence_factors": [
-      "industrial_122063611 is 1.58 km away, wind alignment 0.78"
+      "Highest category score of 0.654 for industrial",
+      "NO2 column at the 98th city percentile (204.3)",
+      "Multiple industrial candidates within 2.7 km with wind alignment up to 0.91",
+      "Absence of fire activity (0 fire hours) ruling out waste burning"
     ],
     "evidence": {
       "cell": "88618c4c1dfffff",
@@ -5332,7 +5509,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 10
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {
@@ -5348,9 +5525,12 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_122063611 is 1.58 km away, wind alignment 0.78.",
+    "reason": "Industrial activity is the top-ranked source with a deterministic category score of 0.654. This is supported by an exceptionally high NO2 concentration at the 98th city percentile (204.3) and elevated SO2 (61st percentile), alongside five nearby industrial candidates within 1.58 to 2.68 km showing strong wind alignments up to 0.91 under 28° winds.",
     "evidence_factors": [
-      "industrial_122063611 is 1.58 km away, wind alignment 0.78"
+      "Highest category score of 0.654 for industrial",
+      "NO2 column at the 98th city percentile (204.3)",
+      "Multiple industrial candidates within 2.7 km with wind alignment up to 0.91",
+      "Absence of fire activity (0 fire hours) ruling out waste burning"
     ],
     "evidence": {
       "cell": "88618c4c1dfffff",
@@ -5448,7 +5628,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 10
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z05"
   },
   {

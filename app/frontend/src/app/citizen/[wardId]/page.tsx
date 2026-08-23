@@ -33,7 +33,14 @@ export default function WardDashboardPage({ params }: { params: Promise<Params> 
   // city switcher and stays consistent (no separate backend summary to drift).
   const wardCells = useMemo(() => new Set(cells.filter((c) => c.ward_id === wardId).map((c) => c.cell)), [cells, wardId]);
   const median = (v: number[]) => (v.length ? [...v].sort((a, b) => a - b)[Math.floor(v.length / 2)] : NaN);
-  const wardPm25 = useMemo(() => median(cells.filter((c) => c.ward_id === wardId).map((c) => c.pm25)), [cells, wardId]);
+  // Drop nulls before medianing: a cell with no value is absent, not zero, and
+  // averaging it in as one would drag the whole ward's number down.
+  const wardPm25 = useMemo(
+    () => median(cells.filter((c) => c.ward_id === wardId)
+                      .map((c) => c.pm25)
+                      .filter((v): v is number => v != null)),
+    [cells, wardId]
+  );
   const wardName = useMemo(
     () => wardsResp?.cells.find((c) => c.ward_id === wardId)?.ward_name ?? wardId,
     [wardsResp, wardId]

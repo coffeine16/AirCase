@@ -12,10 +12,13 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1523267640 is 5.0 km away, wind alignment 0.85; shallow boundary layer (270 m) trapping emissions.",
+    "reason": "Construction is determined as the primary source with the highest attribution score of 0.695, supported by 7 construction sites identified in the land-use context and multiple active candidate sites within 2.71 to 5.0 km showing moderate to high wind alignment (up to 0.85). Meteorological conditions, including a low boundary layer height of 270 m and trapped air, facilitate the accumulation of local construction dust and emissions.",
     "evidence_factors": [
-      "construction_1523267640 is 5.0 km away, wind alignment 0.85",
-      "shallow boundary layer (270 m) trapping emissions"
+      "High deterministic category score of 0.695 for construction",
+      "Presence of 6 construction candidate sites nearby, with wind alignment up to 0.85",
+      "Land-use context indicating 7 construction features",
+      "Low boundary layer height (270 m) with trapped air conditions",
+      "Zero fire activity ruling out waste burning"
     ],
     "evidence": {
       "cell": "8860a258a7fffff",
@@ -113,7 +116,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 8
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -129,10 +132,13 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1523267640 is 5.0 km away, wind alignment 0.85; shallow boundary layer (270 m) trapping emissions.",
+    "reason": "Construction is determined as the primary source with the highest attribution score of 0.695, supported by 7 construction sites identified in the land-use context and multiple active candidate sites within 2.71 to 5.0 km showing moderate to high wind alignment (up to 0.85). Meteorological conditions, including a low boundary layer height of 270 m and trapped air, facilitate the accumulation of local construction dust and emissions.",
     "evidence_factors": [
-      "construction_1523267640 is 5.0 km away, wind alignment 0.85",
-      "shallow boundary layer (270 m) trapping emissions"
+      "High deterministic category score of 0.695 for construction",
+      "Presence of 6 construction candidate sites nearby, with wind alignment up to 0.85",
+      "Land-use context indicating 7 construction features",
+      "Low boundary layer height (270 m) with trapped air conditions",
+      "Zero fire activity ruling out waste burning"
     ],
     "evidence": {
       "cell": "8860a258a7fffff",
@@ -230,7 +236,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 8
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -246,10 +252,13 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1523267640 is 5.0 km away, wind alignment 0.85; shallow boundary layer (270 m) trapping emissions.",
+    "reason": "Construction is determined as the primary source with the highest attribution score of 0.695, supported by 7 construction sites identified in the land-use context and multiple active candidate sites within 2.71 to 5.0 km showing moderate to high wind alignment (up to 0.85). Meteorological conditions, including a low boundary layer height of 270 m and trapped air, facilitate the accumulation of local construction dust and emissions.",
     "evidence_factors": [
-      "construction_1523267640 is 5.0 km away, wind alignment 0.85",
-      "shallow boundary layer (270 m) trapping emissions"
+      "High deterministic category score of 0.695 for construction",
+      "Presence of 6 construction candidate sites nearby, with wind alignment up to 0.85",
+      "Land-use context indicating 7 construction features",
+      "Low boundary layer height (270 m) with trapped air conditions",
+      "Zero fire activity ruling out waste burning"
     ],
     "evidence": {
       "cell": "8860a258a7fffff",
@@ -347,7 +356,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 8
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -363,10 +372,13 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1523267640 is 5.0 km away, wind alignment 0.85; shallow boundary layer (270 m) trapping emissions.",
+    "reason": "Construction is determined as the primary source with the highest attribution score of 0.695, supported by 7 construction sites identified in the land-use context and multiple active candidate sites within 2.71 to 5.0 km showing moderate to high wind alignment (up to 0.85). Meteorological conditions, including a low boundary layer height of 270 m and trapped air, facilitate the accumulation of local construction dust and emissions.",
     "evidence_factors": [
-      "construction_1523267640 is 5.0 km away, wind alignment 0.85",
-      "shallow boundary layer (270 m) trapping emissions"
+      "High deterministic category score of 0.695 for construction",
+      "Presence of 6 construction candidate sites nearby, with wind alignment up to 0.85",
+      "Land-use context indicating 7 construction features",
+      "Low boundary layer height (270 m) with trapped air conditions",
+      "Zero fire activity ruling out waste burning"
     ],
     "evidence": {
       "cell": "8860a258a7fffff",
@@ -464,7 +476,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 8
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -480,10 +492,13 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1523267640 is 5.0 km away, wind alignment 0.85; shallow boundary layer (270 m) trapping emissions.",
+    "reason": "Construction is determined as the primary source with the highest attribution score of 0.695, supported by 7 construction sites identified in the land-use context and multiple active candidate sites within 2.71 to 5.0 km showing moderate to high wind alignment (up to 0.85). Meteorological conditions, including a low boundary layer height of 270 m and trapped air, facilitate the accumulation of local construction dust and emissions.",
     "evidence_factors": [
-      "construction_1523267640 is 5.0 km away, wind alignment 0.85",
-      "shallow boundary layer (270 m) trapping emissions"
+      "High deterministic category score of 0.695 for construction",
+      "Presence of 6 construction candidate sites nearby, with wind alignment up to 0.85",
+      "Land-use context indicating 7 construction features",
+      "Low boundary layer height (270 m) with trapped air conditions",
+      "Zero fire activity ruling out waste burning"
     ],
     "evidence": {
       "cell": "8860a258a7fffff",
@@ -581,7 +596,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 8
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -597,10 +612,13 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1523267640 is 5.0 km away, wind alignment 0.85; shallow boundary layer (270 m) trapping emissions.",
+    "reason": "Construction is determined as the primary source with the highest attribution score of 0.695, supported by 7 construction sites identified in the land-use context and multiple active candidate sites within 2.71 to 5.0 km showing moderate to high wind alignment (up to 0.85). Meteorological conditions, including a low boundary layer height of 270 m and trapped air, facilitate the accumulation of local construction dust and emissions.",
     "evidence_factors": [
-      "construction_1523267640 is 5.0 km away, wind alignment 0.85",
-      "shallow boundary layer (270 m) trapping emissions"
+      "High deterministic category score of 0.695 for construction",
+      "Presence of 6 construction candidate sites nearby, with wind alignment up to 0.85",
+      "Land-use context indicating 7 construction features",
+      "Low boundary layer height (270 m) with trapped air conditions",
+      "Zero fire activity ruling out waste burning"
     ],
     "evidence": {
       "cell": "8860a258a7fffff",
@@ -698,7 +716,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 8
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -714,10 +732,13 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1523267640 is 5.0 km away, wind alignment 0.85; shallow boundary layer (270 m) trapping emissions.",
+    "reason": "Construction is determined as the primary source with the highest attribution score of 0.695, supported by 7 construction sites identified in the land-use context and multiple active candidate sites within 2.71 to 5.0 km showing moderate to high wind alignment (up to 0.85). Meteorological conditions, including a low boundary layer height of 270 m and trapped air, facilitate the accumulation of local construction dust and emissions.",
     "evidence_factors": [
-      "construction_1523267640 is 5.0 km away, wind alignment 0.85",
-      "shallow boundary layer (270 m) trapping emissions"
+      "High deterministic category score of 0.695 for construction",
+      "Presence of 6 construction candidate sites nearby, with wind alignment up to 0.85",
+      "Land-use context indicating 7 construction features",
+      "Low boundary layer height (270 m) with trapped air conditions",
+      "Zero fire activity ruling out waste burning"
     ],
     "evidence": {
       "cell": "8860a258a7fffff",
@@ -815,7 +836,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 8
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -831,10 +852,13 @@
       "waste_burning": 0.0,
       "traffic": 0.45
     },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_1523267640 is 5.0 km away, wind alignment 0.85; shallow boundary layer (270 m) trapping emissions.",
+    "reason": "Construction is determined as the primary source with the highest attribution score of 0.695, supported by 7 construction sites identified in the land-use context and multiple active candidate sites within 2.71 to 5.0 km showing moderate to high wind alignment (up to 0.85). Meteorological conditions, including a low boundary layer height of 270 m and trapped air, facilitate the accumulation of local construction dust and emissions.",
     "evidence_factors": [
-      "construction_1523267640 is 5.0 km away, wind alignment 0.85",
-      "shallow boundary layer (270 m) trapping emissions"
+      "High deterministic category score of 0.695 for construction",
+      "Presence of 6 construction candidate sites nearby, with wind alignment up to 0.85",
+      "Land-use context indicating 7 construction features",
+      "Low boundary layer height (270 m) with trapped air conditions",
+      "Zero fire activity ruling out waste burning"
     ],
     "evidence": {
       "cell": "8860a258a7fffff",
@@ -932,7 +956,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 8
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z01"
   },
   {
@@ -948,12 +972,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -1051,7 +1073,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -1067,12 +1089,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -1170,7 +1190,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -1186,12 +1206,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -1289,7 +1307,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -1305,12 +1323,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -1408,7 +1424,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -1424,12 +1440,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -1527,7 +1541,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -1543,12 +1557,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -1646,7 +1658,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -1662,12 +1674,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -1765,7 +1775,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -1781,12 +1791,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -1884,7 +1892,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -1900,12 +1908,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -2003,7 +2009,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2019,12 +2025,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -2122,7 +2126,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2138,12 +2142,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -2241,7 +2243,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2257,12 +2259,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -2360,7 +2360,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2376,12 +2376,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -2479,7 +2477,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2495,12 +2493,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -2598,7 +2594,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2614,12 +2610,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -2717,7 +2711,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2733,12 +2727,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -2836,7 +2828,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2852,12 +2844,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -2955,7 +2945,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2971,12 +2961,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -3074,7 +3062,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -3090,12 +3078,10 @@
       "waste_burning": 0.315,
       "traffic": 0.709
     },
-    "reason": "Construction received the highest deterministic score (1.095), supported by multiple nearby candidate sites including construction_717882945 just 0.17 km away and construction_915093556 at 0.74 km with a 0.67 wind alignment. The landuse context confirms 7 construction features in the area, and trapped air conditions (boundary layer height of 260 m with 2.0 m/s winds) facilitate local particulate accumulation.",
+    "reason": "Deterministic evidence scoring points to construction as the primary source. construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 1.095 for construction",
-      "Close proximity of construction_717882945 (0.17 km) and construction_915093556 (0.74 km, 0.67 wind alignment)",
-      "Landuse context includes 7 construction features",
-      "Trapped air conditions with a low boundary layer height of 260 m"
+      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8860a24a67fffff",
@@ -3193,7 +3179,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 19
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {

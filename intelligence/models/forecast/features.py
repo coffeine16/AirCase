@@ -280,13 +280,26 @@ def attach_climatology(frame: pd.DataFrame, tables: dict[str, pd.Series]) -> pd.
     return out
 
 
+def _compose_masks(first: np.ndarray, second: np.ndarray) -> np.ndarray:
+    """Fold a mask taken AFTER `first` was applied back into `first`'s frame.
+
+    `keep_mask` is indexed against the original panel row order (the `y` shift
+    below is computed from a groupby over it), so a second filter applied to the
+    already-filtered X cannot simply replace it.
+    """
+    out = first.copy()
+    out[np.flatnonzero(first)] = second
+    return out
+
+
 def build_features(panel: pd.DataFrame, horizons: list[int],
                     loso_exclude: str | None = None,
                     fires: pd.DataFrame | None = None,
                     clim_tables: dict[str, pd.Series] | None = None,
                     restrict_to_station_cells: bool = False,
                     wind_scope: str = "per_cell",
-                    weather: pd.DataFrame | None = None) -> pd.DataFrame:
+                    weather: pd.DataFrame | None = None,
+                    only_last_ts: bool = False) -> pd.DataFrame:
     """`clim_tables`, when given, is used verbatim instead of building the
     climatology from `panel` — the hook a time-split caller needs so that a
     test row's climatology is never computed from that row's own future. A
@@ -699,6 +712,22 @@ def build_features(panel: pd.DataFrame, horizons: list[int],
         allowed = set(station_cells) | ({loso_exclude} if loso_exclude is not None else set())
         keep_mask = X.cell.isin(allowed).to_numpy()
         X = X[keep_mask].reset_index(drop=True)
+
+    # `only_last_ts` is the same trick one level over: SERVING keeps only the
+    # final timestamp's rows, so replicating every other hour across every
+    # horizon builds tens of millions of rows to throw away.
+    #
+    # It has to happen HERE, after the horizon-independent block is built from
+    # the whole panel, because that block is where the long rolling windows live
+    # (roll_med_2160 is a 90-day median). Trimming the panel on the way IN to get
+    # the same memory saving is what starved those features: measured on Delhi,
+    # a 10-day input window left roll_med_2160 28.66 ug/m3 wrong. Full history in,
+    # one timestamp out.
+    if only_last_ts and len(X):
+        last_ts = X.ts.max()
+        last_mask = (X.ts == last_ts).to_numpy()
+        X = X[last_mask].reset_index(drop=True)
+        keep_mask = last_mask if keep_mask is None else _compose_masks(keep_mask, last_mask)
 
     # ---- horizon-DEPENDENT block: replicate the base, vary 6 columns ----
     n = len(X)

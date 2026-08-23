@@ -250,6 +250,6 @@
     "Add a monitor near ward W008 (cell 88618c4d…): the fusion field estimates ~44.0 µg/m³ here with no station within the cell — currently a blind spot."
   ],
   "n_cells": 759,
-  "n_monitored": 5,
+  "n_monitored": 3,
   "elevated_threshold_pm25": 39.2
 }

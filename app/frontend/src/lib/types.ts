@@ -23,7 +23,16 @@ export interface FusionCell {
   // Source: architecture.md data contracts ("pm25, NOT pm25_hat").
   cell: string;
   ward_id: string;
-  pm25: number;
+  /**
+   * null means "no value for this cell at this time", which is a real state the
+   * map has to show rather than drop. At a forecast horizon the forecaster
+   * genuinely cannot cover every cell: build_features fills a station-less
+   * cell's lags from a wind-weighted composite of the real stations, and a cell
+   * UPWIND of all of them gets zero weight, so its lags are NaN and the row is
+   * dropped. Measured on Delhi at the served hour, that is 470 of 1,703 cells
+   * (28%), of which 83% are upwind of every station.
+   */
+  pm25: number | null;
 }
 
 export interface FusionResponse {

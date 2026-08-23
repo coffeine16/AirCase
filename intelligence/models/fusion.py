@@ -125,7 +125,23 @@ def _predict(model: lgb.Booster, df: pd.DataFrame, baseline: pd.Series) -> np.nd
     base = df.ts.map(baseline)
     base = base.fillna(baseline.median())
     df = _with_cyclical(df)
-    return base.values + model.predict(df[FEATURES])
+    out = base.values + model.predict(df[FEATURES])
+    # PM2.5 has a hard physical floor at zero, and this model is a RESIDUAL
+    # regressor: a large enough negative correction drives the sum below it.
+    # It does, on real data -- measured on the shipped fields, Chennai had 94 of
+    # 759 cells (12.4%) negative and Delhi's worst was -78 ug/m3. The map colours
+    # PM2.5 on an AQI ramp whose bottom is "Good", so a physically impossible
+    # value renders as CLEAN AIR: the most misleading output this layer could
+    # produce.
+    #
+    # This DOES flow into the LOSO evaluation, which calls _predict too, and it
+    # should: LOSO is supposed to score what we actually serve, and we serve the
+    # clamped value. The effect can only be favourable — every true PM2.5 is >= 0,
+    # so replacing a negative prediction with 0 moves it closer to truth — which
+    # is worth stating plainly rather than leaving to be discovered. It is small
+    # (0-12% of cells per city) and it does not rescue the exposure claim: fusion
+    # still loses to a naive city-mean on 7 of 8 cities.
+    return np.clip(out, 0.0, None)
 
 
 def loso_validation(panel: pd.DataFrame) -> dict:

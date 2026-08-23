@@ -92,19 +92,34 @@ export default function AdminPage() {
     hourOffset > 0 ? [city, "forecast", hourOffset] : null,
     () => api.cityForecast(city, hourOffset)
   );
-  const wardOf = useMemo(() => {
-    const m = new Map<string, string>();
-    for (const c of wardCells) m.set(c.cell, c.ward_id);
-    return m;
-  }, [wardCells]);
   const fusionCells = useMemo(() => {
-    if (hourOffset === 0) return fusionResp?.cells ?? [];
-    return (horizonForecast ?? []).map((f) => ({
-      cell: f.cell,
-      ward_id: wardOf.get(f.cell) ?? "unassigned",
-      pm25: f.pm25_hat,
+    const base = fusionResp?.cells ?? [];
+    if (hourOffset === 0) return base;
+    // KEEP EVERY CELL, even the ones with no forecast, and mark them null.
+    //
+    // Mapping over the forecast alone silently shrank the choropleth the moment
+    // the slider left "Now": the forecaster cannot cover every cell, so ~28% of
+    // Delhi's hexagons simply stopped being drawn and the map looked broken.
+    // The gap is real — a station-less cell's lags come from a wind-weighted
+    // composite of the stations, and a cell upwind of all of them gets zero
+    // weight, so its row is dropped in build_features — but "we have no forecast
+    // here" and "this cell does not exist" are different statements, and only
+    // the first one is true. The layer renders null as its own muted colour.
+    const fc = horizonForecast ?? [];
+    // If the fusion field is unavailable the forecast alone still draws a map —
+    // fewer cells, but a map. Keying the whole choropleth off `base` without this
+    // would render NOTHING whenever that one request failed, which is strictly
+    // worse than the gap this change exists to fix.
+    if (!base.length) {
+      return fc.map((f) => ({ cell: f.cell, ward_id: "unassigned", pm25: f.pm25_hat }));
+    }
+    const byCell = new Map(fc.map((f) => [f.cell, f.pm25_hat]));
+    return base.map((c) => ({
+      cell: c.cell,
+      ward_id: c.ward_id,
+      pm25: byCell.has(c.cell) ? (byCell.get(c.cell) as number) : null,
     }));
-  }, [hourOffset, fusionResp, horizonForecast, wardOf]);
+  }, [hourOffset, fusionResp, horizonForecast]);
 
   // ── Agent pipeline ──────────────────────────────────────────────────────────
   const onAgentComplete = useCallback(() => {

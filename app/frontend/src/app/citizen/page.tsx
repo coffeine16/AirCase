@@ -95,7 +95,10 @@ export default function CitizenHomePage() {
   // Live city snapshot — the citywide median AQI, and its worst wards right now.
   const cityAqi = useMemo(() => {
     if (!cells.length) return null;
-    const vals = cells.map((c) => c.pm25).sort((a, b) => a - b);
+    // Cells with no value are excluded, not treated as zero — see FusionCell.pm25.
+    const vals = cells.map((c) => c.pm25).filter((v): v is number => v != null)
+                      .sort((a, b) => a - b);
+    if (!vals.length) return null;
     return pm25ToAqi(vals[Math.floor(vals.length / 2)]);
   }, [cells]);
   const cityCat = cityAqi != null ? getAqiCategory(cityAqi) : null;
@@ -104,6 +107,7 @@ export default function CitizenHomePage() {
     const byWard = new Map<string, number[]>();
     for (const c of cells) {
       if (!c.ward_id || c.ward_id === "unassigned") continue;
+      if (c.pm25 == null) continue;
       (byWard.get(c.ward_id) ?? byWard.set(c.ward_id, []).get(c.ward_id)!).push(c.pm25);
     }
     return [...byWard.entries()]
