@@ -343,6 +343,18 @@ main-loop context.
   chronic landfill.) `detect.py::_reconcile_zones` clusters cells within 2 km and
   makes every cell inherit its zone's most persistent verdict. Do not classify
   cells independently.
+- **The demo window is INSIDE the forecast model's training data. Never measure
+  forecast skill on it.** `data/historical/delhi/panel.parquet` runs
+  2023-12-01 .. 2025-11-29 and the demo window is 2025-10-01 .. 2025-11-29 — so
+  9.2% of Delhi's training rows are the very hours a backtest there would score.
+  Measured: the served model "beats" persistence by +33% to +60% across h=3..48
+  on that window, against the **+9.4% walk-forward median** the model's own
+  manifest reports over 19 properly time-split folds. The gap IS the leak. Quote
+  `manifest["eval"]["walk_forward_skill_median"]`; it is the only forecast skill
+  number here that was earned out-of-sample. (The forecast the product DISPLAYS
+  is fine — `forecast.json` predicts forward from the last observed hour, past
+  where training ends. It is only a backtest *inside* the window that is
+  contaminated.) This is the 100% trap wearing a third hat.
 - **`--synthetic` OVERWRITES the live outputs of whatever `AQ_CITY` is set.**
   Both modes write to `data/outputs/<city>/`, and `AQ_CITY` defaults to
   `bengaluru`, so a bare `python scripts/run_pipeline.py --synthetic --full`
