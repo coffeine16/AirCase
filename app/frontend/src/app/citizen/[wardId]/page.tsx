@@ -50,11 +50,25 @@ export default function WardDashboardPage({ params }: { params: Promise<Params> 
 
 
   // The ward's real CPCB advisory text (English), from this city's advisories.
+  //
+  // The embedded "(AQI 92)" is STRIPPED. The advisory is written once per
+  // pipeline run against that run's ward median; the big reading at the top of
+  // this page is the live fusion field at the current hour. Both are correct
+  // and they drift apart within the day — Kondapur showed AQI 67 in the card
+  // and "satisfactory (AQI 92)" in the advisory directly below it, on the same
+  // screen. To a resident that is not two timestamps, it is one page
+  // contradicting itself.
+  //
+  // The number is the only part that goes stale: the health guidance is keyed
+  // to the CPCB band, which is far coarser and still held here. So the advisory
+  // keeps its advice and drops its arithmetic, and the page has exactly one
+  // AQI on it — the live one. The pattern is identical across en/hi/ta/kn
+  // (verified against all four), so one regex covers every language.
   const { data: advisories } = useSWR([city, "advisories"], () => api.cityAdvisories(city));
-  const advisoryText = useMemo(
-    () => advisories?.find((a) => a.ward_id === wardId)?.texts?.en ?? null,
-    [advisories, wardId]
-  );
+  const advisoryText = useMemo(() => {
+    const raw = advisories?.find((a) => a.ward_id === wardId)?.texts?.en ?? null;
+    return raw ? raw.replace(/\s*\(\s*AQI\s*\d+\s*\)/gi, "") : null;
+  }, [advisories, wardId]);
 
   const { data: fc24 } = useSWR<ForecastCell[]>([city, "forecast", 24], () => api.cityForecast(city, 24));
   const { data: fc48 } = useSWR<ForecastCell[]>([city, "forecast", 48], () => api.cityForecast(city, 48));

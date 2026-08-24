@@ -321,11 +321,18 @@ export default function WardAccountability({
               </ul>
             )}
 
+            {/* "19 of 19" reads as a bug, not a statistic — when every flagged
+                location agrees, say so. The instrument list also named satellite
+                twice ("satellite readings, heat from fires picked up by
+                satellite"). The last sentence stays whatever else goes: naming a
+                CATEGORY and an AREA rather than a business is the line between
+                an evidence chain and an accusation. */}
             <p style={{ fontSize: "0.75rem", color: "var(--text-tertiary)", lineHeight: 1.55 }}>
-              Based on {dominant.nCells} of {dominant.total} flagged location
-              {dominant.total === 1 ? "" : "s"} in your ward — from satellite readings,
-              heat from fires picked up by satellite, and which way the wind was
-              blowing. We name a type of source and an area, never a business.
+              {dominant.nCells === dominant.total
+                ? `Based on all ${dominant.total} flagged location${dominant.total === 1 ? "" : "s"}`
+                : `Based on ${dominant.nCells} of ${dominant.total} flagged locations`}{" "}
+              in your ward — satellite, fire heat and wind direction. We name a
+              type of source and an area, never a business.
             </p>
           </>
         )}
