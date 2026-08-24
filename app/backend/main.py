@@ -168,8 +168,28 @@ def hotspots():
 
 @app.get("/attributions", dependencies=[Depends(city_param)])
 def attributions():
-    return [{k: a[k] for k in ("cell", "ward_id", "ts", "primary_source", "confidence", "reason")}
-            for a in _json("attributions.json")]
+    """The list view: enough to render a source per cell, without the evidence.
+
+    zone_id is NOT optional here, however much it looks like an internal id the
+    list view could drop. Everything downstream joins attributions to hotspots
+    BY ZONE, not by ward — a zone's cells are stamped with the zone's ward, so
+    ward joins silently disagree wherever a zone straddles a boundary (25 of
+    Delhi's 58 attributed cells do). Omitting it did not error anywhere: the
+    joins simply matched nothing, so the citizen view told every resident "no
+    pollution source was traced to your ward" — including the wards where one
+    WAS traced, and including the 248 of 266 that should have been shown the
+    nearest source instead.
+
+    It was invisible for a second reason: the frontend falls back to the static
+    bundle, which carries the FULL row, so this only broke once a live backend
+    was configured. Static-fallback parity is a property to preserve, not a
+    coincidence — if a field is load-bearing in the bundle it must survive here.
+
+    The heavy fields (evidence, scores, evidence_factors) stay out; those are
+    what GET /attribution/{cell} is for.
+    """
+    keys = ("cell", "zone_id", "ward_id", "ts", "primary_source", "confidence", "reason")
+    return [{k: a.get(k) for k in keys} for a in _json("attributions.json")]
 
 
 @app.get("/wards", dependencies=[Depends(city_param)])
