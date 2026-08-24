@@ -1172,13 +1172,9 @@
       "waste_burning": 0.0,
       "traffic": 0.799
     },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
     "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence": {
       "cell": "886014434dfffff",
@@ -1276,7 +1272,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -1292,13 +1288,9 @@
       "waste_burning": 0.0,
       "traffic": 0.799
     },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
     "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence": {
       "cell": "886014434dfffff",
@@ -1396,7 +1388,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -1412,13 +1404,9 @@
       "waste_burning": 0.0,
       "traffic": 0.799
     },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
     "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence": {
       "cell": "886014434dfffff",
@@ -1516,127 +1504,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "gemini",
-    "zone_id": "Z00"
-  },
-  {
-    "cell": "88601451a5fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "unassigned",
-    "pm25_estimate": 49.0,
-    "primary_source": "industrial",
-    "confidence": 0.4,
-    "scores": {
-      "industrial": 0.855,
-      "construction": 0.54,
-      "waste_burning": 0.0,
-      "traffic": 0.799
-    },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
-    "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
-    ],
-    "evidence": {
-      "cell": "886014434dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "unassigned",
-      "pm25_estimate": 49.0,
-      "candidates": [
-        {
-          "name": "STP-2",
-          "type": "industrial",
-          "distance_km": 1.23,
-          "wind_alignment": 0.75
-        },
-        {
-          "name": "SM Krishna Road",
-          "type": "traffic",
-          "distance_km": 0.27,
-          "wind_alignment": 0.4
-        },
-        {
-          "name": "SM Krishna Road",
-          "type": "traffic",
-          "distance_km": 0.28,
-          "wind_alignment": 0.37
-        },
-        {
-          "name": "STP-4",
-          "type": "industrial",
-          "distance_km": 0.93,
-          "wind_alignment": 0.55
-        },
-        {
-          "name": "NICE Road",
-          "type": "traffic",
-          "distance_km": 2.44,
-          "wind_alignment": 0.93
-        },
-        {
-          "name": "NICE Road",
-          "type": "traffic",
-          "distance_km": 2.45,
-          "wind_alignment": 0.93
-        },
-        {
-          "name": "SM Krishna Road",
-          "type": "traffic",
-          "distance_km": 0.62,
-          "wind_alignment": 0.42
-        },
-        {
-          "name": "NICE Road",
-          "type": "traffic",
-          "distance_km": 2.6,
-          "wind_alignment": 0.93
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 89.7,
-          "city_percentile": 95
-        },
-        "so2_col": {
-          "value": 161.3,
-          "city_percentile": 87
-        },
-        "aai": {
-          "value": -0.5,
-          "city_percentile": 54
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 0,
-        "fire_hour_fraction": 0.0,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 5,
-        "construction": 3,
-        "waste_burning": 0,
-        "traffic": 32
-      },
-      "meteorology": {
-        "wind_from_deg": 58,
-        "wind_ms": 3.2,
-        "blh_m": 505,
-        "hour_local": 12,
-        "air_trapped": false
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 16
-    },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -1652,13 +1520,9 @@
       "waste_burning": 0.0,
       "traffic": 0.799
     },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
     "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence": {
       "cell": "886014434dfffff",
@@ -1756,7 +1620,123 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451a5fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 49.0,
+    "primary_source": "industrial",
+    "confidence": 0.4,
+    "scores": {
+      "industrial": 0.855,
+      "construction": 0.54,
+      "waste_burning": 0.0,
+      "traffic": 0.799
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.75"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 49.0,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.4
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.28,
+          "wind_alignment": 0.37
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.62,
+          "wind_alignment": 0.42
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 89.7,
+          "city_percentile": 95
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 87
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 54
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 3,
+        "waste_burning": 0,
+        "traffic": 32
+      },
+      "meteorology": {
+        "wind_from_deg": 58,
+        "wind_ms": 3.2,
+        "blh_m": 505,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -1772,13 +1752,9 @@
       "waste_burning": 0.0,
       "traffic": 0.799
     },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
     "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence": {
       "cell": "886014434dfffff",
@@ -1876,7 +1852,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -1892,13 +1868,9 @@
       "waste_burning": 0.0,
       "traffic": 0.799
     },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
     "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence": {
       "cell": "886014434dfffff",
@@ -1996,7 +1968,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2012,13 +1984,9 @@
       "waste_burning": 0.0,
       "traffic": 0.799
     },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
     "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence": {
       "cell": "886014434dfffff",
@@ -2116,7 +2084,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2132,13 +2100,9 @@
       "waste_burning": 0.0,
       "traffic": 0.799
     },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
     "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence": {
       "cell": "886014434dfffff",
@@ -2236,7 +2200,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2252,13 +2216,9 @@
       "waste_burning": 0.0,
       "traffic": 0.799
     },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
     "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence": {
       "cell": "886014434dfffff",
@@ -2356,7 +2316,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2372,13 +2332,9 @@
       "waste_burning": 0.0,
       "traffic": 0.799
     },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
     "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence": {
       "cell": "886014434dfffff",
@@ -2476,127 +2432,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "gemini",
-    "zone_id": "Z00"
-  },
-  {
-    "cell": "88601451ebfffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "unassigned",
-    "pm25_estimate": 49.0,
-    "primary_source": "industrial",
-    "confidence": 0.4,
-    "scores": {
-      "industrial": 0.855,
-      "construction": 0.54,
-      "waste_burning": 0.0,
-      "traffic": 0.799
-    },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
-    "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
-    ],
-    "evidence": {
-      "cell": "886014434dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "unassigned",
-      "pm25_estimate": 49.0,
-      "candidates": [
-        {
-          "name": "STP-2",
-          "type": "industrial",
-          "distance_km": 1.23,
-          "wind_alignment": 0.75
-        },
-        {
-          "name": "SM Krishna Road",
-          "type": "traffic",
-          "distance_km": 0.27,
-          "wind_alignment": 0.4
-        },
-        {
-          "name": "SM Krishna Road",
-          "type": "traffic",
-          "distance_km": 0.28,
-          "wind_alignment": 0.37
-        },
-        {
-          "name": "STP-4",
-          "type": "industrial",
-          "distance_km": 0.93,
-          "wind_alignment": 0.55
-        },
-        {
-          "name": "NICE Road",
-          "type": "traffic",
-          "distance_km": 2.44,
-          "wind_alignment": 0.93
-        },
-        {
-          "name": "NICE Road",
-          "type": "traffic",
-          "distance_km": 2.45,
-          "wind_alignment": 0.93
-        },
-        {
-          "name": "SM Krishna Road",
-          "type": "traffic",
-          "distance_km": 0.62,
-          "wind_alignment": 0.42
-        },
-        {
-          "name": "NICE Road",
-          "type": "traffic",
-          "distance_km": 2.6,
-          "wind_alignment": 0.93
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 89.7,
-          "city_percentile": 95
-        },
-        "so2_col": {
-          "value": 161.3,
-          "city_percentile": 87
-        },
-        "aai": {
-          "value": -0.5,
-          "city_percentile": 54
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 0,
-        "fire_hour_fraction": 0.0,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 5,
-        "construction": 3,
-        "waste_burning": 0,
-        "traffic": 32
-      },
-      "meteorology": {
-        "wind_from_deg": 58,
-        "wind_ms": 3.2,
-        "blh_m": 505,
-        "hour_local": 12,
-        "air_trapped": false
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 16
-    },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2612,13 +2448,9 @@
       "waste_burning": 0.0,
       "traffic": 0.799
     },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
     "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence": {
       "cell": "886014434dfffff",
@@ -2716,7 +2548,123 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
+    "zone_id": "Z00"
+  },
+  {
+    "cell": "88601451ebfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 49.0,
+    "primary_source": "industrial",
+    "confidence": 0.4,
+    "scores": {
+      "industrial": 0.855,
+      "construction": 0.54,
+      "waste_burning": 0.0,
+      "traffic": 0.799
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
+    "evidence_factors": [
+      "STP-2 is 1.23 km away, wind alignment 0.75"
+    ],
+    "evidence": {
+      "cell": "886014434dfffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 49.0,
+      "candidates": [
+        {
+          "name": "STP-2",
+          "type": "industrial",
+          "distance_km": 1.23,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.27,
+          "wind_alignment": 0.4
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.28,
+          "wind_alignment": 0.37
+        },
+        {
+          "name": "STP-4",
+          "type": "industrial",
+          "distance_km": 0.93,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.44,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.45,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "SM Krishna Road",
+          "type": "traffic",
+          "distance_km": 0.62,
+          "wind_alignment": 0.42
+        },
+        {
+          "name": "NICE Road",
+          "type": "traffic",
+          "distance_km": 2.6,
+          "wind_alignment": 0.93
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 89.7,
+          "city_percentile": 95
+        },
+        "so2_col": {
+          "value": 161.3,
+          "city_percentile": 87
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 54
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 5,
+        "construction": 3,
+        "waste_burning": 0,
+        "traffic": 32
+      },
+      "meteorology": {
+        "wind_from_deg": 58,
+        "wind_ms": 3.2,
+        "blh_m": 505,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2732,13 +2680,9 @@
       "waste_burning": 0.0,
       "traffic": 0.799
     },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
     "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence": {
       "cell": "886014434dfffff",
@@ -2836,7 +2780,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2852,13 +2796,9 @@
       "waste_burning": 0.0,
       "traffic": 0.799
     },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
     "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence": {
       "cell": "886014434dfffff",
@@ -2956,7 +2896,7 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
@@ -2972,13 +2912,9 @@
       "waste_burning": 0.0,
       "traffic": 0.799
     },
-    "reason": "Industrial sources achieved the highest deterministic score of 0.855, strongly corroborated by elevated SO2 (87th percentile) and NO2 (95th percentile) column densities. Additionally, industrial candidate STP-2 is located 1.23 km away with high wind alignment (0.75), alongside STP-4 within 0.93 km (0.55 wind alignment).",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. STP-2 is 1.23 km away, wind alignment 0.75.",
     "evidence_factors": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence": {
       "cell": "886014434dfffff",
@@ -3076,14 +3012,14 @@
       "evidence_window_hours": 168,
       "zone_cells": 16
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z00"
   },
   {
     "cell": "8860145189fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "unassigned",
-    "pm25_estimate": 45.9,
+    "pm25_estimate": 46.0,
     "primary_source": "construction",
     "confidence": 0.74,
     "scores": {
@@ -3100,123 +3036,7 @@
       "cell": "8860145189fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 45.9,
-      "candidates": [
-        {
-          "name": "Good Earth Ochre",
-          "type": "construction",
-          "distance_km": 0.39,
-          "wind_alignment": 0.93
-        },
-        {
-          "name": "Good Earth Octave",
-          "type": "construction",
-          "distance_km": 0.5,
-          "wind_alignment": 0.93
-        },
-        {
-          "name": "construction_1395882872",
-          "type": "construction",
-          "distance_km": 0.42,
-          "wind_alignment": 0.85
-        },
-        {
-          "name": "construction_1255318228",
-          "type": "construction",
-          "distance_km": 0.85,
-          "wind_alignment": 0.93
-        },
-        {
-          "name": "construction_1489039743",
-          "type": "construction",
-          "distance_km": 1.1,
-          "wind_alignment": 0.93
-        },
-        {
-          "name": "Vaarahi Vivarea",
-          "type": "construction",
-          "distance_km": 1.09,
-          "wind_alignment": 0.91
-        },
-        {
-          "name": "Good Earth Cadence (u/c)",
-          "type": "construction",
-          "distance_km": 0.49,
-          "wind_alignment": 0.59
-        },
-        {
-          "name": "Provident Sunworth Phase 3 (u/c)",
-          "type": "construction",
-          "distance_km": 1.35,
-          "wind_alignment": 0.9
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 73.4,
-          "city_percentile": 90
-        },
-        "so2_col": {
-          "value": -3.1,
-          "city_percentile": 48
-        },
-        "aai": {
-          "value": -0.5,
-          "city_percentile": 54
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 0,
-        "fire_hour_fraction": 0.0,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 1,
-        "construction": 10,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 58,
-        "wind_ms": 3.2,
-        "blh_m": 512,
-        "hour_local": 12,
-        "air_trapped": false
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 6
-    },
-    "explained_by": "rules",
-    "zone_id": "Z01"
-  },
-  {
-    "cell": "88601451c3fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "unassigned",
-    "pm25_estimate": 45.9,
-    "primary_source": "construction",
-    "confidence": 0.74,
-    "scores": {
-      "industrial": 0.15,
-      "construction": 1.458,
-      "waste_burning": 0.0,
-      "traffic": 0.15
-    },
-    "reason": "Deterministic evidence scoring points to construction as the primary source. Good Earth Ochre is 0.39 km away, wind alignment 0.93.",
-    "evidence_factors": [
-      "Good Earth Ochre is 0.39 km away, wind alignment 0.93"
-    ],
-    "evidence": {
-      "cell": "8860145189fffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "unassigned",
-      "pm25_estimate": 45.9,
+      "pm25_estimate": 46.0,
       "candidates": [
         {
           "name": "Good Earth Ochre",
@@ -3315,7 +3135,7 @@
     "cell": "88601451d5fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "unassigned",
-    "pm25_estimate": 45.9,
+    "pm25_estimate": 46.0,
     "primary_source": "construction",
     "confidence": 0.74,
     "scores": {
@@ -3332,7 +3152,123 @@
       "cell": "8860145189fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 45.9,
+      "pm25_estimate": 46.0,
+      "candidates": [
+        {
+          "name": "Good Earth Ochre",
+          "type": "construction",
+          "distance_km": 0.39,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "Good Earth Octave",
+          "type": "construction",
+          "distance_km": 0.5,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "construction_1395882872",
+          "type": "construction",
+          "distance_km": 0.42,
+          "wind_alignment": 0.85
+        },
+        {
+          "name": "construction_1255318228",
+          "type": "construction",
+          "distance_km": 0.85,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "construction_1489039743",
+          "type": "construction",
+          "distance_km": 1.1,
+          "wind_alignment": 0.93
+        },
+        {
+          "name": "Vaarahi Vivarea",
+          "type": "construction",
+          "distance_km": 1.09,
+          "wind_alignment": 0.91
+        },
+        {
+          "name": "Good Earth Cadence (u/c)",
+          "type": "construction",
+          "distance_km": 0.49,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "Provident Sunworth Phase 3 (u/c)",
+          "type": "construction",
+          "distance_km": 1.35,
+          "wind_alignment": 0.9
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 73.4,
+          "city_percentile": 90
+        },
+        "so2_col": {
+          "value": -3.1,
+          "city_percentile": 48
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 54
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 1,
+        "construction": 10,
+        "waste_burning": 0,
+        "traffic": 1
+      },
+      "meteorology": {
+        "wind_from_deg": 58,
+        "wind_ms": 3.2,
+        "blh_m": 512,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 6
+    },
+    "explained_by": "rules",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "88601451c3fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 46.0,
+    "primary_source": "construction",
+    "confidence": 0.74,
+    "scores": {
+      "industrial": 0.15,
+      "construction": 1.458,
+      "waste_burning": 0.0,
+      "traffic": 0.15
+    },
+    "reason": "Deterministic evidence scoring points to construction as the primary source. Good Earth Ochre is 0.39 km away, wind alignment 0.93.",
+    "evidence_factors": [
+      "Good Earth Ochre is 0.39 km away, wind alignment 0.93"
+    ],
+    "evidence": {
+      "cell": "8860145189fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 46.0,
       "candidates": [
         {
           "name": "Good Earth Ochre",
@@ -3431,7 +3367,7 @@
     "cell": "88601451c7fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "unassigned",
-    "pm25_estimate": 45.9,
+    "pm25_estimate": 46.0,
     "primary_source": "construction",
     "confidence": 0.74,
     "scores": {
@@ -3448,7 +3384,7 @@
       "cell": "8860145189fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 45.9,
+      "pm25_estimate": 46.0,
       "candidates": [
         {
           "name": "Good Earth Ochre",
@@ -3547,7 +3483,7 @@
     "cell": "88601451c5fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "unassigned",
-    "pm25_estimate": 45.9,
+    "pm25_estimate": 46.0,
     "primary_source": "construction",
     "confidence": 0.74,
     "scores": {
@@ -3564,7 +3500,7 @@
       "cell": "8860145189fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 45.9,
+      "pm25_estimate": 46.0,
       "candidates": [
         {
           "name": "Good Earth Ochre",
@@ -3663,7 +3599,7 @@
     "cell": "88601451c1fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "unassigned",
-    "pm25_estimate": 45.9,
+    "pm25_estimate": 46.0,
     "primary_source": "construction",
     "confidence": 0.74,
     "scores": {
@@ -3680,7 +3616,7 @@
       "cell": "8860145189fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 45.9,
+      "pm25_estimate": 46.0,
       "candidates": [
         {
           "name": "Good Earth Ochre",
@@ -3779,7 +3715,7 @@
     "cell": "8860145a05fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W167",
-    "pm25_estimate": 45.2,
+    "pm25_estimate": 45.4,
     "primary_source": "industrial",
     "confidence": 0.45,
     "scores": {
@@ -3797,7 +3733,7 @@
       "cell": "8860145a05fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W167",
-      "pm25_estimate": 45.2,
+      "pm25_estimate": 45.4,
       "candidates": [
         {
           "name": "industrial_1203069041",
@@ -3896,7 +3832,7 @@
     "cell": "8860145a0dfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W167",
-    "pm25_estimate": 45.2,
+    "pm25_estimate": 45.4,
     "primary_source": "industrial",
     "confidence": 0.45,
     "scores": {
@@ -3914,7 +3850,7 @@
       "cell": "8860145a05fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W167",
-      "pm25_estimate": 45.2,
+      "pm25_estimate": 45.4,
       "candidates": [
         {
           "name": "industrial_1203069041",
@@ -4013,7 +3949,7 @@
     "cell": "8860145a63fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W167",
-    "pm25_estimate": 45.2,
+    "pm25_estimate": 45.4,
     "primary_source": "industrial",
     "confidence": 0.45,
     "scores": {
@@ -4031,7 +3967,7 @@
       "cell": "8860145a05fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W167",
-      "pm25_estimate": 45.2,
+      "pm25_estimate": 45.4,
       "candidates": [
         {
           "name": "industrial_1203069041",
@@ -5055,7 +4991,7 @@
     "zone_id": "Z06"
   },
   {
-    "cell": "8861892e15fffff",
+    "cell": "8861892e3bfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W216",
     "pm25_estimate": 43.3,
@@ -5171,7 +5107,7 @@
     "zone_id": "Z06"
   },
   {
-    "cell": "8861892e3bfffff",
+    "cell": "8861892e15fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W216",
     "pm25_estimate": 43.3,

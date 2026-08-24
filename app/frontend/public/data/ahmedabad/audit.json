@@ -241,7 +241,14 @@
       "rank": 40
     }
   ],
-  "sensor_flags": [],
+  "sensor_flags": [
+    {
+      "cell": "8842ceb5d9fffff",
+      "ward_id": "W030",
+      "station_name": "5057509",
+      "reason": "flat_while_satellite_spikes"
+    }
+  ],
   "placement_recommendations": [
     "Add a monitor near ward W040 (cell 8842ceb4…): the fusion field estimates ~50.8 µg/m³ here with no station within the cell — currently a blind spot.",
     "Add a monitor near ward W031 (cell 8842ceb4…): the fusion field estimates ~50.5 µg/m³ here with no station within the cell — currently a blind spot.",

@@ -91,13 +91,13 @@
       "rank": 15
     },
     {
-      "cell": "8860b192c3fffff",
+      "cell": "8860b192cbfffff",
       "ward_id": "unassigned",
       "satellite_signal": 33.1,
       "rank": 16
     },
     {
-      "cell": "8860b192cbfffff",
+      "cell": "8860b192c3fffff",
       "ward_id": "unassigned",
       "satellite_signal": 33.1,
       "rank": 17
@@ -109,14 +109,14 @@
       "rank": 18
     },
     {
-      "cell": "8860b1944dfffff",
-      "ward_id": "W028",
+      "cell": "8860b19441fffff",
+      "ward_id": "unassigned",
       "satellite_signal": 33.0,
       "rank": 19
     },
     {
-      "cell": "8860b19441fffff",
-      "ward_id": "unassigned",
+      "cell": "8860b1944dfffff",
+      "ward_id": "W028",
       "satellite_signal": 33.0,
       "rank": 20
     },
@@ -199,13 +199,13 @@
       "rank": 33
     },
     {
-      "cell": "8860b192d5fffff",
+      "cell": "8860b192ddfffff",
       "ward_id": "unassigned",
       "satellite_signal": 32.8,
       "rank": 34
     },
     {
-      "cell": "8860b192ddfffff",
+      "cell": "8860b192d5fffff",
       "ward_id": "unassigned",
       "satellite_signal": 32.8,
       "rank": 35

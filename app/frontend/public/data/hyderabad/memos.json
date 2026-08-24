@@ -5,7 +5,7 @@
     "zone_id": "Z00",
     "ward_id": "W002",
     "ward_name": "Ward 105 Gachibowli",
-    "issued_at": "2026-08-24T06:47:28.198379+00:00",
+    "issued_at": "2026-08-24T07:22:52.629855+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -151,7 +151,7 @@
     "zone_id": "Z01",
     "ward_id": "W002",
     "ward_name": "Ward 105 Gachibowli",
-    "issued_at": "2026-08-24T06:47:28.198878+00:00",
+    "issued_at": "2026-08-24T07:22:52.629935+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -297,7 +297,7 @@
     "zone_id": "Z02",
     "ward_id": "W006",
     "ward_name": "Ward 59 Mailardevpally",
-    "issued_at": "2026-08-24T06:47:28.199185+00:00",
+    "issued_at": "2026-08-24T07:22:52.629996+00:00",
     "status": "draft",
     "situation": {
       "source": "traffic",

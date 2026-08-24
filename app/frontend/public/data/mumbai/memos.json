@@ -5,7 +5,7 @@
     "zone_id": "Z01",
     "ward_id": "W005",
     "ward_name": "E",
-    "issued_at": "2026-08-24T06:24:34.894734+00:00",
+    "issued_at": "2026-08-24T07:20:19.379447+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -50,7 +50,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -151,7 +151,7 @@
     "zone_id": "Z02",
     "ward_id": "W005",
     "ward_name": "E",
-    "issued_at": "2026-08-24T06:24:34.894836+00:00",
+    "issued_at": "2026-08-24T07:20:19.379556+00:00",
     "status": "draft",
     "situation": {
       "source": "traffic",
@@ -198,7 +198,7 @@
       "cell": "88608b1897fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 2.8,
+      "pm25_estimate": 16.6,
       "candidates": [
         {
           "name": "Dr Babasaheb Ambedkar Marg",
@@ -299,7 +299,7 @@
     "zone_id": "Z05",
     "ward_id": "W017",
     "ward_name": "M/W",
-    "issued_at": "2026-08-24T06:24:34.894882+00:00",
+    "issued_at": "2026-08-24T07:20:19.379607+00:00",
     "status": "draft",
     "situation": {
       "source": "traffic",
@@ -346,7 +346,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -447,7 +447,7 @@
     "zone_id": "Z06",
     "ward_id": "W008",
     "ward_name": "F/N",
-    "issued_at": "2026-08-24T06:24:34.894923+00:00",
+    "issued_at": "2026-08-24T07:20:19.379678+00:00",
     "status": "draft",
     "situation": {
       "source": "waste_burning",
@@ -492,7 +492,7 @@
       "cell": "88608b1995fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W008",
-      "pm25_estimate": 45.8,
+      "pm25_estimate": 46.5,
       "candidates": [
         {
           "name": "Antop Hill Warehousing Complex",
@@ -593,7 +593,7 @@
     "zone_id": "Z03",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-24T06:24:34.894962+00:00",
+    "issued_at": "2026-08-24T07:20:19.379721+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -638,7 +638,7 @@
       "cell": "88608b1889fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 15.1,
+      "pm25_estimate": 23.1,
       "candidates": [
         {
           "name": "industrial_1121664480",
@@ -739,7 +739,7 @@
     "zone_id": "Z07",
     "ward_id": "W018",
     "ward_name": "H/E",
-    "issued_at": "2026-08-24T06:24:34.894994+00:00",
+    "issued_at": "2026-08-24T07:20:19.379755+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -885,7 +885,7 @@
     "zone_id": "Z04",
     "ward_id": "W014",
     "ward_name": "K/W",
-    "issued_at": "2026-08-24T06:24:34.895025+00:00",
+    "issued_at": "2026-08-24T07:20:19.379789+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -1031,7 +1031,7 @@
     "zone_id": "Z08",
     "ward_id": "W017",
     "ward_name": "M/W",
-    "issued_at": "2026-08-24T06:24:34.895055+00:00",
+    "issued_at": "2026-08-24T07:20:19.379822+00:00",
     "status": "draft",
     "situation": {
       "source": "waste_burning",
@@ -1076,7 +1076,7 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -1177,7 +1177,7 @@
     "zone_id": "Z10",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-24T06:24:34.895084+00:00",
+    "issued_at": "2026-08-24T07:20:19.379853+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",

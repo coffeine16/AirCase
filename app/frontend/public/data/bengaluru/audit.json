@@ -205,20 +205,20 @@
       "rank": 34
     },
     {
-      "cell": "88618935adfffff",
-      "ward_id": "unassigned",
+      "cell": "886014583bfffff",
+      "ward_id": "W024",
       "satellite_signal": 42.1,
       "rank": 35
     },
     {
-      "cell": "88618935e7fffff",
+      "cell": "88618935adfffff",
       "ward_id": "unassigned",
       "satellite_signal": 42.1,
       "rank": 36
     },
     {
-      "cell": "886014583bfffff",
-      "ward_id": "W024",
+      "cell": "88618935e7fffff",
+      "ward_id": "unassigned",
       "satellite_signal": 42.1,
       "rank": 37
     },

@@ -1,9 +1,9 @@
 {
   "overall": {
-    "rmse": 31.95,
+    "rmse": 31.99,
     "r2": 0.184,
     "n_stations": 5,
-    "mean_pm25": 43.1,
+    "mean_pm25": 43.3,
     "naive_citymean_rmse": 25.93
   },
   "per_station": {
@@ -13,9 +13,10 @@
       "n": 2066
     },
     "8842cea407fffff": {
-      "rmse": 26.36,
+      "rmse": 26.41,
       "r2": 0.256,
-      "n": 1811
+      "n": 1784,
+      "n_unscoreable": 27
     },
     "8842cea629fffff": {
       "rmse": 34.76,
@@ -23,9 +24,10 @@
       "n": 1959
     },
     "8842cea647fffff": {
-      "rmse": 31.39,
-      "r2": 0.379,
-      "n": 2053
+      "rmse": 31.43,
+      "r2": 0.375,
+      "n": 2019,
+      "n_unscoreable": 34
     },
     "8842ceb5d9fffff": {
       "rmse": 14.25,

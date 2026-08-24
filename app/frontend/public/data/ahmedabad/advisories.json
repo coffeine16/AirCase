@@ -19,9 +19,9 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in 48 RAMOL HATHIJAN is Moderate (AQI 120). Children, seniors, and people with asthma or heart problems may feel discomfort. Please limit long physical activities outside today."
+      "en": "Air quality in 48 RAMOL HATHIJAN is moderate (AQI 120). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true
     },
@@ -83,9 +83,9 @@
       "en"
     ],
     "texts": {
-      "en": "Hello 43 BHAIPURA HATKESHWAR! Air quality is moderate (AQI 119). If you have asthma, heart issues, or are a child or elder, please limit long outdoor activities to stay safe."
+      "en": "Air quality in 43 BHAIPURA HATKESHWAR is moderate (AQI 119). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true
     },
@@ -115,9 +115,9 @@
       "en"
     ],
     "texts": {
-      "en": "Dear residents of 42 INDRAPURI, air quality is moderate (AQI 120). If you have asthma, heart problems, or are a child or elder, please avoid long outdoor activities."
+      "en": "Air quality in 42 INDRAPURI is moderate (AQI 120). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true
     },
@@ -147,9 +147,9 @@
       "en"
     ],
     "texts": {
-      "en": "Hello 41 VASTRAL! The air quality is moderate today (AQI 120). If you have asthma, heart issues, or are a child or older adult, please limit long outdoor activities."
+      "en": "Air quality in 41 VASTRAL is moderate (AQI 120). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true
     },
@@ -179,9 +179,9 @@
       "en"
     ],
     "texts": {
-      "en": "Hello 40 ODHAV. Our air quality is moderate today (AQI 120). If you have asthma, heart problems, or are a child or older adult, please limit long outdoor activities."
+      "en": "Air quality in 40 ODHAV is moderate (AQI 120). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true
     },
@@ -211,9 +211,9 @@
       "en"
     ],
     "texts": {
-      "en": "The air quality in 39 AMRAIWADI is moderate today with an AQI of 119. Children, older adults, and people with asthma or heart conditions should take care and limit heavy outdoor activities."
+      "en": "Air quality in 39 AMRAIWADI is moderate (AQI 119). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true
     },
@@ -1067,9 +1067,9 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in 47 VATVA is moderate with AQI 140. Children, older adults, and people with asthma or heart disease may feel breathing discomfort. Please avoid long outdoor activities today."
+      "en": "Air quality in 47 VATVA is moderate (AQI 140). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true
     },
@@ -1098,9 +1098,9 @@
       "en"
     ],
     "texts": {
-      "en": "In 46 LAMBHA, air quality is Moderate with an AQI of 129. Children, older adults, and people with heart or lung conditions like asthma should avoid spending long hours doing heavy work outdoors."
+      "en": "Air quality in 46 LAMBHA is moderate (AQI 129). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true
     },
@@ -1129,9 +1129,9 @@
       "en"
     ],
     "texts": {
-      "en": "The air in 45 ISANPUR is Moderate today (AQI 133). Children, older adults, and people with asthma or heart conditions should limit long hours of outdoor activity to avoid breathing discomfort. Take care!"
+      "en": "Air quality in 45 ISANPUR is moderate (AQI 133). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true
     },
@@ -1160,9 +1160,9 @@
       "en"
     ],
     "texts": {
-      "en": "The air quality in 37 MANINAGAR is moderate today at AQI 122. Children, older adults, and people with asthma or heart conditions may feel breathing discomfort. Please avoid heavy or prolonged activities outdoors."
+      "en": "Air quality in 37 MANINAGAR is moderate (AQI 122). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true
     },
@@ -1191,9 +1191,9 @@
       "en"
     ],
     "texts": {
-      "en": "The air in 35 BAHERAMPURA is moderate (AQI 127). If you have asthma, heart problems, or are a child or older adult, try to avoid long outdoor activities."
+      "en": "Air quality in 35 BAHERAMPURA is moderate (AQI 127). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true
     },
@@ -1253,9 +1253,9 @@
       "en"
     ],
     "texts": {
-      "en": "Hello Ward 33 SARKHEJ! Air quality is moderate (AQI 133). If you have asthma, heart issues, or are a child or elder, please limit long outdoor activities. Take care!"
+      "en": "Air quality in 33 SARKHEJ is moderate (AQI 133). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true
     },

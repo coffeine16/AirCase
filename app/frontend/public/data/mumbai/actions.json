@@ -49,12 +49,12 @@
     "cells": [
       "88608b1897fffff",
       "88608b1895fffff",
-      "88608b1891fffff",
       "88608b016bfffff",
+      "88608b1891fffff",
       "88608b0169fffff",
       "88608b1893fffff",
-      "88608b189dfffff",
       "88608b0145fffff",
+      "88608b189dfffff",
       "88608b1883fffff",
       "88608b0147fffff",
       "88608b1881fffff",
@@ -66,7 +66,7 @@
     },
     "eps": 71.8,
     "components": {
-      "severity": 0.587,
+      "severity": 0.586,
       "attribution_conf": 0.45,
       "actionability": 1.0,
       "vulnerability": 1.0
@@ -137,9 +137,9 @@
       "lat": 19.0168,
       "lon": 72.8633
     },
-    "eps": 66.0,
+    "eps": 65.9,
     "components": {
-      "severity": 0.656,
+      "severity": 0.655,
       "attribution_conf": 0.44,
       "actionability": 0.6,
       "vulnerability": 1.0
@@ -159,8 +159,8 @@
     "cells": [
       "88608b1889fffff",
       "88608b18c3fffff",
-      "88608b18d5fffff",
       "88608b18c7fffff",
+      "88608b18d5fffff",
       "88608b188dfffff",
       "88608b014dfffff",
       "88608b189bfffff",
@@ -203,8 +203,8 @@
       "88608b0b45fffff",
       "88608b0b5dfffff",
       "88608b0b47fffff",
-      "88608b0b43fffff",
       "88608b0b55fffff",
+      "88608b0b43fffff",
       "88608b0b41fffff",
       "88608b0b4bfffff",
       "88608b0b49fffff"
@@ -262,8 +262,8 @@
       "88608b1989fffff",
       "88608b19c3fffff",
       "88608b19c9fffff",
-      "88608b19c7fffff",
       "88608b19cbfffff",
+      "88608b19c7fffff",
       "88608b198bfffff",
       "88608b1835fffff",
       "88608b1831fffff",
@@ -272,8 +272,8 @@
       "88608b19ddfffff",
       "88608b19d5fffff",
       "88608b19d3fffff",
-      "88608b199dfffff",
       "88608b1999fffff",
+      "88608b199dfffff",
       "88608b19d7fffff"
     ],
     "centroid": {

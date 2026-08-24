@@ -5,7 +5,7 @@
     "zone_id": "Z01",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-24T05:52:59.652000+00:00",
+    "issued_at": "2026-08-24T07:18:02.002804+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -48,7 +48,7 @@
       "cell": "8860145189fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 45.9,
+      "pm25_estimate": 46.0,
       "candidates": [
         {
           "name": "Good Earth Ochre",
@@ -149,7 +149,7 @@
     "zone_id": "Z04",
     "ward_id": "W167",
     "ward_name": "Avalahalli",
-    "issued_at": "2026-08-24T05:52:59.652312+00:00",
+    "issued_at": "2026-08-24T07:18:02.003764+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -194,7 +194,7 @@
       "cell": "8860145a05fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W167",
-      "pm25_estimate": 45.2,
+      "pm25_estimate": 45.4,
       "candidates": [
         {
           "name": "industrial_1203069041",
@@ -295,7 +295,7 @@
     "zone_id": "Z06",
     "ward_id": "W216",
     "ward_name": "K R Puram",
-    "issued_at": "2026-08-24T05:52:59.652653+00:00",
+    "issued_at": "2026-08-24T07:18:02.003984+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -439,7 +439,7 @@
     "zone_id": "Z02",
     "ward_id": "W231",
     "ward_name": "Govindaraja Nagar",
-    "issued_at": "2026-08-24T05:52:59.652738+00:00",
+    "issued_at": "2026-08-24T07:18:02.004108+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -585,7 +585,7 @@
     "zone_id": "Z00",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-24T05:52:59.652816+00:00",
+    "issued_at": "2026-08-24T07:18:02.004223+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -599,11 +599,7 @@
       "ward_name": "Outside city limits",
       "n_cells": 16,
       "evidence_factors": [
-        "High deterministic score for industrial (0.855)",
-        "Elevated SO2 at 87th city percentile (161.3)",
-        "High NO2 at 95th city percentile (89.7)",
-        "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-        "Nearby industrial candidate STP-4 at 0.93 km"
+        "STP-2 is 1.23 km away, wind alignment 0.75"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
@@ -623,14 +619,10 @@
     ],
     "subject": "Air pollution source detected — industrial — Outside city limits (zone Z00)",
     "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 16 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 56.6 ug/m3, corresponding to an AQI of 94 (Satisfactory).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.40. Supporting evidence: High deterministic score for industrial (0.855); Elevated SO2 at 87th city percentile (161.3); High NO2 at 95th city percentile (89.7). This finding is INDICATIVE and requires verification on site.",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.40. Supporting evidence: STP-2 is 1.23 km away, wind alignment 0.75. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
     "evidence_chain": [
-      "High deterministic score for industrial (0.855)",
-      "Elevated SO2 at 87th city percentile (161.3)",
-      "High NO2 at 95th city percentile (89.7)",
-      "Upwind industrial candidate STP-2 with 0.75 wind alignment at 1.23 km",
-      "Nearby industrial candidate STP-4 at 0.93 km"
+      "STP-2 is 1.23 km away, wind alignment 0.75"
     ],
     "evidence_full": {
       "cell": "886014434dfffff",
@@ -737,7 +729,7 @@
     "zone_id": "Z05",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-24T05:52:59.652894+00:00",
+    "issued_at": "2026-08-24T07:18:02.004447+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -881,7 +873,7 @@
     "zone_id": "Z03",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-24T05:52:59.653084+00:00",
+    "issued_at": "2026-08-24T07:18:02.004704+00:00",
     "status": "draft",
     "situation": {
       "source": "traffic",

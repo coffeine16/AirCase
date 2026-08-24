@@ -12,13 +12,10 @@
       "waste_burning": 0.423,
       "traffic": 0.556
     },
-    "reason": "The primary source of the PM2.5 hotspot is attributed to industrial activity, which scored the highest deterministically at 0.754. This choice is supported by the landuse context containing 12 industrial sites and a strong NO2 column measurement of 88.8 (83rd city percentile) from industrial emissions. Furthermore, meteorology indicates air is trapped with a low boundary layer height of 200 meters, worsening chronic accumulation from multiple nearby industrial candidates.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6; shallow boundary layer (200 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 0.754 for industrial",
-      "Landuse context dominated by 12 industrial sites",
-      "High NO2 column value of 88.8 (83rd percentile)",
-      "Trapped air meteorological condition with 200m boundary layer height",
-      "Presence of multiple nearby industrial candidate sources"
+      "Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6",
+      "shallow boundary layer (200 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c441fffff",
@@ -116,7 +113,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 10
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   },
   {
@@ -132,13 +129,10 @@
       "waste_burning": 0.423,
       "traffic": 0.556
     },
-    "reason": "The primary source of the PM2.5 hotspot is attributed to industrial activity, which scored the highest deterministically at 0.754. This choice is supported by the landuse context containing 12 industrial sites and a strong NO2 column measurement of 88.8 (83rd city percentile) from industrial emissions. Furthermore, meteorology indicates air is trapped with a low boundary layer height of 200 meters, worsening chronic accumulation from multiple nearby industrial candidates.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6; shallow boundary layer (200 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 0.754 for industrial",
-      "Landuse context dominated by 12 industrial sites",
-      "High NO2 column value of 88.8 (83rd percentile)",
-      "Trapped air meteorological condition with 200m boundary layer height",
-      "Presence of multiple nearby industrial candidate sources"
+      "Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6",
+      "shallow boundary layer (200 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c441fffff",
@@ -236,7 +230,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 10
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   },
   {
@@ -252,13 +246,10 @@
       "waste_burning": 0.423,
       "traffic": 0.556
     },
-    "reason": "The primary source of the PM2.5 hotspot is attributed to industrial activity, which scored the highest deterministically at 0.754. This choice is supported by the landuse context containing 12 industrial sites and a strong NO2 column measurement of 88.8 (83rd city percentile) from industrial emissions. Furthermore, meteorology indicates air is trapped with a low boundary layer height of 200 meters, worsening chronic accumulation from multiple nearby industrial candidates.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6; shallow boundary layer (200 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 0.754 for industrial",
-      "Landuse context dominated by 12 industrial sites",
-      "High NO2 column value of 88.8 (83rd percentile)",
-      "Trapped air meteorological condition with 200m boundary layer height",
-      "Presence of multiple nearby industrial candidate sources"
+      "Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6",
+      "shallow boundary layer (200 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c441fffff",
@@ -356,7 +347,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 10
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   },
   {
@@ -372,13 +363,10 @@
       "waste_burning": 0.423,
       "traffic": 0.556
     },
-    "reason": "The primary source of the PM2.5 hotspot is attributed to industrial activity, which scored the highest deterministically at 0.754. This choice is supported by the landuse context containing 12 industrial sites and a strong NO2 column measurement of 88.8 (83rd city percentile) from industrial emissions. Furthermore, meteorology indicates air is trapped with a low boundary layer height of 200 meters, worsening chronic accumulation from multiple nearby industrial candidates.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6; shallow boundary layer (200 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 0.754 for industrial",
-      "Landuse context dominated by 12 industrial sites",
-      "High NO2 column value of 88.8 (83rd percentile)",
-      "Trapped air meteorological condition with 200m boundary layer height",
-      "Presence of multiple nearby industrial candidate sources"
+      "Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6",
+      "shallow boundary layer (200 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c441fffff",
@@ -476,7 +464,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 10
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   },
   {
@@ -492,13 +480,10 @@
       "waste_burning": 0.423,
       "traffic": 0.556
     },
-    "reason": "The primary source of the PM2.5 hotspot is attributed to industrial activity, which scored the highest deterministically at 0.754. This choice is supported by the landuse context containing 12 industrial sites and a strong NO2 column measurement of 88.8 (83rd city percentile) from industrial emissions. Furthermore, meteorology indicates air is trapped with a low boundary layer height of 200 meters, worsening chronic accumulation from multiple nearby industrial candidates.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6; shallow boundary layer (200 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 0.754 for industrial",
-      "Landuse context dominated by 12 industrial sites",
-      "High NO2 column value of 88.8 (83rd percentile)",
-      "Trapped air meteorological condition with 200m boundary layer height",
-      "Presence of multiple nearby industrial candidate sources"
+      "Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6",
+      "shallow boundary layer (200 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c441fffff",
@@ -596,7 +581,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 10
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   },
   {
@@ -612,13 +597,10 @@
       "waste_burning": 0.423,
       "traffic": 0.556
     },
-    "reason": "The primary source of the PM2.5 hotspot is attributed to industrial activity, which scored the highest deterministically at 0.754. This choice is supported by the landuse context containing 12 industrial sites and a strong NO2 column measurement of 88.8 (83rd city percentile) from industrial emissions. Furthermore, meteorology indicates air is trapped with a low boundary layer height of 200 meters, worsening chronic accumulation from multiple nearby industrial candidates.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6; shallow boundary layer (200 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 0.754 for industrial",
-      "Landuse context dominated by 12 industrial sites",
-      "High NO2 column value of 88.8 (83rd percentile)",
-      "Trapped air meteorological condition with 200m boundary layer height",
-      "Presence of multiple nearby industrial candidate sources"
+      "Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6",
+      "shallow boundary layer (200 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c441fffff",
@@ -716,7 +698,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 10
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   },
   {
@@ -732,13 +714,10 @@
       "waste_burning": 0.423,
       "traffic": 0.556
     },
-    "reason": "The primary source of the PM2.5 hotspot is attributed to industrial activity, which scored the highest deterministically at 0.754. This choice is supported by the landuse context containing 12 industrial sites and a strong NO2 column measurement of 88.8 (83rd city percentile) from industrial emissions. Furthermore, meteorology indicates air is trapped with a low boundary layer height of 200 meters, worsening chronic accumulation from multiple nearby industrial candidates.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6; shallow boundary layer (200 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 0.754 for industrial",
-      "Landuse context dominated by 12 industrial sites",
-      "High NO2 column value of 88.8 (83rd percentile)",
-      "Trapped air meteorological condition with 200m boundary layer height",
-      "Presence of multiple nearby industrial candidate sources"
+      "Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6",
+      "shallow boundary layer (200 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c441fffff",
@@ -836,7 +815,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 10
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   },
   {
@@ -852,13 +831,10 @@
       "waste_burning": 0.423,
       "traffic": 0.556
     },
-    "reason": "The primary source of the PM2.5 hotspot is attributed to industrial activity, which scored the highest deterministically at 0.754. This choice is supported by the landuse context containing 12 industrial sites and a strong NO2 column measurement of 88.8 (83rd city percentile) from industrial emissions. Furthermore, meteorology indicates air is trapped with a low boundary layer height of 200 meters, worsening chronic accumulation from multiple nearby industrial candidates.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6; shallow boundary layer (200 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 0.754 for industrial",
-      "Landuse context dominated by 12 industrial sites",
-      "High NO2 column value of 88.8 (83rd percentile)",
-      "Trapped air meteorological condition with 200m boundary layer height",
-      "Presence of multiple nearby industrial candidate sources"
+      "Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6",
+      "shallow boundary layer (200 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c441fffff",
@@ -956,7 +932,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 10
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   },
   {
@@ -972,13 +948,10 @@
       "waste_burning": 0.423,
       "traffic": 0.556
     },
-    "reason": "The primary source of the PM2.5 hotspot is attributed to industrial activity, which scored the highest deterministically at 0.754. This choice is supported by the landuse context containing 12 industrial sites and a strong NO2 column measurement of 88.8 (83rd city percentile) from industrial emissions. Furthermore, meteorology indicates air is trapped with a low boundary layer height of 200 meters, worsening chronic accumulation from multiple nearby industrial candidates.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6; shallow boundary layer (200 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 0.754 for industrial",
-      "Landuse context dominated by 12 industrial sites",
-      "High NO2 column value of 88.8 (83rd percentile)",
-      "Trapped air meteorological condition with 200m boundary layer height",
-      "Presence of multiple nearby industrial candidate sources"
+      "Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6",
+      "shallow boundary layer (200 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c441fffff",
@@ -1076,7 +1049,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 10
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   },
   {
@@ -1092,13 +1065,10 @@
       "waste_burning": 0.423,
       "traffic": 0.556
     },
-    "reason": "The primary source of the PM2.5 hotspot is attributed to industrial activity, which scored the highest deterministically at 0.754. This choice is supported by the landuse context containing 12 industrial sites and a strong NO2 column measurement of 88.8 (83rd city percentile) from industrial emissions. Furthermore, meteorology indicates air is trapped with a low boundary layer height of 200 meters, worsening chronic accumulation from multiple nearby industrial candidates.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6; shallow boundary layer (200 m) trapping emissions.",
     "evidence_factors": [
-      "Highest category score of 0.754 for industrial",
-      "Landuse context dominated by 12 industrial sites",
-      "High NO2 column value of 88.8 (83rd percentile)",
-      "Trapped air meteorological condition with 200m boundary layer height",
-      "Presence of multiple nearby industrial candidate sources"
+      "Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6",
+      "shallow boundary layer (200 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c441fffff",
@@ -1196,7 +1166,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 10
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   },
   {
@@ -1920,13 +1890,10 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "The industrial category score is overwhelmingly high at 0.973, while all other categories are 0.0. This is supported by the presence of 16 industrial landuse units and multiple industrial candidate sources, with the closest (0.8 km) having a strong wind alignment (0.78). The pollutant signature also shows elevated NO2 (85th percentile) and SO2 (52nd percentile), consistent with industrial emissions, exacerbated by trapped air conditions.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions.",
     "evidence_factors": [
-      "High industrial category score",
-      "Nearby industrial facilities with strong wind alignment",
-      "Significant industrial landuse context",
-      "Pollutant signature (high NO2, SO2)",
-      "Trapped air conditions"
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c733fffff",
@@ -2024,7 +1991,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 7
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z07"
   },
   {
@@ -2040,13 +2007,10 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "The industrial category score is overwhelmingly high at 0.973, while all other categories are 0.0. This is supported by the presence of 16 industrial landuse units and multiple industrial candidate sources, with the closest (0.8 km) having a strong wind alignment (0.78). The pollutant signature also shows elevated NO2 (85th percentile) and SO2 (52nd percentile), consistent with industrial emissions, exacerbated by trapped air conditions.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions.",
     "evidence_factors": [
-      "High industrial category score",
-      "Nearby industrial facilities with strong wind alignment",
-      "Significant industrial landuse context",
-      "Pollutant signature (high NO2, SO2)",
-      "Trapped air conditions"
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c733fffff",
@@ -2144,7 +2108,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 7
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z07"
   },
   {
@@ -2160,13 +2124,10 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "The industrial category score is overwhelmingly high at 0.973, while all other categories are 0.0. This is supported by the presence of 16 industrial landuse units and multiple industrial candidate sources, with the closest (0.8 km) having a strong wind alignment (0.78). The pollutant signature also shows elevated NO2 (85th percentile) and SO2 (52nd percentile), consistent with industrial emissions, exacerbated by trapped air conditions.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions.",
     "evidence_factors": [
-      "High industrial category score",
-      "Nearby industrial facilities with strong wind alignment",
-      "Significant industrial landuse context",
-      "Pollutant signature (high NO2, SO2)",
-      "Trapped air conditions"
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c733fffff",
@@ -2264,7 +2225,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 7
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z07"
   },
   {
@@ -2280,13 +2241,10 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "The industrial category score is overwhelmingly high at 0.973, while all other categories are 0.0. This is supported by the presence of 16 industrial landuse units and multiple industrial candidate sources, with the closest (0.8 km) having a strong wind alignment (0.78). The pollutant signature also shows elevated NO2 (85th percentile) and SO2 (52nd percentile), consistent with industrial emissions, exacerbated by trapped air conditions.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions.",
     "evidence_factors": [
-      "High industrial category score",
-      "Nearby industrial facilities with strong wind alignment",
-      "Significant industrial landuse context",
-      "Pollutant signature (high NO2, SO2)",
-      "Trapped air conditions"
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c733fffff",
@@ -2384,7 +2342,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 7
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z07"
   },
   {
@@ -2400,13 +2358,10 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "The industrial category score is overwhelmingly high at 0.973, while all other categories are 0.0. This is supported by the presence of 16 industrial landuse units and multiple industrial candidate sources, with the closest (0.8 km) having a strong wind alignment (0.78). The pollutant signature also shows elevated NO2 (85th percentile) and SO2 (52nd percentile), consistent with industrial emissions, exacerbated by trapped air conditions.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions.",
     "evidence_factors": [
-      "High industrial category score",
-      "Nearby industrial facilities with strong wind alignment",
-      "Significant industrial landuse context",
-      "Pollutant signature (high NO2, SO2)",
-      "Trapped air conditions"
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c733fffff",
@@ -2504,7 +2459,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 7
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z07"
   },
   {
@@ -2520,13 +2475,10 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "The industrial category score is overwhelmingly high at 0.973, while all other categories are 0.0. This is supported by the presence of 16 industrial landuse units and multiple industrial candidate sources, with the closest (0.8 km) having a strong wind alignment (0.78). The pollutant signature also shows elevated NO2 (85th percentile) and SO2 (52nd percentile), consistent with industrial emissions, exacerbated by trapped air conditions.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions.",
     "evidence_factors": [
-      "High industrial category score",
-      "Nearby industrial facilities with strong wind alignment",
-      "Significant industrial landuse context",
-      "Pollutant signature (high NO2, SO2)",
-      "Trapped air conditions"
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c733fffff",
@@ -2624,7 +2576,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 7
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z07"
   },
   {
@@ -2640,13 +2592,10 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "The industrial category score is overwhelmingly high at 0.973, while all other categories are 0.0. This is supported by the presence of 16 industrial landuse units and multiple industrial candidate sources, with the closest (0.8 km) having a strong wind alignment (0.78). The pollutant signature also shows elevated NO2 (85th percentile) and SO2 (52nd percentile), consistent with industrial emissions, exacerbated by trapped air conditions.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions.",
     "evidence_factors": [
-      "High industrial category score",
-      "Nearby industrial facilities with strong wind alignment",
-      "Significant industrial landuse context",
-      "Pollutant signature (high NO2, SO2)",
-      "Trapped air conditions"
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
     ],
     "evidence": {
       "cell": "883cf2c733fffff",
@@ -2744,7 +2693,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 7
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z07"
   },
   {

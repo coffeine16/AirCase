@@ -3,7 +3,7 @@
     "cell": "88608b1987fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -22,7 +22,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -121,7 +121,7 @@
     "cell": "88608b19abfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -140,7 +140,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -239,7 +239,7 @@
     "cell": "88608b19bbfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -258,7 +258,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -357,7 +357,7 @@
     "cell": "88608b19b7fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -376,7 +376,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -475,7 +475,7 @@
     "cell": "88608b0a61fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -494,7 +494,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -593,7 +593,7 @@
     "cell": "88608b19b3fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -612,7 +612,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -711,7 +711,7 @@
     "cell": "88608b0a6dfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -730,7 +730,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -829,7 +829,7 @@
     "cell": "88608b19b1fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -848,7 +848,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -947,7 +947,7 @@
     "cell": "88608b0b5bfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -966,7 +966,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -1065,7 +1065,7 @@
     "cell": "88608b0b59fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -1084,7 +1084,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -1183,7 +1183,7 @@
     "cell": "88608b0a65fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -1202,7 +1202,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -1301,7 +1301,7 @@
     "cell": "88608b0a67fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -1320,7 +1320,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -1419,7 +1419,7 @@
     "cell": "88608b19a3fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -1438,7 +1438,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -1537,7 +1537,7 @@
     "cell": "88608b19b5fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -1556,7 +1556,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -1655,7 +1655,7 @@
     "cell": "88608b19b9fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -1674,7 +1674,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -1773,7 +1773,7 @@
     "cell": "88608b19bdfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -1792,7 +1792,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -1891,7 +1891,7 @@
     "cell": "88608b0a2dfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 50.3,
+    "pm25_estimate": 50.5,
     "primary_source": "traffic",
     "confidence": 0.51,
     "scores": {
@@ -1910,7 +1910,7 @@
       "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 50.3,
+      "pm25_estimate": 50.5,
       "candidates": [
         {
           "name": "Eastern Freeway",
@@ -2009,7 +2009,7 @@
     "cell": "88608b1989fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 43.9,
+    "pm25_estimate": 44.5,
     "primary_source": "waste_burning",
     "confidence": 0.48,
     "scores": {
@@ -2027,7 +2027,7 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -2126,7 +2126,7 @@
     "cell": "88608b19c3fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 43.9,
+    "pm25_estimate": 44.5,
     "primary_source": "waste_burning",
     "confidence": 0.48,
     "scores": {
@@ -2144,7 +2144,7 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -2243,7 +2243,7 @@
     "cell": "88608b19c9fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 43.9,
+    "pm25_estimate": 44.5,
     "primary_source": "waste_burning",
     "confidence": 0.48,
     "scores": {
@@ -2261,124 +2261,7 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
-      "candidates": [
-        {
-          "name": "industrial_430012312",
-          "type": "industrial",
-          "distance_km": 0.19,
-          "wind_alignment": 0.48
-        },
-        {
-          "name": "Mumbai Refinery Mahul",
-          "type": "industrial",
-          "distance_km": 0.91,
-          "wind_alignment": 0.48
-        },
-        {
-          "name": "industrial_430012314",
-          "type": "industrial",
-          "distance_km": 1.46,
-          "wind_alignment": 0.45
-        },
-        {
-          "name": "industrial_1289173951",
-          "type": "industrial",
-          "distance_km": 1.73,
-          "wind_alignment": 0.45
-        },
-        {
-          "name": "industrial_1289166121",
-          "type": "industrial",
-          "distance_km": 2.06,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "Mumbai Refinery",
-          "type": "industrial",
-          "distance_km": 1.69,
-          "wind_alignment": 0.41
-        },
-        {
-          "name": "Eastern Freeway",
-          "type": "traffic",
-          "distance_km": 2.03,
-          "wind_alignment": 0.46
-        },
-        {
-          "name": "Eastern Freeway",
-          "type": "traffic",
-          "distance_km": 1.85,
-          "wind_alignment": 0.43
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 209.1,
-          "city_percentile": 94
-        },
-        "so2_col": {
-          "value": 132.8,
-          "city_percentile": 71
-        },
-        "aai": {
-          "value": -0.2,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 12,
-        "fire_hour_fraction": 0.0174,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 720
-      },
-      "landuse_context": {
-        "industrial": 6,
-        "construction": 0,
-        "waste_burning": 0,
-        "traffic": 0
-      },
-      "meteorology": {
-        "wind_from_deg": 27,
-        "wind_ms": 2.2,
-        "blh_m": 210,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "chronic",
-      "evidence_window_hours": 720,
-      "zone_cells": 16
-    },
-    "explained_by": "rules",
-    "zone_id": "Z08"
-  },
-  {
-    "cell": "88608b19c7fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W017",
-    "pm25_estimate": 43.9,
-    "primary_source": "waste_burning",
-    "confidence": 0.48,
-    "scores": {
-      "industrial": 0.886,
-      "construction": 0.0,
-      "waste_burning": 1.348,
-      "traffic": 0.171
-    },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 12 hours (2% of the window); shallow boundary layer (210 m) trapping emissions.",
-    "evidence_factors": [
-      "satellite fire detections in 12 hours (2% of the window)",
-      "shallow boundary layer (210 m) trapping emissions"
-    ],
-    "evidence": {
-      "cell": "88608b1989fffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -2477,7 +2360,7 @@
     "cell": "88608b19cbfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 43.9,
+    "pm25_estimate": 44.5,
     "primary_source": "waste_burning",
     "confidence": 0.48,
     "scores": {
@@ -2495,7 +2378,124 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
+      "candidates": [
+        {
+          "name": "industrial_430012312",
+          "type": "industrial",
+          "distance_km": 0.19,
+          "wind_alignment": 0.48
+        },
+        {
+          "name": "Mumbai Refinery Mahul",
+          "type": "industrial",
+          "distance_km": 0.91,
+          "wind_alignment": 0.48
+        },
+        {
+          "name": "industrial_430012314",
+          "type": "industrial",
+          "distance_km": 1.46,
+          "wind_alignment": 0.45
+        },
+        {
+          "name": "industrial_1289173951",
+          "type": "industrial",
+          "distance_km": 1.73,
+          "wind_alignment": 0.45
+        },
+        {
+          "name": "industrial_1289166121",
+          "type": "industrial",
+          "distance_km": 2.06,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "Mumbai Refinery",
+          "type": "industrial",
+          "distance_km": 1.69,
+          "wind_alignment": 0.41
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 2.03,
+          "wind_alignment": 0.46
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 1.85,
+          "wind_alignment": 0.43
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 209.1,
+          "city_percentile": 94
+        },
+        "so2_col": {
+          "value": 132.8,
+          "city_percentile": 71
+        },
+        "aai": {
+          "value": -0.2,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 12,
+        "fire_hour_fraction": 0.0174,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 6,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 27,
+        "wind_ms": 2.2,
+        "blh_m": 210,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z08"
+  },
+  {
+    "cell": "88608b19c7fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W017",
+    "pm25_estimate": 44.5,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.886,
+      "construction": 0.0,
+      "waste_burning": 1.348,
+      "traffic": 0.171
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 12 hours (2% of the window); shallow boundary layer (210 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 12 hours (2% of the window)",
+      "shallow boundary layer (210 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "88608b1989fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W017",
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -2594,7 +2594,7 @@
     "cell": "88608b198bfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 43.9,
+    "pm25_estimate": 44.5,
     "primary_source": "waste_burning",
     "confidence": 0.48,
     "scores": {
@@ -2612,7 +2612,7 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -2711,7 +2711,7 @@
     "cell": "88608b1835fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 43.9,
+    "pm25_estimate": 44.5,
     "primary_source": "waste_burning",
     "confidence": 0.48,
     "scores": {
@@ -2729,7 +2729,7 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -2828,7 +2828,7 @@
     "cell": "88608b1831fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 43.9,
+    "pm25_estimate": 44.5,
     "primary_source": "waste_burning",
     "confidence": 0.48,
     "scores": {
@@ -2846,7 +2846,7 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -2945,7 +2945,7 @@
     "cell": "88608b19d1fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 43.9,
+    "pm25_estimate": 44.5,
     "primary_source": "waste_burning",
     "confidence": 0.48,
     "scores": {
@@ -2963,7 +2963,7 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -3062,7 +3062,7 @@
     "cell": "88608b183dfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 43.9,
+    "pm25_estimate": 44.5,
     "primary_source": "waste_burning",
     "confidence": 0.48,
     "scores": {
@@ -3080,7 +3080,7 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -3179,7 +3179,7 @@
     "cell": "88608b19ddfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 43.9,
+    "pm25_estimate": 44.5,
     "primary_source": "waste_burning",
     "confidence": 0.48,
     "scores": {
@@ -3197,7 +3197,7 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -3296,7 +3296,7 @@
     "cell": "88608b19d5fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 43.9,
+    "pm25_estimate": 44.5,
     "primary_source": "waste_burning",
     "confidence": 0.48,
     "scores": {
@@ -3314,7 +3314,7 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -3413,7 +3413,7 @@
     "cell": "88608b19d3fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 43.9,
+    "pm25_estimate": 44.5,
     "primary_source": "waste_burning",
     "confidence": 0.48,
     "scores": {
@@ -3431,124 +3431,7 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
-      "candidates": [
-        {
-          "name": "industrial_430012312",
-          "type": "industrial",
-          "distance_km": 0.19,
-          "wind_alignment": 0.48
-        },
-        {
-          "name": "Mumbai Refinery Mahul",
-          "type": "industrial",
-          "distance_km": 0.91,
-          "wind_alignment": 0.48
-        },
-        {
-          "name": "industrial_430012314",
-          "type": "industrial",
-          "distance_km": 1.46,
-          "wind_alignment": 0.45
-        },
-        {
-          "name": "industrial_1289173951",
-          "type": "industrial",
-          "distance_km": 1.73,
-          "wind_alignment": 0.45
-        },
-        {
-          "name": "industrial_1289166121",
-          "type": "industrial",
-          "distance_km": 2.06,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "Mumbai Refinery",
-          "type": "industrial",
-          "distance_km": 1.69,
-          "wind_alignment": 0.41
-        },
-        {
-          "name": "Eastern Freeway",
-          "type": "traffic",
-          "distance_km": 2.03,
-          "wind_alignment": 0.46
-        },
-        {
-          "name": "Eastern Freeway",
-          "type": "traffic",
-          "distance_km": 1.85,
-          "wind_alignment": 0.43
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 209.1,
-          "city_percentile": 94
-        },
-        "so2_col": {
-          "value": 132.8,
-          "city_percentile": 71
-        },
-        "aai": {
-          "value": -0.2,
-          "city_percentile": 63
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 12,
-        "fire_hour_fraction": 0.0174,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 720
-      },
-      "landuse_context": {
-        "industrial": 6,
-        "construction": 0,
-        "waste_burning": 0,
-        "traffic": 0
-      },
-      "meteorology": {
-        "wind_from_deg": 27,
-        "wind_ms": 2.2,
-        "blh_m": 210,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "chronic",
-      "evidence_window_hours": 720,
-      "zone_cells": 16
-    },
-    "explained_by": "rules",
-    "zone_id": "Z08"
-  },
-  {
-    "cell": "88608b199dfffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W017",
-    "pm25_estimate": 43.9,
-    "primary_source": "waste_burning",
-    "confidence": 0.48,
-    "scores": {
-      "industrial": 0.886,
-      "construction": 0.0,
-      "waste_burning": 1.348,
-      "traffic": 0.171
-    },
-    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 12 hours (2% of the window); shallow boundary layer (210 m) trapping emissions.",
-    "evidence_factors": [
-      "satellite fire detections in 12 hours (2% of the window)",
-      "shallow boundary layer (210 m) trapping emissions"
-    ],
-    "evidence": {
-      "cell": "88608b1989fffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -3647,7 +3530,7 @@
     "cell": "88608b1999fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 43.9,
+    "pm25_estimate": 44.5,
     "primary_source": "waste_burning",
     "confidence": 0.48,
     "scores": {
@@ -3665,7 +3548,124 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
+      "candidates": [
+        {
+          "name": "industrial_430012312",
+          "type": "industrial",
+          "distance_km": 0.19,
+          "wind_alignment": 0.48
+        },
+        {
+          "name": "Mumbai Refinery Mahul",
+          "type": "industrial",
+          "distance_km": 0.91,
+          "wind_alignment": 0.48
+        },
+        {
+          "name": "industrial_430012314",
+          "type": "industrial",
+          "distance_km": 1.46,
+          "wind_alignment": 0.45
+        },
+        {
+          "name": "industrial_1289173951",
+          "type": "industrial",
+          "distance_km": 1.73,
+          "wind_alignment": 0.45
+        },
+        {
+          "name": "industrial_1289166121",
+          "type": "industrial",
+          "distance_km": 2.06,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "Mumbai Refinery",
+          "type": "industrial",
+          "distance_km": 1.69,
+          "wind_alignment": 0.41
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 2.03,
+          "wind_alignment": 0.46
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 1.85,
+          "wind_alignment": 0.43
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 209.1,
+          "city_percentile": 94
+        },
+        "so2_col": {
+          "value": 132.8,
+          "city_percentile": 71
+        },
+        "aai": {
+          "value": -0.2,
+          "city_percentile": 63
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 12,
+        "fire_hour_fraction": 0.0174,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 6,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 27,
+        "wind_ms": 2.2,
+        "blh_m": 210,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 16
+    },
+    "explained_by": "rules",
+    "zone_id": "Z08"
+  },
+  {
+    "cell": "88608b199dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W017",
+    "pm25_estimate": 44.5,
+    "primary_source": "waste_burning",
+    "confidence": 0.48,
+    "scores": {
+      "industrial": 0.886,
+      "construction": 0.0,
+      "waste_burning": 1.348,
+      "traffic": 0.171
+    },
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. satellite fire detections in 12 hours (2% of the window); shallow boundary layer (210 m) trapping emissions.",
+    "evidence_factors": [
+      "satellite fire detections in 12 hours (2% of the window)",
+      "shallow boundary layer (210 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "88608b1989fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W017",
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -3764,7 +3764,7 @@
     "cell": "88608b19d7fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W017",
-    "pm25_estimate": 43.9,
+    "pm25_estimate": 44.5,
     "primary_source": "waste_burning",
     "confidence": 0.48,
     "scores": {
@@ -3782,7 +3782,7 @@
       "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W017",
-      "pm25_estimate": 43.9,
+      "pm25_estimate": 44.5,
       "candidates": [
         {
           "name": "industrial_430012312",
@@ -3998,7 +3998,7 @@
     "cell": "88608b1995fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W008",
-    "pm25_estimate": 45.8,
+    "pm25_estimate": 46.5,
     "primary_source": "waste_burning",
     "confidence": 0.44,
     "scores": {
@@ -4016,7 +4016,7 @@
       "cell": "88608b1995fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W008",
-      "pm25_estimate": 45.8,
+      "pm25_estimate": 46.5,
       "candidates": [
         {
           "name": "Antop Hill Warehousing Complex",
@@ -4115,7 +4115,7 @@
     "cell": "88608b1997fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W008",
-    "pm25_estimate": 45.8,
+    "pm25_estimate": 46.5,
     "primary_source": "waste_burning",
     "confidence": 0.44,
     "scores": {
@@ -4133,7 +4133,7 @@
       "cell": "88608b1995fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W008",
-      "pm25_estimate": 45.8,
+      "pm25_estimate": 46.5,
       "candidates": [
         {
           "name": "Antop Hill Warehousing Complex",
@@ -4232,7 +4232,7 @@
     "cell": "88608b0a6bfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W008",
-    "pm25_estimate": 45.8,
+    "pm25_estimate": 46.5,
     "primary_source": "waste_burning",
     "confidence": 0.44,
     "scores": {
@@ -4250,7 +4250,7 @@
       "cell": "88608b1995fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W008",
-      "pm25_estimate": 45.8,
+      "pm25_estimate": 46.5,
       "candidates": [
         {
           "name": "Antop Hill Warehousing Complex",
@@ -4349,7 +4349,7 @@
     "cell": "88608b0a69fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W008",
-    "pm25_estimate": 45.8,
+    "pm25_estimate": 46.5,
     "primary_source": "waste_burning",
     "confidence": 0.44,
     "scores": {
@@ -4367,7 +4367,7 @@
       "cell": "88608b1995fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W008",
-      "pm25_estimate": 45.8,
+      "pm25_estimate": 46.5,
       "candidates": [
         {
           "name": "Antop Hill Warehousing Complex",
@@ -4466,7 +4466,7 @@
     "cell": "88608b1983fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W008",
-    "pm25_estimate": 45.8,
+    "pm25_estimate": 46.5,
     "primary_source": "waste_burning",
     "confidence": 0.44,
     "scores": {
@@ -4484,7 +4484,7 @@
       "cell": "88608b1995fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W008",
-      "pm25_estimate": 45.8,
+      "pm25_estimate": 46.5,
       "candidates": [
         {
           "name": "Antop Hill Warehousing Complex",
@@ -4583,7 +4583,7 @@
     "cell": "88608b1981fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W008",
-    "pm25_estimate": 45.8,
+    "pm25_estimate": 46.5,
     "primary_source": "waste_burning",
     "confidence": 0.44,
     "scores": {
@@ -4601,7 +4601,7 @@
       "cell": "88608b1995fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W008",
-      "pm25_estimate": 45.8,
+      "pm25_estimate": 46.5,
       "candidates": [
         {
           "name": "Antop Hill Warehousing Complex",
@@ -5636,7 +5636,7 @@
     "cell": "88608b18b9fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -5654,7 +5654,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -5753,7 +5753,7 @@
     "cell": "88608b016dfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -5771,7 +5771,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -5870,7 +5870,7 @@
     "cell": "88608b0165fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -5888,7 +5888,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -5987,7 +5987,7 @@
     "cell": "88608b18b1fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -6005,7 +6005,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -6104,7 +6104,7 @@
     "cell": "88608b18b3fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -6122,7 +6122,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -6221,7 +6221,7 @@
     "cell": "88608b18bdfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -6239,7 +6239,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -6338,7 +6338,7 @@
     "cell": "88608b18bbfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -6356,7 +6356,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -6455,7 +6455,7 @@
     "cell": "88608b0a5bfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -6473,7 +6473,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -6572,7 +6572,7 @@
     "cell": "88608b0129fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -6590,7 +6590,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -6689,7 +6689,7 @@
     "cell": "88608b0a59fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -6707,7 +6707,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -6806,7 +6806,7 @@
     "cell": "88608b18b7fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -6824,7 +6824,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -6923,7 +6923,7 @@
     "cell": "88608b0167fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -6941,7 +6941,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -7040,7 +7040,7 @@
     "cell": "88608b18b5fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -7058,7 +7058,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -7157,7 +7157,7 @@
     "cell": "88608b0161fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -7175,7 +7175,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -7274,7 +7274,7 @@
     "cell": "88608b0163fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 38.5,
+    "pm25_estimate": 41.0,
     "primary_source": "industrial",
     "confidence": 0.44,
     "scores": {
@@ -7292,7 +7292,7 @@
       "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 38.5,
+      "pm25_estimate": 41.0,
       "candidates": [
         {
           "name": "industrial_423483205",
@@ -7391,7 +7391,7 @@
     "cell": "88608b1897fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 2.8,
+    "pm25_estimate": 16.6,
     "primary_source": "traffic",
     "confidence": 0.45,
     "scores": {
@@ -7410,7 +7410,7 @@
       "cell": "88608b1897fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 2.8,
+      "pm25_estimate": 16.6,
       "candidates": [
         {
           "name": "Dr Babasaheb Ambedkar Marg",
@@ -7509,7 +7509,7 @@
     "cell": "88608b1895fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 2.8,
+    "pm25_estimate": 16.6,
     "primary_source": "traffic",
     "confidence": 0.45,
     "scores": {
@@ -7528,125 +7528,7 @@
       "cell": "88608b1897fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 2.8,
-      "candidates": [
-        {
-          "name": "Dr Babasaheb Ambedkar Marg",
-          "type": "traffic",
-          "distance_km": 0.69,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "A Patil Flyover",
-          "type": "traffic",
-          "distance_km": 0.74,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "A Patil Flyover",
-          "type": "traffic",
-          "distance_km": 0.76,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "industrial_436231944",
-          "type": "industrial",
-          "distance_km": 0.95,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "A Patil Flyover",
-          "type": "traffic",
-          "distance_km": 0.81,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "Thakkar Estate",
-          "type": "industrial",
-          "distance_km": 1.42,
-          "wind_alignment": 0.63
-        },
-        {
-          "name": "A Patil Flyover",
-          "type": "traffic",
-          "distance_km": 0.9,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "industrial_1473959617",
-          "type": "industrial",
-          "distance_km": 1.47,
-          "wind_alignment": 0.63
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 247.1,
-          "city_percentile": 97
-        },
-        "so2_col": {
-          "value": 148.2,
-          "city_percentile": 73
-        },
-        "aai": {
-          "value": 0.7,
-          "city_percentile": 95
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 0,
-        "fire_hour_fraction": 0.0,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 24
-      },
-      "landuse_context": {
-        "industrial": 13,
-        "construction": 5,
-        "waste_burning": 0,
-        "traffic": 6
-      },
-      "meteorology": {
-        "wind_from_deg": 35,
-        "wind_ms": 2.2,
-        "blh_m": 192,
-        "hour_local": 23,
-        "air_trapped": true
-      },
-      "hotspot_kind": "acute",
-      "evidence_window_hours": 24,
-      "zone_cells": 12
-    },
-    "explained_by": "rules",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "88608b1891fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W005",
-    "pm25_estimate": 2.8,
-    "primary_source": "traffic",
-    "confidence": 0.45,
-    "scores": {
-      "industrial": 0.786,
-      "construction": 0.225,
-      "waste_burning": 0.0,
-      "traffic": 0.797
-    },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Dr Babasaheb Ambedkar Marg is 0.69 km away, wind alignment 0.49; NO2 column at p97 citywide; shallow boundary layer (192 m) trapping emissions.",
-    "evidence_factors": [
-      "Dr Babasaheb Ambedkar Marg is 0.69 km away, wind alignment 0.49",
-      "NO2 column at p97 citywide",
-      "shallow boundary layer (192 m) trapping emissions"
-    ],
-    "evidence": {
-      "cell": "88608b1897fffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W005",
-      "pm25_estimate": 2.8,
+      "pm25_estimate": 16.6,
       "candidates": [
         {
           "name": "Dr Babasaheb Ambedkar Marg",
@@ -7745,7 +7627,7 @@
     "cell": "88608b016bfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 2.8,
+    "pm25_estimate": 16.6,
     "primary_source": "traffic",
     "confidence": 0.45,
     "scores": {
@@ -7764,7 +7646,125 @@
       "cell": "88608b1897fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 2.8,
+      "pm25_estimate": 16.6,
+      "candidates": [
+        {
+          "name": "Dr Babasaheb Ambedkar Marg",
+          "type": "traffic",
+          "distance_km": 0.69,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "A Patil Flyover",
+          "type": "traffic",
+          "distance_km": 0.74,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "A Patil Flyover",
+          "type": "traffic",
+          "distance_km": 0.76,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_436231944",
+          "type": "industrial",
+          "distance_km": 0.95,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "A Patil Flyover",
+          "type": "traffic",
+          "distance_km": 0.81,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "Thakkar Estate",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "A Patil Flyover",
+          "type": "traffic",
+          "distance_km": 0.9,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_1473959617",
+          "type": "industrial",
+          "distance_km": 1.47,
+          "wind_alignment": 0.63
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 247.1,
+          "city_percentile": 97
+        },
+        "so2_col": {
+          "value": 148.2,
+          "city_percentile": 73
+        },
+        "aai": {
+          "value": 0.7,
+          "city_percentile": 95
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 13,
+        "construction": 5,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 2.2,
+        "blh_m": 192,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 12
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "88608b1891fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W005",
+    "pm25_estimate": 16.6,
+    "primary_source": "traffic",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 0.786,
+      "construction": 0.225,
+      "waste_burning": 0.0,
+      "traffic": 0.797
+    },
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Dr Babasaheb Ambedkar Marg is 0.69 km away, wind alignment 0.49; NO2 column at p97 citywide; shallow boundary layer (192 m) trapping emissions.",
+    "evidence_factors": [
+      "Dr Babasaheb Ambedkar Marg is 0.69 km away, wind alignment 0.49",
+      "NO2 column at p97 citywide",
+      "shallow boundary layer (192 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "88608b1897fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W005",
+      "pm25_estimate": 16.6,
       "candidates": [
         {
           "name": "Dr Babasaheb Ambedkar Marg",
@@ -7863,7 +7863,7 @@
     "cell": "88608b0169fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 2.8,
+    "pm25_estimate": 16.6,
     "primary_source": "traffic",
     "confidence": 0.45,
     "scores": {
@@ -7882,7 +7882,7 @@
       "cell": "88608b1897fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 2.8,
+      "pm25_estimate": 16.6,
       "candidates": [
         {
           "name": "Dr Babasaheb Ambedkar Marg",
@@ -7981,7 +7981,7 @@
     "cell": "88608b1893fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 2.8,
+    "pm25_estimate": 16.6,
     "primary_source": "traffic",
     "confidence": 0.45,
     "scores": {
@@ -8000,125 +8000,7 @@
       "cell": "88608b1897fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 2.8,
-      "candidates": [
-        {
-          "name": "Dr Babasaheb Ambedkar Marg",
-          "type": "traffic",
-          "distance_km": 0.69,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "A Patil Flyover",
-          "type": "traffic",
-          "distance_km": 0.74,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "A Patil Flyover",
-          "type": "traffic",
-          "distance_km": 0.76,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "industrial_436231944",
-          "type": "industrial",
-          "distance_km": 0.95,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "A Patil Flyover",
-          "type": "traffic",
-          "distance_km": 0.81,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "Thakkar Estate",
-          "type": "industrial",
-          "distance_km": 1.42,
-          "wind_alignment": 0.63
-        },
-        {
-          "name": "A Patil Flyover",
-          "type": "traffic",
-          "distance_km": 0.9,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "industrial_1473959617",
-          "type": "industrial",
-          "distance_km": 1.47,
-          "wind_alignment": 0.63
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 247.1,
-          "city_percentile": 97
-        },
-        "so2_col": {
-          "value": 148.2,
-          "city_percentile": 73
-        },
-        "aai": {
-          "value": 0.7,
-          "city_percentile": 95
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 0,
-        "fire_hour_fraction": 0.0,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 24
-      },
-      "landuse_context": {
-        "industrial": 13,
-        "construction": 5,
-        "waste_burning": 0,
-        "traffic": 6
-      },
-      "meteorology": {
-        "wind_from_deg": 35,
-        "wind_ms": 2.2,
-        "blh_m": 192,
-        "hour_local": 23,
-        "air_trapped": true
-      },
-      "hotspot_kind": "acute",
-      "evidence_window_hours": 24,
-      "zone_cells": 12
-    },
-    "explained_by": "rules",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "88608b189dfffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W005",
-    "pm25_estimate": 2.8,
-    "primary_source": "traffic",
-    "confidence": 0.45,
-    "scores": {
-      "industrial": 0.786,
-      "construction": 0.225,
-      "waste_burning": 0.0,
-      "traffic": 0.797
-    },
-    "reason": "Deterministic evidence scoring points to traffic as the primary source. Dr Babasaheb Ambedkar Marg is 0.69 km away, wind alignment 0.49; NO2 column at p97 citywide; shallow boundary layer (192 m) trapping emissions.",
-    "evidence_factors": [
-      "Dr Babasaheb Ambedkar Marg is 0.69 km away, wind alignment 0.49",
-      "NO2 column at p97 citywide",
-      "shallow boundary layer (192 m) trapping emissions"
-    ],
-    "evidence": {
-      "cell": "88608b1897fffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W005",
-      "pm25_estimate": 2.8,
+      "pm25_estimate": 16.6,
       "candidates": [
         {
           "name": "Dr Babasaheb Ambedkar Marg",
@@ -8217,7 +8099,7 @@
     "cell": "88608b0145fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 2.8,
+    "pm25_estimate": 16.6,
     "primary_source": "traffic",
     "confidence": 0.45,
     "scores": {
@@ -8236,7 +8118,125 @@
       "cell": "88608b1897fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 2.8,
+      "pm25_estimate": 16.6,
+      "candidates": [
+        {
+          "name": "Dr Babasaheb Ambedkar Marg",
+          "type": "traffic",
+          "distance_km": 0.69,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "A Patil Flyover",
+          "type": "traffic",
+          "distance_km": 0.74,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "A Patil Flyover",
+          "type": "traffic",
+          "distance_km": 0.76,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_436231944",
+          "type": "industrial",
+          "distance_km": 0.95,
+          "wind_alignment": 0.54
+        },
+        {
+          "name": "A Patil Flyover",
+          "type": "traffic",
+          "distance_km": 0.81,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "Thakkar Estate",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "A Patil Flyover",
+          "type": "traffic",
+          "distance_km": 0.9,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_1473959617",
+          "type": "industrial",
+          "distance_km": 1.47,
+          "wind_alignment": 0.63
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 247.1,
+          "city_percentile": 97
+        },
+        "so2_col": {
+          "value": 148.2,
+          "city_percentile": 73
+        },
+        "aai": {
+          "value": 0.7,
+          "city_percentile": 95
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 13,
+        "construction": 5,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 2.2,
+        "blh_m": 192,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 12
+    },
+    "explained_by": "rules",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "88608b189dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W005",
+    "pm25_estimate": 16.6,
+    "primary_source": "traffic",
+    "confidence": 0.45,
+    "scores": {
+      "industrial": 0.786,
+      "construction": 0.225,
+      "waste_burning": 0.0,
+      "traffic": 0.797
+    },
+    "reason": "Deterministic evidence scoring points to traffic as the primary source. Dr Babasaheb Ambedkar Marg is 0.69 km away, wind alignment 0.49; NO2 column at p97 citywide; shallow boundary layer (192 m) trapping emissions.",
+    "evidence_factors": [
+      "Dr Babasaheb Ambedkar Marg is 0.69 km away, wind alignment 0.49",
+      "NO2 column at p97 citywide",
+      "shallow boundary layer (192 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "88608b1897fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W005",
+      "pm25_estimate": 16.6,
       "candidates": [
         {
           "name": "Dr Babasaheb Ambedkar Marg",
@@ -8335,7 +8335,7 @@
     "cell": "88608b1883fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 2.8,
+    "pm25_estimate": 16.6,
     "primary_source": "traffic",
     "confidence": 0.45,
     "scores": {
@@ -8354,7 +8354,7 @@
       "cell": "88608b1897fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 2.8,
+      "pm25_estimate": 16.6,
       "candidates": [
         {
           "name": "Dr Babasaheb Ambedkar Marg",
@@ -8453,7 +8453,7 @@
     "cell": "88608b0147fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 2.8,
+    "pm25_estimate": 16.6,
     "primary_source": "traffic",
     "confidence": 0.45,
     "scores": {
@@ -8472,7 +8472,7 @@
       "cell": "88608b1897fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 2.8,
+      "pm25_estimate": 16.6,
       "candidates": [
         {
           "name": "Dr Babasaheb Ambedkar Marg",
@@ -8571,7 +8571,7 @@
     "cell": "88608b1881fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 2.8,
+    "pm25_estimate": 16.6,
     "primary_source": "traffic",
     "confidence": 0.45,
     "scores": {
@@ -8590,7 +8590,7 @@
       "cell": "88608b1897fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 2.8,
+      "pm25_estimate": 16.6,
       "candidates": [
         {
           "name": "Dr Babasaheb Ambedkar Marg",
@@ -8689,7 +8689,7 @@
     "cell": "88608b188bfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W005",
-    "pm25_estimate": 2.8,
+    "pm25_estimate": 16.6,
     "primary_source": "traffic",
     "confidence": 0.45,
     "scores": {
@@ -8708,7 +8708,7 @@
       "cell": "88608b1897fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 2.8,
+      "pm25_estimate": 16.6,
       "candidates": [
         {
           "name": "Dr Babasaheb Ambedkar Marg",
@@ -9974,7 +9974,7 @@
     "zone_id": "Z07"
   },
   {
-    "cell": "88608b0b43fffff",
+    "cell": "88608b0b55fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W018",
     "pm25_estimate": 54.8,
@@ -10091,7 +10091,7 @@
     "zone_id": "Z07"
   },
   {
-    "cell": "88608b0b55fffff",
+    "cell": "88608b0b43fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W018",
     "pm25_estimate": 54.8,
@@ -10562,7 +10562,7 @@
     "cell": "88608b1889fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "unassigned",
-    "pm25_estimate": 15.1,
+    "pm25_estimate": 23.1,
     "primary_source": "industrial",
     "confidence": 0.42,
     "scores": {
@@ -10580,7 +10580,7 @@
       "cell": "88608b1889fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 15.1,
+      "pm25_estimate": 23.1,
       "candidates": [
         {
           "name": "industrial_1121664480",
@@ -10679,7 +10679,7 @@
     "cell": "88608b18c3fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "unassigned",
-    "pm25_estimate": 15.1,
+    "pm25_estimate": 23.1,
     "primary_source": "industrial",
     "confidence": 0.42,
     "scores": {
@@ -10697,124 +10697,7 @@
       "cell": "88608b1889fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 15.1,
-      "candidates": [
-        {
-          "name": "industrial_1121664480",
-          "type": "industrial",
-          "distance_km": 1.22,
-          "wind_alignment": 0.3
-        },
-        {
-          "name": "industrial_1121664479",
-          "type": "industrial",
-          "distance_km": 1.42,
-          "wind_alignment": 0.31
-        },
-        {
-          "name": "industrial_1121664482",
-          "type": "industrial",
-          "distance_km": 1.44,
-          "wind_alignment": 0.31
-        },
-        {
-          "name": "Mazagon Dock Shipbuilders Limited",
-          "type": "industrial",
-          "distance_km": 1.29,
-          "wind_alignment": 0.29
-        },
-        {
-          "name": "industrial_841044964",
-          "type": "industrial",
-          "distance_km": 1.5,
-          "wind_alignment": 0.31
-        },
-        {
-          "name": "industrial_1121664481",
-          "type": "industrial",
-          "distance_km": 1.51,
-          "wind_alignment": 0.31
-        },
-        {
-          "name": "Eastern Freeway",
-          "type": "traffic",
-          "distance_km": 1.56,
-          "wind_alignment": 0.31
-        },
-        {
-          "name": "Eastern Freeway",
-          "type": "traffic",
-          "distance_km": 1.57,
-          "wind_alignment": 0.31
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 247.1,
-          "city_percentile": 97
-        },
-        "so2_col": {
-          "value": 148.2,
-          "city_percentile": 73
-        },
-        "aai": {
-          "value": 0.7,
-          "city_percentile": 95
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 0,
-        "fire_hour_fraction": 0.0,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 24
-      },
-      "landuse_context": {
-        "industrial": 3,
-        "construction": 0,
-        "waste_burning": 0,
-        "traffic": 1
-      },
-      "meteorology": {
-        "wind_from_deg": 35,
-        "wind_ms": 2.2,
-        "blh_m": 192,
-        "hour_local": 23,
-        "air_trapped": true
-      },
-      "hotspot_kind": "acute",
-      "evidence_window_hours": 24,
-      "zone_cells": 10
-    },
-    "explained_by": "rules",
-    "zone_id": "Z03"
-  },
-  {
-    "cell": "88608b18d5fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "unassigned",
-    "pm25_estimate": 15.1,
-    "primary_source": "industrial",
-    "confidence": 0.42,
-    "scores": {
-      "industrial": 0.613,
-      "construction": 0.0,
-      "waste_burning": 0.0,
-      "traffic": 0.292
-    },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1121664480 is 1.22 km away, wind alignment 0.3; shallow boundary layer (192 m) trapping emissions.",
-    "evidence_factors": [
-      "industrial_1121664480 is 1.22 km away, wind alignment 0.3",
-      "shallow boundary layer (192 m) trapping emissions"
-    ],
-    "evidence": {
-      "cell": "88608b1889fffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "unassigned",
-      "pm25_estimate": 15.1,
+      "pm25_estimate": 23.1,
       "candidates": [
         {
           "name": "industrial_1121664480",
@@ -10913,7 +10796,7 @@
     "cell": "88608b18c7fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "unassigned",
-    "pm25_estimate": 15.1,
+    "pm25_estimate": 23.1,
     "primary_source": "industrial",
     "confidence": 0.42,
     "scores": {
@@ -10931,7 +10814,124 @@
       "cell": "88608b1889fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 15.1,
+      "pm25_estimate": 23.1,
+      "candidates": [
+        {
+          "name": "industrial_1121664480",
+          "type": "industrial",
+          "distance_km": 1.22,
+          "wind_alignment": 0.3
+        },
+        {
+          "name": "industrial_1121664479",
+          "type": "industrial",
+          "distance_km": 1.42,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "industrial_1121664482",
+          "type": "industrial",
+          "distance_km": 1.44,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "Mazagon Dock Shipbuilders Limited",
+          "type": "industrial",
+          "distance_km": 1.29,
+          "wind_alignment": 0.29
+        },
+        {
+          "name": "industrial_841044964",
+          "type": "industrial",
+          "distance_km": 1.5,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "industrial_1121664481",
+          "type": "industrial",
+          "distance_km": 1.51,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 1.56,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 1.57,
+          "wind_alignment": 0.31
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 247.1,
+          "city_percentile": 97
+        },
+        "so2_col": {
+          "value": 148.2,
+          "city_percentile": 73
+        },
+        "aai": {
+          "value": 0.7,
+          "city_percentile": 95
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 3,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 1
+      },
+      "meteorology": {
+        "wind_from_deg": 35,
+        "wind_ms": 2.2,
+        "blh_m": 192,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 10
+    },
+    "explained_by": "rules",
+    "zone_id": "Z03"
+  },
+  {
+    "cell": "88608b18d5fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "unassigned",
+    "pm25_estimate": 23.1,
+    "primary_source": "industrial",
+    "confidence": 0.42,
+    "scores": {
+      "industrial": 0.613,
+      "construction": 0.0,
+      "waste_burning": 0.0,
+      "traffic": 0.292
+    },
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1121664480 is 1.22 km away, wind alignment 0.3; shallow boundary layer (192 m) trapping emissions.",
+    "evidence_factors": [
+      "industrial_1121664480 is 1.22 km away, wind alignment 0.3",
+      "shallow boundary layer (192 m) trapping emissions"
+    ],
+    "evidence": {
+      "cell": "88608b1889fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 23.1,
       "candidates": [
         {
           "name": "industrial_1121664480",
@@ -11030,7 +11030,7 @@
     "cell": "88608b188dfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "unassigned",
-    "pm25_estimate": 15.1,
+    "pm25_estimate": 23.1,
     "primary_source": "industrial",
     "confidence": 0.42,
     "scores": {
@@ -11048,7 +11048,7 @@
       "cell": "88608b1889fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 15.1,
+      "pm25_estimate": 23.1,
       "candidates": [
         {
           "name": "industrial_1121664480",
@@ -11147,7 +11147,7 @@
     "cell": "88608b014dfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "unassigned",
-    "pm25_estimate": 15.1,
+    "pm25_estimate": 23.1,
     "primary_source": "industrial",
     "confidence": 0.42,
     "scores": {
@@ -11165,7 +11165,7 @@
       "cell": "88608b1889fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 15.1,
+      "pm25_estimate": 23.1,
       "candidates": [
         {
           "name": "industrial_1121664480",
@@ -11264,7 +11264,7 @@
     "cell": "88608b189bfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "unassigned",
-    "pm25_estimate": 15.1,
+    "pm25_estimate": 23.1,
     "primary_source": "industrial",
     "confidence": 0.42,
     "scores": {
@@ -11282,7 +11282,7 @@
       "cell": "88608b1889fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 15.1,
+      "pm25_estimate": 23.1,
       "candidates": [
         {
           "name": "industrial_1121664480",
@@ -11381,7 +11381,7 @@
     "cell": "88608b1885fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "unassigned",
-    "pm25_estimate": 15.1,
+    "pm25_estimate": 23.1,
     "primary_source": "industrial",
     "confidence": 0.42,
     "scores": {
@@ -11399,7 +11399,7 @@
       "cell": "88608b1889fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 15.1,
+      "pm25_estimate": 23.1,
       "candidates": [
         {
           "name": "industrial_1121664480",
@@ -11498,7 +11498,7 @@
     "cell": "88608b18d7fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "unassigned",
-    "pm25_estimate": 15.1,
+    "pm25_estimate": 23.1,
     "primary_source": "industrial",
     "confidence": 0.42,
     "scores": {
@@ -11516,7 +11516,7 @@
       "cell": "88608b1889fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 15.1,
+      "pm25_estimate": 23.1,
       "candidates": [
         {
           "name": "industrial_1121664480",
@@ -11615,7 +11615,7 @@
     "cell": "88608b1899fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "unassigned",
-    "pm25_estimate": 15.1,
+    "pm25_estimate": 23.1,
     "primary_source": "industrial",
     "confidence": 0.42,
     "scores": {
@@ -11633,7 +11633,7 @@
       "cell": "88608b1889fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 15.1,
+      "pm25_estimate": 23.1,
       "candidates": [
         {
           "name": "industrial_1121664480",

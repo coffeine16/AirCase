@@ -5,7 +5,7 @@
     "zone_id": "Z02",
     "ward_id": "W030",
     "ward_name": "19 BODAKDEV",
-    "issued_at": "2026-08-24T07:06:18.837109+00:00",
+    "issued_at": "2026-08-24T07:24:41.668693+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -19,10 +19,8 @@
       "ward_name": "19 BODAKDEV",
       "n_cells": 5,
       "evidence_factors": [
-        "Dominant industrial category score of 0.909",
-        "Closest facility industrial_1304792133 at 1.3 km with 0.88 wind alignment",
-        "Elevated NO2 column value of 90.2 (77th percentile)",
-        "Trapped air condition with low BLH of 168 m"
+        "industrial_1304792133 is 1.3 km away, wind alignment 0.88",
+        "shallow boundary layer (168 m) trapping emissions"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
@@ -51,13 +49,11 @@
     ],
     "subject": "Air pollution source detected — industrial — 19 BODAKDEV (zone Z02)",
     "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 5 cell(s) in 19 BODAKDEV. The zone is classified 'acute'. Estimated PM2.5 in the zone is 103.1 ug/m3, corresponding to an AQI of 244 (Poor).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.59. Supporting evidence: Dominant industrial category score of 0.909; Closest facility industrial_1304792133 at 1.3 km with 0.88 wind alignment; Elevated NO2 column value of 90.2 (77th percentile). This finding is INDICATIVE and requires verification on site.",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.59. Supporting evidence: industrial_1304792133 is 1.3 km away, wind alignment 0.88; shallow boundary layer (168 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
     "evidence_chain": [
-      "Dominant industrial category score of 0.909",
-      "Closest facility industrial_1304792133 at 1.3 km with 0.88 wind alignment",
-      "Elevated NO2 column value of 90.2 (77th percentile)",
-      "Trapped air condition with low BLH of 168 m"
+      "industrial_1304792133 is 1.3 km away, wind alignment 0.88",
+      "shallow boundary layer (168 m) trapping emissions"
     ],
     "evidence_full": {
       "cell": "8842ceb4e3fffff",
@@ -164,7 +160,7 @@
     "zone_id": "Z01",
     "ward_id": "W003",
     "ward_name": "46 LAMBHA",
-    "issued_at": "2026-08-24T07:06:59.210091+00:00",
+    "issued_at": "2026-08-24T07:24:41.668757+00:00",
     "status": "draft",
     "situation": {
       "source": "waste_burning",
@@ -178,10 +174,9 @@
       "ward_name": "46 LAMBHA",
       "n_cells": 22,
       "evidence_factors": [
-        "Highest deterministic category score for waste_burning (2.589)",
-        "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-        "Fire activity showing 51 fire hours over the evidence window",
-        "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+        "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+        "satellite fire detections in 51 hours (7% of the window)",
+        "shallow boundary layer (160 m) trapping emissions"
       ],
       "fire_hours": 51,
       "fire_fraction": 0.0742,
@@ -199,15 +194,14 @@
         "penalty": "Environmental compensation as per CPCB/NGT schedule for open burning of waste."
       }
     ],
-    "subject": "Enforcement Notice: Chronic Waste Burning Activity in Ward W003 (46 LAMBHA), Zone Z01",
-    "background": "Environmental monitoring across 22 grid cells in Ward W003 (46 LAMBHA), Zone Z01, recorded a PM2.5 level of 73.9 µg/m³ and an AQI of 147 (Moderate). Meteorological observations over the evidence window registered 51 fire hours, a boundary layer height of 160 m, and a wind speed of 1.7 m/s.",
-    "finding": "The gathered evidence supports the presence of chronic waste burning with a confidence level of 0.78. This determination is further supported by a highest deterministic score of 2.589 for waste burning and a municipal landfill candidate at a distance of 3.0 km with 0.47 wind alignment.",
-    "directive": "Under Rule 15(zg) of the Solid Waste Management Rules, 2016, the local authority shall prohibit open burning of solid waste on streets, open spaces, and at landfill sites. The recipient is directed to immediately inspect the identified area in Ward W003 (46 LAMBHA) and take necessary corrective measures to cease all waste burning.",
+    "subject": "Air pollution source detected — waste burning — 46 LAMBHA (zone Z01)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 22 cell(s) in 46 LAMBHA. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 73.9 ug/m3, corresponding to an AQI of 147 (Moderate).",
+    "finding": "The evidence indicates waste burning as the primary source, at a computed confidence of 0.78. Supporting evidence: Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions. The evidence is consistent and independently corroborated.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Solid Waste Management Rules, 2016, Rule 15(zg).",
     "evidence_chain": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence_full": {
       "cell": "8842cea729fffff",
@@ -305,7 +299,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "drafted_by": "gemini",
+    "drafted_by": "rules",
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   }
 ]

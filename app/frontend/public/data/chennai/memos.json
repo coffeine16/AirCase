@@ -5,7 +5,7 @@
     "zone_id": "Z00",
     "ward_id": "W104",
     "ward_name": "Ward 112 (Teynampet)",
-    "issued_at": "2026-08-24T05:40:29.415447+00:00",
+    "issued_at": "2026-08-24T07:15:44.174621+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
@@ -19,7 +19,11 @@
       "ward_name": "Ward 112 (Teynampet)",
       "n_cells": 16,
       "evidence_factors": [
-        "construction_1264455736 is 1.47 km away, wind alignment 0.94"
+        "Highest category score of 1.081 for construction",
+        "Close proximity and high wind alignment of construction_1264455736 (1.47 km, 0.94)",
+        "Strong wind alignment for Sterling Road Junction Metro (1.98 km, 0.93) and Chetpet Metro Station (2.42 km, 0.97)",
+        "Landuse context features 4 construction sites",
+        "Zero fire activity and fire hour fraction"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
@@ -39,16 +43,20 @@
     ],
     "subject": "Air pollution source detected — construction — Ward 112 (Teynampet) (zone Z00)",
     "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 16 cell(s) in Ward 112 (Teynampet). The zone is classified 'emerging'. Estimated PM2.5 in the zone is 49.8 ug/m3, corresponding to an AQI of 83 (Satisfactory).",
-    "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.50. Supporting evidence: construction_1264455736 is 1.47 km away, wind alignment 0.94. This finding is INDICATIVE and requires verification on site.",
+    "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.50. Supporting evidence: Highest category score of 1.081 for construction; Close proximity and high wind alignment of construction_1264455736 (1.47 km, 0.94); Strong wind alignment for Sterling Road Junction Metro (1.98 km, 0.93) and Chetpet Metro Station (2.42 km, 0.97). This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Construction and Demolition Waste Management Rules, 2016, Rules 4 & 8.",
     "evidence_chain": [
-      "construction_1264455736 is 1.47 km away, wind alignment 0.94"
+      "Highest category score of 1.081 for construction",
+      "Close proximity and high wind alignment of construction_1264455736 (1.47 km, 0.94)",
+      "Strong wind alignment for Sterling Road Junction Metro (1.98 km, 0.93) and Chetpet Metro Station (2.42 km, 0.97)",
+      "Landuse context features 4 construction sites",
+      "Zero fire activity and fire hour fraction"
     ],
     "evidence_full": {
       "cell": "88618c4d49fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W104",
-      "pm25_estimate": 47.7,
+      "pm25_estimate": 47.8,
       "candidates": [
         {
           "name": "construction_1264455736",
@@ -149,13 +157,13 @@
     "zone_id": "Z01",
     "ward_id": "W100",
     "ward_name": "Ward 102 (Annanagar)",
-    "issued_at": "2026-08-24T05:40:29.415514+00:00",
+    "issued_at": "2026-08-24T07:15:44.174685+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
       "confidence": 0.45,
-      "pm25": 47.9,
-      "aqi": 80,
+      "pm25": 48.1,
+      "aqi": 81,
       "aqi_category": "Satisfactory",
       "kind": "emerging",
       "zone_id": "Z01",
@@ -182,7 +190,7 @@
       }
     ],
     "subject": "Air pollution source detected — industrial — Ward 102 (Annanagar) (zone Z01)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 22 cell(s) in Ward 102 (Annanagar). The zone is classified 'emerging'. Estimated PM2.5 in the zone is 47.9 ug/m3, corresponding to an AQI of 80 (Satisfactory).",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 22 cell(s) in Ward 102 (Annanagar). The zone is classified 'emerging'. Estimated PM2.5 in the zone is 48.1 ug/m3, corresponding to an AQI of 81 (Satisfactory).",
     "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.45. Supporting evidence: Ayanavaram MTC Depot is 1.94 km away, wind alignment 0.97. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
     "evidence_chain": [
@@ -192,7 +200,7 @@
       "cell": "88618c4d61fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W100",
-      "pm25_estimate": 46.9,
+      "pm25_estimate": 47.1,
       "candidates": [
         {
           "name": "Ayanavaram MTC Depot",
@@ -293,7 +301,7 @@
     "zone_id": "Z02",
     "ward_id": "W048",
     "ward_name": "Ward 35 (Tondiarpet)",
-    "issued_at": "2026-08-24T05:40:29.415554+00:00",
+    "issued_at": "2026-08-24T07:15:44.174723+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -336,7 +344,7 @@
       "cell": "88618eb20dfffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W048",
-      "pm25_estimate": 12.1,
+      "pm25_estimate": 12.6,
       "candidates": [
         {
           "name": "industrial_219561456",
@@ -432,164 +440,18 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/CHE/20260824/Z05",
-    "action_id": "A05",
-    "zone_id": "Z05",
-    "ward_id": "unassigned",
-    "ward_name": "Outside city limits",
-    "issued_at": "2026-08-24T05:40:29.415601+00:00",
-    "status": "draft",
-    "situation": {
-      "source": "traffic",
-      "confidence": 0.71,
-      "pm25": 45.0,
-      "aqi": 76,
-      "aqi_category": "Satisfactory",
-      "kind": "emerging",
-      "zone_id": "Z05",
-      "ward_id": "unassigned",
-      "ward_name": "Outside city limits",
-      "n_cells": 12,
-      "evidence_factors": [
-        "Chennai Bypass Expressway is 0.66 km away, wind alignment 0.9",
-        "NO2 column at p98 citywide"
-      ],
-      "fire_hours": 0,
-      "fire_fraction": 0.0,
-      "blh_m": 772,
-      "nearest_candidate_km": null
-    },
-    "legal_basis": [
-      {
-        "id": "AIR-1981-20",
-        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
-        "provision": "Section 20",
-        "summary": "Power to give instructions to the authority in charge of registration of motor vehicles to ensure compliance with emission standards.",
-        "authority": "State Government / Transport Department, on SPCB advice",
-        "action": "Direct PUC enforcement drives and lane/corridor checks on this stretch; verify PUC compliance of commercial fleets using it.",
-        "penalty": "Driving in contravention of emission standards is punishable under s.190(2) of the Motor Vehicles Act, 1988."
-      }
-    ],
-    "subject": "Air pollution source detected — traffic — Outside city limits (zone Z05)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 12 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 45.0 ug/m3, corresponding to an AQI of 76 (Satisfactory).",
-    "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.71. Supporting evidence: Chennai Bypass Expressway is 0.66 km away, wind alignment 0.9; NO2 column at p98 citywide. The evidence is consistent and independently corroborated.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20.",
-    "evidence_chain": [
-      "Chennai Bypass Expressway is 0.66 km away, wind alignment 0.9",
-      "NO2 column at p98 citywide"
-    ],
-    "evidence_full": {
-      "cell": "88618c4cedfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "unassigned",
-      "pm25_estimate": 44.7,
-      "candidates": [
-        {
-          "name": "Chennai Bypass Expressway",
-          "type": "traffic",
-          "distance_km": 0.66,
-          "wind_alignment": 0.9
-        },
-        {
-          "name": "Chennai Bypass Expressway",
-          "type": "traffic",
-          "distance_km": 0.66,
-          "wind_alignment": 0.9
-        },
-        {
-          "name": "Porur Bridge",
-          "type": "traffic",
-          "distance_km": 0.37,
-          "wind_alignment": 0.68
-        },
-        {
-          "name": "Porur Bridge",
-          "type": "traffic",
-          "distance_km": 0.38,
-          "wind_alignment": 0.67
-        },
-        {
-          "name": "Chennai Bypass Expressway",
-          "type": "traffic",
-          "distance_km": 0.99,
-          "wind_alignment": 0.91
-        },
-        {
-          "name": "Chennai Bypass Expressway",
-          "type": "traffic",
-          "distance_km": 0.98,
-          "wind_alignment": 0.9
-        },
-        {
-          "name": "traffic_30622254",
-          "type": "traffic",
-          "distance_km": 1.19,
-          "wind_alignment": 0.9
-        },
-        {
-          "name": "traffic_1198892559",
-          "type": "traffic",
-          "distance_km": 1.19,
-          "wind_alignment": 0.9
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 204.3,
-          "city_percentile": 98
-        },
-        "so2_col": {
-          "value": 111.6,
-          "city_percentile": 64
-        },
-        "aai": {
-          "value": -0.5,
-          "city_percentile": 51
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 0,
-        "fire_hour_fraction": 0.0,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 168
-      },
-      "landuse_context": {
-        "industrial": 2,
-        "construction": 0,
-        "waste_burning": 0,
-        "traffic": 6
-      },
-      "meteorology": {
-        "wind_from_deg": 28,
-        "wind_ms": 3.4,
-        "blh_m": 772,
-        "hour_local": 12,
-        "air_trapped": false
-      },
-      "hotspot_kind": "emerging",
-      "evidence_window_hours": 168,
-      "zone_cells": 10
-    },
-    "drafted_by": "rules",
-    "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
-  },
-  {
     "memo_id": "AQ/CHE/20260824/Z10",
     "action_id": "A09",
     "zone_id": "Z10",
     "ward_id": "W042",
     "ward_name": "Ward 28 (Madhavaram)",
-    "issued_at": "2026-08-24T05:40:29.415638+00:00",
+    "issued_at": "2026-08-24T07:15:44.174758+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
       "confidence": 0.69,
-      "pm25": 44.1,
-      "aqi": 74,
+      "pm25": 45.0,
+      "aqi": 76,
       "aqi_category": "Satisfactory",
       "kind": "acute",
       "zone_id": "Z10",
@@ -616,7 +478,7 @@
       }
     ],
     "subject": "Air pollution source detected — industrial — Ward 28 (Madhavaram) (zone Z10)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 19 cell(s) in Ward 28 (Madhavaram). The zone is classified 'acute'. Estimated PM2.5 in the zone is 44.1 ug/m3, corresponding to an AQI of 74 (Satisfactory).",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 19 cell(s) in Ward 28 (Madhavaram). The zone is classified 'acute'. Estimated PM2.5 in the zone is 45.0 ug/m3, corresponding to an AQI of 76 (Satisfactory).",
     "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.69. Supporting evidence: industrial_29246211 is 1.38 km away, wind alignment 0.98. The evidence is consistent and independently corroborated.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
     "evidence_chain": [
@@ -626,7 +488,7 @@
       "cell": "88618eb225fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W042",
-      "pm25_estimate": 11.5,
+      "pm25_estimate": 11.9,
       "candidates": [
         {
           "name": "industrial_29246211",
@@ -722,12 +584,158 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
+    "memo_id": "AQ/CHE/20260824/Z05",
+    "action_id": "A05",
+    "zone_id": "Z05",
+    "ward_id": "unassigned",
+    "ward_name": "Outside city limits",
+    "issued_at": "2026-08-24T07:15:44.174790+00:00",
+    "status": "draft",
+    "situation": {
+      "source": "traffic",
+      "confidence": 0.48,
+      "pm25": 45.0,
+      "aqi": 76,
+      "aqi_category": "Satisfactory",
+      "kind": "emerging",
+      "zone_id": "Z05",
+      "ward_id": "unassigned",
+      "ward_name": "Outside city limits",
+      "n_cells": 12,
+      "evidence_factors": [
+        "Chennai Bypass Expressway is 1.6 km away, wind alignment 0.81",
+        "NO2 column at p98 citywide"
+      ],
+      "fire_hours": 0,
+      "fire_fraction": 0.0,
+      "blh_m": 772,
+      "nearest_candidate_km": null
+    },
+    "legal_basis": [
+      {
+        "id": "AIR-1981-20",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 20",
+        "summary": "Power to give instructions to the authority in charge of registration of motor vehicles to ensure compliance with emission standards.",
+        "authority": "State Government / Transport Department, on SPCB advice",
+        "action": "Direct PUC enforcement drives and lane/corridor checks on this stretch; verify PUC compliance of commercial fleets using it.",
+        "penalty": "Driving in contravention of emission standards is punishable under s.190(2) of the Motor Vehicles Act, 1988."
+      }
+    ],
+    "subject": "Air pollution source detected — traffic — Outside city limits (zone Z05)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 12 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 45.0 ug/m3, corresponding to an AQI of 76 (Satisfactory).",
+    "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.48. Supporting evidence: Chennai Bypass Expressway is 1.6 km away, wind alignment 0.81; NO2 column at p98 citywide. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20.",
+    "evidence_chain": [
+      "Chennai Bypass Expressway is 1.6 km away, wind alignment 0.81",
+      "NO2 column at p98 citywide"
+    ],
+    "evidence_full": {
+      "cell": "88618c4ce1fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "unassigned",
+      "pm25_estimate": 44.8,
+      "candidates": [
+        {
+          "name": "industrial_125234690",
+          "type": "industrial",
+          "distance_km": 0.55,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Iyyapanthangal MTC Depot",
+          "type": "industrial",
+          "distance_km": 0.49,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "Chennai Bypass Expressway",
+          "type": "traffic",
+          "distance_km": 1.6,
+          "wind_alignment": 0.81
+        },
+        {
+          "name": "traffic_30622255",
+          "type": "traffic",
+          "distance_km": 1.76,
+          "wind_alignment": 0.85
+        },
+        {
+          "name": "traffic_1268072848",
+          "type": "traffic",
+          "distance_km": 1.76,
+          "wind_alignment": 0.85
+        },
+        {
+          "name": "Chennai Bypass Expressway",
+          "type": "traffic",
+          "distance_km": 1.76,
+          "wind_alignment": 0.85
+        },
+        {
+          "name": "traffic_30622254",
+          "type": "traffic",
+          "distance_km": 1.74,
+          "wind_alignment": 0.84
+        },
+        {
+          "name": "Chennai Bypass Expressway",
+          "type": "traffic",
+          "distance_km": 1.62,
+          "wind_alignment": 0.8
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 204.3,
+          "city_percentile": 98
+        },
+        "so2_col": {
+          "value": 111.6,
+          "city_percentile": 64
+        },
+        "aai": {
+          "value": -0.5,
+          "city_percentile": 51
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 168
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 6
+      },
+      "meteorology": {
+        "wind_from_deg": 28,
+        "wind_ms": 3.4,
+        "blh_m": 772,
+        "hour_local": 12,
+        "air_trapped": false
+      },
+      "hotspot_kind": "emerging",
+      "evidence_window_hours": 168,
+      "zone_cells": 10
+    },
+    "drafted_by": "rules",
+    "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
+  },
+  {
     "memo_id": "AQ/CHE/20260824/Z07",
     "action_id": "A03",
     "zone_id": "Z07",
     "ward_id": "W014",
     "ward_name": "Ward 157 (Alandur)",
-    "issued_at": "2026-08-24T05:40:29.415676+00:00",
+    "issued_at": "2026-08-24T07:15:44.174820+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -770,7 +778,7 @@
       "cell": "88618c4c51fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W014",
-      "pm25_estimate": 45.4,
+      "pm25_estimate": 45.5,
       "candidates": [
         {
           "name": "industrial_1080301444",
@@ -871,7 +879,7 @@
     "zone_id": "Z04",
     "ward_id": "W175",
     "ward_name": "Ward 150 (Valasaravakkam)",
-    "issued_at": "2026-08-24T05:40:29.415709+00:00",
+    "issued_at": "2026-08-24T07:15:44.174850+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -914,7 +922,7 @@
       "cell": "88618c4c31fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W175",
-      "pm25_estimate": 45.9,
+      "pm25_estimate": 46.1,
       "candidates": [
         {
           "name": "industrial_1081262452",
@@ -1015,13 +1023,13 @@
     "zone_id": "Z08",
     "ward_id": "W167",
     "ward_name": "Ward 159 (Alandur)",
-    "issued_at": "2026-08-24T05:40:29.415740+00:00",
+    "issued_at": "2026-08-24T07:15:44.174878+00:00",
     "status": "draft",
     "situation": {
-      "source": "industrial",
-      "confidence": 0.47,
-      "pm25": 45.5,
-      "aqi": 76,
+      "source": "traffic",
+      "confidence": 0.43,
+      "pm25": 45.8,
+      "aqi": 77,
       "aqi_category": "Satisfactory",
       "kind": "emerging",
       "zone_id": "Z08",
@@ -1029,7 +1037,8 @@
       "ward_name": "Ward 159 (Alandur)",
       "n_cells": 6,
       "evidence_factors": [
-        "industrial_1080301444 is 1.42 km away, wind alignment 0.92"
+        "Grand Southern Trunk Road is 1.89 km away, wind alignment 0.63",
+        "NO2 column at p99 citywide"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
@@ -1038,75 +1047,76 @@
     },
     "legal_basis": [
       {
-        "id": "EPA-1986-5",
-        "statute": "Environment (Protection) Act, 1986",
-        "provision": "Section 5",
-        "summary": "Power to give directions in writing to any person, officer or authority, who shall be bound to comply.",
-        "authority": "State Pollution Control Board / CPCB",
-        "action": "Inspect consent conditions and stack emission compliance; issue show-cause under s.5.",
-        "penalty": "Contravention punishable under s.15."
+        "id": "AIR-1981-20",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 20",
+        "summary": "Power to give instructions to the authority in charge of registration of motor vehicles to ensure compliance with emission standards.",
+        "authority": "State Government / Transport Department, on SPCB advice",
+        "action": "Direct PUC enforcement drives and lane/corridor checks on this stretch; verify PUC compliance of commercial fleets using it.",
+        "penalty": "Driving in contravention of emission standards is punishable under s.190(2) of the Motor Vehicles Act, 1988."
       }
     ],
-    "subject": "Air pollution source detected — industrial — Ward 159 (Alandur) (zone Z08)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 6 cell(s) in Ward 159 (Alandur). The zone is classified 'emerging'. Estimated PM2.5 in the zone is 45.5 ug/m3, corresponding to an AQI of 76 (Satisfactory).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.47. Supporting evidence: industrial_1080301444 is 1.42 km away, wind alignment 0.92. This finding is INDICATIVE and requires verification on site.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
+    "subject": "Air pollution source detected — traffic — Ward 159 (Alandur) (zone Z08)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 6 cell(s) in Ward 159 (Alandur). The zone is classified 'emerging'. Estimated PM2.5 in the zone is 45.8 ug/m3, corresponding to an AQI of 77 (Satisfactory).",
+    "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.43. Supporting evidence: Grand Southern Trunk Road is 1.89 km away, wind alignment 0.63; NO2 column at p99 citywide. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20.",
     "evidence_chain": [
-      "industrial_1080301444 is 1.42 km away, wind alignment 0.92"
+      "Grand Southern Trunk Road is 1.89 km away, wind alignment 0.63",
+      "NO2 column at p99 citywide"
     ],
     "evidence_full": {
-      "cell": "88618c4c5bfffff",
+      "cell": "88618c4c59fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W167",
-      "pm25_estimate": 45.3,
+      "pm25_estimate": 45.4,
       "candidates": [
         {
           "name": "industrial_1080301444",
           "type": "industrial",
-          "distance_km": 1.42,
-          "wind_alignment": 0.92
-        },
-        {
-          "name": "industrial_1080301446",
-          "type": "industrial",
-          "distance_km": 1.44,
-          "wind_alignment": 0.82
-        },
-        {
-          "name": "industrial_1080301445",
-          "type": "industrial",
-          "distance_km": 1.63,
-          "wind_alignment": 0.87
-        },
-        {
-          "name": "construction_1080301441",
-          "type": "construction",
-          "distance_km": 2.14,
-          "wind_alignment": 0.82
+          "distance_km": 1.28,
+          "wind_alignment": 0.69
         },
         {
           "name": "Fintech City",
           "type": "construction",
-          "distance_km": 3.21,
-          "wind_alignment": 0.89
+          "distance_km": 2.64,
+          "wind_alignment": 0.92
         },
         {
-          "name": "industrial_122063611",
+          "name": "industrial_354575639",
           "type": "industrial",
-          "distance_km": 3.46,
-          "wind_alignment": 0.89
-        },
-        {
-          "name": "L&T Realty Avinya Enclave",
-          "type": "construction",
-          "distance_km": 3.66,
-          "wind_alignment": 0.91
+          "distance_km": 2.45,
+          "wind_alignment": 0.87
         },
         {
           "name": "International Flavour & Fragrances",
           "type": "industrial",
-          "distance_km": 3.22,
-          "wind_alignment": 0.8
+          "distance_km": 2.46,
+          "wind_alignment": 0.87
+        },
+        {
+          "name": "Grand Southern Trunk Road",
+          "type": "traffic",
+          "distance_km": 1.89,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_1080301445",
+          "type": "industrial",
+          "distance_km": 1.71,
+          "wind_alignment": 0.59
+        },
+        {
+          "name": "Grand Southern Trunk Road",
+          "type": "traffic",
+          "distance_km": 1.95,
+          "wind_alignment": 0.64
+        },
+        {
+          "name": "Grand Southern Trunk Road",
+          "type": "traffic",
+          "distance_km": 1.73,
+          "wind_alignment": 0.59
         }
       ],
       "pollutant_signature": {
@@ -1159,13 +1169,13 @@
     "zone_id": "Z06",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-24T05:40:29.415771+00:00",
+    "issued_at": "2026-08-24T07:15:44.174905+00:00",
     "status": "draft",
     "situation": {
-      "source": "construction",
-      "confidence": 0.3,
-      "pm25": 44.7,
-      "aqi": 75,
+      "source": "traffic",
+      "confidence": 0.33,
+      "pm25": 45.0,
+      "aqi": 76,
       "aqi_category": "Satisfactory",
       "kind": "emerging",
       "zone_id": "Z06",
@@ -1173,7 +1183,8 @@
       "ward_name": "Outside city limits",
       "n_cells": 6,
       "evidence_factors": [
-        "construction_1080301441 is 1.12 km away, wind alignment 0.72"
+        "Chennai Bypass Expressway is 1.79 km away, wind alignment 0.85",
+        "NO2 column at p99 citywide"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
@@ -1182,75 +1193,76 @@
     },
     "legal_basis": [
       {
-        "id": "CND-2016",
-        "statute": "Construction and Demolition Waste Management Rules, 2016",
-        "provision": "Rules 4 & 8",
-        "summary": "Every waste generator shall prevent dust and segregate and store C&D waste; the local authority shall enforce dust mitigation.",
-        "authority": "Municipal Commissioner / Local Body",
-        "action": "Inspect for anti-smog guns, barricading, covered transport and water sprinkling; issue notice for dust-control non-compliance.",
-        "penalty": "Environmental compensation per CPCB dust-mitigation schedule."
+        "id": "AIR-1981-20",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 20",
+        "summary": "Power to give instructions to the authority in charge of registration of motor vehicles to ensure compliance with emission standards.",
+        "authority": "State Government / Transport Department, on SPCB advice",
+        "action": "Direct PUC enforcement drives and lane/corridor checks on this stretch; verify PUC compliance of commercial fleets using it.",
+        "penalty": "Driving in contravention of emission standards is punishable under s.190(2) of the Motor Vehicles Act, 1988."
       }
     ],
-    "subject": "Air pollution source detected — construction — Outside city limits (zone Z06)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 6 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 44.7 ug/m3, corresponding to an AQI of 75 (Satisfactory).",
-    "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.30. Supporting evidence: construction_1080301441 is 1.12 km away, wind alignment 0.72. This finding is INDICATIVE and requires verification on site.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Construction and Demolition Waste Management Rules, 2016, Rules 4 & 8.",
+    "subject": "Air pollution source detected — traffic — Outside city limits (zone Z06)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 6 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 45.0 ug/m3, corresponding to an AQI of 76 (Satisfactory).",
+    "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.33. Supporting evidence: Chennai Bypass Expressway is 1.79 km away, wind alignment 0.85; NO2 column at p99 citywide. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20.",
     "evidence_chain": [
-      "construction_1080301441 is 1.12 km away, wind alignment 0.72"
+      "Chennai Bypass Expressway is 1.79 km away, wind alignment 0.85",
+      "NO2 column at p99 citywide"
     ],
     "evidence_full": {
-      "cell": "88618c4c19fffff",
+      "cell": "88618c4ccdfffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 44.6,
+      "pm25_estimate": 44.8,
       "candidates": [
         {
-          "name": "construction_1080301441",
-          "type": "construction",
-          "distance_km": 1.12,
-          "wind_alignment": 0.72
+          "name": "Chennai Bypass Expressway",
+          "type": "traffic",
+          "distance_km": 1.79,
+          "wind_alignment": 0.85
         },
         {
-          "name": "industrial_122063611",
-          "type": "industrial",
-          "distance_km": 2.47,
-          "wind_alignment": 0.86
+          "name": "Chennai Bypass Expressway",
+          "type": "traffic",
+          "distance_km": 1.8,
+          "wind_alignment": 0.84
         },
         {
-          "name": "construction_1545061819",
-          "type": "construction",
-          "distance_km": 2.65,
-          "wind_alignment": 0.9
+          "name": "Chennai Bypass Expressway",
+          "type": "traffic",
+          "distance_km": 1.2,
+          "wind_alignment": 0.58
         },
         {
-          "name": "construction_1545061821",
-          "type": "construction",
-          "distance_km": 2.61,
+          "name": "Chennai Bypass Expressway",
+          "type": "traffic",
+          "distance_km": 1.21,
+          "wind_alignment": 0.58
+        },
+        {
+          "name": "Porur Bridge",
+          "type": "traffic",
+          "distance_km": 2.78,
           "wind_alignment": 0.89
         },
         {
-          "name": "L&T Realty Avinya Enclave",
-          "type": "construction",
-          "distance_km": 2.92,
-          "wind_alignment": 0.81
+          "name": "Porur Bridge",
+          "type": "traffic",
+          "distance_km": 2.79,
+          "wind_alignment": 0.89
         },
         {
-          "name": "industrial_122063610",
-          "type": "industrial",
-          "distance_km": 3.37,
-          "wind_alignment": 0.9
+          "name": "Chennai Bypass Expressway",
+          "type": "traffic",
+          "distance_km": 3.19,
+          "wind_alignment": 0.89
         },
         {
-          "name": "industrial_102163116",
-          "type": "industrial",
-          "distance_km": 3.23,
-          "wind_alignment": 0.86
-        },
-        {
-          "name": "industrial_102164751",
-          "type": "industrial",
-          "distance_km": 3.26,
-          "wind_alignment": 0.86
+          "name": "Chennai Bypass Expressway",
+          "type": "traffic",
+          "distance_km": 3.19,
+          "wind_alignment": 0.89
         }
       ],
       "pollutant_signature": {
@@ -1303,7 +1315,7 @@
     "zone_id": "Z09",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-24T05:40:29.415803+00:00",
+    "issued_at": "2026-08-24T07:15:44.174934+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -1346,7 +1358,7 @@
       "cell": "88618c4dddfffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 48.9,
+      "pm25_estimate": 49.2,
       "candidates": [
         {
           "name": "industrial_178747902",

@@ -1,31 +1,35 @@
 {
   "overall": {
-    "rmse": 26.26,
-    "r2": 0.169,
+    "rmse": 26.2,
+    "r2": 0.17,
     "n_stations": 4,
-    "mean_pm25": 35.0,
+    "mean_pm25": 35.1,
     "naive_citymean_rmse": 24.11
   },
   "per_station": {
     "88618c419bfffff": {
-      "rmse": 18.83,
-      "r2": 0.445,
-      "n": 1875
+      "rmse": 18.86,
+      "r2": 0.443,
+      "n": 1868,
+      "n_unscoreable": 7
     },
     "88618c4d09fffff": {
-      "rmse": 21.7,
-      "r2": -0.068,
-      "n": 2026
+      "rmse": 21.22,
+      "r2": -0.058,
+      "n": 2008,
+      "n_unscoreable": 18
     },
     "88618eb269fffff": {
-      "rmse": 25.9,
-      "r2": -0.07,
-      "n": 1981
+      "rmse": 25.96,
+      "r2": -0.073,
+      "n": 1968,
+      "n_unscoreable": 13
     },
     "88618eb357fffff": {
-      "rmse": 35.13,
+      "rmse": 35.14,
       "r2": 0.18,
-      "n": 2040
+      "n": 2037,
+      "n_unscoreable": 3
     }
   }
 }

@@ -5,7 +5,7 @@
     "zone_id": "Z07",
     "ward_id": "W001",
     "ward_name": "Ward 93",
-    "issued_at": "2026-08-24T06:34:13.458021+00:00",
+    "issued_at": "2026-08-24T07:21:13.821072+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -19,11 +19,8 @@
       "ward_name": "Ward 93",
       "n_cells": 7,
       "evidence_factors": [
-        "High industrial category score",
-        "Nearby industrial facilities with strong wind alignment",
-        "Significant industrial landuse context",
-        "Pollutant signature (high NO2, SO2)",
-        "Trapped air conditions"
+        "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+        "shallow boundary layer (195 m) trapping emissions"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
@@ -61,14 +58,11 @@
     ],
     "subject": "Air pollution source detected — industrial — Ward 93 (zone Z07)",
     "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 7 cell(s) in Ward 93. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 133.8 ug/m3, corresponding to an AQI of 312 (Very Poor).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.70. Supporting evidence: High industrial category score; Nearby industrial facilities with strong wind alignment; Significant industrial landuse context. The evidence is consistent and independently corroborated.",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.70. Supporting evidence: industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions. The evidence is consistent and independently corroborated.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 31A; Environment (Protection) Act, 1986, Section 5; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
     "evidence_chain": [
-      "High industrial category score",
-      "Nearby industrial facilities with strong wind alignment",
-      "Significant industrial landuse context",
-      "Pollutant signature (high NO2, SO2)",
-      "Trapped air conditions"
+      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
+      "shallow boundary layer (195 m) trapping emissions"
     ],
     "evidence_full": {
       "cell": "883cf2c733fffff",
@@ -175,7 +169,7 @@
     "zone_id": "Z05",
     "ward_id": "W003",
     "ward_name": "Ward 86",
-    "issued_at": "2026-08-24T06:34:13.458119+00:00",
+    "issued_at": "2026-08-24T07:21:13.821134+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -339,7 +333,7 @@
     "zone_id": "Z08",
     "ward_id": "W044",
     "ward_name": "Ward 69",
-    "issued_at": "2026-08-24T06:34:13.458167+00:00",
+    "issued_at": "2026-08-24T07:21:13.821177+00:00",
     "status": "draft",
     "situation": {
       "source": "traffic",
@@ -496,7 +490,7 @@
     "zone_id": "Z04",
     "ward_id": "W083",
     "ward_name": "Ward 66",
-    "issued_at": "2026-08-24T06:34:13.458206+00:00",
+    "issued_at": "2026-08-24T07:21:13.821216+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -660,7 +654,7 @@
     "zone_id": "Z02",
     "ward_id": "W083",
     "ward_name": "Ward 66",
-    "issued_at": "2026-08-24T06:34:13.458245+00:00",
+    "issued_at": "2026-08-24T07:21:13.821250+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -674,11 +668,8 @@
       "ward_name": "Ward 66",
       "n_cells": 10,
       "evidence_factors": [
-        "Highest category score of 0.754 for industrial",
-        "Landuse context dominated by 12 industrial sites",
-        "High NO2 column value of 88.8 (83rd percentile)",
-        "Trapped air meteorological condition with 200m boundary layer height",
-        "Presence of multiple nearby industrial candidate sources"
+        "Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6",
+        "shallow boundary layer (200 m) trapping emissions"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
@@ -716,14 +707,11 @@
     ],
     "subject": "Air pollution source detected — industrial — Ward 66 (zone Z02)",
     "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 10 cell(s) in Ward 66. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 132.6 ug/m3, corresponding to an AQI of 311 (Very Poor).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.44. Supporting evidence: Highest category score of 0.754 for industrial; Landuse context dominated by 12 industrial sites; High NO2 column value of 88.8 (83rd percentile). This finding is INDICATIVE and requires verification on site.",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.44. Supporting evidence: Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6; shallow boundary layer (200 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 31A; Environment (Protection) Act, 1986, Section 5; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
     "evidence_chain": [
-      "Highest category score of 0.754 for industrial",
-      "Landuse context dominated by 12 industrial sites",
-      "High NO2 column value of 88.8 (83rd percentile)",
-      "Trapped air meteorological condition with 200m boundary layer height",
-      "Presence of multiple nearby industrial candidate sources"
+      "Ballygunge Pumping Station is 1.36 km away, wind alignment 0.6",
+      "shallow boundary layer (200 m) trapping emissions"
     ],
     "evidence_full": {
       "cell": "883cf2c441fffff",
@@ -830,7 +818,7 @@
     "zone_id": "Z00",
     "ward_id": "W120",
     "ward_name": "Ward 107",
-    "issued_at": "2026-08-24T06:34:13.458279+00:00",
+    "issued_at": "2026-08-24T07:21:13.821285+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
@@ -994,7 +982,7 @@
     "zone_id": "Z01",
     "ward_id": "W032",
     "ward_name": "Ward 91",
-    "issued_at": "2026-08-24T06:34:13.458315+00:00",
+    "issued_at": "2026-08-24T07:21:13.821318+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",

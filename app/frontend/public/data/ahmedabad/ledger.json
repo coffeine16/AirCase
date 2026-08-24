@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T07:11:58.264032+00:00",
+  "generated_at": "2026-08-24T07:25:12.844721+00:00",
   "response_time_claim": "Signal-to-memo is automated and deterministic: a cited enforcement memo and dispatch route are produced in seconds. The manual baseline — correlating a satellite signal to a served notice across agencies — is measured in weeks. This is the response-time reduction.",
   "effectiveness_claim": "NOT yet measured. Intervention effectiveness requires a real intervention between the frozen counterfactual and a realized outcome. The ledger freezes the counterfactual and awaits actioned outcomes from the inspector loop; it does not attribute natural change to itself.",
   "n_actions": 2,
@@ -15,7 +15,7 @@
       "eps": 73.5,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-24T07:06:18.837109+00:00",
+        "memo_drafted_at": "2026-08-24T07:24:41.668693+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
@@ -39,7 +39,7 @@
       "eps": 63.6,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-24T07:06:59.210091+00:00",
+        "memo_drafted_at": "2026-08-24T07:24:41.668757+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },

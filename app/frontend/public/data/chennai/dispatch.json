@@ -564,7 +564,7 @@
         "action_id": "A09",
         "zone_id": "Z10",
         "ward_id": "W042",
-        "eps": 63.5,
+        "eps": 63.6,
         "lat": 13.164,
         "lon": 80.2518
       },
@@ -1768,7 +1768,7 @@
         "action_id": "A05",
         "zone_id": "Z05",
         "ward_id": "unassigned",
-        "eps": 69.3,
+        "eps": 63.5,
         "lat": 13.0256,
         "lon": 80.1498
       },

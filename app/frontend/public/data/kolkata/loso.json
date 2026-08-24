@@ -1,9 +1,9 @@
 {
   "overall": {
-    "rmse": 35.48,
-    "r2": 0.393,
+    "rmse": 35.55,
+    "r2": 0.391,
     "n_stations": 6,
-    "mean_pm25": 52.2,
+    "mean_pm25": 52.4,
     "naive_citymean_rmse": 30.9
   },
   "per_station": {
@@ -13,29 +13,34 @@
       "n": 2033
     },
     "883cf2d487fffff": {
-      "rmse": 34.05,
+      "rmse": 34.06,
       "r2": 0.501,
-      "n": 1948
+      "n": 1947,
+      "n_unscoreable": 1
     },
     "883cf2d48bfffff": {
-      "rmse": 30.0,
+      "rmse": 30.01,
       "r2": 0.715,
-      "n": 2048
+      "n": 2047,
+      "n_unscoreable": 1
     },
     "883cf2d493fffff": {
-      "rmse": 16.73,
-      "r2": 0.653,
-      "n": 2006
+      "rmse": 16.82,
+      "r2": 0.65,
+      "n": 1971,
+      "n_unscoreable": 35
     },
     "883cf2d5d9fffff": {
-      "rmse": 27.59,
+      "rmse": 27.6,
       "r2": 0.281,
-      "n": 1998
+      "n": 1994,
+      "n_unscoreable": 4
     },
     "883cf2d5e7fffff": {
-      "rmse": 40.55,
-      "r2": -1.313,
-      "n": 2063
+      "rmse": 40.67,
+      "r2": -1.33,
+      "n": 2049,
+      "n_unscoreable": 14
     }
   }
 }

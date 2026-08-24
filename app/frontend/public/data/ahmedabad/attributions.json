@@ -12,12 +12,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -115,7 +114,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -131,12 +130,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -234,7 +232,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -250,12 +248,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -353,7 +350,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -369,12 +366,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -472,7 +468,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -488,12 +484,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -591,7 +586,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -607,12 +602,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -710,7 +704,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -726,12 +720,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -829,7 +822,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -845,12 +838,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -948,7 +940,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -964,12 +956,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -1067,7 +1058,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -1083,12 +1074,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -1186,7 +1176,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -1202,12 +1192,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -1305,7 +1294,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -1321,12 +1310,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -1424,7 +1412,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -1440,12 +1428,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -1543,7 +1530,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -1559,12 +1546,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -1662,7 +1648,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -1678,12 +1664,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -1781,7 +1766,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -1797,12 +1782,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -1900,7 +1884,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -1916,12 +1900,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -2019,7 +2002,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -2035,12 +2018,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -2138,7 +2120,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -2154,12 +2136,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -2257,7 +2238,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -2273,12 +2254,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -2376,7 +2356,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -2392,12 +2372,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -2495,7 +2474,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -2511,12 +2490,11 @@
       "waste_burning": 2.589,
       "traffic": 0.162
     },
-    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "reason": "Deterministic evidence scoring points to waste burning as the primary source. Municipal Landfill is 3.0 km away, wind alignment 0.47; satellite fire detections in 51 hours (7% of the window); shallow boundary layer (160 m) trapping emissions.",
     "evidence_factors": [
-      "Highest deterministic category score for waste_burning (2.589)",
-      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
-      "Fire activity showing 51 fire hours over the evidence window",
-      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+      "Municipal Landfill is 3.0 km away, wind alignment 0.47",
+      "satellite fire detections in 51 hours (7% of the window)",
+      "shallow boundary layer (160 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842cea729fffff",
@@ -2614,7 +2592,7 @@
       "evidence_window_hours": 720,
       "zone_cells": 22
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z01"
   },
   {
@@ -2630,12 +2608,10 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Industrial activity is identified as the primary source with a dominant category score of 0.909, driven by nearby industrial facilities including industrial_1304792133 located 1.3 km away with a strong wind alignment of 0.88. This is supported by an elevated NO2 column value of 90.2 (77th city percentile), 3 industrial landuse context counts, and trapped air meteorology at a low boundary layer height of 168 meters.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1304792133 is 1.3 km away, wind alignment 0.88; shallow boundary layer (168 m) trapping emissions.",
     "evidence_factors": [
-      "Dominant industrial category score of 0.909",
-      "Closest facility industrial_1304792133 at 1.3 km with 0.88 wind alignment",
-      "Elevated NO2 column value of 90.2 (77th percentile)",
-      "Trapped air condition with low BLH of 168 m"
+      "industrial_1304792133 is 1.3 km away, wind alignment 0.88",
+      "shallow boundary layer (168 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842ceb4e3fffff",
@@ -2733,7 +2709,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 5
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   },
   {
@@ -2749,12 +2725,10 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Industrial activity is identified as the primary source with a dominant category score of 0.909, driven by nearby industrial facilities including industrial_1304792133 located 1.3 km away with a strong wind alignment of 0.88. This is supported by an elevated NO2 column value of 90.2 (77th city percentile), 3 industrial landuse context counts, and trapped air meteorology at a low boundary layer height of 168 meters.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1304792133 is 1.3 km away, wind alignment 0.88; shallow boundary layer (168 m) trapping emissions.",
     "evidence_factors": [
-      "Dominant industrial category score of 0.909",
-      "Closest facility industrial_1304792133 at 1.3 km with 0.88 wind alignment",
-      "Elevated NO2 column value of 90.2 (77th percentile)",
-      "Trapped air condition with low BLH of 168 m"
+      "industrial_1304792133 is 1.3 km away, wind alignment 0.88",
+      "shallow boundary layer (168 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842ceb4e3fffff",
@@ -2852,7 +2826,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 5
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   },
   {
@@ -2868,12 +2842,10 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Industrial activity is identified as the primary source with a dominant category score of 0.909, driven by nearby industrial facilities including industrial_1304792133 located 1.3 km away with a strong wind alignment of 0.88. This is supported by an elevated NO2 column value of 90.2 (77th city percentile), 3 industrial landuse context counts, and trapped air meteorology at a low boundary layer height of 168 meters.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1304792133 is 1.3 km away, wind alignment 0.88; shallow boundary layer (168 m) trapping emissions.",
     "evidence_factors": [
-      "Dominant industrial category score of 0.909",
-      "Closest facility industrial_1304792133 at 1.3 km with 0.88 wind alignment",
-      "Elevated NO2 column value of 90.2 (77th percentile)",
-      "Trapped air condition with low BLH of 168 m"
+      "industrial_1304792133 is 1.3 km away, wind alignment 0.88",
+      "shallow boundary layer (168 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842ceb4e3fffff",
@@ -2971,7 +2943,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 5
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   },
   {
@@ -2987,12 +2959,10 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Industrial activity is identified as the primary source with a dominant category score of 0.909, driven by nearby industrial facilities including industrial_1304792133 located 1.3 km away with a strong wind alignment of 0.88. This is supported by an elevated NO2 column value of 90.2 (77th city percentile), 3 industrial landuse context counts, and trapped air meteorology at a low boundary layer height of 168 meters.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1304792133 is 1.3 km away, wind alignment 0.88; shallow boundary layer (168 m) trapping emissions.",
     "evidence_factors": [
-      "Dominant industrial category score of 0.909",
-      "Closest facility industrial_1304792133 at 1.3 km with 0.88 wind alignment",
-      "Elevated NO2 column value of 90.2 (77th percentile)",
-      "Trapped air condition with low BLH of 168 m"
+      "industrial_1304792133 is 1.3 km away, wind alignment 0.88",
+      "shallow boundary layer (168 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842ceb4e3fffff",
@@ -3090,7 +3060,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 5
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   },
   {
@@ -3106,12 +3076,10 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Industrial activity is identified as the primary source with a dominant category score of 0.909, driven by nearby industrial facilities including industrial_1304792133 located 1.3 km away with a strong wind alignment of 0.88. This is supported by an elevated NO2 column value of 90.2 (77th city percentile), 3 industrial landuse context counts, and trapped air meteorology at a low boundary layer height of 168 meters.",
+    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1304792133 is 1.3 km away, wind alignment 0.88; shallow boundary layer (168 m) trapping emissions.",
     "evidence_factors": [
-      "Dominant industrial category score of 0.909",
-      "Closest facility industrial_1304792133 at 1.3 km with 0.88 wind alignment",
-      "Elevated NO2 column value of 90.2 (77th percentile)",
-      "Trapped air condition with low BLH of 168 m"
+      "industrial_1304792133 is 1.3 km away, wind alignment 0.88",
+      "shallow boundary layer (168 m) trapping emissions"
     ],
     "evidence": {
       "cell": "8842ceb4e3fffff",
@@ -3209,7 +3177,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 5
     },
-    "explained_by": "gemini",
+    "explained_by": "rules",
     "zone_id": "Z02"
   }
 ]
