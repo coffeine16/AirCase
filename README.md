@@ -27,9 +27,28 @@ Commission released **₹8,357.63 cr** in air quality grants to 42 million-plus
 cities and only **₹5,465.49 cr** was utilised — Bengaluru, released **₹535.10
 cr**, utilised **₹0.00** ([PIB/Lok Sabha, 5 Feb 2024, Annexure-I](https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2002614)).
 Cities are short of neither monitors nor budget; they are short of a defensible
-answer to *where to act*. Meanwhile the monitors themselves
+answer to *where to act* — and **CAG has named that exact gap**. Report No. 2 of
+2022 carries a section headed *"Lack of real-time information regarding sources
+of pollutants"*:
+
+> *"AQI values only indicate the total concentration of pollutants in an area.
+> The source of each pollutant is measured by source apportionment/emission
+> inventory study."*
+
+Delhi paid **₹87.60 lakh** for such a study, terminated the contract in December
+2020, and had **not finalised any study as of March 2021**. The same audit
+concluded that without it, *"impact and success of any measure to control
+pollution cannot be assessed."* **That study is what this platform produces
+continuously, from free public data.**
+
+Meanwhile the monitors themselves
 lie about coverage: CPCB siting norms deliberately place them *away from
 sources*, so the official map is a **measurement log, not a pollution census**.
+That is not only our reading — the same CAG audit physically verified 13 of
+Delhi's 24 DPCC stations and found **every one** of them non-compliant with CPCB
+siting norms (trees on multiple sides; Anand Vihar and Wazirpur adjacent to
+heavy-traffic roads), concluding this renders **"the AQI values unreliable"**.
+None of the 24 stations measured Lead at all.
 
 This platform detects sources from instruments that cover **every cell equally**,
 names them with an inspectable evidence chain, and reports honestly on what it
