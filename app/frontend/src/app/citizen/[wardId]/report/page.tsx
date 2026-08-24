@@ -54,8 +54,7 @@ export default function ReportPage({ params }: { params: Promise<Params> }) {
         />
         <h2 style={{ marginBottom: "var(--space-sm)" }}>Report submitted</h2>
         <p style={{ marginBottom: "var(--space-xl)" }}>
-          Your report has been received. You can track its status in My Reports.
-          If your report corroborates a detection, it will appear in the attribution evidence chain.
+          Report received. Track it in My Reports.
         </p>
         <div style={{ display: "flex", gap: "var(--space-md)", justifyContent: "center", flexWrap: "wrap" }}>
           <Link href="/citizen/reports" className="btn btn-primary" style={{ textDecoration: "none" }}>

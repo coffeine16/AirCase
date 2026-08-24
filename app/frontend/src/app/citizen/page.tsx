@@ -195,7 +195,7 @@ export default function CitizenHomePage() {
               Citywide air is {cityCat.label}
             </div>
             <div style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>
-              Median across every ward, live now. Find yours below.
+              Live across the city right now. Find your ward below.
             </div>
           </div>
         </div>

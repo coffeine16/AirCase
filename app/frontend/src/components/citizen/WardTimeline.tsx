@@ -114,8 +114,7 @@ export default function WardTimeline({ city, wardId }: { city: string; wardId: s
         Next 3 days, every 3 hours
       </h5>
       <p style={{ fontSize: "0.75rem", color: "var(--text-tertiary)", marginBottom: 10 }}>
-        Predicted AQI for your ward. Air is usually worst overnight and best in the
-        afternoon — the swing is bigger than the day-to-day change.
+        Usually worst overnight, best in the afternoon.
       </p>
 
       <svg
@@ -204,8 +203,9 @@ export default function WardTimeline({ city, wardId }: { city: string; wardId: s
       </div>
 
       <p style={{ fontSize: "0.68rem", color: "var(--text-tertiary)", marginTop: 10, lineHeight: 1.5 }}>
-        Median across {worst.n_cells} cell{worst.n_cells === 1 ? "" : "s"} in your ward.
-        A forecast, not a measurement.
+        {/* "Median across 8 cells" is our unit of analysis, not the reader's.
+            They need to know it is a prediction. That is the whole caveat. */}
+        A forecast for your ward — not a measurement.
         {hasBand && ` The shaded band is how sure we are: over the next 3 days the air here should stay between AQI ${bandLo} and ${bandHi} about 8 times out of 10.${bandClipped ? " It reaches beyond the edges of the chart." : ""}`}
       </p>
     </div>

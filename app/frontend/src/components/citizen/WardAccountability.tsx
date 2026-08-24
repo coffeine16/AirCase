@@ -223,9 +223,11 @@ export default function WardAccountability({
              actually true. */
           <>
             <p style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
-              No pollution source was traced to your ward in this window — our
-              instruments found nothing standing out here. That is not the same as
-              clean air; the reading above is what you are breathing.
+              {/* Two short sentences. The old copy went on to explain that this
+                  "is not the same as clean air" — correct, and a paragraph a
+                  worried resident will not finish. */}
+              No source traced to your ward this window. That does not mean the
+              air is clean — the reading above still stands.
             </p>
             {nearestSource?.source && (
               <p
@@ -250,9 +252,11 @@ export default function WardAccountability({
                   ? `, in ${nearestSource.wardName}`
                   : ", just beyond the city boundary"}
                 .
+                {/* Four words, not a sentence. A resident needs to know whether
+                    it matters to them, not why air crosses ward boundaries. */}
                 {nearestSource.km <= NEAREST_SOURCE_RELEVANT_KM
-                  ? " Air moves across ward boundaries, so a source that close can still affect what you breathe."
-                  : " That is far enough away that it is probably not what you are breathing here."}
+                  ? " Close enough to affect your air."
+                  : " Probably too far to affect you."}
               </p>
             )}
           </>
@@ -402,13 +406,20 @@ export default function WardAccountability({
             </>
           ) : (
             <>
-              The nearest government monitor is{" "}
+              {/* Says the same thing in a third of the words. The old copy
+                  argued its own ethics at the reader ("showing you a number
+                  without saying so would be the dishonest part") — true, and
+                  not something a person checking their air will read. The
+                  asterisk carries the caveat; the sentence carries the fact. */}
+              No sensor in your ward — nearest is{" "}
               <strong style={{ color: "var(--text-primary)" }}>{nearestKm.toFixed(1)} km</strong>{" "}
-              away. There is no sensor in your ward, so this number is an{" "}
-              <strong style={{ color: "var(--text-primary)" }}>estimate</strong> built
-              from satellite data, weather and local land use — not a measurement. Most
-              of this city has no monitor; showing you a number without saying so would
-              be the dishonest part.
+              away, so this is an{" "}
+              <strong style={{ color: "var(--text-primary)" }}>estimate*</strong>{" "}
+              from satellite, weather and land use.
+              <br />
+              <span style={{ opacity: 0.7 }}>
+                *not a direct measurement
+              </span>
             </>
           )}
         </p>

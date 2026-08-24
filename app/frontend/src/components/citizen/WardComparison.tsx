@@ -223,8 +223,10 @@ export default function WardComparison({
       </div>
 
       <p style={{ fontSize: "0.68rem", color: "var(--text-tertiary)", marginTop: 10, lineHeight: 1.5 }}>
-        Rank 1 is the cleanest ward. Every figure is a median, so one unusually
-        bad street cannot skew a ward — or the city.
+        {/* Dropped "every figure is a median, so one unusually bad street
+            cannot skew a ward" — it defends our statistics to a reader who
+            never doubted them. */}
+        Rank 1 is the cleanest ward.
       </p>
     </div>
   );
