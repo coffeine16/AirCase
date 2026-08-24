@@ -103,6 +103,24 @@ which no satellite can.
 
 ---
 
+**Jump to:**
+[Run it](#run-it-in-under-a-minute) ·
+[The headline result](#the-headline-result) ·
+[How it works](#how-it-works--the-whole-system-at-a-glance) ·
+[The agent pipeline](#the-agent-pipeline--signal-to-action) ·
+[Why not the fusion field](#detection-why-not-the-fusion-field) ·
+[The citizen loop](#the-citizen-loop--from-a-phone-to-the-evidence-chain) ·
+[**What's real vs prototype**](#whats-real-vs-prototype) ·
+[See it running](#see-it-running) ·
+[The 100% trap](#the-100-trap) ·
+[Roadmap](#roadmap)
+
+> Two sections carry the argument if you only read two: **what's real vs
+> prototype**, which lists what we withdrew, and **the 100% trap**, which is how
+> we caught ourselves.
+
+---
+
 ## Run it in under a minute
 
 No API keys. No cloud account. The whole pipeline runs offline against a
@@ -270,7 +288,7 @@ flowchart LR
     subgraph SRC["① Ingestion — 6 free sources, live + synthetic fallback"]
         direction TB
         OAQ["OpenAQ · CPCB stations"]
-        S5P["Sentinel-5P · NO₂/SO₂/aerosol"]
+        S5P["Sentinel-5P · NO₂<br/><small>SO₂/AAI ingested, not scored</small>"]
         FIR["NASA FIRMS · thermal fires"]
         MET["Open-Meteo · wind + BLH"]
         OSM["OpenStreetMap · industry, roads"]
@@ -330,8 +348,8 @@ flowchart TD
 
     classDef det fill:#0f6b3f22,stroke:#0f6b3f;
     classDef llm fill:#a9760a22,stroke:#a9760a;
-    class D,P,L,AU det
-    class A,F,M,V,VO llm
+    class D,F,P,L,VO,AU det
+    class A,M,V llm
 ```
 
 Green nodes are pure arithmetic; amber nodes call an LLM **for prose only**, each
@@ -423,7 +441,7 @@ flowchart LR
     subgraph N8N["n8n workflow — channels stay DUMB"]
         direction TB
         RT["Preprocess · route<br/><small>command? inspector? report?</small>"] --> GEM["Gemini · extract<br/><small>{category, ward_guess}</small>"]
-        GEM --> FIN["Finalize · DECIDE<br/><small>canonicalise ward vs 733 official names;<br/>clamp category; keyword fallback</small>"]
+        GEM --> FIN["Finalize · DECIDE<br/><small>canonicalise ward vs 1,004 official names;<br/>clamp category; keyword fallback</small>"]
     end
 
     FIN --> SUP["Supabase<br/><small>citizen_reports (RLS: anon insert-only)</small>"]
@@ -659,7 +677,7 @@ one box and one certificate with the channel layer.
 
 <p align="center">
   <img alt="shyam" src="https://img.shields.io/badge/Shyam-Backend%20%2B%20Frontend-0f6b3f?style=flat-square" />
-  <img alt="keshav" src="https://img.shields.io/badge/Keshav-Backend%20%2B%20Frontend%20%2B%20Agents-0f6b3f?style=flat-square" />
+  <img alt="keshav" src="https://img.shields.io/badge/Keshav-Frontend%20%2B%20Agents-0f6b3f?style=flat-square" />
   <img alt="suyash" src="https://img.shields.io/badge/Suyash-EPS%20%2B%20Deployment-a9760a?style=flat-square" />
   <img alt="saumya" src="https://img.shields.io/badge/Saumya%20Saraswat-Intelligence%20%2B%20Frontend%20Inputs-a9760a?style=flat-square" />
 </p>
@@ -668,7 +686,7 @@ one box and one certificate with the channel layer.
 |---|---|
 | **Saumya Saraswat** | Intelligence, with inputs on Frontend |
 | **Suyash Mittal** | EPS, Deployment |
-| **Keshav Agrawal** | Backend, Frontend, Agents |
+| **Keshav Agrawal** | Frontend, Agents |
 | **Shyamsundar Paramasivam** | Backend, Frontend |
 
 
