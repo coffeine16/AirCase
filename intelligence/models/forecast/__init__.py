@@ -167,6 +167,27 @@ def _predict_field(panels: dict, served_manifest: dict, served_models: dict,
         recent_panel = panel[panel.ts > cutoff]
         frame = build_features(recent_panel, HORIZONS, fires=fires_by_city.get(city),
                                 clim_tables=clim_tables, only_last_ts=True)
+        # Route a city the model never saw to the TRAINED `unknown` category.
+        #
+        # Without this the generalisation pathway is dead code. Pinning the
+        # categories alone turns an unseen city into NaN — pandas drops any
+        # value outside `categories` — so LightGBM falls back to its implicit
+        # missing-value branch, which is exactly what model.py::mask_unknown_city
+        # exists to avoid: it blinds 5% of training rows to `unknown` precisely
+        # so the fallback has real supervision instead of an accidental split.
+        # We trained the pathway and then never routed to it.
+        #
+        # (pandas also now warns that constructing a Categorical with values
+        # outside its categories is deprecated and will RAISE, so the silent
+        # NaN was on a clock as well.)
+        unseen = ~frame["city"].astype(str).isin(city_categories)
+        if unseen.any():
+            names = sorted(frame.loc[unseen, "city"].astype(str).unique())
+            print(f"[forecast] {city}: not in the served model's city set "
+                  f"{names} — routing to the trained '{UNKNOWN_CITY}' pathway "
+                  f"({int(unseen.sum())} rows). Forecast comes from the pooled "
+                  f"cross-city patterns, with no city-specific adjustment.")
+            frame.loc[unseen, "city"] = UNKNOWN_CITY
         frame["city"] = pd.Categorical(frame["city"], categories=city_categories)
         latest = frame.ts.max()
         latest_rows = frame[frame.ts == latest].dropna(subset=["lag_0"])
