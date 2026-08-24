@@ -8,5 +8,20 @@
 # subdomain gets its OWN Let's Encrypt rate-limit bucket. sslip.io is one shared
 # domain that routinely exhausts LE limits and stalls issuance.
 {$N8N_DOMAIN} {
-    reverse_proxy n8n:5678
+    # The AirCase serving API shares this host under /api/*. One box, one cert,
+    # one DuckDNS record — a second subdomain would mean a second LE issuance
+    # and another thing to be wrong on stage.
+    #
+    # handle_path (not handle) STRIPS the /api prefix, so the frontend's
+    # NEXT_PUBLIC_API_URL=https://<host>/api reaches the app as /hotspots, and
+    # main.py's routes need no prefix awareness. Ordering matters: this block is
+    # matched before the catch-all below, so n8n keeps every other path —
+    # /webhook/* included, which is what the citizen intake and Telegram use.
+    handle_path /api/* {
+        reverse_proxy api:8080
+    }
+
+    handle {
+        reverse_proxy n8n:5678
+    }
 }

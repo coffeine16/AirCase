@@ -255,6 +255,78 @@ set it as `NEXT_PUBLIC_N8N_WEBHOOK_URL` in the frontend's Vercel env when deploy
 
 ---
 
+## Step 6b — the serving API on the same box (Keshav, 15 min)
+
+The FastAPI serving layer runs beside n8n, behind the same Caddy and the same
+certificate, at `https://aq-intel.duckdns.org/api/*`. One box, one cert, one DNS
+record — a second subdomain would mean a second Let's Encrypt issuance and one
+more thing to be wrong on stage.
+
+**Why it is safe next to n8n.** The agent chain reads PRECOMPUTED artifacts and
+re-scores them. Ingestion, the panel build and fusion training are unreachable
+from this container by construction, so it never pulls a satellite tile or fits
+a model. A full 9-agent run is 11 s on Ahmedabad, ~51 s on Delhi.
+
+```bash
+# 1. Bundle code + artifacts (from the repo root, on your machine).
+#    --force-local: GNU tar reads "C:/..." as a remote host spec otherwise.
+tar -czf /tmp/api-bundle.tgz --force-local   --exclude='data/raw/*/truth.parquet' --exclude='data/outputs/*/audio'   --exclude='data/outputs_snapshots' --exclude='data/historical'   --exclude='__pycache__' --exclude='*.pyc'   Dockerfile requirements.txt shared intelligence ingestion app/backend scripts data
+# ~215 MB compressed from ~466 MB raw; ~20 s to upload at 5 MB/s.
+
+# 2. Ship and unpack into the compose build context.
+ssh admin@<IP> "mkdir -p ~/api && rm -rf ~/api/*" 
+ssh admin@<IP> "cat > /tmp/api-bundle.tgz" < /tmp/api-bundle.tgz
+ssh admin@<IP> "tar -xzf /tmp/api-bundle.tgz -C ~/api && rm /tmp/api-bundle.tgz"
+
+# 3. Configs, build, up.
+scp deploy/Caddyfile deploy/docker-compose.yml admin@<IP>:~/
+ssh admin@<IP> "cd ~ && sudo docker compose build api && sudo docker compose up -d"
+ssh admin@<IP> "cd ~ && sudo docker compose exec -T caddy caddy reload --config /etc/caddy/Caddyfile"
+```
+
+**Verify both routes still work** — the API must not have taken n8n's paths:
+```bash
+curl -s https://aq-intel.duckdns.org/api/health      # {"ok":true,...8 cities}
+curl -s -o /dev/null -w '%{http_code}
+' https://aq-intel.duckdns.org/   # 200 = n8n alive
+```
+
+**Then point the frontend at it:** set `NEXT_PUBLIC_API_URL=https://aq-intel.duckdns.org/api`
+in Vercel and redeploy. Note the **`/api` suffix** — Caddy's `handle_path` strips
+it, so the app sees `/hotspots`, not `/api/hotspots`.
+
+### Two things that WILL bite you
+
+**Memory.** This box is 2 GiB and the account's free plan blocks resizing to
+anything larger (`FreeTierRestrictionError` on t3.medium — and Terraform stops
+the instance *before* it discovers that, so a failed resize leaves the box
+**stopped**; restart it from the console or boto3). Delhi's agent run peaks at
+**1.365 GiB** because its panel is 3.68 M rows. Two things make that survivable
+and both are required:
+
+```bash
+sudo fallocate -l 2G /swapfile && sudo chmod 600 /swapfile
+sudo mkswap /swapfile && sudo swapon /swapfile
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab   # survives reboot
+```
+and `memswap_limit` set ABOVE `mem_limit` in compose — with them equal (the
+default when only `mem_limit` is given) the container gets no swap at all and
+the host's swapfile sits unused while the cgroup OOM-kills uvicorn mid-request.
+Caddy surfaces that as a bare `502` with nothing in the API log but a fresh
+`Started server process`.
+
+**Cold parquet reads.** The first `/fusion` for a city after a container restart
+takes ~7 s; warm it is ~0.4 s. The frontend's 4 s timeout means a cold request
+falls back to the static bundle — correct, but it means the live API is doing
+nothing on that click. **Warm every city before demoing:**
+```bash
+for c in delhi chennai bengaluru mumbai kolkata hyderabad pune ahmedabad; do
+  for e in fusion stations satellite fires; do
+    curl -s -o /dev/null "https://aq-intel.duckdns.org/api/$e?city=$c"; done; done
+```
+
+---
+
 ## Step 7 — end-of-call checklist
 
 - [ ] `terraform output static_ip` matches what DuckDNS points at

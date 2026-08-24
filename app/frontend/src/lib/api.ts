@@ -21,6 +21,11 @@ const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "";
  */
 export const HAS_BACKEND = Boolean(process.env.NEXT_PUBLIC_API_URL);
 
+/** How long to wait on the live API before serving the static bundle instead.
+ *  Read-only contracts are precomputed JSON on both sides, so a slow answer and
+ *  no answer are worth the same: whichever arrives first is correct. */
+const LIVE_API_TIMEOUT_MS = 4000;
+
 // Citizen reports do NOT go to the read-only FastAPI backend. They go to the n8n
 // channel layer (live, HTTPS), which validates, canonicalises the ward against the
 // official list, and writes to Supabase — the same table the pipeline syncs down
@@ -84,11 +89,19 @@ export async function cityFetch<T>(
     try {
       const res = await fetch(`${API_BASE}${live}?city=${encodeURIComponent(city)}`, {
         next: { revalidate: 0 },
+        // FAIL FAST, then fall back. A configured-but-unreachable backend is the
+        // dangerous case, not an absent one: an absent backend skips this block
+        // entirely, while a dead host that still resolves in DNS can hang the
+        // request until the browser's own timeout (tens of seconds) — once per
+        // contract, per city switch. The static bundle underneath is complete,
+        // so waiting for the corpse buys nothing. Budget is deliberately short:
+        // a live backend on the same stage network answers well inside it.
+        signal: AbortSignal.timeout(LIVE_API_TIMEOUT_MS),
       });
       if (res.ok) return (await res.json()) as T;
       // A 404 means this city has no pipeline output on the server; the static
       // bundle below may still have it, so fall through rather than fail.
-    } catch { /* backend unreachable — the static bundle is the whole point */ }
+    } catch { /* unreachable OR timed out — the static bundle is the whole point */ }
   }
 
   try {

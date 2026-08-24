@@ -29,13 +29,21 @@ variable "region" {
 }
 
 variable "instance_type" {
-  # 2 vCPU / 2 GiB. NOT t3.micro: 1 GiB is not enough for n8n, which the GCP
-  # file this replaces already said in as many words ("e2-small ~ 2GB is
-  # comfortable for n8n"). Sized down for free-tier eligibility anyway, and the
-  # box became unreachable the moment docker recreated the container — SSH and
-  # HTTPS both stopped answering. Free tier is not worth an instance that dies
-  # under its only workload.
-  default = "t3.small"
+  # 2 vCPU / 4 GiB. The history here is a straight line of "too small":
+  #
+  # t3.micro (1 GiB) — the box became unreachable the moment docker recreated
+  #   the container; SSH and HTTPS both stopped answering. Free tier is not
+  #   worth an instance that dies under its only workload.
+  # t3.small (2 GiB) — fine for n8n alone, NOT once the serving API joined it.
+  #   Measured: POST /run/agent on Delhi peaks at 1.365 GiB (3.68 M panel rows
+  #   through pandas). At 2 GiB total that needed a swapfile and still ran with
+  #   436 MB swapped and ~35 MB of headroom — survivable, but not something to
+  #   put on a stage.
+  # t3.medium (4 GiB) — the agent chain fits in RAM with room for n8n beside it.
+  #
+  # The swapfile stays regardless: it costs disk we have and turns any future
+  # miscalculation into a slow request instead of an OOM kill.
+  default = "t3.medium"
 }
 
 variable "ssh_cidr" {

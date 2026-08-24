@@ -34,6 +34,43 @@ services:
     expose:
       - "5678"
 
+  # AirCase serving API — read-only contracts + POST /run/agent.
+  # Safe to co-locate with n8n on a 2 GB box: the agent chain reads PRECOMPUTED
+  # artifacts and re-scores them (~15 s). Ingestion, the panel build and fusion
+  # training are unreachable from here by construction, so nothing in this
+  # container ever pulls a satellite tile or fits a model.
+  api:
+    build:
+      context: ./api          # code + data shipped separately; see deploy/README.md
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      - AQ_CITY=delhi         # instance default; every endpoint takes ?city=
+      - PORT=8080
+      # Attribution and advisory call the LLM gateway, which falls back to a
+      # deterministic rule-based reasoner when no key is present or the provider
+      # rate-limits. Passing the key through is an optimisation, not a
+      # dependency — the chain returns the same schema either way.
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+    # LightGBM + pandas on a 2 GB box shared with n8n. Capped so a runaway agent
+    # run degrades ITSELF rather than OOM-killing n8n, which would take the
+    # citizen intake and Telegram webhook down with it.
+    #
+    # 900m was NOT enough and failed loudly: POST /run/agent on Delhi hit the
+    # cgroup limit at 916 MB RSS and the kernel OOM-killed uvicorn mid-request,
+    # which Caddy surfaced as a bare 502. Delhi's panel is 3.68 M rows and pandas
+    # holds it far wider in memory than the 25 MB parquet suggests.
+    #
+    # memswap_limit ABOVE mem_limit is the load-bearing half: with them equal
+    # (compose's default when only mem_limit is set) the container gets no swap
+    # at all, so the host's 2 GB swapfile would sit unused while the cgroup died.
+    # This way the peak spills to disk and the run survives; n8n keeps the
+    # headroom it needs because the cap is still a cap.
+    mem_limit: 1400m
+    memswap_limit: 2600m
+    expose:
+      - "8080"
+
   caddy:
     image: caddy:2
     restart: unless-stopped
