@@ -60,43 +60,48 @@ names them with an inspectable evidence chain, and reports honestly on what it
 **cannot** see.
 
 <p align="center">
-  <img src="./docs/img/console-map.png" alt="AirCase enforcement console: a Delhi hotspot zone selected, showing its attributed source, evidence chain, EPS breakdown and a routed inspection" width="100%" />
+  <img src="./docs/img/console-map.png" alt="AirCase enforcement console in 3D: Delhi extruded by PM2.5, with stations, fires and dispatch routes drawn over the columns, and the SAMAYPUR BADLI zone expanded to its waste-burning attribution, evidence list and EPS breakdown" width="100%" />
 </p>
 
 <p align="center">
-  <sub><b>The enforcement console.</b> A chronic zone in KAPASHERA, attributed to
-  traffic, with the deterministic score, the evidence behind it, the EPS
-  breakdown, a routed inspection and a one-click memo. Every layer on the left is
-  a real instrument.</sub>
+  <sub><b>The enforcement console.</b> Delhi extruded by PM2.5, every layer on the
+  left a real instrument. <b>Z06 SAMAYPUR BADLI</b> is expanded to its full case:
+  <code>waste burning</code> at <b>0.84</b>, the evidence that produced it — 30
+  fire hours, three candidate sites within 1.23–1.53 km, NO₂ at the 65th city
+  percentile, a 100 m boundary layer trapping it — and the EPS breakdown behind
+  its rank. The prose is written by the LLM; <b>every number in it was computed
+  before the model was called.</b></sub>
 </p>
 
 <p align="center">
-  <img src="./docs/img/citizen-ward.png" alt="AirCase citizen view for PERAGHARHI: AQI 403 Severe, with a panel explaining that no source was attributed here" width="31%" />
+  <img src="./docs/img/citizen-ward.png" alt="AirCase citizen view for DELHI CANTT CHARGE 2: AQI 311 Very Poor, with the ward map and a comparison against every other Delhi ward" width="31%" />
   &nbsp;
-  <img src="./docs/img/citizen-forecast.png" alt="Same ward scrolled: the nearest monitor is 6.7 km away, the advisory, and a 3-hourly forecast naming the cleanest and worst hours" width="31%" />
+  <img src="./docs/img/citizen-forecast.png" alt="Same ward scrolled: why the air is like this, how far the nearest monitor is, the advisory, a Hindi voice player, and a 3-hourly forecast naming the cleanest and worst hours" width="31%" />
   &nbsp;
   <img src="./docs/img/citizen-report.png" alt="The citizen report form: pollution type, optional photo, optional description" width="31%" />
 </p>
 
 <p align="center">
-  <sub><b>The same platform, facing the citizen.</b> AQI 403 is the number every
-  app shows. The three panels under it are the ones nobody else does.</sub>
+  <sub><b>The same platform, facing the citizen.</b> AQI 311 is the number every
+  app shows. The panels under it are the ones nobody else does — and the one in
+  the middle is a <b>Hindi voice note</b>, because the people most exposed to this
+  air are least likely to read a dashboard.</sub>
 </p>
 
-**Why your air is like this.** Here it says *no source was attributed in your
-ward* — because none was. Our instruments found nothing standing out, and the
-panel says so rather than inventing a cause. Where a source *is* found, its
+**Why your air is like this.** Here it says *no source traced to your ward* —
+because none was. Rather than stop there, it names the nearest source we **did**
+trace (*industrial, 5.2 km away, in DELHI CANTT CHARGE 6*) and says plainly that
+it is probably too far to affect you. Where a source *is* found in your ward, its
 evidence chain appears in the same place.
 
-**How much to trust this number.** *"The nearest government monitor is 6.7 km
-away. There is no sensor in your ward, so this number is an estimate built from
-satellite data, weather and local land use — not a measurement. Most of this city
-has no monitor; showing you a number without saying so would be the dishonest
-part."* Where a monitor **is** close, the same panel says so instead. The claim
-tracks the evidence.
+**How much to trust this number.** *"No sensor in your ward — nearest is 2.4 km
+away, so this is an estimate\* from satellite, weather and land use."* Where a
+monitor **is** close, the same panel says so instead. The claim tracks the
+evidence, and the asterisk carries the caveat rather than a paragraph arguing
+its own honesty at someone checking whether to walk to work.
 
-**When to go outside, and how to talk back.** Cleanest around 10am at AQI 271,
-worst around 7pm at 383 — the swing across one day is larger than the change from
+**When to go outside, and how to talk back.** Cleanest around 12pm at AQI 224,
+worst around 9pm at 315 — the swing across one day is larger than the change from
 one day to the next, which is exactly what a 24-hour forecast hides. And the
 report form turns a resident into the one instrument that sees construction dust,
 which no satellite can.
@@ -355,6 +360,19 @@ flowchart TD
 Green nodes are pure arithmetic; amber nodes call an LLM **for prose only**, each
 with a rule-based fallback. Every agent writes a versioned JSON contract to
 `data/outputs/` that the API serves read-only.
+
+<p align="center">
+  <img src="./docs/img/agent-pipeline.png" alt="The agent pipeline panel in the console: nine agents listed with their per-agent durations, all completed, from detection at 23.4 s to network audit at 0.8 s" width="38%" />
+</p>
+
+<p align="center">
+  <sub><b>The chain, running.</b> Nine agents, per-agent timings, on real Delhi.
+  Attribution is the slow one (<b>48 s</b>) because it makes one LLM call per
+  hotspot; advisory is slower still (<b>274 s</b>) because it writes every ward in
+  two languages. Detection, prioritisation, ledger and audit are pure arithmetic
+  and finish in seconds. The footer is the whole design in one line:
+  <i>deterministic agents rank; LLMs only explain.</i></sub>
+</p>
 
 ---
 
