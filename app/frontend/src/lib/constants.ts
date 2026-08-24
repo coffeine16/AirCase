@@ -46,6 +46,44 @@ export function initialViewFor(city: string) {
   return { ...INITIAL_VIEW_STATE, ...(CITY_VIEW_STATE[city] ?? {}) };
 }
 
+/**
+ * Which of our cities is this coordinate in — or nearest to?
+ *
+ * Ward lookup is per-city: it searches the wards of whichever city is currently
+ * selected. So a citizen in Hyderabad opening the app on the Delhi default was
+ * told "couldn't match your location to a ward" — not because we lack their
+ * data, but because we were looking in the wrong city's ward list. That reads
+ * as "this app doesn't cover me" when in fact it does.
+ *
+ * Great-circle distance to each city centre, nearest wins, and the answer is
+ * rejected beyond MAX_CITY_DISTANCE_KM — someone in Kochi should be told we do
+ * not cover them yet, not silently handed Chennai's air as if it were theirs.
+ * A wrong city is worse than no city: every number on the page would be real,
+ * and about somewhere else.
+ */
+export const MAX_CITY_DISTANCE_KM = 120;
+
+export function nearestCity(
+  lat: number,
+  lon: number,
+): { city: string; km: number } | null {
+  const R = 6371;
+  const rad = Math.PI / 180;
+  let best: { city: string; km: number } | null = null;
+
+  for (const [city, c] of Object.entries(CITY_VIEW_STATE)) {
+    const dLat = (c.latitude - lat) * rad;
+    const dLon = (c.longitude - lon) * rad;
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(lat * rad) * Math.cos(c.latitude * rad) * Math.sin(dLon / 2) ** 2;
+    const km = 2 * R * Math.asin(Math.min(1, Math.sqrt(a)));
+    if (!best || km < best.km) best = { city, km };
+  }
+
+  return best && best.km <= MAX_CITY_DISTANCE_KM ? best : null;
+}
+
 /** Carto dark tiles (no token required) */
 export const MAP_STYLE = "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
 

@@ -7,7 +7,7 @@
  * The 227-ward scroll grid is gone: a citizen should land on their map, not hunt
  * a list.
  */
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -17,6 +17,7 @@ import { pm25ToAqi, getAqiCategory } from "@/lib/colors";
 import { useCitizenWard } from "@/hooks/useReports";
 import { useWardLocator } from "@/hooks/useWardLocator";
 import { useCity } from "@/lib/CityContext";
+import { nearestCity } from "@/lib/constants";
 import { icon, MapPin, Search, ArrowLeft, ArrowRight, Layers, TriangleAlert } from "@/components/Icon";
 import type { FusionResponse } from "@/lib/types";
 
@@ -27,7 +28,7 @@ const CitizenMap = dynamic(() => import("@/components/citizen/CitizenMap"), {
 
 export default function CitizenHomePage() {
   const router = useRouter();
-  const { city } = useCity();
+  const { city, setCity } = useCity();
   const { wardId: savedWard, setWardId } = useCitizenWard();
   const { locate, hasData } = useWardLocator();
 
@@ -52,6 +53,12 @@ export default function CitizenHomePage() {
     router.push(`/citizen/${wardId}`);
   };
 
+  // Coordinates waiting for a city's ward data to arrive. Set only when
+  // geolocation lands in a DIFFERENT city than the one currently loaded: the
+  // ward locator searches one city at a time, so we have to switch first and
+  // resolve the ward once that city's cells are in.
+  const [pendingFix, setPendingFix] = useState<{ lat: number; lon: number } | null>(null);
+
   const useMyLocation = () => {
     setGeoError(null);
     if (!("geolocation" in navigator)) {
@@ -61,8 +68,29 @@ export default function CitizenHomePage() {
     setLocating(true);
     navigator.geolocation.getCurrentPosition(
       (pos) => {
+        const { latitude: lat, longitude: lon } = pos.coords;
+
+        // Which of our eight cities is this? Without this step the lookup runs
+        // against whatever city happens to be selected, so a citizen in
+        // Hyderabad on the Delhi default was told we couldn't find their ward —
+        // when we have Hyderabad's full pipeline sitting right there.
+        const near = nearestCity(lat, lon);
+        if (!near) {
+          setLocating(false);
+          setGeoError(
+            "We don't cover your city yet — we run eight Indian cities so far. " +
+            "Tap the map to look at one of them."
+          );
+          return;
+        }
+        if (near.city !== city) {
+          // Switch, then finish in the effect below once the wards land.
+          setCity(near.city as typeof city);
+          setPendingFix({ lat, lon });
+          return;                      // stays in the locating state deliberately
+        }
         setLocating(false);
-        const hit = locate(pos.coords.latitude, pos.coords.longitude);
+        const hit = locate(lat, lon);
         if (hit) go(hit.ward_id);
         else setGeoError("Couldn't match your location to a ward. Tap the map instead.");
       },
@@ -73,6 +101,21 @@ export default function CitizenHomePage() {
       { enableHighAccuracy: true, timeout: 8000 }
     );
   };
+
+  // Second half of a cross-city locate: the city switched, its wards have now
+  // loaded, so the held coordinates can finally be resolved. `hasData` is the
+  // gate — running before it is in would miss and show a false "not found".
+  useEffect(() => {
+    if (!pendingFix || !hasData) return;
+    const hit = locate(pendingFix.lat, pendingFix.lon);
+    setPendingFix(null);
+    setLocating(false);
+    if (hit) go(hit.ward_id);
+    else setGeoError("Couldn't match your location to a ward. Tap the map instead.");
+    // `go` and `locate` are stable enough for this one-shot resolve; re-running
+    // on their identity would re-navigate after the push.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pendingFix, hasData]);
 
   // Ward list for search — real names from wards.json, matched by name or id.
   const wards = useMemo(() => {
