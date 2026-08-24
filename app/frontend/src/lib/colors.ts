@@ -33,6 +33,15 @@ export const AQI_CATEGORIES = [
 
 /** Convert PM2.5 µg/m³ to India NAQI AQI. Mirrors backend memo.py::pm25_to_aqi. */
 export function pm25ToAqi(pm25: number): number {
+  // A negative concentration is physically impossible, but the fusion model
+  // predicts baseline + residual and is not clamped, so the field genuinely
+  // contains some (Delhi reaches -78 ug/m3, Chennai -19). Without this guard the
+  // first band extrapolates straight through zero and produces a NEGATIVE AQI:
+  // -78 renders as "-130 AQI", which is nonsense on any surface that shows it.
+  // memo.py::pm25_to_aqi — which this function's header claims to mirror, and
+  // did not — already returns (0, "Good") for pm25 <= 0. This restores parity.
+  if (!Number.isFinite(pm25) || pm25 <= 0) return 0;
+
   // (conc_lo, conc_hi, aqi_lo, aqi_hi) — CPCB NAQI PM2.5 sub-index table
   const bands: [number, number, number, number][] = [
     [0, 30, 0, 50],
@@ -158,4 +167,17 @@ export const SAT_CHANNEL_COLORS: Record<string, [string, string]> = {
   no2_col: ["#c9d4ea", "#4a5f8f"],
   so2_col: ["#e8ddc6", "#8a6a35"],
   aai:     ["#ddd6e6", "#665a80"],
+};
+
+// ─── Enforcement action status (map pins) ─────────────────────────────────────
+// ↔ ACTION_STATUS_BADGE in constants.ts. Pin colour encodes STATUS, not
+// severity: on the citizen explore map the question is "is anyone dealing with
+// this", and coluring by severity there would duplicate the choropleth
+// underneath it. Hexes track the light-theme --text-tertiary/--accent/
+// --positive tokens, since deck.gl cannot read a CSS variable.
+export const ACTION_STATUS_HEX: Record<string, string> = {
+  pending:    "#6d737b",
+  dispatched: "#7a9ce0",
+  actioned:   "#5ea88a",
+  resolved:   "#5ea88a",
 };

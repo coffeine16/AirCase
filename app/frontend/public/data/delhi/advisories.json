@@ -1,17 +1,17 @@
 [
   {
-    "ward_id": "W011",
-    "ward_name": "NDMC CHARGE 3",
-    "pm25": 126.5,
-    "aqi": 306,
+    "ward_id": "W006",
+    "ward_name": "DELHI CANTT CHARGE 7",
+    "pm25": 129.9,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "critical",
     "risk_score": 0.86,
     "worsening": true,
-    "n_cells": 11,
+    "n_cells": 5,
     "vulnerability": {
-      "schools_hospitals_nearby": 39,
+      "schools_hospitals_nearby": 18,
       "outdoor_workers": null,
       "elderly": null
     },
@@ -20,10 +20,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Hello NDMC CHARGE 3! Air quality is Very Poor (AQI 306). This can make you sick if you stay out long. Please avoid heavy outdoor work. Keep windows shut. Wear a mask if you go outside.",
-      "hi": "नमस्ते NDMC CHARGE 3! हवा की गुणवत्ता बहुत खराब है (AQI 306)। लंबे समय तक बाहर रहने से साँस की बीमारी हो सकती है। बाहर ज़्यादा मेहनत न करें। खिड़कियाँ बंद रखें। बाहर मास्क पहनें।"
+      "en": "Air quality in DELHI CANTT CHARGE 7 is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "DELHI CANTT CHARGE 7 की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -36,18 +36,18 @@
     "audio": {}
   },
   {
-    "ward_id": "W018",
-    "ward_name": "CHANDNI CHOWK",
-    "pm25": 130.7,
-    "aqi": 309,
+    "ward_id": "W024",
+    "ward_name": "JANAK PURI NORTH",
+    "pm25": 133.1,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "critical",
     "risk_score": 0.86,
     "worsening": true,
-    "n_cells": 4,
+    "n_cells": 2,
     "vulnerability": {
-      "schools_hospitals_nearby": 27,
+      "schools_hospitals_nearby": 25,
       "outdoor_workers": null,
       "elderly": null
     },
@@ -56,10 +56,46 @@
       "hi"
     ],
     "texts": {
-      "en": "The air in CHANDNI CHOWK is Very Poor today (AQI 309). Breathing this air for long can cause breathing illness. Please stay inside, keep windows closed, avoid heavy work outdoors, and wear a mask if stepping out.",
-      "hi": "CHANDNI CHOWK की हवा आज बहुत खराब है (AQI 309)। इसमें ज्यादा देर रहने से सांस की बीमारी हो सकती है। कृपया घर के अंदर रहें, खिड़कियां बंद रखें और बाहर निकलते समय मास्क जरूर लगाएं।"
+      "en": "Air quality in JANAK PURI NORTH is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "JANAK PURI NORTH की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W027",
+    "ward_name": "JANAK PURI SOUTH",
+    "pm25": 134.4,
+    "aqi": 312,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "critical",
+    "risk_score": 0.86,
+    "worsening": true,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 19,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in JANAK PURI SOUTH is VERY POOR (AQI 312). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "JANAK PURI SOUTH की हवा बहुत खराब है (AQI 312)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -74,8 +110,8 @@
   {
     "ward_id": "W028",
     "ward_name": "MILAP NAGAR",
-    "pm25": 130.0,
-    "aqi": 309,
+    "pm25": 131.8,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "critical",
@@ -92,8 +128,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MILAP NAGAR is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "MILAP NAGAR की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in MILAP NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MILAP NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -108,18 +144,18 @@
     "audio": {}
   },
   {
-    "ward_id": "W061",
-    "ward_name": "NIZAMUDDIN",
-    "pm25": 159.7,
-    "aqi": 331,
+    "ward_id": "W102",
+    "ward_name": "SADH NAGAR",
+    "pm25": 135.2,
+    "aqi": 313,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "critical",
     "risk_score": 0.86,
     "worsening": true,
-    "n_cells": 10,
+    "n_cells": 1,
     "vulnerability": {
-      "schools_hospitals_nearby": 19,
+      "schools_hospitals_nearby": 20,
       "outdoor_workers": null,
       "elderly": null
     },
@@ -128,44 +164,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in NIZAMUDDIN is VERY POOR (AQI 331). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "NIZAMUDDIN की हवा बहुत खराब है (AQI 331)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W063",
-    "ward_name": "KASTURBA NAGAR",
-    "pm25": 160.9,
-    "aqi": 332,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "critical",
-    "risk_score": 0.86,
-    "worsening": true,
-    "n_cells": 5,
-    "vulnerability": {
-      "schools_hospitals_nearby": 26,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in KASTURBA NAGAR is VERY POOR (AQI 332). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KASTURBA NAGAR की हवा बहुत खराब है (AQI 332)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in SADH NAGAR is VERY POOR (AQI 313). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SADH NAGAR की हवा बहुत खराब है (AQI 313)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -216,10 +216,46 @@
     "audio": {}
   },
   {
+    "ward_id": "W121",
+    "ward_name": "PUNJABI BAGH",
+    "pm25": 131.9,
+    "aqi": 310,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "critical",
+    "risk_score": 0.86,
+    "worsening": true,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 31,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in PUNJABI BAGH is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "PUNJABI BAGH की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
     "ward_id": "W126",
     "ward_name": "SANGAM PARK",
-    "pm25": 176.1,
-    "aqi": 344,
+    "pm25": 173.6,
+    "aqi": 342,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "critical",
@@ -236,8 +272,44 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in SANGAM PARK is VERY POOR (AQI 344). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SANGAM PARK की हवा बहुत खराब है (AQI 344)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in SANGAM PARK is VERY POOR (AQI 342). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SANGAM PARK की हवा बहुत खराब है (AQI 342)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W142",
+    "ward_name": "DABRI",
+    "pm25": 135.2,
+    "aqi": 313,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "critical",
+    "risk_score": 0.86,
+    "worsening": true,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 13,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in DABRI is VERY POOR (AQI 313). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "DABRI की हवा बहुत खराब है (AQI 313)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -254,8 +326,8 @@
   {
     "ward_id": "W143",
     "ward_name": "MATIALA",
-    "pm25": 130.3,
-    "aqi": 309,
+    "pm25": 132.8,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "critical",
@@ -272,8 +344,116 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MATIALA is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "MATIALA की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in MATIALA is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MATIALA की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W164",
+    "ward_name": "RANI BAGH",
+    "pm25": 133.6,
+    "aqi": 311,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "critical",
+    "risk_score": 0.86,
+    "worsening": true,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 34,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in RANI BAGH is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "RANI BAGH की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W202",
+    "ward_name": "SAGARPUR WEST",
+    "pm25": 132.6,
+    "aqi": 311,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "critical",
+    "risk_score": 0.86,
+    "worsening": true,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 11,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in SAGARPUR WEST is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SAGARPUR WEST की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W223",
+    "ward_name": "KAPASHERA",
+    "pm25": 129.6,
+    "aqi": 308,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "critical",
+    "risk_score": 0.86,
+    "worsening": true,
+    "n_cells": 29,
+    "vulnerability": {
+      "schools_hospitals_nearby": 11,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in KAPASHERA is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KAPASHERA की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -324,10 +504,262 @@
     "audio": {}
   },
   {
+    "ward_id": "W229",
+    "ward_name": "RAJA GARDEN",
+    "pm25": 128.6,
+    "aqi": 308,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "critical",
+    "risk_score": 0.86,
+    "worsening": true,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 30,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in RAJA GARDEN is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "RAJA GARDEN की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W230",
+    "ward_name": "RAGHUBIR NAGAR",
+    "pm25": 134.2,
+    "aqi": 312,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "critical",
+    "risk_score": 0.86,
+    "worsening": true,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 16,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in RAGHUBIR NAGAR is VERY POOR (AQI 312). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "RAGHUBIR NAGAR की हवा बहुत खराब है (AQI 312)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W231",
+    "ward_name": "RAJOURI GARDEN",
+    "pm25": 131.5,
+    "aqi": 310,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "critical",
+    "risk_score": 0.86,
+    "worsening": true,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 15,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in RAJOURI GARDEN is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "RAJOURI GARDEN की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W232",
+    "ward_name": "NANGAL RAYA",
+    "pm25": 127.6,
+    "aqi": 307,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "critical",
+    "risk_score": 0.86,
+    "worsening": true,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 17,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in NANGAL RAYA is VERY POOR (AQI 307). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NANGAL RAYA की हवा बहुत खराब है (AQI 307)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W234",
+    "ward_name": "SUBHASH NAGAR",
+    "pm25": 130.8,
+    "aqi": 309,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "critical",
+    "risk_score": 0.86,
+    "worsening": true,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 27,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in SUBHASH NAGAR is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SUBHASH NAGAR की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W247",
+    "ward_name": "PALAM",
+    "pm25": 131.6,
+    "aqi": 310,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "critical",
+    "risk_score": 0.86,
+    "worsening": true,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 29,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in PALAM is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "PALAM की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W250",
+    "ward_name": "MADIPUR",
+    "pm25": 134.7,
+    "aqi": 312,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "critical",
+    "risk_score": 0.86,
+    "worsening": true,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 22,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in MADIPUR is VERY POOR (AQI 312). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MADIPUR की हवा बहुत खराब है (AQI 312)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
     "ward_id": "W252",
     "ward_name": "R. K. PURAM",
-    "pm25": 161.3,
-    "aqi": 332,
+    "pm25": 158.8,
+    "aqi": 331,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "critical",
@@ -344,8 +776,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in R. K. PURAM is VERY POOR (AQI 332). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "R. K. PURAM की हवा बहुत खराब है (AQI 332)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in R. K. PURAM is VERY POOR (AQI 331). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "R. K. PURAM की हवा बहुत खराब है (AQI 331)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -396,10 +828,46 @@
     "audio": {}
   },
   {
+    "ward_id": "W108",
+    "ward_name": "AYA NAGAR",
+    "pm25": 131.6,
+    "aqi": 310,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "critical",
+    "risk_score": 0.785,
+    "worsening": true,
+    "n_cells": 24,
+    "vulnerability": {
+      "schools_hospitals_nearby": 5,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in AYA NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "AYA NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
     "ward_id": "W060",
     "ward_name": "SONIA VIHAR",
-    "pm25": 156.5,
-    "aqi": 329,
+    "pm25": 156.1,
+    "aqi": 328,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "critical",
@@ -416,8 +884,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in SONIA VIHAR is VERY POOR (AQI 329). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SONIA VIHAR की हवा बहुत खराब है (AQI 329)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in SONIA VIHAR is VERY POOR (AQI 328). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SONIA VIHAR की हवा बहुत खराब है (AQI 328)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -430,6 +898,41 @@
     },
     "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
     "audio": {}
+  },
+  {
+    "ward_id": "W030",
+    "ward_name": "CHHAWLA",
+    "pm25": 130.1,
+    "aqi": 309,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "high",
+    "risk_score": 0.74,
+    "worsening": true,
+    "n_cells": 50,
+    "vulnerability": {
+      "schools_hospitals_nearby": 2,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in CHHAWLA is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "CHHAWLA की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
     "ward_id": "W001",
@@ -452,10 +955,10 @@
       "hi"
     ],
     "texts": {
-      "en": "The air in DELHI CANTT CHARGE 1 is Very Poor today (AQI 310). Staying outside for long can cause breathing trouble. Please stay indoors, keep windows closed, avoid heavy work outside, and wear a mask if you go out.",
-      "hi": "DELHI CANTT CHARGE 1 में हवा बहुत खराब है (AQI 310)। बाहर ज़्यादा देर रहने पर सांस की बीमारी हो सकती है। कृपया खिड़कियां बंद रखें, बाहर मेहनत का काम न करें और बाहर जाने पर मास्क पहनें।"
+      "en": "Air quality in DELHI CANTT CHARGE 1 is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "DELHI CANTT CHARGE 1 की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -464,8 +967,7 @@
       "en": "cpcb_official",
       "hi": "native_speaker"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
     "ward_id": "W002",
@@ -488,10 +990,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Air in DELHI CANTT CHARGE 2 is Very Poor today (AQI 310). Staying outside for long can cause breathing problems. Please stay indoors, keep windows closed, and wear a mask if you go out. Take care.",
-      "hi": "DELHI CANTT CHARGE 2 में हवा बहुत खराब है (AQI 310)। बाहर ज़्यादा देर रहने से साँस की बीमारी हो सकती है। घर में रहें, खिड़कियाँ बंद रखें और बाहर निकलने पर मास्क ज़रूर पहनें। اپنا ख्याल रखें।"
+      "en": "Air quality in DELHI CANTT CHARGE 2 is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "DELHI CANTT CHARGE 2 की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -500,14 +1002,13 @@
       "en": "cpcb_official",
       "hi": "native_speaker"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
     "ward_id": "W003",
     "ward_name": "DELHI CANTT CHARGE 4",
-    "pm25": 131.7,
-    "aqi": 310,
+    "pm25": 129.3,
+    "aqi": 308,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -524,10 +1025,10 @@
       "hi"
     ],
     "texts": {
-      "en": "The air in DELHI CANTT CHARGE 4 is Very Poor today (AQI 310). Breathing it for long can cause respiratory illness. Please stay indoors, keep windows closed, and wear a mask if you must go outside.",
-      "hi": "DELHI CANTT CHARGE 4 की हवा आज बहुत खराब है (AQI 310)। ज़्यादा देर बाहर रहने से सांस की बीमारी हो सकती है। खिड़कियां बंद रखें, घर में रहें और बाहर निकलने पर मास्क पहनें।"
+      "en": "Air quality in DELHI CANTT CHARGE 4 is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "DELHI CANTT CHARGE 4 की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -536,14 +1037,13 @@
       "en": "cpcb_official",
       "hi": "native_speaker"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
     "ward_id": "W005",
     "ward_name": "DELHI CANTT CHARGE 6",
-    "pm25": 124.6,
-    "aqi": 305,
+    "pm25": 123.8,
+    "aqi": 304,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -560,10 +1060,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Air in DELHI CANTT CHARGE 6 is Very Poor (AQI 305). Prolonged exposure can cause respiratory illness. Please avoid heavy outdoor work, keep your windows closed, and wear a mask if you must go outside.",
-      "hi": "DELHI CANTT CHARGE 6 की हवा बहुत खराब है (AQI 305)। लंबे समय तक बाहर रहने से सांस की बीमारी हो सकती है। खिड़कियां बंद रखें, बाहर मेहनत न करें और बाहर जाते समय मास्क पहनें।"
+      "en": "Air quality in DELHI CANTT CHARGE 6 is VERY POOR (AQI 304). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "DELHI CANTT CHARGE 6 की हवा बहुत खराब है (AQI 304)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -572,50 +1072,13 @@
       "en": "cpcb_official",
       "hi": "native_speaker"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W006",
-    "ward_name": "DELHI CANTT CHARGE 7",
-    "pm25": 131.3,
-    "aqi": 310,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 5,
-    "vulnerability": {
-      "schools_hospitals_nearby": 18,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "In DELHI CANTT CHARGE 7, the air is Very Poor with AQI 310. Being outside for long can cause breathing illness. Please avoid heavy outdoor work, keep windows closed, and wear a mask outside to stay safe.",
-      "hi": "DELHI CANTT CHARGE 7 में हवा बहुत खराब है (AQI 310)। देर तक बाहर रहने से सांस की बीमारी हो सकती है। भारी काम से बचें, खिड़कियां बंद रखें और बाहर जाने पर मास्क पहनें।"
-    },
-    "written_by": "gemini",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
     "ward_id": "W007",
     "ward_name": "DELHI CANTT CHARGE 8",
-    "pm25": 131.1,
-    "aqi": 309,
+    "pm25": 132.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -632,10 +1095,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Dear residents of DELHI CANTT CHARGE 8, the air quality is Very Poor (AQI 309). This can affect your breathing. Please avoid heavy outdoor activity. Keep your windows shut. Wear a mask if you go outside.",
-      "hi": "दिल्ली कैंट चार्ज 8 के प्यारे निवासियों, हवा की गुणवत्ता बहुत खराब है (AQI 309)। इससे साँस लेने में दिक्कत हो सकती है। बाहर ज़्यादा मेहनत न करें। खिड़कियाँ बंद रखें। बाहर निकलने पर मास्क पहनें।"
+      "en": "Air quality in DELHI CANTT CHARGE 8 is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "DELHI CANTT CHARGE 8 की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -644,14 +1107,13 @@
       "en": "cpcb_official",
       "hi": "native_speaker"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
     "ward_id": "W009",
     "ward_name": "NDMC CHARGE 1",
-    "pm25": 129.0,
-    "aqi": 308,
+    "pm25": 131.3,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -668,10 +1130,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Hello NDMC CHARGE 1 residents! Our air quality is Very Poor today (AQI 308). This can make breathing hard. Please stay indoors, keep windows shut, and wear a mask if you go out. Take care!",
-      "hi": "NDMC CHARGE 1 के निवासियों, ध्यान दें! आज हवा की गुणवत्ता बहुत खराब है (AQI 308)। इससे सांस लेने में दिक्कत हो सकती है। घर में रहें, खिड़कियाँ बंद रखें और बाहर मास्क पहनें। अपना ध्यान रखें!"
+      "en": "Air quality in NDMC CHARGE 1 is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NDMC CHARGE 1 की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -680,14 +1142,13 @@
       "en": "cpcb_official",
       "hi": "native_speaker"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
     "ward_id": "W010",
     "ward_name": "NDMC CHARGE 2",
-    "pm25": 127.9,
-    "aqi": 307,
+    "pm25": 124.7,
+    "aqi": 305,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -704,10 +1165,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Dear residents of NDMC CHARGE 2, air quality is Very Poor (AQI 307). This can cause breathing problems if you stay out long. Please avoid heavy outdoor activity. Keep your windows shut. Wear a mask outside.",
-      "hi": "NDMC CHARGE 2 के प्यारे निवासियों, हवा बहुत खराब है (AQI 307)। लंबे समय तक बाहर रहने से साँस की दिक्कत हो सकती है। बाहर ज़्यादा मेहनत न करें। खिड़कियाँ बंद रखें। बाहर मास्क ज़रूर पहनें।"
+      "en": "Air quality in NDMC CHARGE 2 is VERY POOR (AQI 305). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NDMC CHARGE 2 की हवा बहुत खराब है (AQI 305)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -716,14 +1177,48 @@
       "en": "cpcb_official",
       "hi": "native_speaker"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W011",
+    "ward_name": "NDMC CHARGE 3",
+    "pm25": 126.1,
+    "aqi": 306,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "high",
+    "risk_score": 0.71,
+    "worsening": false,
+    "n_cells": 11,
+    "vulnerability": {
+      "schools_hospitals_nearby": 39,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in NDMC CHARGE 3 is VERY POOR (AQI 306). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NDMC CHARGE 3 की हवा बहुत खराब है (AQI 306)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
     "ward_id": "W012",
     "ward_name": "NDMC CHARGE 4",
-    "pm25": 129.4,
-    "aqi": 308,
+    "pm25": 131.7,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -740,10 +1235,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Hello NDMC CHARGE 4! Air quality is Very Poor (AQI 308). Long exposure can cause breathing problems. Please avoid heavy outdoor work. Keep your windows shut. Wear a mask if you go outside.",
-      "hi": "NDMC CHARGE 4 के निवासियों, हवा बहुत खराब है (AQI 308)। लंबे समय तक बाहर रहने से सांस की बीमारी हो सकती है। बाहर ज़्यादा मेहनत न करें। खिड़कियाँ बंद रखें और बाहर मास्क पहनें।"
+      "en": "Air quality in NDMC CHARGE 4 is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NDMC CHARGE 4 की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -752,14 +1247,13 @@
       "en": "cpcb_official",
       "hi": "native_speaker"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
     "ward_id": "W013",
     "ward_name": "NDMC CHARGE 5",
-    "pm25": 132.8,
-    "aqi": 311,
+    "pm25": 131.2,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -776,10 +1270,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Dear residents of NDMC CHARGE 5, air quality is Very Poor (AQI 311). This can cause breathing problems if you stay out long. Please avoid heavy outdoor activity. Keep your windows closed and wear a mask outside.",
-      "hi": "NDMC CHARGE 5 के निवासियों, हवा बहुत खराब है (AQI 311)। लंबे समय तक बाहर रहने से साँस की दिक्कत हो सकती है। बाहर ज़्यादा मेहनत न करें। खिड़कियाँ बंद रखें और बाहर मास्क पहनें।"
+      "en": "Air quality in NDMC CHARGE 5 is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NDMC CHARGE 5 की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -788,8 +1282,7 @@
       "en": "cpcb_official",
       "hi": "native_speaker"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
     "ward_id": "W014",
@@ -812,10 +1305,10 @@
       "hi"
     ],
     "texts": {
-      "en": "The air in NDMC CHARGE 7 is Very Poor (AQI 310). This can cause breathing problems if you stay out long. Please avoid heavy outdoor activity. Keep your windows shut. Wear a mask outside.",
-      "hi": "NDMC CHARGE 7 में हवा बहुत खराब है (AQI 310)। लंबे समय तक बाहर रहने से साँस की दिक्कत हो सकती है। बाहर ज़्यादा मेहनत न करें। खिड़कियाँ बंद रखें। बाहर मास्क पहनें।"
+      "en": "Air quality in NDMC CHARGE 7 is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NDMC CHARGE 7 की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -824,8 +1317,7 @@
       "en": "cpcb_official",
       "hi": "native_speaker"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
     "ward_id": "W015",
@@ -848,10 +1340,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Dear residents of NDMC CHARGE 8, the air quality is Very Poor (AQI 310). This can cause breathing problems if you stay out long. Please avoid heavy outdoor activity. Keep windows shut and wear a mask outside.",
-      "hi": "NDMC CHARGE 8 के प्यारे निवासियों, हवा की गुणवत्ता बहुत खराब है (AQI 310)। लंबे समय तक बाहर रहने से साँस की दिक्कत हो सकती है। कृपया बाहर ज़्यादा मेहनत न करें। खिड़कियाँ बंद रखें और बाहर मास्क पहनें।"
+      "en": "Air quality in NDMC CHARGE 8 is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NDMC CHARGE 8 की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -860,8 +1352,7 @@
       "en": "cpcb_official",
       "hi": "native_speaker"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
     "ward_id": "W016",
@@ -884,10 +1375,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Dear residents of NDMC CHARGE 9, air quality is Very Poor (AQI 310). Staying out long can cause breathing problems. Please avoid heavy outdoor work. Keep your windows shut and wear a mask outside.",
-      "hi": "NDMC CHARGE 9 के प्यारे निवासियों, हवा की गुणवत्ता बहुत खराब है (AQI 310)। लंबे समय तक बाहर रहने से साँस की दिक्कत हो सकती है। बाहर ज़्यादा मेहनत न करें। खिड़कियाँ बंद रखें और बाहर मास्क पहनें।"
+      "en": "Air quality in NDMC CHARGE 9 is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NDMC CHARGE 9 की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -896,13 +1387,12 @@
       "en": "cpcb_official",
       "hi": "native_speaker"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
     "ward_id": "W017",
     "ward_name": "NDMC CHARGE 6",
-    "pm25": 138.9,
+    "pm25": 137.9,
     "aqi": 315,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -920,10 +1410,45 @@
       "hi"
     ],
     "texts": {
-      "en": "The air in NDMC CHARGE 6 is Very Poor today (AQI 315). Breathing this air for long can cause breathing illness. Please stay indoors, keep windows closed, and wear a mask if you must go outside.",
-      "hi": "NDMC CHARGE 6 में आज हवा बहुत खराब (AQI 315) है। ज्यादा देर बाहर रहने से सांस की बीमारी हो सकती है। कृपया घर के अंदर रहें, खिड़कियां बंद रखें और बाहर निकलने पर मास्क जरूर पहनें।"
+      "en": "Air quality in NDMC CHARGE 6 is VERY POOR (AQI 315). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NDMC CHARGE 6 की हवा बहुत खराब है (AQI 315)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W018",
+    "ward_name": "CHANDNI CHOWK",
+    "pm25": 131.5,
+    "aqi": 310,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "high",
+    "risk_score": 0.71,
+    "worsening": false,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 27,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in CHANDNI CHOWK is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "CHANDNI CHOWK की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -937,8 +1462,8 @@
   {
     "ward_id": "W019",
     "ward_name": "MINTO ROAD",
-    "pm25": 132.5,
-    "aqi": 311,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -955,10 +1480,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MINTO ROAD is Very Poor (AQI 311). This can cause breathing problems if you stay out too long. Please avoid heavy outdoor work. Keep your windows shut. Wear a mask if you go outside.",
-      "hi": "MINTO ROAD में हवा बहुत खराब है (AQI 311)। ज़्यादा देर बाहर रहने से सांस की दिक्कत हो सकती है। बाहर ज़्यादा मेहनत न करें। अपनी खिड़कियाँ बंद रखें। बाहर जाते समय मास्क ज़रूर पहनें।"
+      "en": "Air quality in MINTO ROAD is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MINTO ROAD की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -972,8 +1497,8 @@
   {
     "ward_id": "W020",
     "ward_name": "KUCHA PANDIT",
-    "pm25": 129.1,
-    "aqi": 308,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -990,10 +1515,10 @@
       "hi"
     ],
     "texts": {
-      "en": "KUCHA PANDIT's air is very poor (AQI 308). This can cause breathing problems if you stay out long. Please limit outdoor activities. Keep windows shut and wear a mask outside.",
-      "hi": "कूचा पंडित की हवा बहुत खराब है (AQI 308)। लंबे समय तक बाहर रहने से साँस की बीमारी हो सकती है। कृपया बाहर कम निकलें। खिड़कियाँ बंद रखें और बाहर मास्क पहनें।"
+      "en": "Air quality in KUCHA PANDIT is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KUCHA PANDIT की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -1007,8 +1532,8 @@
   {
     "ward_id": "W022",
     "ward_name": "IDGAH ROAD",
-    "pm25": 132.7,
-    "aqi": 311,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1025,10 +1550,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Air in IDGAH ROAD is Very Poor (AQI 311). Staying outside for long can cause breathing illness. Please avoid heavy outdoor work, keep windows closed, and wear a mask when outside.",
-      "hi": "IDGAH ROAD की हवा बहुत खराब है (AQI 311)। ज़्यादा देर बाहर रहने से साँस की बीमारी हो सकती है। बाहर मेहनत का काम न करें, खिड़कियाँ बंद रखें और मास्क पहनें।"
+      "en": "Air quality in IDGAH ROAD is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "IDGAH ROAD की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -1042,8 +1567,8 @@
   {
     "ward_id": "W023",
     "ward_name": "KHYALA",
-    "pm25": 132.5,
-    "aqi": 311,
+    "pm25": 132.1,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1060,45 +1585,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Dear KHYALA residents, air quality is Very Poor (AQI 311). It can cause breathing issues if you stay out long. Please avoid heavy outdoor work. Keep windows closed. Wear a mask outside. Stay safe!",
-      "hi": "KHYALA के निवासियों, हवा बहुत खराब (AQI 311) है। इससे लंबे समय तक बाहर रहने पर साँस की बीमारी हो सकती है। बाहर ज़्यादा मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर निकलने पर मास्क पहनें। सुरक्षित रहें!"
+      "en": "Air quality in KHYALA is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KHYALA की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W024",
-    "ward_name": "JANAK PURI NORTH",
-    "pm25": 131.8,
-    "aqi": 310,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 25,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Hello, Janak Puri North residents! Our air is Very Poor (AQI 310). This can affect your breathing. Please avoid heavy outdoor work. Keep your windows shut. Wear a mask if you go outside.",
-      "hi": "नमस्ते, जनकपुरी नॉर्थ के निवासियों! हमारी हवा बहुत खराब है (AQI 310)। इससे साँस लेने में दिक्कत हो सकती है। बाहर ज़्यादा मेहनत न करें। अपनी खिड़कियाँ बंद रखें। बाहर निकलने पर मास्क ज़रूर पहनें।"
-    },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -1112,7 +1602,7 @@
   {
     "ward_id": "W025",
     "ward_name": "MUKHERJEE NAGAR",
-    "pm25": 131.9,
+    "pm25": 131.5,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -1130,10 +1620,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MUKHERJEE NAGAR is Very Poor (AQI 310). This can cause breathing problems if you stay out too long. Limit outdoor activities. Keep windows shut. Wear a mask outside.",
-      "hi": "MUKHERJEE NAGAR में हवा की गुणवत्ता बहुत खराब है (AQI 310)। लंबे समय तक बाहर रहने से साँस की दिक्कत हो सकती है। बाहर कम निकलें। खिड़कियाँ बंद रखें। बाहर मास्क ज़रूर पहनें।"
+      "en": "Air quality in MUKHERJEE NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MUKHERJEE NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -1147,7 +1637,7 @@
   {
     "ward_id": "W026",
     "ward_name": "JANAK PURI WEST",
-    "pm25": 132.3,
+    "pm25": 131.9,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -1165,45 +1655,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Dear residents of JANAK PURI WEST, the air quality is Very Poor (AQI 310). This can affect your breathing. Please stay indoors, keep windows shut, and wear a mask if you must go out.",
-      "hi": "प्रिय JANAK PURI WEST निवासियों, हवा की गुणवत्ता बहुत खराब है (AQI 310)। इससे साँस लेने में दिक्कत हो सकती है। कृपया घर में रहें, खिड़कियाँ बंद रखें और बाहर निकलने पर मास्क पहनें।"
+      "en": "Air quality in JANAK PURI WEST is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "JANAK PURI WEST की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W027",
-    "ward_name": "JANAK PURI SOUTH",
-    "pm25": 131.9,
-    "aqi": 310,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 3,
-    "vulnerability": {
-      "schools_hospitals_nearby": 19,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "The air in JANAK PURI SOUTH is Very Poor today with AQI 310. Breathing this for long can cause breathing illness. Please avoid heavy outdoor activities, keep windows closed, and wear a mask when going outside.",
-      "hi": "JANAK PURI SOUTH में हवा बहुत खराब है (AQI 310)। लंबे समय तक बाहर रहने से सांस की बीमारी हो सकती है। बाहर भारी काम न करें, घर की खिड़कियां बंद रखें और बाहर निकलते समय मास्क पहनें।"
-    },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -1217,7 +1672,7 @@
   {
     "ward_id": "W029",
     "ward_name": "SITA PURI",
-    "pm25": 132.4,
+    "pm25": 132.1,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -1252,8 +1707,8 @@
   {
     "ward_id": "W031",
     "ward_name": "NANGLI SAKRAVATI",
-    "pm25": 158.5,
-    "aqi": 330,
+    "pm25": 129.1,
+    "aqi": 308,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1270,8 +1725,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in NANGLI SAKRAVATI is VERY POOR (AQI 330). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "NANGLI SAKRAVATI की हवा बहुत खराब है (AQI 330)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in NANGLI SAKRAVATI is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NANGLI SAKRAVATI की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -1287,8 +1742,8 @@
   {
     "ward_id": "W032",
     "ward_name": "KAKRAULA",
-    "pm25": 163.9,
-    "aqi": 334,
+    "pm25": 132.7,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1305,8 +1760,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in KAKRAULA is VERY POOR (AQI 334). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KAKRAULA की हवा बहुत खराब है (AQI 334)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in KAKRAULA is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KAKRAULA की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -1322,8 +1777,8 @@
   {
     "ward_id": "W033",
     "ward_name": "KHERA",
-    "pm25": 163.9,
-    "aqi": 334,
+    "pm25": 132.8,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1340,8 +1795,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in KHERA is VERY POOR (AQI 334). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KHERA की हवा बहुत खराब है (AQI 334)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in KHERA is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KHERA की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -1392,8 +1847,8 @@
   {
     "ward_id": "W038",
     "ward_name": "DURGA PURI",
-    "pm25": 128.3,
-    "aqi": 307,
+    "pm25": 133.0,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1410,8 +1865,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in DURGA PURI is VERY POOR (AQI 307). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "DURGA PURI की हवा बहुत खराब है (AQI 307)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in DURGA PURI is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "DURGA PURI की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -1427,8 +1882,8 @@
   {
     "ward_id": "W039",
     "ward_name": "ASHOK NAGAR",
-    "pm25": 128.7,
-    "aqi": 308,
+    "pm25": 133.4,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1445,8 +1900,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in ASHOK NAGAR is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "ASHOK NAGAR की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in ASHOK NAGAR is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "ASHOK NAGAR की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -1462,8 +1917,8 @@
   {
     "ward_id": "W040",
     "ward_name": "RAM NAGAR",
-    "pm25": 128.9,
-    "aqi": 308,
+    "pm25": 133.6,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1480,8 +1935,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in RAM NAGAR is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "RAM NAGAR की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in RAM NAGAR is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "RAM NAGAR की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -1497,7 +1952,7 @@
   {
     "ward_id": "W041",
     "ward_name": "WELCOME COLONY",
-    "pm25": 133.7,
+    "pm25": 132.5,
     "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -1602,8 +2057,8 @@
   {
     "ward_id": "W048",
     "ward_name": "KARDAM PURI",
-    "pm25": 130.7,
-    "aqi": 309,
+    "pm25": 133.0,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1620,8 +2075,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in KARDAM PURI is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KARDAM PURI की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in KARDAM PURI is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KARDAM PURI की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -1672,8 +2127,8 @@
   {
     "ward_id": "W052",
     "ward_name": "GOKALPUR",
-    "pm25": 131.1,
-    "aqi": 309,
+    "pm25": 133.4,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1690,8 +2145,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in GOKALPUR is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "GOKALPUR की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in GOKALPUR is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "GOKALPUR की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -1707,8 +2162,8 @@
   {
     "ward_id": "W056",
     "ward_name": "KARAWAL NAGAR EAST",
-    "pm25": 132.6,
-    "aqi": 311,
+    "pm25": 131.8,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1725,8 +2180,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in KARAWAL NAGAR EAST is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KARAWAL NAGAR EAST की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in KARAWAL NAGAR EAST is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KARAWAL NAGAR EAST की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -1742,8 +2197,8 @@
   {
     "ward_id": "W058",
     "ward_name": "KHAJOORI KHAS",
-    "pm25": 130.6,
-    "aqi": 309,
+    "pm25": 132.9,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1760,8 +2215,43 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in KHAJOORI KHAS is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KHAJOORI KHAS की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in KHAJOORI KHAS is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KHAJOORI KHAS की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W061",
+    "ward_name": "NIZAMUDDIN",
+    "pm25": 157.9,
+    "aqi": 330,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "high",
+    "risk_score": 0.71,
+    "worsening": false,
+    "n_cells": 10,
+    "vulnerability": {
+      "schools_hospitals_nearby": 19,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in NIZAMUDDIN is VERY POOR (AQI 330). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NIZAMUDDIN की हवा बहुत खराब है (AQI 330)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -1810,10 +2300,45 @@
     "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
+    "ward_id": "W063",
+    "ward_name": "KASTURBA NAGAR",
+    "pm25": 160.0,
+    "aqi": 331,
+    "aqi_category": "Very Poor",
+    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
+    "risk_tier": "high",
+    "risk_score": 0.71,
+    "worsening": false,
+    "n_cells": 5,
+    "vulnerability": {
+      "schools_hospitals_nearby": 26,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en",
+      "hi"
+    ],
+    "texts": {
+      "en": "Air quality in KASTURBA NAGAR is VERY POOR (AQI 331). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KASTURBA NAGAR की हवा बहुत खराब है (AQI 331)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true,
+      "hi": true
+    },
+    "verification": {
+      "en": "cpcb_official",
+      "hi": "native_speaker"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
     "ward_id": "W064",
     "ward_name": "AMAR COLONY",
-    "pm25": 132.4,
-    "aqi": 310,
+    "pm25": 132.6,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1830,8 +2355,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in AMAR COLONY is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "AMAR COLONY की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in AMAR COLONY is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "AMAR COLONY की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -1847,7 +2372,7 @@
   {
     "ward_id": "W065",
     "ward_name": "MALVIYA NAGAR",
-    "pm25": 131.0,
+    "pm25": 130.6,
     "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -1882,7 +2407,7 @@
   {
     "ward_id": "W066",
     "ward_name": "HAUZ RANI",
-    "pm25": 132.6,
+    "pm25": 132.5,
     "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -1917,8 +2442,8 @@
   {
     "ward_id": "W067",
     "ward_name": "ANDREWSGANJ",
-    "pm25": 135.0,
-    "aqi": 312,
+    "pm25": 132.8,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1935,8 +2460,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in ANDREWSGANJ is VERY POOR (AQI 312). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "ANDREWSGANJ की हवा बहुत खराब है (AQI 312)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in ANDREWSGANJ is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "ANDREWSGANJ की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -1952,8 +2477,8 @@
   {
     "ward_id": "W068",
     "ward_name": "VASANT VIHAR",
-    "pm25": 127.5,
-    "aqi": 307,
+    "pm25": 129.6,
+    "aqi": 308,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -1970,8 +2495,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in VASANT VIHAR is VERY POOR (AQI 307). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "VASANT VIHAR की हवा बहुत खराब है (AQI 307)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in VASANT VIHAR is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "VASANT VIHAR की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -1987,8 +2512,8 @@
   {
     "ward_id": "W069",
     "ward_name": "MUNIRKA",
-    "pm25": 131.9,
-    "aqi": 310,
+    "pm25": 128.4,
+    "aqi": 307,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -2005,8 +2530,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MUNIRKA is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "MUNIRKA की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in MUNIRKA is VERY POOR (AQI 307). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MUNIRKA की हवा बहुत खराब है (AQI 307)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -2022,8 +2547,8 @@
   {
     "ward_id": "W070",
     "ward_name": "NANAK PURA",
-    "pm25": 132.4,
-    "aqi": 310,
+    "pm25": 129.5,
+    "aqi": 308,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -2040,8 +2565,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in NANAK PURA is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "NANAK PURA की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in NANAK PURA is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NANAK PURA की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -2057,8 +2582,8 @@
   {
     "ward_id": "W071",
     "ward_name": "VASANTKUNJ",
-    "pm25": 131.8,
-    "aqi": 310,
+    "pm25": 129.2,
+    "aqi": 308,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -2075,8 +2600,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in VASANTKUNJ is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "VASANTKUNJ की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in VASANTKUNJ is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "VASANTKUNJ की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -2127,7 +2652,7 @@
   {
     "ward_id": "W073",
     "ward_name": "KHANPUR",
-    "pm25": 131.9,
+    "pm25": 131.8,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -2197,7 +2722,7 @@
   {
     "ward_id": "W076",
     "ward_name": "PUSHP VIHAR",
-    "pm25": 132.0,
+    "pm25": 132.1,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -2407,7 +2932,7 @@
   {
     "ward_id": "W082",
     "ward_name": "SHAPUR JAT",
-    "pm25": 158.6,
+    "pm25": 158.4,
     "aqi": 330,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -2442,8 +2967,8 @@
   {
     "ward_id": "W083",
     "ward_name": "GREATER KAILASH-I",
-    "pm25": 133.7,
-    "aqi": 311,
+    "pm25": 133.9,
+    "aqi": 312,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -2460,8 +2985,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in GREATER KAILASH-I is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "GREATER KAILASH-I की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in GREATER KAILASH-I is VERY POOR (AQI 312). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "GREATER KAILASH-I की हवा बहुत खराब है (AQI 312)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -2512,7 +3037,7 @@
   {
     "ward_id": "W085",
     "ward_name": "EAST OF KAILASH",
-    "pm25": 131.4,
+    "pm25": 131.6,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -2547,7 +3072,7 @@
   {
     "ward_id": "W086",
     "ward_name": "GOVIND PURI",
-    "pm25": 131.5,
+    "pm25": 131.7,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -2617,7 +3142,7 @@
   {
     "ward_id": "W088",
     "ward_name": "TUGHLAKABAD",
-    "pm25": 131.6,
+    "pm25": 131.7,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -2652,7 +3177,7 @@
   {
     "ward_id": "W091",
     "ward_name": "HARKESH NAGAR",
-    "pm25": 130.9,
+    "pm25": 131.1,
     "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -2722,7 +3247,7 @@
   {
     "ward_id": "W096",
     "ward_name": "OKHLA",
-    "pm25": 131.5,
+    "pm25": 131.2,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -2757,7 +3282,7 @@
   {
     "ward_id": "W100",
     "ward_name": "QASABPURA",
-    "pm25": 131.4,
+    "pm25": 131.5,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -2792,8 +3317,8 @@
   {
     "ward_id": "W101",
     "ward_name": "PAHAR GANJ",
-    "pm25": 134.0,
-    "aqi": 312,
+    "pm25": 131.6,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -2810,43 +3335,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in PAHAR GANJ is VERY POOR (AQI 312). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "PAHAR GANJ की हवा बहुत खराब है (AQI 312)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W102",
-    "ward_name": "SADH NAGAR",
-    "pm25": 132.0,
-    "aqi": 310,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 1,
-    "vulnerability": {
-      "schools_hospitals_nearby": 20,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in SADH NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SADH NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in PAHAR GANJ is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "PAHAR GANJ की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -2862,7 +3352,7 @@
   {
     "ward_id": "W103",
     "ward_name": "PUSA",
-    "pm25": 129.7,
+    "pm25": 129.5,
     "aqi": 308,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -2932,8 +3422,8 @@
   {
     "ward_id": "W107",
     "ward_name": "CHHATARPUR",
-    "pm25": 131.3,
-    "aqi": 310,
+    "pm25": 131.1,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -2950,8 +3440,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in CHHATARPUR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "CHHATARPUR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in CHHATARPUR is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "CHHATARPUR की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -2967,7 +3457,7 @@
   {
     "ward_id": "W111",
     "ward_name": "SARITA VIHAR",
-    "pm25": 131.8,
+    "pm25": 131.5,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -3002,8 +3492,8 @@
   {
     "ward_id": "W112",
     "ward_name": "GHONDLI",
-    "pm25": 129.2,
-    "aqi": 308,
+    "pm25": 132.5,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -3020,8 +3510,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in GHONDLI is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "GHONDLI की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in GHONDLI is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "GHONDLI की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -3037,8 +3527,8 @@
   {
     "ward_id": "W115",
     "ward_name": "AZAD NAGAR",
-    "pm25": 133.6,
-    "aqi": 311,
+    "pm25": 132.3,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -3055,8 +3545,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in AZAD NAGAR is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "AZAD NAGAR की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in AZAD NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "AZAD NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -3072,8 +3562,8 @@
   {
     "ward_id": "W116",
     "ward_name": "RAGHUBAR PURA",
-    "pm25": 133.0,
-    "aqi": 311,
+    "pm25": 131.7,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -3090,8 +3580,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in RAGHUBAR PURA is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "RAGHUBAR PURA की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in RAGHUBAR PURA is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "RAGHUBAR PURA की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -3142,8 +3632,8 @@
   {
     "ward_id": "W118",
     "ward_name": "JHILMIL",
-    "pm25": 132.3,
-    "aqi": 310,
+    "pm25": 134.6,
+    "aqi": 312,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -3160,8 +3650,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in JHILMIL is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "JHILMIL की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in JHILMIL is VERY POOR (AQI 312). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "JHILMIL की हवा बहुत खराब है (AQI 312)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -3210,44 +3700,9 @@
     "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
-    "ward_id": "W121",
-    "ward_name": "PUNJABI BAGH",
-    "pm25": 131.5,
-    "aqi": 310,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 4,
-    "vulnerability": {
-      "schools_hospitals_nearby": 31,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in PUNJABI BAGH is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "PUNJABI BAGH की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
     "ward_id": "W122",
     "ward_name": "NEW RANJIT NAGAR",
-    "pm25": 130.6,
+    "pm25": 131.0,
     "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -3282,7 +3737,7 @@
   {
     "ward_id": "W123",
     "ward_name": "KIRTI NAGAR",
-    "pm25": 131.4,
+    "pm25": 131.2,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -3317,7 +3772,7 @@
   {
     "ward_id": "W124",
     "ward_name": "MANSAROWER GARDEN",
-    "pm25": 131.7,
+    "pm25": 131.5,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -3352,8 +3807,8 @@
   {
     "ward_id": "W125",
     "ward_name": "HASTSAL",
-    "pm25": 149.4,
-    "aqi": 323,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -3370,8 +3825,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in HASTSAL is VERY POOR (AQI 323). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "HASTSAL की हवा बहुत खराब है (AQI 323)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in HASTSAL is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "HASTSAL की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -3387,8 +3842,8 @@
   {
     "ward_id": "W127",
     "ward_name": "MODEL TOWN",
-    "pm25": 131.3,
-    "aqi": 310,
+    "pm25": 130.9,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -3405,8 +3860,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MODEL TOWN is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "MODEL TOWN की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in MODEL TOWN is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MODEL TOWN की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -3422,7 +3877,7 @@
   {
     "ward_id": "W128",
     "ward_name": "KAMLA NAGAR",
-    "pm25": 130.7,
+    "pm25": 130.9,
     "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -3457,8 +3912,8 @@
   {
     "ward_id": "W129",
     "ward_name": "INDER LOK COLONY",
-    "pm25": 131.1,
-    "aqi": 309,
+    "pm25": 131.5,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -3475,8 +3930,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in INDER LOK COLONY is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "INDER LOK COLONY की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in INDER LOK COLONY is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "INDER LOK COLONY की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -3492,8 +3947,8 @@
   {
     "ward_id": "W130",
     "ward_name": "KISHAN GANJ",
-    "pm25": 131.1,
-    "aqi": 309,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -3510,8 +3965,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in KISHAN GANJ is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KISHAN GANJ की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in KISHAN GANJ is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KISHAN GANJ की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -3527,7 +3982,7 @@
   {
     "ward_id": "W131",
     "ward_name": "DEPUTY GANJ",
-    "pm25": 131.8,
+    "pm25": 132.1,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -3562,7 +4017,7 @@
   {
     "ward_id": "W132",
     "ward_name": "KASHMERE GATE",
-    "pm25": 132.3,
+    "pm25": 132.0,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -3632,8 +4087,8 @@
   {
     "ward_id": "W134",
     "ward_name": "JAMA MASJID",
-    "pm25": 129.1,
-    "aqi": 308,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -3650,8 +4105,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in JAMA MASJID is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "JAMA MASJID की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in JAMA MASJID is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "JAMA MASJID की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -3667,7 +4122,7 @@
   {
     "ward_id": "W135",
     "ward_name": "TILAK NAGAR",
-    "pm25": 131.9,
+    "pm25": 131.6,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -3702,7 +4157,7 @@
   {
     "ward_id": "W136",
     "ward_name": "MAJOR BHUPINDAR SINGH NAGAR",
-    "pm25": 131.9,
+    "pm25": 131.6,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -3737,7 +4192,7 @@
   {
     "ward_id": "W137",
     "ward_name": "VIKASPURI EAST",
-    "pm25": 131.9,
+    "pm25": 131.6,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -3772,8 +4227,8 @@
   {
     "ward_id": "W138",
     "ward_name": "MOHAN GARDEN",
-    "pm25": 163.9,
-    "aqi": 334,
+    "pm25": 131.6,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -3790,8 +4245,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MOHAN GARDEN is VERY POOR (AQI 334). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "MOHAN GARDEN की हवा बहुत खराब है (AQI 334)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in MOHAN GARDEN is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MOHAN GARDEN की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -3807,8 +4262,8 @@
   {
     "ward_id": "W139",
     "ward_name": "NAWADA",
-    "pm25": 163.9,
-    "aqi": 334,
+    "pm25": 131.6,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -3825,8 +4280,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in NAWADA is VERY POOR (AQI 334). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "NAWADA की हवा बहुत खराब है (AQI 334)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in NAWADA is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NAWADA की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -3842,8 +4297,8 @@
   {
     "ward_id": "W140",
     "ward_name": "UTTAM NAGAR",
-    "pm25": 172.8,
-    "aqi": 341,
+    "pm25": 131.6,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -3860,8 +4315,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in UTTAM NAGAR is VERY POOR (AQI 341). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "UTTAM NAGAR की हवा बहुत खराब है (AQI 341)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in UTTAM NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "UTTAM NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -3877,7 +4332,7 @@
   {
     "ward_id": "W141",
     "ward_name": "BINDAPUR",
-    "pm25": 132.0,
+    "pm25": 131.7,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -3910,45 +4365,10 @@
     "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
-    "ward_id": "W142",
-    "ward_name": "DABRI",
-    "pm25": 131.7,
-    "aqi": 310,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 1,
-    "vulnerability": {
-      "schools_hospitals_nearby": 13,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in DABRI is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "DABRI की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
     "ward_id": "W144",
     "ward_name": "ROSHANPURA",
-    "pm25": 179.3,
-    "aqi": 346,
+    "pm25": 132.5,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -3965,8 +4385,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in ROSHANPURA is VERY POOR (AQI 346). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "ROSHANPURA की हवा बहुत खराब है (AQI 346)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in ROSHANPURA is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "ROSHANPURA की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -3982,7 +4402,7 @@
   {
     "ward_id": "W145",
     "ward_name": "MAYUR VIHAR PHASE-I",
-    "pm25": 131.5,
+    "pm25": 131.9,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4017,8 +4437,8 @@
   {
     "ward_id": "W146",
     "ward_name": "ROHINI",
-    "pm25": 203.2,
-    "aqi": 364,
+    "pm25": 132.1,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -4035,8 +4455,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in ROHINI is VERY POOR (AQI 364). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "ROHINI की हवा बहुत खराब है (AQI 364)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in ROHINI is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "ROHINI की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -4052,7 +4472,7 @@
   {
     "ward_id": "W147",
     "ward_name": "DALLOPURA",
-    "pm25": 131.2,
+    "pm25": 132.3,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4087,7 +4507,7 @@
   {
     "ward_id": "W148",
     "ward_name": "TRILOK PURI",
-    "pm25": 131.5,
+    "pm25": 131.3,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4122,7 +4542,7 @@
   {
     "ward_id": "W149",
     "ward_name": "NEW ASHOK NAGAR",
-    "pm25": 130.8,
+    "pm25": 130.7,
     "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4157,7 +4577,7 @@
   {
     "ward_id": "W150",
     "ward_name": "KALYAN PURI",
-    "pm25": 133.1,
+    "pm25": 133.0,
     "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4192,7 +4612,7 @@
   {
     "ward_id": "W151",
     "ward_name": "KHICHRIPUR",
-    "pm25": 131.9,
+    "pm25": 132.4,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4227,7 +4647,7 @@
   {
     "ward_id": "W152",
     "ward_name": "KONDLI",
-    "pm25": 133.1,
+    "pm25": 133.0,
     "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4297,7 +4717,7 @@
   {
     "ward_id": "W154",
     "ward_name": "VINOD NAGAR",
-    "pm25": 132.3,
+    "pm25": 132.1,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4332,8 +4752,8 @@
   {
     "ward_id": "W155",
     "ward_name": "ASHOK VIHAR",
-    "pm25": 170.1,
-    "aqi": 339,
+    "pm25": 168.7,
+    "aqi": 338,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -4350,8 +4770,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in ASHOK VIHAR is VERY POOR (AQI 339). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "ASHOK VIHAR की हवा बहुत खराब है (AQI 339)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in ASHOK VIHAR is VERY POOR (AQI 338). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "ASHOK VIHAR की हवा बहुत खराब है (AQI 338)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -4367,7 +4787,7 @@
   {
     "ward_id": "W156",
     "ward_name": "WAJIRPUR",
-    "pm25": 131.8,
+    "pm25": 131.5,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4402,8 +4822,8 @@
   {
     "ward_id": "W157",
     "ward_name": "SAWAN PARK",
-    "pm25": 131.5,
-    "aqi": 310,
+    "pm25": 131.0,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -4420,8 +4840,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in SAWAN PARK is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SAWAN PARK की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in SAWAN PARK is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SAWAN PARK की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -4437,7 +4857,7 @@
   {
     "ward_id": "W158",
     "ward_name": "NIMRI COLONY",
-    "pm25": 132.1,
+    "pm25": 131.6,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4472,8 +4892,8 @@
   {
     "ward_id": "W159",
     "ward_name": "SHAKUR PUR",
-    "pm25": 131.3,
-    "aqi": 310,
+    "pm25": 130.7,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -4490,8 +4910,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in SHAKUR PUR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SHAKUR PUR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in SHAKUR PUR is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SHAKUR PUR की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -4507,7 +4927,7 @@
   {
     "ward_id": "W160",
     "ward_name": "KOHAT ENCLAVE",
-    "pm25": 132.3,
+    "pm25": 131.8,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4542,8 +4962,8 @@
   {
     "ward_id": "W161",
     "ward_name": "RAMPURA",
-    "pm25": 131.4,
-    "aqi": 310,
+    "pm25": 131.1,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -4560,8 +4980,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in RAMPURA is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "RAMPURA की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in RAMPURA is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "RAMPURA की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -4577,7 +4997,7 @@
   {
     "ward_id": "W162",
     "ward_name": "TRI NAGAR",
-    "pm25": 131.9,
+    "pm25": 131.6,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4612,7 +5032,7 @@
   {
     "ward_id": "W163",
     "ward_name": "SARASWATI VIHAR",
-    "pm25": 132.4,
+    "pm25": 132.2,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4645,44 +5065,9 @@
     "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
-    "ward_id": "W164",
-    "ward_name": "RANI BAGH",
-    "pm25": 131.1,
-    "aqi": 309,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 3,
-    "vulnerability": {
-      "schools_hospitals_nearby": 34,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in RANI BAGH is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "RANI BAGH की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
     "ward_id": "W165",
     "ward_name": "PASCHIM VIHAR NORTH",
-    "pm25": 130.8,
+    "pm25": 130.5,
     "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4717,7 +5102,7 @@
   {
     "ward_id": "W166",
     "ward_name": "PASCHIM VIHAR SOUTH",
-    "pm25": 132.1,
+    "pm25": 131.7,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4752,7 +5137,7 @@
   {
     "ward_id": "W167",
     "ward_name": "SHALIMAR BAGH SOUTH",
-    "pm25": 132.3,
+    "pm25": 131.7,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4787,7 +5172,7 @@
   {
     "ward_id": "W168",
     "ward_name": "SHALIMAR BAGH NORTH",
-    "pm25": 131.9,
+    "pm25": 131.2,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4822,7 +5207,7 @@
   {
     "ward_id": "W169",
     "ward_name": "PITAMPUR NORTH",
-    "pm25": 132.1,
+    "pm25": 131.4,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4857,8 +5242,8 @@
   {
     "ward_id": "W170",
     "ward_name": "PITAMPURA SOUTH",
-    "pm25": 132.6,
-    "aqi": 311,
+    "pm25": 131.9,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -4875,8 +5260,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in PITAMPURA SOUTH is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "PITAMPURA SOUTH की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in PITAMPURA SOUTH is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "PITAMPURA SOUTH की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -4892,7 +5277,7 @@
   {
     "ward_id": "W171",
     "ward_name": "NAHARPUR",
-    "pm25": 132.2,
+    "pm25": 131.8,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4927,7 +5312,7 @@
   {
     "ward_id": "W172",
     "ward_name": "ROHINI EAST",
-    "pm25": 132.0,
+    "pm25": 131.6,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -4962,8 +5347,8 @@
   {
     "ward_id": "W173",
     "ward_name": "ROHINI CENTRAL",
-    "pm25": 130.9,
-    "aqi": 309,
+    "pm25": 131.8,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -4980,8 +5365,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in ROHINI CENTRAL is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "ROHINI CENTRAL की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in ROHINI CENTRAL is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "ROHINI CENTRAL की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -4997,8 +5382,8 @@
   {
     "ward_id": "W174",
     "ward_name": "MANGOLPURI  WEST",
-    "pm25": 171.1,
-    "aqi": 340,
+    "pm25": 167.1,
+    "aqi": 337,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5015,8 +5400,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MANGOLPURI  WEST is VERY POOR (AQI 340). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "MANGOLPURI  WEST की हवा बहुत खराब है (AQI 340)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in MANGOLPURI  WEST is VERY POOR (AQI 337). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MANGOLPURI  WEST की हवा बहुत खराब है (AQI 337)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5032,8 +5417,8 @@
   {
     "ward_id": "W175",
     "ward_name": "MANGOLPURI  EAST",
-    "pm25": 134.7,
-    "aqi": 312,
+    "pm25": 132.2,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5050,8 +5435,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MANGOLPURI  EAST is VERY POOR (AQI 312). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "MANGOLPURI  EAST की हवा बहुत खराब है (AQI 312)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in MANGOLPURI  EAST is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MANGOLPURI  EAST की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5067,8 +5452,8 @@
   {
     "ward_id": "W176",
     "ward_name": "ROHINI SOUTH",
-    "pm25": 132.7,
-    "aqi": 311,
+    "pm25": 132.3,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5085,8 +5470,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in ROHINI SOUTH is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "ROHINI SOUTH की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in ROHINI SOUTH is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "ROHINI SOUTH की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5102,8 +5487,8 @@
   {
     "ward_id": "W177",
     "ward_name": "QUAMMRUDDIN NAGAR",
-    "pm25": 146.7,
-    "aqi": 321,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5120,8 +5505,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in QUAMMRUDDIN NAGAR is VERY POOR (AQI 321). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "QUAMMRUDDIN NAGAR की हवा बहुत खराब है (AQI 321)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in QUAMMRUDDIN NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "QUAMMRUDDIN NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5137,8 +5522,8 @@
   {
     "ward_id": "W178",
     "ward_name": "NANGLOI EAST",
-    "pm25": 164.8,
-    "aqi": 335,
+    "pm25": 131.5,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5155,8 +5540,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in NANGLOI EAST is VERY POOR (AQI 335). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "NANGLOI EAST की हवा बहुत खराब है (AQI 335)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in NANGLOI EAST is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NANGLOI EAST की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5172,8 +5557,8 @@
   {
     "ward_id": "W179",
     "ward_name": "PERAGHARHI",
-    "pm25": 129.9,
-    "aqi": 309,
+    "pm25": 131.8,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5190,8 +5575,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in PERAGHARHI is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "PERAGHARHI की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in PERAGHARHI is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "PERAGHARHI की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5242,8 +5627,8 @@
   {
     "ward_id": "W181",
     "ward_name": "SULTANPURI  SOUTH",
-    "pm25": 164.2,
-    "aqi": 335,
+    "pm25": 131.1,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5260,8 +5645,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in SULTANPURI  SOUTH is VERY POOR (AQI 335). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SULTANPURI  SOUTH की हवा बहुत खराब है (AQI 335)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in SULTANPURI  SOUTH is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SULTANPURI  SOUTH की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5277,8 +5662,8 @@
   {
     "ward_id": "W182",
     "ward_name": "SULTANPURI  EAST",
-    "pm25": 175.0,
-    "aqi": 343,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5295,8 +5680,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in SULTANPURI  EAST is VERY POOR (AQI 343). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SULTANPURI  EAST की हवा बहुत खराब है (AQI 343)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in SULTANPURI  EAST is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SULTANPURI  EAST की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5312,8 +5697,8 @@
   {
     "ward_id": "W186",
     "ward_name": "POOTH KALAN",
-    "pm25": 175.0,
-    "aqi": 343,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5330,8 +5715,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in POOTH KALAN is VERY POOR (AQI 343). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "POOTH KALAN की हवा बहुत खराब है (AQI 343)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in POOTH KALAN is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "POOTH KALAN की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5347,8 +5732,8 @@
   {
     "ward_id": "W187",
     "ward_name": "VIJAY VIHAR",
-    "pm25": 175.0,
-    "aqi": 343,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5365,8 +5750,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in VIJAY VIHAR is VERY POOR (AQI 343). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "VIJAY VIHAR की हवा बहुत खराब है (AQI 343)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in VIJAY VIHAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "VIJAY VIHAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5382,8 +5767,8 @@
   {
     "ward_id": "W188",
     "ward_name": "GEETA COLONY",
-    "pm25": 128.1,
-    "aqi": 307,
+    "pm25": 131.3,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5400,8 +5785,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in GEETA COLONY is VERY POOR (AQI 307). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "GEETA COLONY की हवा बहुत खराब है (AQI 307)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in GEETA COLONY is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "GEETA COLONY की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5417,7 +5802,7 @@
   {
     "ward_id": "W189",
     "ward_name": "KRISHNA  NAGAR",
-    "pm25": 132.1,
+    "pm25": 131.4,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -5452,7 +5837,7 @@
   {
     "ward_id": "W190",
     "ward_name": "PREET VIHAR",
-    "pm25": 133.4,
+    "pm25": 132.5,
     "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -5487,8 +5872,8 @@
   {
     "ward_id": "W191",
     "ward_name": "I.P EXTENTION",
-    "pm25": 134.6,
-    "aqi": 312,
+    "pm25": 133.5,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5505,8 +5890,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in I.P EXTENTION is VERY POOR (AQI 312). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "I.P EXTENTION की हवा बहुत खराब है (AQI 312)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in I.P EXTENTION is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "I.P EXTENTION की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5557,7 +5942,7 @@
   {
     "ward_id": "W193",
     "ward_name": "Ward 193",
-    "pm25": 131.6,
+    "pm25": 131.4,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -5592,8 +5977,8 @@
   {
     "ward_id": "W194",
     "ward_name": "SHAKARPUR",
-    "pm25": 132.8,
-    "aqi": 311,
+    "pm25": 135.2,
+    "aqi": 313,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5610,8 +5995,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in SHAKARPUR is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SHAKARPUR की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in SHAKARPUR is VERY POOR (AQI 313). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SHAKARPUR की हवा बहुत खराब है (AQI 313)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5627,8 +6012,8 @@
   {
     "ward_id": "W195",
     "ward_name": "LAXMI NAGAR",
-    "pm25": 128.9,
-    "aqi": 308,
+    "pm25": 132.3,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5645,8 +6030,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in LAXMI NAGAR is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "LAXMI NAGAR की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in LAXMI NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "LAXMI NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5662,8 +6047,8 @@
   {
     "ward_id": "W196",
     "ward_name": "RITHALA",
-    "pm25": 157.0,
-    "aqi": 329,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5680,8 +6065,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in RITHALA is VERY POOR (AQI 329). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "RITHALA की हवा बहुत खराब है (AQI 329)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in RITHALA is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "RITHALA की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5697,7 +6082,7 @@
   {
     "ward_id": "W197",
     "ward_name": "MAYUR VIHAR PHASE II",
-    "pm25": 133.0,
+    "pm25": 132.9,
     "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -5732,8 +6117,8 @@
   {
     "ward_id": "W198",
     "ward_name": "MANDAWALI",
-    "pm25": 133.5,
-    "aqi": 311,
+    "pm25": 132.1,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5750,8 +6135,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MANDAWALI is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "MANDAWALI की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in MANDAWALI is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MANDAWALI की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5802,8 +6187,8 @@
   {
     "ward_id": "W200",
     "ward_name": "MAHAVIR ENCLAVE",
-    "pm25": 132.1,
-    "aqi": 310,
+    "pm25": 132.6,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5820,43 +6205,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MAHAVIR ENCLAVE is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "MAHAVIR ENCLAVE की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W202",
-    "ward_name": "SAGARPUR WEST",
-    "pm25": 131.4,
-    "aqi": 310,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 11,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in SAGARPUR WEST is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SAGARPUR WEST की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in MAHAVIR ENCLAVE is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MAHAVIR ENCLAVE की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -5872,7 +6222,7 @@
   {
     "ward_id": "W204",
     "ward_name": "EAST PATEL NAGAR",
-    "pm25": 131.3,
+    "pm25": 131.5,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -5907,7 +6257,7 @@
   {
     "ward_id": "W205",
     "ward_name": "WEST PATEL NAGAR",
-    "pm25": 130.7,
+    "pm25": 130.9,
     "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -5942,8 +6292,8 @@
   {
     "ward_id": "W207",
     "ward_name": "KAROL BAGH",
-    "pm25": 131.0,
-    "aqi": 309,
+    "pm25": 131.3,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -5960,8 +6310,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in KAROL BAGH is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KAROL BAGH की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in KAROL BAGH is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KAROL BAGH की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -6012,8 +6362,8 @@
   {
     "ward_id": "W209",
     "ward_name": "RANA PRATAP BAGH",
-    "pm25": 131.0,
-    "aqi": 309,
+    "pm25": 131.2,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -6030,8 +6380,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in RANA PRATAP BAGH is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "RANA PRATAP BAGH की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in RANA PRATAP BAGH is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "RANA PRATAP BAGH की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -6047,8 +6397,8 @@
   {
     "ward_id": "W212",
     "ward_name": "SAHIBABAD DAULAT PUR",
-    "pm25": 183.6,
-    "aqi": 349,
+    "pm25": 131.2,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -6065,8 +6415,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in SAHIBABAD DAULAT PUR is VERY POOR (AQI 349). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SAHIBABAD DAULAT PUR की हवा बहुत खराब है (AQI 349)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in SAHIBABAD DAULAT PUR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SAHIBABAD DAULAT PUR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -6082,7 +6432,7 @@
   {
     "ward_id": "W214",
     "ward_name": "MALKAGANJ",
-    "pm25": 130.2,
+    "pm25": 130.5,
     "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -6117,7 +6467,7 @@
   {
     "ward_id": "W216",
     "ward_name": "MUKUND PUR",
-    "pm25": 131.9,
+    "pm25": 131.2,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -6152,8 +6502,8 @@
   {
     "ward_id": "W218",
     "ward_name": "BHALSWA",
-    "pm25": 131.5,
-    "aqi": 310,
+    "pm25": 131.0,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -6170,8 +6520,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in BHALSWA is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "BHALSWA की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in BHALSWA is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "BHALSWA की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -6187,8 +6537,8 @@
   {
     "ward_id": "W219",
     "ward_name": "SAMAYPUR BADLI",
-    "pm25": 131.7,
-    "aqi": 310,
+    "pm25": 131.1,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -6205,8 +6555,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in SAMAYPUR BADLI is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SAMAYPUR BADLI की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in SAMAYPUR BADLI is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SAMAYPUR BADLI की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -6222,7 +6572,7 @@
   {
     "ward_id": "W221",
     "ward_name": "SARAI PIPAL THALA",
-    "pm25": 131.1,
+    "pm25": 130.6,
     "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -6257,8 +6607,8 @@
   {
     "ward_id": "W222",
     "ward_name": "MAHIPALPUR",
-    "pm25": 131.5,
-    "aqi": 310,
+    "pm25": 129.2,
+    "aqi": 308,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -6275,43 +6625,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MAHIPALPUR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "MAHIPALPUR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W223",
-    "ward_name": "KAPASHERA",
-    "pm25": 130.7,
-    "aqi": 309,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 29,
-    "vulnerability": {
-      "schools_hospitals_nearby": 11,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in KAPASHERA is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KAPASHERA की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in MAHIPALPUR is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MAHIPALPUR की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -6327,7 +6642,7 @@
   {
     "ward_id": "W225",
     "ward_name": "ADARASH  NAGAR",
-    "pm25": 132.0,
+    "pm25": 131.4,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -6362,8 +6677,8 @@
   {
     "ward_id": "W226",
     "ward_name": "DHIR PUR",
-    "pm25": 132.7,
-    "aqi": 311,
+    "pm25": 131.5,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -6380,8 +6695,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in DHIR PUR is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "DHIR PUR की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in DHIR PUR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "DHIR PUR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -6397,7 +6712,7 @@
   {
     "ward_id": "W227",
     "ward_name": "G.T.B. NAGAR",
-    "pm25": 132.1,
+    "pm25": 131.8,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -6432,7 +6747,7 @@
   {
     "ward_id": "W228",
     "ward_name": "TIMAR PUR",
-    "pm25": 132.2,
+    "pm25": 132.1,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -6465,150 +6780,10 @@
     "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
-    "ward_id": "W229",
-    "ward_name": "RAJA GARDEN",
-    "pm25": 132.2,
-    "aqi": 310,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 4,
-    "vulnerability": {
-      "schools_hospitals_nearby": 30,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in RAJA GARDEN is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "RAJA GARDEN की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W230",
-    "ward_name": "RAGHUBIR NAGAR",
-    "pm25": 131.3,
-    "aqi": 310,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 1,
-    "vulnerability": {
-      "schools_hospitals_nearby": 16,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in RAGHUBIR NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "RAGHUBIR NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W231",
-    "ward_name": "RAJOURI GARDEN",
-    "pm25": 131.9,
-    "aqi": 310,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 3,
-    "vulnerability": {
-      "schools_hospitals_nearby": 15,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in RAJOURI GARDEN is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "RAJOURI GARDEN की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W232",
-    "ward_name": "NANGAL RAYA",
-    "pm25": 131.9,
-    "aqi": 310,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 3,
-    "vulnerability": {
-      "schools_hospitals_nearby": 17,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in NANGAL RAYA is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "NANGAL RAYA की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
     "ward_id": "W233",
     "ward_name": "HARI NAGAR",
-    "pm25": 131.7,
-    "aqi": 310,
+    "pm25": 127.1,
+    "aqi": 306,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -6625,43 +6800,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in HARI NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "HARI NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W234",
-    "ward_name": "SUBHASH NAGAR",
-    "pm25": 131.6,
-    "aqi": 310,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 27,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in SUBHASH NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SUBHASH NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in HARI NAGAR is VERY POOR (AQI 306). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "HARI NAGAR की हवा बहुत खराब है (AQI 306)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -6677,8 +6817,8 @@
   {
     "ward_id": "W235",
     "ward_name": "MADHU VIHAR",
-    "pm25": 129.2,
-    "aqi": 308,
+    "pm25": 131.6,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -6695,8 +6835,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MADHU VIHAR is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "MADHU VIHAR की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in MADHU VIHAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MADHU VIHAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -6712,8 +6852,8 @@
   {
     "ward_id": "W236",
     "ward_name": "BUDH VIHAR",
-    "pm25": 175.0,
-    "aqi": 343,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -6730,8 +6870,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in BUDH VIHAR is VERY POOR (AQI 343). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "BUDH VIHAR की हवा बहुत खराब है (AQI 343)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in BUDH VIHAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "BUDH VIHAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -6747,8 +6887,8 @@
   {
     "ward_id": "W237",
     "ward_name": "NANGLOI JAT WEST",
-    "pm25": 153.8,
-    "aqi": 327,
+    "pm25": 131.1,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -6765,8 +6905,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in NANGLOI JAT WEST is VERY POOR (AQI 327). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "NANGLOI JAT WEST की हवा बहुत खराब है (AQI 327)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in NANGLOI JAT WEST is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NANGLOI JAT WEST की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -6782,7 +6922,7 @@
   {
     "ward_id": "W240",
     "ward_name": "ROHINI NORTH",
-    "pm25": 132.2,
+    "pm25": 131.4,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -6817,8 +6957,8 @@
   {
     "ward_id": "W243",
     "ward_name": "DICHAON KALAN",
-    "pm25": 163.8,
-    "aqi": 334,
+    "pm25": 131.6,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -6835,8 +6975,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in DICHAON KALAN is VERY POOR (AQI 334). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "DICHAON KALAN की हवा बहुत खराब है (AQI 334)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in DICHAON KALAN is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "DICHAON KALAN की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -6852,7 +6992,7 @@
   {
     "ward_id": "W244",
     "ward_name": "MOTI NAGAR",
-    "pm25": 132.1,
+    "pm25": 131.8,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -6887,7 +7027,7 @@
   {
     "ward_id": "W246",
     "ward_name": "LAJPAT NAGAR",
-    "pm25": 129.0,
+    "pm25": 128.9,
     "aqi": 308,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -6907,41 +7047,6 @@
     "texts": {
       "en": "Air quality in LAJPAT NAGAR is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
       "hi": "LAJPAT NAGAR की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W247",
-    "ward_name": "PALAM",
-    "pm25": 131.5,
-    "aqi": 310,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 4,
-    "vulnerability": {
-      "schools_hospitals_nearby": 29,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in PALAM is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "PALAM की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -6977,41 +7082,6 @@
     "texts": {
       "en": "Air quality in VISHWASH NAGAR is VERY POOR (AQI 312). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
       "hi": "VISHWASH NAGAR की हवा बहुत खराब है (AQI 312)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W250",
-    "ward_name": "MADIPUR",
-    "pm25": 131.9,
-    "aqi": 310,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.71,
-    "worsening": false,
-    "n_cells": 1,
-    "vulnerability": {
-      "schools_hospitals_nearby": 22,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in MADIPUR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "MADIPUR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -7097,7 +7167,7 @@
   {
     "ward_id": "W254",
     "ward_name": "HAUZ KHAS",
-    "pm25": 132.4,
+    "pm25": 132.2,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -7132,8 +7202,8 @@
   {
     "ward_id": "W255",
     "ward_name": "KOTLA MUBARAKPUR",
-    "pm25": 133.8,
-    "aqi": 312,
+    "pm25": 132.3,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -7150,8 +7220,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in KOTLA MUBARAKPUR is VERY POOR (AQI 312). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KOTLA MUBARAKPUR की हवा बहुत खराब है (AQI 312)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in KOTLA MUBARAKPUR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KOTLA MUBARAKPUR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -7167,7 +7237,7 @@
   {
     "ward_id": "W256",
     "ward_name": "MANGLAPURI",
-    "pm25": 131.7,
+    "pm25": 131.8,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -7202,8 +7272,8 @@
   {
     "ward_id": "W257",
     "ward_name": "MANGOL PURI  NORTH",
-    "pm25": 166.8,
-    "aqi": 337,
+    "pm25": 131.0,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -7220,8 +7290,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MANGOL PURI  NORTH is VERY POOR (AQI 337). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "MANGOL PURI  NORTH की हवा बहुत खराब है (AQI 337)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in MANGOL PURI  NORTH is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MANGOL PURI  NORTH की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -7237,7 +7307,7 @@
   {
     "ward_id": "W258",
     "ward_name": "TAGORE GARDEN",
-    "pm25": 131.8,
+    "pm25": 131.6,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -7307,8 +7377,8 @@
   {
     "ward_id": "W261",
     "ward_name": "BHALASWA JAHAGIR PUR",
-    "pm25": 131.8,
-    "aqi": 310,
+    "pm25": 135.2,
+    "aqi": 313,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -7325,8 +7395,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in BHALASWA JAHAGIR PUR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "BHALASWA JAHAGIR PUR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in BHALASWA JAHAGIR PUR is VERY POOR (AQI 313). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "BHALASWA JAHAGIR PUR की हवा बहुत खराब है (AQI 313)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -7377,7 +7447,7 @@
   {
     "ward_id": "W264",
     "ward_name": "PANDAV NAGAR",
-    "pm25": 132.7,
+    "pm25": 132.6,
     "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -7412,8 +7482,8 @@
   {
     "ward_id": "W265",
     "ward_name": "KISHAN KUNJ",
-    "pm25": 128.0,
-    "aqi": 307,
+    "pm25": 131.2,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -7430,8 +7500,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in KISHAN KUNJ is VERY POOR (AQI 307). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KISHAN KUNJ की हवा बहुत खराब है (AQI 307)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in KISHAN KUNJ is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KISHAN KUNJ की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -7517,7 +7587,7 @@
   {
     "ward_id": "W274",
     "ward_name": "TIGRI",
-    "pm25": 131.2,
+    "pm25": 131.4,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -7552,7 +7622,7 @@
   {
     "ward_id": "W275",
     "ward_name": "ZAKIR NAGAR",
-    "pm25": 131.5,
+    "pm25": 131.4,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -7587,8 +7657,8 @@
   {
     "ward_id": "W276",
     "ward_name": "NAJAFGARH",
-    "pm25": 236.1,
-    "aqi": 389,
+    "pm25": 132.8,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -7605,8 +7675,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in NAJAFGARH is VERY POOR (AQI 389). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "NAJAFGARH की हवा बहुत खराब है (AQI 389)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in NAJAFGARH is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NAJAFGARH की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -7622,8 +7692,8 @@
   {
     "ward_id": "W277",
     "ward_name": "JAHANGIR PURI -II",
-    "pm25": 131.6,
-    "aqi": 310,
+    "pm25": 130.9,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -7640,8 +7710,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in JAHANGIR PURI -II is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "JAHANGIR PURI -II की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in JAHANGIR PURI -II is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "JAHANGIR PURI -II की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -7657,8 +7727,8 @@
   {
     "ward_id": "W278",
     "ward_name": "KUNWAR SINGH NAGAR",
-    "pm25": 152.8,
-    "aqi": 326,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -7675,8 +7745,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in KUNWAR SINGH NAGAR is VERY POOR (AQI 326). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KUNWAR SINGH NAGAR की हवा बहुत खराब है (AQI 326)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in KUNWAR SINGH NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KUNWAR SINGH NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -7692,8 +7762,8 @@
   {
     "ward_id": "W279",
     "ward_name": "VIKAS NAGAR",
-    "pm25": 129.0,
-    "aqi": 308,
+    "pm25": 131.7,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -7710,8 +7780,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in VIKAS NAGAR is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "VIKAS NAGAR की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in VIKAS NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "VIKAS NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -7727,8 +7797,8 @@
   {
     "ward_id": "W280",
     "ward_name": "VIKAS PURI",
-    "pm25": 144.2,
-    "aqi": 319,
+    "pm25": 131.6,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -7745,8 +7815,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in VIKAS PURI is VERY POOR (AQI 319). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "VIKAS PURI की हवा बहुत खराब है (AQI 319)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in VIKAS PURI is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "VIKAS PURI की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -7762,7 +7832,7 @@
   {
     "ward_id": "W281",
     "ward_name": "MAHAVIR NAGAR",
-    "pm25": 132.4,
+    "pm25": 132.0,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -7797,7 +7867,7 @@
   {
     "ward_id": "W282",
     "ward_name": "DARYAGANJ",
-    "pm25": 130.1,
+    "pm25": 130.9,
     "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -7832,7 +7902,7 @@
   {
     "ward_id": "W287",
     "ward_name": "SHASTRI NAGAR",
-    "pm25": 130.8,
+    "pm25": 130.7,
     "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -7867,7 +7937,7 @@
   {
     "ward_id": "W288",
     "ward_name": "VISHNU GARDEN",
-    "pm25": 131.6,
+    "pm25": 131.2,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -7902,8 +7972,8 @@
   {
     "ward_id": "W004",
     "ward_name": "DELHI CANTT CHARGE 5",
-    "pm25": 132.2,
-    "aqi": 310,
+    "pm25": 129.7,
+    "aqi": 308,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -7920,10 +7990,10 @@
       "hi"
     ],
     "texts": {
-      "en": "Air in DELHI CANTT CHARGE 5 is VERY POOR (AQI 310). Long exposure causes respiratory illness. Please avoid heavy outdoor work, keep windows closed, and wear a mask outside to stay safe.",
-      "hi": "DELHI CANTT CHARGE 5 में हवा बहुत खराब है (AQI 310)। लंबे समय तक बाहर रहने से सांस की बीमारी हो सकती है। खिड़कियां बंद रखें, बाहर मेहनत से बचें और मास्क जरूर पहनें।"
+      "en": "Air quality in DELHI CANTT CHARGE 5 is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "DELHI CANTT CHARGE 5 की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -7937,8 +8007,8 @@
   {
     "ward_id": "W042",
     "ward_name": "CHAUHAN BANGER",
-    "pm25": 133.0,
-    "aqi": 311,
+    "pm25": 131.8,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -7955,8 +8025,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in CHAUHAN BANGER is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "CHAUHAN BANGER की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in CHAUHAN BANGER is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "CHAUHAN BANGER की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8007,7 +8077,7 @@
   {
     "ward_id": "W089",
     "ward_name": "PUL PEHLAD",
-    "pm25": 131.2,
+    "pm25": 131.4,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -8077,8 +8147,8 @@
   {
     "ward_id": "W183",
     "ward_name": "KIRARI SULEMAN NAGAR",
-    "pm25": 175.0,
-    "aqi": 343,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8095,8 +8165,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in KIRARI SULEMAN NAGAR is VERY POOR (AQI 343). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KIRARI SULEMAN NAGAR की हवा बहुत खराब है (AQI 343)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in KIRARI SULEMAN NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KIRARI SULEMAN NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8112,8 +8182,8 @@
   {
     "ward_id": "W185",
     "ward_name": "BEGUMPUR",
-    "pm25": 187.4,
-    "aqi": 352,
+    "pm25": 131.1,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8130,8 +8200,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in BEGUMPUR is VERY POOR (AQI 352). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "BEGUMPUR की हवा बहुत खराब है (AQI 352)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in BEGUMPUR is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "BEGUMPUR की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8147,8 +8217,8 @@
   {
     "ward_id": "W284",
     "ward_name": "NILOTHI",
-    "pm25": 183.4,
-    "aqi": 349,
+    "pm25": 130.4,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8165,8 +8235,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in NILOTHI is VERY POOR (AQI 349). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "NILOTHI की हवा बहुत खराब है (AQI 349)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in NILOTHI is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NILOTHI की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8182,8 +8252,8 @@
   {
     "ward_id": "W285",
     "ward_name": "PRATAP VIHAR",
-    "pm25": 157.7,
-    "aqi": 330,
+    "pm25": 131.2,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8200,8 +8270,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in PRATAP VIHAR is VERY POOR (AQI 330). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "PRATAP VIHAR की हवा बहुत खराब है (AQI 330)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in PRATAP VIHAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "PRATAP VIHAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8217,7 +8287,7 @@
   {
     "ward_id": "W008",
     "ward_name": "DELHI CANTT CHARGE 3",
-    "pm25": 131.4,
+    "pm25": 131.6,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -8235,10 +8305,10 @@
       "hi"
     ],
     "texts": {
-      "en": "The air in DELHI CANTT CHARGE 3 is very poor (AQI 310). This can make you sick if you stay out long. Please stay indoors. Keep windows shut. Wear a mask if you must go out.",
-      "hi": "DELHI CANTT CHARGE 3 में हवा बहुत खराब है (AQI 310)। ज़्यादा देर बाहर रहने से तबीयत बिगड़ सकती है। कृपया घर के अंदर रहें। खिड़कियाँ बंद रखें। बाहर निकलें तो मास्क ज़रूर पहनें।"
+      "en": "Air quality in DELHI CANTT CHARGE 3 is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "DELHI CANTT CHARGE 3 की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
-    "written_by": "gemini",
+    "written_by": "rules",
     "reviewed": {
       "en": true,
       "hi": true
@@ -8252,8 +8322,8 @@
   {
     "ward_id": "W037",
     "ward_name": "SUNDER NAGARI",
-    "pm25": 128.4,
-    "aqi": 307,
+    "pm25": 133.1,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8270,8 +8340,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in SUNDER NAGARI is VERY POOR (AQI 307). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SUNDER NAGARI की हवा बहुत खराब है (AQI 307)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in SUNDER NAGARI is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SUNDER NAGARI की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8357,8 +8427,8 @@
   {
     "ward_id": "W055",
     "ward_name": "SHIV VIHAR",
-    "pm25": 133.2,
-    "aqi": 311,
+    "pm25": 131.9,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8375,8 +8445,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in SHIV VIHAR is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SHIV VIHAR की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in SHIV VIHAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SHIV VIHAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8462,8 +8532,8 @@
   {
     "ward_id": "W206",
     "ward_name": "DEV NAGAR",
-    "pm25": 131.1,
-    "aqi": 309,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8480,8 +8550,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in DEV NAGAR is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "DEV NAGAR की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in DEV NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "DEV NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8497,7 +8567,7 @@
   {
     "ward_id": "W215",
     "ward_name": "JHARODA",
-    "pm25": 131.4,
+    "pm25": 131.2,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -8532,8 +8602,8 @@
   {
     "ward_id": "W286",
     "ward_name": "PREM NAGAR",
-    "pm25": 175.0,
-    "aqi": 343,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8550,8 +8620,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in PREM NAGAR is VERY POOR (AQI 343). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "PREM NAGAR की हवा बहुत खराब है (AQI 343)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in PREM NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "PREM NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8567,8 +8637,8 @@
   {
     "ward_id": "W054",
     "ward_name": "HARSH VIHAR",
-    "pm25": 128.2,
-    "aqi": 307,
+    "pm25": 132.9,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8585,8 +8655,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in HARSH VIHAR is VERY POOR (AQI 307). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "HARSH VIHAR की हवा बहुत खराब है (AQI 307)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in HARSH VIHAR is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "HARSH VIHAR की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8602,8 +8672,8 @@
   {
     "ward_id": "W059",
     "ward_name": "KARAWAL NAGAR WEST",
-    "pm25": 131.2,
-    "aqi": 310,
+    "pm25": 130.9,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8620,8 +8690,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in KARAWAL NAGAR WEST is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KARAWAL NAGAR WEST की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in KARAWAL NAGAR WEST is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KARAWAL NAGAR WEST की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8637,7 +8707,7 @@
   {
     "ward_id": "W053",
     "ward_name": "SABOLI",
-    "pm25": 132.7,
+    "pm25": 133.1,
     "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -8672,8 +8742,8 @@
   {
     "ward_id": "W104",
     "ward_name": "INDER PURI",
-    "pm25": 130.9,
-    "aqi": 309,
+    "pm25": 131.3,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8690,8 +8760,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in INDER PURI is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "INDER PURI की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in INDER PURI is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "INDER PURI की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8707,7 +8777,7 @@
   {
     "ward_id": "W105",
     "ward_name": "NARAINA",
-    "pm25": 131.7,
+    "pm25": 131.6,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -8740,45 +8810,10 @@
     "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
-    "ward_id": "W108",
-    "ward_name": "AYA NAGAR",
-    "pm25": 129.2,
-    "aqi": 308,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.635,
-    "worsening": false,
-    "n_cells": 24,
-    "vulnerability": {
-      "schools_hospitals_nearby": 5,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in AYA NAGAR is VERY POOR (AQI 308). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "AYA NAGAR की हवा बहुत खराब है (AQI 308)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
     "ward_id": "W114",
     "ward_name": "GANDHI NAGAR",
-    "pm25": 132.8,
-    "aqi": 311,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8795,8 +8830,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in GANDHI NAGAR is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "GANDHI NAGAR की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in GANDHI NAGAR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "GANDHI NAGAR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8812,8 +8847,8 @@
   {
     "ward_id": "W201",
     "ward_name": "SAGARPUR",
-    "pm25": 132.2,
-    "aqi": 310,
+    "pm25": 127.9,
+    "aqi": 307,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8830,8 +8865,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in SAGARPUR is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "SAGARPUR की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in SAGARPUR is VERY POOR (AQI 307). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "SAGARPUR की हवा बहुत खराब है (AQI 307)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8847,8 +8882,8 @@
   {
     "ward_id": "W203",
     "ward_name": "MUNDAKA",
-    "pm25": 167.3,
-    "aqi": 337,
+    "pm25": 131.2,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8865,8 +8900,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in MUNDAKA is VERY POOR (AQI 337). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "MUNDAKA की हवा बहुत खराब है (AQI 337)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in MUNDAKA is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "MUNDAKA की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8882,8 +8917,8 @@
   {
     "ward_id": "W238",
     "ward_name": "NITHARI",
-    "pm25": 175.8,
-    "aqi": 343,
+    "pm25": 131.1,
+    "aqi": 309,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -8900,8 +8935,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in NITHARI is VERY POOR (AQI 343). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "NITHARI की हवा बहुत खराब है (AQI 343)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in NITHARI is VERY POOR (AQI 309). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "NITHARI की हवा बहुत खराब है (AQI 309)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -8952,7 +8987,7 @@
   {
     "ward_id": "W110",
     "ward_name": "MADANPUR KHADAR",
-    "pm25": 131.8,
+    "pm25": 131.7,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -8987,7 +9022,7 @@
   {
     "ward_id": "W267",
     "ward_name": "NEW USMANPUR",
-    "pm25": 131.6,
+    "pm25": 131.4,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -9022,8 +9057,8 @@
   {
     "ward_id": "W109",
     "ward_name": "BHATI",
-    "pm25": 131.2,
-    "aqi": 310,
+    "pm25": 133.4,
+    "aqi": 311,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -9040,8 +9075,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in BHATI is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "BHATI की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in BHATI is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "BHATI की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -9057,7 +9092,7 @@
   {
     "ward_id": "W271",
     "ward_name": "SANGAM VIHAR",
-    "pm25": 131.4,
+    "pm25": 131.6,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -9090,45 +9125,10 @@
     "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
-    "ward_id": "W030",
-    "ward_name": "CHHAWLA",
-    "pm25": 158.5,
-    "aqi": 330,
-    "aqi_category": "Very Poor",
-    "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
-    "risk_tier": "high",
-    "risk_score": 0.59,
-    "worsening": false,
-    "n_cells": 50,
-    "vulnerability": {
-      "schools_hospitals_nearby": 2,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "texts": {
-      "en": "Air quality in CHHAWLA is VERY POOR (AQI 330). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "CHHAWLA की हवा बहुत खराब है (AQI 330)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true,
-      "hi": true
-    },
-    "verification": {
-      "en": "cpcb_official",
-      "hi": "native_speaker"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
     "ward_id": "W045",
     "ward_name": "GHONDA",
-    "pm25": 132.8,
-    "aqi": 311,
+    "pm25": 131.6,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -9145,8 +9145,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in GHONDA is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "GHONDA की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in GHONDA is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "GHONDA की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -9162,8 +9162,8 @@
   {
     "ward_id": "W184",
     "ward_name": "KARALA",
-    "pm25": 141.6,
-    "aqi": 317,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -9180,8 +9180,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in KARALA is VERY POOR (AQI 317). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "KARALA की हवा बहुत खराब है (AQI 317)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in KARALA is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "KARALA की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -9232,8 +9232,8 @@
   {
     "ward_id": "W266",
     "ward_name": "DHARAMPURA",
-    "pm25": 132.8,
-    "aqi": 311,
+    "pm25": 131.4,
+    "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
     "risk_tier": "high",
@@ -9250,8 +9250,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in DHARAMPURA is VERY POOR (AQI 311). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
-      "hi": "DHARAMPURA की हवा बहुत खराब है (AQI 311)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
+      "en": "Air quality in DHARAMPURA is VERY POOR (AQI 310). Avoid outdoor exertion. Keep windows closed. Use a mask outdoors.",
+      "hi": "DHARAMPURA की हवा बहुत खराब है (AQI 310)। बाहर मेहनत का काम न करें। खिड़कियाँ बंद रखें। बाहर जाएँ तो मास्क पहनें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -9267,7 +9267,7 @@
   {
     "ward_id": "W270",
     "ward_name": "SAID UL AJAIB",
-    "pm25": 131.2,
+    "pm25": 131.5,
     "aqi": 310,
     "aqi_category": "Very Poor",
     "health_impact_cpcb": "Respiratory illness on prolonged exposure.",
@@ -9302,8 +9302,8 @@
   {
     "ward_id": "W034",
     "ward_name": "DILSHAD GARDEN",
-    "pm25": 104.0,
-    "aqi": 247,
+    "pm25": 106.3,
+    "aqi": 255,
     "aqi_category": "Poor",
     "health_impact_cpcb": "Breathing discomfort to most people on prolonged exposure.",
     "risk_tier": "high",
@@ -9320,8 +9320,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in DILSHAD GARDEN is POOR (AQI 247). Most people may feel breathing discomfort on prolonged exposure. Reduce outdoor activity.",
-      "hi": "DILSHAD GARDEN की हवा खराब है (AQI 247)। ज़्यादा देर बाहर रहने पर साँस लेने में दिक्कत हो सकती है। बाहर कम निकलें।"
+      "en": "Air quality in DILSHAD GARDEN is POOR (AQI 255). Most people may feel breathing discomfort on prolonged exposure. Reduce outdoor activity.",
+      "hi": "DILSHAD GARDEN की हवा खराब है (AQI 255)। ज़्यादा देर बाहर रहने पर साँस लेने में दिक्कत हो सकती है। बाहर कम निकलें।"
     },
     "written_by": "rules",
     "reviewed": {
@@ -9337,8 +9337,8 @@
   {
     "ward_id": "W248",
     "ward_name": "KISHANGARH",
-    "pm25": 111.2,
-    "aqi": 271,
+    "pm25": 109.7,
+    "aqi": 266,
     "aqi_category": "Poor",
     "health_impact_cpcb": "Breathing discomfort to most people on prolonged exposure.",
     "risk_tier": "high",
@@ -9355,8 +9355,8 @@
       "hi"
     ],
     "texts": {
-      "en": "Air quality in KISHANGARH is POOR (AQI 271). Most people may feel breathing discomfort on prolonged exposure. Reduce outdoor activity.",
-      "hi": "KISHANGARH की हवा खराब है (AQI 271)। ज़्यादा देर बाहर रहने पर साँस लेने में दिक्कत हो सकती है। बाहर कम निकलें।"
+      "en": "Air quality in KISHANGARH is POOR (AQI 266). Most people may feel breathing discomfort on prolonged exposure. Reduce outdoor activity.",
+      "hi": "KISHANGARH की हवा खराब है (AQI 266)। ज़्यादा देर बाहर रहने पर साँस लेने में दिक्कत हो सकती है। बाहर कम निकलें।"
     },
     "written_by": "rules",
     "reviewed": {

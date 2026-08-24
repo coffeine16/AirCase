@@ -24,9 +24,24 @@ create table if not exists public.citizen_reports (
   source      text not null default 'web' check (source in ('web','telegram','whatsapp')),
   language    text,                     -- 'hi' | 'kn' | 'ta' | 'en' (for the reply)
   chat_id     text,                     -- Telegram chat to close the loop with
+  device_id   text,                     -- anonymous per-BROWSER id, web reports only
+                                         -- (Telegram reports are matched by chat_id
+                                         -- instead). Minted client-side with
+                                         -- crypto.randomUUID(), no account, no PII —
+                                         -- it exists ONLY so GET /reports can return
+                                         -- one citizen's own reports instead of every
+                                         -- report in the city (RLS below lets anon
+                                         -- read all rows; the API filters by this).
   status      text not null default 'submitted' check (status in
                 ('submitted','under_review','corroborated','action_taken','resolved'))
 );
+
+-- Migration for an ALREADY-PROVISIONED instance: `create table if not exists`
+-- above is a no-op once the table exists, so a column added only to that
+-- statement never reaches a live database. Safe to re-run this whole file.
+alter table public.citizen_reports add column if not exists device_id text;
+create index if not exists citizen_reports_device_id_idx
+  on public.citizen_reports (device_id);
 
 -- ── 2. Inspector loop (the "done" reply -> the ledger's stopwatch) ───────────
 create table if not exists public.inspection_status (

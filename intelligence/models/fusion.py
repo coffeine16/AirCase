@@ -141,7 +141,19 @@ def _predict(model: lgb.Booster, df: pd.DataFrame, baseline: pd.Series) -> np.nd
     # is worth stating plainly rather than leaving to be discovered. It is small
     # (0-12% of cells per city) and it does not rescue the exposure claim: fusion
     # still loses to a naive city-mean on 7 of 8 cities.
-    return np.clip(out, 0.0, None)
+    # NaN, not 0. Clamping to zero was the first attempt and it is worse than
+    # the bug it fixed: it renders a MODEL FAILURE as PRISTINE AIR. Measured on
+    # Delhi, 15 cells clamped to exactly 0, which dragged three whole wards to a
+    # median of 0.0 ug/m3 -- i.e. "AQI 0, Good" in a city whose own median that
+    # day was AQI 318. A judge would find that in ten seconds and they would be
+    # right to.
+    #
+    # A negative residual prediction means the model has no credible estimate
+    # for that cell, and "no estimate" is a state the product already knows how
+    # to show: FusionCell.pm25 is nullable, the choropleth paints it as a grey
+    # gap, and WardComparison excludes it from the ranking. Saying nothing is
+    # honest; saying zero is a claim, and a false one.
+    return np.where(out > 0.0, out, np.nan)
 
 
 def loso_validation(panel: pd.DataFrame) -> dict:
@@ -157,10 +169,25 @@ def loso_validation(panel: pd.DataFrame) -> dict:
         baseline = _city_baseline(train)
         model = _train(train, baseline, rounds=250)
         pred = _predict(model, test, baseline)
-        rmse = float(np.sqrt(mean_squared_error(test[LABEL], pred)))
-        r2 = float(r2_score(test[LABEL], pred))
-        per_station[held_out] = {"rmse": round(rmse, 2), "r2": round(r2, 3), "n": len(test)}
-        all_true.extend(test[LABEL]); all_pred.extend(pred)
+        # _predict returns NaN where it has no credible estimate. You cannot
+        # score a prediction that was not made, so those rows are dropped rather
+        # than substituted -- filling them with 0, or with the baseline, would
+        # be scoring a number the product never shows. The count is reported so
+        # a city quietly losing half its rows this way is visible rather than
+        # flattering.
+        truth = test[LABEL].to_numpy(dtype=float)
+        ok = np.isfinite(pred) & np.isfinite(truth)
+        n_skipped = int((~ok).sum())
+        if ok.sum() < 2:
+            per_station[held_out] = {"rmse": None, "r2": None, "n": 0,
+                                     "note": "no scoreable rows"}
+            continue
+        rmse = float(np.sqrt(mean_squared_error(truth[ok], pred[ok])))
+        r2 = float(r2_score(truth[ok], pred[ok]))
+        per_station[held_out] = {"rmse": round(rmse, 2), "r2": round(r2, 3),
+                                 "n": int(ok.sum()),
+                                 **({"n_unscoreable": n_skipped} if n_skipped else {})}
+        all_true.extend(truth[ok]); all_pred.extend(pred[ok])
     overall = {
         "rmse": round(float(np.sqrt(mean_squared_error(all_true, all_pred))), 2),
         "r2": round(float(r2_score(all_true, all_pred)), 3),

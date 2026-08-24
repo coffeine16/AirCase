@@ -57,6 +57,14 @@ export default function AdminPage() {
   const [selectedCell, setSelectedCell] = useState<string | null>(null);
   const [mobileControls, setMobileControls] = useState(false);
   const [pipelineOpen, setPipelineOpen] = useState(false);
+  // Ward search (FilterBar) -> map fly-to. `token` bumps on every pick so
+  // re-selecting the SAME ward still commands a fly (see MapContainer).
+  const [focusWard, setFocusWard] = useState<{ wardId: string; token: number } | null>(null);
+  const focusTokenRef = useRef(0);
+  const handleFocusWard = useCallback((wardId: string) => {
+    focusTokenRef.current += 1;
+    setFocusWard({ wardId, token: focusTokenRef.current });
+  }, []);
 
   // ── Filters & layers ────────────────────────────────────────────────────────
   const {
@@ -235,9 +243,11 @@ export default function AdminPage() {
             <LayerToggle layers={layers} onToggle={toggleLayer} />
             <FilterBar
               filters={filters}
+              wardCells={wardCells}
               onWards={setWards}
               onSources={setSources}
               onPersistence={setPersistence}
+              onFocusWard={handleFocusWard}
               onReset={resetFilters}
             />
           </div>
@@ -277,6 +287,7 @@ export default function AdminPage() {
           selectedCell={selectedCell}
           onCellClick={setSelectedCell}
           recenterKey={city}
+          focusWard={focusWard}
           showOverlays={showMapControls}
         />
       </div>

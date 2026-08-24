@@ -26,7 +26,7 @@ import { useMemo } from "react";
 import useSWR from "swr";
 import { cellToLatLng } from "h3-js";
 import { api } from "@/lib/api";
-import { SOURCE_LABELS } from "@/lib/constants";
+import { SOURCE_LABELS, confidenceLabel } from "@/lib/constants";
 import type {
   Attribution, Action, Memo, Hotspot, SourceCategory, FusionCell,
 } from "@/lib/types";
@@ -172,8 +172,9 @@ export default function WardAccountability({
               <span style={{ fontSize: "1.05rem", fontWeight: 600 }}>
                 {SOURCE_LABELS[dominant.source]}
               </span>
-              <span className="mono" style={{ fontSize: "0.72rem", color: "var(--text-tertiary)" }}>
-                confidence {(dominant.best.confidence * 100).toFixed(0)}%
+              <span style={{ fontSize: "0.72rem", color: "var(--text-tertiary)" }}>
+                {confidenceLabel(dominant.best.confidence)}{" "}
+                <span className="mono">({(dominant.best.confidence * 100).toFixed(0)}%)</span>
               </span>
             </div>
 

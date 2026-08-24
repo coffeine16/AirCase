@@ -13,8 +13,12 @@ Endpoints:
     GET /fusion?hour_offset=0    fusion field snapshot (0 = latest hour)
     GET /wards                   cell -> ward map (real boundaries or fallback)
     GET /loso                    fusion validation metrics
+    GET /reports?device_id=...   one citizen's own submitted reports (from Supabase)
 """
 import json
+import os
+import urllib.parse
+import urllib.request
 from pathlib import Path
 
 import pandas as pd
@@ -304,6 +308,78 @@ def ward_summary(ward_id: str):
         if a["ward_id"] == ward_id:
             return a
     raise HTTPException(404, f"no advisory for ward {ward_id}")
+
+
+@app.get("/reports", dependencies=[Depends(city_param)])
+def reports(device_id: str | None = Query(
+    default=None,
+    description=(
+        "Anonymous per-browser id (minted client-side, no PII, no account). "
+        "Required — omitted, this returns [] rather than every citizen's "
+        "reports. Supabase RLS lets the anon key read every row in "
+        "citizen_reports; this endpoint is the thing that narrows that down "
+        "to one device's own reports before anything reaches a browser."
+    ),
+)):
+    """A citizen's own submitted reports, read live from Supabase.
+
+    Reports are written by n8n straight to Supabase (see db/schema.sql), not
+    through this API — this is the read half of that channel, the same REST
+    call scripts/sync_supabase.py already makes for the batch pipeline, just
+    filtered server-side by device_id. The Supabase anon key lives only in
+    this process's environment; a citizen's browser never sees it or any row
+    but its own.
+
+    Degrades to [] rather than 500 whenever the channel isn't configured or
+    unreachable (principle 2) — "My reports" showing empty is a far smaller
+    failure than the whole citizen view breaking because an external VM is
+    down.
+
+    KNOWN LIMITATION: citizen_reports carries no per-city column, so ward
+    names are resolved against THIS request's city only (?city=); a report
+    logged against a different city's ward id falls back to the raw id
+    rather than crashing.
+    """
+    if not device_id:
+        return []
+    url = os.environ.get("SUPABASE_URL", "").rstrip("/")
+    key = os.environ.get("SUPABASE_ANON_KEY", "")
+    if not url or not key:
+        return []
+
+    q = urllib.parse.urlencode({
+        "device_id": f"eq.{device_id}", "select": "*", "order": "ts.desc",
+    })
+    req = urllib.request.Request(
+        f"{url}/rest/v1/citizen_reports?{q}",
+        headers={"apikey": key, "Authorization": f"Bearer {key}"},
+    )
+    try:
+        rows = json.loads(urllib.request.urlopen(req, timeout=10).read())
+    except Exception:  # noqa: BLE001 — a dead channel must not break the citizen view
+        return []
+
+    try:
+        ward_name = {c["ward_id"]: c["ward_name"] for c in _json("wards.json")["cells"]}
+    except HTTPException:
+        ward_name = {}
+
+    return [
+        {
+            "report_id": r["id"],
+            "ward_id": r.get("ward_id") or "",
+            "ward_name": ward_name.get(r.get("ward_id"), r.get("ward_id") or ""),
+            # Schema/pipeline category is "construction"; the frontend's enum is
+            # "construction_dust" — the inverse of api.ts::submitReport's mapping.
+            "category": "construction_dust" if r.get("category") == "construction" else r.get("category"),
+            "description": r.get("description") or "",
+            "photo_url": r.get("media_url"),
+            "status": r.get("status") or "submitted",
+            "created_at": r.get("ts"),
+            "updated_at": r.get("ts"),
+        }
+        for r in rows
+    ]
 
 
 @app.post("/run/agent", dependencies=[Depends(city_param)])

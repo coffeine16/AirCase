@@ -9,6 +9,7 @@
  */
 import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import dynamic from "next/dynamic";
 import useSWR from "swr";
 import { api } from "@/lib/api";
@@ -16,7 +17,7 @@ import { pm25ToAqi, getAqiCategory } from "@/lib/colors";
 import { useCitizenWard } from "@/hooks/useReports";
 import { useWardLocator } from "@/hooks/useWardLocator";
 import { useCity } from "@/lib/CityContext";
-import { icon, MapPin, Search, ArrowLeft, TriangleAlert } from "@/components/Icon";
+import { icon, MapPin, Search, ArrowLeft, ArrowRight, Layers, TriangleAlert } from "@/components/Icon";
 import type { FusionResponse } from "@/lib/types";
 
 const CitizenMap = dynamic(() => import("@/components/citizen/CitizenMap"), {
@@ -233,6 +234,23 @@ export default function CitizenHomePage() {
 
       {/* Tappable map */}
       <CitizenMap cells={cells} onPickWard={(wardId) => go(wardId)} height={360} />
+
+      {/* Entry point to the multi-layer explorer — a different map, not this
+          ward-picker. Kept as a quiet link, not a competing primary button:
+          finding YOUR ward is still this page's one job. */}
+      <Link
+        href="/citizen/explore"
+        className="nav-link"
+        style={{
+          display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
+          margin: "var(--space-sm) 0 0", padding: "8px", textDecoration: "none",
+          fontSize: "0.8rem",
+        }}
+      >
+        <Layers {...icon.sm} aria-hidden />
+        Explore air quality, forecast &amp; cases citywide
+        <ArrowRight {...icon.sm} aria-hidden />
+      </Link>
 
       {/* Worst wards right now — live, tappable, fills the space with substance */}
       {worstWards.length > 0 && (

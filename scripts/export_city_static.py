@@ -48,8 +48,17 @@ def _fusion_json() -> dict:
     if wp.exists():
         for c in json.loads(wp.read_text(encoding="utf-8"))["cells"]:
             wards[c["cell"]] = c["ward_id"]
+    # NaN -> null, deliberately. fusion._predict returns NaN where it has no
+    # credible estimate (see its comment), and json.dumps would otherwise emit a
+    # bare NaN token, which is invalid JSON that every browser JSON.parse
+    # rejects outright -- one unestimated cell would blank the entire map.
+    # null is the value FusionCell.pm25 is already typed for.
+    import math
+    def _pm(v):
+        f = float(v)
+        return None if math.isnan(f) else round(f, 1)
     cells = [{"cell": r.cell, "ward_id": wards.get(r.cell, "unassigned"),
-              "pm25": round(float(r.pm25_hat), 1)} for r in latest.itertuples()]
+              "pm25": _pm(r.pm25_hat)} for r in latest.itertuples()]
     return {"ts": str(latest["ts"].iloc[0]), "n_hours": int(df["ts"].nunique()), "cells": cells}
 
 

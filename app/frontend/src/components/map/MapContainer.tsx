@@ -52,6 +52,11 @@ interface Props {
   onCellClick: (cell: string | null) => void;
   /** When this changes (e.g. the city), the map re-centres on the new data. */
   recenterKey?: string;
+  /** Fly to one ward (from the FilterBar search), e.g. { wardId: "W042", token: 3 }.
+   *  `token` is a bump-per-search counter, not just the wardId — searching the
+   *  SAME ward twice in a row is still two "go there" commands and must still
+   *  fly, even though wardId alone wouldn't change between them. */
+  focusWard?: { wardId: string; token: number } | null;
   /** False while a compact-layout sheet covers the bottom of the map — the
    *  legend and recentre button hide rather than sitting under an opaque
    *  panel where they are visible-but-untappable. */
@@ -72,6 +77,7 @@ export default function MapContainer({
   selectedCell,
   onCellClick,
   recenterKey,
+  focusWard,
   showOverlays = true,
 }: Props) {
   // Open on THIS city, not on Delhi. The recentre effect below still fits to the
@@ -140,6 +146,24 @@ export default function MapContainer({
     fittedKey.current = key;
     setViewState((vs) => ({ ...vs, ...c, zoom: 10.5 }));
   }, [recenterKey, dataCenter]);
+
+  // Ward search: fly to the searched ward's own cells, tighter than the
+  // whole-city recentre above (12.5 vs 10.5 — matches the citizen map's own
+  // ward-zoom level). Independent of dataCenter/fittedKey: a search result
+  // must always fly, even to a ward with zero hotspots in it right now.
+  const lastFocusToken = useRef<number | null>(null);
+  useEffect(() => {
+    if (!focusWard || lastFocusToken.current === focusWard.token) return;
+    lastFocusToken.current = focusWard.token;
+    const cells = wardCells.filter((w) => w.ward_id === focusWard.wardId).map((w) => w.cell);
+    if (!cells.length) return;
+    let sLat = 0, sLon = 0, n = 0;
+    for (const c of cells) {
+      try { const [lat, lon] = cellToLatLng(c); sLat += lat; sLon += lon; n++; } catch { /* skip malformed cell */ }
+    }
+    if (!n) return;
+    setViewState((vs) => ({ ...vs, latitude: sLat / n, longitude: sLon / n, zoom: 12.5, pitch: 30, bearing: 0 }));
+  }, [focusWard, wardCells]);
 
   const setTip = useCallback(
     (info: { x: number; y: number; content: React.ReactNode } | null) => setTooltip(info),

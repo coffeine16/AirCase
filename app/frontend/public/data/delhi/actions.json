@@ -1,17 +1,17 @@
 [
   {
-    "action_id": "A02",
+    "action_id": "A01",
     "zone_id": "Z06",
     "ward_id": "W219",
     "ward_name": "SAMAYPUR BADLI",
     "cells": [
       "883da18cd7fffff",
       "883da18c99fffff",
-      "883da18c9dfffff",
       "883da18c8bfffff",
-      "883da18c83fffff",
+      "883da18c9dfffff",
       "883da18c95fffff",
       "883da18c91fffff",
+      "883da18c83fffff",
       "883da18cd3fffff",
       "883da18cd5fffff"
     ],
@@ -19,9 +19,9 @@
       "lat": 28.7293,
       "lon": 77.1572
     },
-    "eps": 78.2,
+    "eps": 79.6,
     "components": {
-      "severity": 0.607,
+      "severity": 0.646,
       "attribution_conf": 0.84,
       "actionability": 0.8,
       "vulnerability": 1.0
@@ -30,48 +30,48 @@
     "source": "waste_burning",
     "confidence": 0.84,
     "n_cells": 9,
-    "pm25_med": 233.7,
+    "pm25_med": 264.1,
     "status": "pending"
   },
   {
     "action_id": "A03",
     "zone_id": "Z04",
-    "ward_id": "W094",
-    "ward_name": "BADAR PUR",
+    "ward_id": "W110",
+    "ward_name": "MADANPUR KHADAR",
     "cells": [
-      "883da10723fffff",
       "883da10739fffff",
+      "883da10723fffff",
       "883da10731fffff",
       "883da10707fffff",
-      "883da10727fffff",
-      "883da10703fffff",
-      "883da10733fffff",
-      "883da1073dfffff",
       "883da10721fffff",
-      "883da1073bfffff",
+      "883da10727fffff",
+      "883da10733fffff",
       "883da10715fffff",
-      "883da1072bfffff",
       "883da1071dfffff",
-      "883da10701fffff",
+      "883da1072bfffff",
+      "883da10757fffff",
       "883da1070bfffff",
-      "883da10757fffff"
+      "883da1073bfffff",
+      "883da10703fffff",
+      "883da1073dfffff",
+      "883da10701fffff"
     ],
     "centroid": {
       "lat": 28.5227,
       "lon": 77.3094
     },
-    "eps": 55.4,
+    "eps": 57.8,
     "components": {
-      "severity": 0.583,
-      "attribution_conf": 0.42,
+      "severity": 0.594,
+      "attribution_conf": 0.5,
       "actionability": 0.8,
       "vulnerability": 0.424
     },
     "kind": "emerging",
     "source": "waste_burning",
-    "confidence": 0.42,
+    "confidence": 0.5,
     "n_cells": 16,
-    "pm25_med": 265.2,
+    "pm25_med": 267.6,
     "status": "pending"
   },
   {
@@ -81,26 +81,26 @@
     "ward_name": "Outside city limits",
     "cells": [
       "883da10365fffff",
-      "883da10347fffff",
-      "883da11abbfffff",
-      "883da1030dfffff",
-      "883da10369fffff",
       "883da10361fffff",
-      "883da1036bfffff",
+      "883da10369fffff",
+      "883da1030dfffff",
       "883da10329fffff",
-      "883da10305fffff",
-      "883da11a97fffff",
       "883da10363fffff",
       "883da10367fffff",
-      "883da1036dfffff"
+      "883da10305fffff",
+      "883da1036bfffff",
+      "883da11abbfffff",
+      "883da1036dfffff",
+      "883da11a97fffff",
+      "883da10347fffff"
     ],
     "centroid": {
       "lat": 28.4595,
       "lon": 77.1089
     },
-    "eps": 52.9,
+    "eps": 52.8,
     "components": {
-      "severity": 0.442,
+      "severity": 0.441,
       "attribution_conf": 0.26,
       "actionability": 1.0,
       "vulnerability": 0.545
@@ -109,38 +109,38 @@
     "source": "construction",
     "confidence": 0.26,
     "n_cells": 13,
-    "pm25_med": 212.8,
+    "pm25_med": 203.6,
     "status": "pending"
   },
   {
-    "action_id": "A01",
+    "action_id": "A02",
     "zone_id": "Z05",
     "ward_id": "W223",
     "ward_name": "KAPASHERA",
     "cells": [
       "883da110e5fffff",
       "883da110e1fffff",
-      "883da111dbfffff",
-      "883da11033fffff",
       "883da110e9fffff",
-      "883da110edfffff",
-      "883da111d3fffff",
-      "883da11037fffff",
       "883da11031fffff",
+      "883da110edfffff",
+      "883da111dbfffff",
+      "883da11037fffff",
+      "883da11033fffff",
+      "883da111d3fffff",
       "883da111d9fffff",
-      "883da111d1fffff",
-      "883da1103bfffff",
       "883da11013fffff",
+      "883da1103bfffff",
       "883da11017fffff",
-      "883da111d7fffff"
+      "883da111d7fffff",
+      "883da111d1fffff"
     ],
     "centroid": {
       "lat": 28.5496,
       "lon": 77.0906
     },
-    "eps": 46.4,
+    "eps": 45.5,
     "components": {
-      "severity": 0.653,
+      "severity": 0.628,
       "attribution_conf": 0.39,
       "actionability": 0.6,
       "vulnerability": 0.091
@@ -149,7 +149,7 @@
     "source": "industrial",
     "confidence": 0.39,
     "n_cells": 15,
-    "pm25_med": 263.8,
+    "pm25_med": 227.8,
     "status": "pending"
   }
 ]

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
  */
 
 const STATS = [
-  { value: "3",    label: "Real cities",  sub: "live, not synthetic" },
+  { value: "8",    label: "Real cities",  sub: "live, not synthetic" },
   { value: "6",    label: "Data sources", sub: "satellite to citizen" },
   { value: "9",    label: "AI agents",    sub: "detect → dispatch" },
   { value: "4",    label: "Languages",    sub: "EN · HI · TA · KN" },
@@ -77,7 +77,7 @@ export default function LandingPage() {
               background: "var(--positive)", display: "inline-block",
             }}
           />
-          Delhi · Chennai · Bengaluru — live
+          8 Indian cities — live
         </div>
 
         <h1 className="display" style={{ marginBottom: "var(--space-md)" }}>

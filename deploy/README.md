@@ -204,6 +204,18 @@ set it as `NEXT_PUBLIC_N8N_WEBHOOK_URL` in the frontend's Vercel env when deploy
 > contract** (ward_id, category ∈ industrial|construction|waste_burning|traffic,
 > ts, lat, lon, media_url, source) — attribution reads that exact shape.
 
+> ⚠️ **`device_id` needs a mapping check.** The webhook body now also carries a
+> `device_id` (an anonymous per-browser id, no PII) — it's how the citizen
+> dashboard's "My reports" screen (`GET /reports?device_id=...`) shows a citizen
+> only their own reports instead of every report in the city. `db/schema.sql`
+> has the column. If the workflow's Supabase-insert node is set to auto-map
+> incoming JSON fields, this needs nothing further; if it uses explicit
+> field-to-column mapping, add `device_id -> device_id`. Test it: submit two
+> reports with different fake `device_id` values via curl, then check in the
+> Supabase table editor that the column is actually populated (not null) —
+> without this mapping, reports still save, they just never surface in "My
+> reports" for anyone, silently.
+
 ---
 
 ## Step 7 — end-of-call checklist
