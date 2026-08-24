@@ -576,11 +576,8 @@ down.
 </p>
 
 The Telegram loop closes in both directions, in the citizen's own language and
-in their own medium:
-
-<p align="center">
-  <img src="./docs/img/telegram-voice-loop.png" alt="Telegram: a spoken report in Hindi is transcribed, classified as waste_burning, and acknowledged with a request for a location pin" width="62%" />
-</p>
+in their own medium. **It is live — message
+[@aircaseaqbot](https://t.me/aircaseaqbot)** rather than take our word for it.
 
 A **spoken** report — *"yahan kachra jal raha hai"* — is downloaded from
 Telegram, transcribed by a multimodal model, and clamped to `waste_burning`
