@@ -561,14 +561,27 @@ The Telegram loop closes in both directions, in the citizen's own language and
 in their own medium:
 
 <p align="center">
-  <img src="./docs/img/telegram-voice-loop.png" alt="Telegram: a voice note in Hinglish is transcribed, logged as ward DELHI CANTT CHARGE 1 category waste_burning, and answered with a Hindi audio advisory" width="62%" />
+  <img src="./docs/img/telegram-voice-loop.png" alt="Telegram: a spoken report in Hindi is transcribed, classified as waste_burning, and acknowledged with a request for a location pin" width="62%" />
 </p>
 
-A **spoken** report — *"Delhi Cant, Charj 1 mein kachra jal raha hai"* — is
-transcribed, the ward is canonicalised against the official list (`Charj 1` →
-`DELHI CANTT CHARGE 1`), the category is clamped to `waste_burning`, and the
-ward's advisory comes back **as audio**. No typing, no app, no literacy
-requirement. The people most exposed to this air are outdoor workers.
+A **spoken** report — *"yahan kachra jal raha hai"* — is downloaded from
+Telegram, transcribed by a multimodal model, and clamped to `waste_burning`
+against a fixed category list. No typing, no app, no literacy requirement. The
+people most exposed to this air are outdoor workers, and they are the least
+likely to fill in a form.
+
+**The bot does not name your ward, and that is deliberate.** An earlier version
+let the model canonicalise a spoken place-name against the official ward list.
+It reads well and it is the wrong design: attribution matches citizen evidence
+**strictly by ward**, so a plausible-but-wrong guess corroborates a source in a
+place the citizen never mentioned. The report is filed `unassigned` and the bot
+asks for a location pin, which resolves to a ward by geometry instead. A model
+may extract; it may not decide **where**.
+
+**If the model is unavailable the report still lands** — a keyword classifier
+covers the typed case in transliterated Hindi (`kachra`, `malba`, `karkhana`),
+and a voice note is logged with the bot asking for detail rather than being
+silently dropped.
 
 ---
 
