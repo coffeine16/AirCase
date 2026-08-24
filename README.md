@@ -598,14 +598,23 @@ breaker** after repeated failures so one dead provider cannot slow an entire run
 strips code fences, parses hard, and returns `None` on any doubt rather than a
 half-parsed dict.
 
-> ### It was tested in production, unintentionally
-> Our Gemini quota was exhausted mid-deployment, and mid-run the provider
-> returned a timeout and a 503. The circuit opened, all 53 Delhi attributions
-> fell through to the rule-based reasoner — and **every number was identical**.
-> Bhalswa: `waste_burning`, confidence **0.84**, before and after. Only the
-> wording changed.
+> ### Both tiers were tested in production, unintentionally
+> **Tier 1 — the provider fell over, the chain caught it.** Gemini's quota ran
+> out mid-deployment and it then returned a timeout and a 503. The circuit
+> opened and the chain walked to Groq, which wrote **22 of 27** Ahmedabad
+> attributions on Llama 3.3 70B. Pirana: `waste_burning`, confidence **0.78**.
 >
-> That is the whole design in one incident. **The intelligence is in the
+> **Tier 2 — before Groq had a key, the same failure hit the floor.** All 53
+> Delhi attributions fell through to the rule-based reasoner, and **every number
+> was identical**. Bhalswa: `waste_burning`, confidence **0.84**, before and
+> after. Only the wording changed.
+>
+> Gemini's free tier allows **20 requests a day per model**. One Delhi run makes
+> **53 attribution calls**. The LLM half was never going to run at demo scale on
+> a single provider — an argument for the chain made by arithmetic rather than
+> by us.
+>
+> That is the whole design in two incidents. **The intelligence is in the
 > arithmetic; the language model is how it talks.**
 
 ---
