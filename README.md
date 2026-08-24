@@ -572,6 +572,44 @@ requirement. The people most exposed to this air are outdoor workers.
 
 ---
 
+## How we use generative AI — and where we refuse to
+
+Five places, each chosen because a language model is genuinely the best tool for
+it, and **none of them decide anything**:
+
+| Where | What the model does | If it fails |
+|---|---|---|
+| **Citizen intake** | Reads a photo, a voice note or free text in any Indian language and returns `{category, description, urgency}` | Keyword classifier over a multilingual lexicon — `kachra`/`malba`/`karkhana` included |
+| **Evidence chain** | Writes 2–3 sentences explaining a score already computed | Rule-based reasoner, identical output schema |
+| **Enforcement memo** | Drafts the connective prose around a matched legal citation | Template with the same citation |
+| **Ward advisories** | Generates health guidance in en / hi / ta / kn | CPCB's own band text |
+| **Ward-name resolution** | Guesses which ward a citizen meant | Validated in code against the official list — a guess is *never* trusted |
+
+**The rule is one line: the model explains, it never ranks.** Every score,
+every priority, every ordering is plain arithmetic you can recompute by hand. If
+the model's answer disagrees with the arithmetic, the arithmetic wins and the
+prose is discarded. That is not caution — an enforcement notice has to survive a
+hearing, and *"the AI decided"* does not.
+
+**The gateway is built for the day the model is unavailable**, because that day
+came: `intelligence/agents/llm_gateway.py` walks Gemini → Groq → none, tries
+several model names within a provider before giving up on it, trips a **circuit
+breaker** after repeated failures so one dead provider cannot slow an entire run,
+strips code fences, parses hard, and returns `None` on any doubt rather than a
+half-parsed dict.
+
+> ### It was tested in production, unintentionally
+> Our Gemini quota was exhausted mid-deployment, and mid-run the provider
+> returned a timeout and a 503. The circuit opened, all 53 Delhi attributions
+> fell through to the rule-based reasoner — and **every number was identical**.
+> Bhalswa: `waste_burning`, confidence **0.84**, before and after. Only the
+> wording changed.
+>
+> That is the whole design in one incident. **The intelligence is in the
+> arithmetic; the language model is how it talks.**
+
+---
+
 ## The 100% trap
 
 This project once reported **100% attribution accuracy**. It was an artefact, and
@@ -607,22 +645,13 @@ assumption we made.
 ## Repo layout
 
 ```
-app/            backend/main.py — read-only FastAPI (24 endpoints, ?city= scoped)
-                frontend/       — Next.js + deck.gl console + citizen view
-ingestion/      collectors (6 sources, live + synthetic fallback)
-                preprocessing/panel.py — the cell × hour feature table
-                synthetic.py — the adversarial hidden-source world
-intelligence/   orchestrator.py     — the 9-agent LangGraph state machine
-                models/fusion.py    — LightGBM exposure field
-                models/signals.py   — robust multi-window statistics
-                agents/             — detect, attribution, forecast, prioritise,
-                                      memo, advisory, voice, ledger, audit
-                                      + llm_gateway
-shared/         config, H3 grid utilities, real ward layer (8 cities)
-scripts/        run_pipeline.py, sync_supabase.py + truth-scored evaluations
-db/             schema.sql — Supabase contracts the channel layer writes to
-deploy/         n8n on GCP: Terraform + Caddy + DuckDNS runbook
-docs/           architecture.md — the 9-layer design and why it's shaped this way
+app/            read-only FastAPI (24 endpoints, ?city=) + Next.js/deck.gl frontend
+ingestion/      6 collectors, the cell x hour panel, the adversarial synthetic world
+intelligence/   orchestrator.py (9-agent LangGraph) + models/ + agents/ + llm_gateway
+shared/         config, H3 grid, real ward layer (8 cities)
+scripts/        run_pipeline.py + the truth-scored evaluations below
+deploy/         AWS: Terraform + Caddy + DuckDNS, n8n and the API on one box
+docs/           architecture.md — the 9-layer design, and sources/ — the CAG audit
 ```
 
 ## Evaluations
