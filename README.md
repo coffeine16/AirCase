@@ -18,8 +18,16 @@ evidence*, and *what to do about it today* — not another map of how bad the ai
 is.**
 
 India does not have a monitoring problem; it has an action problem. Over 900
-CAAQMS stations exist, yet a 2024 CAG audit found only **31%** of monitored
-cities had any actionable response protocol. Meanwhile the monitors themselves
+CAAQMS stations exist, and the *money* exists too — it is the action that does
+not. A CAG performance audit tabled in the Delhi Assembly found **₹843.12 crore
+of the ₹1,624.63 crore** collected as Environment Compensation Charge (2015-16
+to 2024-25) still **unspent**, with collection records missing for **280 days**
+and no explanation offered when CAG asked. Nationally, the 15th Finance
+Commission released **₹8,357.63 cr** in air quality grants to 42 million-plus
+cities and only **₹5,465.49 cr** was utilised — Bengaluru, released **₹535.10
+cr**, utilised **₹0.00** ([PIB/Lok Sabha, 5 Feb 2024, Annexure-I](https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2002614)).
+Cities are short of neither monitors nor budget; they are short of a defensible
+answer to *where to act*. Meanwhile the monitors themselves
 lie about coverage: CPCB siting norms deliberately place them *away from
 sources*, so the official map is a **measurement log, not a pollution census**.
 
