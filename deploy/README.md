@@ -159,19 +159,56 @@ screen.
 
 ## Step 5 — Telegram intake (Keshav, 5 min)
 
-1. In Telegram: talk to **@BotFather** → `/newbot` → name it (e.g. `AQIntelBot`) →
-   **copy the bot token**.
-2. In n8n (`https://aq-intel.duckdns.org`): Credentials → Add → **Telegram API** →
-   paste the token.
-3. New workflow → add a **Telegram Trigger** node (updates: `message`) → **Activate**
-   the workflow (toggle top-right).
+The workflow (**"Telegram citizen intake"**, already in the instance) uses a plain
+**Webhook** node plus `$env.TELEGRAM_BOT_TOKEN`, *not* n8n's Telegram Trigger.
+That is deliberate: the trigger node needs a stored **credential**, credentials
+live only inside the `n8n_data` volume, and nothing outside that volume can
+rebuild them. When the GCP box died it took the credential — and therefore this
+workflow — with it. A token in compose is recreated by `docker compose up`.
 
-n8n registers the webhook with Telegram automatically — against
-`https://aq-intel.duckdns.org/` (that is what `WEBHOOK_URL` in the compose file
-does). **Test: message the bot from your phone; the execution appears in n8n.**
+1. Telegram → **@BotFather** → `/mybots` → pick the bot → **API Token**
+   (or `/newbot` if you are making a fresh one). **Do not paste the token into
+   chat, a commit, or a workflow node** — unlike the Supabase anon key this one
+   is not public: it is full control of the bot.
+2. Add it to `.env` **on the VM** (the same file that already holds
+   `SUPABASE_URL` / `SUPABASE_ANON_KEY`):
+   ```bash
+   echo "TELEGRAM_BOT_TOKEN=<paste>" >> ~/aircase/.env
+   cd ~/aircase && docker compose up -d      # recreates n8n with the new env
+   ```
+3. In n8n, open **Telegram citizen intake** → **Activate** (toggle, top-right).
+4. Point Telegram at the webhook. n8n does this automatically *only* for the
+   Telegram Trigger node, so with a plain webhook you register it once yourself:
+   ```bash
+   curl -s "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/setWebhook?url=https://aq-intel.duckdns.org/webhook/telegram"
+   # -> {"ok":true,"result":true,"description":"Webhook was set"}
+   ```
 
-**If the trigger never fires:** the workflow must be **Active** (the toggle, not
-just saved), and check Settings → the instance shows the https URL, not localhost.
+**Test:** message the bot from your phone (“garbage being burned near the lake”).
+The execution appears in n8n, a row lands in `citizen_reports`, and the bot
+replies naming the category it filed.
+
+**What it does.** Webhook → extract text/photo/voice + chat_id → one Gemini call
+classifies into `waste_burning | construction | industrial | traffic | other`
+with a one-line description and urgency → validated in **code**, never trusted
+raw → insert into Supabase → acknowledge in the chat.
+
+**The ward is deliberately left `null`.** An LLM cannot know which ward a message
+came from, and a plausible wrong ward is worse than none — it files the report
+against a place the citizen never mentioned, and attribution then counts it as a
+corroborating instrument for the wrong cell. Ward is resolved downstream from a
+real coordinate when Telegram sends one.
+
+**If Gemini is down,** the report is still stored: the HTTP node is
+`neverError` + `continueRegularOutput` and the parser falls back to the raw
+message text with category `other`. Principle 2 — no LLM path goes silent.
+
+**If the trigger never fires:** check `getWebhookInfo` (below) before anything
+else — the usual cause is that step 4 was skipped or the workflow is saved but
+not **Active**.
+```bash
+curl -s "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/getWebhookInfo"
+```
 
 ---
 

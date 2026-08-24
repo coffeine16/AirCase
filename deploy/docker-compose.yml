@@ -15,8 +15,19 @@ services:
       # and there is no reason to put it there.
       - SUPABASE_URL=${SUPABASE_URL}
       - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
-      # n8n blocks $env inside expressions unless this is set, so the two lines
-      # above would otherwise resolve to empty at runtime with no error.
+      # Telegram's bot token, same reasoning as the Supabase keys above — except
+      # this one is NOT public: it is full control of the bot. It reaches the
+      # HTTP Request nodes as $env so it never lands in workflow JSON, which is
+      # what gets exported and screenshotted. Using a plain Webhook node plus
+      # this token, rather than n8n's Telegram Trigger, is deliberate: the
+      # trigger node needs a stored CREDENTIAL, and credentials live only in the
+      # n8n volume — so a rebuilt box loses them silently, which is exactly how
+      # the GCP instance took this workflow down with it.
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      # n8n blocks $env inside expressions unless this is set, so every var
+      # above would otherwise resolve to empty at runtime WITH NO ERROR — the
+      # Supabase insert would post to "/rest/v1/citizen_reports" against no
+      # host, and sendMessage would call .../bot/sendMessage. Silent, not loud.
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
     volumes:
       - n8n_data:/home/node/.n8n            # workflows + credentials survive restarts
