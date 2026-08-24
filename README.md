@@ -41,6 +41,11 @@ concluded that without it, *"impact and success of any measure to control
 pollution cannot be assessed."* **That study is what this platform produces
 continuously, from free public data.**
 
+That audit is archived in this repository at
+[`docs/sources/`](./docs/sources/) rather than cited by URL alone — a claim whose
+only evidence is a link is one dead link away from being unsourced, and this one
+carries the argument.
+
 Meanwhile the monitors themselves
 lie about coverage: CPCB siting norms deliberately place them *away from
 sources*, so the official map is a **measurement log, not a pollution census**.
@@ -112,8 +117,6 @@ python scripts/run_pipeline.py --synthetic --full        # ingest → panel → 
 python scripts/eval_detection.py                         # THE headline stat
 ```
 
-Then serve it:
-
 The `--full` run drives the whole **9-agent pipeline** and writes every JSON
 contract (`hotspots`, `attributions`, `forecast`, `actions`, `dispatch`, `memos`,
 `advisories`, `ledger`) to `data/outputs/`. Then serve it:
@@ -123,8 +126,9 @@ uvicorn app.backend.main:app --reload --port 8000        # 23 endpoints: /hotspo
 ```
 
 > **All three tiers are deployed.** The Next.js console and citizen view are live
-> on Vercel; the read-only API and the 9-agent chain run on Google Cloud Run; the
-> channel layer (n8n citizen bot + inspector loop) is live behind HTTPS. See
+> on Vercel; the read-only API and the 9-agent chain run on AWS behind Caddy; the
+> channel layer (n8n citizen bot + Telegram intake) shares that box on the same
+> certificate. See
 > [what's real vs prototype](#whats-real-vs-prototype) — we'd rather tell you than
 > let you find out.
 
@@ -135,15 +139,28 @@ uvicorn app.backend.main:app --reload --port 8000        # 23 endpoints: /hotspo
 **On real data.** Delhi, November 2025 — real Sentinel-5P, real NASA FIRMS, real
 CPCB stations, real OpenStreetMap:
 
-> ### Bhalswa landfill → `waste_burning`, confidence 0.76
-> *evidence: satellite fire detections in 30 hours (18% of the window);
-> shallow boundary layer (120 m) trapping emissions*
+> ### Bhalswa landfill → `waste_burning`, confidence 0.84
+> *0.40 km from the mapped landfill · evidence: satellite fire detections in
+> 30 hours (18% of the window); shallow boundary layer trapping emissions*
 
 A real polluter, in a real city, from public satellite data, with an evidence chain
 **anyone can check** — google *"Bhalswa landfill fire November 2025"*.
 
-(Okhla landfill → `traffic`; it genuinely sits on Mathura Road — defensible but
-incomplete. Ghazipur → not detected: no fires in the window. We report all three.)
+**Then it did it again, in a different city, unprompted:**
+
+> ### Pirana landfill, Ahmedabad → `waste_burning`, confidence 0.78, `chronic`
+> *0.36 km · evidence: satellite fire detections in 51 hours (7% of the window);
+> municipal landfill 3.0 km, wind alignment 0.47*
+
+84 hectares, in use since 1982, a long public record of fires. Ahmedabad has **55
+FIRMS detections in 90 days** — the most of any city we run, which is precisely
+*why* fire-driven detection works there and not everywhere. Bhalswa was not a
+fluke; it was the instrument working where the instrument can see.
+
+(Okhla landfill → `waste_burning`, confidence 0.50, 1.00 km — it previously came
+back as `traffic`, defensible since it sits on Mathura Road, but incomplete; that
+weak spot has closed. Ghazipur → still not detected: no fires in the window. We
+report all four.)
 
 **On the synthetic world**, where ground truth exists and accuracy can actually be
 *scored*, recall is reported by **what the instruments can physically see**:
@@ -419,7 +436,7 @@ Because a README that oversells is the same bug as a metric that oversells.
 | | Status |
 |---|---|
 | Ingestion — Sentinel-5P, OpenAQ, Open-Meteo, FIRMS, OSM | ✅ **all real and live.** Run end-to-end on Delhi, Nov 2025 |
-| H3 spatial fabric + real ward boundaries | ✅ real (official Datameet GeoJSON for Bengaluru/Delhi/Chennai; Voronoi fallback) |
+| H3 spatial fabric + real ward boundaries | ✅ real — **official Datameet GeoJSON for all eight cities**, 1,004 municipal wards over 7,931 H3 res-8 cells. No Voronoi fallback is in use anywhere |
 | Detection (NO₂ contrast + fire persistence) | ✅ real — validated on a real landfill fire |
 | Attribution + evidence chain + confidence | ✅ real, truth-scored, calibrated |
 | Forecast — 3-hourly to +72 h vs persistence baseline | ✅ real. One pooled LightGBM with the lead time as a feature, scored at **24 lead times** on a held-out tail. See [the sawtooth](#the-evaluation-was-flattering-our-own-baseline) — and the city where we lose |
@@ -428,8 +445,9 @@ Because a README that oversells is the same bug as a metric that oversells.
 | Ward advisory agent — English + city language | ✅ real — **every ward, not a sample**: Delhi 267 wards in en/hi, Chennai 177 in en/ta, Bengaluru 227 in en/kn, with per-language verification labels (native-speaker vs cross-checked — never claims a review it didn't get) |
 | Intervention ledger — response time + counterfactual | ✅ real. Response-time is honest (CAG's *weeks* vs one automated batch); effectiveness freezes the +48 h counterfactual, `our_impact: null` until a real intervention exists |
 | Channels — n8n citizen intake + inspector loop | ✅ **live.** Telegram bot + web webhook → Supabase, proven end-to-end into the evidence chain |
-| Read-only serving API (23 endpoints) | ✅ real |
-| **Fusion exposure field** | ❌ **claim withdrawn.** On real Delhi it is **14% worse than a naive city-mean** (RMSE 75.4 vs 66.0). We tried predicting the *deviation* from the city median — a construction that cannot lose to the baseline — and it still lost, which means the spatial model has **no transferable skill** across held-out stations. We do not claim it. |
+| Jurisdiction tagging on the action queue | ✅ real — the H3 fabric is a rectangular bbox but a municipality is an irregular polygon inside it, so **165 of 580 hotspot cells and 12 of 46 actions fall outside city limits** (all of Pune's). Tagged *"refer to state board"*, not dropped: a landfill past the boundary still pollutes the city, so deleting it discards a true detection — the routing changes, the finding stands |
+| Read-only serving API (23 endpoints) | ✅ real — one instance serves all eight cities, co-located with the channel layer behind one certificate |
+| **Fusion exposure field** | ❌ **claim withdrawn, now on EIGHT cities.** Leave-one-station-out, it loses to a naive city-mean on **7 of 8**; two have a *negative* R² (Pune −0.244, Hyderabad −0.221) — worse than predicting the mean. The single win is Delhi (+2.1%), the city with 24 stations, the most we have anywhere. We tried predicting the *deviation* from the city median — a construction that cannot lose to the baseline, since a zero residual **is** the baseline — and it still lost, which means the model fits its training stations' siting quirks rather than structure that transfers. With ~24 stations we cannot demonstrate spatial skill, so we do not claim it. **Detection is the contribution.** |
 | **Frontend — Next.js + deck.gl console** | ✅ **deployed.** Admin console and citizen view live on Vercel, reading the live API with a static-bundle fallback so the map still renders if the backend is down |
 | GEE Sentinel-5P collector | ✅ **built and wired** — real `COPERNICUS/S5P` extraction; it produced the real Delhi result. Live satellite needs GEE auth on the run machine (`gcloud auth application-default login`); until then synthetic mode runs fully offline |
 | **Intervention effectiveness** | ❌ **not claimed.** The ledger freezes the +48 h counterfactual at dispatch and waits for a real actioned outcome. Zero of four actions are actioned, so `our_impact` is `null`. Response *time* is real; response *effect* is not yet measurable |
@@ -446,8 +464,8 @@ Because a README that oversells is the same bug as a metric that oversells.
   impossible to defend.</sub>
 </p>
 | Voice advisory **audio** (TTS) | ✅ real — Google TTS, 71 clips per city, played in the citizen view and pushed as Telegram voice notes |
-| Network audit — monitoring blind spots | ✅ real — **21 of 1,703 Delhi cells are monitored**; the 40 worst blind spots are ranked into a next-sensor placement list |
-| Multi-city — one instance, three cities | ✅ real — `?city=` on every endpoint; Delhi, Chennai and Bengaluru all run the same pipeline |
+| Network audit — monitoring blind spots | ✅ real — **24 of Delhi's 1,703 cells are monitored (1.4%)**; the 40 worst blind spots are ranked into a next-sensor placement list |
+| Multi-city — one instance, **eight** cities | ✅ real — `?city=` on every endpoint. Delhi, Chennai, Bengaluru, Mumbai, Kolkata, Hyderabad, Pune and Ahmedabad each have a full live pipeline run over the same 90-day window, on real municipal ward boundaries |
 
 > ### ⚠️ Live mode refuses to fake anything
 > If the satellite, fire, or OSM collector fails, the pipeline **raises rather than
@@ -472,8 +490,9 @@ It is deployed. These are live, not screenshots.
 |---|---|
 | **Admin console** | [aircase-aq.vercel.app/admin](https://aircase-aq.vercel.app/admin) — map, hotspot zones, evidence chains, EPS queue, dispatch routes, agent runner |
 | **Citizen view** | [aircase-aq.vercel.app/citizen](https://aircase-aq.vercel.app/citizen) — your ward's AQI, *why* it is bad, what is being done, and a 3-hourly timeline |
-| **API** | [/docs](https://aircase-api-431151205852.asia-south1.run.app/docs) — 23 endpoints, `?city=` on each, OpenAPI schema |
-| **Health** | [/health](https://aircase-api-431151205852.asia-south1.run.app/health) — which cities this instance can answer for |
+| **API** | [/docs](https://aq-intel.duckdns.org/aircase/docs) — 23 endpoints, `?city=` on each, OpenAPI schema |
+| **Health** | [/health](https://aq-intel.duckdns.org/aircase/health) — which cities this instance can answer for |
+| **Telegram** | [@aircaseaqbot](https://t.me/aircaseaqbot) — send a photo, a voice note, or a sentence in your own language |
 
 The console runs the agent chain live: pick an agent (or all nine), set the
 inspection-team count, and watch dispatch recluster. Everything read-only falls
@@ -486,9 +505,10 @@ down.
 
 <p align="center">
   <sub><b>Same code, different city.</b> Chennai: twelve enforcement zones, on a
-  satellite feed only 26% complete and three CPCB stations for eleven million
+  satellite feed only 26% complete and four CPCB stations for eleven million
   people. No new hardware, no city-specific code — a bounding box and a ward
-  layer.</sub>
+  layer. That is how this reached <b>eight cities</b>: the marginal cost of the
+  ninth is compute, not sensors.</sub>
 </p>
 
 The Telegram loop closes in both directions, in the citizen's own language and
@@ -573,10 +593,12 @@ python scripts/eval_hotspot_recovery.py     # fusion as an EXPOSURE map — and 
 ## Roadmap
 
 **Shipped.** Sentinel-5P via Google Earth Engine · 9-agent LangGraph pipeline ·
-real Datameet ward boundaries for three cities · n8n citizen intake and inspector
-loop, proven end-to-end into the evidence chain · multi-language advisory text and
+real Datameet ward boundaries for **all eight cities** (1,004 wards, 7,931 H3
+cells, 17.1 M cell-hours) · n8n citizen intake, Telegram bot and inspector loop,
+proven end-to-end into the evidence chain · multi-language advisory text and
 voice · Next.js console and citizen view on Vercel · read-only API and live agent
-runs on Cloud Run, serving all three cities from one instance.
+runs on AWS behind Caddy, serving **all eight cities from one instance**, sharing
+one box and one certificate with the channel layer.
 
 **Known gaps, stated rather than hidden:**
 
@@ -593,6 +615,16 @@ runs on Cloud Run, serving all three cities from one instance.
       dispatch; it needs a real actioned inspection to become an impact number.
 - [ ] **No rate limiting on the public report webhook.** It is an unauthenticated
       intake form by design; abuse handling is not built.
+- [ ] **26% of enforcement actions fall outside municipal jurisdiction.** The H3
+      fabric is a rectangular bbox; a municipality is an irregular polygon inside
+      it, so 12 of 46 actions (and *all* of Pune's) sit beyond the city boundary.
+      They are now tagged *"refer to state board"* rather than dropped — the
+      detection stands, the routing changes — but the enforcement queue should
+      filter by jurisdiction upstream, in `prioritise.py`, not in the console.
+- [ ] **A live LLM makes the agent chain scale with hotspot count.** Attribution
+      calls the model once per hotspot, so Delhi's 53 take ~6.5 min against
+      Ahmedabad's 27 at 114 s. Fine for a batch job, too slow for a request a
+      human is watching; it wants batching or streaming per-hotspot results.
 - [ ] Kannada advisory text is `cross_checked`, not native-verified.
 
 ## Contributors
