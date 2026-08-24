@@ -60,6 +60,17 @@ services:
       # rate-limits. Passing the key through is an optimisation, not a
       # dependency — the chain returns the same schema either way.
       - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      # The SECOND provider in llm_gateway's chain, and until now the reason
+      # that chain was theoretical: the Groq path has been fully implemented
+      # (llama-3.3-70b-versatile, JSON mode, its own circuit breaker) since it
+      # was written, with no key ever set. So "Gemini -> Groq -> rule-based"
+      # was really "Gemini -> rule-based", and a Gemini outage skipped straight
+      # to deterministic prose.
+      #
+      # It also fixes a hard limit: Gemini's free tier allows 20 requests per
+      # day per model, and ONE Delhi agent run makes 53 attribution calls. The
+      # LLM half could never have run at demo scale on Gemini alone.
+      - GROQ_API_KEY=${GROQ_API_KEY:-}
     # LightGBM + pandas on a 2 GB box shared with n8n. Capped so a runaway agent
     # run degrades ITSELF rather than OOM-killing n8n, which would take the
     # citizen intake and Telegram webhook down with it.
