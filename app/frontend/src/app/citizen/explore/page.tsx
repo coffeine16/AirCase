@@ -35,7 +35,7 @@ import { pm25ToAqi, getAqiCategory, ACTION_STATUS_HEX } from "@/lib/colors";
 import {
   SOURCE_LABELS, ACTION_STATUS_LABELS, ACTION_STATUS_BADGE, confidenceLabel,
 } from "@/lib/constants";
-import { icon, Wind, TrendingUp, Target, ArrowRight, X } from "@/components/Icon";
+import { icon, Wind, TrendingUp, Target, ArrowRight, X, Search } from "@/components/Icon";
 import type { FusionResponse, WardsResponse, ForecastCell, Action, Memo, ActionStatus } from "@/lib/types";
 
 const CitizenMap = dynamic(() => import("@/components/citizen/CitizenMap"), {
@@ -64,9 +64,14 @@ export default function ExplorePage() {
   const [view3D, setView3D] = useState(true);
   const [selectedWard, setSelectedWard] = useState<{ wardId: string; wardName: string; pm25: number } | null>(null);
   const [selectedActionId, setSelectedActionId] = useState<string | null>(null);
+  // The ward the citizen SEARCHED for, as opposed to one they tapped. Only this
+  // drives the map camera: tapping a hex must not yank the viewport around while
+  // someone is exploring, but typing a ward name is an explicit "take me there".
+  const [focusWard, setFocusWard] = useState<string | null>(null);
+  const [query, setQuery] = useState("");
 
   // Switching mode invalidates whatever was selected under the old one.
-  useEffect(() => { setSelectedWard(null); setSelectedActionId(null); }, [mode]);
+  useEffect(() => { setSelectedWard(null); setSelectedActionId(null); setFocusWard(null); setQuery(""); }, [mode]);
 
   const { data: fusion } = useSWR<FusionResponse>([city, "fusion"], () => api.cityFusion(city));
   const { data: wardsResp } = useSWR<WardsResponse>([city, "wards"], () => api.cityWards(city));
@@ -121,6 +126,56 @@ export default function ExplorePage() {
     setSelectedActionId(id);
   };
 
+  /** Every ward in the city, once, sorted by name — the search corpus.
+   *  Built from wards.json rather than from `cells`, so a ward with no fusion
+   *  coverage in the current mode is still findable instead of silently absent. */
+  const wards = useMemo(() => {
+    const seen = new Map<string, string>();
+    for (const c of wardsResp?.cells ?? []) {
+      if (!c.ward_id || c.ward_id === "unassigned" || seen.has(c.ward_id)) continue;
+      seen.set(c.ward_id, c.ward_name);
+    }
+    return [...seen.entries()].map(([ward_id, ward_name]) => ({ ward_id, ward_name }))
+      .sort((a, b) => a.ward_name.localeCompare(b.ward_name));
+  }, [wardsResp]);
+
+  const searchHits = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return [];
+    return wards
+      .filter((w) => w.ward_name.toLowerCase().includes(q) || w.ward_id.toLowerCase().includes(q))
+      .slice(0, 8);
+  }, [wards, query]);
+
+  /** A searched ward has no single cell behind it, so its reading is the MEDIAN
+   *  over the ward's cells — the same statistic the ward page and WardComparison
+   *  use, so the two surfaces cannot disagree about the same ward. */
+  const wardMedianPm25 = (wardId: string): number => {
+    const vals = cells
+      .filter((c) => c.ward_id === wardId && Number.isFinite(c.pm25))
+      .map((c) => c.pm25)
+      .sort((a, b) => a - b);
+    if (!vals.length) return NaN;
+    const mid = Math.floor(vals.length / 2);
+    return vals.length % 2 ? vals[mid] : (vals[mid - 1] + vals[mid]) / 2;
+  };
+
+  const handleSearchPick = (wardId: string, wardName: string) => {
+    setSelectedActionId(null);
+    setFocusWard(wardId);
+    setQuery("");
+    setSelectedWard({ wardId, wardName, pm25: wardMedianPm25(wardId) });
+  };
+
+  /** Clearing the search returns the camera to the whole city — CitizenMap
+   *  re-fits to all cells the moment nothing is highlighted, which is exactly
+   *  what "clear" should mean here. */
+  const clearSearch = () => {
+    setFocusWard(null);
+    setQuery("");
+    setSelectedWard(null);
+  };
+
   const selectedAction = useMemo(
     () => (actions ?? []).find((a) => a.action_id === selectedActionId) ?? null,
     [actions, selectedActionId]
@@ -139,6 +194,7 @@ export default function ExplorePage() {
       <CitizenMap
         cells={cells}
         pins={pins}
+        highlightWard={focusWard}
         onPickWard={handlePickWard}
         onPickPin={handlePickPin}
         height="100%"
@@ -146,14 +202,87 @@ export default function ExplorePage() {
         bleed
       />
 
+      {/* Ward search — top-left, above the map.
+          Hidden in Cases mode for the same reason the 2D/3D toggle is: that mode
+          renders pins, not the hex layer, so highlighting a ward would have
+          nothing to draw and the control would visibly do nothing. */}
+      {mode !== "cases" && (
+        <div className="explore-search">
+          {focusWard ? (
+            <div
+              className="glass"
+              style={{
+                display: "flex", alignItems: "center", justifyContent: "space-between",
+                gap: 8, padding: "8px 10px", borderRadius: "var(--radius-lg)",
+                boxShadow: "var(--shadow-md)",
+              }}
+            >
+              <span className="truncate" style={{ fontSize: "0.8rem", fontWeight: 550 }}>
+                {selectedWard?.wardName ?? focusWard}
+              </span>
+              <button
+                onClick={clearSearch}
+                aria-label="Clear ward search and show the whole city"
+                className="btn btn-ghost btn-icon btn-sm"
+                style={{ flexShrink: 0 }}
+              >
+                <X {...icon.sm} aria-hidden />
+              </button>
+            </div>
+          ) : (
+            <div className="glass" style={{ position: "relative", borderRadius: "var(--radius-lg)", boxShadow: "var(--shadow-md)" }}>
+              <Search
+                {...icon.sm}
+                aria-hidden
+                style={{
+                  position: "absolute", left: 10, top: "50%", transform: "translateY(-50%)",
+                  color: "var(--text-tertiary)", pointerEvents: "none",
+                }}
+              />
+              <input
+                type="search"
+                aria-label="Search your ward by name"
+                placeholder="Search your ward…"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                style={{
+                  width: "100%", paddingLeft: 32, fontSize: "0.82rem",
+                  background: "transparent", border: "none",
+                }}
+              />
+              {searchHits.length > 0 && (
+                <div
+                  role="listbox"
+                  aria-label="Matching wards"
+                  className="menu"
+                  style={{ position: "absolute", top: "calc(100% + 4px)", left: 0, right: 0, zIndex: 1 }}
+                >
+                  {searchHits.map((w) => (
+                    <button
+                      key={w.ward_id}
+                      role="option"
+                      aria-selected={false}
+                      className="menu-item"
+                      onClick={() => handleSearchPick(w.ward_id, w.ward_name)}
+                    >
+                      <span className="truncate">{w.ward_name}</span>
+                      <span className="menu-meta mono">{w.ward_id}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
       {/* 2D/3D toggle — only meaningful for the hex layer (air/forecast); pins
           never extrude, so hide it in Cases mode rather than offer a control
           that visibly does nothing. */}
       {mode !== "cases" && (
         <div
-          className="glass"
+          className="glass explore-viewtoggle"
           style={{
-            position: "absolute", top: 12, right: 12, zIndex: "var(--z-panel)",
             display: "flex", gap: 4, padding: 4, borderRadius: "var(--radius-lg)",
             boxShadow: "var(--shadow-md)",
           }}

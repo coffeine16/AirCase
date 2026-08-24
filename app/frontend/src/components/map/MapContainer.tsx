@@ -87,6 +87,11 @@ export default function MapContainer({
     longitude: number; latitude: number; zoom: number; pitch: number; bearing: number;
   }>(() => initialViewFor(recenterKey ?? "delhi"));
 
+  /** 2D / 3D. Off by default: the console is a working surface first, and an
+   *  extruded field hides the point layers (stations, fires, blind spots) that
+   *  an analyst is usually reading alongside it. Opt-in, not the default view. */
+  const [extruded, setExtruded] = useState(false);
+
   // Theme-aware base map: dark-matter on dark, positron (light) on light. Follows
   // the same data-theme attribute the ThemeToggle stamps on <html>.
   const [mapStyle, setMapStyle] = useState(MAP_STYLE);
@@ -170,6 +175,17 @@ export default function MapContainer({
     []
   );
 
+  // Flipping to 2D snaps back to top-down: "2D" has to mean flat, even if the
+  // analyst had rotated the 3D view first. Watches `extruded` after mount rather
+  // than only reading it at init, so it tracks the toggle rather than the
+  // initial value. Same shape as CitizenMap's own re-tilt effect.
+  const wasExtruded = useRef(extruded);
+  useEffect(() => {
+    if (wasExtruded.current === extruded) return;
+    wasExtruded.current = extruded;
+    setViewState((vs) => ({ ...vs, pitch: extruded ? 45 : 0, bearing: extruded ? -12 : 0 }));
+  }, [extruded]);
+
   // ── Fusion PM2.5 choropleth ─────────────────────────────────────────────────
   const fusionLayer = useMemo(() => {
     if (!layers.fusion || !fusionCells.length) return null;
@@ -178,7 +194,12 @@ export default function MapContainer({
       data: fusionCells,
       getHexagon: (d) => d.cell,
       getFillColor: (d) => pm25ToRgbaArray(d.pm25, 175),
-      extruded: false,
+      // Height IS the PM2.5 value, so a column reads directly as "how much worse
+      // than clean air" rather than an arbitrary scale. elevationScale 12 matches
+      // CitizenMap so the same city looks the same height on both surfaces.
+      extruded,
+      getElevation: extruded ? (d: FusionCell) => Math.max(d.pm25, 0) : 0,
+      elevationScale: 12,
       wireframe: false,
       pickable: true,
       autoHighlight: true,
@@ -203,9 +224,12 @@ export default function MapContainer({
         } else setTip(null);
       },
       onClick: (info) => info.object && onCellClick((info.object as FusionCell).cell),
-      updateTriggers: { getFillColor: [fusionCells] },
+      updateTriggers: { getFillColor: [fusionCells], getElevation: [extruded] },
     });
-  }, [layers.fusion, fusionCells, setTip, onCellClick]);
+    // `extruded` MUST be in these deps: without it the memo returns the cached
+    // 2D layer and the toggle only tilts the camera over a flat field, which
+    // reads as "3D is broken" rather than "3D is off".
+  }, [layers.fusion, fusionCells, setTip, onCellClick, extruded]);
 
   // ── Hotspot zones ───────────────────────────────────────────────────────────
   const hotspotLayer = useMemo(() => {
@@ -337,6 +361,49 @@ export default function MapContainer({
         >
           <Crosshair {...icon.md} aria-hidden />
         </button>
+      )}
+
+      {/* 2D / 3D — map TOP-right, matching the citizen explore map so the same
+          control lives in the same corner on both surfaces.
+          Not bottom-right: that corner is already a stack of the legend (274px
+          tall) and the recentre button, and measured, a toggle there overlapped
+          the legend by 82x30px. Only rendered while the fusion layer is on — it
+          is the only extruded layer, so with it off the control would visibly do
+          nothing. */}
+      {showOverlays && layers.fusion && (
+        <div
+          className="glass"
+          style={{
+            position: "absolute",
+            right: 12,
+            top: 12,
+            zIndex: "var(--z-overlay)",
+            display: "flex",
+            gap: 3,
+            padding: 3,
+            borderRadius: "var(--radius-lg)",
+            boxShadow: "var(--shadow-md)",
+          }}
+        >
+          <button
+            className="chip"
+            data-active={!extruded}
+            aria-pressed={!extruded}
+            onClick={() => setExtruded(false)}
+            title="Flat view"
+          >
+            2D
+          </button>
+          <button
+            className="chip"
+            data-active={extruded}
+            aria-pressed={extruded}
+            onClick={() => setExtruded(true)}
+            title="Extrude the PM2.5 field by its value"
+          >
+            3D
+          </button>
+        </div>
       )}
 
       {/* Context-sensitive legend */}

@@ -1005,3 +1005,48 @@ hr {
   .display { font-size: 1.625rem; }
   .badge { font-size: 0.65rem; padding: 2px 6px; }
 }
+
+/* ─── Citizen explore: ward search overlay ───────────────────────────────────
+   Top-left over the map on desktop, where the centred mode switcher leaves
+   plenty of room. On a phone that room does not exist — the three mode chips
+   span most of a 390px viewport and sat ON TOP of the input, intercepting every
+   tap (the control rendered fine and was simply not clickable). Below 768px the
+   search therefore drops beneath the chip row and goes full width, which is the
+   better mobile search affordance anyway. */
+.explore-search {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: var(--z-panel);
+  width: min(240px, calc(100vw - 24px));
+}
+
+.explore-viewtoggle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: var(--z-panel);
+}
+
+/* Three floating controls do not fit across a 390px viewport, and measured, two
+   pairs genuinely collided: the 2D/3D toggle sat ON the mode switcher's "Cases"
+   chip by 45x33px (so tapping Cases hit 2D instead), and the mode chips wrap to
+   two lines on a phone, which pushed them 6px into the search field below.
+   On mobile the overlays therefore become two clean rows:
+       row 1   the mode switcher, centred
+       row 2   the ward search, sharing its line with the 2D/3D toggle
+   The reserved 116px right inset on the search is the toggle's own width plus a
+   gap, so the two can never meet however the chips reflow. */
+@media (max-width: 768px) {
+  .explore-search {
+    top: 68px;
+    left: 12px;
+    right: 116px;
+    width: auto;
+  }
+
+  .explore-viewtoggle {
+    top: 68px;
+    right: 12px;
+  }
+}

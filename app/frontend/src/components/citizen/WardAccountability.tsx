@@ -160,11 +160,40 @@ export default function WardAccountability({
     <>
       {/* ── 1. Why ───────────────────────────────────────────────────────────── */}
       <Card title="Why your air is like this" icon={FileSearch} rail="var(--accent)">
-        {!hasHotspots || !dominant ? (
+        {!hasHotspots ? (
+          /* Nothing flagged at all. The only case where "we found nothing" is
+             actually true. */
           <p style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
             No pollution source has been attributed in your ward in this window. That
             means our instruments found nothing standing out here — not that the air
             is clean. Read the AQI above for that.
+          </p>
+        ) : !dominant && !enforceable ? (
+          /* WE DID FIND SOMETHING — it just has nobody to blame.
+             This branch used to print the "found nothing standing out" line above,
+             which is simply false here: these wards have flagged cells, and every
+             one of their zones came back `attributable: false`. That is the
+             enforceable/diffuse split the whole detector is built around, and
+             collapsing it into "nothing found" threw away the more useful and
+             more honest answer. Measured across the eight cities, 16 wards land
+             in exactly this state (Pune's only two flagged wards are both here). */
+          <p style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
+            We did detect raised pollution in your ward — {wardHotspots.length} flagged
+            location{wardHotspots.length === 1 ? "" : "s"} — but it is spread across the
+            area rather than coming from one place. That pattern is <strong>diffuse
+            urban background</strong>: mostly traffic across the whole road network,
+            not a single site anyone can be served a notice for. It is real pollution
+            and a policy problem, which is why no inspection is queued here.
+          </p>
+        ) : !dominant ? (
+          /* Flagged, and at least one zone IS enforceable, but no attribution row
+             resolved for it yet. Rare (2 zones in Chennai at the time of writing)
+             and worth stating plainly rather than implying nothing was found. */
+          <p style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
+            {wardHotspots.length} location{wardHotspots.length === 1 ? " is" : "s are"} flagged
+            in your ward, but none has a confirmed source yet — the evidence so far does
+            not point clearly enough at any one place to name it. Naming a source we
+            cannot evidence would be a guess, so we are not making one.
           </p>
         ) : (
           <>
