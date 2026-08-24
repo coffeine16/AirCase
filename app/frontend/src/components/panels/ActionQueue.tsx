@@ -34,6 +34,25 @@ interface Props {
   onSelectCell: (cell: string) => void;
 }
 
+/**
+ * Does this zone sit outside the municipal boundary?
+ *
+ * The H3 fabric is built from a rectangular BBOX; a municipality is an
+ * irregular polygon inside it. So a real, correctly-detected source can land in
+ * the bbox but outside the city — 165 of 580 hotspot cells and 12 of 46 actions
+ * do, and for Pune it is the ENTIRE queue (2 of 2). `wards.py` already assigns
+ * those cells to an "Outside city limits" bucket; nothing downstream read it.
+ *
+ * We tag rather than drop, deliberately. A landfill 2 km beyond the PMC line
+ * still pollutes Pune, so deleting it loses a true finding. But dispatching a
+ * municipal inspector there sends them somewhere their authority does not
+ * reach. The honest action is to refer it to the state board — which is a
+ * routing decision, not a detection failure.
+ */
+function isOutsideJurisdiction(wardName: string): boolean {
+  return wardName.toLowerCase().includes("outside city limits");
+}
+
 // ── Derived zone type (grouped from hotspot cells) ─────────────────────────────
 
 interface Zone {
@@ -267,6 +286,19 @@ function ZoneCard({ zone, rank, isSelected, onSelect }: {
               {rank}
             </span>
             <span className={`badge badge-${zone.kind}`}>{PERSISTENCE_LABELS[zone.kind]}</span>
+            {isOutsideJurisdiction(zone.ward_name) && (
+              <span
+                className="badge"
+                title="This zone falls outside the municipal boundary. The detection stands — but a city inspector has no authority here, so it routes to the state pollution control board instead."
+                style={{
+                  ["--tint" as string]: "var(--text-tertiary)",
+                  ["--tint-soft" as string]: "color-mix(in srgb, var(--text-tertiary) 12%, transparent)",
+                  ["--tint-line" as string]: "color-mix(in srgb, var(--text-tertiary) 24%, transparent)",
+                }}
+              >
+                refer to state board
+              </span>
+            )}
           </div>
           {/* Zone + ward */}
           <div style={{ fontWeight: 600, fontSize: "0.9rem", color: "var(--text-primary)", marginBottom: 2 }} className="truncate">
