@@ -257,6 +257,16 @@ below, explain the most likely primary source of this PM2.5 hotspot. Do not
 invent facts not present in the evidence. The category scores were computed
 deterministically; your job is to explain, not to re-decide.
 
+NEVER cite so2_col or aai as supporting evidence, and never name them in your
+reason. Measured on real Sentinel-5P over Indian cities, both sit at or below
+their own noise floor (SNR 0.66-1.03; real SO2 is 49% NEGATIVE), which is why
+neither contributes to the category scores you are explaining. They remain in
+the evidence dict as context for the exposure layer, not as grounds for an
+accusation. Citing them makes the evidence chain indefensible the moment anyone
+checks the instrument — an enforcement notice must not rest on a channel we
+have documented as unusable. Cite no2_col, fire_activity, candidates,
+landuse_context, traffic_proxy and citizen_corroboration instead.
+
 EVIDENCE:
 {evidence}
 

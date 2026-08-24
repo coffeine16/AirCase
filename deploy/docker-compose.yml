@@ -24,6 +24,14 @@ services:
       # n8n volume — so a rebuilt box loses them silently, which is exactly how
       # the GCP instance took this workflow down with it.
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      # The Telegram intake's classifier node calls Gemini as
+      # $env.GEMINI_API_KEY. Without this line that expression resolves to an
+      # EMPTY STRING and the request 400s on every message — indistinguishable,
+      # from the outside, from the quota being exhausted, because both land in
+      # the same keyword fallback. The workflow keeps working either way, which
+      # is exactly why this was invisible: nothing breaks, the LLM half just
+      # never runs.
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
       # n8n blocks $env inside expressions unless this is set, so every var
       # above would otherwise resolve to empty at runtime WITH NO ERROR — the
       # Supabase insert would post to "/rest/v1/citizen_reports" against no

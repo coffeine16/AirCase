@@ -443,7 +443,15 @@ def run_agent(body: dict):
         env = {**os.environ, "AQ_CITY": city, "PYTHONPATH": str(ROOT)}
         proc = subprocess.run(
             [sys.executable, "-c", child, agent, str(out), json.dumps(dispatch_config)],
-            cwd=str(ROOT), env=env, capture_output=True, timeout=240)
+            # 240s was sized when attribution ran rule-based (~15s/city). With a
+            # live LLM key it makes ONE call per hotspot, so the chain scales
+            # with hotspot count, not city size: Ahmedabad's 27 attributions took
+            # 114s and Delhi's 53 took ~6.5 min. Chennai has 100 and would have
+            # blown the old cap — as a 500 mid-demo, on the one city with the
+            # most hotspots. The in-process path (the AQ_CITY the container was
+            # started for) has no timeout at all, so this only ever bound the
+            # OTHER cities, which is exactly the case nobody tests.
+            cwd=str(ROOT), env=env, capture_output=True, timeout=900)
         if not out.exists():
             tail = (proc.stderr or b"").decode(errors="replace")[-400:]
             raise HTTPException(500, f"agent run for {city} failed: {tail}")
