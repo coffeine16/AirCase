@@ -8,16 +8,24 @@
 # subdomain gets its OWN Let's Encrypt rate-limit bucket. sslip.io is one shared
 # domain that routinely exhausts LE limits and stalls issuance.
 {$N8N_DOMAIN} {
-    # The AirCase serving API shares this host under /api/*. One box, one cert,
-    # one DuckDNS record — a second subdomain would mean a second LE issuance
-    # and another thing to be wrong on stage.
+    # The AirCase serving API shares this host under /aircase/*. One box, one
+    # cert, one DuckDNS record — a second subdomain would mean a second LE
+    # issuance and another thing to be wrong on stage.
     #
-    # handle_path (not handle) STRIPS the /api prefix, so the frontend's
-    # NEXT_PUBLIC_API_URL=https://<host>/api reaches the app as /hotspots, and
-    # main.py's routes need no prefix awareness. Ordering matters: this block is
-    # matched before the catch-all below, so n8n keeps every other path —
-    # /webhook/* included, which is what the citizen intake and Telegram use.
-    handle_path /api/* {
+    # NOT /api/*. That was the first attempt and it silently broke n8n: n8n
+    # serves its OWN REST API at /api/v1/*, so the proxy swallowed every n8n API
+    # call and handed it to this container, which 404'd it. The n8n EDITOR kept
+    # working — it is served from / — so a smoke test of the root page passes
+    # while the API is dead underneath. Anything driving n8n over its API (the
+    # MCP integration, workflow import/export, activation) fails with a bare
+    # 404 and no clue why. Pick a prefix the upstream does not already own.
+    #
+    # handle_path (not handle) STRIPS the prefix, so the frontend's
+    # NEXT_PUBLIC_API_URL=https://<host>/aircase reaches the app as /hotspots,
+    # and main.py's routes need no prefix awareness. Ordering matters: this
+    # block is matched before the catch-all below, so n8n keeps every other
+    # path — /webhook/* and /api/v1/* included.
+    handle_path /aircase/* {
         reverse_proxy api:8080
     }
 

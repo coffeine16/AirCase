@@ -258,7 +258,7 @@ set it as `NEXT_PUBLIC_N8N_WEBHOOK_URL` in the frontend's Vercel env when deploy
 ## Step 6b — the serving API on the same box (Keshav, 15 min)
 
 The FastAPI serving layer runs beside n8n, behind the same Caddy and the same
-certificate, at `https://aq-intel.duckdns.org/api/*`. One box, one cert, one DNS
+certificate, at `https://aq-intel.duckdns.org/aircase/*`. One box, one cert, one DNS
 record — a second subdomain would mean a second Let's Encrypt issuance and one
 more thing to be wrong on stage.
 
@@ -284,15 +284,21 @@ ssh admin@<IP> "cd ~ && sudo docker compose build api && sudo docker compose up 
 ssh admin@<IP> "cd ~ && sudo docker compose exec -T caddy caddy reload --config /etc/caddy/Caddyfile"
 ```
 
-**Verify both routes still work** — the API must not have taken n8n's paths:
+**Verify both routes still work** — and verify the n8n *API*, not just its UI.
+`/` is the editor and keeps working even when the REST API underneath is being
+swallowed, so a smoke test of the root page passes while n8n is broken:
 ```bash
-curl -s https://aq-intel.duckdns.org/api/health      # {"ok":true,...8 cities}
+curl -s https://aq-intel.duckdns.org/aircase/health      # {"ok":true,...8 cities}
 curl -s -o /dev/null -w '%{http_code}
-' https://aq-intel.duckdns.org/   # 200 = n8n alive
+' https://aq-intel.duckdns.org/            # 200 = editor
+curl -s -o /dev/null -w '%{http_code}
+' https://aq-intel.duckdns.org/api/v1/workflows  # 401 = n8n API alive
+# 401 is CORRECT there: n8n is answering and asking for a key. A 404 means
+# something else has stolen /api/* — which is exactly what happened once.
 ```
 
-**Then point the frontend at it:** set `NEXT_PUBLIC_API_URL=https://aq-intel.duckdns.org/api`
-in Vercel and redeploy. Note the **`/api` suffix** — Caddy's `handle_path` strips
+**Then point the frontend at it:** set `NEXT_PUBLIC_API_URL=https://aq-intel.duckdns.org/aircase`
+in Vercel and redeploy. Note the **`/aircase` suffix** — Caddy's `handle_path` strips
 it, so the app sees `/hotspots`, not `/api/hotspots`.
 
 ### Two things that WILL bite you
@@ -322,7 +328,7 @@ nothing on that click. **Warm every city before demoing:**
 ```bash
 for c in delhi chennai bengaluru mumbai kolkata hyderabad pune ahmedabad; do
   for e in fusion stations satellite fires; do
-    curl -s -o /dev/null "https://aq-intel.duckdns.org/api/$e?city=$c"; done; done
+    curl -s -o /dev/null "https://aq-intel.duckdns.org/aircase/$e?city=$c"; done; done
 ```
 
 ---
