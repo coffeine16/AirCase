@@ -186,8 +186,10 @@ export default function WardComparison({
             fontSize: "0.68rem", color: "var(--text-tertiary)", marginTop: 5,
           }}
         >
-          <span>{lo} cleanest</span>
-          <span>{hi} worst</span>
+          {/* Word first. "36 cleanest" reads as "36th cleanest" — a rank —
+              when it is the cleanest ward's AQI. Same digits, opposite meaning. */}
+          <span>cleanest ward · {lo}</span>
+          <span>{hi} · worst</span>
         </div>
       </div>
 
