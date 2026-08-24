@@ -1,26 +1,29 @@
 [
   {
-    "memo_id": "AQ/KOL/20260822/Z07",
-    "action_id": "A04",
+    "memo_id": "AQ/KOL/20260824/Z07",
+    "action_id": "A03",
     "zone_id": "Z07",
     "ward_id": "W001",
     "ward_name": "Ward 93",
-    "issued_at": "2026-08-22T19:23:46.151351+00:00",
+    "issued_at": "2026-08-24T06:34:13.458021+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
       "confidence": 0.7,
-      "pm25": 75.1,
-      "aqi": 151,
-      "aqi_category": "Moderate",
+      "pm25": 133.8,
+      "aqi": 312,
+      "aqi_category": "Very Poor",
       "kind": "chronic",
       "zone_id": "Z07",
       "ward_id": "W001",
       "ward_name": "Ward 93",
       "n_cells": 7,
       "evidence_factors": [
-        "industrial_118521436 is 0.8 km away, wind alignment 0.78",
-        "shallow boundary layer (195 m) trapping emissions"
+        "High industrial category score",
+        "Nearby industrial facilities with strong wind alignment",
+        "Significant industrial landuse context",
+        "Pollutant signature (high NO2, SO2)",
+        "Trapped air conditions"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
@@ -29,6 +32,15 @@
     },
     "legal_basis": [
       {
+        "id": "AIR-1981-31A",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 31A",
+        "summary": "Power to issue directions, including closure, prohibition or regulation of any industry, operation or process, and stoppage of electricity or water supply.",
+        "authority": "State Pollution Control Board",
+        "action": "Issue direction under s.31A; consider stoppage of operations pending compliance.",
+        "penalty": "Non-compliance attracts prosecution under s.37."
+      },
+      {
         "id": "EPA-1986-5",
         "statute": "Environment (Protection) Act, 1986",
         "provision": "Section 5",
@@ -36,21 +48,33 @@
         "authority": "State Pollution Control Board / CPCB",
         "action": "Inspect consent conditions and stack emission compliance; issue show-cause under s.5.",
         "penalty": "Contravention punishable under s.15."
+      },
+      {
+        "id": "GRAP-STAGE",
+        "statute": "Graded Response Action Plan (CAQM)",
+        "provision": "Stage escalation by AQI band",
+        "summary": "Graded restrictions on construction, DG sets and dust-generating activity, escalating with the AQI band.",
+        "authority": "Commission for Air Quality Management",
+        "action": "Apply the GRAP stage corresponding to the prevailing AQI band in this ward.",
+        "penalty": "As notified per stage."
       }
     ],
     "subject": "Air pollution source detected — industrial — Ward 93 (zone Z07)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 7 cell(s) in Ward 93. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 75.1 ug/m3, corresponding to an AQI of 151 (Moderate).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.70. Supporting evidence: industrial_118521436 is 0.8 km away, wind alignment 0.78; shallow boundary layer (195 m) trapping emissions. The evidence is consistent and independently corroborated.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 7 cell(s) in Ward 93. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 133.8 ug/m3, corresponding to an AQI of 312 (Very Poor).",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.70. Supporting evidence: High industrial category score; Nearby industrial facilities with strong wind alignment; Significant industrial landuse context. The evidence is consistent and independently corroborated.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 31A; Environment (Protection) Act, 1986, Section 5; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
     "evidence_chain": [
-      "industrial_118521436 is 0.8 km away, wind alignment 0.78",
-      "shallow boundary layer (195 m) trapping emissions"
+      "High industrial category score",
+      "Nearby industrial facilities with strong wind alignment",
+      "Significant industrial landuse context",
+      "Pollutant signature (high NO2, SO2)",
+      "Trapped air conditions"
     ],
     "evidence_full": {
       "cell": "883cf2c733fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W001",
-      "pm25_estimate": 58.7,
+      "pm25_estimate": 107.6,
       "candidates": [
         {
           "name": "industrial_118521436",
@@ -104,15 +128,15 @@
       "pollutant_signature": {
         "no2_col": {
           "value": 94.4,
-          "city_percentile": 84
+          "city_percentile": 85
         },
         "so2_col": {
           "value": 90.2,
-          "city_percentile": 53
+          "city_percentile": 52
         },
         "aai": {
           "value": -0.0,
-          "city_percentile": 69
+          "city_percentile": 75
         }
       },
       "fire_activity": {
@@ -146,19 +170,19 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/KOL/20260822/Z05",
-    "action_id": "A05",
+    "memo_id": "AQ/KOL/20260824/Z05",
+    "action_id": "A04",
     "zone_id": "Z05",
     "ward_id": "W003",
     "ward_name": "Ward 86",
-    "issued_at": "2026-08-22T19:23:47.496242+00:00",
+    "issued_at": "2026-08-24T06:34:13.458119+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
       "confidence": 0.69,
-      "pm25": 72.9,
-      "aqi": 144,
-      "aqi_category": "Moderate",
+      "pm25": 134.2,
+      "aqi": 312,
+      "aqi_category": "Very Poor",
       "kind": "chronic",
       "zone_id": "Z05",
       "ward_id": "W003",
@@ -175,6 +199,15 @@
     },
     "legal_basis": [
       {
+        "id": "AIR-1981-31A",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 31A",
+        "summary": "Power to issue directions, including closure, prohibition or regulation of any industry, operation or process, and stoppage of electricity or water supply.",
+        "authority": "State Pollution Control Board",
+        "action": "Issue direction under s.31A; consider stoppage of operations pending compliance.",
+        "penalty": "Non-compliance attracts prosecution under s.37."
+      },
+      {
         "id": "EPA-1986-5",
         "statute": "Environment (Protection) Act, 1986",
         "provision": "Section 5",
@@ -182,12 +215,21 @@
         "authority": "State Pollution Control Board / CPCB",
         "action": "Inspect consent conditions and stack emission compliance; issue show-cause under s.5.",
         "penalty": "Contravention punishable under s.15."
+      },
+      {
+        "id": "GRAP-STAGE",
+        "statute": "Graded Response Action Plan (CAQM)",
+        "provision": "Stage escalation by AQI band",
+        "summary": "Graded restrictions on construction, DG sets and dust-generating activity, escalating with the AQI band.",
+        "authority": "Commission for Air Quality Management",
+        "action": "Apply the GRAP stage corresponding to the prevailing AQI band in this ward.",
+        "penalty": "As notified per stage."
       }
     ],
     "subject": "Air pollution source detected — industrial — Ward 86 (zone Z05)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 6 cell(s) in Ward 86. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 72.9 ug/m3, corresponding to an AQI of 144 (Moderate).",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 6 cell(s) in Ward 86. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 134.2 ug/m3, corresponding to an AQI of 312 (Very Poor).",
     "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.69. Supporting evidence: industrial_121904566 is 0.42 km away, wind alignment 0.59; shallow boundary layer (208 m) trapping emissions. The evidence is consistent and independently corroborated.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 31A; Environment (Protection) Act, 1986, Section 5; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
     "evidence_chain": [
       "industrial_121904566 is 0.42 km away, wind alignment 0.59",
       "shallow boundary layer (208 m) trapping emissions"
@@ -196,7 +238,7 @@
       "cell": "883cf2c711fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 59.2,
+      "pm25_estimate": 98.9,
       "candidates": [
         {
           "name": "industrial_121904566",
@@ -250,15 +292,15 @@
       "pollutant_signature": {
         "no2_col": {
           "value": 94.4,
-          "city_percentile": 84
+          "city_percentile": 85
         },
         "so2_col": {
           "value": 83.7,
-          "city_percentile": 52
+          "city_percentile": 51
         },
         "aai": {
           "value": -0.0,
-          "city_percentile": 68
+          "city_percentile": 74
         }
       },
       "fire_activity": {
@@ -292,29 +334,28 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/KOL/20260822/Z08",
+    "memo_id": "AQ/KOL/20260824/Z08",
     "action_id": "A02",
     "zone_id": "Z08",
-    "ward_id": "W067",
-    "ward_name": "Ward 46",
-    "issued_at": "2026-08-22T19:23:47.496392+00:00",
+    "ward_id": "W044",
+    "ward_name": "Ward 69",
+    "issued_at": "2026-08-24T06:34:13.458167+00:00",
     "status": "draft",
     "situation": {
-      "source": "industrial",
-      "confidence": 0.47,
-      "pm25": 98.0,
-      "aqi": 227,
-      "aqi_category": "Poor",
+      "source": "traffic",
+      "confidence": 0.65,
+      "pm25": 134.6,
+      "aqi": 312,
+      "aqi_category": "Very Poor",
       "kind": "chronic",
       "zone_id": "Z08",
-      "ward_id": "W067",
-      "ward_name": "Ward 46",
+      "ward_id": "W044",
+      "ward_name": "Ward 69",
       "n_cells": 6,
       "evidence_factors": [
-        "Highest deterministic category score (0.752) for industrial",
-        "Presence of 7 industrial land-use features and multiple upwind industrial candidates with wind alignment up to 0.78",
-        "High NO2 column density at the 83rd city percentile",
-        "Stagnant dispersion conditions with trapped air and low boundary layer height of 195 m"
+        "Acharya Jagadish Chandra Bose Flyover Ramp is 0.37 km away, wind alignment 0.69",
+        "NO2 column at p85 citywide",
+        "shallow boundary layer (195 m) trapping emissions"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
@@ -323,13 +364,13 @@
     },
     "legal_basis": [
       {
-        "id": "EPA-1986-5",
-        "statute": "Environment (Protection) Act, 1986",
-        "provision": "Section 5",
-        "summary": "Power to give directions in writing to any person, officer or authority, who shall be bound to comply.",
-        "authority": "State Pollution Control Board / CPCB",
-        "action": "Inspect consent conditions and stack emission compliance; issue show-cause under s.5.",
-        "penalty": "Contravention punishable under s.15."
+        "id": "AIR-1981-20",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 20",
+        "summary": "Power to give instructions to the authority in charge of registration of motor vehicles to ensure compliance with emission standards.",
+        "authority": "State Government / Transport Department, on SPCB advice",
+        "action": "Direct PUC enforcement drives and lane/corridor checks on this stretch; verify PUC compliance of commercial fleets using it.",
+        "penalty": "Driving in contravention of emission standards is punishable under s.190(2) of the Motor Vehicles Act, 1988."
       },
       {
         "id": "GRAP-STAGE",
@@ -341,83 +382,82 @@
         "penalty": "As notified per stage."
       }
     ],
-    "subject": "Air pollution source detected — industrial — Ward 46 (zone Z08)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 6 cell(s) in Ward 46. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 98.0 ug/m3, corresponding to an AQI of 227 (Poor).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.47. Supporting evidence: Highest deterministic category score (0.752) for industrial; Presence of 7 industrial land-use features and multiple upwind industrial candidates with wind alignment up to 0.78; High NO2 column density at the 83rd city percentile. This finding is INDICATIVE and requires verification on site.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
+    "subject": "Air pollution source detected — traffic — Ward 69 (zone Z08)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 6 cell(s) in Ward 69. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 134.6 ug/m3, corresponding to an AQI of 312 (Very Poor).",
+    "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.65. Supporting evidence: Acharya Jagadish Chandra Bose Flyover Ramp is 0.37 km away, wind alignment 0.69; NO2 column at p85 citywide; shallow boundary layer (195 m) trapping emissions. The evidence is consistent and independently corroborated.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
     "evidence_chain": [
-      "Highest deterministic category score (0.752) for industrial",
-      "Presence of 7 industrial land-use features and multiple upwind industrial candidates with wind alignment up to 0.78",
-      "High NO2 column density at the 83rd city percentile",
-      "Stagnant dispersion conditions with trapped air and low boundary layer height of 195 m"
+      "Acharya Jagadish Chandra Bose Flyover Ramp is 0.37 km away, wind alignment 0.69",
+      "NO2 column at p85 citywide",
+      "shallow boundary layer (195 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "883cf2c661fffff",
+      "cell": "883cf2c625fffff",
       "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W067",
-      "pm25_estimate": 67.4,
+      "ward_id": "W044",
+      "pm25_estimate": 87.0,
       "candidates": [
         {
-          "name": "construction_828171881",
-          "type": "construction",
-          "distance_km": 1.26,
-          "wind_alignment": 0.76
+          "name": "Acharya Jagadish Chandra Bose Flyover Ramp",
+          "type": "traffic",
+          "distance_km": 0.37,
+          "wind_alignment": 0.69
         },
         {
-          "name": "industrial_101757267",
-          "type": "industrial",
-          "distance_km": 1.9,
-          "wind_alignment": 0.78
+          "name": "Acharya Jagadish Chandra Bose Flyover",
+          "type": "traffic",
+          "distance_km": 0.57,
+          "wind_alignment": 0.66
         },
         {
-          "name": "industrial_101757335",
-          "type": "industrial",
-          "distance_km": 2.44,
-          "wind_alignment": 0.77
+          "name": "Acharya Jagadish Chandra Bose Flyover Ramp",
+          "type": "traffic",
+          "distance_km": 0.51,
+          "wind_alignment": 0.55
         },
         {
-          "name": "industrial_101750901",
-          "type": "industrial",
-          "distance_km": 2.85,
-          "wind_alignment": 0.75
+          "name": "Maa Flyover",
+          "type": "traffic",
+          "distance_km": 0.66,
+          "wind_alignment": 0.56
         },
         {
-          "name": "Mayo Hospital",
-          "type": "construction",
-          "distance_km": 3.28,
-          "wind_alignment": 0.74
-        },
-        {
-          "name": "industrial_101750926",
-          "type": "industrial",
-          "distance_km": 3.33,
-          "wind_alignment": 0.74
-        },
-        {
-          "name": "industrial_101765730",
-          "type": "industrial",
-          "distance_km": 3.64,
-          "wind_alignment": 0.73
-        },
-        {
-          "name": "industrial_102036207",
-          "type": "industrial",
-          "distance_km": 2.27,
+          "name": "Maa Flyover",
+          "type": "traffic",
+          "distance_km": 0.65,
           "wind_alignment": 0.51
+        },
+        {
+          "name": "Acharya Jagadish Chandra Bose Flyover",
+          "type": "traffic",
+          "distance_km": 1.05,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Maa Flyover",
+          "type": "traffic",
+          "distance_km": 0.64,
+          "wind_alignment": 0.48
+        },
+        {
+          "name": "Maa Flyover",
+          "type": "traffic",
+          "distance_km": 0.64,
+          "wind_alignment": 0.46
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 92.6,
-          "city_percentile": 83
+          "city_percentile": 85
         },
         "so2_col": {
           "value": 83.7,
-          "city_percentile": 52
+          "city_percentile": 51
         },
         "aai": {
           "value": 0.0,
-          "city_percentile": 69
+          "city_percentile": 75
         }
       },
       "fire_activity": {
@@ -451,26 +491,26 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/KOL/20260822/Z04",
-    "action_id": "A01",
+    "memo_id": "AQ/KOL/20260824/Z04",
+    "action_id": "A05",
     "zone_id": "Z04",
-    "ward_id": "W060",
-    "ward_name": "Ward 53",
-    "issued_at": "2026-08-22T19:23:47.496452+00:00",
+    "ward_id": "W083",
+    "ward_name": "Ward 66",
+    "issued_at": "2026-08-24T06:34:13.458206+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
-      "confidence": 0.43,
-      "pm25": 98.0,
-      "aqi": 227,
-      "aqi_category": "Poor",
+      "confidence": 0.5,
+      "pm25": 135.5,
+      "aqi": 313,
+      "aqi_category": "Very Poor",
       "kind": "chronic",
       "zone_id": "Z04",
-      "ward_id": "W060",
-      "ward_name": "Ward 53",
+      "ward_id": "W083",
+      "ward_name": "Ward 66",
       "n_cells": 6,
       "evidence_factors": [
-        "industrial_101757267 is 2.32 km away, wind alignment 0.76",
+        "industrial_331478234 is 0.33 km away, wind alignment 0.77",
         "shallow boundary layer (200 m) trapping emissions"
       ],
       "fire_hours": 0,
@@ -479,6 +519,15 @@
       "nearest_candidate_km": null
     },
     "legal_basis": [
+      {
+        "id": "AIR-1981-31A",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 31A",
+        "summary": "Power to issue directions, including closure, prohibition or regulation of any industry, operation or process, and stoppage of electricity or water supply.",
+        "authority": "State Pollution Control Board",
+        "action": "Issue direction under s.31A; consider stoppage of operations pending compliance.",
+        "penalty": "Non-compliance attracts prosecution under s.37."
+      },
       {
         "id": "EPA-1986-5",
         "statute": "Environment (Protection) Act, 1986",
@@ -498,81 +547,81 @@
         "penalty": "As notified per stage."
       }
     ],
-    "subject": "Air pollution source detected — industrial — Ward 53 (zone Z04)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 6 cell(s) in Ward 53. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 98.0 ug/m3, corresponding to an AQI of 227 (Poor).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.43. Supporting evidence: industrial_101757267 is 2.32 km away, wind alignment 0.76; shallow boundary layer (200 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
+    "subject": "Air pollution source detected — industrial — Ward 66 (zone Z04)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 6 cell(s) in Ward 66. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 135.5 ug/m3, corresponding to an AQI of 313 (Very Poor).",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.50. Supporting evidence: industrial_331478234 is 0.33 km away, wind alignment 0.77; shallow boundary layer (200 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 31A; Environment (Protection) Act, 1986, Section 5; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
     "evidence_chain": [
-      "industrial_101757267 is 2.32 km away, wind alignment 0.76",
+      "industrial_331478234 is 0.33 km away, wind alignment 0.77",
       "shallow boundary layer (200 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "883cf2c663fffff",
+      "cell": "883cf2c44dfffff",
       "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W060",
-      "pm25_estimate": 67.7,
+      "ward_id": "W083",
+      "pm25_estimate": 78.2,
       "candidates": [
         {
-          "name": "Bowbazar Shaft",
-          "type": "construction",
-          "distance_km": 0.94,
-          "wind_alignment": 0.69
-        },
-        {
-          "name": "construction_828171881",
-          "type": "construction",
-          "distance_km": 1.64,
-          "wind_alignment": 0.74
-        },
-        {
-          "name": "industrial_101757267",
+          "name": "industrial_331478234",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.76
+          "distance_km": 0.33,
+          "wind_alignment": 0.77
         },
         {
-          "name": "Shree Mani Haat",
-          "type": "construction",
-          "distance_km": 1.53,
-          "wind_alignment": 0.55
-        },
-        {
-          "name": "industrial_101757335",
+          "name": "Ballygunge Pumping Station",
           "type": "industrial",
-          "distance_km": 2.72,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "industrial_101750901",
-          "type": "industrial",
-          "distance_km": 3.05,
+          "distance_km": 0.68,
           "wind_alignment": 0.79
         },
         {
-          "name": "Mayo Hospital",
-          "type": "construction",
-          "distance_km": 3.41,
+          "name": "Hindustan Engineering & Industries Limited (HEIL)",
+          "type": "industrial",
+          "distance_km": 0.41,
+          "wind_alignment": 0.64
+        },
+        {
+          "name": "industrial_113279111",
+          "type": "industrial",
+          "distance_km": 1.55,
           "wind_alignment": 0.79
         },
         {
-          "name": "industrial_101750926",
-          "type": "industrial",
-          "distance_km": 3.48,
-          "wind_alignment": 0.79
+          "name": "waste_burning_331408111",
+          "type": "waste_burning",
+          "distance_km": 1.07,
+          "wind_alignment": 0.64
+        },
+        {
+          "name": "Maa Flyover",
+          "type": "traffic",
+          "distance_km": 1.55,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "Maa Flyover",
+          "type": "traffic",
+          "distance_km": 1.57,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "Maa Flyover",
+          "type": "traffic",
+          "distance_km": 1.71,
+          "wind_alignment": 0.75
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 91.4,
-          "city_percentile": 82
+          "city_percentile": 84
         },
         "so2_col": {
           "value": 81.3,
-          "city_percentile": 51
+          "city_percentile": 50
         },
         "aai": {
           "value": 0.0,
-          "city_percentile": 71
+          "city_percentile": 77
         }
       },
       "fire_activity": {
@@ -606,173 +655,30 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/KOL/20260822/Z00",
-    "action_id": "A07",
-    "zone_id": "Z00",
-    "ward_id": "W054",
-    "ward_name": "Ward 106",
-    "issued_at": "2026-08-22T19:23:47.496507+00:00",
-    "status": "draft",
-    "situation": {
-      "source": "industrial",
-      "confidence": 0.64,
-      "pm25": 81.6,
-      "aqi": 172,
-      "aqi_category": "Moderate",
-      "kind": "acute",
-      "zone_id": "Z00",
-      "ward_id": "W054",
-      "ward_name": "Ward 106",
-      "n_cells": 11,
-      "evidence_factors": [
-        "industrial_117961786 is 1.2 km away, wind alignment 0.55",
-        "shallow boundary layer (122 m) trapping emissions"
-      ],
-      "fire_hours": 0,
-      "fire_fraction": 0.0,
-      "blh_m": 122,
-      "nearest_candidate_km": null
-    },
-    "legal_basis": [
-      {
-        "id": "EPA-1986-5",
-        "statute": "Environment (Protection) Act, 1986",
-        "provision": "Section 5",
-        "summary": "Power to give directions in writing to any person, officer or authority, who shall be bound to comply.",
-        "authority": "State Pollution Control Board / CPCB",
-        "action": "Inspect consent conditions and stack emission compliance; issue show-cause under s.5.",
-        "penalty": "Contravention punishable under s.15."
-      }
-    ],
-    "subject": "Air pollution source detected — industrial — Ward 106 (zone Z00)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 11 cell(s) in Ward 106. The zone is classified 'acute'. Estimated PM2.5 in the zone is 81.6 ug/m3, corresponding to an AQI of 172 (Moderate).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.64. Supporting evidence: industrial_117961786 is 1.2 km away, wind alignment 0.55; shallow boundary layer (122 m) trapping emissions. The evidence is consistent and independently corroborated.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
-    "evidence_chain": [
-      "industrial_117961786 is 1.2 km away, wind alignment 0.55",
-      "shallow boundary layer (122 m) trapping emissions"
-    ],
-    "evidence_full": {
-      "cell": "883cf2c405fffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W054",
-      "pm25_estimate": 73.5,
-      "candidates": [
-        {
-          "name": "industrial_117961786",
-          "type": "industrial",
-          "distance_km": 1.2,
-          "wind_alignment": 0.55
-        },
-        {
-          "name": "industrial_117856402",
-          "type": "industrial",
-          "distance_km": 1.81,
-          "wind_alignment": 0.61
-        },
-        {
-          "name": "industrial_117856399",
-          "type": "industrial",
-          "distance_km": 1.89,
-          "wind_alignment": 0.61
-        },
-        {
-          "name": "Kasba Industrial Estate",
-          "type": "industrial",
-          "distance_km": 1.04,
-          "wind_alignment": 0.43
-        },
-        {
-          "name": "industrial_117856409",
-          "type": "industrial",
-          "distance_km": 2.05,
-          "wind_alignment": 0.6
-        },
-        {
-          "name": "industrial_117856411",
-          "type": "industrial",
-          "distance_km": 2.03,
-          "wind_alignment": 0.59
-        },
-        {
-          "name": "industrial_117975077",
-          "type": "industrial",
-          "distance_km": 2.02,
-          "wind_alignment": 0.53
-        },
-        {
-          "name": "industrial_117975070",
-          "type": "industrial",
-          "distance_km": 2.09,
-          "wind_alignment": 0.48
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 149.6,
-          "city_percentile": 99
-        },
-        "so2_col": {
-          "value": 72.2,
-          "city_percentile": 49
-        },
-        "aai": {
-          "value": -0.3,
-          "city_percentile": 41
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 0,
-        "fire_hour_fraction": 0.0,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 24
-      },
-      "landuse_context": {
-        "industrial": 2,
-        "construction": 0,
-        "waste_burning": 0,
-        "traffic": 0
-      },
-      "meteorology": {
-        "wind_from_deg": 341,
-        "wind_ms": 0.9,
-        "blh_m": 122,
-        "hour_local": 23,
-        "air_trapped": true
-      },
-      "hotspot_kind": "acute",
-      "evidence_window_hours": 24,
-      "zone_cells": 11
-    },
-    "drafted_by": "rules",
-    "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
-  },
-  {
-    "memo_id": "AQ/KOL/20260822/Z02",
-    "action_id": "A03",
+    "memo_id": "AQ/KOL/20260824/Z02",
+    "action_id": "A01",
     "zone_id": "Z02",
-    "ward_id": "W128",
-    "ward_name": "Ward 50",
-    "issued_at": "2026-08-22T19:23:47.496554+00:00",
+    "ward_id": "W083",
+    "ward_name": "Ward 66",
+    "issued_at": "2026-08-24T06:34:13.458245+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
-      "confidence": 0.41,
-      "pm25": 95.6,
-      "aqi": 219,
-      "aqi_category": "Poor",
+      "confidence": 0.44,
+      "pm25": 132.6,
+      "aqi": 311,
+      "aqi_category": "Very Poor",
       "kind": "chronic",
       "zone_id": "Z02",
-      "ward_id": "W128",
-      "ward_name": "Ward 50",
+      "ward_id": "W083",
+      "ward_name": "Ward 66",
       "n_cells": 10,
       "evidence_factors": [
-        "industrial_101750901 is 2.57 km away, wind alignment 0.75",
-        "shallow boundary layer (200 m) trapping emissions"
+        "Highest category score of 0.754 for industrial",
+        "Landuse context dominated by 12 industrial sites",
+        "High NO2 column value of 88.8 (83rd percentile)",
+        "Trapped air meteorological condition with 200m boundary layer height",
+        "Presence of multiple nearby industrial candidate sources"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
@@ -780,6 +686,15 @@
       "nearest_candidate_km": null
     },
     "legal_basis": [
+      {
+        "id": "AIR-1981-31A",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 31A",
+        "summary": "Power to issue directions, including closure, prohibition or regulation of any industry, operation or process, and stoppage of electricity or water supply.",
+        "authority": "State Pollution Control Board",
+        "action": "Issue direction under s.31A; consider stoppage of operations pending compliance.",
+        "penalty": "Non-compliance attracts prosecution under s.37."
+      },
       {
         "id": "EPA-1986-5",
         "statute": "Environment (Protection) Act, 1986",
@@ -799,81 +714,84 @@
         "penalty": "As notified per stage."
       }
     ],
-    "subject": "Air pollution source detected — industrial — Ward 50 (zone Z02)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 10 cell(s) in Ward 50. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 95.6 ug/m3, corresponding to an AQI of 219 (Poor).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.41. Supporting evidence: industrial_101750901 is 2.57 km away, wind alignment 0.75; shallow boundary layer (200 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
+    "subject": "Air pollution source detected — industrial — Ward 66 (zone Z02)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 10 cell(s) in Ward 66. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 132.6 ug/m3, corresponding to an AQI of 311 (Very Poor).",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.44. Supporting evidence: Highest category score of 0.754 for industrial; Landuse context dominated by 12 industrial sites; High NO2 column value of 88.8 (83rd percentile). This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 31A; Environment (Protection) Act, 1986, Section 5; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
     "evidence_chain": [
-      "industrial_101750901 is 2.57 km away, wind alignment 0.75",
-      "shallow boundary layer (200 m) trapping emissions"
+      "Highest category score of 0.754 for industrial",
+      "Landuse context dominated by 12 industrial sites",
+      "High NO2 column value of 88.8 (83rd percentile)",
+      "Trapped air meteorological condition with 200m boundary layer height",
+      "Presence of multiple nearby industrial candidate sources"
     ],
     "evidence_full": {
-      "cell": "883cf2c60dfffff",
+      "cell": "883cf2c441fffff",
       "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W128",
-      "pm25_estimate": 61.2,
+      "ward_id": "W083",
+      "pm25_estimate": 100.4,
       "candidates": [
         {
-          "name": "Shree Mani Haat",
-          "type": "construction",
-          "distance_km": 0.56,
-          "wind_alignment": 0.59
-        },
-        {
-          "name": "Bowbazar Shaft",
-          "type": "construction",
-          "distance_km": 0.34,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "industrial_101750901",
-          "type": "industrial",
-          "distance_km": 2.57,
-          "wind_alignment": 0.75
-        },
-        {
-          "name": "industrial_101757335",
-          "type": "industrial",
-          "distance_km": 2.37,
-          "wind_alignment": 0.7
-        },
-        {
-          "name": "Mayo Hospital",
-          "type": "construction",
-          "distance_km": 2.84,
-          "wind_alignment": 0.78
-        },
-        {
-          "name": "industrial_101750926",
-          "type": "industrial",
-          "distance_km": 2.93,
+          "name": "waste_burning_331408111",
+          "type": "waste_burning",
+          "distance_km": 1.2,
           "wind_alignment": 0.77
         },
         {
-          "name": "industrial_101765730",
-          "type": "industrial",
-          "distance_km": 3.1,
+          "name": "Maa Flyover",
+          "type": "traffic",
+          "distance_km": 1.33,
           "wind_alignment": 0.79
         },
         {
-          "name": "industrial_101757267",
+          "name": "Maa Flyover",
+          "type": "traffic",
+          "distance_km": 1.33,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Ballygunge Pumping Station",
           "type": "industrial",
-          "distance_km": 2.15,
+          "distance_km": 1.36,
           "wind_alignment": 0.6
+        },
+        {
+          "name": "industrial_113279111",
+          "type": "industrial",
+          "distance_km": 2.05,
+          "wind_alignment": 0.73
+        },
+        {
+          "name": "industrial_331478234",
+          "type": "industrial",
+          "distance_km": 1.19,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "industrial_113282886",
+          "type": "industrial",
+          "distance_km": 2.78,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "industrial_112937876",
+          "type": "industrial",
+          "distance_km": 2.92,
+          "wind_alignment": 0.79
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 88.8,
-          "city_percentile": 81
+          "city_percentile": 83
         },
         "so2_col": {
           "value": 73.1,
-          "city_percentile": 49
+          "city_percentile": 48
         },
         "aai": {
           "value": 0.0,
-          "city_percentile": 71
+          "city_percentile": 77
         }
       },
       "fire_activity": {
@@ -907,34 +825,43 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/KOL/20260822/Z01",
+    "memo_id": "AQ/KOL/20260824/Z00",
     "action_id": "A06",
-    "zone_id": "Z01",
-    "ward_id": "W094",
-    "ward_name": "Ward 101",
-    "issued_at": "2026-08-22T19:23:47.496590+00:00",
+    "zone_id": "Z00",
+    "ward_id": "W120",
+    "ward_name": "Ward 107",
+    "issued_at": "2026-08-24T06:34:13.458279+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
-      "confidence": 0.16,
-      "pm25": 82.8,
-      "aqi": 176,
-      "aqi_category": "Moderate",
+      "confidence": 0.65,
+      "pm25": 132.7,
+      "aqi": 311,
+      "aqi_category": "Very Poor",
       "kind": "acute",
-      "zone_id": "Z01",
-      "ward_id": "W094",
-      "ward_name": "Ward 101",
-      "n_cells": 9,
+      "zone_id": "Z00",
+      "ward_id": "W120",
+      "ward_name": "Ward 107",
+      "n_cells": 11,
       "evidence_factors": [
-        "industrial_118840253 is 2.69 km away, wind alignment 0.61",
-        "shallow boundary layer (95 m) trapping emissions"
+        "industrial_117856402 is 0.89 km away, wind alignment 0.57",
+        "shallow boundary layer (122 m) trapping emissions"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
-      "blh_m": 95,
+      "blh_m": 122,
       "nearest_candidate_km": null
     },
     "legal_basis": [
+      {
+        "id": "AIR-1981-31A",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 31A",
+        "summary": "Power to issue directions, including closure, prohibition or regulation of any industry, operation or process, and stoppage of electricity or water supply.",
+        "authority": "State Pollution Control Board",
+        "action": "Issue direction under s.31A; consider stoppage of operations pending compliance.",
+        "penalty": "Non-compliance attracts prosecution under s.37."
+      },
       {
         "id": "EPA-1986-5",
         "statute": "Environment (Protection) Act, 1986",
@@ -943,69 +870,78 @@
         "authority": "State Pollution Control Board / CPCB",
         "action": "Inspect consent conditions and stack emission compliance; issue show-cause under s.5.",
         "penalty": "Contravention punishable under s.15."
+      },
+      {
+        "id": "GRAP-STAGE",
+        "statute": "Graded Response Action Plan (CAQM)",
+        "provision": "Stage escalation by AQI band",
+        "summary": "Graded restrictions on construction, DG sets and dust-generating activity, escalating with the AQI band.",
+        "authority": "Commission for Air Quality Management",
+        "action": "Apply the GRAP stage corresponding to the prevailing AQI band in this ward.",
+        "penalty": "As notified per stage."
       }
     ],
-    "subject": "Air pollution source detected — industrial — Ward 101 (zone Z01)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 9 cell(s) in Ward 101. The zone is classified 'acute'. Estimated PM2.5 in the zone is 82.8 ug/m3, corresponding to an AQI of 176 (Moderate).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.16. Supporting evidence: industrial_118840253 is 2.69 km away, wind alignment 0.61; shallow boundary layer (95 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
+    "subject": "Air pollution source detected — industrial — Ward 107 (zone Z00)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 11 cell(s) in Ward 107. The zone is classified 'acute'. Estimated PM2.5 in the zone is 132.7 ug/m3, corresponding to an AQI of 311 (Very Poor).",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.65. Supporting evidence: industrial_117856402 is 0.89 km away, wind alignment 0.57; shallow boundary layer (122 m) trapping emissions. The evidence is consistent and independently corroborated.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 31A; Environment (Protection) Act, 1986, Section 5; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
     "evidence_chain": [
-      "industrial_118840253 is 2.69 km away, wind alignment 0.61",
-      "shallow boundary layer (95 m) trapping emissions"
+      "industrial_117856402 is 0.89 km away, wind alignment 0.57",
+      "shallow boundary layer (122 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "883cf2c519fffff",
+      "cell": "883cf2c40dfffff",
       "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W094",
-      "pm25_estimate": 72.1,
+      "ward_id": "W120",
+      "pm25_estimate": 102.9,
       "candidates": [
         {
-          "name": "industrial_118840253",
+          "name": "industrial_117856402",
           "type": "industrial",
-          "distance_km": 2.69,
-          "wind_alignment": 0.61
+          "distance_km": 0.89,
+          "wind_alignment": 0.57
         },
         {
-          "name": "industrial_120564610",
+          "name": "industrial_117856399",
           "type": "industrial",
-          "distance_km": 2.71,
+          "distance_km": 0.97,
           "wind_alignment": 0.58
         },
         {
-          "name": "industrial_120008363",
+          "name": "industrial_117856409",
           "type": "industrial",
-          "distance_km": 3.1,
-          "wind_alignment": 0.62
+          "distance_km": 1.15,
+          "wind_alignment": 0.55
         },
         {
-          "name": "industrial_120230900",
+          "name": "industrial_117856411",
           "type": "industrial",
-          "distance_km": 3.22,
-          "wind_alignment": 0.59
+          "distance_km": 1.16,
+          "wind_alignment": 0.51
         },
         {
-          "name": "industrial_120230913",
+          "name": "industrial_117975077",
           "type": "industrial",
-          "distance_km": 3.29,
-          "wind_alignment": 0.59
+          "distance_km": 1.27,
+          "wind_alignment": 0.38
         },
         {
-          "name": "industrial_120327177",
+          "name": "industrial_117604825",
           "type": "industrial",
-          "distance_km": 2.93,
-          "wind_alignment": 0.54
+          "distance_km": 2.27,
+          "wind_alignment": 0.53
         },
         {
-          "name": "industrial_120230423",
+          "name": "industrial_117604835",
           "type": "industrial",
-          "distance_km": 3.25,
-          "wind_alignment": 0.58
+          "distance_km": 2.29,
+          "wind_alignment": 0.51
         },
         {
-          "name": "industrial_120229556",
+          "name": "industrial_117566181",
           "type": "industrial",
-          "distance_km": 3.41,
-          "wind_alignment": 0.58
+          "distance_km": 2.38,
+          "wind_alignment": 0.52
         }
       ],
       "pollutant_signature": {
@@ -1015,11 +951,175 @@
         },
         "so2_col": {
           "value": 72.2,
-          "city_percentile": 49
+          "city_percentile": 48
         },
         "aai": {
           "value": -0.3,
-          "city_percentile": 41
+          "city_percentile": 50
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 341,
+        "wind_ms": 0.9,
+        "blh_m": 122,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 11
+    },
+    "drafted_by": "rules",
+    "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
+  },
+  {
+    "memo_id": "AQ/KOL/20260824/Z01",
+    "action_id": "A07",
+    "zone_id": "Z01",
+    "ward_id": "W032",
+    "ward_name": "Ward 91",
+    "issued_at": "2026-08-24T06:34:13.458315+00:00",
+    "status": "draft",
+    "situation": {
+      "source": "industrial",
+      "confidence": 0.51,
+      "pm25": 134.9,
+      "aqi": 312,
+      "aqi_category": "Very Poor",
+      "kind": "acute",
+      "zone_id": "Z01",
+      "ward_id": "W032",
+      "ward_name": "Ward 91",
+      "n_cells": 9,
+      "evidence_factors": [
+        "industrial_117853451 is 0.54 km away, wind alignment 0.61",
+        "shallow boundary layer (95 m) trapping emissions"
+      ],
+      "fire_hours": 0,
+      "fire_fraction": 0.0,
+      "blh_m": 95,
+      "nearest_candidate_km": null
+    },
+    "legal_basis": [
+      {
+        "id": "AIR-1981-31A",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 31A",
+        "summary": "Power to issue directions, including closure, prohibition or regulation of any industry, operation or process, and stoppage of electricity or water supply.",
+        "authority": "State Pollution Control Board",
+        "action": "Issue direction under s.31A; consider stoppage of operations pending compliance.",
+        "penalty": "Non-compliance attracts prosecution under s.37."
+      },
+      {
+        "id": "EPA-1986-5",
+        "statute": "Environment (Protection) Act, 1986",
+        "provision": "Section 5",
+        "summary": "Power to give directions in writing to any person, officer or authority, who shall be bound to comply.",
+        "authority": "State Pollution Control Board / CPCB",
+        "action": "Inspect consent conditions and stack emission compliance; issue show-cause under s.5.",
+        "penalty": "Contravention punishable under s.15."
+      },
+      {
+        "id": "GRAP-STAGE",
+        "statute": "Graded Response Action Plan (CAQM)",
+        "provision": "Stage escalation by AQI band",
+        "summary": "Graded restrictions on construction, DG sets and dust-generating activity, escalating with the AQI band.",
+        "authority": "Commission for Air Quality Management",
+        "action": "Apply the GRAP stage corresponding to the prevailing AQI band in this ward.",
+        "penalty": "As notified per stage."
+      }
+    ],
+    "subject": "Air pollution source detected — industrial — Ward 91 (zone Z01)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 9 cell(s) in Ward 91. The zone is classified 'acute'. Estimated PM2.5 in the zone is 134.9 ug/m3, corresponding to an AQI of 312 (Very Poor).",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.51. Supporting evidence: industrial_117853451 is 0.54 km away, wind alignment 0.61; shallow boundary layer (95 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 31A; Environment (Protection) Act, 1986, Section 5; Graded Response Action Plan (CAQM), Stage escalation by AQI band.",
+    "evidence_chain": [
+      "industrial_117853451 is 0.54 km away, wind alignment 0.61",
+      "shallow boundary layer (95 m) trapping emissions"
+    ],
+    "evidence_full": {
+      "cell": "883cf2c469fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W032",
+      "pm25_estimate": 91.3,
+      "candidates": [
+        {
+          "name": "industrial_117853451",
+          "type": "industrial",
+          "distance_km": 0.54,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_118074176",
+          "type": "industrial",
+          "distance_km": 0.64,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "industrial_118110688",
+          "type": "industrial",
+          "distance_km": 0.53,
+          "wind_alignment": 0.57
+        },
+        {
+          "name": "industrial_118110446",
+          "type": "industrial",
+          "distance_km": 0.66,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_118110449",
+          "type": "industrial",
+          "distance_km": 0.64,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "industrial_118110682",
+          "type": "industrial",
+          "distance_km": 0.46,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "industrial_117853453",
+          "type": "industrial",
+          "distance_km": 0.75,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "industrial_118112281",
+          "type": "industrial",
+          "distance_km": 0.37,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 149.6,
+          "city_percentile": 99
+        },
+        "so2_col": {
+          "value": 72.2,
+          "city_percentile": 48
+        },
+        "aai": {
+          "value": -0.3,
+          "city_percentile": 50
         }
       },
       "fire_activity": {

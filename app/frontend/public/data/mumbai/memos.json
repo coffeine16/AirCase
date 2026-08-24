@@ -1,17 +1,17 @@
 [
   {
-    "memo_id": "AQ/MUM/20260823/Z01",
+    "memo_id": "AQ/MUM/20260824/Z01",
     "action_id": "A06",
     "zone_id": "Z01",
     "ward_id": "W005",
     "ward_name": "E",
-    "issued_at": "2026-08-23T17:46:56.440550+00:00",
+    "issued_at": "2026-08-24T06:24:34.894734+00:00",
     "status": "draft",
     "situation": {
-      "source": "traffic",
-      "confidence": 0.5,
-      "pm25": 87.3,
-      "aqi": 191,
+      "source": "industrial",
+      "confidence": 0.44,
+      "pm25": 86.1,
+      "aqi": 187,
       "aqi_category": "Moderate",
       "kind": "acute",
       "zone_id": "Z01",
@@ -19,8 +19,7 @@
       "ward_name": "E",
       "n_cells": 17,
       "evidence_factors": [
-        "Dr Babasaheb Ambedkar Marg is 0.37 km away, wind alignment 0.62",
-        "NO2 column at p96 citywide",
+        "industrial_423483205 is 0.13 km away, wind alignment 0.61",
         "shallow boundary layer (192 m) trapping emissions"
       ],
       "fire_hours": 0,
@@ -30,87 +29,86 @@
     },
     "legal_basis": [
       {
-        "id": "AIR-1981-20",
-        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
-        "provision": "Section 20",
-        "summary": "Power to give instructions to the authority in charge of registration of motor vehicles to ensure compliance with emission standards.",
-        "authority": "State Government / Transport Department, on SPCB advice",
-        "action": "Direct PUC enforcement drives and lane/corridor checks on this stretch; verify PUC compliance of commercial fleets using it.",
-        "penalty": "Driving in contravention of emission standards is punishable under s.190(2) of the Motor Vehicles Act, 1988."
+        "id": "EPA-1986-5",
+        "statute": "Environment (Protection) Act, 1986",
+        "provision": "Section 5",
+        "summary": "Power to give directions in writing to any person, officer or authority, who shall be bound to comply.",
+        "authority": "State Pollution Control Board / CPCB",
+        "action": "Inspect consent conditions and stack emission compliance; issue show-cause under s.5.",
+        "penalty": "Contravention punishable under s.15."
       }
     ],
-    "subject": "Air pollution source detected — traffic — E (zone Z01)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 17 cell(s) in E. The zone is classified 'acute'. Estimated PM2.5 in the zone is 87.3 ug/m3, corresponding to an AQI of 191 (Moderate).",
-    "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.50. Supporting evidence: Dr Babasaheb Ambedkar Marg is 0.37 km away, wind alignment 0.62; NO2 column at p96 citywide; shallow boundary layer (192 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20.",
+    "subject": "Air pollution source detected — industrial — E (zone Z01)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 17 cell(s) in E. The zone is classified 'acute'. Estimated PM2.5 in the zone is 86.1 ug/m3, corresponding to an AQI of 187 (Moderate).",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.44. Supporting evidence: industrial_423483205 is 0.13 km away, wind alignment 0.61; shallow boundary layer (192 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
     "evidence_chain": [
-      "Dr Babasaheb Ambedkar Marg is 0.37 km away, wind alignment 0.62",
-      "NO2 column at p96 citywide",
+      "industrial_423483205 is 0.13 km away, wind alignment 0.61",
       "shallow boundary layer (192 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "88608b18b3fffff",
+      "cell": "88608b18b9fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W005",
-      "pm25_estimate": 45.2,
+      "pm25_estimate": 38.5,
       "candidates": [
         {
-          "name": "Dr Babasaheb Ambedkar Marg",
-          "type": "traffic",
-          "distance_km": 0.37,
-          "wind_alignment": 0.62
+          "name": "industrial_423483205",
+          "type": "industrial",
+          "distance_km": 0.13,
+          "wind_alignment": 0.61
         },
         {
-          "name": "Dr Baba Saheb Ambedkar Marg (Victoria Garden Road)",
-          "type": "traffic",
-          "distance_km": 0.39,
-          "wind_alignment": 0.62
+          "name": "industrial_1121664486",
+          "type": "industrial",
+          "distance_km": 0.33,
+          "wind_alignment": 0.63
         },
         {
-          "name": "Dr Babasaheb Ambedkar Marg",
+          "name": "Devidayal & Sons Steel Mills",
+          "type": "industrial",
+          "distance_km": 0.52,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "industrial_1386099084",
+          "type": "industrial",
+          "distance_km": 0.47,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Brittania Industries",
+          "type": "industrial",
+          "distance_km": 0.55,
+          "wind_alignment": 0.63
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 0.41,
+          "wind_alignment": 0.57
+        },
+        {
+          "name": "Eastern Freeway",
           "type": "traffic",
           "distance_km": 0.42,
-          "wind_alignment": 0.63
+          "wind_alignment": 0.57
         },
         {
-          "name": "Dr Babasaheb Ambedkar Marg",
-          "type": "traffic",
-          "distance_km": 0.33,
-          "wind_alignment": 0.56
-        },
-        {
-          "name": "Dr Baba Saheb Ambedkar Marg (Victoria Garden Road)",
-          "type": "traffic",
-          "distance_km": 0.34,
-          "wind_alignment": 0.56
-        },
-        {
-          "name": "Dr Baba Saheb Ambedkar Marg (Victoria Garden Road)",
-          "type": "traffic",
-          "distance_km": 0.53,
-          "wind_alignment": 0.63
-        },
-        {
-          "name": "Dr Babasaheb Ambedkar Marg",
-          "type": "traffic",
-          "distance_km": 0.57,
-          "wind_alignment": 0.62
-        },
-        {
-          "name": "industrial_430223759",
+          "name": "industrial_1121664497",
           "type": "industrial",
-          "distance_km": 0.27,
-          "wind_alignment": 0.49
+          "distance_km": 0.61,
+          "wind_alignment": 0.63
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 247.1,
-          "city_percentile": 96
+          "city_percentile": 97
         },
         "so2_col": {
           "value": 148.2,
-          "city_percentile": 66
+          "city_percentile": 73
         },
         "aai": {
           "value": 0.7,
@@ -131,7 +129,7 @@
         "industrial": 16,
         "construction": 9,
         "waste_burning": 0,
-        "traffic": 23
+        "traffic": 25
       },
       "meteorology": {
         "wind_from_deg": 35,
@@ -142,32 +140,33 @@
       },
       "hotspot_kind": "acute",
       "evidence_window_hours": 24,
-      "zone_cells": 16
+      "zone_cells": 15
     },
     "drafted_by": "rules",
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/MUM/20260823/Z02",
-    "action_id": "A08",
+    "memo_id": "AQ/MUM/20260824/Z02",
+    "action_id": "A07",
     "zone_id": "Z02",
-    "ward_id": "W002",
-    "ward_name": "B",
-    "issued_at": "2026-08-23T17:46:56.440619+00:00",
+    "ward_id": "W005",
+    "ward_name": "E",
+    "issued_at": "2026-08-24T06:24:34.894836+00:00",
     "status": "draft",
     "situation": {
-      "source": "industrial",
-      "confidence": 0.38,
-      "pm25": 85.2,
-      "aqi": 184,
+      "source": "traffic",
+      "confidence": 0.45,
+      "pm25": 74.9,
+      "aqi": 150,
       "aqi_category": "Moderate",
       "kind": "acute",
       "zone_id": "Z02",
-      "ward_id": "W002",
-      "ward_name": "B",
+      "ward_id": "W005",
+      "ward_name": "E",
       "n_cells": 12,
       "evidence_factors": [
-        "industrial_436231944 is 0.89 km away, wind alignment 0.59",
+        "Dr Babasaheb Ambedkar Marg is 0.69 km away, wind alignment 0.49",
+        "NO2 column at p97 citywide",
         "shallow boundary layer (192 m) trapping emissions"
       ],
       "fire_hours": 0,
@@ -177,86 +176,87 @@
     },
     "legal_basis": [
       {
-        "id": "EPA-1986-5",
-        "statute": "Environment (Protection) Act, 1986",
-        "provision": "Section 5",
-        "summary": "Power to give directions in writing to any person, officer or authority, who shall be bound to comply.",
-        "authority": "State Pollution Control Board / CPCB",
-        "action": "Inspect consent conditions and stack emission compliance; issue show-cause under s.5.",
-        "penalty": "Contravention punishable under s.15."
+        "id": "AIR-1981-20",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 20",
+        "summary": "Power to give instructions to the authority in charge of registration of motor vehicles to ensure compliance with emission standards.",
+        "authority": "State Government / Transport Department, on SPCB advice",
+        "action": "Direct PUC enforcement drives and lane/corridor checks on this stretch; verify PUC compliance of commercial fleets using it.",
+        "penalty": "Driving in contravention of emission standards is punishable under s.190(2) of the Motor Vehicles Act, 1988."
       }
     ],
-    "subject": "Air pollution source detected — industrial — B (zone Z02)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 12 cell(s) in B. The zone is classified 'acute'. Estimated PM2.5 in the zone is 85.2 ug/m3, corresponding to an AQI of 184 (Moderate).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.38. Supporting evidence: industrial_436231944 is 0.89 km away, wind alignment 0.59; shallow boundary layer (192 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
+    "subject": "Air pollution source detected — traffic — E (zone Z02)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 12 cell(s) in E. The zone is classified 'acute'. Estimated PM2.5 in the zone is 74.9 ug/m3, corresponding to an AQI of 150 (Moderate).",
+    "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.45. Supporting evidence: Dr Babasaheb Ambedkar Marg is 0.69 km away, wind alignment 0.49; NO2 column at p97 citywide; shallow boundary layer (192 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20.",
     "evidence_chain": [
-      "industrial_436231944 is 0.89 km away, wind alignment 0.59",
+      "Dr Babasaheb Ambedkar Marg is 0.69 km away, wind alignment 0.49",
+      "NO2 column at p97 citywide",
       "shallow boundary layer (192 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "88608b1891fffff",
+      "cell": "88608b1897fffff",
       "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W002",
-      "pm25_estimate": 46.6,
+      "ward_id": "W005",
+      "pm25_estimate": 2.8,
       "candidates": [
+        {
+          "name": "Dr Babasaheb Ambedkar Marg",
+          "type": "traffic",
+          "distance_km": 0.69,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "A Patil Flyover",
+          "type": "traffic",
+          "distance_km": 0.74,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "A Patil Flyover",
+          "type": "traffic",
+          "distance_km": 0.76,
+          "wind_alignment": 0.49
+        },
         {
           "name": "industrial_436231944",
           "type": "industrial",
-          "distance_km": 0.89,
-          "wind_alignment": 0.59
+          "distance_km": 0.95,
+          "wind_alignment": 0.54
         },
         {
-          "name": "industrial_72545858",
-          "type": "industrial",
-          "distance_km": 0.1,
-          "wind_alignment": 0.34
-        },
-        {
-          "name": "Eastern Freeway",
+          "name": "A Patil Flyover",
           "type": "traffic",
-          "distance_km": 1.06,
-          "wind_alignment": 0.63
+          "distance_km": 0.81,
+          "wind_alignment": 0.49
         },
         {
-          "name": "industrial_374346198",
+          "name": "Thakkar Estate",
           "type": "industrial",
-          "distance_km": 1.09,
+          "distance_km": 1.42,
           "wind_alignment": 0.63
         },
         {
-          "name": "industrial_436231945",
-          "type": "industrial",
-          "distance_km": 1.09,
-          "wind_alignment": 0.63
-        },
-        {
-          "name": "Eastern Freeway",
+          "name": "A Patil Flyover",
           "type": "traffic",
-          "distance_km": 1.07,
-          "wind_alignment": 0.62
+          "distance_km": 0.9,
+          "wind_alignment": 0.49
         },
         {
-          "name": "industrial_436231943",
+          "name": "industrial_1473959617",
           "type": "industrial",
-          "distance_km": 1.09,
-          "wind_alignment": 0.62
-        },
-        {
-          "name": "industrial_841044964",
-          "type": "industrial",
-          "distance_km": 1.11,
-          "wind_alignment": 0.62
+          "distance_km": 1.47,
+          "wind_alignment": 0.63
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 247.1,
-          "city_percentile": 96
+          "city_percentile": 97
         },
         "so2_col": {
           "value": 148.2,
-          "city_percentile": 66
+          "city_percentile": 73
         },
         "aai": {
           "value": 0.7,
@@ -294,30 +294,28 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/MUM/20260823/Z05",
+    "memo_id": "AQ/MUM/20260824/Z05",
     "action_id": "A01",
     "zone_id": "Z05",
-    "ward_id": "W008",
-    "ward_name": "F/N",
-    "issued_at": "2026-08-23T17:46:56.440669+00:00",
+    "ward_id": "W017",
+    "ward_name": "M/W",
+    "issued_at": "2026-08-24T06:24:34.894882+00:00",
     "status": "draft",
     "situation": {
-      "source": "construction",
-      "confidence": 0.42,
-      "pm25": 83.0,
-      "aqi": 177,
+      "source": "traffic",
+      "confidence": 0.51,
+      "pm25": 81.9,
+      "aqi": 173,
       "aqi_category": "Moderate",
       "kind": "chronic",
       "zone_id": "Z05",
-      "ward_id": "W008",
-      "ward_name": "F/N",
+      "ward_id": "W017",
+      "ward_name": "M/W",
       "n_cells": 17,
       "evidence_factors": [
-        "Highest construction score (0.815)",
-        "Nearby construction candidate (1.52 km, 0.49 wind alignment)",
-        "Construction land use context (3)",
-        "High PM2.5 estimate (59.2)",
-        "Air trapped conditions"
+        "Eastern Freeway is 0.06 km away, wind alignment 0.46",
+        "NO2 column at p93 citywide",
+        "shallow boundary layer (210 m) trapping emissions"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
@@ -326,93 +324,91 @@
     },
     "legal_basis": [
       {
-        "id": "CND-2016",
-        "statute": "Construction and Demolition Waste Management Rules, 2016",
-        "provision": "Rules 4 & 8",
-        "summary": "Every waste generator shall prevent dust and segregate and store C&D waste; the local authority shall enforce dust mitigation.",
-        "authority": "Municipal Commissioner / Local Body",
-        "action": "Inspect for anti-smog guns, barricading, covered transport and water sprinkling; issue notice for dust-control non-compliance.",
-        "penalty": "Environmental compensation per CPCB dust-mitigation schedule."
+        "id": "AIR-1981-20",
+        "statute": "Air (Prevention and Control of Pollution) Act, 1981",
+        "provision": "Section 20",
+        "summary": "Power to give instructions to the authority in charge of registration of motor vehicles to ensure compliance with emission standards.",
+        "authority": "State Government / Transport Department, on SPCB advice",
+        "action": "Direct PUC enforcement drives and lane/corridor checks on this stretch; verify PUC compliance of commercial fleets using it.",
+        "penalty": "Driving in contravention of emission standards is punishable under s.190(2) of the Motor Vehicles Act, 1988."
       }
     ],
-    "subject": "Air pollution source detected — construction — F/N (zone Z05)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 17 cell(s) in F/N. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 83.0 ug/m3, corresponding to an AQI of 177 (Moderate).",
-    "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.42. Supporting evidence: Highest construction score (0.815); Nearby construction candidate (1.52 km, 0.49 wind alignment); Construction land use context (3). This finding is INDICATIVE and requires verification on site.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Construction and Demolition Waste Management Rules, 2016, Rules 4 & 8.",
+    "subject": "Air pollution source detected — traffic — M/W (zone Z05)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 17 cell(s) in M/W. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 81.9 ug/m3, corresponding to an AQI of 173 (Moderate).",
+    "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.51. Supporting evidence: Eastern Freeway is 0.06 km away, wind alignment 0.46; NO2 column at p93 citywide; shallow boundary layer (210 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20.",
     "evidence_chain": [
-      "Highest construction score (0.815)",
-      "Nearby construction candidate (1.52 km, 0.49 wind alignment)",
-      "Construction land use context (3)",
-      "High PM2.5 estimate (59.2)",
-      "Air trapped conditions"
+      "Eastern Freeway is 0.06 km away, wind alignment 0.46",
+      "NO2 column at p93 citywide",
+      "shallow boundary layer (210 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "88608b19bbfffff",
+      "cell": "88608b1987fffff",
       "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W008",
-      "pm25_estimate": 59.2,
+      "ward_id": "W017",
+      "pm25_estimate": 50.3,
       "candidates": [
         {
-          "name": "construction_1550177121",
-          "type": "construction",
-          "distance_km": 1.52,
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 0.06,
+          "wind_alignment": 0.46
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 0.09,
+          "wind_alignment": 0.46
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 0.08,
+          "wind_alignment": 0.45
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 0.38,
+          "wind_alignment": 0.46
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 0.4,
+          "wind_alignment": 0.46
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 0.7,
+          "wind_alignment": 0.46
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 0.7,
+          "wind_alignment": 0.46
+        },
+        {
+          "name": "industrial_430018484",
+          "type": "industrial",
+          "distance_km": 1.06,
           "wind_alignment": 0.49
-        },
-        {
-          "name": "Laxmibai Kelkar Marg",
-          "type": "traffic",
-          "distance_km": 0.91,
-          "wind_alignment": 0.36
-        },
-        {
-          "name": "Eastern Express Highway",
-          "type": "traffic",
-          "distance_km": 0.99,
-          "wind_alignment": 0.37
-        },
-        {
-          "name": "Eastern Express Highway",
-          "type": "traffic",
-          "distance_km": 0.99,
-          "wind_alignment": 0.37
-        },
-        {
-          "name": "Laxmibai Kelkar Marg",
-          "type": "traffic",
-          "distance_km": 0.99,
-          "wind_alignment": 0.37
-        },
-        {
-          "name": "Laxmibai Kelkar Marg",
-          "type": "traffic",
-          "distance_km": 0.94,
-          "wind_alignment": 0.36
-        },
-        {
-          "name": "Laxmibai Kelkar Marg",
-          "type": "traffic",
-          "distance_km": 0.89,
-          "wind_alignment": 0.35
-        },
-        {
-          "name": "Laxmibai Kelkar Marg",
-          "type": "traffic",
-          "distance_km": 1.22,
-          "wind_alignment": 0.41
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 199.1,
-          "city_percentile": 91
+          "city_percentile": 93
         },
         "so2_col": {
           "value": 153.6,
-          "city_percentile": 67
+          "city_percentile": 73
         },
         "aai": {
           "value": -0.1,
-          "city_percentile": 65
+          "city_percentile": 68
         }
       },
       "fire_activity": {
@@ -446,18 +442,18 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/MUM/20260823/Z06",
-    "action_id": "A02",
+    "memo_id": "AQ/MUM/20260824/Z06",
+    "action_id": "A04",
     "zone_id": "Z06",
     "ward_id": "W008",
     "ward_name": "F/N",
-    "issued_at": "2026-08-23T17:46:56.440722+00:00",
+    "issued_at": "2026-08-24T06:24:34.894923+00:00",
     "status": "draft",
     "situation": {
       "source": "waste_burning",
-      "confidence": 0.46,
-      "pm25": 85.0,
-      "aqi": 184,
+      "confidence": 0.44,
+      "pm25": 69.8,
+      "aqi": 133,
       "aqi_category": "Moderate",
       "kind": "chronic",
       "zone_id": "Z06",
@@ -485,80 +481,80 @@
       }
     ],
     "subject": "Air pollution source detected — waste burning — F/N (zone Z06)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 6 cell(s) in F/N. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 85.0 ug/m3, corresponding to an AQI of 184 (Moderate).",
-    "finding": "The evidence indicates waste burning as the primary source, at a computed confidence of 0.46. Supporting evidence: satellite fire detections in 6 hours (1% of the window); shallow boundary layer (210 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 6 cell(s) in F/N. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 69.8 ug/m3, corresponding to an AQI of 133 (Moderate).",
+    "finding": "The evidence indicates waste burning as the primary source, at a computed confidence of 0.44. Supporting evidence: satellite fire detections in 6 hours (1% of the window); shallow boundary layer (210 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Solid Waste Management Rules, 2016, Rule 15(zg).",
     "evidence_chain": [
       "satellite fire detections in 6 hours (1% of the window)",
       "shallow boundary layer (210 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "88608b1997fffff",
+      "cell": "88608b1995fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W008",
-      "pm25_estimate": 57.9,
+      "pm25_estimate": 45.8,
       "candidates": [
         {
           "name": "Antop Hill Warehousing Complex",
           "type": "industrial",
-          "distance_km": 0.93,
-          "wind_alignment": 0.46
+          "distance_km": 0.36,
+          "wind_alignment": 0.44
         },
         {
           "name": "industrial_626382663",
           "type": "industrial",
-          "distance_km": 0.75,
-          "wind_alignment": 0.4
+          "distance_km": 0.11,
+          "wind_alignment": 0.21
         },
         {
-          "name": "industrial_430017700",
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 1.6,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 1.62,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 1.63,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "L & T",
           "type": "industrial",
-          "distance_km": 0.61,
-          "wind_alignment": 0.34
+          "distance_km": 1.83,
+          "wind_alignment": 0.49
         },
         {
-          "name": "Laxmibai Kelkar Marg",
+          "name": "Eastern Freeway",
           "type": "traffic",
-          "distance_km": 1.26,
-          "wind_alignment": 0.42
+          "distance_km": 1.92,
+          "wind_alignment": 0.47
         },
         {
-          "name": "construction_1379107777",
-          "type": "construction",
-          "distance_km": 1.05,
-          "wind_alignment": 0.38
-        },
-        {
-          "name": "King's Circle",
+          "name": "Eastern Freeway",
           "type": "traffic",
-          "distance_km": 1.16,
-          "wind_alignment": 0.4
-        },
-        {
-          "name": "King's Circle",
-          "type": "traffic",
-          "distance_km": 1.18,
-          "wind_alignment": 0.4
-        },
-        {
-          "name": "Laxmibai Kelkar Marg",
-          "type": "traffic",
-          "distance_km": 1.34,
-          "wind_alignment": 0.42
+          "distance_km": 1.94,
+          "wind_alignment": 0.47
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 209.3,
-          "city_percentile": 93
+          "city_percentile": 94
         },
         "so2_col": {
           "value": 132.8,
-          "city_percentile": 64
+          "city_percentile": 71
         },
         "aai": {
           "value": -0.2,
-          "city_percentile": 61
+          "city_percentile": 64
         }
       },
       "fire_activity": {
@@ -592,18 +588,18 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/MUM/20260823/Z03",
+    "memo_id": "AQ/MUM/20260824/Z03",
     "action_id": "A09",
     "zone_id": "Z03",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-23T17:46:56.440759+00:00",
+    "issued_at": "2026-08-24T06:24:34.894962+00:00",
     "status": "draft",
     "situation": {
       "source": "industrial",
-      "confidence": 0.44,
-      "pm25": 85.8,
-      "aqi": 186,
+      "confidence": 0.42,
+      "pm25": 65.1,
+      "aqi": 118,
       "aqi_category": "Moderate",
       "kind": "acute",
       "zone_id": "Z03",
@@ -611,7 +607,7 @@
       "ward_name": "Outside city limits",
       "n_cells": 11,
       "evidence_factors": [
-        "industrial_1121664489 is 0.69 km away, wind alignment 0.3",
+        "industrial_1121664480 is 1.22 km away, wind alignment 0.3",
         "shallow boundary layer (192 m) trapping emissions"
       ],
       "fire_hours": 0,
@@ -631,76 +627,76 @@
       }
     ],
     "subject": "Air pollution source detected — industrial — Outside city limits (zone Z03)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 11 cell(s) in Outside city limits. The zone is classified 'acute'. Estimated PM2.5 in the zone is 85.8 ug/m3, corresponding to an AQI of 186 (Moderate).",
-    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.44. Supporting evidence: industrial_1121664489 is 0.69 km away, wind alignment 0.3; shallow boundary layer (192 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 11 cell(s) in Outside city limits. The zone is classified 'acute'. Estimated PM2.5 in the zone is 65.1 ug/m3, corresponding to an AQI of 118 (Moderate).",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.42. Supporting evidence: industrial_1121664480 is 1.22 km away, wind alignment 0.3; shallow boundary layer (192 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
     "evidence_chain": [
-      "industrial_1121664489 is 0.69 km away, wind alignment 0.3",
+      "industrial_1121664480 is 1.22 km away, wind alignment 0.3",
       "shallow boundary layer (192 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "88608b1885fffff",
+      "cell": "88608b1889fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 47.5,
+      "pm25_estimate": 15.1,
       "candidates": [
         {
-          "name": "industrial_1121664489",
+          "name": "industrial_1121664480",
           "type": "industrial",
-          "distance_km": 0.69,
+          "distance_km": 1.22,
           "wind_alignment": 0.3
         },
         {
-          "name": "industrial_1121664487",
+          "name": "industrial_1121664479",
           "type": "industrial",
-          "distance_km": 0.76,
+          "distance_km": 1.42,
           "wind_alignment": 0.31
         },
         {
-          "name": "HPCL Lubricants Terminal",
+          "name": "industrial_1121664482",
           "type": "industrial",
-          "distance_km": 0.97,
-          "wind_alignment": 0.34
-        },
-        {
-          "name": "industrial_1386099087",
-          "type": "industrial",
-          "distance_km": 0.8,
+          "distance_km": 1.44,
           "wind_alignment": 0.31
         },
         {
-          "name": "Dump",
-          "type": "waste_burning",
-          "distance_km": 0.74,
-          "wind_alignment": 0.28
+          "name": "Mazagon Dock Shipbuilders Limited",
+          "type": "industrial",
+          "distance_km": 1.29,
+          "wind_alignment": 0.29
         },
         {
-          "name": "industrial_1121664493",
+          "name": "industrial_841044964",
           "type": "industrial",
-          "distance_km": 1.48,
-          "wind_alignment": 0.37
+          "distance_km": 1.5,
+          "wind_alignment": 0.31
         },
         {
-          "name": "industrial_1121664492",
+          "name": "industrial_1121664481",
           "type": "industrial",
-          "distance_km": 0.82,
-          "wind_alignment": 0.27
+          "distance_km": 1.51,
+          "wind_alignment": 0.31
         },
         {
-          "name": "industrial_1121664491",
-          "type": "industrial",
-          "distance_km": 1.16,
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 1.56,
+          "wind_alignment": 0.31
+        },
+        {
+          "name": "Eastern Freeway",
+          "type": "traffic",
+          "distance_km": 1.57,
           "wind_alignment": 0.31
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 247.1,
-          "city_percentile": 96
+          "city_percentile": 97
         },
         "so2_col": {
           "value": 148.2,
-          "city_percentile": 66
+          "city_percentile": 73
         },
         "aai": {
           "value": 0.7,
@@ -718,10 +714,10 @@
         "window_hours": 24
       },
       "landuse_context": {
-        "industrial": 7,
-        "construction": 1,
+        "industrial": 3,
+        "construction": 0,
         "waste_burning": 0,
-        "traffic": 2
+        "traffic": 1
       },
       "meteorology": {
         "wind_from_deg": 35,
@@ -732,32 +728,32 @@
       },
       "hotspot_kind": "acute",
       "evidence_window_hours": 24,
-      "zone_cells": 9
+      "zone_cells": 10
     },
     "drafted_by": "rules",
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/MUM/20260823/Z07",
-    "action_id": "A05",
+    "memo_id": "AQ/MUM/20260824/Z07",
+    "action_id": "A08",
     "zone_id": "Z07",
-    "ward_id": "W009",
-    "ward_name": "G/N",
-    "issued_at": "2026-08-23T17:46:56.440797+00:00",
+    "ward_id": "W018",
+    "ward_name": "H/E",
+    "issued_at": "2026-08-24T06:24:34.894994+00:00",
     "status": "draft",
     "situation": {
-      "source": "construction",
-      "confidence": 0.48,
-      "pm25": 79.6,
-      "aqi": 166,
+      "source": "industrial",
+      "confidence": 0.42,
+      "pm25": 72.6,
+      "aqi": 143,
       "aqi_category": "Moderate",
       "kind": "emerging",
       "zone_id": "Z07",
-      "ward_id": "W009",
-      "ward_name": "G/N",
+      "ward_id": "W018",
+      "ward_name": "H/E",
       "n_cells": 15,
       "evidence_factors": [
-        "construction_1186873771 is 0.28 km away, wind alignment 0.6",
+        "industrial_436370681 is 0.27 km away, wind alignment 0.48",
         "shallow boundary layer (200 m) trapping emissions"
       ],
       "fire_hours": 0,
@@ -767,90 +763,90 @@
     },
     "legal_basis": [
       {
-        "id": "CND-2016",
-        "statute": "Construction and Demolition Waste Management Rules, 2016",
-        "provision": "Rules 4 & 8",
-        "summary": "Every waste generator shall prevent dust and segregate and store C&D waste; the local authority shall enforce dust mitigation.",
-        "authority": "Municipal Commissioner / Local Body",
-        "action": "Inspect for anti-smog guns, barricading, covered transport and water sprinkling; issue notice for dust-control non-compliance.",
-        "penalty": "Environmental compensation per CPCB dust-mitigation schedule."
+        "id": "EPA-1986-5",
+        "statute": "Environment (Protection) Act, 1986",
+        "provision": "Section 5",
+        "summary": "Power to give directions in writing to any person, officer or authority, who shall be bound to comply.",
+        "authority": "State Pollution Control Board / CPCB",
+        "action": "Inspect consent conditions and stack emission compliance; issue show-cause under s.5.",
+        "penalty": "Contravention punishable under s.15."
       }
     ],
-    "subject": "Air pollution source detected — construction — G/N (zone Z07)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 15 cell(s) in G/N. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 79.6 ug/m3, corresponding to an AQI of 166 (Moderate).",
-    "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.48. Supporting evidence: construction_1186873771 is 0.28 km away, wind alignment 0.6; shallow boundary layer (200 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
-    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Construction and Demolition Waste Management Rules, 2016, Rules 4 & 8.",
+    "subject": "Air pollution source detected — industrial — H/E (zone Z07)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 15 cell(s) in H/E. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 72.6 ug/m3, corresponding to an AQI of 143 (Moderate).",
+    "finding": "The evidence indicates industrial as the primary source, at a computed confidence of 0.42. Supporting evidence: industrial_436370681 is 0.27 km away, wind alignment 0.48; shallow boundary layer (200 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Environment (Protection) Act, 1986, Section 5.",
     "evidence_chain": [
-      "construction_1186873771 is 0.28 km away, wind alignment 0.6",
+      "industrial_436370681 is 0.27 km away, wind alignment 0.48",
       "shallow boundary layer (200 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "88608b0b5dfffff",
+      "cell": "88608b0b63fffff",
       "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W009",
-      "pm25_estimate": 69.3,
+      "ward_id": "W018",
+      "pm25_estimate": 54.8,
       "candidates": [
         {
-          "name": "construction_1186873771",
-          "type": "construction",
-          "distance_km": 0.28,
-          "wind_alignment": 0.6
+          "name": "industrial_436370681",
+          "type": "industrial",
+          "distance_km": 0.27,
+          "wind_alignment": 0.48
         },
         {
-          "name": "industrial_257411174",
-          "type": "industrial",
+          "name": "Santa Cruz â€“ Chembur Link Road",
+          "type": "traffic",
           "distance_km": 0.4,
-          "wind_alignment": 0.59
+          "wind_alignment": 0.36
         },
         {
-          "name": "Dharavi BEST Bus Depot",
-          "type": "industrial",
-          "distance_km": 0.59,
-          "wind_alignment": 0.6
+          "name": "Santa Cruz â€“ Chembur Link Road",
+          "type": "traffic",
+          "distance_km": 0.45,
+          "wind_alignment": 0.37
         },
         {
-          "name": "Kalakilla BEST Bus Depot",
-          "type": "industrial",
-          "distance_km": 0.68,
-          "wind_alignment": 0.61
+          "name": "Santa Cruz â€“ Chembur Link Road",
+          "type": "traffic",
+          "distance_km": 0.51,
+          "wind_alignment": 0.37
         },
         {
-          "name": "construction_1327069026",
-          "type": "construction",
-          "distance_km": 0.53,
-          "wind_alignment": 0.54
+          "name": "Santa Cruz â€“ Chembur Link Road",
+          "type": "traffic",
+          "distance_km": 0.4,
+          "wind_alignment": 0.34
         },
         {
-          "name": "industrial_1186783925",
-          "type": "industrial",
-          "distance_km": 0.63,
-          "wind_alignment": 0.49
+          "name": "SCLR Flyover",
+          "type": "traffic",
+          "distance_km": 0.24,
+          "wind_alignment": 0.3
         },
         {
-          "name": "industrial_260766030",
-          "type": "industrial",
-          "distance_km": 0.85,
-          "wind_alignment": 0.51
+          "name": "Santa Cruz â€“ Chembur Link Road",
+          "type": "traffic",
+          "distance_km": 0.46,
+          "wind_alignment": 0.35
         },
         {
-          "name": "construction_1159113177",
-          "type": "construction",
-          "distance_km": 1.61,
-          "wind_alignment": 0.6
+          "name": "traffic_1509555857",
+          "type": "traffic",
+          "distance_km": 0.46,
+          "wind_alignment": 0.35
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 250.9,
-          "city_percentile": 96
+          "city_percentile": 97
         },
         "so2_col": {
           "value": 163.7,
-          "city_percentile": 68
+          "city_percentile": 75
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 83
+          "city_percentile": 86
         }
       },
       "fire_activity": {
@@ -884,18 +880,18 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/MUM/20260823/Z04",
-    "action_id": "A07",
+    "memo_id": "AQ/MUM/20260824/Z04",
+    "action_id": "A03",
     "zone_id": "Z04",
     "ward_id": "W014",
     "ward_name": "K/W",
-    "issued_at": "2026-08-23T17:46:56.440831+00:00",
+    "issued_at": "2026-08-24T06:24:34.895025+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
       "confidence": 0.33,
-      "pm25": 63.9,
-      "aqi": 114,
+      "pm25": 75.6,
+      "aqi": 152,
       "aqi_category": "Moderate",
       "kind": "chronic",
       "zone_id": "Z04",
@@ -923,7 +919,7 @@
       }
     ],
     "subject": "Air pollution source detected — construction — K/W (zone Z04)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 1 cell(s) in K/W. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 63.9 ug/m3, corresponding to an AQI of 114 (Moderate).",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 1 cell(s) in K/W. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 75.6 ug/m3, corresponding to an AQI of 152 (Moderate).",
     "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.33. Supporting evidence: construction_227896397 is 0.79 km away, wind alignment 0.32; shallow boundary layer (205 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Construction and Demolition Waste Management Rules, 2016, Rules 4 & 8.",
     "evidence_chain": [
@@ -934,7 +930,7 @@
       "cell": "88608b0967fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W014",
-      "pm25_estimate": 52.7,
+      "pm25_estimate": 64.1,
       "candidates": [
         {
           "name": "industrial_257491059",
@@ -988,15 +984,15 @@
       "pollutant_signature": {
         "no2_col": {
           "value": 145.6,
-          "city_percentile": 79
+          "city_percentile": 84
         },
         "so2_col": {
           "value": -114.0,
-          "city_percentile": 25
+          "city_percentile": 22
         },
         "aai": {
           "value": -0.0,
-          "city_percentile": 70
+          "city_percentile": 73
         }
       },
       "fire_activity": {
@@ -1030,29 +1026,27 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/MUM/20260823/Z08",
-    "action_id": "A03",
+    "memo_id": "AQ/MUM/20260824/Z08",
+    "action_id": "A02",
     "zone_id": "Z08",
-    "ward_id": "W008",
-    "ward_name": "F/N",
-    "issued_at": "2026-08-23T17:46:56.440866+00:00",
+    "ward_id": "W017",
+    "ward_name": "M/W",
+    "issued_at": "2026-08-24T06:24:34.895055+00:00",
     "status": "draft",
     "situation": {
       "source": "waste_burning",
-      "confidence": 0.53,
-      "pm25": 73.9,
-      "aqi": 147,
+      "confidence": 0.48,
+      "pm25": 75.7,
+      "aqi": 153,
       "aqi_category": "Moderate",
       "kind": "chronic",
       "zone_id": "Z08",
-      "ward_id": "W008",
-      "ward_name": "F/N",
+      "ward_id": "W017",
+      "ward_name": "M/W",
       "n_cells": 16,
       "evidence_factors": [
-        "Highest category score for waste_burning",
-        "12 fire hours detected",
-        "NO2 at 92nd city percentile",
-        "SO2 at 64th city percentile"
+        "satellite fire detections in 12 hours (2% of the window)",
+        "shallow boundary layer (210 m) trapping emissions"
       ],
       "fire_hours": 12,
       "fire_fraction": 0.0174,
@@ -1070,83 +1064,81 @@
         "penalty": "Environmental compensation as per CPCB/NGT schedule for open burning of waste."
       }
     ],
-    "subject": "Air pollution source detected — waste burning — F/N (zone Z08)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 16 cell(s) in F/N. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 73.9 ug/m3, corresponding to an AQI of 147 (Moderate).",
-    "finding": "The evidence indicates waste burning as the primary source, at a computed confidence of 0.53. Supporting evidence: Highest category score for waste_burning; 12 fire hours detected; NO2 at 92nd city percentile. This finding is INDICATIVE and requires verification on site.",
+    "subject": "Air pollution source detected — waste burning — M/W (zone Z08)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 16 cell(s) in M/W. The zone is classified 'chronic'. Estimated PM2.5 in the zone is 75.7 ug/m3, corresponding to an AQI of 153 (Moderate).",
+    "finding": "The evidence indicates waste burning as the primary source, at a computed confidence of 0.48. Supporting evidence: satellite fire detections in 12 hours (2% of the window); shallow boundary layer (210 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Solid Waste Management Rules, 2016, Rule 15(zg).",
     "evidence_chain": [
-      "Highest category score for waste_burning",
-      "12 fire hours detected",
-      "NO2 at 92nd city percentile",
-      "SO2 at 64th city percentile"
+      "satellite fire detections in 12 hours (2% of the window)",
+      "shallow boundary layer (210 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "88608b199dfffff",
+      "cell": "88608b1989fffff",
       "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W008",
-      "pm25_estimate": 54.4,
+      "ward_id": "W017",
+      "pm25_estimate": 43.9,
       "candidates": [
         {
-          "name": "industrial_626382663",
+          "name": "industrial_430012312",
           "type": "industrial",
-          "distance_km": 0.89,
-          "wind_alignment": 0.35
+          "distance_km": 0.19,
+          "wind_alignment": 0.48
         },
         {
-          "name": "Antop Hill Warehousing Complex",
+          "name": "Mumbai Refinery Mahul",
           "type": "industrial",
-          "distance_km": 1.21,
-          "wind_alignment": 0.39
+          "distance_km": 0.91,
+          "wind_alignment": 0.48
         },
         {
-          "name": "industrial_430017700",
+          "name": "industrial_430012314",
           "type": "industrial",
-          "distance_km": 0.88,
-          "wind_alignment": 0.33
+          "distance_km": 1.46,
+          "wind_alignment": 0.45
+        },
+        {
+          "name": "industrial_1289173951",
+          "type": "industrial",
+          "distance_km": 1.73,
+          "wind_alignment": 0.45
+        },
+        {
+          "name": "industrial_1289166121",
+          "type": "industrial",
+          "distance_km": 2.06,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "Mumbai Refinery",
+          "type": "industrial",
+          "distance_km": 1.69,
+          "wind_alignment": 0.41
         },
         {
           "name": "Eastern Freeway",
           "type": "traffic",
-          "distance_km": 1.89,
-          "wind_alignment": 0.49
+          "distance_km": 2.03,
+          "wind_alignment": 0.46
         },
         {
           "name": "Eastern Freeway",
           "type": "traffic",
-          "distance_km": 1.9,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "Eastern Freeway",
-          "type": "traffic",
-          "distance_km": 1.91,
-          "wind_alignment": 0.49
-        },
-        {
-          "name": "industrial_430017694",
-          "type": "industrial",
-          "distance_km": 0.67,
-          "wind_alignment": 0.28
-        },
-        {
-          "name": "Eastern Freeway",
-          "type": "traffic",
-          "distance_km": 2.16,
-          "wind_alignment": 0.49
+          "distance_km": 1.85,
+          "wind_alignment": 0.43
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 209.1,
-          "city_percentile": 92
+          "city_percentile": 94
         },
         "so2_col": {
           "value": 132.8,
-          "city_percentile": 64
+          "city_percentile": 71
         },
         "aai": {
           "value": -0.2,
-          "city_percentile": 59
+          "city_percentile": 63
         }
       },
       "fire_activity": {
@@ -1180,19 +1172,19 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/MUM/20260823/Z10",
-    "action_id": "A04",
+    "memo_id": "AQ/MUM/20260824/Z10",
+    "action_id": "A05",
     "zone_id": "Z10",
     "ward_id": "unassigned",
     "ward_name": "Outside city limits",
-    "issued_at": "2026-08-23T17:46:56.440898+00:00",
+    "issued_at": "2026-08-24T06:24:34.895084+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
       "confidence": 0.34,
-      "pm25": 62.5,
-      "aqi": 109,
-      "aqi_category": "Moderate",
+      "pm25": 54.9,
+      "aqi": 92,
+      "aqi_category": "Satisfactory",
       "kind": "emerging",
       "zone_id": "Z10",
       "ward_id": "unassigned",
@@ -1219,7 +1211,7 @@
       }
     ],
     "subject": "Air pollution source detected — construction — Outside city limits (zone Z10)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 8 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 62.5 ug/m3, corresponding to an AQI of 109 (Moderate).",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 8 cell(s) in Outside city limits. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 54.9 ug/m3, corresponding to an AQI of 92 (Satisfactory).",
     "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.34. Supporting evidence: construction_1472947755 is 1.68 km away, wind alignment 0.65; shallow boundary layer (185 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Construction and Demolition Waste Management Rules, 2016, Rules 4 & 8.",
     "evidence_chain": [
@@ -1230,7 +1222,7 @@
       "cell": "88608b5757fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "unassigned",
-      "pm25_estimate": 62.4,
+      "pm25_estimate": 55.0,
       "candidates": [
         {
           "name": "construction_1472947755",
@@ -1284,15 +1276,15 @@
       "pollutant_signature": {
         "no2_col": {
           "value": 153.3,
-          "city_percentile": 81
+          "city_percentile": 86
         },
         "so2_col": {
           "value": -254.6,
-          "city_percentile": 11
+          "city_percentile": 9
         },
         "aai": {
           "value": 0.1,
-          "city_percentile": 78
+          "city_percentile": 81
         }
       },
       "fire_activity": {

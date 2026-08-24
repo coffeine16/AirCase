@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T17:47:30.312857+00:00",
+  "generated_at": "2026-08-24T06:25:12.909086+00:00",
   "response_time_claim": "Signal-to-memo is automated and deterministic: a cited enforcement memo and dispatch route are produced in seconds. The manual baseline — correlating a satellite signal to a served notice across agencies — is measured in weeks. This is the response-time reduction.",
   "effectiveness_claim": "NOT yet measured. Intervention effectiveness requires a real intervention between the frozen counterfactual and a realized outcome. The ledger freezes the counterfactual and awaits actioned outcomes from the inspector loop; it does not attribute natural change to itself.",
   "n_actions": 9,
@@ -11,17 +11,17 @@
       "zone_id": "Z01",
       "ward_id": "W005",
       "ward_name": "E",
-      "source": "traffic",
-      "eps": 74.2,
+      "source": "industrial",
+      "eps": 72.5,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:46:56.440550+00:00",
+        "memo_drafted_at": "2026-08-24T06:24:34.894734+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 53.3,
+        "pm25_counterfactual": 53.4,
         "aqi_counterfactual": 89,
         "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
@@ -31,15 +31,15 @@
       "status": "awaiting_outcome"
     },
     {
-      "action_id": "A08",
+      "action_id": "A07",
       "zone_id": "Z02",
-      "ward_id": "W002",
-      "ward_name": "B",
-      "source": "industrial",
-      "eps": 70.6,
+      "ward_id": "W005",
+      "ward_name": "E",
+      "source": "traffic",
+      "eps": 71.8,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:46:56.440619+00:00",
+        "memo_drafted_at": "2026-08-24T06:24:34.894836+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
@@ -57,20 +57,20 @@
     {
       "action_id": "A01",
       "zone_id": "Z05",
-      "ward_id": "W008",
-      "ward_name": "F/N",
-      "source": "construction",
-      "eps": 68.2,
+      "ward_id": "W017",
+      "ward_name": "M/W",
+      "source": "traffic",
+      "eps": 70.2,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:46:56.440669+00:00",
+        "memo_drafted_at": "2026-08-24T06:24:34.894882+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 57.1,
-        "aqi_counterfactual": 95,
+        "pm25_counterfactual": 53.3,
+        "aqi_counterfactual": 89,
         "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
@@ -79,22 +79,22 @@
       "status": "awaiting_outcome"
     },
     {
-      "action_id": "A02",
+      "action_id": "A04",
       "zone_id": "Z06",
       "ward_id": "W008",
       "ward_name": "F/N",
       "source": "waste_burning",
-      "eps": 67.8,
+      "eps": 66.0,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:46:56.440722+00:00",
+        "memo_drafted_at": "2026-08-24T06:24:34.894923+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 57.0,
-        "aqi_counterfactual": 95,
+        "pm25_counterfactual": 53.2,
+        "aqi_counterfactual": 89,
         "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
@@ -108,16 +108,16 @@
       "ward_id": "unassigned",
       "ward_name": "Outside city limits",
       "source": "industrial",
-      "eps": 66.5,
+      "eps": 63.8,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:46:56.440759+00:00",
+        "memo_drafted_at": "2026-08-24T06:24:34.894962+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 45.3,
+        "pm25_counterfactual": 45.2,
         "aqi_counterfactual": 76,
         "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
@@ -127,22 +127,22 @@
       "status": "awaiting_outcome"
     },
     {
-      "action_id": "A05",
+      "action_id": "A08",
       "zone_id": "Z07",
-      "ward_id": "W009",
-      "ward_name": "G/N",
-      "source": "construction",
-      "eps": 63.3,
+      "ward_id": "W018",
+      "ward_name": "H/E",
+      "source": "industrial",
+      "eps": 60.6,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:46:56.440797+00:00",
+        "memo_drafted_at": "2026-08-24T06:24:34.894994+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 64.3,
-        "aqi_counterfactual": 115,
+        "pm25_counterfactual": 63.8,
+        "aqi_counterfactual": 114,
         "band_counterfactual": "Moderate",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
@@ -151,45 +151,21 @@
       "status": "awaiting_outcome"
     },
     {
-      "action_id": "A07",
+      "action_id": "A03",
       "zone_id": "Z04",
       "ward_id": "W014",
       "ward_name": "K/W",
       "source": "construction",
-      "eps": 58.0,
+      "eps": 60.3,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:46:56.440831+00:00",
+        "memo_drafted_at": "2026-08-24T06:24:34.895025+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 49.3,
-        "aqi_counterfactual": 83,
-        "band_counterfactual": "Satisfactory",
-        "frozen_at": "2025-11-29 23:00:00+00:00"
-      },
-      "observed_change": null,
-      "our_impact": null,
-      "status": "awaiting_outcome"
-    },
-    {
-      "action_id": "A03",
-      "zone_id": "Z08",
-      "ward_id": "W008",
-      "ward_name": "F/N",
-      "source": "waste_burning",
-      "eps": 50.7,
-      "response": {
-        "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:46:56.440866+00:00",
-        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
-        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
-      },
-      "counterfactual": {
-        "horizon_h": 48,
-        "pm25_counterfactual": 50.6,
+        "pm25_counterfactual": 50.7,
         "aqi_counterfactual": 85,
         "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
@@ -199,15 +175,39 @@
       "status": "awaiting_outcome"
     },
     {
-      "action_id": "A04",
+      "action_id": "A02",
+      "zone_id": "Z08",
+      "ward_id": "W017",
+      "ward_name": "M/W",
+      "source": "waste_burning",
+      "eps": 49.2,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-24T06:24:34.895055+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 50.0,
+        "aqi_counterfactual": 84,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A05",
       "zone_id": "Z10",
       "ward_id": "unassigned",
       "ward_name": "Outside city limits",
       "source": "construction",
-      "eps": 46.6,
+      "eps": 46.1,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:46:56.440898+00:00",
+        "memo_drafted_at": "2026-08-24T06:24:34.895084+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },

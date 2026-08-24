@@ -8,6 +8,16 @@ services:
       - N8N_PROTOCOL=https
       - WEBHOOK_URL=https://${N8N_DOMAIN}/   # Telegram registers webhooks against this
       - GENERIC_TIMEZONE=Asia/Kolkata
+      # Supabase reaches the workflow as ENV, not as a value pasted into a node.
+      # The anon key is public by design (it is what a browser would carry, with
+      # row-level security doing the actual protecting) but a key living in
+      # workflow JSON still ends up in exports, screenshots and version history,
+      # and there is no reason to put it there.
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+      # n8n blocks $env inside expressions unless this is set, so the two lines
+      # above would otherwise resolve to empty at runtime with no error.
+      - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
     volumes:
       - n8n_data:/home/node/.n8n            # workflows + credentials survive restarts
     expose:

@@ -2,8 +2,8 @@
   {
     "ward_id": "W069",
     "ward_name": "Ward 76 Mallepally",
-    "pm25": 77.3,
-    "aqi": 158,
+    "pm25": 76.4,
+    "aqi": 155,
     "aqi_category": "Moderate",
     "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
     "risk_tier": "high",
@@ -19,7 +19,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 76 Mallepally is moderate (AQI 158). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+      "en": "Air quality in Ward 76 Mallepally is moderate (AQI 155). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
     "written_by": "rules",
     "reviewed": {
@@ -34,8 +34,8 @@
   {
     "ward_id": "W062",
     "ward_name": "Ward 55 Ramnaspura",
-    "pm25": 73.2,
-    "aqi": 145,
+    "pm25": 65.5,
+    "aqi": 119,
     "aqi_category": "Moderate",
     "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
     "risk_tier": "moderate",
@@ -51,7 +51,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 55 Ramnaspura is moderate (AQI 145). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+      "en": "Air quality in Ward 55 Ramnaspura is moderate (AQI 119). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
     "written_by": "rules",
     "reviewed": {
@@ -66,13 +66,13 @@
   {
     "ward_id": "W001",
     "ward_name": "Ward 91 Khairatabad",
-    "pm25": 51.8,
-    "aqi": 87,
+    "pm25": 52.6,
+    "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
     "n_cells": 11,
     "vulnerability": {
       "schools_hospitals_nearby": 54,
@@ -83,679 +83,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 91 Khairatabad is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W023",
-    "ward_name": "Ward 92 Venkateshwara Colony",
-    "pm25": 44.7,
-    "aqi": 75,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 6,
-    "vulnerability": {
-      "schools_hospitals_nearby": 60,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 92 Venkateshwara Colony is satisfactory (AQI 75). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W024",
-    "ward_name": "Ward 93 Banjara Hills",
-    "pm25": 42.2,
-    "aqi": 71,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 6,
-    "vulnerability": {
-      "schools_hospitals_nearby": 43,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 93 Banjara Hills is satisfactory (AQI 71). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W039",
-    "ward_name": "Ward 104 Kondapur",
-    "pm25": 53.6,
-    "aqi": 90,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 17,
-    "vulnerability": {
-      "schools_hospitals_nearby": 28,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 104 Kondapur is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W068",
-    "ward_name": "Ward 94 Shaikpet",
-    "pm25": 43.5,
-    "aqi": 73,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 6,
-    "vulnerability": {
-      "schools_hospitals_nearby": 18,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 94 Shaikpet is satisfactory (AQI 73). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W070",
-    "ward_name": "Ward 63 Mangalhat",
-    "pm25": 43.0,
-    "aqi": 72,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 18,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 63 Mangalhat is satisfactory (AQI 72). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W071",
-    "ward_name": "Ward 64 Dattatreya Nagar",
-    "pm25": 42.8,
-    "aqi": 72,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 1,
-    "vulnerability": {
-      "schools_hospitals_nearby": 14,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 64 Dattatreya Nagar is satisfactory (AQI 72). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W072",
-    "ward_name": "Ward 73 Vijay Nagar Colony",
-    "pm25": 42.6,
-    "aqi": 72,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 53,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 73 Vijay Nagar Colony is satisfactory (AQI 72). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W073",
-    "ward_name": "Ward 72 Asif Nagar",
-    "pm25": 43.0,
-    "aqi": 72,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 42,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 72 Asif Nagar is satisfactory (AQI 72). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W074",
-    "ward_name": "Ward 70 Mehdipatnam",
-    "pm25": 43.5,
-    "aqi": 73,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 42,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 70 Mehdipatnam is satisfactory (AQI 73). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W075",
-    "ward_name": "Ward 71 Gudimalkapur",
-    "pm25": 42.8,
-    "aqi": 72,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 33,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 71 Gudimalkapur is satisfactory (AQI 72). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W076",
-    "ward_name": "Ward 69 Nanal Nagar",
-    "pm25": 43.0,
-    "aqi": 72,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 4,
-    "vulnerability": {
-      "schools_hospitals_nearby": 28,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 69 Nanal Nagar is satisfactory (AQI 72). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W078",
-    "ward_name": "Ward 67 Golconda",
-    "pm25": 42.5,
-    "aqi": 71,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 4,
-    "vulnerability": {
-      "schools_hospitals_nearby": 16,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 67 Golconda is satisfactory (AQI 71). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W079",
-    "ward_name": "Ward 66 Langar Houz",
-    "pm25": 43.5,
-    "aqi": 73,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 8,
-    "vulnerability": {
-      "schools_hospitals_nearby": 11,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 66 Langar Houz is satisfactory (AQI 73). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W127",
-    "ward_name": "Ward 75 Red Hills",
-    "pm25": 42.5,
-    "aqi": 71,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 3,
-    "vulnerability": {
-      "schools_hospitals_nearby": 57,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 75 Red Hills is satisfactory (AQI 71). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W131",
-    "ward_name": "Ward 62 Ziaguda",
-    "pm25": 43.3,
-    "aqi": 73,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 1,
-    "vulnerability": {
-      "schools_hospitals_nearby": 14,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 62 Ziaguda is satisfactory (AQI 73). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W132",
-    "ward_name": "Ward 65 Karwan",
-    "pm25": 42.3,
-    "aqi": 71,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 3,
-    "vulnerability": {
-      "schools_hospitals_nearby": 18,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 65 Karwan is satisfactory (AQI 71). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W139",
-    "ward_name": "Ward 56 Kishanbagh",
-    "pm25": 47.9,
-    "aqi": 80,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 10,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 56 Kishanbagh is satisfactory (AQI 80). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W140",
-    "ward_name": "Ward 61 Attapur",
-    "pm25": 42.6,
-    "aqi": 72,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 7,
-    "vulnerability": {
-      "schools_hospitals_nearby": 26,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 61 Attapur is satisfactory (AQI 72). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W145",
-    "ward_name": "Ward 74 Ahmed Nagar",
-    "pm25": 43.2,
-    "aqi": 73,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 51,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 74 Ahmed Nagar is satisfactory (AQI 73). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "unassigned",
-    "ward_name": "Outside city limits",
-    "pm25": 52.1,
-    "aqi": 87,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 341,
-    "vulnerability": {
-      "schools_hospitals_nearby": 51,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Outside city limits is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W077",
-    "ward_name": "Ward 68 Tolichowki",
-    "pm25": 43.8,
-    "aqi": 73,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.38,
-    "worsening": true,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 6,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 68 Tolichowki is satisfactory (AQI 73). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 91 Khairatabad is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -770,8 +98,8 @@
   {
     "ward_id": "W002",
     "ward_name": "Ward 105 Gachibowli",
-    "pm25": 52.3,
-    "aqi": 88,
+    "pm25": 55.0,
+    "aqi": 92,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -787,7 +115,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 105 Gachibowli is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 105 Gachibowli is satisfactory (AQI 92). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -802,8 +130,8 @@
   {
     "ward_id": "W003",
     "ward_name": "Ward 60 Rajendra Nagar",
-    "pm25": 53.7,
-    "aqi": 90,
+    "pm25": 53.5,
+    "aqi": 89,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -819,7 +147,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 60 Rajendra Nagar is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 60 Rajendra Nagar is satisfactory (AQI 89). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -828,13 +156,14 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W004",
     "ward_name": "Ward 95 Jubilee Hills",
-    "pm25": 49.1,
-    "aqi": 82,
+    "pm25": 54.9,
+    "aqi": 92,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -850,7 +179,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 95 Jubilee Hills is satisfactory (AQI 82). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 95 Jubilee Hills is satisfactory (AQI 92). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -859,12 +188,13 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W005",
     "ward_name": "Ward 6 Nacharam",
-    "pm25": 53.3,
+    "pm25": 53.2,
     "aqi": 89,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -890,12 +220,13 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W008",
     "ward_name": "Ward 1 Kapra",
-    "pm25": 52.5,
+    "pm25": 52.7,
     "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -921,12 +252,13 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W009",
     "ward_name": "Ward 136 Neredmet",
-    "pm25": 52.5,
+    "pm25": 52.9,
     "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -952,13 +284,14 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W010",
     "ward_name": "Ward 2 Dr A S Rao Nagar",
-    "pm25": 35.2,
-    "aqi": 59,
+    "pm25": 35.3,
+    "aqi": 60,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -974,7 +307,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 2 Dr A S Rao Nagar is satisfactory (AQI 59). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 2 Dr A S Rao Nagar is satisfactory (AQI 60). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -983,13 +316,14 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W011",
     "ward_name": "Ward 5 Mallapur",
-    "pm25": 53.2,
-    "aqi": 89,
+    "pm25": 52.8,
+    "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1005,7 +339,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 5 Mallapur is satisfactory (AQI 89). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 5 Mallapur is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1014,12 +348,13 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W012",
     "ward_name": "Ward 7 Chilka Nagar",
-    "pm25": 52.5,
+    "pm25": 52.6,
     "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -1045,12 +380,13 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W013",
     "ward_name": "Ward 10 Uppal",
-    "pm25": 52.0,
+    "pm25": 52.2,
     "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -1076,12 +412,13 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W014",
     "ward_name": "Ward 12 Mansoorabad",
-    "pm25": 52.3,
+    "pm25": 52.2,
     "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -1107,7 +444,8 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W015",
@@ -1138,13 +476,14 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W016",
     "ward_name": "Ward 14 BN Reddy Nagar",
-    "pm25": 53.0,
-    "aqi": 89,
+    "pm25": 52.8,
+    "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1160,7 +499,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 14 BN Reddy Nagar is satisfactory (AQI 89). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 14 BN Reddy Nagar is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1169,13 +508,14 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W017",
     "ward_name": "Ward 15 Vanasthalipuram",
-    "pm25": 51.4,
-    "aqi": 86,
+    "pm25": 51.8,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1191,7 +531,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 15 Vanasthalipuram is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 15 Vanasthalipuram is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1200,12 +540,13 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W018",
     "ward_name": "Ward 139 East Anand Bagh",
-    "pm25": 52.9,
+    "pm25": 52.5,
     "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -1231,13 +572,14 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W019",
     "ward_name": "Ward 20 RK Puram",
-    "pm25": 51.1,
-    "aqi": 85,
+    "pm25": 51.8,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1253,7 +595,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 20 RK Puram is satisfactory (AQI 85). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 20 RK Puram is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1262,13 +604,14 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W020",
     "ward_name": "Ward 21 Kothapet",
-    "pm25": 52.0,
-    "aqi": 87,
+    "pm25": 52.4,
+    "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1284,7 +627,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 21 Kothapet is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 21 Kothapet is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1293,13 +636,14 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W021",
     "ward_name": "Ward 8 Habsiguda",
-    "pm25": 52.4,
-    "aqi": 88,
+    "pm25": 52.2,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1315,7 +659,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 8 Habsiguda is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 8 Habsiguda is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1324,7 +668,8 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W022",
@@ -1355,12 +700,77 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W023",
+    "ward_name": "Ward 92 Venkateshwara Colony",
+    "pm25": 54.7,
+    "aqi": 91,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 6,
+    "vulnerability": {
+      "schools_hospitals_nearby": 60,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 92 Venkateshwara Colony is satisfactory (AQI 91). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W024",
+    "ward_name": "Ward 93 Banjara Hills",
+    "pm25": 54.2,
+    "aqi": 91,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 6,
+    "vulnerability": {
+      "schools_hospitals_nearby": 43,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 93 Banjara Hills is satisfactory (AQI 91). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W025",
     "ward_name": "Ward 126 Jagathgirigutta",
-    "pm25": 52.5,
+    "pm25": 52.7,
     "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -1386,12 +796,13 @@
     "verification": {
       "en": "cpcb_official"
     },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
   },
   {
     "ward_id": "W026",
     "ward_name": "Ward 124 Alwyn Colony",
-    "pm25": 52.5,
+    "pm25": 52.7,
     "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -1453,8 +864,8 @@
   {
     "ward_id": "W028",
     "ward_name": "Ward 132 Jeedimetla",
-    "pm25": 51.7,
-    "aqi": 86,
+    "pm25": 53.8,
+    "aqi": 90,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1470,7 +881,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 132 Jeedimetla is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 132 Jeedimetla is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1484,8 +895,8 @@
   {
     "ward_id": "W029",
     "ward_name": "Ward 130 Subash Nagar",
-    "pm25": 52.4,
-    "aqi": 88,
+    "pm25": 52.0,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1501,7 +912,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 130 Subash Nagar is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 130 Subash Nagar is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1515,7 +926,7 @@
   {
     "ward_id": "W030",
     "ward_name": "Ward 129 Suraram",
-    "pm25": 52.1,
+    "pm25": 51.8,
     "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -1546,8 +957,8 @@
   {
     "ward_id": "W031",
     "ward_name": "Ward 125 Gajularamaram",
-    "pm25": 52.5,
-    "aqi": 88,
+    "pm25": 52.2,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1563,7 +974,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 125 Gajularamaram is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 125 Gajularamaram is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1577,8 +988,8 @@
   {
     "ward_id": "W032",
     "ward_name": "Ward 116 Allapur",
-    "pm25": 53.8,
-    "aqi": 90,
+    "pm25": 56.0,
+    "aqi": 93,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1594,7 +1005,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 116 Allapur is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 116 Allapur is satisfactory (AQI 93). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1608,8 +1019,8 @@
   {
     "ward_id": "W033",
     "ward_name": "Ward 114 KPHB Colony",
-    "pm25": 53.7,
-    "aqi": 90,
+    "pm25": 55.2,
+    "aqi": 92,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1625,7 +1036,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 114 KPHB Colony is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 114 KPHB Colony is satisfactory (AQI 92). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1639,8 +1050,8 @@
   {
     "ward_id": "W034",
     "ward_name": "Ward 108 Miyapur",
-    "pm25": 58.7,
-    "aqi": 98,
+    "pm25": 55.9,
+    "aqi": 93,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1656,7 +1067,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 108 Miyapur is satisfactory (AQI 98). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 108 Miyapur is satisfactory (AQI 93). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1670,8 +1081,8 @@
   {
     "ward_id": "W035",
     "ward_name": "Ward 107 Madhapur",
-    "pm25": 54.2,
-    "aqi": 91,
+    "pm25": 55.5,
+    "aqi": 93,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1687,7 +1098,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 107 Madhapur is satisfactory (AQI 91). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 107 Madhapur is satisfactory (AQI 93). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1701,8 +1112,8 @@
   {
     "ward_id": "W036",
     "ward_name": "Ward 109 Hafeezpet",
-    "pm25": 59.1,
-    "aqi": 99,
+    "pm25": 56.0,
+    "aqi": 93,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1718,7 +1129,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 109 Hafeezpet is satisfactory (AQI 99). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 109 Hafeezpet is satisfactory (AQI 93). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1732,8 +1143,8 @@
   {
     "ward_id": "W038",
     "ward_name": "Ward 106 Serilingampally",
-    "pm25": 53.6,
-    "aqi": 90,
+    "pm25": 54.9,
+    "aqi": 92,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1749,7 +1160,38 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 106 Serilingampally is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 106 Serilingampally is satisfactory (AQI 92). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W039",
+    "ward_name": "Ward 104 Kondapur",
+    "pm25": 55.1,
+    "aqi": 92,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 17,
+    "vulnerability": {
+      "schools_hospitals_nearby": 28,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 104 Kondapur is satisfactory (AQI 92). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1763,8 +1205,8 @@
   {
     "ward_id": "W040",
     "ward_name": "Ward 78 Gunfoundry",
-    "pm25": 49.5,
-    "aqi": 83,
+    "pm25": 51.0,
+    "aqi": 85,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1780,7 +1222,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 78 Gunfoundry is satisfactory (AQI 83). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 78 Gunfoundry is satisfactory (AQI 85). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1794,8 +1236,8 @@
   {
     "ward_id": "W041",
     "ward_name": "Ward 79 Himayath Nagar",
-    "pm25": 51.9,
-    "aqi": 87,
+    "pm25": 51.3,
+    "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1811,7 +1253,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 79 Himayath Nagar is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 79 Himayath Nagar is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1825,7 +1267,7 @@
   {
     "ward_id": "W042",
     "ward_name": "Ward 84 Bagh Amberpet",
-    "pm25": 52.1,
+    "pm25": 52.2,
     "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -1856,8 +1298,8 @@
   {
     "ward_id": "W044",
     "ward_name": "Ward 85 Adikmet",
-    "pm25": 52.3,
-    "aqi": 88,
+    "pm25": 52.1,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1873,7 +1315,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 85 Adikmet is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 85 Adikmet is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1887,8 +1329,8 @@
   {
     "ward_id": "W045",
     "ward_name": "Ward 87 Ramnagar",
-    "pm25": 52.4,
-    "aqi": 88,
+    "pm25": 52.2,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -1904,7 +1346,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 87 Ramnagar is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 87 Ramnagar is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -1918,7 +1360,7 @@
   {
     "ward_id": "W046",
     "ward_name": "Ward 89 Gandhinagar",
-    "pm25": 53.3,
+    "pm25": 53.1,
     "aqi": 89,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -1949,7 +1391,7 @@
   {
     "ward_id": "W047",
     "ward_name": "Ward 86 Musheerabad",
-    "pm25": 53.2,
+    "pm25": 53.1,
     "aqi": 89,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -2011,7 +1453,7 @@
   {
     "ward_id": "W049",
     "ward_name": "Ward 88 Bholakpur",
-    "pm25": 52.8,
+    "pm25": 52.9,
     "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -2104,7 +1546,7 @@
   {
     "ward_id": "W052",
     "ward_name": "Ward 40 Riyasat Nagar",
-    "pm25": 51.8,
+    "pm25": 52.1,
     "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -2166,7 +1608,7 @@
   {
     "ward_id": "W056",
     "ward_name": "Ward 45 Jangammet",
-    "pm25": 51.4,
+    "pm25": 51.5,
     "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -2197,7 +1639,255 @@
   {
     "ward_id": "W057",
     "ward_name": "Ward 48 Shalibanda",
+    "pm25": 51.7,
+    "aqi": 86,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 18,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 48 Shalibanda is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W059",
+    "ward_name": "Ward 46 Falaknuma",
+    "pm25": 51.1,
+    "aqi": 85,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 11,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 46 Falaknuma is satisfactory (AQI 85). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W061",
+    "ward_name": "Ward 54 Jahanuma",
+    "pm25": 51.2,
+    "aqi": 86,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 14,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 54 Jahanuma is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W063",
+    "ward_name": "Ward 53 Doodh Bowli",
+    "pm25": 51.3,
+    "aqi": 86,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 16,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 53 Doodh Bowli is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W065",
+    "ward_name": "Ward 52 Puranapool",
+    "pm25": 51.2,
+    "aqi": 86,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 12,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 52 Puranapool is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W066",
+    "ward_name": "Ward 32 Patthergatti",
+    "pm25": 50.5,
+    "aqi": 85,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 21,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 32 Patthergatti is satisfactory (AQI 85). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W067",
+    "ward_name": "Ward 49 Ghansi Bazar",
     "pm25": 51.0,
+    "aqi": 85,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 24,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 49 Ghansi Bazar is satisfactory (AQI 85). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W068",
+    "ward_name": "Ward 94 Shaikpet",
+    "pm25": 55.7,
+    "aqi": 93,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 6,
+    "vulnerability": {
+      "schools_hospitals_nearby": 18,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 94 Shaikpet is satisfactory (AQI 93). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W070",
+    "ward_name": "Ward 63 Mangalhat",
+    "pm25": 50.8,
     "aqi": 85,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -2214,7 +1904,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 48 Shalibanda is satisfactory (AQI 85). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 63 Mangalhat is satisfactory (AQI 85). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2226,47 +1916,16 @@
     "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
-    "ward_id": "W059",
-    "ward_name": "Ward 46 Falaknuma",
-    "pm25": 51.5,
+    "ward_id": "W071",
+    "ward_name": "Ward 64 Dattatreya Nagar",
+    "pm25": 51.2,
     "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
     "risk_score": 0.29,
     "worsening": false,
-    "n_cells": 3,
-    "vulnerability": {
-      "schools_hospitals_nearby": 11,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 46 Falaknuma is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W061",
-    "ward_name": "Ward 54 Jahanuma",
-    "pm25": 52.9,
-    "aqi": 88,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "low",
-    "risk_score": 0.29,
-    "worsening": false,
-    "n_cells": 2,
+    "n_cells": 1,
     "vulnerability": {
       "schools_hospitals_nearby": 14,
       "outdoor_workers": null,
@@ -2276,7 +1935,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 54 Jahanuma is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 64 Dattatreya Nagar is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2288,16 +1947,171 @@
     "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
-    "ward_id": "W063",
-    "ward_name": "Ward 53 Doodh Bowli",
-    "pm25": 50.0,
-    "aqi": 84,
+    "ward_id": "W072",
+    "ward_name": "Ward 73 Vijay Nagar Colony",
+    "pm25": 53.2,
+    "aqi": 89,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
     "risk_score": 0.29,
     "worsening": false,
-    "n_cells": 3,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 53,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 73 Vijay Nagar Colony is satisfactory (AQI 89). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W073",
+    "ward_name": "Ward 72 Asif Nagar",
+    "pm25": 52.6,
+    "aqi": 88,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 42,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 72 Asif Nagar is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W074",
+    "ward_name": "Ward 70 Mehdipatnam",
+    "pm25": 53.3,
+    "aqi": 89,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 42,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 70 Mehdipatnam is satisfactory (AQI 89). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W075",
+    "ward_name": "Ward 71 Gudimalkapur",
+    "pm25": 52.2,
+    "aqi": 87,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 33,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 71 Gudimalkapur is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W076",
+    "ward_name": "Ward 69 Nanal Nagar",
+    "pm25": 54.6,
+    "aqi": 91,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 4,
+    "vulnerability": {
+      "schools_hospitals_nearby": 28,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 69 Nanal Nagar is satisfactory (AQI 91). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W078",
+    "ward_name": "Ward 67 Golconda",
+    "pm25": 54.1,
+    "aqi": 90,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 4,
     "vulnerability": {
       "schools_hospitals_nearby": 16,
       "outdoor_workers": null,
@@ -2307,7 +2121,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 53 Doodh Bowli is satisfactory (AQI 84). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 67 Golconda is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2319,18 +2133,18 @@
     "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
-    "ward_id": "W065",
-    "ward_name": "Ward 52 Puranapool",
-    "pm25": 46.5,
-    "aqi": 78,
+    "ward_id": "W079",
+    "ward_name": "Ward 66 Langar Houz",
+    "pm25": 55.4,
+    "aqi": 92,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
     "risk_score": 0.29,
     "worsening": false,
-    "n_cells": 1,
+    "n_cells": 8,
     "vulnerability": {
-      "schools_hospitals_nearby": 12,
+      "schools_hospitals_nearby": 11,
       "outdoor_workers": null,
       "elderly": null
     },
@@ -2338,69 +2152,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 52 Puranapool is satisfactory (AQI 78). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W066",
-    "ward_name": "Ward 32 Patthergatti",
-    "pm25": 49.1,
-    "aqi": 82,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "low",
-    "risk_score": 0.29,
-    "worsening": false,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 21,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 32 Patthergatti is satisfactory (AQI 82). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
-  },
-  {
-    "ward_id": "W067",
-    "ward_name": "Ward 49 Ghansi Bazar",
-    "pm25": 49.7,
-    "aqi": 83,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "low",
-    "risk_score": 0.29,
-    "worsening": false,
-    "n_cells": 2,
-    "vulnerability": {
-      "schools_hospitals_nearby": 24,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Ward 49 Ghansi Bazar is satisfactory (AQI 83). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 66 Langar Houz is satisfactory (AQI 92). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2414,8 +2166,8 @@
   {
     "ward_id": "W080",
     "ward_name": "Ward 100 Sanath Nagar",
-    "pm25": 52.5,
-    "aqi": 88,
+    "pm25": 52.2,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -2431,7 +2183,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 100 Sanath Nagar is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 100 Sanath Nagar is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2445,8 +2197,8 @@
   {
     "ward_id": "W081",
     "ward_name": "Ward 98 Ameerpet",
-    "pm25": 51.8,
-    "aqi": 87,
+    "pm25": 54.0,
+    "aqi": 90,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -2462,7 +2214,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 98 Ameerpet is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 98 Ameerpet is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2476,8 +2228,8 @@
   {
     "ward_id": "W082",
     "ward_name": "Ward 97 Somajiguda",
-    "pm25": 51.8,
-    "aqi": 87,
+    "pm25": 54.1,
+    "aqi": 90,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -2493,7 +2245,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 97 Somajiguda is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 97 Somajiguda is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2507,8 +2259,8 @@
   {
     "ward_id": "W083",
     "ward_name": "Ward 96 Yousufguda",
-    "pm25": 52.1,
-    "aqi": 87,
+    "pm25": 55.3,
+    "aqi": 92,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -2524,7 +2276,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 96 Yousufguda is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 96 Yousufguda is satisfactory (AQI 92). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2538,8 +2290,8 @@
   {
     "ward_id": "W084",
     "ward_name": "Ward 102 Rahmath Nagar",
-    "pm25": 52.7,
-    "aqi": 88,
+    "pm25": 56.0,
+    "aqi": 93,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -2555,7 +2307,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 102 Rahmath Nagar is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 102 Rahmath Nagar is satisfactory (AQI 93). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2569,8 +2321,8 @@
   {
     "ward_id": "W085",
     "ward_name": "Ward 101 Erragadda",
-    "pm25": 52.5,
-    "aqi": 88,
+    "pm25": 56.1,
+    "aqi": 94,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -2586,7 +2338,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 101 Erragadda is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 101 Erragadda is satisfactory (AQI 94). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2600,8 +2352,8 @@
   {
     "ward_id": "W086",
     "ward_name": "Ward 103 Borabanda",
-    "pm25": 52.9,
-    "aqi": 88,
+    "pm25": 56.0,
+    "aqi": 93,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -2617,7 +2369,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 103 Borabanda is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 103 Borabanda is satisfactory (AQI 93). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2631,8 +2383,8 @@
   {
     "ward_id": "W087",
     "ward_name": "Ward 99 Vengal Rao Nagar",
-    "pm25": 51.2,
-    "aqi": 86,
+    "pm25": 55.0,
+    "aqi": 92,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -2648,7 +2400,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 99 Vengal Rao Nagar is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 99 Vengal Rao Nagar is satisfactory (AQI 92). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2662,7 +2414,7 @@
   {
     "ward_id": "W088",
     "ward_name": "Ward 150 Monda Market",
-    "pm25": 52.2,
+    "pm25": 51.8,
     "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -2724,7 +2476,7 @@
   {
     "ward_id": "W090",
     "ward_name": "Ward 149 Begumpet",
-    "pm25": 51.7,
+    "pm25": 51.5,
     "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -2786,8 +2538,8 @@
   {
     "ward_id": "W092",
     "ward_name": "Ward 117 Moosapet",
-    "pm25": 52.3,
-    "aqi": 87,
+    "pm25": 55.9,
+    "aqi": 93,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -2803,7 +2555,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 117 Moosapet is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 117 Moosapet is satisfactory (AQI 93). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2817,8 +2569,8 @@
   {
     "ward_id": "W093",
     "ward_name": "Ward 118 Fateh Nagar",
-    "pm25": 51.9,
-    "aqi": 87,
+    "pm25": 51.7,
+    "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -2834,7 +2586,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 118 Fateh Nagar is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 118 Fateh Nagar is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2848,7 +2600,7 @@
   {
     "ward_id": "W094",
     "ward_name": "Ward 127 Rangareddy Nagar",
-    "pm25": 52.5,
+    "pm25": 52.7,
     "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -2879,7 +2631,7 @@
   {
     "ward_id": "W095",
     "ward_name": "Ward 120 Balanagar",
-    "pm25": 52.5,
+    "pm25": 52.6,
     "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -2910,7 +2662,7 @@
   {
     "ward_id": "W096",
     "ward_name": "Ward 121 Kukatpally",
-    "pm25": 52.1,
+    "pm25": 52.2,
     "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -2941,8 +2693,8 @@
   {
     "ward_id": "W097",
     "ward_name": "Ward 123 Hydernagar",
-    "pm25": 48.7,
-    "aqi": 81,
+    "pm25": 46.8,
+    "aqi": 79,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -2958,7 +2710,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 123 Hydernagar is satisfactory (AQI 81). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 123 Hydernagar is satisfactory (AQI 79). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -2972,7 +2724,7 @@
   {
     "ward_id": "W098",
     "ward_name": "Ward 122 Vivekananda Nagar Colony",
-    "pm25": 51.2,
+    "pm25": 51.6,
     "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3003,8 +2755,8 @@
   {
     "ward_id": "W099",
     "ward_name": "Ward 119 Old Bowenpally",
-    "pm25": 52.0,
-    "aqi": 87,
+    "pm25": 51.6,
+    "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3020,7 +2772,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 119 Old Bowenpally is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 119 Old Bowenpally is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3034,8 +2786,8 @@
   {
     "ward_id": "W101",
     "ward_name": "Ward 134 Alwal",
-    "pm25": 52.0,
-    "aqi": 87,
+    "pm25": 53.7,
+    "aqi": 90,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3051,7 +2803,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 134 Alwal is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 134 Alwal is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3065,8 +2817,8 @@
   {
     "ward_id": "W102",
     "ward_name": "Ward 131 Quthbullapur",
-    "pm25": 51.7,
-    "aqi": 86,
+    "pm25": 51.9,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3082,7 +2834,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 131 Quthbullapur is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 131 Quthbullapur is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3096,7 +2848,7 @@
   {
     "ward_id": "W103",
     "ward_name": "Ward 115 Balaji Nagar",
-    "pm25": 52.9,
+    "pm25": 52.5,
     "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3127,8 +2879,8 @@
   {
     "ward_id": "W104",
     "ward_name": "Ward 143 Tarnaka",
-    "pm25": 52.6,
-    "aqi": 88,
+    "pm25": 52.1,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3144,7 +2896,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 143 Tarnaka is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 143 Tarnaka is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3189,7 +2941,7 @@
   {
     "ward_id": "W106",
     "ward_name": "Ward 138 Moula Ali",
-    "pm25": 52.7,
+    "pm25": 52.5,
     "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3220,7 +2972,7 @@
   {
     "ward_id": "W107",
     "ward_name": "Ward 142 Addagutta",
-    "pm25": 52.2,
+    "pm25": 51.8,
     "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3251,8 +3003,8 @@
   {
     "ward_id": "W108",
     "ward_name": "Ward 141 Gautham Nagar",
-    "pm25": 52.6,
-    "aqi": 88,
+    "pm25": 52.2,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3268,7 +3020,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 141 Gautham Nagar is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 141 Gautham Nagar is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3282,7 +3034,7 @@
   {
     "ward_id": "W109",
     "ward_name": "Ward 137 Vinayak Nagar",
-    "pm25": 52.5,
+    "pm25": 52.6,
     "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3313,8 +3065,8 @@
   {
     "ward_id": "W110",
     "ward_name": "Ward 140 Malkajgiri",
-    "pm25": 52.5,
-    "aqi": 88,
+    "pm25": 52.0,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3330,7 +3082,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 140 Malkajgiri is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 140 Malkajgiri is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3344,8 +3096,8 @@
   {
     "ward_id": "W111",
     "ward_name": "Ward 23 Gaddiannaram",
-    "pm25": 52.4,
-    "aqi": 88,
+    "pm25": 53.0,
+    "aqi": 89,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3361,7 +3113,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 23 Gaddiannaram is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 23 Gaddiannaram is satisfactory (AQI 89). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3375,8 +3127,8 @@
   {
     "ward_id": "W112",
     "ward_name": "Ward 22 Chaitanyapuri",
-    "pm25": 52.6,
-    "aqi": 88,
+    "pm25": 53.0,
+    "aqi": 89,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3392,7 +3144,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 22 Chaitanyapuri is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 22 Chaitanyapuri is satisfactory (AQI 89). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3406,8 +3158,8 @@
   {
     "ward_id": "W113",
     "ward_name": "Ward 19 Saroornagar",
-    "pm25": 52.0,
-    "aqi": 87,
+    "pm25": 52.5,
+    "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3423,7 +3175,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 19 Saroornagar is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 19 Saroornagar is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3437,7 +3189,7 @@
   {
     "ward_id": "W114",
     "ward_name": "Ward 18 Lingojiguda",
-    "pm25": 51.9,
+    "pm25": 52.2,
     "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3468,7 +3220,7 @@
   {
     "ward_id": "W115",
     "ward_name": "Ward 38 IS Sadan",
-    "pm25": 51.9,
+    "pm25": 52.3,
     "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3499,7 +3251,7 @@
   {
     "ward_id": "W116",
     "ward_name": "Ward 17 Champapet",
-    "pm25": 52.1,
+    "pm25": 52.2,
     "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3530,8 +3282,8 @@
   {
     "ward_id": "W117",
     "ward_name": "Ward 27 Akbarbagh",
-    "pm25": 50.8,
-    "aqi": 85,
+    "pm25": 51.4,
+    "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3547,7 +3299,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 27 Akbarbagh is satisfactory (AQI 85). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 27 Akbarbagh is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3561,8 +3313,8 @@
   {
     "ward_id": "W118",
     "ward_name": "Ward 24 Saidabad",
-    "pm25": 51.5,
-    "aqi": 86,
+    "pm25": 51.9,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3578,7 +3330,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 24 Saidabad is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 24 Saidabad is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3592,8 +3344,8 @@
   {
     "ward_id": "W119",
     "ward_name": "Ward 25 Moosarambagh",
-    "pm25": 52.3,
-    "aqi": 87,
+    "pm25": 52.5,
+    "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3609,7 +3361,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 25 Moosarambagh is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 25 Moosarambagh is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3623,7 +3375,7 @@
   {
     "ward_id": "W120",
     "ward_name": "Ward 26 Old Malakpet",
-    "pm25": 50.6,
+    "pm25": 50.7,
     "aqi": 85,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3654,7 +3406,7 @@
   {
     "ward_id": "W121",
     "ward_name": "Ward 28 Azampura",
-    "pm25": 50.5,
+    "pm25": 50.8,
     "aqi": 85,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3685,7 +3437,7 @@
   {
     "ward_id": "W122",
     "ward_name": "Ward 29 Chawni",
-    "pm25": 51.8,
+    "pm25": 52.1,
     "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3716,7 +3468,7 @@
   {
     "ward_id": "W124",
     "ward_name": "Ward 37 Kurmaguda",
-    "pm25": 51.8,
+    "pm25": 51.9,
     "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3776,10 +3528,41 @@
     "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
+    "ward_id": "W127",
+    "ward_name": "Ward 75 Red Hills",
+    "pm25": 51.6,
+    "aqi": 86,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 57,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 75 Red Hills is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
     "ward_id": "W128",
     "ward_name": "Ward 77 Jambagh",
-    "pm25": 44.0,
-    "aqi": 74,
+    "pm25": 51.6,
+    "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3795,7 +3578,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 77 Jambagh is satisfactory (AQI 74). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 77 Jambagh is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3809,8 +3592,8 @@
   {
     "ward_id": "W129",
     "ward_name": "Ward 50 Begum Bazar",
-    "pm25": 48.5,
-    "aqi": 81,
+    "pm25": 50.7,
+    "aqi": 85,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3826,7 +3609,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 50 Begum Bazar is satisfactory (AQI 81). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 50 Begum Bazar is satisfactory (AQI 85). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3840,8 +3623,8 @@
   {
     "ward_id": "W130",
     "ward_name": "Ward 51 Goshamahal",
-    "pm25": 45.4,
-    "aqi": 76,
+    "pm25": 50.6,
+    "aqi": 85,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3857,7 +3640,69 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 51 Goshamahal is satisfactory (AQI 76). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 51 Goshamahal is satisfactory (AQI 85). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W131",
+    "ward_name": "Ward 62 Ziaguda",
+    "pm25": 50.6,
+    "aqi": 85,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 1,
+    "vulnerability": {
+      "schools_hospitals_nearby": 14,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 62 Ziaguda is satisfactory (AQI 85). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W132",
+    "ward_name": "Ward 65 Karwan",
+    "pm25": 51.7,
+    "aqi": 86,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 3,
+    "vulnerability": {
+      "schools_hospitals_nearby": 18,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 65 Karwan is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3902,7 +3747,7 @@
   {
     "ward_id": "W134",
     "ward_name": "Ward 83 Amberpet",
-    "pm25": 51.8,
+    "pm25": 52.2,
     "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3933,7 +3778,7 @@
   {
     "ward_id": "W135",
     "ward_name": "Ward 82 Golnaka",
-    "pm25": 51.6,
+    "pm25": 51.7,
     "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -3964,8 +3809,8 @@
   {
     "ward_id": "W136",
     "ward_name": "Ward 80 Kachiguda",
-    "pm25": 51.4,
-    "aqi": 86,
+    "pm25": 51.8,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -3981,7 +3826,69 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 80 Kachiguda is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 80 Kachiguda is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W139",
+    "ward_name": "Ward 56 Kishanbagh",
+    "pm25": 51.0,
+    "aqi": 85,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 10,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 56 Kishanbagh is satisfactory (AQI 85). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W140",
+    "ward_name": "Ward 61 Attapur",
+    "pm25": 51.9,
+    "aqi": 87,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 7,
+    "vulnerability": {
+      "schools_hospitals_nearby": 26,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 61 Attapur is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -3995,7 +3902,7 @@
   {
     "ward_id": "W143",
     "ward_name": "Ward 30 Dabeerpura",
-    "pm25": 50.6,
+    "pm25": 50.8,
     "aqi": 85,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -4024,10 +3931,72 @@
     "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
   },
   {
+    "ward_id": "W145",
+    "ward_name": "Ward 74 Ahmed Nagar",
+    "pm25": 54.2,
+    "aqi": 91,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 51,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 74 Ahmed Nagar is satisfactory (AQI 91). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "unassigned",
+    "ward_name": "Outside city limits",
+    "pm25": 52.9,
+    "aqi": 88,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 341,
+    "vulnerability": {
+      "schools_hospitals_nearby": 51,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Outside city limits is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
     "ward_id": "W007",
     "ward_name": "Ward 133 Macha Bolarum",
-    "pm25": 51.7,
-    "aqi": 86,
+    "pm25": 53.7,
+    "aqi": 90,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4043,7 +4012,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 133 Macha Bolarum is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 133 Macha Bolarum is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4057,7 +4026,7 @@
   {
     "ward_id": "W055",
     "ward_name": "Ward 44 Uppuguda",
-    "pm25": 50.6,
+    "pm25": 51.0,
     "aqi": 85,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -4088,7 +4057,7 @@
   {
     "ward_id": "W058",
     "ward_name": "Ward 43 Chandrayangutta",
-    "pm25": 50.6,
+    "pm25": 51.1,
     "aqi": 85,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -4119,8 +4088,8 @@
   {
     "ward_id": "W100",
     "ward_name": "Ward 135 Venkatapuram",
-    "pm25": 52.5,
-    "aqi": 88,
+    "pm25": 53.7,
+    "aqi": 90,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4136,7 +4105,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 135 Venkatapuram is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 135 Venkatapuram is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4150,8 +4119,8 @@
   {
     "ward_id": "W123",
     "ward_name": "Ward 37 Rein Bazar",
-    "pm25": 52.0,
-    "aqi": 87,
+    "pm25": 51.7,
+    "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4167,7 +4136,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 37 Rein Bazar is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 37 Rein Bazar is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4181,7 +4150,7 @@
   {
     "ward_id": "W053",
     "ward_name": "Ward 36 Lalithabagh",
-    "pm25": 51.5,
+    "pm25": 51.7,
     "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -4212,8 +4181,8 @@
   {
     "ward_id": "W060",
     "ward_name": "Ward 47 Nawab Saheb Kunta",
-    "pm25": 54.5,
-    "aqi": 91,
+    "pm25": 51.4,
+    "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4229,7 +4198,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 47 Nawab Saheb Kunta is satisfactory (AQI 91). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 47 Nawab Saheb Kunta is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4243,8 +4212,8 @@
   {
     "ward_id": "W126",
     "ward_name": "Ward 41 Kanchanbagh",
-    "pm25": 51.7,
-    "aqi": 86,
+    "pm25": 52.0,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4260,7 +4229,38 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 41 Kanchanbagh is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 41 Kanchanbagh is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language."
+  },
+  {
+    "ward_id": "W077",
+    "ward_name": "Ward 68 Tolichowki",
+    "pm25": 56.0,
+    "aqi": 93,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.23,
+    "worsening": false,
+    "n_cells": 2,
+    "vulnerability": {
+      "schools_hospitals_nearby": 6,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Ward 68 Tolichowki is satisfactory (AQI 93). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4274,8 +4274,8 @@
   {
     "ward_id": "W006",
     "ward_name": "Ward 59 Mailardevpally",
-    "pm25": 58.2,
-    "aqi": 97,
+    "pm25": 51.4,
+    "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4291,7 +4291,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 59 Mailardevpally is satisfactory (AQI 97). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 59 Mailardevpally is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4305,8 +4305,8 @@
   {
     "ward_id": "W137",
     "ward_name": "Ward 58 Shastripuram",
-    "pm25": 57.9,
-    "aqi": 97,
+    "pm25": 51.2,
+    "aqi": 86,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4322,7 +4322,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 58 Shastripuram is satisfactory (AQI 97). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 58 Shastripuram is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4336,8 +4336,8 @@
   {
     "ward_id": "W144",
     "ward_name": "Ward 42 Barkas",
-    "pm25": 53.1,
-    "aqi": 89,
+    "pm25": 50.9,
+    "aqi": 85,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4353,7 +4353,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 42 Barkas is satisfactory (AQI 89). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 42 Barkas is satisfactory (AQI 85). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -4367,8 +4367,8 @@
   {
     "ward_id": "W138",
     "ward_name": "Ward 57 Suleman Nagar",
-    "pm25": 53.6,
-    "aqi": 90,
+    "pm25": 52.0,
+    "aqi": 87,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -4384,7 +4384,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in Ward 57 Suleman Nagar is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in Ward 57 Suleman Nagar is satisfactory (AQI 87). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {

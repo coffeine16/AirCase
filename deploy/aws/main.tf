@@ -29,10 +29,13 @@ variable "region" {
 }
 
 variable "instance_type" {
-  # 2 vCPU / 1 GiB, and free-tier eligible for 12 months. n8n idles at a few
-  # hundred MB; the GCP box it replaces was an e2-small (2 GiB) and was never
-  # close to using it.
-  default = "t3.micro"
+  # 2 vCPU / 2 GiB. NOT t3.micro: 1 GiB is not enough for n8n, which the GCP
+  # file this replaces already said in as many words ("e2-small ~ 2GB is
+  # comfortable for n8n"). Sized down for free-tier eligibility anyway, and the
+  # box became unreachable the moment docker recreated the container — SSH and
+  # HTTPS both stopped answering. Free tier is not worth an instance that dies
+  # under its only workload.
+  default = "t3.small"
 }
 
 variable "ssh_cidr" {

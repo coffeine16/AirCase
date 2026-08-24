@@ -7,17 +7,17 @@
     "cells": [
       "8842ceb4e3fffff",
       "8842ceb48dfffff",
-      "8842ceb4c7fffff",
       "8842ceb4ebfffff",
+      "8842ceb4c7fffff",
       "8842ceb4c5fffff"
     ],
     "centroid": {
       "lat": 23.0595,
       "lon": 72.5434
     },
-    "eps": 72.7,
+    "eps": 73.5,
     "components": {
-      "severity": 0.513,
+      "severity": 0.537,
       "attribution_conf": 0.59,
       "actionability": 1.0,
       "vulnerability": 1.0
@@ -26,7 +26,7 @@
     "source": "industrial",
     "confidence": 0.59,
     "n_cells": 5,
-    "pm25_med": 85.4,
+    "pm25_med": 103.1,
     "status": "pending"
   },
   {
@@ -35,36 +35,36 @@
     "ward_id": "W003",
     "ward_name": "46 LAMBHA",
     "cells": [
-      "8842cea70dfffff",
-      "8842cea76bfffff",
-      "8842cea769fffff",
-      "8842cea745fffff",
-      "8842cea747fffff",
-      "8842cea763fffff",
       "8842cea729fffff",
-      "8842cea76dfffff",
-      "8842cea705fffff",
       "8842cea767fffff",
+      "8842cea76dfffff",
       "8842cea765fffff",
+      "8842cea70dfffff",
       "8842cea761fffff",
-      "8842cea757fffff",
-      "8842cea751fffff",
-      "8842cea755fffff",
+      "8842cea763fffff",
+      "8842cea76bfffff",
+      "8842cea705fffff",
+      "8842cea747fffff",
+      "8842cea745fffff",
+      "8842cea769fffff",
       "8842cea70bfffff",
-      "8842cea701fffff",
-      "8842cea743fffff",
-      "8842cea709fffff",
+      "8842cea751fffff",
+      "8842cea757fffff",
+      "8842cea755fffff",
       "8842cea75dfffff",
+      "8842cea701fffff",
       "8842cea74bfffff",
+      "8842cea709fffff",
+      "8842cea743fffff",
       "8842cea741fffff"
     ],
     "centroid": {
       "lat": 22.9692,
       "lon": 72.5612
     },
-    "eps": 63.5,
+    "eps": 63.6,
     "components": {
-      "severity": 0.859,
+      "severity": 0.863,
       "attribution_conf": 0.78,
       "actionability": 0.6,
       "vulnerability": 0.094
@@ -73,7 +73,7 @@
     "source": "waste_burning",
     "confidence": 0.78,
     "n_cells": 22,
-    "pm25_med": 65.4,
+    "pm25_med": 73.9,
     "status": "pending"
   }
 ]

@@ -1,1048 +1,96 @@
 [
   {
-    "cell": "8842cea70dfffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W003",
-    "pm25_estimate": 53.0,
-    "primary_source": "waste_burning",
-    "confidence": 0.78,
-    "scores": {
-      "industrial": 0.593,
-      "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
-    },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
-    "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
-    ],
-    "evidence": {
-      "cell": "8842cea70dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W003",
-      "pm25_estimate": 53.0,
-      "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
-        {
-          "name": "industrial_321136518",
-          "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
-        },
-        {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136521",
-          "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
-        },
-        {
-          "name": "industrial_321136523",
-          "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 120.4,
-          "city_percentile": 88
-        },
-        "so2_col": {
-          "value": 89.2,
-          "city_percentile": 53
-        },
-        "aai": {
-          "value": 0.3,
-          "city_percentile": 58
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 720
-      },
-      "landuse_context": {
-        "industrial": 2,
-        "construction": 0,
-        "waste_burning": 0,
-        "traffic": 0
-      },
-      "meteorology": {
-        "wind_from_deg": 58,
-        "wind_ms": 1.7,
-        "blh_m": 160,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "chronic",
-      "evidence_window_hours": 720,
-      "zone_cells": 22
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z01"
-  },
-  {
-    "cell": "8842cea76bfffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W003",
-    "pm25_estimate": 53.0,
-    "primary_source": "waste_burning",
-    "confidence": 0.78,
-    "scores": {
-      "industrial": 0.593,
-      "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
-    },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
-    "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
-    ],
-    "evidence": {
-      "cell": "8842cea70dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W003",
-      "pm25_estimate": 53.0,
-      "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
-        {
-          "name": "industrial_321136518",
-          "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
-        },
-        {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136521",
-          "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
-        },
-        {
-          "name": "industrial_321136523",
-          "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 120.4,
-          "city_percentile": 88
-        },
-        "so2_col": {
-          "value": 89.2,
-          "city_percentile": 53
-        },
-        "aai": {
-          "value": 0.3,
-          "city_percentile": 58
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 720
-      },
-      "landuse_context": {
-        "industrial": 2,
-        "construction": 0,
-        "waste_burning": 0,
-        "traffic": 0
-      },
-      "meteorology": {
-        "wind_from_deg": 58,
-        "wind_ms": 1.7,
-        "blh_m": 160,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "chronic",
-      "evidence_window_hours": 720,
-      "zone_cells": 22
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z01"
-  },
-  {
-    "cell": "8842cea769fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W003",
-    "pm25_estimate": 53.0,
-    "primary_source": "waste_burning",
-    "confidence": 0.78,
-    "scores": {
-      "industrial": 0.593,
-      "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
-    },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
-    "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
-    ],
-    "evidence": {
-      "cell": "8842cea70dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W003",
-      "pm25_estimate": 53.0,
-      "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
-        {
-          "name": "industrial_321136518",
-          "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
-        },
-        {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136521",
-          "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
-        },
-        {
-          "name": "industrial_321136523",
-          "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 120.4,
-          "city_percentile": 88
-        },
-        "so2_col": {
-          "value": 89.2,
-          "city_percentile": 53
-        },
-        "aai": {
-          "value": 0.3,
-          "city_percentile": 58
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 720
-      },
-      "landuse_context": {
-        "industrial": 2,
-        "construction": 0,
-        "waste_burning": 0,
-        "traffic": 0
-      },
-      "meteorology": {
-        "wind_from_deg": 58,
-        "wind_ms": 1.7,
-        "blh_m": 160,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "chronic",
-      "evidence_window_hours": 720,
-      "zone_cells": 22
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z01"
-  },
-  {
-    "cell": "8842cea745fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W003",
-    "pm25_estimate": 53.0,
-    "primary_source": "waste_burning",
-    "confidence": 0.78,
-    "scores": {
-      "industrial": 0.593,
-      "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
-    },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
-    "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
-    ],
-    "evidence": {
-      "cell": "8842cea70dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W003",
-      "pm25_estimate": 53.0,
-      "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
-        {
-          "name": "industrial_321136518",
-          "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
-        },
-        {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136521",
-          "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
-        },
-        {
-          "name": "industrial_321136523",
-          "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 120.4,
-          "city_percentile": 88
-        },
-        "so2_col": {
-          "value": 89.2,
-          "city_percentile": 53
-        },
-        "aai": {
-          "value": 0.3,
-          "city_percentile": 58
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 720
-      },
-      "landuse_context": {
-        "industrial": 2,
-        "construction": 0,
-        "waste_burning": 0,
-        "traffic": 0
-      },
-      "meteorology": {
-        "wind_from_deg": 58,
-        "wind_ms": 1.7,
-        "blh_m": 160,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "chronic",
-      "evidence_window_hours": 720,
-      "zone_cells": 22
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z01"
-  },
-  {
-    "cell": "8842cea747fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W003",
-    "pm25_estimate": 53.0,
-    "primary_source": "waste_burning",
-    "confidence": 0.78,
-    "scores": {
-      "industrial": 0.593,
-      "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
-    },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
-    "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
-    ],
-    "evidence": {
-      "cell": "8842cea70dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W003",
-      "pm25_estimate": 53.0,
-      "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
-        {
-          "name": "industrial_321136518",
-          "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
-        },
-        {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136521",
-          "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
-        },
-        {
-          "name": "industrial_321136523",
-          "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 120.4,
-          "city_percentile": 88
-        },
-        "so2_col": {
-          "value": 89.2,
-          "city_percentile": 53
-        },
-        "aai": {
-          "value": 0.3,
-          "city_percentile": 58
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 720
-      },
-      "landuse_context": {
-        "industrial": 2,
-        "construction": 0,
-        "waste_burning": 0,
-        "traffic": 0
-      },
-      "meteorology": {
-        "wind_from_deg": 58,
-        "wind_ms": 1.7,
-        "blh_m": 160,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "chronic",
-      "evidence_window_hours": 720,
-      "zone_cells": 22
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z01"
-  },
-  {
-    "cell": "8842cea763fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W003",
-    "pm25_estimate": 53.0,
-    "primary_source": "waste_burning",
-    "confidence": 0.78,
-    "scores": {
-      "industrial": 0.593,
-      "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
-    },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
-    "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
-    ],
-    "evidence": {
-      "cell": "8842cea70dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W003",
-      "pm25_estimate": 53.0,
-      "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
-        {
-          "name": "industrial_321136518",
-          "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
-        },
-        {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136521",
-          "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
-        },
-        {
-          "name": "industrial_321136523",
-          "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 120.4,
-          "city_percentile": 88
-        },
-        "so2_col": {
-          "value": 89.2,
-          "city_percentile": 53
-        },
-        "aai": {
-          "value": 0.3,
-          "city_percentile": 58
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 720
-      },
-      "landuse_context": {
-        "industrial": 2,
-        "construction": 0,
-        "waste_burning": 0,
-        "traffic": 0
-      },
-      "meteorology": {
-        "wind_from_deg": 58,
-        "wind_ms": 1.7,
-        "blh_m": 160,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "chronic",
-      "evidence_window_hours": 720,
-      "zone_cells": 22
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z01"
-  },
-  {
     "cell": "8842cea729fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W003",
-    "pm25_estimate": 53.0,
+    "pm25_estimate": 59.4,
     "primary_source": "waste_burning",
     "confidence": 0.78,
     "scores": {
-      "industrial": 0.593,
+      "industrial": 0.565,
       "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
+      "waste_burning": 2.589,
+      "traffic": 0.162
     },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
     "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
     ],
     "evidence": {
-      "cell": "8842cea70dfffff",
+      "cell": "8842cea729fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 53.0,
+      "pm25_estimate": 59.4,
       "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
         {
           "name": "industrial_321136518",
           "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
         },
         {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
         },
         {
           "name": "industrial_321136521",
           "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
         },
         {
           "name": "industrial_321136523",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 120.4,
-          "city_percentile": 88
+          "city_percentile": 92
         },
         "so2_col": {
           "value": 89.2,
-          "city_percentile": 53
+          "city_percentile": 57
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 58
+          "city_percentile": 66
         }
       },
       "fire_activity": {
         "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 720
-      },
-      "landuse_context": {
-        "industrial": 2,
-        "construction": 0,
-        "waste_burning": 0,
-        "traffic": 0
-      },
-      "meteorology": {
-        "wind_from_deg": 58,
-        "wind_ms": 1.7,
-        "blh_m": 160,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "chronic",
-      "evidence_window_hours": 720,
-      "zone_cells": 22
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z01"
-  },
-  {
-    "cell": "8842cea76dfffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W003",
-    "pm25_estimate": 53.0,
-    "primary_source": "waste_burning",
-    "confidence": 0.78,
-    "scores": {
-      "industrial": 0.593,
-      "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
-    },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
-    "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
-    ],
-    "evidence": {
-      "cell": "8842cea70dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W003",
-      "pm25_estimate": 53.0,
-      "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
-        {
-          "name": "industrial_321136518",
-          "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
-        },
-        {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136521",
-          "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
-        },
-        {
-          "name": "industrial_321136523",
-          "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 120.4,
-          "city_percentile": 88
-        },
-        "so2_col": {
-          "value": 89.2,
-          "city_percentile": 53
-        },
-        "aai": {
-          "value": 0.3,
-          "city_percentile": 58
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 720
-      },
-      "landuse_context": {
-        "industrial": 2,
-        "construction": 0,
-        "waste_burning": 0,
-        "traffic": 0
-      },
-      "meteorology": {
-        "wind_from_deg": 58,
-        "wind_ms": 1.7,
-        "blh_m": 160,
-        "hour_local": 12,
-        "air_trapped": true
-      },
-      "hotspot_kind": "chronic",
-      "evidence_window_hours": 720,
-      "zone_cells": 22
-    },
-    "explained_by": "gemini",
-    "zone_id": "Z01"
-  },
-  {
-    "cell": "8842cea705fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W003",
-    "pm25_estimate": 53.0,
-    "primary_source": "waste_burning",
-    "confidence": 0.78,
-    "scores": {
-      "industrial": 0.593,
-      "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
-    },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
-    "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
-    ],
-    "evidence": {
-      "cell": "8842cea70dfffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W003",
-      "pm25_estimate": 53.0,
-      "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
-        {
-          "name": "industrial_321136518",
-          "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
-        },
-        {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136521",
-          "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
-        },
-        {
-          "name": "industrial_321136523",
-          "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 120.4,
-          "city_percentile": 88
-        },
-        "so2_col": {
-          "value": 89.2,
-          "city_percentile": 53
-        },
-        "aai": {
-          "value": 0.3,
-          "city_percentile": 58
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
+        "fire_hour_fraction": 0.0742,
         "frp_p90": 0.0
       },
       "citizen_corroboration": {
@@ -1074,94 +122,213 @@
     "cell": "8842cea767fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W003",
-    "pm25_estimate": 53.0,
+    "pm25_estimate": 59.4,
     "primary_source": "waste_burning",
     "confidence": 0.78,
     "scores": {
-      "industrial": 0.593,
+      "industrial": 0.565,
       "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
+      "waste_burning": 2.589,
+      "traffic": 0.162
     },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
     "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
     ],
     "evidence": {
-      "cell": "8842cea70dfffff",
+      "cell": "8842cea729fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 53.0,
+      "pm25_estimate": 59.4,
       "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
         {
           "name": "industrial_321136518",
           "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
         },
         {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
         },
         {
           "name": "industrial_321136521",
           "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
         },
         {
           "name": "industrial_321136523",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 120.4,
-          "city_percentile": 88
+          "city_percentile": 92
         },
         "so2_col": {
           "value": 89.2,
-          "city_percentile": 53
+          "city_percentile": 57
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 58
+          "city_percentile": 66
         }
       },
       "fire_activity": {
         "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
+        "fire_hour_fraction": 0.0742,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 58,
+        "wind_ms": 1.7,
+        "blh_m": 160,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 22
+    },
+    "explained_by": "gemini",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "8842cea76dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W003",
+    "pm25_estimate": 59.4,
+    "primary_source": "waste_burning",
+    "confidence": 0.78,
+    "scores": {
+      "industrial": 0.565,
+      "construction": 0.0,
+      "waste_burning": 2.589,
+      "traffic": 0.162
+    },
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "evidence_factors": [
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+    ],
+    "evidence": {
+      "cell": "8842cea729fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W003",
+      "pm25_estimate": 59.4,
+      "candidates": [
+        {
+          "name": "industrial_321136518",
+          "type": "industrial",
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_321136521",
+          "type": "industrial",
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "industrial_321136523",
+          "type": "industrial",
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 120.4,
+          "city_percentile": 92
+        },
+        "so2_col": {
+          "value": 89.2,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": 0.3,
+          "city_percentile": 66
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 51,
+        "fire_hour_fraction": 0.0742,
         "frp_p90": 0.0
       },
       "citizen_corroboration": {
@@ -1193,94 +360,213 @@
     "cell": "8842cea765fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W003",
-    "pm25_estimate": 53.0,
+    "pm25_estimate": 59.4,
     "primary_source": "waste_burning",
     "confidence": 0.78,
     "scores": {
-      "industrial": 0.593,
+      "industrial": 0.565,
       "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
+      "waste_burning": 2.589,
+      "traffic": 0.162
     },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
     "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
     ],
     "evidence": {
-      "cell": "8842cea70dfffff",
+      "cell": "8842cea729fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 53.0,
+      "pm25_estimate": 59.4,
       "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
         {
           "name": "industrial_321136518",
           "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
         },
         {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
         },
         {
           "name": "industrial_321136521",
           "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
         },
         {
           "name": "industrial_321136523",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 120.4,
-          "city_percentile": 88
+          "city_percentile": 92
         },
         "so2_col": {
           "value": 89.2,
-          "city_percentile": 53
+          "city_percentile": 57
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 58
+          "city_percentile": 66
         }
       },
       "fire_activity": {
         "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
+        "fire_hour_fraction": 0.0742,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 58,
+        "wind_ms": 1.7,
+        "blh_m": 160,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 22
+    },
+    "explained_by": "gemini",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "8842cea70dfffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W003",
+    "pm25_estimate": 59.4,
+    "primary_source": "waste_burning",
+    "confidence": 0.78,
+    "scores": {
+      "industrial": 0.565,
+      "construction": 0.0,
+      "waste_burning": 2.589,
+      "traffic": 0.162
+    },
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "evidence_factors": [
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+    ],
+    "evidence": {
+      "cell": "8842cea729fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W003",
+      "pm25_estimate": 59.4,
+      "candidates": [
+        {
+          "name": "industrial_321136518",
+          "type": "industrial",
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_321136521",
+          "type": "industrial",
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "industrial_321136523",
+          "type": "industrial",
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 120.4,
+          "city_percentile": 92
+        },
+        "so2_col": {
+          "value": 89.2,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": 0.3,
+          "city_percentile": 66
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 51,
+        "fire_hour_fraction": 0.0742,
         "frp_p90": 0.0
       },
       "citizen_corroboration": {
@@ -1312,94 +598,94 @@
     "cell": "8842cea761fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W003",
-    "pm25_estimate": 53.0,
+    "pm25_estimate": 59.4,
     "primary_source": "waste_burning",
     "confidence": 0.78,
     "scores": {
-      "industrial": 0.593,
+      "industrial": 0.565,
       "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
+      "waste_burning": 2.589,
+      "traffic": 0.162
     },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
     "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
     ],
     "evidence": {
-      "cell": "8842cea70dfffff",
+      "cell": "8842cea729fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 53.0,
+      "pm25_estimate": 59.4,
       "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
         {
           "name": "industrial_321136518",
           "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
         },
         {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
         },
         {
           "name": "industrial_321136521",
           "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
         },
         {
           "name": "industrial_321136523",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 120.4,
-          "city_percentile": 88
+          "city_percentile": 92
         },
         "so2_col": {
           "value": 89.2,
-          "city_percentile": 53
+          "city_percentile": 57
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 58
+          "city_percentile": 66
         }
       },
       "fire_activity": {
         "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
+        "fire_hour_fraction": 0.0742,
         "frp_p90": 0.0
       },
       "citizen_corroboration": {
@@ -1428,97 +714,97 @@
     "zone_id": "Z01"
   },
   {
-    "cell": "8842cea757fffff",
+    "cell": "8842cea763fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W003",
-    "pm25_estimate": 53.0,
+    "pm25_estimate": 59.4,
     "primary_source": "waste_burning",
     "confidence": 0.78,
     "scores": {
-      "industrial": 0.593,
+      "industrial": 0.565,
       "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
+      "waste_burning": 2.589,
+      "traffic": 0.162
     },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
     "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
     ],
     "evidence": {
-      "cell": "8842cea70dfffff",
+      "cell": "8842cea729fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 53.0,
+      "pm25_estimate": 59.4,
       "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
         {
           "name": "industrial_321136518",
           "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
         },
         {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
         },
         {
           "name": "industrial_321136521",
           "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
         },
         {
           "name": "industrial_321136523",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 120.4,
-          "city_percentile": 88
+          "city_percentile": 92
         },
         "so2_col": {
           "value": 89.2,
-          "city_percentile": 53
+          "city_percentile": 57
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 58
+          "city_percentile": 66
         }
       },
       "fire_activity": {
         "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
+        "fire_hour_fraction": 0.0742,
         "frp_p90": 0.0
       },
       "citizen_corroboration": {
@@ -1547,97 +833,97 @@
     "zone_id": "Z01"
   },
   {
-    "cell": "8842cea751fffff",
+    "cell": "8842cea76bfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W003",
-    "pm25_estimate": 53.0,
+    "pm25_estimate": 59.4,
     "primary_source": "waste_burning",
     "confidence": 0.78,
     "scores": {
-      "industrial": 0.593,
+      "industrial": 0.565,
       "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
+      "waste_burning": 2.589,
+      "traffic": 0.162
     },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
     "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
     ],
     "evidence": {
-      "cell": "8842cea70dfffff",
+      "cell": "8842cea729fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 53.0,
+      "pm25_estimate": 59.4,
       "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
         {
           "name": "industrial_321136518",
           "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
         },
         {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
         },
         {
           "name": "industrial_321136521",
           "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
         },
         {
           "name": "industrial_321136523",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 120.4,
-          "city_percentile": 88
+          "city_percentile": 92
         },
         "so2_col": {
           "value": 89.2,
-          "city_percentile": 53
+          "city_percentile": 57
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 58
+          "city_percentile": 66
         }
       },
       "fire_activity": {
         "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
+        "fire_hour_fraction": 0.0742,
         "frp_p90": 0.0
       },
       "citizen_corroboration": {
@@ -1666,97 +952,454 @@
     "zone_id": "Z01"
   },
   {
-    "cell": "8842cea755fffff",
+    "cell": "8842cea705fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W003",
-    "pm25_estimate": 53.0,
+    "pm25_estimate": 59.4,
     "primary_source": "waste_burning",
     "confidence": 0.78,
     "scores": {
-      "industrial": 0.593,
+      "industrial": 0.565,
       "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
+      "waste_burning": 2.589,
+      "traffic": 0.162
     },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
     "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
     ],
     "evidence": {
-      "cell": "8842cea70dfffff",
+      "cell": "8842cea729fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 53.0,
+      "pm25_estimate": 59.4,
       "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
         {
           "name": "industrial_321136518",
           "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
         },
         {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
         },
         {
           "name": "industrial_321136521",
           "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
         },
         {
           "name": "industrial_321136523",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 120.4,
-          "city_percentile": 88
+          "city_percentile": 92
         },
         "so2_col": {
           "value": 89.2,
-          "city_percentile": 53
+          "city_percentile": 57
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 58
+          "city_percentile": 66
         }
       },
       "fire_activity": {
         "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
+        "fire_hour_fraction": 0.0742,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 58,
+        "wind_ms": 1.7,
+        "blh_m": 160,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 22
+    },
+    "explained_by": "gemini",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "8842cea747fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W003",
+    "pm25_estimate": 59.4,
+    "primary_source": "waste_burning",
+    "confidence": 0.78,
+    "scores": {
+      "industrial": 0.565,
+      "construction": 0.0,
+      "waste_burning": 2.589,
+      "traffic": 0.162
+    },
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "evidence_factors": [
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+    ],
+    "evidence": {
+      "cell": "8842cea729fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W003",
+      "pm25_estimate": 59.4,
+      "candidates": [
+        {
+          "name": "industrial_321136518",
+          "type": "industrial",
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_321136521",
+          "type": "industrial",
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "industrial_321136523",
+          "type": "industrial",
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 120.4,
+          "city_percentile": 92
+        },
+        "so2_col": {
+          "value": 89.2,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": 0.3,
+          "city_percentile": 66
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 51,
+        "fire_hour_fraction": 0.0742,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 58,
+        "wind_ms": 1.7,
+        "blh_m": 160,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 22
+    },
+    "explained_by": "gemini",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "8842cea745fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W003",
+    "pm25_estimate": 59.4,
+    "primary_source": "waste_burning",
+    "confidence": 0.78,
+    "scores": {
+      "industrial": 0.565,
+      "construction": 0.0,
+      "waste_burning": 2.589,
+      "traffic": 0.162
+    },
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "evidence_factors": [
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+    ],
+    "evidence": {
+      "cell": "8842cea729fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W003",
+      "pm25_estimate": 59.4,
+      "candidates": [
+        {
+          "name": "industrial_321136518",
+          "type": "industrial",
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_321136521",
+          "type": "industrial",
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "industrial_321136523",
+          "type": "industrial",
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 120.4,
+          "city_percentile": 92
+        },
+        "so2_col": {
+          "value": 89.2,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": 0.3,
+          "city_percentile": 66
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 51,
+        "fire_hour_fraction": 0.0742,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 58,
+        "wind_ms": 1.7,
+        "blh_m": 160,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 22
+    },
+    "explained_by": "gemini",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "8842cea769fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W003",
+    "pm25_estimate": 59.4,
+    "primary_source": "waste_burning",
+    "confidence": 0.78,
+    "scores": {
+      "industrial": 0.565,
+      "construction": 0.0,
+      "waste_burning": 2.589,
+      "traffic": 0.162
+    },
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "evidence_factors": [
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+    ],
+    "evidence": {
+      "cell": "8842cea729fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W003",
+      "pm25_estimate": 59.4,
+      "candidates": [
+        {
+          "name": "industrial_321136518",
+          "type": "industrial",
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_321136521",
+          "type": "industrial",
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "industrial_321136523",
+          "type": "industrial",
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 120.4,
+          "city_percentile": 92
+        },
+        "so2_col": {
+          "value": 89.2,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": 0.3,
+          "city_percentile": 66
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 51,
+        "fire_hour_fraction": 0.0742,
         "frp_p90": 0.0
       },
       "citizen_corroboration": {
@@ -1788,94 +1431,94 @@
     "cell": "8842cea70bfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W003",
-    "pm25_estimate": 53.0,
+    "pm25_estimate": 59.4,
     "primary_source": "waste_burning",
     "confidence": 0.78,
     "scores": {
-      "industrial": 0.593,
+      "industrial": 0.565,
       "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
+      "waste_burning": 2.589,
+      "traffic": 0.162
     },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
     "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
     ],
     "evidence": {
-      "cell": "8842cea70dfffff",
+      "cell": "8842cea729fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 53.0,
+      "pm25_estimate": 59.4,
       "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
         {
           "name": "industrial_321136518",
           "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
         },
         {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
         },
         {
           "name": "industrial_321136521",
           "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
         },
         {
           "name": "industrial_321136523",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 120.4,
-          "city_percentile": 88
+          "city_percentile": 92
         },
         "so2_col": {
           "value": 89.2,
-          "city_percentile": 53
+          "city_percentile": 57
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 58
+          "city_percentile": 66
         }
       },
       "fire_activity": {
         "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
+        "fire_hour_fraction": 0.0742,
         "frp_p90": 0.0
       },
       "citizen_corroboration": {
@@ -1904,97 +1547,97 @@
     "zone_id": "Z01"
   },
   {
-    "cell": "8842cea701fffff",
+    "cell": "8842cea751fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W003",
-    "pm25_estimate": 53.0,
+    "pm25_estimate": 59.4,
     "primary_source": "waste_burning",
     "confidence": 0.78,
     "scores": {
-      "industrial": 0.593,
+      "industrial": 0.565,
       "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
+      "waste_burning": 2.589,
+      "traffic": 0.162
     },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
     "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
     ],
     "evidence": {
-      "cell": "8842cea70dfffff",
+      "cell": "8842cea729fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 53.0,
+      "pm25_estimate": 59.4,
       "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
         {
           "name": "industrial_321136518",
           "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
         },
         {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
         },
         {
           "name": "industrial_321136521",
           "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
         },
         {
           "name": "industrial_321136523",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 120.4,
-          "city_percentile": 88
+          "city_percentile": 92
         },
         "so2_col": {
           "value": 89.2,
-          "city_percentile": 53
+          "city_percentile": 57
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 58
+          "city_percentile": 66
         }
       },
       "fire_activity": {
         "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
+        "fire_hour_fraction": 0.0742,
         "frp_p90": 0.0
       },
       "citizen_corroboration": {
@@ -2023,97 +1666,97 @@
     "zone_id": "Z01"
   },
   {
-    "cell": "8842cea743fffff",
+    "cell": "8842cea757fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W003",
-    "pm25_estimate": 53.0,
+    "pm25_estimate": 59.4,
     "primary_source": "waste_burning",
     "confidence": 0.78,
     "scores": {
-      "industrial": 0.593,
+      "industrial": 0.565,
       "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
+      "waste_burning": 2.589,
+      "traffic": 0.162
     },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
     "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
     ],
     "evidence": {
-      "cell": "8842cea70dfffff",
+      "cell": "8842cea729fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 53.0,
+      "pm25_estimate": 59.4,
       "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
         {
           "name": "industrial_321136518",
           "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
         },
         {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
         },
         {
           "name": "industrial_321136521",
           "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
         },
         {
           "name": "industrial_321136523",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 120.4,
-          "city_percentile": 88
+          "city_percentile": 92
         },
         "so2_col": {
           "value": 89.2,
-          "city_percentile": 53
+          "city_percentile": 57
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 58
+          "city_percentile": 66
         }
       },
       "fire_activity": {
         "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
+        "fire_hour_fraction": 0.0742,
         "frp_p90": 0.0
       },
       "citizen_corroboration": {
@@ -2142,97 +1785,97 @@
     "zone_id": "Z01"
   },
   {
-    "cell": "8842cea709fffff",
+    "cell": "8842cea755fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W003",
-    "pm25_estimate": 53.0,
+    "pm25_estimate": 59.4,
     "primary_source": "waste_burning",
     "confidence": 0.78,
     "scores": {
-      "industrial": 0.593,
+      "industrial": 0.565,
       "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
+      "waste_burning": 2.589,
+      "traffic": 0.162
     },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
     "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
     ],
     "evidence": {
-      "cell": "8842cea70dfffff",
+      "cell": "8842cea729fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 53.0,
+      "pm25_estimate": 59.4,
       "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
         {
           "name": "industrial_321136518",
           "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
         },
         {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
         },
         {
           "name": "industrial_321136521",
           "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
         },
         {
           "name": "industrial_321136523",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 120.4,
-          "city_percentile": 88
+          "city_percentile": 92
         },
         "so2_col": {
           "value": 89.2,
-          "city_percentile": 53
+          "city_percentile": 57
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 58
+          "city_percentile": 66
         }
       },
       "fire_activity": {
         "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
+        "fire_hour_fraction": 0.0742,
         "frp_p90": 0.0
       },
       "citizen_corroboration": {
@@ -2264,94 +1907,213 @@
     "cell": "8842cea75dfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W003",
-    "pm25_estimate": 53.0,
+    "pm25_estimate": 59.4,
     "primary_source": "waste_burning",
     "confidence": 0.78,
     "scores": {
-      "industrial": 0.593,
+      "industrial": 0.565,
       "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
+      "waste_burning": 2.589,
+      "traffic": 0.162
     },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
     "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
     ],
     "evidence": {
-      "cell": "8842cea70dfffff",
+      "cell": "8842cea729fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 53.0,
+      "pm25_estimate": 59.4,
       "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
         {
           "name": "industrial_321136518",
           "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
         },
         {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
         },
         {
           "name": "industrial_321136521",
           "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
         },
         {
           "name": "industrial_321136523",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 120.4,
-          "city_percentile": 88
+          "city_percentile": 92
         },
         "so2_col": {
           "value": 89.2,
-          "city_percentile": 53
+          "city_percentile": 57
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 58
+          "city_percentile": 66
         }
       },
       "fire_activity": {
         "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
+        "fire_hour_fraction": 0.0742,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 58,
+        "wind_ms": 1.7,
+        "blh_m": 160,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 22
+    },
+    "explained_by": "gemini",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "8842cea701fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W003",
+    "pm25_estimate": 59.4,
+    "primary_source": "waste_burning",
+    "confidence": 0.78,
+    "scores": {
+      "industrial": 0.565,
+      "construction": 0.0,
+      "waste_burning": 2.589,
+      "traffic": 0.162
+    },
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "evidence_factors": [
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+    ],
+    "evidence": {
+      "cell": "8842cea729fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W003",
+      "pm25_estimate": 59.4,
+      "candidates": [
+        {
+          "name": "industrial_321136518",
+          "type": "industrial",
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_321136521",
+          "type": "industrial",
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "industrial_321136523",
+          "type": "industrial",
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 120.4,
+          "city_percentile": 92
+        },
+        "so2_col": {
+          "value": 89.2,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": 0.3,
+          "city_percentile": 66
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 51,
+        "fire_hour_fraction": 0.0742,
         "frp_p90": 0.0
       },
       "citizen_corroboration": {
@@ -2383,94 +2145,332 @@
     "cell": "8842cea74bfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W003",
-    "pm25_estimate": 53.0,
+    "pm25_estimate": 59.4,
     "primary_source": "waste_burning",
     "confidence": 0.78,
     "scores": {
-      "industrial": 0.593,
+      "industrial": 0.565,
       "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
+      "waste_burning": 2.589,
+      "traffic": 0.162
     },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
     "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
     ],
     "evidence": {
-      "cell": "8842cea70dfffff",
+      "cell": "8842cea729fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 53.0,
+      "pm25_estimate": 59.4,
       "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
         {
           "name": "industrial_321136518",
           "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
         },
         {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
         },
         {
           "name": "industrial_321136521",
           "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
         },
         {
           "name": "industrial_321136523",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 120.4,
-          "city_percentile": 88
+          "city_percentile": 92
         },
         "so2_col": {
           "value": 89.2,
-          "city_percentile": 53
+          "city_percentile": 57
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 58
+          "city_percentile": 66
         }
       },
       "fire_activity": {
         "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
+        "fire_hour_fraction": 0.0742,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 58,
+        "wind_ms": 1.7,
+        "blh_m": 160,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 22
+    },
+    "explained_by": "gemini",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "8842cea709fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W003",
+    "pm25_estimate": 59.4,
+    "primary_source": "waste_burning",
+    "confidence": 0.78,
+    "scores": {
+      "industrial": 0.565,
+      "construction": 0.0,
+      "waste_burning": 2.589,
+      "traffic": 0.162
+    },
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "evidence_factors": [
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+    ],
+    "evidence": {
+      "cell": "8842cea729fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W003",
+      "pm25_estimate": 59.4,
+      "candidates": [
+        {
+          "name": "industrial_321136518",
+          "type": "industrial",
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_321136521",
+          "type": "industrial",
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "industrial_321136523",
+          "type": "industrial",
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 120.4,
+          "city_percentile": 92
+        },
+        "so2_col": {
+          "value": 89.2,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": 0.3,
+          "city_percentile": 66
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 51,
+        "fire_hour_fraction": 0.0742,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 720
+      },
+      "landuse_context": {
+        "industrial": 2,
+        "construction": 0,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 58,
+        "wind_ms": 1.7,
+        "blh_m": 160,
+        "hour_local": 12,
+        "air_trapped": true
+      },
+      "hotspot_kind": "chronic",
+      "evidence_window_hours": 720,
+      "zone_cells": 22
+    },
+    "explained_by": "gemini",
+    "zone_id": "Z01"
+  },
+  {
+    "cell": "8842cea743fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W003",
+    "pm25_estimate": 59.4,
+    "primary_source": "waste_burning",
+    "confidence": 0.78,
+    "scores": {
+      "industrial": 0.565,
+      "construction": 0.0,
+      "waste_burning": 2.589,
+      "traffic": 0.162
+    },
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
+    "evidence_factors": [
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
+    ],
+    "evidence": {
+      "cell": "8842cea729fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W003",
+      "pm25_estimate": 59.4,
+      "candidates": [
+        {
+          "name": "industrial_321136518",
+          "type": "industrial",
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
+        },
+        {
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
+        },
+        {
+          "name": "industrial_321136521",
+          "type": "industrial",
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
+        },
+        {
+          "name": "industrial_321136523",
+          "type": "industrial",
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 120.4,
+          "city_percentile": 92
+        },
+        "so2_col": {
+          "value": 89.2,
+          "city_percentile": 57
+        },
+        "aai": {
+          "value": 0.3,
+          "city_percentile": 66
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 51,
+        "fire_hour_fraction": 0.0742,
         "frp_p90": 0.0
       },
       "citizen_corroboration": {
@@ -2502,94 +2502,94 @@
     "cell": "8842cea741fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W003",
-    "pm25_estimate": 53.0,
+    "pm25_estimate": 59.4,
     "primary_source": "waste_burning",
     "confidence": 0.78,
     "scores": {
-      "industrial": 0.593,
+      "industrial": 0.565,
       "construction": 0.0,
-      "waste_burning": 2.73,
-      "traffic": 0.0
+      "waste_burning": 2.589,
+      "traffic": 0.162
     },
-    "reason": "Waste burning is determined as the primary source with the highest category score of 2.73, supported by the presence of the Municipal Landfill candidate at 1.56 km with a 0.54 wind alignment. Additionally, regional fire activity recorded 51 fire hours during the observation window, contributing to PM2.5 accumulation under trapped air conditions with a low boundary layer height of 160 m.",
+    "reason": "The deterministic category score for waste_burning is the highest at 2.589, establishing it as the primary source for the PM2.5 hotspot value of 59.4. This is supported by the Municipal Landfill candidate located 3.0 km away (wind alignment 0.47) and recorded fire activity totaling 51 fire hours over the 720-hour window. Stagnant atmospheric conditions, including trapped air with a boundary layer height of 160 m and wind speed of 1.7 m/s, further concentrate emissions.",
     "evidence_factors": [
-      "Highest deterministic score for waste_burning (2.73)",
-      "Municipal Landfill located 1.56 km away with 0.54 wind alignment",
-      "51 fire hours recorded in fire activity data",
-      "Meteorological conditions with air trapped and low BLH (160 m)"
+      "Highest deterministic category score for waste_burning (2.589)",
+      "Municipal Landfill candidate at 3.0 km distance with 0.47 wind alignment",
+      "Fire activity showing 51 fire hours over the evidence window",
+      "Trapped air meteorology with low boundary layer height of 160 m and wind speed of 1.7 m/s"
     ],
     "evidence": {
-      "cell": "8842cea70dfffff",
+      "cell": "8842cea729fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W003",
-      "pm25_estimate": 53.0,
+      "pm25_estimate": 59.4,
       "candidates": [
-        {
-          "name": "industrial_730859587",
-          "type": "industrial",
-          "distance_km": 1.4,
-          "wind_alignment": 0.59
-        },
         {
           "name": "industrial_321136518",
           "type": "industrial",
-          "distance_km": 1.67,
-          "wind_alignment": 0.57
+          "distance_km": 1.94,
+          "wind_alignment": 0.7
         },
         {
-          "name": "Municipal Landfill",
-          "type": "waste_burning",
-          "distance_km": 1.56,
-          "wind_alignment": 0.54
+          "name": "industrial_653193669",
+          "type": "industrial",
+          "distance_km": 1.89,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.69,
+          "wind_alignment": 0.62
+        },
+        {
+          "name": "Flyover",
+          "type": "traffic",
+          "distance_km": 2.68,
+          "wind_alignment": 0.61
+        },
+        {
+          "name": "industrial_730859587",
+          "type": "industrial",
+          "distance_km": 2.8,
+          "wind_alignment": 0.49
         },
         {
           "name": "industrial_321136521",
           "type": "industrial",
-          "distance_km": 2.61,
-          "wind_alignment": 0.67
+          "distance_km": 3.79,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "Municipal Landfill",
+          "type": "waste_burning",
+          "distance_km": 3.0,
+          "wind_alignment": 0.47
         },
         {
           "name": "industrial_321136523",
           "type": "industrial",
-          "distance_km": 2.32,
-          "wind_alignment": 0.54
-        },
-        {
-          "name": "industrial_321136515",
-          "type": "industrial",
-          "distance_km": 2.46,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "GOVERMENT GODOWN",
-          "type": "industrial",
-          "distance_km": 4.22,
-          "wind_alignment": 0.66
-        },
-        {
-          "name": "industrial_137989387",
-          "type": "industrial",
-          "distance_km": 0.9,
-          "wind_alignment": 0.23
+          "distance_km": 3.76,
+          "wind_alignment": 0.48
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 120.4,
-          "city_percentile": 88
+          "city_percentile": 92
         },
         "so2_col": {
           "value": 89.2,
-          "city_percentile": 53
+          "city_percentile": 57
         },
         "aai": {
           "value": 0.3,
-          "city_percentile": 58
+          "city_percentile": 66
         }
       },
       "fire_activity": {
         "fire_hours": 51,
-        "fire_hour_fraction": 0.0741,
+        "fire_hour_fraction": 0.0742,
         "frp_p90": 0.0
       },
       "citizen_corroboration": {
@@ -2621,7 +2621,7 @@
     "cell": "8842ceb4e3fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W030",
-    "pm25_estimate": 69.7,
+    "pm25_estimate": 78.8,
     "primary_source": "industrial",
     "confidence": 0.59,
     "scores": {
@@ -2630,16 +2630,18 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1304792133 is 1.3 km away, wind alignment 0.88; shallow boundary layer (168 m) trapping emissions.",
+    "reason": "Industrial activity is identified as the primary source with a dominant category score of 0.909, driven by nearby industrial facilities including industrial_1304792133 located 1.3 km away with a strong wind alignment of 0.88. This is supported by an elevated NO2 column value of 90.2 (77th city percentile), 3 industrial landuse context counts, and trapped air meteorology at a low boundary layer height of 168 meters.",
     "evidence_factors": [
-      "industrial_1304792133 is 1.3 km away, wind alignment 0.88",
-      "shallow boundary layer (168 m) trapping emissions"
+      "Dominant industrial category score of 0.909",
+      "Closest facility industrial_1304792133 at 1.3 km with 0.88 wind alignment",
+      "Elevated NO2 column value of 90.2 (77th percentile)",
+      "Trapped air condition with low BLH of 168 m"
     ],
     "evidence": {
       "cell": "8842ceb4e3fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W030",
-      "pm25_estimate": 69.7,
+      "pm25_estimate": 78.8,
       "candidates": [
         {
           "name": "industrial_1304792133",
@@ -2693,15 +2695,15 @@
       "pollutant_signature": {
         "no2_col": {
           "value": 90.2,
-          "city_percentile": 72
+          "city_percentile": 77
         },
         "so2_col": {
           "value": -212.4,
-          "city_percentile": 16
+          "city_percentile": 11
         },
         "aai": {
           "value": 0.2,
-          "city_percentile": 50
+          "city_percentile": 60
         }
       },
       "fire_activity": {
@@ -2731,14 +2733,14 @@
       "evidence_window_hours": 24,
       "zone_cells": 5
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z02"
   },
   {
     "cell": "8842ceb48dfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W030",
-    "pm25_estimate": 69.7,
+    "pm25_estimate": 78.8,
     "primary_source": "industrial",
     "confidence": 0.59,
     "scores": {
@@ -2747,16 +2749,18 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1304792133 is 1.3 km away, wind alignment 0.88; shallow boundary layer (168 m) trapping emissions.",
+    "reason": "Industrial activity is identified as the primary source with a dominant category score of 0.909, driven by nearby industrial facilities including industrial_1304792133 located 1.3 km away with a strong wind alignment of 0.88. This is supported by an elevated NO2 column value of 90.2 (77th city percentile), 3 industrial landuse context counts, and trapped air meteorology at a low boundary layer height of 168 meters.",
     "evidence_factors": [
-      "industrial_1304792133 is 1.3 km away, wind alignment 0.88",
-      "shallow boundary layer (168 m) trapping emissions"
+      "Dominant industrial category score of 0.909",
+      "Closest facility industrial_1304792133 at 1.3 km with 0.88 wind alignment",
+      "Elevated NO2 column value of 90.2 (77th percentile)",
+      "Trapped air condition with low BLH of 168 m"
     ],
     "evidence": {
       "cell": "8842ceb4e3fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W030",
-      "pm25_estimate": 69.7,
+      "pm25_estimate": 78.8,
       "candidates": [
         {
           "name": "industrial_1304792133",
@@ -2810,15 +2814,15 @@
       "pollutant_signature": {
         "no2_col": {
           "value": 90.2,
-          "city_percentile": 72
+          "city_percentile": 77
         },
         "so2_col": {
           "value": -212.4,
-          "city_percentile": 16
+          "city_percentile": 11
         },
         "aai": {
           "value": 0.2,
-          "city_percentile": 50
+          "city_percentile": 60
         }
       },
       "fire_activity": {
@@ -2848,131 +2852,14 @@
       "evidence_window_hours": 24,
       "zone_cells": 5
     },
-    "explained_by": "rules",
-    "zone_id": "Z02"
-  },
-  {
-    "cell": "8842ceb4c7fffff",
-    "ts": "2025-11-29 23:00:00+00:00",
-    "ward_id": "W030",
-    "pm25_estimate": 69.7,
-    "primary_source": "industrial",
-    "confidence": 0.59,
-    "scores": {
-      "industrial": 0.909,
-      "construction": 0.279,
-      "waste_burning": 0.0,
-      "traffic": 0.0
-    },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1304792133 is 1.3 km away, wind alignment 0.88; shallow boundary layer (168 m) trapping emissions.",
-    "evidence_factors": [
-      "industrial_1304792133 is 1.3 km away, wind alignment 0.88",
-      "shallow boundary layer (168 m) trapping emissions"
-    ],
-    "evidence": {
-      "cell": "8842ceb4e3fffff",
-      "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W030",
-      "pm25_estimate": 69.7,
-      "candidates": [
-        {
-          "name": "industrial_1304792133",
-          "type": "industrial",
-          "distance_km": 1.3,
-          "wind_alignment": 0.88
-        },
-        {
-          "name": "industrial_1305013760",
-          "type": "industrial",
-          "distance_km": 1.87,
-          "wind_alignment": 0.86
-        },
-        {
-          "name": "construction_1304779255",
-          "type": "construction",
-          "distance_km": 2.14,
-          "wind_alignment": 0.75
-        },
-        {
-          "name": "construction_1304779253",
-          "type": "construction",
-          "distance_km": 2.0,
-          "wind_alignment": 0.69
-        },
-        {
-          "name": "construction_1304654826",
-          "type": "construction",
-          "distance_km": 2.54,
-          "wind_alignment": 0.8
-        },
-        {
-          "name": "construction_1304654827",
-          "type": "construction",
-          "distance_km": 2.6,
-          "wind_alignment": 0.81
-        },
-        {
-          "name": "construction_1304654828",
-          "type": "construction",
-          "distance_km": 2.67,
-          "wind_alignment": 0.82
-        },
-        {
-          "name": "industrial_1304654813",
-          "type": "industrial",
-          "distance_km": 2.9,
-          "wind_alignment": 0.84
-        }
-      ],
-      "pollutant_signature": {
-        "no2_col": {
-          "value": 90.2,
-          "city_percentile": 72
-        },
-        "so2_col": {
-          "value": -212.4,
-          "city_percentile": 16
-        },
-        "aai": {
-          "value": 0.2,
-          "city_percentile": 50
-        }
-      },
-      "fire_activity": {
-        "fire_hours": 0,
-        "fire_hour_fraction": 0.0,
-        "frp_p90": 0.0
-      },
-      "citizen_corroboration": {
-        "n_reports": 0,
-        "categories": {},
-        "window_hours": 24
-      },
-      "landuse_context": {
-        "industrial": 3,
-        "construction": 2,
-        "waste_burning": 0,
-        "traffic": 0
-      },
-      "meteorology": {
-        "wind_from_deg": 58,
-        "wind_ms": 2.3,
-        "blh_m": 168,
-        "hour_local": 23,
-        "air_trapped": true
-      },
-      "hotspot_kind": "acute",
-      "evidence_window_hours": 24,
-      "zone_cells": 5
-    },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z02"
   },
   {
     "cell": "8842ceb4ebfffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W030",
-    "pm25_estimate": 69.7,
+    "pm25_estimate": 78.8,
     "primary_source": "industrial",
     "confidence": 0.59,
     "scores": {
@@ -2981,16 +2868,18 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1304792133 is 1.3 km away, wind alignment 0.88; shallow boundary layer (168 m) trapping emissions.",
+    "reason": "Industrial activity is identified as the primary source with a dominant category score of 0.909, driven by nearby industrial facilities including industrial_1304792133 located 1.3 km away with a strong wind alignment of 0.88. This is supported by an elevated NO2 column value of 90.2 (77th city percentile), 3 industrial landuse context counts, and trapped air meteorology at a low boundary layer height of 168 meters.",
     "evidence_factors": [
-      "industrial_1304792133 is 1.3 km away, wind alignment 0.88",
-      "shallow boundary layer (168 m) trapping emissions"
+      "Dominant industrial category score of 0.909",
+      "Closest facility industrial_1304792133 at 1.3 km with 0.88 wind alignment",
+      "Elevated NO2 column value of 90.2 (77th percentile)",
+      "Trapped air condition with low BLH of 168 m"
     ],
     "evidence": {
       "cell": "8842ceb4e3fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W030",
-      "pm25_estimate": 69.7,
+      "pm25_estimate": 78.8,
       "candidates": [
         {
           "name": "industrial_1304792133",
@@ -3044,15 +2933,15 @@
       "pollutant_signature": {
         "no2_col": {
           "value": 90.2,
-          "city_percentile": 72
+          "city_percentile": 77
         },
         "so2_col": {
           "value": -212.4,
-          "city_percentile": 16
+          "city_percentile": 11
         },
         "aai": {
           "value": 0.2,
-          "city_percentile": 50
+          "city_percentile": 60
         }
       },
       "fire_activity": {
@@ -3082,14 +2971,133 @@
       "evidence_window_hours": 24,
       "zone_cells": 5
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
+    "zone_id": "Z02"
+  },
+  {
+    "cell": "8842ceb4c7fffff",
+    "ts": "2025-11-29 23:00:00+00:00",
+    "ward_id": "W030",
+    "pm25_estimate": 78.8,
+    "primary_source": "industrial",
+    "confidence": 0.59,
+    "scores": {
+      "industrial": 0.909,
+      "construction": 0.279,
+      "waste_burning": 0.0,
+      "traffic": 0.0
+    },
+    "reason": "Industrial activity is identified as the primary source with a dominant category score of 0.909, driven by nearby industrial facilities including industrial_1304792133 located 1.3 km away with a strong wind alignment of 0.88. This is supported by an elevated NO2 column value of 90.2 (77th city percentile), 3 industrial landuse context counts, and trapped air meteorology at a low boundary layer height of 168 meters.",
+    "evidence_factors": [
+      "Dominant industrial category score of 0.909",
+      "Closest facility industrial_1304792133 at 1.3 km with 0.88 wind alignment",
+      "Elevated NO2 column value of 90.2 (77th percentile)",
+      "Trapped air condition with low BLH of 168 m"
+    ],
+    "evidence": {
+      "cell": "8842ceb4e3fffff",
+      "ts": "2025-11-29 23:00:00+00:00",
+      "ward_id": "W030",
+      "pm25_estimate": 78.8,
+      "candidates": [
+        {
+          "name": "industrial_1304792133",
+          "type": "industrial",
+          "distance_km": 1.3,
+          "wind_alignment": 0.88
+        },
+        {
+          "name": "industrial_1305013760",
+          "type": "industrial",
+          "distance_km": 1.87,
+          "wind_alignment": 0.86
+        },
+        {
+          "name": "construction_1304779255",
+          "type": "construction",
+          "distance_km": 2.14,
+          "wind_alignment": 0.75
+        },
+        {
+          "name": "construction_1304779253",
+          "type": "construction",
+          "distance_km": 2.0,
+          "wind_alignment": 0.69
+        },
+        {
+          "name": "construction_1304654826",
+          "type": "construction",
+          "distance_km": 2.54,
+          "wind_alignment": 0.8
+        },
+        {
+          "name": "construction_1304654827",
+          "type": "construction",
+          "distance_km": 2.6,
+          "wind_alignment": 0.81
+        },
+        {
+          "name": "construction_1304654828",
+          "type": "construction",
+          "distance_km": 2.67,
+          "wind_alignment": 0.82
+        },
+        {
+          "name": "industrial_1304654813",
+          "type": "industrial",
+          "distance_km": 2.9,
+          "wind_alignment": 0.84
+        }
+      ],
+      "pollutant_signature": {
+        "no2_col": {
+          "value": 90.2,
+          "city_percentile": 77
+        },
+        "so2_col": {
+          "value": -212.4,
+          "city_percentile": 11
+        },
+        "aai": {
+          "value": 0.2,
+          "city_percentile": 60
+        }
+      },
+      "fire_activity": {
+        "fire_hours": 0,
+        "fire_hour_fraction": 0.0,
+        "frp_p90": 0.0
+      },
+      "citizen_corroboration": {
+        "n_reports": 0,
+        "categories": {},
+        "window_hours": 24
+      },
+      "landuse_context": {
+        "industrial": 3,
+        "construction": 2,
+        "waste_burning": 0,
+        "traffic": 0
+      },
+      "meteorology": {
+        "wind_from_deg": 58,
+        "wind_ms": 2.3,
+        "blh_m": 168,
+        "hour_local": 23,
+        "air_trapped": true
+      },
+      "hotspot_kind": "acute",
+      "evidence_window_hours": 24,
+      "zone_cells": 5
+    },
+    "explained_by": "gemini",
     "zone_id": "Z02"
   },
   {
     "cell": "8842ceb4c5fffff",
     "ts": "2025-11-29 23:00:00+00:00",
     "ward_id": "W030",
-    "pm25_estimate": 69.7,
+    "pm25_estimate": 78.8,
     "primary_source": "industrial",
     "confidence": 0.59,
     "scores": {
@@ -3098,16 +3106,18 @@
       "waste_burning": 0.0,
       "traffic": 0.0
     },
-    "reason": "Deterministic evidence scoring points to industrial as the primary source. industrial_1304792133 is 1.3 km away, wind alignment 0.88; shallow boundary layer (168 m) trapping emissions.",
+    "reason": "Industrial activity is identified as the primary source with a dominant category score of 0.909, driven by nearby industrial facilities including industrial_1304792133 located 1.3 km away with a strong wind alignment of 0.88. This is supported by an elevated NO2 column value of 90.2 (77th city percentile), 3 industrial landuse context counts, and trapped air meteorology at a low boundary layer height of 168 meters.",
     "evidence_factors": [
-      "industrial_1304792133 is 1.3 km away, wind alignment 0.88",
-      "shallow boundary layer (168 m) trapping emissions"
+      "Dominant industrial category score of 0.909",
+      "Closest facility industrial_1304792133 at 1.3 km with 0.88 wind alignment",
+      "Elevated NO2 column value of 90.2 (77th percentile)",
+      "Trapped air condition with low BLH of 168 m"
     ],
     "evidence": {
       "cell": "8842ceb4e3fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W030",
-      "pm25_estimate": 69.7,
+      "pm25_estimate": 78.8,
       "candidates": [
         {
           "name": "industrial_1304792133",
@@ -3161,15 +3171,15 @@
       "pollutant_signature": {
         "no2_col": {
           "value": 90.2,
-          "city_percentile": 72
+          "city_percentile": 77
         },
         "so2_col": {
           "value": -212.4,
-          "city_percentile": 16
+          "city_percentile": 11
         },
         "aai": {
           "value": 0.2,
-          "city_percentile": 50
+          "city_percentile": 60
         }
       },
       "fire_activity": {
@@ -3199,7 +3209,7 @@
       "evidence_window_hours": 24,
       "zone_cells": 5
     },
-    "explained_by": "rules",
+    "explained_by": "gemini",
     "zone_id": "Z02"
   }
 ]

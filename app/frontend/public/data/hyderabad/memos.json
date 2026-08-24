@@ -1,25 +1,25 @@
 [
   {
-    "memo_id": "AQ/HYD/20260823/Z00",
+    "memo_id": "AQ/HYD/20260824/Z00",
     "action_id": "A02",
     "zone_id": "Z00",
-    "ward_id": "W038",
-    "ward_name": "Ward 106 Serilingampally",
-    "issued_at": "2026-08-23T17:47:52.158452+00:00",
+    "ward_id": "W002",
+    "ward_name": "Ward 105 Gachibowli",
+    "issued_at": "2026-08-24T06:47:28.198379+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
-      "confidence": 0.52,
-      "pm25": 59.0,
-      "aqi": 98,
-      "aqi_category": "Satisfactory",
+      "confidence": 0.46,
+      "pm25": 81.2,
+      "aqi": 171,
+      "aqi_category": "Moderate",
       "kind": "emerging",
       "zone_id": "Z00",
-      "ward_id": "W038",
-      "ward_name": "Ward 106 Serilingampally",
+      "ward_id": "W002",
+      "ward_name": "Ward 105 Gachibowli",
       "n_cells": 19,
       "evidence_factors": [
-        "construction_915093556 is 0.74 km away, wind alignment 0.67",
+        "construction_1324066530 is 0.92 km away, wind alignment 0.86",
         "shallow boundary layer (260 m) trapping emissions"
       ],
       "fire_hours": 0,
@@ -38,81 +38,81 @@
         "penalty": "Environmental compensation per CPCB dust-mitigation schedule."
       }
     ],
-    "subject": "Air pollution source detected — construction — Ward 106 Serilingampally (zone Z00)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 19 cell(s) in Ward 106 Serilingampally. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 59.0 ug/m3, corresponding to an AQI of 98 (Satisfactory).",
-    "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.52. Supporting evidence: construction_915093556 is 0.74 km away, wind alignment 0.67; shallow boundary layer (260 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "subject": "Air pollution source detected — construction — Ward 105 Gachibowli (zone Z00)",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 19 cell(s) in Ward 105 Gachibowli. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 81.2 ug/m3, corresponding to an AQI of 171 (Moderate).",
+    "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.46. Supporting evidence: construction_1324066530 is 0.92 km away, wind alignment 0.86; shallow boundary layer (260 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Construction and Demolition Waste Management Rules, 2016, Rules 4 & 8.",
     "evidence_chain": [
-      "construction_915093556 is 0.74 km away, wind alignment 0.67",
+      "construction_1324066530 is 0.92 km away, wind alignment 0.86",
       "shallow boundary layer (260 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "8860a24a67fffff",
+      "cell": "8860a24a47fffff",
       "ts": "2025-11-29 23:00:00+00:00",
-      "ward_id": "W038",
-      "pm25_estimate": 49.8,
+      "ward_id": "W002",
+      "pm25_estimate": 64.0,
       "candidates": [
         {
-          "name": "construction_915093556",
-          "type": "construction",
-          "distance_km": 0.74,
-          "wind_alignment": 0.67
-        },
-        {
-          "name": "construction_717882945",
-          "type": "construction",
-          "distance_km": 0.17,
-          "wind_alignment": 0.44
-        },
-        {
-          "name": "waste_burning_846897833",
-          "type": "waste_burning",
-          "distance_km": 1.89,
-          "wind_alignment": 0.81
-        },
-        {
-          "name": "construction_1120726024",
-          "type": "construction",
-          "distance_km": 1.62,
-          "wind_alignment": 0.72
-        },
-        {
-          "name": "construction_1152313449",
-          "type": "construction",
-          "distance_km": 1.98,
-          "wind_alignment": 0.68
-        },
-        {
-          "name": "traffic_1415599121",
+          "name": "Outer Ring Road",
           "type": "traffic",
-          "distance_km": 0.87,
-          "wind_alignment": 0.4
+          "distance_km": 0.54,
+          "wind_alignment": 0.82
+        },
+        {
+          "name": "Outer Ring Road",
+          "type": "traffic",
+          "distance_km": 0.56,
+          "wind_alignment": 0.82
+        },
+        {
+          "name": "construction_1324066530",
+          "type": "construction",
+          "distance_km": 0.92,
+          "wind_alignment": 0.86
+        },
+        {
+          "name": "Outer Ring Road",
+          "type": "traffic",
+          "distance_km": 0.85,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "Outer Ring Road",
+          "type": "traffic",
+          "distance_km": 0.86,
+          "wind_alignment": 0.79
+        },
+        {
+          "name": "construction_1324066529",
+          "type": "construction",
+          "distance_km": 1.01,
+          "wind_alignment": 0.85
+        },
+        {
+          "name": "construction_626346956",
+          "type": "construction",
+          "distance_km": 1.03,
+          "wind_alignment": 0.85
         },
         {
           "name": "PJR Flyover",
           "type": "traffic",
-          "distance_km": 0.87,
-          "wind_alignment": 0.4
-        },
-        {
-          "name": "traffic_1466377021",
-          "type": "traffic",
-          "distance_km": 0.87,
-          "wind_alignment": 0.4
+          "distance_km": 0.89,
+          "wind_alignment": 0.78
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 108.5,
-          "city_percentile": 96
+          "city_percentile": 97
         },
         "so2_col": {
           "value": 21.5,
-          "city_percentile": 48
+          "city_percentile": 51
         },
         "aai": {
           "value": -0.2,
-          "city_percentile": 57
+          "city_percentile": 60
         }
       },
       "fire_activity": {
@@ -146,18 +146,18 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/HYD/20260823/Z01",
+    "memo_id": "AQ/HYD/20260824/Z01",
     "action_id": "A01",
     "zone_id": "Z01",
     "ward_id": "W002",
     "ward_name": "Ward 105 Gachibowli",
-    "issued_at": "2026-08-23T17:47:52.158540+00:00",
+    "issued_at": "2026-08-24T06:47:28.198878+00:00",
     "status": "draft",
     "situation": {
       "source": "construction",
-      "confidence": 0.46,
-      "pm25": 70.9,
-      "aqi": 137,
+      "confidence": 0.55,
+      "pm25": 81.2,
+      "aqi": 171,
       "aqi_category": "Moderate",
       "kind": "emerging",
       "zone_id": "Z01",
@@ -165,11 +165,8 @@
       "ward_name": "Ward 105 Gachibowli",
       "n_cells": 8,
       "evidence_factors": [
-        "High deterministic category score of 0.695 for construction",
-        "Presence of 6 construction candidate sites nearby, with wind alignment up to 0.85",
-        "Land-use context indicating 7 construction features",
-        "Low boundary layer height (270 m) with trapped air conditions",
-        "Zero fire activity ruling out waste burning"
+        "construction_1120726076 is 0.26 km away, wind alignment 0.61",
+        "shallow boundary layer (270 m) trapping emissions"
       ],
       "fire_hours": 0,
       "fire_fraction": 0.0,
@@ -188,83 +185,80 @@
       }
     ],
     "subject": "Air pollution source detected — construction — Ward 105 Gachibowli (zone Z01)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 8 cell(s) in Ward 105 Gachibowli. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 70.9 ug/m3, corresponding to an AQI of 137 (Moderate).",
-    "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.46. Supporting evidence: High deterministic category score of 0.695 for construction; Presence of 6 construction candidate sites nearby, with wind alignment up to 0.85; Land-use context indicating 7 construction features. This finding is INDICATIVE and requires verification on site.",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 8 cell(s) in Ward 105 Gachibowli. The zone is classified 'emerging'. Estimated PM2.5 in the zone is 81.2 ug/m3, corresponding to an AQI of 171 (Moderate).",
+    "finding": "The evidence indicates construction as the primary source, at a computed confidence of 0.55. Supporting evidence: construction_1120726076 is 0.26 km away, wind alignment 0.61; shallow boundary layer (270 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Construction and Demolition Waste Management Rules, 2016, Rules 4 & 8.",
     "evidence_chain": [
-      "High deterministic category score of 0.695 for construction",
-      "Presence of 6 construction candidate sites nearby, with wind alignment up to 0.85",
-      "Land-use context indicating 7 construction features",
-      "Low boundary layer height (270 m) with trapped air conditions",
-      "Zero fire activity ruling out waste burning"
+      "construction_1120726076 is 0.26 km away, wind alignment 0.61",
+      "shallow boundary layer (270 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "8860a258a7fffff",
+      "cell": "8860a24a41fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W002",
-      "pm25_estimate": 51.9,
+      "pm25_estimate": 74.7,
       "candidates": [
         {
-          "name": "industrial_332096196",
-          "type": "industrial",
-          "distance_km": 3.51,
-          "wind_alignment": 0.75
-        },
-        {
-          "name": "industrial_1451064955",
-          "type": "industrial",
-          "distance_km": 3.04,
-          "wind_alignment": 0.65
-        },
-        {
-          "name": "construction_1523267640",
+          "name": "construction_1120726076",
           "type": "construction",
-          "distance_km": 5.0,
-          "wind_alignment": 0.85
-        },
-        {
-          "name": "construction_1496345308",
-          "type": "construction",
-          "distance_km": 2.71,
-          "wind_alignment": 0.5
-        },
-        {
-          "name": "Prestige Oberoi (u/c)",
-          "type": "construction",
-          "distance_km": 2.8,
-          "wind_alignment": 0.47
-        },
-        {
-          "name": "construction_764360781",
-          "type": "construction",
-          "distance_km": 2.77,
-          "wind_alignment": 0.45
-        },
-        {
-          "name": "construction_253458326",
-          "type": "construction",
-          "distance_km": 4.19,
+          "distance_km": 0.26,
           "wind_alignment": 0.61
         },
         {
-          "name": "construction_1496345303",
+          "name": "construction_1449395830",
           "type": "construction",
-          "distance_km": 3.42,
-          "wind_alignment": 0.48
+          "distance_km": 1.02,
+          "wind_alignment": 0.83
+        },
+        {
+          "name": "construction_626346956",
+          "type": "construction",
+          "distance_km": 1.14,
+          "wind_alignment": 0.6
+        },
+        {
+          "name": "construction_1324066530",
+          "type": "construction",
+          "distance_km": 1.13,
+          "wind_alignment": 0.53
+        },
+        {
+          "name": "construction_1324066529",
+          "type": "construction",
+          "distance_km": 1.23,
+          "wind_alignment": 0.55
+        },
+        {
+          "name": "Outer Ring Road",
+          "type": "traffic",
+          "distance_km": 0.8,
+          "wind_alignment": 0.39
+        },
+        {
+          "name": "Outer Ring Road",
+          "type": "traffic",
+          "distance_km": 0.23,
+          "wind_alignment": 0.26
+        },
+        {
+          "name": "Outer Ring Road",
+          "type": "traffic",
+          "distance_km": 0.8,
+          "wind_alignment": 0.37
         }
       ],
       "pollutant_signature": {
         "no2_col": {
           "value": 108.5,
-          "city_percentile": 96
+          "city_percentile": 97
         },
         "so2_col": {
           "value": 225.9,
-          "city_percentile": 81
+          "city_percentile": 82
         },
         "aai": {
           "value": -0.3,
-          "city_percentile": 52
+          "city_percentile": 55
         }
       },
       "fire_activity": {
@@ -298,26 +292,26 @@
     "disclaimer": "Citations are indicative and generated by a deterministic rule engine from the detected situation. This is a DRAFT for review and signature by an authorised officer; it is not legal advice."
   },
   {
-    "memo_id": "AQ/HYD/20260823/Z02",
+    "memo_id": "AQ/HYD/20260824/Z02",
     "action_id": "A03",
     "zone_id": "Z02",
     "ward_id": "W006",
     "ward_name": "Ward 59 Mailardevpally",
-    "issued_at": "2026-08-23T17:47:52.158598+00:00",
+    "issued_at": "2026-08-24T06:47:28.199185+00:00",
     "status": "draft",
     "situation": {
       "source": "traffic",
-      "confidence": 0.46,
-      "pm25": 61.4,
-      "aqi": 106,
-      "aqi_category": "Moderate",
+      "confidence": 0.76,
+      "pm25": 56.6,
+      "aqi": 94,
+      "aqi_category": "Satisfactory",
       "kind": "acute",
       "zone_id": "Z02",
       "ward_id": "W006",
       "ward_name": "Ward 59 Mailardevpally",
       "n_cells": 12,
       "evidence_factors": [
-        "Inner Ring Road is 2.31 km away, wind alignment 0.95",
+        "P.V. Narasimha Rao Flyover is 0.62 km away, wind alignment 0.95",
         "NO2 column at p99 citywide",
         "shallow boundary layer (245 m) trapping emissions"
       ],
@@ -338,67 +332,67 @@
       }
     ],
     "subject": "Air pollution source detected — traffic — Ward 59 Mailardevpally (zone Z02)",
-    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 12 cell(s) in Ward 59 Mailardevpally. The zone is classified 'acute'. Estimated PM2.5 in the zone is 61.4 ug/m3, corresponding to an AQI of 106 (Moderate).",
-    "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.46. Supporting evidence: Inner Ring Road is 2.31 km away, wind alignment 0.95; NO2 column at p99 citywide; shallow boundary layer (245 m) trapping emissions. This finding is INDICATIVE and requires verification on site.",
+    "background": "Satellite and ground observations over the monitoring window identify an elevated pollution zone spanning 12 cell(s) in Ward 59 Mailardevpally. The zone is classified 'acute'. Estimated PM2.5 in the zone is 56.6 ug/m3, corresponding to an AQI of 94 (Satisfactory).",
+    "finding": "The evidence indicates traffic as the primary source, at a computed confidence of 0.76. Supporting evidence: P.V. Narasimha Rao Flyover is 0.62 km away, wind alignment 0.95; NO2 column at p99 citywide; shallow boundary layer (245 m) trapping emissions. The evidence is consistent and independently corroborated.",
     "directive": "The addressee is directed to inspect the zone and act under the provisions cited below: Air (Prevention and Control of Pollution) Act, 1981, Section 20.",
     "evidence_chain": [
-      "Inner Ring Road is 2.31 km away, wind alignment 0.95",
+      "P.V. Narasimha Rao Flyover is 0.62 km away, wind alignment 0.95",
       "NO2 column at p99 citywide",
       "shallow boundary layer (245 m) trapping emissions"
     ],
     "evidence_full": {
-      "cell": "8860a25123fffff",
+      "cell": "8860a25ac5fffff",
       "ts": "2025-11-29 23:00:00+00:00",
       "ward_id": "W006",
-      "pm25_estimate": 53.5,
+      "pm25_estimate": 60.4,
       "candidates": [
         {
-          "name": "Katedan Industrial Area",
-          "type": "industrial",
-          "distance_km": 0.89,
-          "wind_alignment": 0.92
-        },
-        {
-          "name": "Katedan Industrial Area",
-          "type": "industrial",
-          "distance_km": 1.43,
+          "name": "P.V. Narasimha Rao Flyover",
+          "type": "traffic",
+          "distance_km": 0.62,
           "wind_alignment": 0.95
         },
         {
-          "name": "Inner Ring Road",
+          "name": "P.V. Narasimha Rao Flyover",
           "type": "traffic",
-          "distance_km": 2.31,
+          "distance_km": 0.63,
           "wind_alignment": 0.95
         },
         {
-          "name": "Inner Ring Road",
+          "name": "P.V. Narasimha Rao Flyover",
           "type": "traffic",
-          "distance_km": 2.39,
-          "wind_alignment": 0.96
+          "distance_km": 0.85,
+          "wind_alignment": 0.95
         },
         {
-          "name": "Flyover",
+          "name": "P.V. Narasimha Rao Flyover",
           "type": "traffic",
-          "distance_km": 1.3,
-          "wind_alignment": 0.64
+          "distance_km": 0.86,
+          "wind_alignment": 0.95
         },
         {
-          "name": "Flyover",
+          "name": "P.V. Narasimha Rao Flyover",
           "type": "traffic",
-          "distance_km": 1.3,
-          "wind_alignment": 0.63
+          "distance_km": 1.04,
+          "wind_alignment": 0.93
         },
         {
-          "name": "Inner Ring Road",
+          "name": "P.V. Narasimha Rao Flyover",
           "type": "traffic",
-          "distance_km": 2.17,
-          "wind_alignment": 0.85
+          "distance_km": 1.05,
+          "wind_alignment": 0.93
         },
         {
-          "name": "Inner Ring Road",
+          "name": "P.V. Narasimha Rao Flyover",
           "type": "traffic",
-          "distance_km": 2.18,
-          "wind_alignment": 0.85
+          "distance_km": 1.19,
+          "wind_alignment": 0.9
+        },
+        {
+          "name": "P.V. Narasimha Rao Flyover",
+          "type": "traffic",
+          "distance_km": 1.2,
+          "wind_alignment": 0.9
         }
       ],
       "pollutant_signature": {
@@ -408,11 +402,11 @@
         },
         "so2_col": {
           "value": -348.8,
-          "city_percentile": 3
+          "city_percentile": 2
         },
         "aai": {
           "value": -0.6,
-          "city_percentile": 35
+          "city_percentile": 40
         }
       },
       "fire_activity": {

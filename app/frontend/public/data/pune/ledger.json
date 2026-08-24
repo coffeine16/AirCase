@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T18:48:13.500877+00:00",
+  "generated_at": "2026-08-24T06:58:36.623577+00:00",
   "response_time_claim": "Signal-to-memo is automated and deterministic: a cited enforcement memo and dispatch route are produced in seconds. The manual baseline — correlating a satellite signal to a served notice across agencies — is measured in weeks. This is the response-time reduction.",
   "effectiveness_claim": "NOT yet measured. Intervention effectiveness requires a real intervention between the frozen counterfactual and a realized outcome. The ledger freezes the counterfactual and awaits actioned outcomes from the inspector loop; it does not attribute natural change to itself.",
   "n_actions": 2,
@@ -12,17 +12,17 @@
       "ward_id": "unassigned",
       "ward_name": "Outside city limits",
       "source": "construction",
-      "eps": 71.1,
+      "eps": 71.5,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-22T18:47:54.130407+00:00",
+        "memo_drafted_at": "2026-08-24T06:58:13.022168+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 72.7,
-        "aqi_counterfactual": 143,
+        "pm25_counterfactual": 77.8,
+        "aqi_counterfactual": 160,
         "band_counterfactual": "Moderate",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },
@@ -36,17 +36,17 @@
       "ward_id": "unassigned",
       "ward_name": "Outside city limits",
       "source": "industrial",
-      "eps": 60.6,
+      "eps": 60.3,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-22T18:47:54.130535+00:00",
+        "memo_drafted_at": "2026-08-24T06:58:13.022292+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 72.7,
-        "aqi_counterfactual": 143,
+        "pm25_counterfactual": 79.1,
+        "aqi_counterfactual": 164,
         "band_counterfactual": "Moderate",
         "frozen_at": "2025-11-29 23:00:00+00:00"
       },

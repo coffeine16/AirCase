@@ -15,9 +15,9 @@
       "lat": 18.6035,
       "lon": 73.7615
     },
-    "eps": 71.1,
+    "eps": 71.5,
     "components": {
-      "severity": 0.596,
+      "severity": 0.607,
       "attribution_conf": 0.41,
       "actionability": 1.0,
       "vulnerability": 1.0
@@ -26,7 +26,7 @@
     "source": "construction",
     "confidence": 0.41,
     "n_cells": 5,
-    "pm25_med": 73.9,
+    "pm25_med": 80.9,
     "status": "pending"
   },
   {
@@ -40,26 +40,26 @@
       "88608841cdfffff",
       "886088403dfffff",
       "8860884027fffff",
-      "8860884023fffff",
       "88608841c1fffff",
+      "8860884023fffff",
       "8860884039fffff",
       "886088411bfffff",
       "8860884003fffff",
       "886088402bfffff",
       "8860884021fffff",
       "8860884005fffff",
-      "8860884001fffff",
-      "8860884029fffff",
       "8860884067fffff",
+      "8860884029fffff",
+      "8860884001fffff",
       "8860884007fffff"
     ],
     "centroid": {
       "lat": 18.6318,
       "lon": 73.7635
     },
-    "eps": 60.6,
+    "eps": 60.3,
     "components": {
-      "severity": 0.883,
+      "severity": 0.873,
       "attribution_conf": 0.27,
       "actionability": 0.6,
       "vulnerability": 0.548
@@ -68,7 +68,7 @@
     "source": "industrial",
     "confidence": 0.27,
     "n_cells": 17,
-    "pm25_med": 67.0,
+    "pm25_med": 67.5,
     "status": "pending"
   }
 ]

@@ -32,10 +32,42 @@
     "audio": {}
   },
   {
+    "ward_id": "W024",
+    "ward_name": "L",
+    "pm25": 61.2,
+    "aqi": 105,
+    "aqi_category": "Moderate",
+    "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+    "risk_tier": "high",
+    "risk_score": 0.58,
+    "worsening": true,
+    "n_cells": 25,
+    "vulnerability": {
+      "schools_hospitals_nearby": 46,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in L is moderate (AQI 105). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
     "ward_id": "W005",
     "ward_name": "E",
-    "pm25": 54.8,
-    "aqi": 92,
+    "pm25": 54.6,
+    "aqi": 91,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
@@ -51,7 +83,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in E is satisfactory (AQI 92). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in E is satisfactory (AQI 91). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -64,18 +96,18 @@
     "audio": {}
   },
   {
-    "ward_id": "W022",
-    "ward_name": "R/S",
-    "pm25": 43.3,
-    "aqi": 73,
+    "ward_id": "W008",
+    "ward_name": "F/N",
+    "pm25": 53.2,
+    "aqi": 89,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "moderate",
     "risk_score": 0.44,
     "worsening": true,
-    "n_cells": 28,
+    "n_cells": 17,
     "vulnerability": {
-      "schools_hospitals_nearby": 64,
+      "schools_hospitals_nearby": 75,
       "outdoor_workers": null,
       "elderly": null
     },
@@ -83,71 +115,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in R/S is satisfactory (AQI 73). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "W024",
-    "ward_name": "L",
-    "pm25": 59.9,
-    "aqi": 100,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 25,
-    "vulnerability": {
-      "schools_hospitals_nearby": 46,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in L is satisfactory (AQI 100). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
-    "ward_id": "unassigned",
-    "ward_name": "Outside city limits",
-    "pm25": 43.8,
-    "aqi": 74,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "moderate",
-    "risk_score": 0.44,
-    "worsening": true,
-    "n_cells": 786,
-    "vulnerability": {
-      "schools_hospitals_nearby": 86,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in Outside city limits is satisfactory (AQI 74). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in F/N is satisfactory (AQI 89). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -162,8 +130,8 @@
   {
     "ward_id": "W018",
     "ward_name": "H/E",
-    "pm25": 64.1,
-    "aqi": 115,
+    "pm25": 63.6,
+    "aqi": 113,
     "aqi_category": "Moderate",
     "health_impact_cpcb": "Breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
     "risk_tier": "moderate",
@@ -179,7 +147,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in H/E is moderate (AQI 115). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
+      "en": "Air quality in H/E is moderate (AQI 113). People with asthma or heart conditions, children and older adults should limit prolonged outdoor exertion."
     },
     "written_by": "rules",
     "reviewed": {
@@ -258,7 +226,7 @@
   {
     "ward_id": "W003",
     "ward_name": "C",
-    "pm25": 53.2,
+    "pm25": 53.5,
     "aqi": 89,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -290,7 +258,7 @@
   {
     "ward_id": "W004",
     "ward_name": "D",
-    "pm25": 53.1,
+    "pm25": 53.2,
     "aqi": 89,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -322,7 +290,7 @@
   {
     "ward_id": "W007",
     "ward_name": "G/S",
-    "pm25": 46.0,
+    "pm25": 45.7,
     "aqi": 77,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -352,42 +320,10 @@
     "audio": {}
   },
   {
-    "ward_id": "W008",
-    "ward_name": "F/N",
-    "pm25": 54.9,
-    "aqi": 92,
-    "aqi_category": "Satisfactory",
-    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
-    "risk_tier": "low",
-    "risk_score": 0.29,
-    "worsening": false,
-    "n_cells": 17,
-    "vulnerability": {
-      "schools_hospitals_nearby": 75,
-      "outdoor_workers": null,
-      "elderly": null
-    },
-    "languages": [
-      "en"
-    ],
-    "texts": {
-      "en": "Air quality in F/N is satisfactory (AQI 92). Sensitive individuals may feel minor breathing discomfort."
-    },
-    "written_by": "rules",
-    "reviewed": {
-      "en": true
-    },
-    "verification": {
-      "en": "cpcb_official"
-    },
-    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
-    "audio": {}
-  },
-  {
     "ward_id": "W009",
     "ward_name": "G/N",
-    "pm25": 54.3,
-    "aqi": 91,
+    "pm25": 52.6,
+    "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -403,7 +339,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in G/N is satisfactory (AQI 91). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in G/N is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -418,8 +354,8 @@
   {
     "ward_id": "W010",
     "ward_name": "N",
-    "pm25": 46.4,
-    "aqi": 78,
+    "pm25": 47.2,
+    "aqi": 79,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -435,7 +371,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in N is satisfactory (AQI 78). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in N is satisfactory (AQI 79). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -450,8 +386,8 @@
   {
     "ward_id": "W011",
     "ward_name": "R/C",
-    "pm25": 48.6,
-    "aqi": 81,
+    "pm25": 48.0,
+    "aqi": 80,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -467,7 +403,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in R/C is satisfactory (AQI 81). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in R/C is satisfactory (AQI 80). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -482,7 +418,7 @@
   {
     "ward_id": "W012",
     "ward_name": "S",
-    "pm25": 42.0,
+    "pm25": 42.4,
     "aqi": 71,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -546,8 +482,8 @@
   {
     "ward_id": "W014",
     "ward_name": "K/W",
-    "pm25": 46.8,
-    "aqi": 78,
+    "pm25": 48.3,
+    "aqi": 81,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -563,7 +499,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in K/W is satisfactory (AQI 78). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in K/W is satisfactory (AQI 81). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -578,8 +514,8 @@
   {
     "ward_id": "W015",
     "ward_name": "R/N",
-    "pm25": 51.2,
-    "aqi": 86,
+    "pm25": 50.7,
+    "aqi": 85,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -595,7 +531,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in R/N is satisfactory (AQI 86). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in R/N is satisfactory (AQI 85). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -610,7 +546,7 @@
   {
     "ward_id": "W017",
     "ward_name": "M/W",
-    "pm25": 54.9,
+    "pm25": 54.8,
     "aqi": 92,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
@@ -642,8 +578,8 @@
   {
     "ward_id": "W019",
     "ward_name": "K/E",
-    "pm25": 50.0,
-    "aqi": 84,
+    "pm25": 52.6,
+    "aqi": 88,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -659,7 +595,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in K/E is satisfactory (AQI 84). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in K/E is satisfactory (AQI 88). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -674,8 +610,8 @@
   {
     "ward_id": "W020",
     "ward_name": "P/S",
-    "pm25": 46.7,
-    "aqi": 78,
+    "pm25": 48.6,
+    "aqi": 81,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -691,7 +627,7 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in P/S is satisfactory (AQI 78). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in P/S is satisfactory (AQI 81). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -706,8 +642,8 @@
   {
     "ward_id": "W021",
     "ward_name": "P/N",
-    "pm25": 44.0,
-    "aqi": 74,
+    "pm25": 45.0,
+    "aqi": 76,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -723,7 +659,39 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in P/N is satisfactory (AQI 74). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in P/N is satisfactory (AQI 76). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "W022",
+    "ward_name": "R/S",
+    "pm25": 43.1,
+    "aqi": 72,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 28,
+    "vulnerability": {
+      "schools_hospitals_nearby": 64,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in R/S is satisfactory (AQI 72). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
@@ -738,8 +706,8 @@
   {
     "ward_id": "W023",
     "ward_name": "H/W",
-    "pm25": 54.3,
-    "aqi": 91,
+    "pm25": 53.9,
+    "aqi": 90,
     "aqi_category": "Satisfactory",
     "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
     "risk_tier": "low",
@@ -755,7 +723,39 @@
       "en"
     ],
     "texts": {
-      "en": "Air quality in H/W is satisfactory (AQI 91). Sensitive individuals may feel minor breathing discomfort."
+      "en": "Air quality in H/W is satisfactory (AQI 90). Sensitive individuals may feel minor breathing discomfort."
+    },
+    "written_by": "rules",
+    "reviewed": {
+      "en": true
+    },
+    "verification": {
+      "en": "cpcb_official"
+    },
+    "disclaimer": "AQI band and health impact are the official CPCB NAQI classification. All languages verified by a speaker of that language.",
+    "audio": {}
+  },
+  {
+    "ward_id": "unassigned",
+    "ward_name": "Outside city limits",
+    "pm25": 43.8,
+    "aqi": 74,
+    "aqi_category": "Satisfactory",
+    "health_impact_cpcb": "Minor breathing discomfort to sensitive people.",
+    "risk_tier": "low",
+    "risk_score": 0.29,
+    "worsening": false,
+    "n_cells": 786,
+    "vulnerability": {
+      "schools_hospitals_nearby": 86,
+      "outdoor_workers": null,
+      "elderly": null
+    },
+    "languages": [
+      "en"
+    ],
+    "texts": {
+      "en": "Air quality in Outside city limits is satisfactory (AQI 74). Sensitive individuals may feel minor breathing discomfort."
     },
     "written_by": "rules",
     "reviewed": {
