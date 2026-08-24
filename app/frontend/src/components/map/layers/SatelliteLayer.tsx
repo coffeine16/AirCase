@@ -13,6 +13,7 @@
  * hotspots themselves. It used to run to near-fluorescent magenta.
  */
 import { H3HexagonLayer } from "@deck.gl/geo-layers";
+import { OVERLAY_PARAMETERS } from "./overlay";
 
 export interface SatelliteCell {
   cell: string;
@@ -41,6 +42,7 @@ export function buildSatelliteLayer(
 
   return new H3HexagonLayer<SatelliteCell>({
     id: "satellite-no2",
+    parameters: OVERLAY_PARAMETERS,
     data: cells,
     getHexagon: (d) => d.cell,
     getFillColor: (d) => no2ToColor(d.no2, min, max),

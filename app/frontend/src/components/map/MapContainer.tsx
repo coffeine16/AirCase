@@ -13,6 +13,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 
 import { initialViewFor, MAP_STYLE } from "@/lib/constants";
 import { pm25ToRgbaArray, SEVERITY_COLORS, hexToRgba, UNKNOWN_HEX, NO_FORECAST_RGBA } from "@/lib/colors";
+import { OVERLAY_PARAMETERS } from "./layers/overlay";
 import type { FusionCell, Hotspot, LayerVisibility, MapFilters, DispatchRoute, BlindSpot } from "@/lib/types";
 import type { Station, FireDetection } from "@/hooks/useMapData";
 
@@ -87,9 +88,13 @@ export default function MapContainer({
     longitude: number; latitude: number; zoom: number; pitch: number; bearing: number;
   }>(() => initialViewFor(recenterKey ?? "delhi"));
 
-  /** 2D / 3D. Off by default: the console is a working surface first, and an
-   *  extruded field hides the point layers (stations, fires, blind spots) that
-   *  an analyst is usually reading alongside it. Opt-in, not the default view. */
+  /** 2D / 3D. Off by default because the console is a working surface first and
+   *  a flat field is easier to read a queue against — NOT, any longer, because
+   *  3D hid the evidence. It did: the extruded columns occluded stations, fires,
+   *  hotspot zones, blind spots and dispatch routes, since those are drawn flat
+   *  at ground level and lose the depth test against a 2,500-unit column. Every
+   *  overlay now carries OVERLAY_PARAMETERS (see ./layers/overlay.ts), so 3D is
+   *  a safe view rather than one that quietly costs you the layers you came for. */
   const [extruded, setExtruded] = useState(false);
 
   // Theme-aware base map: dark-matter on dark, positron (light) on light. Follows
@@ -248,6 +253,11 @@ export default function MapContainer({
     if (!layers.hotspots || !hotspots.length) return null;
     return new H3HexagonLayer<Hotspot>({
       id: "hotspot-zones",
+      // Flat, at ground level, and therefore BEHIND the extruded fusion columns
+      // as far as the depth buffer is concerned. Without this the hotspot zones
+      // — the whole point of the console — disappear the moment 3D is switched
+      // on. See ./layers/overlay.ts.
+      parameters: OVERLAY_PARAMETERS,
       data: hotspots,
       getHexagon: (d) => d.cell,
       getFillColor: (d) => SEVERITY_COLORS[d.kind]?.fill ?? hexToRgba(UNKNOWN_HEX, 100),
@@ -306,6 +316,7 @@ export default function MapContainer({
     if (!selectedCell) return null;
     return new H3HexagonLayer({
       id: "selected-cell",
+      parameters: OVERLAY_PARAMETERS,   // the selection ring must never be occluded
       data: [{ cell: selectedCell }],
       getHexagon: (d) => (d as { cell: string }).cell,
       getFillColor: [255, 255, 255, 30],

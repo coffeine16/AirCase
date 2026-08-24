@@ -11,6 +11,7 @@
 import { PathLayer, LineLayer, ScatterplotLayer, TextLayer } from "@deck.gl/layers";
 import { icon, Truck } from "@/components/Icon";
 import type { DispatchRoute, DispatchStop } from "@/lib/types";
+import { OVERLAY_PARAMETERS } from "./overlay";
 
 // One hue per team, up to 6. Muted and evenly spaced around the wheel: these
 // identify a route, they do not rank it, so none of them may read as an alert.
@@ -95,6 +96,7 @@ export function buildDispatchLayers(
     layers.push(
       new PathLayer<RoadPath>({
         id: "dispatch-road-paths",
+        parameters: OVERLAY_PARAMETERS,
         data: roadPaths,
         getPath: (d) => d.path,
         getColor: (d) => teamColor(d.team_id),
@@ -113,6 +115,7 @@ export function buildDispatchLayers(
     layers.push(
       new LineLayer<RouteLine>({
         id: "dispatch-routes-fallback",
+        parameters: OVERLAY_PARAMETERS,
         data: fallbackLines,
         getSourcePosition: (d) => d.from,
         getTargetPosition: (d) => d.to,
@@ -136,6 +139,7 @@ export function buildDispatchLayers(
     layers.push(
       new ScatterplotLayer<StopPoint>({
         id: "dispatch-solo-halo",
+        parameters: OVERLAY_PARAMETERS,
         data: solos,
         getPosition: (d) => [d.stop.lon, d.stop.lat],
         getRadius: 620,
@@ -156,6 +160,7 @@ export function buildDispatchLayers(
   // Stop markers
   const stopLayer = new ScatterplotLayer<StopPoint>({
     id: "dispatch-stops",
+    parameters: OVERLAY_PARAMETERS,
     data: points,
     getPosition: (d) => [d.stop.lon, d.stop.lat],
     getRadius: 320,
@@ -218,6 +223,7 @@ export function buildDispatchLayers(
   // Sequence labels on each stop
   const labelLayer = new TextLayer<StopPoint>({
     id: "dispatch-labels",
+    parameters: OVERLAY_PARAMETERS,
     data: points,
     getPosition: (d) => [d.stop.lon, d.stop.lat],
     getText: (d) => `${d.stop.seq}`,

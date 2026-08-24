@@ -7,6 +7,7 @@ import { H3HexagonLayer } from "@deck.gl/geo-layers";
 import { BLINDSPOT_HEX, hexToRgba } from "@/lib/colors";
 import { icon, Eye } from "@/components/Icon";
 import type { BlindSpot } from "@/lib/types";
+import { OVERLAY_PARAMETERS } from "./overlay";
 
 export function buildBlindSpotLayer(
   blindSpots: BlindSpot[],
@@ -19,6 +20,7 @@ export function buildBlindSpotLayer(
 
   return new H3HexagonLayer<BlindSpot>({
     id: "blindspots",
+    parameters: OVERLAY_PARAMETERS,
     data: blindSpots,
     getHexagon: (d) => d.cell,
     getFillColor: (d) => {

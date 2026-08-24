@@ -5,6 +5,7 @@
  * Cells from /wards are converted to H3 polygons client-side.
  */
 import { H3HexagonLayer } from "@deck.gl/geo-layers";
+import { OVERLAY_PARAMETERS } from "./overlay";
 
 interface WardCell {
   cell: string;
@@ -19,6 +20,9 @@ export function buildWardLayer(
   if (!cells.length) return null;
   return new H3HexagonLayer<WardCell>({
     id: "wards",
+    // Ward outlines are ground-level lines; without this they vanish under the
+    // extruded fusion field in 3D. See ./overlay.ts.
+    parameters: OVERLAY_PARAMETERS,
     data: cells,
     getHexagon: (d) => d.cell,
     getFillColor: [0, 0, 0, 0],            // fully transparent fill

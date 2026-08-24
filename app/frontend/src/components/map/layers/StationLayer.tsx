@@ -9,6 +9,7 @@ import { ScatterplotLayer } from "@deck.gl/layers";
 import { pm25ToRgbaArray } from "@/lib/colors";
 import { icon, MapPin } from "@/components/Icon";
 import type { Station } from "@/hooks/useMapData";
+import { OVERLAY_PARAMETERS } from "./overlay";
 
 // Returns a Deck.gl layer instance (or null if empty / hidden)
 export function buildStationLayer(
@@ -19,6 +20,7 @@ export function buildStationLayer(
   if (!stations.length) return null;
   return new ScatterplotLayer<Station>({
     id: "stations",
+    parameters: OVERLAY_PARAMETERS,
     data: stations,
     getPosition: (d) => [d.lon, d.lat],
     getRadius: 400,

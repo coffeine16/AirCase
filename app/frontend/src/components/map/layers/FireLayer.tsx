@@ -7,6 +7,7 @@ import { ScatterplotLayer } from "@deck.gl/layers";
 import { FIRE_HEX, hexToRgba } from "@/lib/colors";
 import { icon, Flame } from "@/components/Icon";
 import { FIRE_CONFIDENCE, type FireDetection } from "@/hooks/useMapData";
+import { OVERLAY_PARAMETERS } from "./overlay";
 
 /** FIRMS confidence is a letter code, not a number. */
 const conf = (d: FireDetection) => FIRE_CONFIDENCE[d.confidence] ?? { label: "Unknown", weight: 0.5 };
@@ -36,6 +37,7 @@ export function buildFireLayer(
   if (!fires.length) return null;
   return new ScatterplotLayer<FireDetection>({
     id: "fires",
+    parameters: OVERLAY_PARAMETERS,
     data: fires,
     getPosition: (d) => [d.lon, d.lat],
     getRadius: (d) => Math.max(300, Math.min(1200, d.frp * 30)),
