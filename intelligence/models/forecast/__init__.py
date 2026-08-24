@@ -529,7 +529,28 @@ def serve(cities: list[str] | None = None) -> dict:
                             fires_by_city=fires_by_city, clim_panels=clim_panels)
     eval_payload = manifest.get("eval") or {}
     for city, field in fields.items():
-        _write_city_outputs(DATA_OUT_BASE / city, field, eval_payload)
+        city_out = DATA_OUT_BASE / city
+        _write_city_outputs(city_out, field, eval_payload)
+
+        # Log what we just predicted, and score whatever earlier predictions the
+        # panel has now caught up to. forecast.json is overwritten every run, so
+        # without this the prediction is gone by the time its ground truth
+        # arrives — which is exactly why the model has no error-feedback feature
+        # to learn from. Purely additive: nothing above reads it back, and the
+        # served numbers are unchanged.
+        try:
+            from intelligence.models.forecast import residuals
+            issued = panels[city].ts.max()
+            n = residuals.log_predictions(city_out, field, issued)
+            sc = residuals.score_against(city_out, panels[city])
+            if sc.get("scored"):
+                print(f"[residuals] {city}: {n:,} logged, {sc['scored']:,} scored — "
+                      f"median bias {sc['median_bias']:+.1f} ug/m3, "
+                      f"median |error| {sc['median_abs_error']:.1f}")
+            else:
+                print(f"[residuals] {city}: {n:,} logged — {sc.get('note','')}")
+        except Exception as e:   # noqa: BLE001 — bookkeeping must never break serving
+            print(f"[residuals] {city}: skipped ({type(e).__name__}: {e})")
     return manifest
 
 

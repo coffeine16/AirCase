@@ -98,7 +98,15 @@ def window_end():
     return pd.Timestamp.now("UTC").normalize()
 
 H3_RES = 8            # ~460 m edge -> satisfies "1 km grid" requirement
-PANEL_HOURS = 24 * 60 # synthetic/backfill window: 60 days hourly
+# A QUARTER, not two months. The forecaster's longest feature is roll_med_2160,
+# a 90-day rolling median, so a 60-day panel could only ever fill 67% of that
+# window — the model was trained on panels where it was complete, so serving it a
+# partial one is train/serve skew in the feature meant to carry seasonal memory.
+# Detection is unaffected either way (its longest window is 30d) and fusion only
+# gains rows. 90 is also the practical ceiling: Open-Meteo's forecast endpoint
+# stops at 92 days, and while a window this old routes to the ERA5 archive
+# instead, staying under that keeps a "recent window" run working too.
+PANEL_HOURS = 24 * 90 # synthetic/backfill window: 90 days hourly (one quarter)
 
 # The synthetic world ends HERE, not at utcnow(). Anchoring it makes every
 # reported number reproducible; with a sliding clock the same code gave 72

@@ -47,6 +47,28 @@ export default function WardDashboardPage({ params }: { params: Promise<Params> 
   );
   const summary = Number.isFinite(wardPm25) ? { pm25: wardPm25, ward_name: wardName } : null;
 
+  // "Cleaner than 8 in 10 wards" — the comparison a resident actually makes.
+  // A bare AQI number is meaningless to someone who does not know what 140 is
+  // like; a rank against their own city is immediately legible, and it is the
+  // question behind "is it bad HERE, or is it bad everywhere".
+  //
+  // Computed from THIS city's fusion field, medianed per ward exactly as
+  // wardPm25 is, so the ward's own number and its rank can never disagree.
+  const wardRank = useMemo(() => {
+    if (!Number.isFinite(wardPm25)) return null;
+    const byWard = new Map<string, number[]>();
+    for (const c of cells) {
+      if (!c.ward_id || c.ward_id === "unassigned" || c.pm25 == null) continue;
+      const arr = byWard.get(c.ward_id) ?? [];
+      arr.push(c.pm25);
+      byWard.set(c.ward_id, arr);
+    }
+    const medians = [...byWard.values()].map(median).filter(Number.isFinite);
+    if (medians.length < 5) return null;   // too few wards for a rank to mean anything
+    const cleaner = medians.filter((m) => m > wardPm25).length;
+    return { pct: Math.round((100 * cleaner) / medians.length), nWards: medians.length };
+  }, [cells, wardPm25]);
+
   // The ward's real CPCB advisory text (English), from this city's advisories.
   const { data: advisories } = useSWR([city, "advisories"], () => api.cityAdvisories(city));
   const advisoryText = useMemo(
@@ -170,6 +192,17 @@ export default function WardDashboardPage({ params }: { params: Promise<Params> 
                   {summary?.pm25 != null ? `${summary.pm25.toFixed(1)} µg/m³` : "—"}
                 </span>
               </div>
+              {wardRank && (
+                <div style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginBottom: 8 }}>
+                  {wardRank.pct >= 50 ? (
+                    <>Cleaner than <strong style={{ color: "var(--text-primary)" }}>{wardRank.pct}%</strong> of
+                    {" "}{wardRank.nWards} wards in this city.</>
+                  ) : (
+                    <>Dirtier than <strong style={{ color: "var(--text-primary)" }}>{100 - wardRank.pct}%</strong> of
+                    {" "}{wardRank.nWards} wards in this city.</>
+                  )}
+                </div>
+              )}
               {/* Only when the ward has NO real advisory. The pipeline's advisory
                   says the same thing better — named ward, actual AQI, and it is
                   the text the voice note reads — so rendering both printed the

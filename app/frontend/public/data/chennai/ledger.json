@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T17:45:35.887800+00:00",
+  "generated_at": "2026-08-24T05:41:43.493728+00:00",
   "response_time_claim": "Signal-to-memo is automated and deterministic: a cited enforcement memo and dispatch route are produced in seconds. The manual baseline — correlating a satellite signal to a served notice across agencies — is measured in weeks. This is the response-time reduction.",
   "effectiveness_claim": "NOT yet measured. Intervention effectiveness requires a real intervention between the frozen counterfactual and a realized outcome. The ledger freezes the counterfactual and awaits actioned outcomes from the inspector loop; it does not attribute natural change to itself.",
   "n_actions": 12,
@@ -7,135 +7,15 @@
   "counterfactual_horizon_h": 48,
   "entries": [
     {
-      "action_id": "A08",
-      "zone_id": "Z00",
-      "ward_id": "W100",
-      "ward_name": "Ward 102 (Annanagar)",
-      "source": "construction",
-      "eps": 76.2,
-      "response": {
-        "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:44:27.479526+00:00",
-        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
-        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
-      },
-      "counterfactual": {
-        "horizon_h": 48,
-        "pm25_counterfactual": 36.6,
-        "aqi_counterfactual": 62,
-        "band_counterfactual": "Satisfactory",
-        "frozen_at": "2025-11-29 23:00:00+00:00"
-      },
-      "observed_change": null,
-      "our_impact": null,
-      "status": "awaiting_outcome"
-    },
-    {
-      "action_id": "A02",
-      "zone_id": "Z01",
-      "ward_id": "W100",
-      "ward_name": "Ward 102 (Annanagar)",
-      "source": "industrial",
-      "eps": 73.6,
-      "response": {
-        "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:44:27.479586+00:00",
-        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
-        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
-      },
-      "counterfactual": {
-        "horizon_h": 48,
-        "pm25_counterfactual": 37.1,
-        "aqi_counterfactual": 63,
-        "band_counterfactual": "Satisfactory",
-        "frozen_at": "2025-11-29 23:00:00+00:00"
-      },
-      "observed_change": null,
-      "our_impact": null,
-      "status": "awaiting_outcome"
-    },
-    {
-      "action_id": "A07",
-      "zone_id": "Z02",
-      "ward_id": "W048",
-      "ward_name": "Ward 35 (Tondiarpet)",
-      "source": "industrial",
-      "eps": 71.2,
-      "response": {
-        "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:44:27.479625+00:00",
-        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
-        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
-      },
-      "counterfactual": {
-        "horizon_h": 48,
-        "pm25_counterfactual": 36.9,
-        "aqi_counterfactual": 62,
-        "band_counterfactual": "Satisfactory",
-        "frozen_at": "2025-11-29 23:00:00+00:00"
-      },
-      "observed_change": null,
-      "our_impact": null,
-      "status": "awaiting_outcome"
-    },
-    {
-      "action_id": "A09",
-      "zone_id": "Z10",
-      "ward_id": "W042",
-      "ward_name": "Ward 28 (Madhavaram)",
-      "source": "industrial",
-      "eps": 62.7,
-      "response": {
-        "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:44:27.479657+00:00",
-        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
-        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
-      },
-      "counterfactual": {
-        "horizon_h": 48,
-        "pm25_counterfactual": 37.0,
-        "aqi_counterfactual": 63,
-        "band_counterfactual": "Satisfactory",
-        "frozen_at": "2025-11-29 23:00:00+00:00"
-      },
-      "observed_change": null,
-      "our_impact": null,
-      "status": "awaiting_outcome"
-    },
-    {
-      "action_id": "A04",
-      "zone_id": "Z05",
-      "ward_id": "W168",
-      "ward_name": "Ward 156 (Alandur)",
-      "source": "industrial",
-      "eps": 62.0,
-      "response": {
-        "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:44:27.479689+00:00",
-        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
-        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
-      },
-      "counterfactual": {
-        "horizon_h": 48,
-        "pm25_counterfactual": 36.7,
-        "aqi_counterfactual": 62,
-        "band_counterfactual": "Satisfactory",
-        "frozen_at": "2025-11-29 23:00:00+00:00"
-      },
-      "observed_change": null,
-      "our_impact": null,
-      "status": "awaiting_outcome"
-    },
-    {
       "action_id": "A01",
-      "zone_id": "Z07",
-      "ward_id": "unassigned",
-      "ward_name": "Outside city limits",
-      "source": "industrial",
-      "eps": 58.6,
+      "zone_id": "Z00",
+      "ward_id": "W104",
+      "ward_name": "Ward 112 (Teynampet)",
+      "source": "construction",
+      "eps": 75.9,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:44:27.479720+00:00",
+        "memo_drafted_at": "2026-08-24T05:40:29.415447+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
@@ -151,15 +31,183 @@
       "status": "awaiting_outcome"
     },
     {
-      "action_id": "A03",
-      "zone_id": "Z04",
-      "ward_id": "unassigned",
-      "ward_name": "Outside city limits",
+      "action_id": "A02",
+      "zone_id": "Z01",
+      "ward_id": "W100",
+      "ward_name": "Ward 102 (Annanagar)",
       "source": "industrial",
-      "eps": 58.6,
+      "eps": 74.4,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:44:27.479750+00:00",
+        "memo_drafted_at": "2026-08-24T05:40:29.415514+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 37.1,
+        "aqi_counterfactual": 63,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A08",
+      "zone_id": "Z02",
+      "ward_id": "W048",
+      "ward_name": "Ward 35 (Tondiarpet)",
+      "source": "industrial",
+      "eps": 72.0,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-24T05:40:29.415554+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 37.2,
+        "aqi_counterfactual": 63,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A05",
+      "zone_id": "Z05",
+      "ward_id": "unassigned",
+      "ward_name": "Outside city limits",
+      "source": "traffic",
+      "eps": 69.3,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-24T05:40:29.415601+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 36.7,
+        "aqi_counterfactual": 62,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A09",
+      "zone_id": "Z10",
+      "ward_id": "W042",
+      "ward_name": "Ward 28 (Madhavaram)",
+      "source": "industrial",
+      "eps": 63.5,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-24T05:40:29.415638+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 37.1,
+        "aqi_counterfactual": 63,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A03",
+      "zone_id": "Z07",
+      "ward_id": "W014",
+      "ward_name": "Ward 157 (Alandur)",
+      "source": "industrial",
+      "eps": 61.8,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-24T05:40:29.415676+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 36.5,
+        "aqi_counterfactual": 62,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A06",
+      "zone_id": "Z04",
+      "ward_id": "W175",
+      "ward_name": "Ward 150 (Valasaravakkam)",
+      "source": "industrial",
+      "eps": 58.4,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-24T05:40:29.415709+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 36.4,
+        "aqi_counterfactual": 61,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A04",
+      "zone_id": "Z08",
+      "ward_id": "W167",
+      "ward_name": "Ward 159 (Alandur)",
+      "source": "industrial",
+      "eps": 55.6,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-24T05:40:29.415740+00:00",
+        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
+        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
+      },
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 36.8,
+        "aqi_counterfactual": 62,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
+      "observed_change": null,
+      "our_impact": null,
+      "status": "awaiting_outcome"
+    },
+    {
+      "action_id": "A07",
+      "zone_id": "Z06",
+      "ward_id": "unassigned",
+      "ward_name": "Outside city limits",
+      "source": "construction",
+      "eps": 52.0,
+      "response": {
+        "signal_at": "2025-11-29 23:00:00+00:00",
+        "memo_drafted_at": "2026-08-24T05:40:29.415771+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
@@ -179,65 +227,17 @@
       "zone_id": "Z09",
       "ward_id": "unassigned",
       "ward_name": "Outside city limits",
-      "source": "traffic",
-      "eps": 55.6,
-      "response": {
-        "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:44:27.479778+00:00",
-        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
-        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
-      },
-      "counterfactual": {
-        "horizon_h": 48,
-        "pm25_counterfactual": 36.5,
-        "aqi_counterfactual": 62,
-        "band_counterfactual": "Satisfactory",
-        "frozen_at": "2025-11-29 23:00:00+00:00"
-      },
-      "observed_change": null,
-      "our_impact": null,
-      "status": "awaiting_outcome"
-    },
-    {
-      "action_id": "A06",
-      "zone_id": "Z08",
-      "ward_id": "W167",
-      "ward_name": "Ward 159 (Alandur)",
       "source": "industrial",
-      "eps": 54.7,
+      "eps": 50.1,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:44:27.479805+00:00",
+        "memo_drafted_at": "2026-08-24T05:40:29.415803+00:00",
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 36.8,
-        "aqi_counterfactual": 62,
-        "band_counterfactual": "Satisfactory",
-        "frozen_at": "2025-11-29 23:00:00+00:00"
-      },
-      "observed_change": null,
-      "our_impact": null,
-      "status": "awaiting_outcome"
-    },
-    {
-      "action_id": "A05",
-      "zone_id": "Z06",
-      "ward_id": "unassigned",
-      "ward_name": "Outside city limits",
-      "source": "construction",
-      "eps": 51.4,
-      "response": {
-        "signal_at": "2025-11-29 23:00:00+00:00",
-        "memo_drafted_at": "2026-08-23T17:44:27.479834+00:00",
-        "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
-        "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
-      },
-      "counterfactual": {
-        "horizon_h": 48,
-        "pm25_counterfactual": 36.2,
+        "pm25_counterfactual": 36.4,
         "aqi_counterfactual": 61,
         "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
@@ -247,12 +247,12 @@
       "status": "awaiting_outcome"
     },
     {
-      "action_id": "A12",
+      "action_id": "A11",
       "zone_id": "Z03",
-      "ward_id": "W179",
-      "ward_name": "Ward 155 (Valasaravakkam)",
+      "ward_id": "W015",
+      "ward_name": "Ward 0 (St. Thomas Mount)",
       "source": "unknown",
-      "eps": 44.6,
+      "eps": 45.4,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
         "memo_drafted_at": null,
@@ -261,7 +261,7 @@
       },
       "counterfactual": {
         "horizon_h": 48,
-        "pm25_counterfactual": 37.3,
+        "pm25_counterfactual": 37.6,
         "aqi_counterfactual": 63,
         "band_counterfactual": "Satisfactory",
         "frozen_at": "2025-11-29 23:00:00+00:00"
@@ -271,19 +271,25 @@
       "status": "awaiting_outcome"
     },
     {
-      "action_id": "A11",
+      "action_id": "A12",
       "zone_id": "Z11",
       "ward_id": "W021",
       "ward_name": "Ward 18 (Manali)",
       "source": "unknown",
-      "eps": 36.7,
+      "eps": 37.2,
       "response": {
         "signal_at": "2025-11-29 23:00:00+00:00",
         "memo_drafted_at": null,
         "manual_baseline": "weeks (manual cross-agency signal->notice correlation, CAG 2024)",
         "automated": "one batch run: satellite signal -> attribution -> cited memo -> dispatch route, no human correlation step"
       },
-      "counterfactual": null,
+      "counterfactual": {
+        "horizon_h": 48,
+        "pm25_counterfactual": 32.2,
+        "aqi_counterfactual": 55,
+        "band_counterfactual": "Satisfactory",
+        "frozen_at": "2025-11-29 23:00:00+00:00"
+      },
       "observed_change": null,
       "our_impact": null,
       "status": "awaiting_outcome"
