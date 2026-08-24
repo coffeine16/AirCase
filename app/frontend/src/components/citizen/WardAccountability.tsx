@@ -27,13 +27,22 @@ import useSWR from "swr";
 import { cellToLatLng } from "h3-js";
 import { api } from "@/lib/api";
 import { SOURCE_LABELS, confidenceLabel } from "@/lib/constants";
+import { plainEvidenceChain } from "@/lib/plainEvidence";
 import type {
   Attribution, Action, Memo, Hotspot, SourceCategory, FusionCell,
 } from "@/lib/types";
 import { icon, FileSearch, FileText, Gauge } from "@/components/Icon";
 
 /** Evidence drawn from a channel we have measured as noise. See header. */
-const NOISE_EVIDENCE = /\b(aai|aerosol|so2|so₂)\b/i;
+
+/** Beyond this, the nearest traced source says nothing useful about the air in
+ *  YOUR ward — Pune's W008 sits 12.6 km from the closest one — so the line is
+ *  withheld rather than padded out with a distance nobody can act on. */
+const NEAREST_SOURCE_MAX_KM = 15;
+
+/** Within this, "it can still affect what you breathe" is a fair thing to say.
+ *  Past it, stating the distance is fine but claiming influence is not. */
+const NEAREST_SOURCE_RELEVANT_KM = 5;
 
 function haversineKm(a: [number, number], b: [number, number]): number {
   const R = 6371;
@@ -154,7 +163,56 @@ export default function WardAccountability({
     return Number.isFinite(best) ? best : null;
   }, [cells, wardId, stations]);
 
-  const evidence = (dominant?.best.evidence_factors ?? []).filter((f) => !NOISE_EVIDENCE.test(f));
+  /* Rewritten for a citizen, not an inspector: no OSM ids, no cosines, no
+     unexplained jargon, and the model's own scoring lines dropped. The admin
+     console still renders the raw strings — see lib/plainEvidence.ts. */
+  const evidence = plainEvidenceChain(dominant?.best.evidence_factors ?? []);
+
+  /**
+   * For a ward with nothing flagged in it — which is MOST wards, 250 of Delhi's
+   * 266 — "we found nothing" is true but a dead end. We still know where the
+   * nearest source we DID trace is, and that is the thing a resident actually
+   * wants to know next. Measured as nearest cell-to-cell, not centroid-to-
+   * centroid, because "how far is it from me" is the question being answered.
+   */
+  const nearestSource = useMemo(() => {
+    if (hasHotspots) return null;
+    const mine = cells.filter((c) => c.ward_id === wardId);
+    const srcOf = new Map((attributions ?? []).map((a) => [a.zone_id, a]));
+    const cand = (hotspots ?? []).filter((h) => srcOf.has(h.zone_id));
+    if (!mine.length || !cand.length) return null;
+
+    const pt = (cell: string): [number, number] | null => {
+      try { return cellToLatLng(cell) as [number, number]; } catch { return null; }
+    };
+    let best: { km: number; zoneId: string; wardName: string; wardId: string } | null = null;
+    for (const m of mine) {
+      const mp = pt(m.cell);
+      if (!mp) continue;
+      for (const c of cand) {
+        const cp = pt(c.cell);
+        if (!cp) continue;
+        const km = haversineKm(mp, cp);
+        if (!best || km < best.km)
+          best = { km, zoneId: c.zone_id, wardName: c.ward_name, wardId: c.ward_id };
+      }
+    }
+    if (!best || best.km > NEAREST_SOURCE_MAX_KM) return null;
+    const src = srcOf.get(best.zoneId);
+    // A zone can sit in the `unassigned` ward — every cell that fell outside the
+    // municipal boundary. Its ward_name is the literal string "Outside city
+    // limits", which renders as "…1.6 km away, in Outside city limits." Real on
+    // Pune's W001. Such a zone is still worth reporting (it is 1.6 km from you
+    // and it is really there); only the place-name clause has to change.
+    const outside =
+      best.wardId === "unassigned" || /outside city limits/i.test(best.wardName);
+    return {
+      km: best.km,
+      wardName: outside ? null : best.wardName,
+      source: src?.primary_source as SourceCategory | undefined,
+      nZones: new Set(cand.map((c) => c.zone_id)).size,
+    };
+  }, [hasHotspots, cells, wardId, hotspots, attributions]);
 
   return (
     <>
@@ -163,11 +221,41 @@ export default function WardAccountability({
         {!hasHotspots ? (
           /* Nothing flagged at all. The only case where "we found nothing" is
              actually true. */
-          <p style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
-            No pollution source has been attributed in your ward in this window. That
-            means our instruments found nothing standing out here — not that the air
-            is clean. Read the AQI above for that.
-          </p>
+          <>
+            <p style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
+              No pollution source was traced to your ward in this window — our
+              instruments found nothing standing out here. That is not the same as
+              clean air; the reading above is what you are breathing.
+            </p>
+            {nearestSource?.source && (
+              <p
+                style={{
+                  fontSize: "0.875rem", color: "var(--text-secondary)",
+                  lineHeight: 1.6, marginTop: 10,
+                  paddingTop: 10, borderTop: "1px solid var(--border-subtle)",
+                }}
+              >
+                The nearest source we did trace is{" "}
+                <strong style={{ color: "var(--text-primary)" }}>
+                  {SOURCE_LABELS[nearestSource.source].toLowerCase()}
+                </strong>{" "}
+                about{" "}
+                <strong style={{ color: "var(--text-primary)" }}>
+                  {nearestSource.km < 1
+                    ? `${Math.round(nearestSource.km * 1000)} m`
+                    : `${nearestSource.km.toFixed(1)} km`}
+                </strong>{" "}
+                away
+                {nearestSource.wardName
+                  ? `, in ${nearestSource.wardName}`
+                  : ", just beyond the city boundary"}
+                .
+                {nearestSource.km <= NEAREST_SOURCE_RELEVANT_KM
+                  ? " Air moves across ward boundaries, so a source that close can still affect what you breathe."
+                  : " That is far enough away that it is probably not what you are breathing here."}
+              </p>
+            )}
+          </>
         ) : !dominant && !enforceable ? (
           /* WE DID FIND SOMETHING — it just has nobody to blame.
              This branch used to print the "found nothing standing out" line above,
@@ -231,9 +319,9 @@ export default function WardAccountability({
 
             <p style={{ fontSize: "0.75rem", color: "var(--text-tertiary)", lineHeight: 1.55 }}>
               Based on {dominant.nCells} of {dominant.total} flagged location
-              {dominant.total === 1 ? "" : "s"} in your ward, from satellite columns,
-              thermal fire detections and wind direction. We name a source category
-              and an area — not a business.
+              {dominant.total === 1 ? "" : "s"} in your ward — from satellite readings,
+              heat from fires picked up by satellite, and which way the wind was
+              blowing. We name a type of source and an area, never a business.
             </p>
           </>
         )}
