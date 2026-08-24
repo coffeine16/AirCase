@@ -79,7 +79,7 @@ export default function WardDashboardPage({ params }: { params: Promise<Params> 
   const adviceIndex = category ? Math.max(0, AQI_CATEGORIES.indexOf(category)) : 0;
 
   return (
-    <div className="page" style={{ maxWidth: 680 }}>
+    <div className="page ward-page">
       <Link href="/citizen" className="nav-link" style={{ marginBottom: "var(--space-md)", marginLeft: -10 }}>
         <ArrowLeft {...icon.sm} aria-hidden />
         Change ward
@@ -99,149 +99,166 @@ export default function WardDashboardPage({ params }: { params: Promise<Params> 
         </span>
       </div>
 
-      {/* Map of THIS ward — leads the page: you land on your area */}
-      <div style={{ marginBottom: "var(--space-lg)" }}>
-        <CitizenMap cells={cells} highlightWard={wardId} interactive={false} height={280} />
-        <p style={{ fontSize: "0.72rem", color: "var(--text-tertiary)", textAlign: "center", marginTop: 6 }}>
-          Live PM2.5 across your ward — brighter cells are dirtier air.
-        </p>
-      </div>
-
-      {/* AQI Card */}
-      <div
-        className="card card-rail"
-        style={{
-          marginBottom: "var(--space-lg)",
-          ["--rail" as string]: category?.color ?? "var(--border-strong)",
-          padding: "var(--space-lg)",
-        }}
-      >
-        {isLoading ? (
-          <div className="skeleton" style={{ height: 120, borderRadius: 8 }} />
-        ) : (
-          <div style={{ display: "flex", gap: "var(--space-xl)", alignItems: "center" }}>
-            {/* AQI reading. A 100px glowing disc read as a game score; a
-                square swatch reads as a measurement, and matches the band
-                swatches in the map legend. */}
-            <div style={{ flexShrink: 0 }}>
-              <div
-                style={{
-                  width: 86, height: 86, borderRadius: "var(--radius-lg)",
-                  background: category?.color ?? "var(--bg-tertiary)",
-                  display: "flex", flexDirection: "column",
-                  alignItems: "center", justifyContent: "center",
-                }}
-              >
-                <div
-                  className="mono"
-                  style={{ fontSize: "1.7rem", fontWeight: 600, color: category?.textColor ?? "var(--text-secondary)", lineHeight: 1 }}
-                >
-                  {aqi ?? "—"}
-                </div>
-                <div style={{ fontSize: "0.58rem", color: category?.textColor ?? "var(--text-tertiary)", opacity: 0.8, marginTop: 3, letterSpacing: "0.1em" }}>
-                  AQI
-                </div>
-              </div>
-            </div>
-            {/* Details */}
-            <div style={{ flex: 1 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-                <span style={{ fontSize: "1.1rem", fontWeight: 600 }}>{category?.label ?? "No data"}</span>
-                {(() => {
-                  const now = forecast[0].aqi, next = forecast[1].aqi;
-                  if (now == null || next == null) return null;
-                  const d = next - now;
-                  if (Math.abs(d) < 3) {
-                    return <span className="badge badge-diffuse">steady · 24h</span>;
-                  }
-                  const worse = d > 0;
-                  return (
-                    <span className={`badge ${worse ? "badge-critical" : "badge-positive"}`}>
-                      <TrendingUp
-                        {...icon.sm}
-                        aria-hidden
-                        style={{ transform: worse ? "none" : "scaleY(-1)" }}
-                      />
-                      {worse ? "worsening" : "improving"} · 24h
-                    </span>
-                  );
-                })()}
-              </div>
-              <div style={{ fontSize: "0.875rem", color: "var(--text-secondary)", marginBottom: 8 }}>
-                PM2.5 <span className="mono" style={{ color: "var(--text-primary)" }}>
-                  {summary?.pm25 != null ? `${summary.pm25.toFixed(1)} µg/m³` : "—"}
-                </span>
-              </div>
-              {/* Only when the ward has NO real advisory. The pipeline's advisory
-                  says the same thing better — named ward, actual AQI, and it is
-                  the text the voice note reads — so rendering both printed the
-                  same sentence twice, once generically and once for real. */}
-              {!advisoryText && (
-                <div style={{ fontSize: "0.85rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>
-                  {AQI_ADVICE[adviceIndex]}
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* "Compared to what?" — the question the AQI number provokes before "why".
-          A resident cannot act on 403 without knowing whether their ward is the
-          outlier or the whole city is like this today. */}
-      <WardComparison wardId={wardId} cells={cells} cityLabel={cityLabel} />
-
-      {/* Why / what is being done / how sure — placed directly under the number,
-          because "why" is the question the number provokes and the one every
-          other AQI product leaves unanswered. */}
-      <WardAccountability city={city} wardId={wardId} cells={cells} />
-
-      {/* Advisory */}
-      {advisoryText && (
-        <div
-          className="card card-rail"
-          style={{ marginBottom: "var(--space-lg)", ["--rail" as string]: "var(--caution)" }}
-        >
-          <h5 style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}>
-            <Megaphone {...icon.sm} aria-hidden />
-            Advisory
-          </h5>
-          <p style={{ fontSize: "0.875rem", color: "var(--text-primary)", lineHeight: 1.6 }}>
-            {advisoryText}
+      {/* Two columns on a wide screen, one on a phone.
+          It was a single 680px column, so on a desktop the whole right-hand
+          half of the window sat empty while "Why your air is like this" — the
+          question the AQI number provokes, and the one thing no other AQI app
+          answers — was pushed a full screen below the fold. Splitting it puts
+          the reading (left) beside the explanation and what to do about it
+          (right), so both are visible at once without scrolling.
+          Order is unchanged on mobile: the grid collapses to one column and
+          the DOM order below IS the phone reading order. */}
+      <div className="ward-grid">
+        <div className="ward-col">
+        {/* Map of THIS ward — leads the page: you land on your area */}
+        <div style={{ marginBottom: "var(--space-lg)" }}>
+          <CitizenMap cells={cells} highlightWard={wardId} interactive={false} height={280} />
+          <p style={{ fontSize: "0.72rem", color: "var(--text-tertiary)", textAlign: "center", marginTop: 6 }}>
+            Live PM2.5 across your ward — brighter cells are dirtier air.
           </p>
         </div>
-      )}
 
-      {/* Spoken advisory — the IVR/voice-note deliverable, per language */}
-      <VoiceAdvisory city={city} wardId={wardId} />
-
-      {/* Forecast: the 3-hourly ward timeline, and nothing else.
-          It REPLACED a Now/+24/+48/+72 strip that sat right underneath it. The
-          strip was strictly contained by the curve, and worse, its four samples
-          all land on the same hour of day — so it hid the diurnal swing that is
-          the largest thing moving (BHALSWA: 240 at night, 109 by midday). */}
-      <WardTimeline city={city} wardId={wardId} />
-
-      {/* Actions */}
-      <div style={{ display: "flex", gap: "var(--space-md)", flexWrap: "wrap" }}>
-        <Link
-          href={`/citizen/${wardId}/report`}
-          className="btn btn-primary"
-          style={{ flex: 1, textDecoration: "none" }}
+        {/* AQI Card */}
+        <div
+          className="card card-rail"
+          style={{
+            marginBottom: "var(--space-lg)",
+            ["--rail" as string]: category?.color ?? "var(--border-strong)",
+            padding: "var(--space-lg)",
+          }}
         >
-          <Camera {...icon.md} aria-hidden />
-          Report pollution
-        </Link>
-        <Link
-          href="/citizen/reports"
-          className="btn btn-ghost"
-          style={{ flex: 1, textDecoration: "none" }}
-        >
-          <ClipboardList {...icon.md} aria-hidden />
-          My reports
-          <ArrowRight {...icon.sm} aria-hidden />
-        </Link>
+          {isLoading ? (
+            <div className="skeleton" style={{ height: 120, borderRadius: 8 }} />
+          ) : (
+            <div style={{ display: "flex", gap: "var(--space-xl)", alignItems: "center" }}>
+              {/* AQI reading. A 100px glowing disc read as a game score; a
+                  square swatch reads as a measurement, and matches the band
+                  swatches in the map legend. */}
+              <div style={{ flexShrink: 0 }}>
+                <div
+                  style={{
+                    width: 86, height: 86, borderRadius: "var(--radius-lg)",
+                    background: category?.color ?? "var(--bg-tertiary)",
+                    display: "flex", flexDirection: "column",
+                    alignItems: "center", justifyContent: "center",
+                  }}
+                >
+                  <div
+                    className="mono"
+                    style={{ fontSize: "1.7rem", fontWeight: 600, color: category?.textColor ?? "var(--text-secondary)", lineHeight: 1 }}
+                  >
+                    {aqi ?? "—"}
+                  </div>
+                  <div style={{ fontSize: "0.58rem", color: category?.textColor ?? "var(--text-tertiary)", opacity: 0.8, marginTop: 3, letterSpacing: "0.1em" }}>
+                    AQI
+                  </div>
+                </div>
+              </div>
+              {/* Details */}
+              <div style={{ flex: 1 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+                  <span style={{ fontSize: "1.1rem", fontWeight: 600 }}>{category?.label ?? "No data"}</span>
+                  {(() => {
+                    const now = forecast[0].aqi, next = forecast[1].aqi;
+                    if (now == null || next == null) return null;
+                    const d = next - now;
+                    if (Math.abs(d) < 3) {
+                      return <span className="badge badge-diffuse">steady · 24h</span>;
+                    }
+                    const worse = d > 0;
+                    return (
+                      <span className={`badge ${worse ? "badge-critical" : "badge-positive"}`}>
+                        <TrendingUp
+                          {...icon.sm}
+                          aria-hidden
+                          style={{ transform: worse ? "none" : "scaleY(-1)" }}
+                        />
+                        {worse ? "worsening" : "improving"} · 24h
+                      </span>
+                    );
+                  })()}
+                </div>
+                <div style={{ fontSize: "0.875rem", color: "var(--text-secondary)", marginBottom: 8 }}>
+                  PM2.5 <span className="mono" style={{ color: "var(--text-primary)" }}>
+                    {summary?.pm25 != null ? `${summary.pm25.toFixed(1)} µg/m³` : "—"}
+                  </span>
+                </div>
+                {/* Only when the ward has NO real advisory. The pipeline's advisory
+                    says the same thing better — named ward, actual AQI, and it is
+                    the text the voice note reads — so rendering both printed the
+                    same sentence twice, once generically and once for real. */}
+                {!advisoryText && (
+                  <div style={{ fontSize: "0.85rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>
+                    {AQI_ADVICE[adviceIndex]}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* "Compared to what?" — the question the AQI number provokes before "why".
+            A resident cannot act on 403 without knowing whether their ward is the
+            outlier or the whole city is like this today. */}
+        <WardComparison wardId={wardId} cells={cells} cityLabel={cityLabel} />
+
+        </div>
+
+        <div className="ward-col">
+        {/* Why / what is being done / how sure — placed directly under the number,
+            because "why" is the question the number provokes and the one every
+            other AQI product leaves unanswered. */}
+        <WardAccountability city={city} wardId={wardId} cells={cells} />
+
+        {/* Advisory */}
+        {advisoryText && (
+          <div
+            className="card card-rail"
+            style={{ marginBottom: "var(--space-lg)", ["--rail" as string]: "var(--caution)" }}
+          >
+            <h5 style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}>
+              <Megaphone {...icon.sm} aria-hidden />
+              Advisory
+            </h5>
+            <p style={{ fontSize: "0.875rem", color: "var(--text-primary)", lineHeight: 1.6 }}>
+              {advisoryText}
+            </p>
+          </div>
+        )}
+
+        {/* Spoken advisory — the IVR/voice-note deliverable, per language */}
+        <VoiceAdvisory city={city} wardId={wardId} />
+
+        {/* Forecast: the 3-hourly ward timeline, and nothing else.
+            It REPLACED a Now/+24/+48/+72 strip that sat right underneath it. The
+            strip was strictly contained by the curve, and worse, its four samples
+            all land on the same hour of day — so it hid the diurnal swing that is
+            the largest thing moving (BHALSWA: 240 at night, 109 by midday). */}
+        <WardTimeline city={city} wardId={wardId} />
+
+        {/* Actions */}
+        <div style={{ display: "flex", gap: "var(--space-md)", flexWrap: "wrap" }}>
+          <Link
+            href={`/citizen/${wardId}/report`}
+            className="btn btn-primary"
+            style={{ flex: 1, textDecoration: "none" }}
+          >
+            <Camera {...icon.md} aria-hidden />
+            Report pollution
+          </Link>
+          <Link
+            href="/citizen/reports"
+            className="btn btn-ghost"
+            style={{ flex: 1, textDecoration: "none" }}
+          >
+            <ClipboardList {...icon.md} aria-hidden />
+            My reports
+            <ArrowRight {...icon.sm} aria-hidden />
+          </Link>
+        </div>
+        </div>
       </div>
+
     </div>
   );
 }

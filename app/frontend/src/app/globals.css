@@ -1050,3 +1050,56 @@ hr {
     right: 12px;
   }
 }
+
+/* ─── Citizen ward page: two-column reading layout ───────────────────────────
+   The ward page was one 680px column, so on a desktop half the window was
+   empty and "Why your air is like this" sat a full screen below the AQI number
+   that provokes it. Two columns put the reading beside the explanation.
+
+   Below 1024px this collapses to a single column and the DOM order in
+   citizen/[wardId]/page.tsx IS the phone reading order — map, AQI, comparison,
+   forecast, then why / what is being done / advisory / report. The citizen view
+   is mobile-first by design; the second column is the enhancement, not the
+   baseline. */
+.ward-page {
+  max-width: 680px;
+}
+
+.ward-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* Column gap only. Each card already carries its own margin-bottom, so a row
+     gap here would double the vertical rhythm. */
+  column-gap: var(--space-lg);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .ward-page {
+    max-width: 1120px;
+  }
+
+  .ward-grid {
+    /* minmax(0, …) so the map canvas and the forecast SVG can shrink instead of
+       forcing the column wider than its share. */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  /* The left column is the shorter one (map, reading, ranking) and the right is
+     the long read. Pinning the left means the AQI number and the map stay on
+     screen while you scroll the explanation beside them — which is the reason
+     to have two columns at all — instead of leaving dead space under it.
+     68px = the 52px citizen header plus a 16px breath. */
+  .ward-grid > .ward-col:first-child {
+    position: sticky;
+    top: 68px;
+  }
+}
+
+/* A pinned column that is taller than the viewport can never scroll to its own
+   end, so the pin is dropped on short windows. */
+@media (min-width: 1024px) and (max-height: 760px) {
+  .ward-grid > .ward-col:first-child {
+    position: static;
+  }
+}
