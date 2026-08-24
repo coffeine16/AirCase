@@ -303,6 +303,42 @@ def run() -> None:
             advisory["audio"][lang] = rel_path
             synthesized += 1
 
+    # REFUSE to replace a working manifest with an empty one.
+    #
+    # The manifest is rebuilt from scratch each run and only gains entries from
+    # a cache hit or a fresh synthesis. So when TTS is unavailable — no
+    # credentials, dead billing, a rate limit — AND the advisory text has
+    # changed enough to miss the hash-keyed cache, every ward fails and this
+    # writes []. The MP3s stay on disk, perfectly playable, and the frontend
+    # stops finding them: the voice feature silently disappears.
+    #
+    # That is exactly what happened. An 8-city run took Delhi's manifest from
+    # 13,984 bytes to 2 while its 70 clips sat untouched beside it, and nothing
+    # in the logs said so, because per rule 3 a TTS failure is only ever a
+    # warning. The atomic write below was added after a related incident ("a
+    # killed run left 273 MP3s and no manifest") — same failure, different
+    # cause, and atomicity does not help when the empty write is deliberate.
+    #
+    # Keeping stale-but-valid audio beats losing the feature: the clips are of
+    # an older advisory text for the same ward and hazard, which is a far
+    # smaller error than silence. Loud, because a silent degrade is what let
+    # this ship.
+    if not manifest and existing:
+        surviving = [
+            e for e in existing
+            if (AUDIO_DIR / str(e.get("path", "")).split("/")[-1]).exists()
+        ]
+        if surviving:
+            logger.error(
+                "Voice: produced 0 entries (%d failed) but %d previously "
+                "synthesized clips are still on disk. KEEPING the existing "
+                "manifest rather than blanking it — the audio you are serving "
+                "is for an older advisory text. Re-run with working TTS "
+                "credentials to refresh it.",
+                failed, len(surviving),
+            )
+            return
+
     # Write atomically: an interrupted run must never leave a half-written
     # manifest, and without a manifest the /voice endpoint 404s even though the
     # MP3s exist (this bit us — a killed run left 273 MP3s and no manifest).
