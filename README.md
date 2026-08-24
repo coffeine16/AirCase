@@ -122,7 +122,7 @@ contract (`hotspots`, `attributions`, `forecast`, `actions`, `dispatch`, `memos`
 `advisories`, `ledger`) to `data/outputs/`. Then serve it:
 
 ```bash
-uvicorn app.backend.main:app --reload --port 8000        # 23 endpoints: /hotspots, /attribution/{cell}, /actions, /dispatch, /ledger, /advisories …
+uvicorn app.backend.main:app --reload --port 8000        # 24 endpoints: /hotspots, /attribution/{cell}, /actions, /dispatch, /ledger, /advisories …
 ```
 
 > **All three tiers are deployed.** The Next.js console and citizen view are live
@@ -208,20 +208,48 @@ PM2.5 runs on a daily cycle, so persistence is accidentally *in phase* at 24-hou
 multiples — it compares a value to the same hour of the previous day. Between
 those points it compares night to day and collapses. On real Delhi:
 
-| lead | 3 h | 12 h | **24 h** | 36 h | **48 h** | 60 h | **72 h** |
-|---|---|---|---|---|---|---|---|
-| our model | 59.6 | 69.4 | 74.0 | 77.9 | 80.8 | 81.2 | 81.3 |
-| persistence | 69.4 | 107.6 | **76.2** | 117.3 | **92.7** | 116.2 | **87.5** |
-| skill | +14% | +36% | **+3%** | +34% | **+13%** | +30% | **+7%** |
+| lead | 3 h | 6 h | 12 h | **24 h** | **48 h** | **72 h** |
+|---|---|---|---|---|---|---|
+| our model | 81.5 | 85.2 | 87.2 | 88.3 | 91.2 | 92.1 |
+| persistence | **67.2** | 91.9 | 105.8 | **92.6** | 110.5 | 115.5 |
+| skill | **−21.3%** | +7.2% | +17.5% | **+4.6%** | **+17.5%** | **+20.3%** |
 
-Every standard benchmark — including the one in our own brief — samples 24, 48 and
-72 h. **Exactly the three points where the baseline is strongest.** Re-scored every
-three hours, the model beats persistence at all 24 lead times in Delhi.
+Read the persistence row, not ours. It climbs to 105.8 at 12 h and then *falls
+back* to 92.6 at 24 h — the baseline gets **better** as the horizon gets longer,
+which no forecast should. That is the diurnal cycle: at 24-hour multiples
+persistence compares a value to the same hour of the previous day and is
+accidentally in phase. Between those points it compares night to day and
+collapses.
 
-**And in Chennai we lose.** It is coastal, the sea breeze flattens the diurnal
-cycle, persistence stays strong, and we do not beat it until 51 h. We ship that
-curve beside Delhi's — a method that only publishes the city where it wins is not
-a method.
+Every standard benchmark — including the one in our own brief — samples 24, 48
+and 72 h. **Exactly where the baseline is strongest**, and at 24 h our margin is
+its narrowest (+4.6%) for that reason.
+
+**And we lose at 3 h, by 21%.** At that range "the air is what it is right now"
+is genuinely hard to beat in Delhi, and we report it rather than starting the
+table at 6 h. The horizon that matters for enforcement is 48–72 h — *"stagnant
+winds Thursday, act before"* — and that is where the margin is widest.
+
+⚠️ These are **out-of-sample**: 175,585 station-cell rows from 2025-11-30 to
+2026-01-14, strictly after the model's training cutoff, with climatology
+truncated at the same cutoff so it cannot leak either. Measured *inside* the
+training window the same model "beats" persistence by 33–60%. That number is
+fake, we found it, and we threw it away.
+
+**Where we lose has moved, and we report the new one.** This paragraph used to
+say we lost in Chennai until 51 h — true of the earlier single-city model.
+Re-scored out-of-sample against the pooled quantile model, Chennai is now the
+*strongest* city (+10% at 3 h rising to +27% at 72 h) and **Delhi is the one we
+lose in, at 3 h**. All three, honestly:
+
+| skill vs persistence | 3 h | 24 h | 48 h | 72 h |
+|---|---|---|---|---|
+| Delhi | **−21.3%** | +4.6% | +17.5% | +20.3% |
+| Chennai | +10.1% | +12.4% | +21.2% | **+27.1%** |
+| Bengaluru | +3.2% | +8.4% | +13.0% | +12.1% |
+
+The model wins **3 of 3 cities at 24 h, 48 h and 72 h**. A method that only
+publishes the city where it wins is not a method — so the one red cell stays.
 
 We also tested adding a meteorology forecast, as an **oracle**: feeding the model
 the met that actually occurred, the most favourable case that exists. It did not
@@ -446,7 +474,7 @@ Because a README that oversells is the same bug as a metric that oversells.
 | Intervention ledger — response time + counterfactual | ✅ real. Response-time is honest (CAG's *weeks* vs one automated batch); effectiveness freezes the +48 h counterfactual, `our_impact: null` until a real intervention exists |
 | Channels — n8n citizen intake + inspector loop | ✅ **live.** Telegram bot + web webhook → Supabase, proven end-to-end into the evidence chain |
 | Jurisdiction tagging on the action queue | ✅ real — the H3 fabric is a rectangular bbox but a municipality is an irregular polygon inside it, so **165 of 580 hotspot cells and 12 of 46 actions fall outside city limits** (all of Pune's). Tagged *"refer to state board"*, not dropped: a landfill past the boundary still pollutes the city, so deleting it discards a true detection — the routing changes, the finding stands |
-| Read-only serving API (23 endpoints) | ✅ real — one instance serves all eight cities, co-located with the channel layer behind one certificate |
+| Read-only serving API (24 endpoints) | ✅ real — one instance serves all eight cities, co-located with the channel layer behind one certificate |
 | **Fusion exposure field** | ❌ **claim withdrawn, now on EIGHT cities.** Leave-one-station-out, it loses to a naive city-mean on **7 of 8**; two have a *negative* R² (Pune −0.244, Hyderabad −0.221) — worse than predicting the mean. The single win is Delhi (+2.1%), the city with 24 stations, the most we have anywhere. We tried predicting the *deviation* from the city median — a construction that cannot lose to the baseline, since a zero residual **is** the baseline — and it still lost, which means the model fits its training stations' siting quirks rather than structure that transfers. With ~24 stations we cannot demonstrate spatial skill, so we do not claim it. **Detection is the contribution.** |
 | **Frontend — Next.js + deck.gl console** | ✅ **deployed.** Admin console and citizen view live on Vercel, reading the live API with a static-bundle fallback so the map still renders if the backend is down |
 | GEE Sentinel-5P collector | ✅ **built and wired** — real `COPERNICUS/S5P` extraction; it produced the real Delhi result. Live satellite needs GEE auth on the run machine (`gcloud auth application-default login`); until then synthetic mode runs fully offline |
@@ -463,7 +491,7 @@ Because a README that oversells is the same bug as a metric that oversells.
   dishonest." A product that reported an impact here would be easy to build and
   impossible to defend.</sub>
 </p>
-| Voice advisory **audio** (TTS) | ✅ real — Google TTS, 71 clips per city, played in the citizen view and pushed as Telegram voice notes |
+| Voice advisory **audio** (TTS) | ✅ real for **three** cities — Google TTS, **50 clips over the 25 highest-risk wards** of Delhi (hi), Chennai (ta) and Bengaluru (kn), played in the citizen view. The cap is deliberate: 227 wards × 2 languages is ~450 sequential TTS calls, and an advisory reading "air quality is Good" does not need a voice note. Every ward still gets the **text**. The other five cities have none — the agent needs Google Cloud TTS and that project's billing is gone |
 | Network audit — monitoring blind spots | ✅ real — **24 of Delhi's 1,703 cells are monitored (1.4%)**; the 40 worst blind spots are ranked into a next-sensor placement list |
 | Multi-city — one instance, **eight** cities | ✅ real — `?city=` on every endpoint. Delhi, Chennai, Bengaluru, Mumbai, Kolkata, Hyderabad, Pune and Ahmedabad each have a full live pipeline run over the same 90-day window, on real municipal ward boundaries |
 
@@ -490,7 +518,7 @@ It is deployed. These are live, not screenshots.
 |---|---|
 | **Admin console** | [aircase-aq.vercel.app/admin](https://aircase-aq.vercel.app/admin) — map, hotspot zones, evidence chains, EPS queue, dispatch routes, agent runner |
 | **Citizen view** | [aircase-aq.vercel.app/citizen](https://aircase-aq.vercel.app/citizen) — your ward's AQI, *why* it is bad, what is being done, and a 3-hourly timeline |
-| **API** | [/docs](https://aq-intel.duckdns.org/aircase/docs) — 23 endpoints, `?city=` on each, OpenAPI schema |
+| **API** | [/docs](https://aq-intel.duckdns.org/aircase/docs) — 24 endpoints, `?city=` on each, OpenAPI schema |
 | **Health** | [/health](https://aq-intel.duckdns.org/aircase/health) — which cities this instance can answer for |
 | **Telegram** | [@aircaseaqbot](https://t.me/aircaseaqbot) — send a photo, a voice note, or a sentence in your own language |
 
@@ -561,7 +589,7 @@ assumption we made.
 ## Repo layout
 
 ```
-app/            backend/main.py — read-only FastAPI (23 endpoints, ?city= scoped)
+app/            backend/main.py — read-only FastAPI (24 endpoints, ?city= scoped)
                 frontend/       — Next.js + deck.gl console + citizen view
 ingestion/      collectors (6 sources, live + synthetic fallback)
                 preprocessing/panel.py — the cell × hour feature table
@@ -572,7 +600,7 @@ intelligence/   orchestrator.py     — the 9-agent LangGraph state machine
                 agents/             — detect, attribution, forecast, prioritise,
                                       memo, advisory, voice, ledger, audit
                                       + llm_gateway
-shared/         config, H3 grid utilities, real ward layer (3 cities)
+shared/         config, H3 grid utilities, real ward layer (8 cities)
 scripts/        run_pipeline.py, sync_supabase.py + truth-scored evaluations
 db/             schema.sql — Supabase contracts the channel layer writes to
 deploy/         n8n on GCP: Terraform + Caddy + DuckDNS runbook
