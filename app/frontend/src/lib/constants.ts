@@ -4,7 +4,7 @@ import {
   Gauge, Layers, MapPin, Megaphone, RadioTower, Route, SatelliteDish,
   ScanLine, Target, TrendingUp, TriangleAlert, Truck, Volume2,
 } from "./../components/Icon";
-import type { AgentName, HotspotKind, SourceCategory, ReportCategory, LayerId } from "./types";
+import type { AgentName, HotspotKind, SourceCategory, ReportCategory, LayerId, ActionStatus } from "./types";
 
 // ─── Map ──────────────────────────────────────────────────────────────────────
 
@@ -218,3 +218,41 @@ export const AQI_ADVICE = [
   "Air quality is Very Poor. Everyone should avoid prolonged exertion. Sensitive groups: avoid all outdoor activity.",
   "Air quality is Severe. Everyone should avoid any outdoor exertion; sensitive groups should remain indoors.",
 ];
+
+// ─── Enforcement action status (citizen-facing) ────────────────────────────────
+
+/** Plain-language status, for the citizen surfaces.
+ *
+ *  Deliberately NOT the admin vocabulary. `pending`/`dispatched`/`actioned` are
+ *  internal queue states; a resident reading a map of their own city needs to
+ *  know whether anyone is coming, not what our scheduler calls the row. */
+export const ACTION_STATUS_LABELS: Record<ActionStatus, string> = {
+  pending:    "Awaiting inspection",
+  dispatched: "Inspector assigned",
+  actioned:   "Action taken",
+  resolved:   "Resolved",
+};
+
+/** Badge variant per status — a design token, never a raw hex, so the four
+ *  statuses stay inside the app's semantic colours instead of becoming four
+ *  unrelated hues. Mirrors REPORT_STATUS_BADGE's progression above. */
+export const ACTION_STATUS_BADGE: Record<ActionStatus, string> = {
+  pending:    "badge-diffuse",
+  dispatched: "badge-accent",
+  actioned:   "badge-positive",
+  resolved:   "badge-positive",
+};
+
+/** Attribution confidence as words, not a bare percentage.
+ *
+ *  The thresholds are the ones `scripts/eval_attribution.py` actually validated
+ *  against truth — 100% precision above 0.70, and a median of 0.66 on hits vs
+ *  0.42 on misses — so "High confidence" here means something measured, not a
+ *  designer's guess at where a number starts sounding good. A citizen reading
+ *  "67%" has no way to know whether that is strong or weak; this does. */
+export function confidenceLabel(confidence: number): string {
+  if (!Number.isFinite(confidence)) return "Not assessed";
+  if (confidence >= 0.70) return "High confidence";
+  if (confidence >= 0.50) return "Likely";
+  return "Under review";
+}

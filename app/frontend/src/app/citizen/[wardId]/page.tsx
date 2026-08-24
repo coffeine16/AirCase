@@ -11,6 +11,7 @@ import type { FusionResponse, ForecastCell } from "@/lib/types";
 
 import VoiceAdvisory from "@/components/citizen/VoiceAdvisory";
 import WardAccountability from "@/components/citizen/WardAccountability";
+import WardComparison from "@/components/citizen/WardComparison";
 import WardTimeline from "@/components/citizen/WardTimeline";
 import { icon, ArrowLeft, ArrowRight, Camera, ClipboardList, Megaphone, TrendingUp } from "@/components/Icon";
 
@@ -24,7 +25,7 @@ interface Params { wardId: string }
 export default function WardDashboardPage({ params }: { params: Promise<Params> }) {
   const { wardId } = use(params);
 
-  const { city } = useCity();
+  const { city, cityLabel } = useCity();
   const { data: fusion, isLoading } = useSWR<FusionResponse>([city, "fusion"], () => api.cityFusion(city));
   const { data: wardsResp } = useSWR([city, "wards"], () => api.cityWards(city));
   const cells = useMemo(() => fusion?.cells ?? [], [fusion]);
@@ -176,6 +177,11 @@ export default function WardDashboardPage({ params }: { params: Promise<Params> 
           </div>
         )}
       </div>
+
+      {/* "Compared to what?" — the question the AQI number provokes before "why".
+          A resident cannot act on 403 without knowing whether their ward is the
+          outlier or the whole city is like this today. */}
+      <WardComparison wardId={wardId} cells={cells} cityLabel={cityLabel} />
 
       {/* Why / what is being done / how sure — placed directly under the number,
           because "why" is the question the number provokes and the one every

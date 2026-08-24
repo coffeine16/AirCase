@@ -286,14 +286,19 @@ export const api = {
     apiFetch<{ ward_id: string; ward_name: string; aqi: number; pm25: number; advisory?: string }>
       (`/ward/${wardId}/summary`).catch(() => null),
 
-  getReports: () =>
-    apiFetch<CitizenReport[]>("/reports").catch(() => [] as CitizenReport[]),
+  // Scoped to ONE device. Supabase's anon key can read every row, so the filter
+  // has to happen server-side before anything reaches a browser — hence the id
+  // is a query param on our own API, not a client-side .filter().
+  getReports: (deviceId: string) =>
+    apiFetch<CitizenReport[]>(
+      `/reports?device_id=${encodeURIComponent(deviceId)}`,
+    ).catch(() => [] as CitizenReport[]),
 
   // Submit a citizen report to the n8n webhook (NOT the FastAPI backend). n8n
   // validates, canonicalises the ward, and writes to Supabase. The webhook returns
   // {ok, status}, so we synthesize a CitizenReport for the optimistic UI update —
   // the authoritative row lives in Supabase and appears after the next sync.
-  submitReport: async (payload: CreateReportPayload): Promise<CitizenReport> => {
+  submitReport: async (payload: CreateReportPayload, deviceId: string): Promise<CitizenReport> => {
     // Frontend uses "construction_dust"; the schema/pipeline category is "construction".
     const category =
       payload.category === "construction_dust" ? "construction" : payload.category;
@@ -313,6 +318,7 @@ export const api = {
           description: payload.description ?? "",
           lat: payload.lat ?? null,
           lon: payload.lon ?? null,
+          device_id: deviceId,
           source: "web",
         }),
         signal: AbortSignal.timeout(8000),
