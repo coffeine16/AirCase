@@ -83,9 +83,25 @@ export default function AdminPage() {
   const { data: audit }        = useSWR([city, "audit"],     () => api.cityAudit(city));
   const { data: satellite = [] }= useSWR([city, "satellite"],() => api.citySatellite(city));
   const { data: dispatchRoutes = [] } = useSWR([city, "dispatch"], () => api.cityDispatch(city));
+  // Needed for the Source Type filter chips. A hotspot row has no
+  // primary_source — source is a property of the ZONE, and lives here.
+  const { data: attributions = [] } = useSWR([city, "attributions"], () => api.cityAttributions(city));
 
   const allHotspots = useMemo(() => rawHotspots ?? [], [rawHotspots]);
-  const hotspots = useMemo(() => filterHotspots(allHotspots, filters), [allHotspots, filters]);
+
+  /** zone_id -> attributed source, so the Source Type chips can filter cells.
+   *  One attribution per cell, all cells in a zone share the zone's source, so
+   *  last-write-wins is fine here. */
+  const sourceByZone = useMemo(() => {
+    const m = new Map<string, string>();
+    for (const a of attributions) if (a.zone_id) m.set(a.zone_id, a.primary_source);
+    return m;
+  }, [attributions]);
+
+  const hotspots = useMemo(
+    () => filterHotspots(allHotspots, filters, sourceByZone),
+    [allHotspots, filters, sourceByZone]
+  );
   const wardCells = wardsResp?.cells ?? [];
   const blindSpots = audit?.blind_spots ?? [];
 
